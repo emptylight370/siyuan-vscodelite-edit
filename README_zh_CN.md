@@ -2,7 +2,7 @@
 
 ![GitHub Release Date](https://img.shields.io/github/release-date/emptylight370/siyuan-vscodelite-edit?display_date=published_at)
 ![GitHub Release](https://img.shields.io/github/v/release/emptylight370/siyuan-vscodelite-edit)
-![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/emptylight370/siyuan-vscodelite-edit/total)
+![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/emptylight370/siyuan-vscodelite-edit/latest/total)
 ![GitHub Repo stars](https://img.shields.io/github/stars/emptylight370/siyuan-vscodelite-edit)
 
 从VSCode Lite脱胎而来，进一步美化界面。
