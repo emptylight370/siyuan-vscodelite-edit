@@ -38,6 +38,8 @@ Limited by the configuration loading method, updated configurations for new vers
 
 > Full changelog view [ChangeLog](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/main/changelog.md)
 
+- V1.4.18
+  - Fixed an issue where virtual references were displayed as reference styles
 - V1.4.17
   - Highlight the exit focus button
   - Repair reference text with bold appearance
@@ -45,9 +47,6 @@ Limited by the configuration loading method, updated configurations for new vers
   - Add hover background for tab close button
   - Add special style for pinned tab
   - Fine-tune the font style for market tabs
-- V1.4.15
-  - Redraw heading icon
-  - Fix heading display style
 
 # Plugin fitness
 

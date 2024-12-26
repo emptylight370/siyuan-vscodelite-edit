@@ -1,5 +1,8 @@
 # ChangeLog
 
+- V1.4.18
+  - 修复虚拟引用显示为引用样式的问题
+  - Fixed an issue where virtual references were displayed as reference styles
 - V1.4.17
   - 高亮退出聚焦按钮
   - 修复块引加粗外观

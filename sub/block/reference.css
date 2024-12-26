@@ -1,17 +1,17 @@
 /* 引用锚文本 */
-.protyle-wysiwyg [data-node-id] span[data-type*='block-ref']:not(.av__celltext) {
+.protyle-wysiwyg [data-node-id] span[data-type*='block-ref']:not(.av__celltext):not([data-type='virtual-block-ref']) {
     color: var(--lite-block-ref-color);
 }
 
-.protyle-wysiwyg [data-node-id] span[data-type*='block-ref']:not(.av__celltext)::before {
+.protyle-wysiwyg [data-node-id] span[data-type*='block-ref']:not(.av__celltext):not([data-type='virtual-block-ref'])::before {
     content: '⌈';
 }
 
-.protyle-wysiwyg [data-node-id] span[data-type*='block-ref']:not(.av__celltext)::after {
+.protyle-wysiwyg [data-node-id] span[data-type*='block-ref']:not(.av__celltext):not([data-type='virtual-block-ref'])::after {
     content: '⌋';
 }
 
-.protyle-wysiwyg [data-node-id] span[data-type*='block-ref']:not(.av__celltext):hover {
+.protyle-wysiwyg [data-node-id] span[data-type*='block-ref']:not(.av__celltext):not([data-type='virtual-block-ref']):hover {
     background-color: var(--lite-block-ref-background-color);
     border-radius: 3px;
 }
