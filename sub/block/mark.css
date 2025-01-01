@@ -2,21 +2,10 @@
 .b3-typography span[data-type~=mark],
 .protyle-wysiwyg mark,
 .protyle-wysiwyg span[data-type~=mark] {
-    position: relative;
     background-color: unset;
-}
-
-.b3-typography mark::after,
-.b3-typography span[data-type~=mark]::after,
-.protyle-wysiwyg mark::after,
-.protyle-wysiwyg span[data-type~=mark]::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    height: 60%;
-    background-color: rgb(124, 245, 94);
-    border-radius: 8px;
-    z-index: -1;
+    background: linear-gradient(to bottom, transparent 40%, rgba(124, 245, 94, 0.45) 60%);
+    border-radius: 0.2em;
+    padding: 0.1em 0;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
 }

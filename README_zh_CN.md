@@ -39,12 +39,12 @@
 
 > 完整更新日志查看[changelog](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/main/changelog.md)
 
+- v1.5.2
+  - 修复标注文本换行时不能显示背景问题
 - v1.5.1
   - 紧急修复更新内容未打包问题
 - V1.5.0
   - 修复导出PDF时丢失部分样式的问题
-- V1.4.19
-  - 添加高亮标注样式
 
 # 插件适配
 

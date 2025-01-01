@@ -1,5 +1,10 @@
 # ChangeLog
 
+## v1.5.2
+
+- 修复标注文本换行时不能显示背景问题
+- Fixed the problem that the background cannot be displayed when the marked text is wrapped
+
 ## v1.5.1
 
 - 紧急修复更新内容未打包问题
