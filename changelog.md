@@ -1,197 +1,297 @@
 # ChangeLog
 
-- V1.5.0
-  - 修复导出PDF时丢失部分样式的问题
-  - Fix some styles would lost when exporting PDF
-- V1.4.19
-  - 添加高亮标注样式
-  - Add highlight mark style
-- V1.4.18
-  - 修复虚拟引用显示为引用样式的问题
-  - Fixed an issue where virtual references were displayed as reference styles
-- V1.4.17
-  - 高亮退出聚焦按钮
-  - 修复块引加粗外观
-  - Highlight the exit focus button
-  - Repair reference text with bold appearance
-- V1.4.16
-  - 标签关闭按钮添加悬停背景
-  - 为钉住的标签添加显示效果
-  - 微调集市标签字体样式，可能需要搭配字体插件才能看出区别
-  - tab close button add hover background
-  - Add special style for pinned tab
-  - Fine-tune the font style for market tabs; the differences might be more noticeable with a font plugin installed
-- V1.4.15
-  - 重绘标题图标
-  - 修复标题显示效果(#14)
-  - Redraw heading icon
-  - Fix heading display style(#14)
-- V1.4.14
-  - 调整背景插件适配下全屏显示效果(#15)
-  - Adjust fullscreen display style under background image plugin adaption(#15)
-- V1.4.13
-  - 修改仓库链接，可能需要重新安装
-  - Edit repo link, maybe you should reinstall
-- V1.4.12
-  - 去除表格透明以缓解表格失去背景问题（仅透明背景）
-  - Remove transparency from tables to alleviate the problem of losing background in tables(only transparent background)
-- V1.4.11
-  - 可以禁用标题阴影(#13)
-  - Can disable heading block shadow(#13)
-- V1.4.10
-  - 修复大纲中标题失去颜色问题
-  - Fixed the issue where the title in the outline lost color
-- V1.4.9
-  - 修复标题无法居中问题(#9)
-  - Fixed the problem that the title could not be centered(#9)
-- V1.4.8
-  - 标题添加阴影
-  - 标题符号转为svg并添加颜色
-  - Header add shadow
-  - Header icon convert to svg and add color
-- V1.4.7
-  - 尝试修复导出预览效果
-  - 尝试修复设置界面右侧设置选项显示效果
-  - 尝试修复导出PDF预览面板右侧意外滚动条
-  - Try to fix the export preview style
-  - Try to repair the display style of setting options on the right side of the settings panel
-  - Try to fix the unexcepted scrollbar on the right side of export PDF preview panel
-- V1.4.6
-  - 限制数学增强插件公式预览区域的宽度，可调整
-  - Limit the width of the mathematical enhancement plug-in formula preview area, adjustable
-- V1.4.5
-  - 修复背景插件启用时意外影响移动端显示问题
-  - Fixed a problem that accidentally affected the mobile display when the background plug-in was enabled
-- V1.4.4
-  - readme update
-  - fix known issue
-- V1.4.3
-  - 让不透明的块更透明一点（可能带来显示问题）(#5)
-  - Make opaque blocks more transparent (may cause display problems)(#5)
-- V1.4.2
-  - readme update
-- V1.4.1
-  - 调整背景透明时数据库和嵌入块的背景(#5)
-  - Adjust the background of database and embedded blocks when the background is transparent(#5)
-- V1.4.0
-  - 适配替换背景图片插件（需要关闭插件设置中前景透明度）(#5)
-  - Adapt Background Cover plugin (need to turn off foreground transparency in plugin settings)(#5)
-- V1.3.5
-  - 更新说明文档
-  - 调整文档树部分样式
-  - 尝试适配自定义背景情况（dock）
-  - 尝试禁用移动端编辑器滚动条
-  - Update readme doc
-  - Adjust doc tree styles partly
-  - Try to adapt customized background(dock)
-  - Try to hide editor scroll bar on mobile app
-- V1.3.4
-  - 新增文档树和大纲缩进（可能和插件冲突）
-  - Add document tree and outline indentation (may conflict with plugin)
-- V1.3.3
-  - 新增本地化适配
-  - New localized adaptation
-- V1.3.2
-  - 调整列表多层级样式
-  - 修复捐赠链接
-  - Adjust list multi-level styles
-  - Fix donate link
-- V1.3.1
-  - 修复切换颜色主题需要重新加载的问题
-  - Fixed an issue where switching color modes requires reloading
-- V1.3.0
-  - 更新加载主题的方式（可能需要多次重启或刷新）
-  - 添加数据库的样式
-  - 修改引用锚文本的样式
-  - 去除嵌入块的横向滚动条
-  - Update how themes are loaded (may require multiple restarts or refreshments)
-  - Add styles to the database
-  - Modify the style of reference anchor text
-  - Remove horizontal scroll bars from embedded blocks
-- V1.2.3
-  - 快速修复Readme说明
-  - Readme quick fix
-- V1.2.2
-  - 完成配置面板
-  - Accomplish Configure Panel
-- V1.2.1
-  - 为有序列表添加不同缩进层级的编号类型(#4)
-  - 为无序列表添加颜色显示
-  - Add numbering types with different indentation levels to ordered lists (#4)
-  - Add color display to unordered lists
-- V1.2.0
-  - 使用配置文件来调整主题显示效果，但是尚无法直接打开配置文件编辑。
-  - Use configuration file to amend display style, but can't directly open file to edit.
-- V1.1.6
-  - Readme fix
-- V1.1.5
-  - minor fix
-- V1.1.4
-  - 修复了插件自定义块样式定义的块在嵌入块中的显示问题
-  - Fix plugin Custom Block Style's display problem in embedded block
-- V1.1.3
-  - 修复了嵌入块的显示问题，表现为嵌入块内所有非段落块都单独显示。现在行级公式块不会单独显示了。
-  - Fix a display problem of embedded block, showing as any non-paragraph block will display in single line. Now it won't display like this.
-- V1.1.2
-  - 调整了嵌入块的显示效果，限制高度到70vh
-  - Adjust the display style of embedded block, limit the height to 70vh
-- V1.1.1
-  - minor bug fixed
-- V1.1.0
-  - 改善引用锚文本显示效果
-  - 调整适配插件为导入模块
-  - 调整文件组成为导入模块
-  - Improve reference text display
-  - Change fit plugin's code to import module
-  - Change files to import module
-- V1.0.11
-  - 调整代码块行号宽度为3em，缓解代码块换行冲突问题
-  - Expand code block line number width to 3em, alleviate code block soft wrap conflict
-- V1.0.10
-  - 修复了集市中选中分类高亮问题
-  - Fix bazaar selected category highlight
-- V1.0.9
-  - 修复README
-  - Fix README
-- V1.0.8
-  - 修改README_zh到README_zh_CN
-  - Modify README_zh to README_zh_CN
-- V1.0.7
-  - 修复标签栏意外滚动
-  - Fix tab-header accidently scroll
-- V1.0.6
-  - Nothing change
-- V1.0.5
-  - 更新许可证
-  - Update LICENSE
-- V1.0.4
-  - 更新预览图
-  - Update preview image
-- V1.0.3
-  - 修改了标题样式（好麻烦）
-  - Adjust title style
-- V1.0.2
-  - 调整了部分颜色效果
-  - 调整了代码块行号显示
-  - 调整了有序列表显示效果
-  - 调整了状态栏显示效果
-  - 适配快捷键面板
-  - Adjust some color
-  - Adjust code block line number display style
-  - Adjust ordered list display style
-  - Adjust status bar display style
-  - Fit shortcut panel
-- V1.0.1
-  - 调整了页面滚动条显示效果
-  - 调整了部分颜色效果
-  - Adjust scroll bar display style
-  - Adjust some color
-- V1.0.0
-  - 从VSCode Lite复制项目，第一次更新
-  - 调整了各级标题样式
-  - 调整了部分区域宽高
-  - 调整了表格显示效果
-  - Copied from VSCode Ltie, first update
-  - Adjust title style
-  - Adjust some area's width and height
-  - Adjust table display style
+## v1.5.0
+
+- 修复导出PDF时丢失部分样式的问题
+- Fix some styles would lost when exporting PDF
+
+## v1.4.19
+
+- 添加高亮标注样式
+- Add highlight mark style
+
+## v1.4.18
+
+- 修复虚拟引用显示为引用样式的问题
+- Fixed an issue where virtual references were displayed as reference styles
+
+## v1.4.17
+
+- 高亮退出聚焦按钮
+- 修复块引加粗外观
+- Highlight the exit focus button
+- Repair reference text with bold appearance
+
+## v1.4.16
+
+- 标签关闭按钮添加悬停背景
+- 为钉住的标签添加显示效果
+- 微调集市标签字体样式，可能需要搭配字体插件才能看出区别
+- tab close button add hover background
+- Add special style for pinned tab
+- Fine-tune the font style for market tabs; the differences might be more noticeable with a font plugin installed
+
+## v1.4.15
+
+- 重绘标题图标
+- 修复标题显示效果(#14)
+- Redraw heading icon
+- Fix heading display style(#14)
+
+## v1.4.14
+
+- 调整背景插件适配下全屏显示效果(#15)
+- Adjust fullscreen display style under background image plugin adaption(#15)
+
+## v1.4.13
+
+- 修改仓库链接，可能需要重新安装
+- Edit repo link, maybe you should reinstall
+
+## v1.4.12
+
+- 去除表格透明以缓解表格失去背景问题（仅透明背景）
+- Remove transparency from tables to alleviate the problem of losing background in tables(only transparent background)
+
+## v1.4.11
+
+- 可以禁用标题阴影(#13)
+- Can disable heading block shadow(#13)
+
+## v1.4.10
+
+- 修复大纲中标题失去颜色问题
+- Fixed the issue where the title in the outline lost color
+
+## v1.4.9
+
+- 修复标题无法居中问题(#9)
+- Fixed the problem that the title could not be centered(#9)
+
+## v1.4.8
+
+- 标题添加阴影
+- 标题符号转为svg并添加颜色
+- Header add shadow
+- Header icon convert to svg and add color
+
+## v1.4.7
+
+- 尝试修复导出预览效果
+- 尝试修复设置界面右侧设置选项显示效果
+- 尝试修复导出PDF预览面板右侧意外滚动条
+- Try to fix the export preview style
+- Try to repair the display style of setting options on the right side of the settings panel
+- Try to fix the unexcepted scrollbar on the right side of export PDF preview panel
+
+## v1.4.6
+
+- 限制数学增强插件公式预览区域的宽度，可调整
+- Limit the width of the mathematical enhancement plug-in formula preview area, adjustable
+
+## v1.4.5
+
+- 修复背景插件启用时意外影响移动端显示问题
+- Fixed a problem that accidentally affected the mobile display when the background plug-in was enabled
+
+## v1.4.4
+
+- readme update
+- fix known issue
+
+## v1.4.3
+
+- 让不透明的块更透明一点（可能带来显示问题）(#5)
+- Make opaque blocks more transparent (may cause display problems)(#5)
+
+## v1.4.2
+
+- readme update
+
+## v1.4.1
+
+- 调整背景透明时数据库和嵌入块的背景(#5)
+- Adjust the background of database and embedded blocks when the background is transparent(#5)
+
+## v1.4.0
+
+- 适配替换背景图片插件（需要关闭插件设置中前景透明度）(#5)
+- Adapt Background Cover plugin (need to turn off foreground transparency in plugin settings)(#5)
+
+## v1.3.5
+
+- 更新说明文档
+- 调整文档树部分样式
+- 尝试适配自定义背景情况（dock）
+- 尝试禁用移动端编辑器滚动条
+- Update readme doc
+- Adjust doc tree styles partly
+- Try to adapt customized background(dock)
+- Try to hide editor scroll bar on mobile app
+
+## v1.3.4
+
+- 新增文档树和大纲缩进（可能和插件冲突）
+- Add document tree and outline indentation (may conflict with plugin)
+
+## v1.3.3
+
+- 新增本地化适配
+- New localized adaptation
+
+## v1.3.2
+
+- 调整列表多层级样式
+- 修复捐赠链接
+- Adjust list multi-level styles
+- Fix donate link
+
+## v1.3.1
+
+- 修复切换颜色主题需要重新加载的问题
+- Fixed an issue where switching color modes requires reloading
+
+## v1.3.0
+
+- 更新加载主题的方式（可能需要多次重启或刷新）
+- 添加数据库的样式
+- 修改引用锚文本的样式
+- 去除嵌入块的横向滚动条
+- Update how themes are loaded (may require multiple restarts or refreshments)
+- Add styles to the database
+- Modify the style of reference anchor text
+- Remove horizontal scroll bars from embedded blocks
+
+## v1.2.3
+
+- 快速修复Readme说明
+- Readme quick fix
+
+## v1.2.2
+
+- 完成配置面板
+- Accomplish Configure Panel
+
+## v1.2.1
+
+- 为有序列表添加不同缩进层级的编号类型(#4)
+- 为无序列表添加颜色显示
+- Add numbering types with different indentation levels to ordered lists (#4)
+- Add color display to unordered lists
+
+## v1.2.0
+
+- 使用配置文件来调整主题显示效果，但是尚无法直接打开配置文件编辑。
+- Use configuration file to amend display style, but can't directly open file to edit.
+
+## v1.1.6
+
+- Readme fix
+
+## v1.1.5
+
+- minor fix
+
+## v1.1.4
+
+- 修复了插件自定义块样式定义的块在嵌入块中的显示问题
+- Fix plugin Custom Block Style's display problem in embedded block
+
+## v1.1.3
+
+- 修复了嵌入块的显示问题，表现为嵌入块内所有非段落块都单独显示。现在行级公式块不会单独显示了。
+
+- Fix a display problem of embedded block, showing as any non-paragraph block will display in single line. Now it won't display like this.
+
+## v1.1.2
+
+- 调整了嵌入块的显示效果，限制高度到70vh
+- Adjust the display style of embedded block, limit the height to 70vh
+
+## v1.1.1
+
+- minor bug fixed
+
+## v1.1.0
+
+- 改善引用锚文本显示效果
+- 调整适配插件为导入模块
+- 调整文件组成为导入模块
+- Improve reference text display
+- Change fit plugin's code to import module
+- Change files to import module
+
+## v1.0.11
+
+- 调整代码块行号宽度为3em，缓解代码块换行冲突问题
+- Expand code block line number width to 3em, alleviate code block soft wrap conflict
+
+## v1.0.10
+
+- 修复了集市中选中分类高亮问题
+- Fix bazaar selected category highlight
+
+## v1.0.9
+
+- 修复README
+- Fix README
+
+## v1.0.8
+
+- 修改README_zh到README_zh_CN
+- Modify README_zh to README_zh_CN
+
+## v1.0.7
+
+- 修复标签栏意外滚动
+- Fix tab-header accidently scroll
+
+## v1.0.6
+
+- Nothing change
+
+## v1.0.5
+
+- 更新许可证
+- Update LICENSE
+
+## v1.0.4
+
+- 更新预览图
+- Update preview image
+
+## v1.0.3
+
+- 修改了标题样式（好麻烦）
+- Adjust title style
+
+## v1.0.2
+
+- 调整了部分颜色效果
+- 调整了代码块行号显示
+- 调整了有序列表显示效果
+- 调整了状态栏显示效果
+- 适配快捷键面板
+- Adjust some color
+- Adjust code block line number display style
+- Adjust ordered list display style
+- Adjust status bar display style
+- Fit shortcut panel
+
+## v1.0.1
+
+- 调整了页面滚动条显示效果
+- 调整了部分颜色效果
+- Adjust scroll bar display style
+- Adjust some color
+
+## v1.0.0
+
+- 从VSCode Lite复制项目，第一次更新
+- 调整了各级标题样式
+- 调整了部分区域宽高
+- 调整了表格显示效果
+- Copied from VSCode Ltie, first update
+- Adjust title style
+- Adjust some area's width and height
+- Adjust table display style
