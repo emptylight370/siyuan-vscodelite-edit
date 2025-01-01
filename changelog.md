@@ -1,5 +1,8 @@
 # ChangeLog
 
+- V1.5.0
+  - 修复导出PDF时丢失部分样式的问题
+  - Fix some styles would lost when exporting PDF
 - V1.4.19
   - 添加高亮标注样式
   - Add highlight mark style

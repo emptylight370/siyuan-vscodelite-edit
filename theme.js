@@ -13,16 +13,20 @@
         addThemeToolBar();
         // 向css中插入语句
         addImports(cssTable, labels);
+        // 移除CSS规则
+        removeCSSRules(cssTable);
         // 添加固定属性
         addFixedAttribute(labels);
+        // 修复导出pdf没有样式的问题
+        await addPdfStyle(labels);
+        console.log(localMessage["loadFinish"][defLag]);
     } else {
-        _postMessage('error', localMessage["localCssFail"][defLag], 5000);
+        await _postMessage('error', localMessage["localCssFail"][defLag], 5000);
     }
-    console.log(localMessage["loadFinish"][defLag]);
 })();
 
 // ! 更换主题时移除修改内容
-window.destroyTheme = () => {
+window.destroyTheme = async () => {
     // 移除主题按钮
     document.querySelector("#vscleToolbar").remove();
     // 移除body特殊适配语句
@@ -50,6 +54,7 @@ window.destroyTheme = () => {
     delete globalThis.defLag;
     delete globalThis.timer;
     delete globalThis.observer;
+    await addPdfStyle([]);
 };
 
 /**
@@ -841,4 +846,60 @@ function addFixedAttribute(settings) {
         }
     }
     // <<<<<<<<<<<<<<<<<<<<<<<<<<<<
+}
+
+/**
+ * ! 添加导出pdf时候的样式
+ * @param {*} lab 
+ */
+async function addPdfStyle(lab) {
+    var list = [];
+    lab.forEach(it => {
+        if (it == 'codeBlock') {
+            list.push('@import url(block/codeBlock.css);');
+        }
+        if (it == 'reference') {
+            list.push('@import url(block/reference.css);');
+        }
+        if (it == 'titleShadow') {
+            list.push('@import url(block/title-shadow.css);');
+        }
+        if (it == 'titleNoShadow') {
+            list.push('@import url(block/title-no-shadow.css);');
+        }
+        if (it == 'shortcutPanel') {
+            list.push('@import url(plugin/keymapPlugin.css);');
+        }
+        if (it == 'database') {
+            list.push('@import url(block/database.css);');
+        }
+        if (it == 'mark') {
+            list.push('@import url(block/mark.css);');
+        }
+    });
+    var str = list.join("\n");
+    await _writeFile("/conf/appearance/themes/siyuan-vscodelite-edit/sub/pdfPreview.css", str);
+}
+
+/**
+ * 移除CSS规则，用于在可加载js的时候去掉PDF导出适配
+ * @param {*} table 
+ */
+function removeCSSRules(table) {
+    table = table.sheet;
+
+    // 移除特定的 @import 规则
+    var removeImportRule = (sheet, url) => {
+        const rules = Array.from(sheet.cssRules);
+        for (let i = 0; i < rules.length; i++) {
+            const rule = rules[i];
+            if (rule instanceof CSSImportRule && rule.href.includes(url)) {
+                sheet.deleteRule(i);
+                break; // 找到并删除目标规则后停止遍历
+            }
+        }
+    };
+
+    // 移除 @import("sub/pdfPreview.css") 规则
+    removeImportRule(table, 'sub/pdfPreview.css');
 }

@@ -39,13 +39,12 @@ Limited by the configuration loading method, updated configurations for new vers
 
 > Full changelog view [ChangeLog](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/main/changelog.md)
 
+- V1.5.0
+  - Fix some styles would lost when exporting PDF
 - V1.4.19
   - Add highlight mark style
 - V1.4.18
   - Fixed an issue where virtual references were displayed as reference styles
-- V1.4.17
-  - Highlight the exit focus button
-  - Repair reference text with bold appearance
 
 # Plugin fitness
 

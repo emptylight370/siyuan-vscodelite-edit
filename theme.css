@@ -47,6 +47,8 @@
 @import url(sub/app/SettingPanel.css);
 /* 数据库样式 */
 /* @import url(sub/block/database.css); */
+/* 导出时加载的样式 */
+@import url(sub/pdfPreview.css);
 
 .protyle-title__input {
   font-size: 2.5em;
