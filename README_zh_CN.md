@@ -39,12 +39,12 @@
 
 > 完整更新日志查看[changelog](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/main/changelog.md)
 
+- v1.5.1
+  - 紧急修复更新内容未打包问题
 - V1.5.0
   - 修复导出PDF时丢失部分样式的问题
 - V1.4.19
   - 添加高亮标注样式
-- V1.4.18
-  - 修复虚拟引用显示为引用样式的问题
 
 # 插件适配
 

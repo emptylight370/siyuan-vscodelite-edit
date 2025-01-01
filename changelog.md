@@ -1,5 +1,10 @@
 # ChangeLog
 
+## v1.5.1
+
+- 紧急修复更新内容未打包问题
+- Emergency fix update to address the issue with unpackaged content
+
 ## v1.5.0
 
 - 修复导出PDF时丢失部分样式的问题
