@@ -1,5 +1,8 @@
 # ChangeLog
 
+- V1.4.19
+  - 添加高亮标注样式
+  - Add highlight mark style
 - V1.4.18
   - 修复虚拟引用显示为引用样式的问题
   - Fixed an issue where virtual references were displayed as reference styles

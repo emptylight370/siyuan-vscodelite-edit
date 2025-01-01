@@ -60,7 +60,7 @@ async function loadGlobalVars() {
      * ! 默认配置文件
      */
     globalThis.defaultConf = {
-        "version": 5,
+        "version": 6,
         "theme": {
             "codeBlock": true,
             "reference": true,
@@ -69,7 +69,8 @@ async function loadGlobalVars() {
             "title": true,
             "titleShadow": true,
             "database": true,
-            "doctree": true
+            "doctree": true,
+            "mark": true
         },
         "plugins": {
             "shortcutPanel": true,
@@ -173,6 +174,10 @@ async function loadGlobalVars() {
         "dbitem": {
             "zh_CN": '数据库样式',
             "en_US": 'database style'
+        },
+        "markitem": {
+            "zh_CN": "高亮标注样式",
+            "en_US": "highlight mark style"
         },
         "scitem": {
             "zh_CN": '（插件）快捷键面板样式',
@@ -419,6 +424,9 @@ async function showElementSettings(settings) {
     if (settings["plugins"]["mathPanel"] == true) {
         lab.push("mathPanel");
     }
+    if (settings["theme"]["mark"] == true) {
+        lab.push("mark");
+    }
     return lab;
 }
 
@@ -480,6 +488,10 @@ function addImports(table, labels) {
                 table.insertRule('@import url(sub/plugin/mathEnhance.css);', 6 + i);
                 i += 1;
             }
+        }
+        if (it == 'mark') {
+            table.insertRule('@import url(sub/block/mark.css);', 6 + i);
+            i += 1;
         }
     });
 }
@@ -574,6 +586,11 @@ async function createSettingsWindow() {
                 settings.push({ label: localMessage["refitem"][defLag], id: 'referenceBlock', enable: true });
             } else {
                 settings.push({ label: localMessage["refitem"][defLag], id: 'referenceBlock', enable: false });
+            }
+            if (v["theme"]["mark"] == true) {
+                settings.push({ label: localMessage["markitem"][defLag], id: 'mark', enable: true });
+            } else {
+                settings.push({ label: localMessage["markitem"][defLag], id: 'mark', enable: false });
             }
             // 集市
             if (v["theme"]["bazaar"] == true) {
@@ -686,6 +703,8 @@ async function createSettingsWindow() {
                 saveSt["plugins"]["backgroundCover"] = ck;
             } else if (id == 'mathPanel') {
                 saveSt["plugins"]["mathPanel"] = ck;
+            } else if (id == 'mark') {
+                saveSt["theme"]["mark"] = ck;
             }
         });
         // 修改配置文件版本

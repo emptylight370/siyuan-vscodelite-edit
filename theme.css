@@ -35,6 +35,8 @@
 @import url(sub/block/list.css);
 /* 代码块样式 */
 /* @import url(sub/block/codeBlock.css); */
+/* 高亮样式 */
+/* @import url(sub/block/mark.css); */
 /* 集市相关样式 */
 /* @import url(sub/app/bazaar.css); */
 /* 引用锚文本样式 */

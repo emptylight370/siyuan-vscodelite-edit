@@ -27,6 +27,7 @@ Instruction for use: [liandi](https://ld246.com/article/1728034766990)
 - Multi-level serial number style
 - Configuration edit page
 - doc tree and outline indentation
+- Adjust highlight mark style
 
 # Configure
 
@@ -38,15 +39,13 @@ Limited by the configuration loading method, updated configurations for new vers
 
 > Full changelog view [ChangeLog](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/main/changelog.md)
 
+- V1.4.19
+  - Add highlight mark style
 - V1.4.18
   - Fixed an issue where virtual references were displayed as reference styles
 - V1.4.17
   - Highlight the exit focus button
   - Repair reference text with bold appearance
-- V1.4.16
-  - Add hover background for tab close button
-  - Add special style for pinned tab
-  - Fine-tune the font style for market tabs
 
 # Plugin fitness
 
