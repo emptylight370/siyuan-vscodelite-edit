@@ -1,4 +1,6 @@
 /* h1标签 */
+.b3-typography .h1,
+.b3-typography h1,
 [data-node-id].h1,
 .protyle-preview h1 {
     color: var(--mk-block-header-h1);
@@ -12,6 +14,8 @@
 }
 
 /* h1标签 */
+.b3-typography .h1::before,
+.b3-typography h1::before,
 [data-node-id].h1::before,
 .protyle-preview h1::before {
     content: "";
@@ -51,6 +55,8 @@ ul.b3-list.b3-list--background [data-subtype=h1] .b3-list-item__text {
 }
 
 /* h2标签 */
+.b3-typography .h2,
+.b3-typography h2,
 [data-node-id].h2,
 .protyle-preview h2 {
     color: var(--mk-block-header-h2);
@@ -64,6 +70,8 @@ ul.b3-list.b3-list--background [data-subtype=h1] .b3-list-item__text {
 }
 
 /* h2标签 */
+.b3-typography .h2::before,
+.b3-typography h2::before,
 [data-node-id].h2::before,
 .protyle-preview h2::before {
     content: "";
@@ -103,6 +111,8 @@ ul.b3-list.b3-list--background [data-subtype=h2] .b3-list-item__text {
 }
 
 /* h3标签 */
+.b3-typography .h3,
+.b3-typography h3,
 [data-node-id].h3,
 .protyle-preview h3 {
     color: var(--mk-block-header-h3);
@@ -116,6 +126,8 @@ ul.b3-list.b3-list--background [data-subtype=h2] .b3-list-item__text {
 }
 
 /* h3标签 */
+.b3-typography .h3::before,
+.b3-typography h3::before,
 [data-node-id].h3::before,
 .protyle-preview h3::before {
     content: "";
@@ -155,6 +167,8 @@ ul.b3-list.b3-list--background [data-subtype=h3] .b3-list-item__text {
 }
 
 /* h4标签 */
+.b3-typography .h4,
+.b3-typography h4,
 [data-node-id].h4,
 .protyle-preview h4 {
     color: var(--mk-block-header-h4);
@@ -168,6 +182,8 @@ ul.b3-list.b3-list--background [data-subtype=h3] .b3-list-item__text {
 }
 
 /* h4标签 */
+.b3-typography .h4::before,
+.b3-typography h4::before,
 [data-node-id].h4::before,
 .protyle-preview h4::before {
     content: "";
@@ -207,6 +223,8 @@ ul.b3-list.b3-list--background [data-subtype=h4] .b3-list-item__text {
 }
 
 /* h5标签 */
+.b3-typography .h5,
+.b3-typography h5,
 [data-node-id].h5,
 .protyle-preview h5 {
     color: var(--mk-block-header-h5);
@@ -220,6 +238,8 @@ ul.b3-list.b3-list--background [data-subtype=h4] .b3-list-item__text {
 }
 
 /* h5标签 */
+.b3-typography .h5::before,
+.b3-typography h5::before,
 [data-node-id].h5::before,
 .protyle-preview h5::before {
     content: "";
@@ -259,6 +279,8 @@ ul.b3-list.b3-list--background [data-subtype=h5] .b3-list-item__text {
 }
 
 /* h6标签 */
+.b3-typography .h6,
+.b3-typography h6,
 [data-node-id].h6,
 .protyle-preview h6 {
     color: var(--mk-block-header-h6);
@@ -272,6 +294,8 @@ ul.b3-list.b3-list--background [data-subtype=h5] .b3-list-item__text {
 }
 
 /* h6标签 */
+.b3-typography .h6::before,
+.b3-typography h6::before,
 [data-node-id].h6::before,
 .protyle-preview h6::before {
     content: "";
