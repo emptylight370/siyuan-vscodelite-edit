@@ -1,5 +1,10 @@
 # ChangeLog
 
+## v1.5.3
+
+- 调整标注样式
+- Adjust mark style
+
 ## v1.5.2
 
 - 修复标注文本换行时不能显示背景问题
