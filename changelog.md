@@ -3,7 +3,11 @@
 ## v1.5.3
 
 - 调整标注样式
+- 调整代码块样式
+- 嵌入代码片段：代码块悬浮显示操作按钮 by JefferyChen
 - Adjust mark style
+- Adjust codeblock style
+- Include snippest: CodeBlock show action buttons when hover by JefferyChen
 
 ## v1.5.2
 

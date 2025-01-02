@@ -41,6 +41,8 @@ Limited by the configuration loading method, updated configurations for new vers
 
 - v1.5.3
   - Adjust mark style
+  - Adjust codeblock style
+  - Include snippest: CodeBlock show action buttons when hover by JefferyChen
 - v1.5.2
   - Fixed the problem that the background cannot be displayed when the marked text is wrapped
 - v1.5.1
@@ -48,7 +50,9 @@ Limited by the configuration loading method, updated configurations for new vers
 - V1.5.0
   - Fix some styles would lost when exporting PDF
 
-# Plugin fitness
+# Special fitness
+
+## Plugin fitness
 
 Currently adapted plugins are:
 
@@ -56,6 +60,10 @@ Currently adapted plugins are:
 - Custom block style(fix display problem in embedded block caused by theme)
 - Background Cover(By making the foreground transparent. Please set "foreground transparency" to 0 in the plugin settings to disable it, and enable the Blurring in settings(set to greater than 0))
 - Math Enhancement Plugin(Limit plugin preview width)
+
+## Snippests
+
+[CodeBlock show action buttons when hover](https://ld246.com/article/1728146248791) by JefferyChen
 
 # Feedback
 
