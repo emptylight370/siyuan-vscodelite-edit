@@ -1,10 +1,14 @@
 /* 代码块的语言显示 */
-.code-block[linenumber=true] .protyle-action .protyle-action--first.protyle-action__language {
-    margin-left: 3.5em !important;
+.code-block:has(.protyle-linenumber__rows) .protyle-action .protyle-action--first.protyle-action__language {
+    margin-left: 4em !important;
+}
+
+.code-block:not(:has(.protyle-linenumber__rows)) .protyle-action .protyle-action--first.protyle-action__language {
+    margin-left: 1em !important;
 }
 
 /* 代码块左边的行号显示 */
-.code-block[linenumber=true] .protyle-linenumber__rows {
+.code-block .protyle-linenumber__rows {
     width: 2em;
 }
 
@@ -21,7 +25,7 @@
 }
 
 .protyle-wysiwyg[contenteditable] .code-block:hover .protyle-action {
-    background-color: #1d1c21;
+    background-color: var(--sy-codeblock-background);
 }
 
 /* 代码块语言的左边与代码对齐 */

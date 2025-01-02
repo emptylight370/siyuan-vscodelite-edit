@@ -39,16 +39,14 @@ Limited by the configuration loading method, updated configurations for new vers
 
 > Full changelog view [ChangeLog](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/main/changelog.md)
 
+- v1.5.4
+  - Adjust codeblock style, fix color problem in light mode
 - v1.5.3
   - Adjust mark style
   - Adjust codeblock style
   - Include snippest: CodeBlock show action buttons when hover by JefferyChen
 - v1.5.2
   - Fixed the problem that the background cannot be displayed when the marked text is wrapped
-- v1.5.1
-  - Emergency fix update to address the issue with unpackaged content
-- V1.5.0
-  - Fix some styles would lost when exporting PDF
 
 # Special fitness
 

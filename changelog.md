@@ -1,5 +1,10 @@
 # ChangeLog
 
+## v1.5.4
+
+- 调整代码块样式，修复浅色模式下颜色问题
+- Adjust codeblock style, fix color problem in light mode
+
 ## v1.5.3
 
 - 调整标注样式

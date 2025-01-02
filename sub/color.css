@@ -53,6 +53,7 @@
     --mk-block-header-background-h4: rgba(112, 173, 71, 0.2);
     --mk-block-header-background-h5: rgba(232, 77, 34, 0.2);
     --mk-block-header-background-h6: rgba(128, 100, 162, 0.2);
+    --sy-codeblock-background: #e6e6e6;
 }
 
 /* 暗黑模式元数据定义 */
@@ -104,4 +105,5 @@
     --mk-block-header-h4: #70AD47;
     --mk-block-header-h5: #E84C22;
     --mk-block-header-h6: #9f8ab9;
+    --sy-codeblock-background: #1d1c21;
 }

@@ -39,14 +39,14 @@
 
 > 完整更新日志查看[changelog](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/main/changelog.md)
 
+- v1.5.4
+  - 调整代码块样式，修复浅色模式下颜色问题
 - v1.5.3
   - 调整标注样式
   - 调整代码块样式
   - 嵌入代码片段：代码块悬浮显示操作按钮 by JefferyChen
 - v1.5.2
   - 修复标注文本换行时不能显示背景问题
-- v1.5.1
-  - 紧急修复更新内容未打包问题
 
 # 特殊适配
 
