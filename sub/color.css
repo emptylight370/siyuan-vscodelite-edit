@@ -8,6 +8,8 @@
     --lite-bg-dock-item-background: #00000022;
     --lite-bg-dock-item-active: #3b3838;
     --lite-header-shadow: #2b8f74;
+    --lite-mark-top: transparent;
+    --lite-mark-bottom: rgba(124, 245, 94, 0.45);
     --mk-toolbar-background: #dddddd;
     --mk-toolbar-background--blur: #e5e5e5;
     --mk-toolbar--blur-item: #7b7b7b;
@@ -63,6 +65,8 @@
     --lite-bg-dock-item-active: #f4f4f4;
     --lite-bg-dock-item-background: #00000022;
     --lite-header-shadow: #2b4c8f;
+    --lite-mark-top: transparent;
+    --lite-mark-bottom: rgba(124, 245, 94, 0.45);
     --mk-toolbar-background: #3c3c3c;
     --mk-toolbar-background--blur: #323233;
     --mk-toolbar--blur-item: #8e8e8e;
