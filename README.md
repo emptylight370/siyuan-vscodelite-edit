@@ -52,6 +52,7 @@ Limited by the configuration loading method, updated configurations for new vers
 
 ## Plugin fitness
 
+It is recommended to disable the plugin compatibility switch when no corresponding plugin is installed to reduce the burden on theme loading.  
 Currently adapted plugins are:
 
 - Shortcut key panel(Category title color)
