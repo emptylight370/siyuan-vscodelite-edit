@@ -1,5 +1,9 @@
 # ChangeLog
 
+## v2.0.1
+
+- fix package problem
+
 ## v2.0.0
 
 - 使用sass重构

@@ -30,7 +30,7 @@ jobs:
         run: npm run build
 
       - name: Package
-        run: find ./ -name 'theme.*' -o -name 'icon.png' -o -name 'preview.png' -o -name 'README*.md' -o -path './resources/*' -o -path './sub/*' | xargs zip package.zip
+        run: find ./ -name 'theme.*' -o -name 'icon.png' -o -name 'preview.png' -o -name 'README*.md' -o -path './resources/*' -o -path './sub/*' -not -path '*/node_modules/*' | xargs zip -@ package.zip
 
       - name: Create tag
         run: echo "VERSION=$(jq -r ".version" theme.json)" >> $GITHUB_ENV
