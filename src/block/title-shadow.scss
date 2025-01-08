@@ -1,0 +1,11 @@
+/* 标题样式 */
+@for $i from 1 through 6 {
+
+    /* h#{$i}标题阴影 */
+    .b3-typography .h#{$i},
+    .b3-typography h#{$i},
+    [data-node-id].h#{$i},
+    .protyle-preview h#{$i} {
+        text-shadow: 2px 2px 4px var(--lite-header-shadow);
+    }
+}

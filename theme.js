@@ -65,7 +65,7 @@ async function loadGlobalVars() {
      * ! 默认配置文件
      */
     globalThis.defaultConf = {
-        "version": 6,
+        "version": 7,
         "theme": {
             "codeBlock": true,
             "reference": true,
@@ -73,6 +73,7 @@ async function loadGlobalVars() {
             "embeddedBlock": true,
             "title": true,
             "titleShadow": true,
+            "titleIcon": true,
             "database": true,
             "doctree": true,
             "mark": true
@@ -175,6 +176,10 @@ async function loadGlobalVars() {
         "titleShadowDesc": {
             "zh_CN": "仅启用标题样式有效",
             "en_US": "Only effective when enable heading style"
+        },
+        "titleIcon": {
+            "zh_CN": "标题前添加图标",
+            "en_US": "Add icon before title"
         },
         "dbitem": {
             "zh_CN": '数据库样式',
@@ -404,11 +409,14 @@ async function showElementSettings(settings) {
     }
     // 标题
     if (settings["theme"]["title"] == true) {
+        lab.push("title");
         // 标题阴影
         if (settings["theme"]['titleShadow'] == true) {
             lab.push("titleShadow");
-        } else {
-            lab.push("titleNoShadow");
+        }
+        // 标题图标
+        if (settings["theme"]["titleIcon"] == true) {
+            lab.push("titleIcon");
         }
     }
     // 快捷键面板
@@ -447,55 +455,47 @@ function addImports(table, labels) {
     // ! 向css表中插入引用的语句
     labels.forEach(it => {
         if (it == 'codeBlock') {
-            table.insertRule('@import url(sub/block/codeBlock.css);', 1 + i);
+            table.insertRule('@import url(sub/block/codeBlock.css);', 4 + i);
             i += 1;
-        }
-        if (it == 'reference') {
-            table.insertRule('@import url(sub/block/reference.css);', 1 + i);
+        } else if (it == 'reference') {
+            table.insertRule('@import url(sub/block/reference.css);', 4 + i);
             i += 1;
-        }
-        if (it == 'bazaar') {
-            table.insertRule('@import url(sub/app/bazaar.css);', 1 + i);
+        } else if (it == 'bazaar') {
+            table.insertRule('@import url(sub/app/bazaar.css);', 4 + i);
             i += 1;
-        }
-        if (it == 'embeddedBlock') {
-            table.insertRule('@import url(sub/block/embeddedBlock.css);', 1 + i);
+        } else if (it == 'embeddedBlock') {
+            table.insertRule('@import url(sub/block/embeddedBlock.css);', 4 + i);
             i += 1;
-        }
-        if (it == 'titleShadow') {
-            table.insertRule('@import url(sub/block/title-shadow.css);', 1 + i);
+        } else if (it == 'title') {
+            table.insertRule('@import url(sub/block/title.css);', 4 + i);
             i += 1;
-        }
-        if (it == 'titleNoShadow') {
-            table.insertRule('@import url(sub/block/title-no-shadow.css);', 1 + i);
+        } else if (it == 'titleShadow') {
+            table.insertRule('@import url(sub/block/title-shadow.css);', 4 + i);
             i += 1;
-        }
-        if (it == 'shortcutPanel') {
-            table.insertRule('@import url(sub/plugin/keymapPlugin.css);', 1 + i);
+        } else if (it == 'titleIcon') {
+            table.insertRule('@import url(sub/block/title-icon.css);', 4 + i);
             i += 1;
-        }
-        if (it == 'database') {
-            table.insertRule('@import url(sub/block/database.css);', 1 + i);
+        } else if (it == 'shortcutPanel') {
+            table.insertRule('@import url(sub/plugin/keymapPlugin.css);', 4 + i);
             i += 1;
-        }
-        if (it == 'doctree') {
-            table.insertRule('@import url(sub/app/filetree.css);', 1 + i);
+        } else if (it == 'database') {
+            table.insertRule('@import url(sub/block/database.css);', 4 + i);
             i += 1;
-        }
-        if (it == 'backgroundCover') {
+        } else if (it == 'doctree') {
+            table.insertRule('@import url(sub/app/filetree.css);', 4 + i);
+            i += 1;
+        } else if (it == 'backgroundCover') {
             if (!document.body.classList.contains('vscmobile')) {
-                table.insertRule('@import url(sub/plugin/backgroundPlugin.css);', 1 + i);
+                table.insertRule('@import url(sub/plugin/backgroundPlugin.css);', 4 + i);
                 i += 1;
             }
-        }
-        if (it == 'mathPanel') {
+        } else if (it == 'mathPanel') {
             if (!document.body.classList.contains('vscmobile')) {
-                table.insertRule('@import url(sub/plugin/mathEnhance.css);', 1 + i);
+                table.insertRule('@import url(sub/plugin/mathEnhance.css);', 4 + i);
                 i += 1;
             }
-        }
-        if (it == 'mark') {
-            table.insertRule('@import url(sub/block/mark.css);', 1 + i);
+        } else if (it == 'mark') {
+            table.insertRule('@import url(sub/block/mark.css);', 4 + i);
             i += 1;
         }
     });
@@ -568,11 +568,17 @@ async function createSettingsWindow() {
             } else {
                 settings.push({ label: localMessage["tititem"][defLag], id: 'titleBlock', enable: false });
             }
-            // 标题
+            // 标题阴影
             if (v["theme"]["titleShadow"] == true) {
                 settings.push({ label: localMessage["titleShadow"][defLag], description: localMessage["titleShadowDesc"][defLag], id: 'titleShadow', enable: true });
             } else {
                 settings.push({ label: localMessage["titleShadow"][defLag], description: localMessage["titleShadowDesc"][defLag], id: 'titleShadow', enable: false });
+            }
+            // 标题阴影
+            if (v["theme"]["titleIcon"] == true) {
+                settings.push({ label: localMessage["titleIcon"][defLag], description: localMessage["titleShadowDesc"][defLag], id: 'titleIcon', enable: true });
+            } else {
+                settings.push({ label: localMessage["titleIcon"][defLag], description: localMessage["titleShadowDesc"][defLag], id: 'titleIcon', enable: false });
             }
             // 文档树和大纲
             if (v["theme"]["doctree"] == true) {
@@ -698,6 +704,8 @@ async function createSettingsWindow() {
                 saveSt["theme"]["title"] = ck;
             } else if (id == "titleShadow") {
                 saveSt["theme"]["titleShadow"] = ck;
+            } else if (id == "titleIcon") {
+                saveSt["theme"]["titleIcon"] = ck;
             } else if (id == "scPanelStyle") {
                 saveSt["plugins"]["shortcutPanel"] = ck;
             } else if (id == "database") {
@@ -856,25 +864,19 @@ async function addPdfStyle(lab) {
     var list = [];
     lab.forEach(it => {
         if (it == 'codeBlock') {
-            list.push('@import url(block/codeBlock.css);');
-        }
-        if (it == 'reference') {
-            list.push('@import url(block/reference.css);');
-        }
-        if (it == 'titleShadow') {
-            list.push('@import url(block/title-shadow.css);');
-        }
-        if (it == 'titleNoShadow') {
-            list.push('@import url(block/title-no-shadow.css);');
-        }
-        if (it == 'shortcutPanel') {
-            list.push('@import url(plugin/keymapPlugin.css);');
-        }
-        if (it == 'database') {
-            list.push('@import url(block/database.css);');
-        }
-        if (it == 'mark') {
-            list.push('@import url(block/mark.css);');
+            list.push('@import url(sub/block/codeBlock.css);');
+        } else if (it == 'reference') {
+            list.push('@import url(sub/block/reference.css);');
+        } else if (it == 'title') {
+            list.push('@import url(sub/block/title.css);');
+        } else if (it == 'titleShadow') {
+            list.push('@import url(sub/block/title-shadow.css);');
+        } else if (it == 'titleIcon') {
+            list.push('@import url(sub/block/title-icon.css);');
+        } else if (it == 'database') {
+            list.push('@import url(sub/block/database.css);');
+        } else if (it == 'mark') {
+            list.push('@import url(sub/block/mark.css);');
         }
     });
     var str = list.join("\n");
