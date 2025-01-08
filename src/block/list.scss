@@ -1,0 +1,226 @@
+/* 这个列表样式是干嘛的，原本就有了 */
+.b3-list--background .b3-list-item:hover:not(.b3-list-item--focus),
+.b3-list--background .b3-list-item--focus:not(.dragover):not(.dragover__top):not(.dragover__bottom) {
+    background-color: var(--mk-filetree-list--hover);
+}
+
+/* 有序列表 */
+/* 有序列表着色 */
+.b3-typography li::marker,
+.list[data-subtype="o"] .li[data-subtype="o"] .protyle-action.protyle-action--order,
+.li .protyle-action::after {
+    color: var(--lite-li-items);
+}
+
+/* 同时用于修改有序列表和无序列表的块标位置 */
+.li[data-subtype] > .protyle-action::after {
+    padding: 3px 2px;
+    width: 24px;
+    display: flex;
+    justify-content: center;
+    /* color: var(--lite-li-items); */
+    margin: -20px 0 0 -8px !important;
+}
+
+/*
+ * 修改有序列表的按层级缩进显示序号
+ * 这部分代码从Savor抄的，我直接写在这里了
+ * 扩增了一下到17级缩进了，感觉溢出了，什么时候会有这么多级缩进呢
+ */
+.li[data-subtype="o"] .li[data-subtype="o"] .protyle-action--order {
+    color: transparent !important;
+}
+
+.list[data-subtype="o"] {
+    counter-reset: o1 0 o2 0 o3 0 o4 0;
+}
+
+.li[data-subtype="o"] {
+    & > .protyle-action::after {
+        counter-increment: o2;
+        content: counter(o2, decimal)")";
+        position: absolute;
+    }
+
+    & & > .protyle-action::after {
+        counter-increment: o3;
+        content: counter(o3, lower-latin)".";
+        position: absolute;
+    }
+
+    & & & > .protyle-action::after {
+        counter-increment: o4;
+        content: counter(o4, lower-roman)".";
+        position: absolute;
+    }
+
+    & & & & > .protyle-action::after {
+        counter-increment: o1;
+        content: counter(o1, decimal)".";
+        position: absolute;
+    }
+
+    & & & & & > .protyle-action::after {
+        counter-increment: o2;
+        content: counter(o2, decimal)")";
+        position: absolute;
+    }
+
+    & & & & & & > .protyle-action::after {
+        counter-increment: o3;
+        content: counter(o3, lower-latin)".";
+        position: absolute;
+    }
+
+    & & & & & & & > .protyle-action::after {
+        counter-increment: o4;
+        content: counter(o4, lower-roman)".";
+        position: absolute;
+    }
+
+    & & & & & & & & > .protyle-action::after {
+        counter-increment: o1;
+        content: counter(o1, decimal)".";
+        position: absolute;
+    }
+
+    & & & & & & & & & > .protyle-action::after {
+        counter-increment: o2;
+        content: counter(o2, decimal)")";
+        position: absolute;
+    }
+
+    & & & & & & & & & & > .protyle-action::after {
+        counter-increment: o3;
+        content: counter(o3, lower-latin)".";
+        position: absolute;
+    }
+
+    & & & & & & & & & & & > .protyle-action::after {
+        counter-increment: o4;
+        content: counter(o4, lower-roman)".";
+        position: absolute;
+    }
+
+    & & & & & & & & & & & & > .protyle-action::after {
+        counter-increment: o1;
+        content: counter(o1, decimal)".";
+        position: absolute;
+    }
+
+    & & & & & & & & & & & & & > .protyle-action::after {
+        counter-increment: o2;
+        content: counter(o2, decimal)")";
+        position: absolute;
+    }
+
+    & & & & & & & & & & & & & & > .protyle-action::after {
+        counter-increment: o3;
+        content: counter(o3, lower-latin)".";
+        position: absolute;
+    }
+
+    & & & & & & & & & & & & & & & > .protyle-action::after {
+        counter-increment: o4;
+        content: counter(o4, lower-roman)".";
+        position: absolute;
+    }
+
+    & & & & & & & & & & & & & & & & > .protyle-action::after {
+        counter-increment: o1;
+        content: counter(o1, decimal)".";
+        position: absolute;
+    }
+}
+
+/* 无序列表 */
+/* 无序列表着色 */
+/* 导出时预览放到上面去了 */
+.list[data-subtype="u"] .li[data-subtype="u"] .protyle-action svg {
+    fill: transparent;
+}
+
+/* 
+ * 无序列表的前面的标记，还是部分参考Savor
+ * 这次也是17级列表，后面依然回到一级列表的样式
+ */
+[data-subtype="u"] > .li[data-subtype="u"] > .protyle-action::after {
+    font-size: 1.5em;
+    font-family: Arial;
+    content: "•";
+    position: absolute;
+}
+
+.li[data-subtype="u"] {
+    & > .protyle-action::after {
+        content: "◦"
+    }
+
+    & & > .protyle-action::after {
+        content: "▪";
+    }
+
+    & & & > .protyle-action::after {
+        content: "▫"
+    }
+
+    & & & & > .protyle-action::after {
+        content: "▴";
+    }
+
+    & & & & & > .protyle-action::after {
+        content: "▵"
+    }
+
+    & & & & & & > .protyle-action::after {
+        content: "•";
+    }
+
+    & & & & & & & > .protyle-action::after {
+        content: "◦"
+    }
+
+    & & & & & & & & > .protyle-action::after {
+        content: "▪";
+    }
+
+    & & & & & & & & & > .protyle-action::after {
+        content: "▫"
+    }
+
+    & & & & & & & & & & > .protyle-action::after {
+        content: "▴";
+    }
+
+    & & & & & & & & & & & > .protyle-action::after {
+        content: "▵"
+    }
+
+    & & & & & & & & & & & & > .protyle-action::after {
+        content: "•";
+    }
+
+    & & & & & & & & & & & & & > .protyle-action::after {
+        content: "◦"
+    }
+
+    & & & & & & & & & & & & & & > .protyle-action::after {
+        content: "▪";
+    }
+
+    & & & & & & & & & & & & & & & > .protyle-action::after {
+        content: "▫"
+    }
+
+    & & & & & & & & & & & & & & & & > .protyle-action::after {
+        content: "▴";
+    }
+
+    & & & & & & & & & & & & & & & & & > .protyle-action::after {
+        content: "▵";
+    }
+
+    & & & & & & & & & & & & & & & & & > .protyle-action::after {
+        content: "•";
+    }
+}
