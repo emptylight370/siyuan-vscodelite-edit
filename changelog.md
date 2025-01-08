@@ -1,5 +1,12 @@
 # ChangeLog
 
+## v2.0.0
+
+- 使用sass重构
+- 进一步拆分标题可选样式
+- Refactoring with SASS
+- Further split header optional styles
+
 ## v1.5.5
 
 - 添加无序列表多级样式

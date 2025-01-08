@@ -15,10 +15,6 @@
 
 使用说明：[链滴](https://ld246.com/article/1728034766990)
 
-> 警告: 目前正在进行从css到scss的重构，将有一段时间不进行更新。
->
-> 在相当一段时间内可能仅有css分支的维护性发版。
-
 # 特性
 
 - 各级标题样式（进一步调整）
@@ -43,6 +39,9 @@
 
 > 完整更新日志查看[changelog](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/main/changelog.md)
 
+- v2.0.0
+  - 使用sass重构
+  - 进一步拆分标题可选样式
 - v1.5.5
   - 添加无序列表多级样式
   - 在集市中应用标题颜色和列表颜色

@@ -15,10 +15,6 @@ Origin author: [TinkMingKing](https://github.com/TinkMingKing)
 
 Instruction for use: [liandi](https://ld246.com/article/1728034766990)
 
-> Warning: Is refactoring from css to scss, will have a long time without update.
->
-> There may be only maintenance releases of css branches for quite a long time.
-
 # Features
 
 - Style various heading levels(futher change)
@@ -43,15 +39,14 @@ Limited by the configuration loading method, updated configurations for new vers
 
 > Full changelog view [ChangeLog](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/main/changelog.md)
 
+- v2.0.0
+  - Refactoring with SASS
+  - Further split header optional styles
 - v1.5.5
   - Add unordered list serial style
   - Apply title color and list color in bazaar
 - v1.5.4
   - Adjust codeblock style, fix color problem in light mode
-- v1.5.3
-  - Adjust mark style
-  - Adjust codeblock style
-  - Include snippest: CodeBlock show action buttons when hover by JefferyChen
 
 # Special fitness
 
