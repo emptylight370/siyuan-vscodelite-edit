@@ -1,0 +1,24 @@
+/* 整个设置面板 */
+div[vslite="SettingPanel"] {
+    user-select: none;
+
+    h2.h2 {
+        /* h2标签 */
+        color: var(--mk-block-header-h2);
+        display: flex;
+        line-height: 2rem;
+
+        &::before {
+            /* h2标签 */
+            content: "";
+            display: inline-block;
+            width: 1.55rem;
+            height: 1.55rem;
+            background: url(../../resources/h2.bmp) no-repeat center center;
+            background-size: contain;
+            filter: invert(75%);
+            padding-top: 7.44px;
+            margin-right: 0.2em;
+        }
+    }
+}
