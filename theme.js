@@ -447,55 +447,55 @@ function addImports(table, labels) {
     // ! 向css表中插入引用的语句
     labels.forEach(it => {
         if (it == 'codeBlock') {
-            table.insertRule('@import url(sub/block/codeBlock.css);', 6 + i);
+            table.insertRule('@import url(sub/block/codeBlock.css);', 1 + i);
             i += 1;
         }
         if (it == 'reference') {
-            table.insertRule('@import url(sub/block/reference.css);', 6 + i);
+            table.insertRule('@import url(sub/block/reference.css);', 1 + i);
             i += 1;
         }
         if (it == 'bazaar') {
-            table.insertRule('@import url(sub/app/bazaar.css);', 6 + i);
+            table.insertRule('@import url(sub/app/bazaar.css);', 1 + i);
             i += 1;
         }
         if (it == 'embeddedBlock') {
-            table.insertRule('@import url(sub/block/embeddedBlock.css);', 6 + i);
+            table.insertRule('@import url(sub/block/embeddedBlock.css);', 1 + i);
             i += 1;
         }
         if (it == 'titleShadow') {
-            table.insertRule('@import url(sub/block/title-shadow.css);', 6 + i);
+            table.insertRule('@import url(sub/block/title-shadow.css);', 1 + i);
             i += 1;
         }
         if (it == 'titleNoShadow') {
-            table.insertRule('@import url(sub/block/title-no-shadow.css);', 6 + i);
+            table.insertRule('@import url(sub/block/title-no-shadow.css);', 1 + i);
             i += 1;
         }
         if (it == 'shortcutPanel') {
-            table.insertRule('@import url(sub/plugin/keymapPlugin.css);', 6 + i);
+            table.insertRule('@import url(sub/plugin/keymapPlugin.css);', 1 + i);
             i += 1;
         }
         if (it == 'database') {
-            table.insertRule('@import url(sub/block/database.css);', 6 + i);
+            table.insertRule('@import url(sub/block/database.css);', 1 + i);
             i += 1;
         }
         if (it == 'doctree') {
-            table.insertRule('@import url(sub/app/filetree.css);', 6 + i);
+            table.insertRule('@import url(sub/app/filetree.css);', 1 + i);
             i += 1;
         }
         if (it == 'backgroundCover') {
             if (!document.body.classList.contains('vscmobile')) {
-                table.insertRule('@import url(sub/plugin/backgroundPlugin.css);', 6 + i);
+                table.insertRule('@import url(sub/plugin/backgroundPlugin.css);', 1 + i);
                 i += 1;
             }
         }
         if (it == 'mathPanel') {
             if (!document.body.classList.contains('vscmobile')) {
-                table.insertRule('@import url(sub/plugin/mathEnhance.css);', 6 + i);
+                table.insertRule('@import url(sub/plugin/mathEnhance.css);', 1 + i);
                 i += 1;
             }
         }
         if (it == 'mark') {
-            table.insertRule('@import url(sub/block/mark.css);', 6 + i);
+            table.insertRule('@import url(sub/block/mark.css);', 1 + i);
             i += 1;
         }
     });
