@@ -1,5 +1,11 @@
 /* 表格表头单元格 */
-table thead tr th {
-    color: var(--mk-block-header-h6);
-    text-align: center;
+table {
+    thead {
+        tr {
+            th {
+                color: var(--mk-block-header-h6);
+                text-align: center;
+            }
+        }
+    }
 }
