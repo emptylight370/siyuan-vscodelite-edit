@@ -1,5 +1,6 @@
 /* 明亮模式元数据定义 */
 :root[data-theme-mode=light] {
+    // 添加的内容，自定义属性
     --lite-status-background: #39cebb;
     --lite-li-items: #5cb83e;
     --lite-block-ref-color: #9e46e6;
@@ -10,6 +11,9 @@
     --lite-header-shadow: #2b8f74;
     --lite-mark-top: transparent;
     --lite-mark-bottom: rgba(124, 245, 94, 0.45);
+
+    // [区域]
+    // toolbar 顶部工具栏
     --mk-toolbar-background: #dddddd;
     --mk-toolbar-background--blur: #e5e5e5;
     --mk-toolbar--blur-item: #7b7b7b;
@@ -21,43 +25,59 @@
     --mk-toolbar-svg: var(--mk-toolbar-text);
     --mk-toolbar-text--blur: rgba(255, 255, 255, 0.6);
     --mk-toolbar-svg--blur: var(--mk-toolbar-text--blur);
+
+    // file-tree 文档树
     --mk-filetree-scrollbar-thumb: var(--mk-scrollbar-thumb);
     --mk-filetree-scrollbar-thumb--hover: var(--mk-scrollbar-thumb--hover);
     --mk-filetree-scrollbar-thumb--active: var(--mk-scrollbar-thumb--active);
     --mk-filetree-list--hover: #e5e6f0;
+
+    // tabbar 标签栏
     --mk-tabbar-background-color: #ececec;
     --mk-tabbar-background-color-item--readonly: #f3f3f3;
     --mk-tabbar-background-color-item--focus: #ffffff;
+
+    // dock
     --mk-dock-background: #2c2c2c;
     --mk-dock-item-color: #727272;
     --mk-dock-item-svg-color--hover: #f4f4f4;
+
+    // 编辑区
     --mk-protyle-wysiwyg--selection: #cddcf6;
     --mk-protyle-wysiwyg--selection--blur: #e6ebf1;
     --mk-protyle-content-scrollbar-track-border: var(--mk-scrollbar-track-border);
     --mk-protyle-content-scrollbar-thumb: var(--mk-scrollbar-thumb);
     --mk-protyle-content-scrollbar-thumb--hover: var(--mk-filetree-scrollbar-thumb--hover);
     --mk-protyle-content-scrollbar-thumb--active: var(--mk-filetree-scrollbar-thumb--active);
+
+    // [控件]
     --mk-scrollbar-track-border: #dcdcdc;
     --mk-scrollbar-thumb: #c1c1c1;
     --mk-scrollbar-thumb--hover: #929292;
     --mk-scrollbar-thumb--active: #666666;
+
+    // [块]
     --mk-block-header-h1: #202124;
     --mk-block-header-h2: #2E75B5;
     --mk-block-header-h3: #BF9000;
     --mk-block-header-h4: #70AD47;
     --mk-block-header-h5: #E84C22;
     --mk-block-header-h6: #8064A2;
+
     --mk-block-header-background-h1: rgba(32, 33, 36, 0.2);
     --mk-block-header-background-h2: rgba(46, 118, 181, 0.2);
     --mk-block-header-background-h3: rgba(191, 143, 0, 0.2);
     --mk-block-header-background-h4: rgba(112, 173, 71, 0.2);
     --mk-block-header-background-h5: rgba(232, 77, 34, 0.2);
     --mk-block-header-background-h6: rgba(128, 100, 162, 0.2);
+
+    // 原本思源自带的属性，换个名字用
     --sy-codeblock-background: #e6e6e6;
 }
 
 /* 暗黑模式元数据定义 */
 :root[data-theme-mode=dark] {
+    // 添加的内容，自定义属性
     --lite-status-background: #66ccff;
     --lite-li-items: #c6d77b;
     --lite-block-ref-color: #49b0f0;
@@ -68,6 +88,9 @@
     --lite-header-shadow: #2b4c8f;
     --lite-mark-top: transparent;
     --lite-mark-bottom: rgba(124, 245, 94, 0.45);
+
+    // [区域]
+    // toolbar 顶部工具栏
     --mk-toolbar-background: #3c3c3c;
     --mk-toolbar-background--blur: #323233;
     --mk-toolbar--blur-item: #8e8e8e;
@@ -79,31 +102,45 @@
     --mk-toolbar-svg: var(--mk-toolbar-text);
     --mk-toolbar-text--blur: rgba(255, 255, 255, 0.6);
     --mk-toolbar-svg--blur: var(--mk-toolbar-text--blur);
+
+    // file-tree 文档树
     --mk-filetree-scrollbar-thumb: var(--mk-scrollbar-thumb);
     --mk-filetree-scrollbar-thumb--hover: var(--mk-scrollbar-thumb--hover);
     --mk-filetree-scrollbar-thumb--active: var(--mk-scrollbar-thumb--active);
     --mk-filetree-list--hover: #37373d;
+
+    // tabbar 标签栏
     --mk-tabbar-background-color: #2d2d2d;
     --mk-tabbar-background-color-item--readonly: #252526;
     --mk-tabbar-background-color-item--focus: #1e1e1e;
+
+    // dock
     --mk-dock-background: #333333;
     --mk-dock-item-color: #727272;
     --mk-dock-item-svg-color--hover: #f4f4f4;
+
+    // 编辑区
     --mk-protyle-wysiwyg--selection: #334e76;
     --mk-protyle-wysiwyg--selection--blur: #3b3d41;
     --mk-protyle-content-scrollbar-track-border: var(--mk-scrollbar-track-border);
     --mk-protyle-content-scrollbar-thumb: var(--mk-scrollbar-thumb);
     --mk-protyle-content-scrollbar-thumb--hover: var(--mk-filetree-scrollbar-thumb--hover);
     --mk-protyle-content-scrollbar-thumb--active: var(--mk-filetree-scrollbar-thumb--active);
+
+    // [控件]
     --mk-scrollbar-track-border: #393939;
     --mk-scrollbar-thumb: #424242;
     --mk-scrollbar-thumb--hover: #4f4f4f;
     --mk-scrollbar-thumb--active: #5e5e5e;
+
+    // [块]
     --mk-block-header-h1: #cbd1d9;
     --mk-block-header-h2: #82b2dc;
     --mk-block-header-h3: #BF9000;
     --mk-block-header-h4: #70AD47;
     --mk-block-header-h5: #E84C22;
     --mk-block-header-h6: #9f8ab9;
+
+    // 原本思源自带的属性，换个名字用
     --sy-codeblock-background: #1d1c21;
 }
