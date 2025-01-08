@@ -2,18 +2,18 @@
 .protyle-wysiwyg [data-node-id] {
     span[data-type~='block-ref']:not(.av__celltext) {
         color: var(--lite-block-ref-color);
-    }
 
-    &::before {
-        content: '⌈';
-    }
+        &::before {
+            content: '⌈';
+        }
 
-    &::after {
-        content: '⌋';
-    }
+        &::after {
+            content: '⌋';
+        }
 
-    &:hover {
-        background-color: var(--lite-block-ref-background-color);
-        border-radius: 3px;
+        &:hover {
+            background-color: var(--lite-block-ref-background-color);
+            border-radius: 3px;
+        }
     }
 }
