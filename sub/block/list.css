@@ -1,9 +1,8 @@
 /* 有序列表 */
 /* 有序列表着色 */
+.b3-typography li::marker,
 .list[data-subtype="o"] .li[data-subtype="o"] .protyle-action.protyle-action--order,
-.protyle-action::after,
-ol[id] li[id]::marker,
-ul[id] li[id]::marker {
+.protyle-action::after {
     color: var(--lite-li-items);
 }
 
