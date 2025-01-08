@@ -7,7 +7,7 @@ on:
 
 jobs:
   package:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
 
     permissions: 
       contents: write
@@ -16,13 +16,23 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: package
-        run: find ./ -name 'theme.json' -o -name 'icon.png' -o -name 'preview.png' -o -name 'README.md' -o -name 'README_zh_CN.md' -o -name 'theme.css' -o -name 'theme.js' -o -path './resources/*' -o -path './sub/*' | xargs zip package.zip
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
 
-      - name: install
+      - name: Install deps
+        run: npm install
+
+      - name: Install tool
         run: sudo apt-get install jq
-      
-      - name: create tag
+
+      - name: Build scss
+        run: npm run build
+
+      - name: Package
+        run: find ./ -name 'theme.json' -o -name 'icon.png' -o -name 'preview.png' -o -name 'README.md' -o -name 'README_zh_CN.md' -o -name 'theme.css' -o -name 'theme.css.map' -o -name 'theme.js' -o -path './resources/*' -o -path './sub/*' | xargs zip package.zip
+
+      - name: Create tag
         run: echo "VERSION=$(jq -r ".version" theme.json)" >> $GITHUB_ENV
 
       - name: Release
