@@ -1,0 +1,22 @@
+/* 快捷键面板适配子模块 */
+.keymap-plugin-container {
+    .keymap-plugin-header {
+        /* 快捷键面板标题h1 */
+        color: var(--mk-block-header-h2);
+    }
+
+    .keymap-plugin-header-2 {
+        /* 快捷键面板标题h2 */
+        color: var(--mk-block-header-h4);
+    }
+
+    .repeated-key {
+        /* 重复的快捷键 */
+        border-radius: 2px;
+    }
+
+    .keymap-plugin-item.selected {
+        /* 快捷键冲突的提示 */
+        color: var(--b3-theme-error);
+    }
+}
