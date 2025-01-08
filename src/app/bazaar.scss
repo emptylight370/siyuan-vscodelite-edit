@@ -1,0 +1,28 @@
+/* 集市相关的主题 */
+.config__tab-container.config__tab-container--top {
+    .config-bazaar__panel {
+
+        /* 设置中集市的上方筛选栏 */
+        .config-bazaar__title {
+            padding: 8px 16px;
+
+            /* 集市筛选栏的按钮 */
+            /* 也就是上面那个分类按钮 */
+            .b3-button {
+                padding: 0px 8px;
+            }
+        }
+    }
+
+    .layout-tab-bar {
+
+        /* 集市中选中的标签栏 */
+        .item.item--focus {
+            color: white;
+            font-weight: 400;
+            font-size: 16px;
+            background-color: rgb(72, 72, 72);
+            padding-top: 1px;
+        }
+    }
+}
