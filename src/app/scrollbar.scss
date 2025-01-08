@@ -3,8 +3,8 @@
 .protyle-scroll {
     display: none;
 
-    /* 滚动条 */
     .protyle & {
+        /* 滚动条 */
         width: 10px;
     }
 }
@@ -44,10 +44,10 @@
     }
 }
 
-/* 移除移动端编辑器滚动条 */
 #editor {
     .protyle-content {
         &::-webkit-scrollbar {
+            /* 移除移动端编辑器滚动条 */
             display: none;
         }
     }

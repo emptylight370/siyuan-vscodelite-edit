@@ -1,0 +1,68 @@
+/* 页面标签 */
+.layout-tab-bar {
+    /* 标签栏 */
+    background-color: var(--mk-tabbar-background-color);
+    border-bottom: none;
+    height: 36px;
+    min-height: 36px;
+
+    &.layout-tab-bar--readonly {
+        /* 标签栏 */
+        background-color: var(--mk-tabbar-background-color-item--readonly);
+        border-bottom: none;
+        height: 36px;
+        min-height: 36px;
+    }
+
+    .item {
+        /* 标签栏中标题标签 */
+        background-color: var(--mk-tabbar-background-color);
+        height: 36px;
+        min-height: 36px;
+
+        &.item--focus {
+            /* 标签聚焦 */
+            background-color: var(--mk-tabbar-background-color-item--focus);
+            height: 36px;
+            min-height: 36px;
+
+            &:after {
+                /* 标签聚焦 */
+                display: none;
+                height: 36px;
+                min-height: 36px;
+            }
+        }
+
+        &.item--pin {
+            /* 钉住的标签 */
+            border-top: 2px solid var(--b3-theme-success);
+            border-bottom: 2px solid transparent;
+            box-sizing: border-box;
+        }
+    }
+
+    .item--readonly {
+        /* 标签栏空地 */
+        min-height: 36px;
+    }
+
+    .item__close:hover {
+        svg {
+            /* 标签关闭按钮 */
+            background-color: var(--b3-theme-error);
+        }
+    }
+}
+
+body.body--blur .layout-tab-bar .item.item--focus {
+    /* 标签栏聚焦 */
+    box-shadow: none;
+    height: 36px;
+
+    &:after {
+        /* 标签栏聚焦 */
+        display: none;
+        height: 36px;
+    }
+}
