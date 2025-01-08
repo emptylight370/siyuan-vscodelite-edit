@@ -2,11 +2,9 @@
 /* 就是那个可以回顶回底的那个 */
 .protyle-scroll {
     display: none;
-}
 
-/* 滚动条 */
-.protyle {
-    .protyle-scroll {
+    /* 滚动条 */
+    .protyle & {
         width: 10px;
     }
 }
