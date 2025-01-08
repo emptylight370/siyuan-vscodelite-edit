@@ -13,7 +13,7 @@
 }
 
 /* 同时用于修改有序列表和无序列表的块标位置 */
-.li[data-subtype] > .protyle-action::after {
+.li[data-subtype]>.protyle-action::after {
     padding: 3px 2px;
     width: 24px;
     display: flex;
@@ -36,97 +36,97 @@
 }
 
 .li[data-subtype="o"] {
-    & > .protyle-action::after {
+    & &>.protyle-action::after {
         counter-increment: o2;
         content: counter(o2, decimal)")";
         position: absolute;
     }
 
-    & & > .protyle-action::after {
+    & & &>.protyle-action::after {
         counter-increment: o3;
         content: counter(o3, lower-latin)".";
         position: absolute;
     }
 
-    & & & > .protyle-action::after {
+    & & & &>.protyle-action::after {
         counter-increment: o4;
         content: counter(o4, lower-roman)".";
         position: absolute;
     }
 
-    & & & & > .protyle-action::after {
+    & & & & &>.protyle-action::after {
         counter-increment: o1;
         content: counter(o1, decimal)".";
         position: absolute;
     }
 
-    & & & & & > .protyle-action::after {
+    & & & & & &>.protyle-action::after {
         counter-increment: o2;
         content: counter(o2, decimal)")";
         position: absolute;
     }
 
-    & & & & & & > .protyle-action::after {
+    & & & & & & &>.protyle-action::after {
         counter-increment: o3;
         content: counter(o3, lower-latin)".";
         position: absolute;
     }
 
-    & & & & & & & > .protyle-action::after {
+    & & & & & & & &>.protyle-action::after {
         counter-increment: o4;
         content: counter(o4, lower-roman)".";
         position: absolute;
     }
 
-    & & & & & & & & > .protyle-action::after {
+    & & & & & & & & &>.protyle-action::after {
         counter-increment: o1;
         content: counter(o1, decimal)".";
         position: absolute;
     }
 
-    & & & & & & & & & > .protyle-action::after {
+    & & & & & & & & & &>.protyle-action::after {
         counter-increment: o2;
         content: counter(o2, decimal)")";
         position: absolute;
     }
 
-    & & & & & & & & & & > .protyle-action::after {
+    & & & & & & & & & & &>.protyle-action::after {
         counter-increment: o3;
         content: counter(o3, lower-latin)".";
         position: absolute;
     }
 
-    & & & & & & & & & & & > .protyle-action::after {
+    & & & & & & & & & & & &>.protyle-action::after {
         counter-increment: o4;
         content: counter(o4, lower-roman)".";
         position: absolute;
     }
 
-    & & & & & & & & & & & & > .protyle-action::after {
+    & & & & & & & & & & & & &>.protyle-action::after {
         counter-increment: o1;
         content: counter(o1, decimal)".";
         position: absolute;
     }
 
-    & & & & & & & & & & & & & > .protyle-action::after {
+    & & & & & & & & & & & & & &>.protyle-action::after {
         counter-increment: o2;
         content: counter(o2, decimal)")";
         position: absolute;
     }
 
-    & & & & & & & & & & & & & & > .protyle-action::after {
+    & & & & & & & & & & & & & & &>.protyle-action::after {
         counter-increment: o3;
         content: counter(o3, lower-latin)".";
         position: absolute;
     }
 
-    & & & & & & & & & & & & & & & > .protyle-action::after {
+    & & & & & & & & & & & & & & & &>.protyle-action::after {
         counter-increment: o4;
         content: counter(o4, lower-roman)".";
         position: absolute;
     }
 
-    & & & & & & & & & & & & & & & & > .protyle-action::after {
+    & & & & & & & & & & & & & & & & &>.protyle-action::after {
         counter-increment: o1;
         content: counter(o1, decimal)".";
         position: absolute;
@@ -144,7 +144,7 @@
  * 无序列表的前面的标记，还是部分参考Savor
  * 这次也是17级列表，后面依然回到一级列表的样式
  */
-[data-subtype="u"] > .li[data-subtype="u"] > .protyle-action::after {
+[data-subtype="u"]>.li[data-subtype="u"]>.protyle-action::after {
     font-size: 1.5em;
     font-family: Arial;
     content: "•";
@@ -152,75 +152,75 @@
 }
 
 .li[data-subtype="u"] {
-    & > .protyle-action::after {
+    & &>.protyle-action::after {
         content: "◦"
     }
 
-    & & > .protyle-action::after {
+    & & &>.protyle-action::after {
         content: "▪";
     }
 
-    & & & > .protyle-action::after {
+    & & & &>.protyle-action::after {
         content: "▫"
     }
 
-    & & & & > .protyle-action::after {
+    & & & & &>.protyle-action::after {
         content: "▴";
     }
 
-    & & & & & > .protyle-action::after {
+    & & & & & &>.protyle-action::after {
         content: "▵"
     }
 
-    & & & & & & > .protyle-action::after {
+    & & & & & & &>.protyle-action::after {
         content: "•";
     }
 
-    & & & & & & & > .protyle-action::after {
+    & & & & & & & &>.protyle-action::after {
         content: "◦"
     }
 
-    & & & & & & & & > .protyle-action::after {
+    & & & & & & & & &>.protyle-action::after {
         content: "▪";
     }
 
-    & & & & & & & & & > .protyle-action::after {
+    & & & & & & & & & &>.protyle-action::after {
         content: "▫"
     }
 
-    & & & & & & & & & & > .protyle-action::after {
+    & & & & & & & & & & &>.protyle-action::after {
         content: "▴";
     }
 
-    & & & & & & & & & & & > .protyle-action::after {
+    & & & & & & & & & & & &>.protyle-action::after {
         content: "▵"
     }
 
-    & & & & & & & & & & & & > .protyle-action::after {
+    & & & & & & & & & & & & &>.protyle-action::after {
         content: "•";
     }
 
-    & & & & & & & & & & & & & > .protyle-action::after {
+    & & & & & & & & & & & & & &>.protyle-action::after {
         content: "◦"
     }
 
-    & & & & & & & & & & & & & & > .protyle-action::after {
+    & & & & & & & & & & & & & & &>.protyle-action::after {
         content: "▪";
     }
 
-    & & & & & & & & & & & & & & & > .protyle-action::after {
+    & & & & & & & & & & & & & & & &>.protyle-action::after {
         content: "▫"
     }
 
-    & & & & & & & & & & & & & & & & > .protyle-action::after {
+    & & & & & & & & & & & & & & & & &>.protyle-action::after {
         content: "▴";
     }
 
-    & & & & & & & & & & & & & & & & & > .protyle-action::after {
+    & & & & & & & & & & & & & & & & & &>.protyle-action::after {
         content: "▵";
     }
 
-    & & & & & & & & & & & & & & & & & > .protyle-action::after {
+    & & & & & & & & & & & & & & & & & &>.protyle-action::after {
         content: "•";
     }
 }
