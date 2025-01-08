@@ -24,7 +24,7 @@ Instruction for use: [liandi](https://ld246.com/article/1728034766990)
 - Table display style
 - Fit some plugins
 - Limit display height of embedded block(can close)
-- Multi-level serial number style
+- Multi-level list serial number style
 - Configuration edit page
 - doc tree and outline indentation
 - Adjust highlight mark style
@@ -39,14 +39,14 @@ Limited by the configuration loading method, updated configurations for new vers
 
 > Full changelog view [ChangeLog](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/main/changelog.md)
 
+- v1.5.5
+  - Add unordered list serial style
 - v1.5.4
   - Adjust codeblock style, fix color problem in light mode
 - v1.5.3
   - Adjust mark style
   - Adjust codeblock style
   - Include snippest: CodeBlock show action buttons when hover by JefferyChen
-- v1.5.2
-  - Fixed the problem that the background cannot be displayed when the marked text is wrapped
 
 # Special fitness
 
