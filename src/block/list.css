@@ -1,3 +1,8 @@
+.b3-list--background .b3-list-item:hover:not(.b3-list-item--focus),
+.b3-list--background .b3-list-item--focus:not(.dragover):not(.dragover__top):not(.dragover__bottom) {
+    background-color: var(--mk-filetree-list--hover);
+}
+
 /* 有序列表 */
 /* 有序列表着色 */
 .b3-typography li::marker,

@@ -1,0 +1,28 @@
+{
+  "name": "siyuan-vscodelite-edit",
+  "version": "0.0.0",
+  "description": "siyuan theme vscode lite edit",
+  "main": "theme.js",
+  "scripts": {
+    "build:scss": "sass theme.scss:theme.css src/**/*.scss:sub/**/*.css",
+    "build": "npm run build:scss",
+    "watch:scss": "sass theme.scss:theme.css src/**/*.scss:sub/**/*.css --watch",
+    "watch": "npm run watch:scss",
+    "clean:scss": "rimraf theme.css theme.css.map sub",
+    "clean": "npm run clean:scss"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/emptylight370/siyuan-vscodelite-edit.git"
+  },
+  "author": "EmptyLight",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/emptylight370/siyuan-vscodelite-edit/issues"
+  },
+  "homepage": "https://github.com/emptylight370/siyuan-vscodelite-edit#readme",
+  "devDependencies": {
+    "rimraf": "^6.0.1",
+    "sass": "^1.83.1"
+  }
+}

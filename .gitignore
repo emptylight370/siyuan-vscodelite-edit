@@ -1,4 +1,6 @@
 _gsdata_/
 sync.ffs_db
 scripts/
-sub/pdfPreview.css
+sub/*
+node_modules/
+package-lock.json

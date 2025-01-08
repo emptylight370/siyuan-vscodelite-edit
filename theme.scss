@@ -1,54 +1,54 @@
 @charset "UTF-8";
 /* 导入定义的颜色 */
-@import url(sub/color.css);
+@import "src/color.css";
 
 /* 动态引用内容 */
 
 /* 插件适配，不用的就注释掉 */
 /* 快捷键面板 */
-/* @import url(sub/plugin/keymapPlugin.css); */
+/* @import "src/plugin/keymapPlugin.css"; */
 /* 数学公式优化 */
-/* @import url(sub/plugin/mathEnhance.css); */
+/* @import "src/plugin/mathEnhance.css"; */
 /* 背景插件适配 */
-/* @import url(sub/plugin/backgroundPlugin.css); */
+/* @import "src/plugin/backgroundPlugin.css"; */
 
 /* 正式内容 */
 /* 应用程序底部状态栏 */
-@import url(sub/app/statusBar.css);
+@import "src/app/statusBar.css";
 /* 应用程序顶部标题栏 */
-@import url(sub/app/toolbarHead.css);
+@import "src/app/toolbarHead.css";
 /* 应用程序页面标签 */
-@import url(sub/app/tabBar.css);
+@import "src/app/tabBar.css";
 /* 应用程序dock栏 */
-@import url(sub/app/dock.css);
+@import "src/app/dock.css";
 /* 导出预览面板 */
-@import url(sub/app/export.css);
+@import "src/app/export.css";
 /* 到处的滚动条 */
-@import url(sub/app/scrollbar.css);
+@import "src/app/scrollbar.css";
 /* 文档树和大纲 */
-/* @import url(sub/app/filetree.css); */
+/* @import "src/app/filetree.css"; */
 /* 文档面包屑 */
-@import url(sub/app/breadcrumb.css);
+@import "src/app/breadcrumb.css";
 /* 标题标签h123456 */
-/* @import url(sub/block/title.css); */
+/* @import "src/block/title.css"; */
 /* 列表样式 */
-@import url(sub/block/list.css);
+@import "src/block/list.css";
 /* 代码块样式 */
-/* @import url(sub/block/codeBlock.css); */
+/* @import "src/block/codeBlock.css"; */
 /* 高亮样式 */
-/* @import url(sub/block/mark.css); */
+/* @import "src/block/mark.css"; */
 /* 集市相关样式 */
-/* @import url(sub/app/bazaar.css); */
+/* @import "src/app/bazaar.css"; */
 /* 引用锚文本样式 */
-/* @import url(sub/block/reference.css); */
+/* @import "src/block/reference.css"; */
 /* 嵌入块样式 */
-/* @import url(sub/block/embeddedBlock.css); */
+/* @import "src/block/embeddedBlock.css"; */
 /* 主题设置面板 */
-@import url(sub/app/SettingPanel.css);
+@import "src/app/SettingPanel.css";
 /* 数据库样式 */
-/* @import url(sub/block/database.css); */
+/* @import "src/block/database.css"; */
 /* 导出时加载的样式 */
-@import url(sub/pdfPreview.css);
+@import "src/pdfPreview.css";
 
 .protyle-title__input {
   font-size: 2.5em;
@@ -61,6 +61,7 @@
 
 #barWorkspace:hover {
   background-color: var(--mk-toolbar-item-barWorkspace--hover);
+
 }
 
 #closeWindow:hover {
@@ -101,11 +102,6 @@
 
 .layout__resize--lr::after {
   visibility: hidden;
-}
-
-.b3-list--background .b3-list-item:hover:not(.b3-list-item--focus),
-.b3-list--background .b3-list-item--focus:not(.dragover):not(.dragover__top):not(.dragover__bottom) {
-  background-color: var(--mk-filetree-list--hover);
 }
 
 .block__logo svg {
