@@ -8,14 +8,15 @@
     border-top: unset;
     padding: 0 5px;
     color: #ffffff;
-}
 
-/* 状态栏内所有文本 */
-.status * {
-    color: #ffffff;
-    font-size: 14px;
-    font-weight: 600;
-    font-family: 'Cascadia Mono', 'Cascadia Code', 'Microsoft YaHei UI';
+    & * {
+        /* 状态栏内所有文本 */
+        color: #ffffff;
+        font-size: 14px;
+        font-weight: 600;
+        font-family: 'Cascadia Mono', 'Cascadia Code', 'Microsoft YaHei UI';
+
+    }
 }
 
 /* 状态栏中显示/隐藏侧边栏按钮 */
@@ -26,13 +27,4 @@
 /* 状态栏中帮助按钮 */
 #statusHelp:hover {
     background-color: #5284c9 !important;
-}
-
-/* 状态栏左边小箭头 */
-.toolbar__item:not(.toolbar__item--disabled):not(.toolbar__item--close):hover {
-    background-color: var(--mk-toolbar-item--hover);
-}
-
-.toolbar__item--active {
-    background-color: var(--mk-toolbar-item--active);
 }
