@@ -1,0 +1,45 @@
+.dock {
+    background: var(--mk-dock-background);
+
+    &#dockLeft {
+        border-right: none;
+    }
+
+    &#dockRight {
+        border-left: none;
+    }
+
+    &#dockBottom {
+        border-bottom: none;
+    }
+}
+
+.dock__item {
+    justify-content: center;
+    border-radius: unset;
+    margin: 5px;
+    color: var(--mk-dock-item-color);
+
+    svg {
+        height: 20px;
+        width: 20px;
+    }
+
+    &:hover,
+    &--active {
+        background-color: unset;
+
+        svg {
+            color: var(--mk-dock-item-svg-color--hover);
+        }
+    }
+
+    &--activefocus {
+
+        &,
+        body.body--blur & {
+            color: unset !important;
+            background-color: unset !important;
+        }
+    }
+}
