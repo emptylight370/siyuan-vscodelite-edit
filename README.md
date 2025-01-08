@@ -39,14 +39,14 @@ Limited by the configuration loading method, updated configurations for new vers
 
 > Full changelog view [ChangeLog](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/main/changelog.md)
 
+- v2.0.4
+  - Fix the display problem of last label in unordered list
 - v2.0.0
   - Refactoring with SASS
   - Further split header optional styles
 - v1.5.5
   - Add unordered list serial style
   - Apply title color and list color in bazaar
-- v1.5.4
-  - Adjust codeblock style, fix color problem in light mode
 
 # Special fitness
 

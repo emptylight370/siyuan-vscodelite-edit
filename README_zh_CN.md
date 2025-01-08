@@ -39,14 +39,14 @@
 
 > 完整更新日志查看[changelog](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/main/changelog.md)
 
+- v2.0.4
+  - 修复无序列表最后的标记显示问题
 - v2.0.0
   - 使用sass重构
   - 进一步拆分标题可选样式
 - v1.5.5
   - 添加无序列表多级样式
   - 在集市中应用标题颜色和列表颜色
-- v1.5.4
-  - 调整代码块样式，修复浅色模式下颜色问题
 
 # 特殊适配
 

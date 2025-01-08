@@ -1,5 +1,10 @@
 # ChangeLog
 
+## v2.0.4
+
+- 修复无序列表最后的标记显示问题
+- Fix the display problem of last label in unordered list
+
 ## v2.0.3
 
 - fix package problem
