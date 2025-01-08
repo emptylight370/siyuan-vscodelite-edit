@@ -15,6 +15,10 @@ Origin author: [TinkMingKing](https://github.com/TinkMingKing)
 
 Instruction for use: [liandi](https://ld246.com/article/1728034766990)
 
+> Warning: Is refactoring from css to scss, will have a long time without update.
+>
+> There may be only maintenance releases of css branches for quite a long time.
+
 # Features
 
 - Style various heading levels(futher change)
