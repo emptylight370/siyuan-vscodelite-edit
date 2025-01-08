@@ -26,6 +26,7 @@
  * 修改有序列表的按层级缩进显示序号
  * 这部分代码从Savor抄的，我直接写在这里了
  * 扩增了一下到17级缩进了，感觉溢出了，什么时候会有这么多级缩进呢
+ * 注意，编译后会被压缩
  */
 .li[data-subtype="o"] .li[data-subtype="o"] .protyle-action--order {
     color: transparent !important;
@@ -35,101 +36,93 @@
     counter-reset: o1 0 o2 0 o3 0 o4 0;
 }
 
+%o1 {
+    counter-increment: o1;
+    content: counter(o1, decimal)".";
+    position: absolute;
+}
+
+%o2 {
+    counter-increment: o2;
+    content: counter(o2, decimal)")";
+    position: absolute;
+}
+
+%o3 {
+    counter-increment: o3;
+    content: counter(o3, lower-latin)".";
+    position: absolute;
+}
+
+%o4 {
+    counter-increment: o4;
+    content: counter(o4, lower-roman)".";
+    position: absolute;
+}
+
 .li[data-subtype="o"] {
     & &>.protyle-action::after {
-        counter-increment: o2;
-        content: counter(o2, decimal)")";
-        position: absolute;
+        @extend %o2;
     }
 
     & & &>.protyle-action::after {
-        counter-increment: o3;
-        content: counter(o3, lower-latin)".";
-        position: absolute;
+        @extend %o3;
     }
 
     & & & &>.protyle-action::after {
-        counter-increment: o4;
-        content: counter(o4, lower-roman)".";
-        position: absolute;
+        @extend %o4;
     }
 
     & & & & &>.protyle-action::after {
-        counter-increment: o1;
-        content: counter(o1, decimal)".";
-        position: absolute;
+        @extend %o1;
     }
 
     & & & & & &>.protyle-action::after {
-        counter-increment: o2;
-        content: counter(o2, decimal)")";
-        position: absolute;
+        @extend %o2;
     }
 
     & & & & & & &>.protyle-action::after {
-        counter-increment: o3;
-        content: counter(o3, lower-latin)".";
-        position: absolute;
+        @extend %o3;
     }
 
     & & & & & & & &>.protyle-action::after {
-        counter-increment: o4;
-        content: counter(o4, lower-roman)".";
-        position: absolute;
+        @extend %o4;
     }
 
     & & & & & & & & &>.protyle-action::after {
-        counter-increment: o1;
-        content: counter(o1, decimal)".";
-        position: absolute;
+        @extend %o1;
     }
 
     & & & & & & & & & &>.protyle-action::after {
-        counter-increment: o2;
-        content: counter(o2, decimal)")";
-        position: absolute;
+        @extend %o2;
     }
 
     & & & & & & & & & & &>.protyle-action::after {
-        counter-increment: o3;
-        content: counter(o3, lower-latin)".";
-        position: absolute;
+        @extend %o3;
     }
 
     & & & & & & & & & & & &>.protyle-action::after {
-        counter-increment: o4;
-        content: counter(o4, lower-roman)".";
-        position: absolute;
+        @extend %o4;
     }
 
     & & & & & & & & & & & & &>.protyle-action::after {
-        counter-increment: o1;
-        content: counter(o1, decimal)".";
-        position: absolute;
+        @extend %o1;
     }
 
     & & & & & & & & & & & & & &>.protyle-action::after {
-        counter-increment: o2;
-        content: counter(o2, decimal)")";
-        position: absolute;
+        @extend %o2;
     }
 
     & & & & & & & & & & & & & & &>.protyle-action::after {
-        counter-increment: o3;
-        content: counter(o3, lower-latin)".";
-        position: absolute;
+        @extend %o3;
     }
 
     & & & & & & & & & & & & & & & &>.protyle-action::after {
-        counter-increment: o4;
-        content: counter(o4, lower-roman)".";
-        position: absolute;
+        @extend %o4;
     }
 
     & & & & & & & & & & & & & & & & &>.protyle-action::after {
-        counter-increment: o1;
-        content: counter(o1, decimal)".";
-        position: absolute;
+        @extend %o1;
     }
 }
 
@@ -142,7 +135,8 @@
 
 /* 
  * 无序列表的前面的标记，还是部分参考Savor
- * 这次也是17级列表，后面依然回到一级列表的样式
+ * 这次是18级列表，后面依然回到一级列表的样式
+ * 注意，编译后会被压缩
  */
 [data-subtype="u"]>.li[data-subtype="u"]>.protyle-action::after {
     font-size: 1.5em;
@@ -151,76 +145,100 @@
     position: absolute;
 }
 
+%u1 {
+    content: "•";
+}
+
+%u2 {
+    content: "◦";
+}
+
+%u3 {
+    content: "▪";
+}
+
+%u4 {
+    content: "▫";
+}
+
+%u5 {
+    content: "▴";
+}
+
+%u6 {
+    content: "▵";
+}
+
 .li[data-subtype="u"] {
     & &>.protyle-action::after {
-        content: "◦"
+        @extend %u2;
     }
 
     & & &>.protyle-action::after {
-        content: "▪";
+        @extend %u3;
     }
 
     & & & &>.protyle-action::after {
-        content: "▫"
+        @extend %u4;
     }
 
     & & & & &>.protyle-action::after {
-        content: "▴";
+        @extend %u5;
     }
 
     & & & & & &>.protyle-action::after {
-        content: "▵"
+        @extend %u6;
     }
 
     & & & & & & &>.protyle-action::after {
-        content: "•";
+        @extend %u1;
     }
 
     & & & & & & & &>.protyle-action::after {
-        content: "◦"
+        @extend %u2;
     }
 
     & & & & & & & & &>.protyle-action::after {
-        content: "▪";
+        @extend %u3;
     }
 
     & & & & & & & & & &>.protyle-action::after {
-        content: "▫"
+        @extend %u4;
     }
 
     & & & & & & & & & & &>.protyle-action::after {
-        content: "▴";
+        @extend %u5;
     }
 
     & & & & & & & & & & & &>.protyle-action::after {
-        content: "▵"
+        @extend %u6;
     }
 
     & & & & & & & & & & & & &>.protyle-action::after {
-        content: "•";
+        @extend %u1;
     }
 
     & & & & & & & & & & & & & &>.protyle-action::after {
-        content: "◦"
+        @extend %u2;
     }
 
     & & & & & & & & & & & & & & &>.protyle-action::after {
-        content: "▪";
+        @extend %u3;
     }
 
     & & & & & & & & & & & & & & & &>.protyle-action::after {
-        content: "▫"
+        @extend %u4;
     }
 
     & & & & & & & & & & & & & & & & &>.protyle-action::after {
-        content: "▴";
+        @extend %u5;
     }
 
     & & & & & & & & & & & & & & & & & &>.protyle-action::after {
-        content: "▵";
+        @extend %u6;
     }
 
     & & & & & & & & & & & & & & & & & &>.protyle-action::after {
-        content: "•";
+        @extend %u1;
     }
 }
