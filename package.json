@@ -4,7 +4,7 @@
   "description": "siyuan theme vscode lite edit",
   "main": "theme.js",
   "scripts": {
-    "build:scss": "sass --load-path=src src:sub",
+    "build:scss": "sass --load-path=src theme.scss:theme.css src:sub",
     "build": "npm run build:scss",
     "watch:scss": "sass --watch --load-path=src theme.scss:theme.css src:sub",
     "watch": "npm run watch:scss",
