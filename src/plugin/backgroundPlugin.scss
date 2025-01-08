@@ -1,0 +1,138 @@
+body.bgenable {
+    background-color: var(--lite-modify-background);
+
+    .dock {
+        /* 两边的dock栏 */
+        background: var(--lite-modify-surface__dock);
+    }
+
+    .dock__item {
+        // svg {
+        // /* dock栏图标背景 */
+        // background-color: var(--lite-bg-dock-item-background);
+        // }
+
+        &:hover svg,
+        &--active svg {
+            /* dock栏图标激活背景 */
+            color: var(--lite-bg-dock-item-active);
+            /* background-color: var(--lite-bg-dock-item-background); */
+        }
+    }
+
+    [data-type=wnd] {
+        .layout-tab-container {
+            /* 两边的文档树、大纲位置 */
+            background-color: var(--lite-modify-surface__darker);
+        }
+
+        .layout-tab-bar {
+            /* 顶上的标签页 */
+            background-color: var(--lite-modify-surface__darker);
+
+            .item,
+            .item--readonly {
+                background-color: var(--lite-tabbar-background-color-item--readonly);
+            }
+
+            .item.item--focus {
+                background-color: var(--lite-tabbar-background-color-item--focus);
+            }
+        }
+
+        // 代码块
+        .code-block,
+        // 表格块
+        /* body.bgenable [data-type=wnd] .table, */
+        // 数据库块
+        .av[data-av-type=table] {
+            opacity: 0.8;
+        }
+    }
+
+    .protyle {
+        &:not(.fullscreen) {
+            /* 编辑器 */
+            background-color: var(--lite-modify-background);
+        }
+
+        &.fullscreen {
+            opacity: 0.75;
+        }
+
+        &:not(.fullscreen)>.protyle-breadcrumb {
+            /* 编辑器面包屑 */
+            background-color: var(--lite-modify-surface__breadcrumb);
+        }
+    }
+
+    .av[data-av-type=table] {
+
+        .av__header,
+        .av__scroll {
+            /* 数据库背景修复 */
+            background: var(--b3-theme-background);
+        }
+    }
+
+    .protyle-wysiwyg [data-node-id].render-node[data-type=NodeBlockQueryEmbed] {
+        /* 嵌入块背景调整 */
+        background-color: var(--lite-modify-surface);
+    }
+
+    // 设置面板类的弹出面板
+    .b3-dialog--open .b3-dialog__container,
+    // 菜单类的弹出面板
+    .b3-menu,
+    // 设置面板的右半边部分
+    .config__tab-wrap,
+    // 选项的背景框
+    .config__tab-wrap .config__tab-container,
+    // 右边的选项
+    .config__tab-wrap .config__tab-container .b3-label:not(.b3-label--inner) {
+        background-color: var(--lite-modify-surface__menu);
+    }
+
+
+    .config__tab-container .b3-label:not(.b3-label--inner) {
+        /* 设置面板右边的选项 */
+        box-shadow: none;
+    }
+
+    .b3-menu {
+
+        .b3-menu__item,
+        .b3-menu__item .b3-menu__submenu {
+            /* 左上角菜单选项 */
+            background-color: var(--lite-menu-background);
+        }
+    }
+}
+
+:root[data-theme-mode=light] body.bgenable {
+    --lite-status-background: #39cebbc0;
+    --lite-modify-surface: #f6f6f640;
+    --lite-modify-surface__menu: #f6f6f6c0;
+    --lite-modify-surface__dock: #f6f6f6a0;
+    --lite-modify-surface__breadcrumb: #f6f6f620;
+    --lite-modify-surface__darker: #f6f6f6a0;
+    --lite-modify-background: #ffffff00;
+    --lite-tabbar-background-color: #f0ec7f39;
+    --lite-tabbar-background-color-item--readonly: #f3f3f350;
+    --lite-tabbar-background-color-item--focus: #ffffff80;
+    --lite-menu-background: #f6f6f680;
+}
+
+:root[data-theme-mode=dark] body.bgenable {
+    --lite-status-background: #66ccffc0;
+    --lite-modify-surface: #26262670;
+    --lite-modify-surface__menu: #262626c0;
+    --lite-modify-surface__dock: #262626a0;
+    --lite-modify-surface__breadcrumb: #26262620;
+    --lite-modify-surface__darker: #262626a0;
+    --lite-modify-background: #1e1e1e00;
+    --lite-tabbar-background-color: #c5c6cc39;
+    --lite-tabbar-background-color-item--readonly: #25252650;
+    --lite-tabbar-background-color-item--focus: #1e1e1e80;
+    --lite-menu-background: #26262680;
+}
