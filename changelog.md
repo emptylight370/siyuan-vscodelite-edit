@@ -1,5 +1,12 @@
 # ChangeLog
 
+## v1.5.5
+
+- 添加无序列表多级样式
+- 在集市中应用标题颜色和列表颜色
+- Add unordered list serial style
+- Apply title color and list color in bazaar
+
 ## v1.5.4
 
 - 调整代码块样式，修复浅色模式下颜色问题

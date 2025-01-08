@@ -41,6 +41,7 @@ Limited by the configuration loading method, updated configurations for new vers
 
 - v1.5.5
   - Add unordered list serial style
+  - Apply title color and list color in bazaar
 - v1.5.4
   - Adjust codeblock style, fix color problem in light mode
 - v1.5.3
