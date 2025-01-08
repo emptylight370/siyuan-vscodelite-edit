@@ -1,0 +1,55 @@
+/* 顶部标题栏 */
+body.body--blur .toolbar {
+    background: var(--mk-toolbar-background--blur);
+
+    #drag {
+        color: var(--mk-toolbar--blur-item);
+    }
+
+    .toolbar__text {
+        color: var(--mk-toolbar-text--blur);
+    }
+
+    .toolbar__svg {
+        color: var(--mk-toolbar-svg--blur);
+    }
+
+    .toolbar__item {
+        color: var(--mk-toolbar--blur-item);
+    }
+}
+
+/* 应用顶部工具栏 */
+.toolbar {
+    background-color: var(--mk-toolbar-background);
+    border-bottom: none;
+
+    #drag {
+        /* 应用顶部标题 */
+        color: var(--mk-toolbar-item);
+        font-size: 14px;
+        font-weight: 600;
+    }
+
+    .toolbar__text {
+        /* 应用顶部工具栏文字 */
+        color: var(--mk-toolbar-text);
+        font-weight: bold;
+    }
+
+    .toolbar__svg {
+        color: var(--mk-toolbar-svg);
+    }
+
+    .toolbar__item {
+        color: var(--mk-toolbar-item);
+    }
+}
+
+.toolbar__item:not(.toolbar__item--disabled):not(.toolbar__item--close):hover {
+    background-color: var(--mk-toolbar-item--hover);
+}
+
+.toolbar__item--active {
+    background-color: var(--mk-toolbar-item--active);
+}
