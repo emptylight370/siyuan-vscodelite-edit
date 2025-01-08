@@ -29,6 +29,8 @@
 /* @import "src/app/filetree.css"; */
 /* 文档面包屑 */
 @import "src/app/breadcrumb.css";
+/* 跟块有关的内容，比如块标 */
+@import "src/app/block.scss";
 /* 标题标签h123456 */
 /* @import "src/block/title.css"; */
 /* 列表样式 */
@@ -47,16 +49,13 @@
 @import "src/app/SettingPanel.css";
 /* 数据库样式 */
 /* @import "src/block/database.css"; */
+/* 列表样式 */
+@import "src/block/table.scss";
 /* 导出时加载的样式 */
 @import "src/pdfPreview.css";
 
 .protyle-title__input {
   font-size: 2.5em;
-}
-
-/* 块标动画 */
-.protyle-gutters {
-  transition: all 200ms ease-out;
 }
 
 #barWorkspace:hover {
@@ -121,10 +120,4 @@
 
 .protyle:not(:has(.protyle-content[data-scrolltop="0"])):has(.protyle-content:not([data-scrolltop])) .protyle-breadcrumb {
   box-shadow: none;
-}
-
-/* 表格表头单元格 */
-table thead tr th {
-  color: var(--mk-block-header-h6);
-  text-align: center;
 }
