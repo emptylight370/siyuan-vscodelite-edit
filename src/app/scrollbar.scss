@@ -1,0 +1,56 @@
+/*隐藏块滚动条*/
+/* 就是那个可以回顶回底的那个 */
+.protyle-scroll {
+    display: none;
+}
+
+/* 滚动条 */
+.protyle {
+    .protyle-scroll {
+        width: 10px;
+    }
+}
+
+.protyle-content {
+    &:hover {
+        &::-webkit-scrollbar-thumb {
+            opacity: 1;
+            background: var(--mk-protyle-content-scrollbar-thumb);
+        }
+    }
+
+    &::-webkit-scrollbar {
+        width: 15px;
+    }
+
+    $scrollbar-track-border: 1px solid var(--mk-protyle-content-scrollbar-track-border);
+
+    &::-webkit-scrollbar-track {
+        border: $scrollbar-track-border;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        opacity: 0;
+        border-radius: 0;
+        background: rgba(0, 0, 0, 0);
+        transition: all .2s cubic-bezier(0, 0, .2, 1) 0ms, opacity 1s cubic-bezier(0, 0, 0.2, 1) 0ms;
+        box-shadow: none;
+
+        &:hover {
+            background: var(--mk-protyle-content-scrollbar-thumb--hover);
+        }
+
+        &:active {
+            background: var(--mk-protyle-content-scrollbar-thumb--active);
+        }
+    }
+}
+
+/* 移除移动端编辑器滚动条 */
+#editor {
+    .protyle-content {
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+}
