@@ -25,7 +25,7 @@
 /*
  * 修改有序列表的按层级缩进显示序号
  * 这部分代码从Savor抄的，我直接写在这里了
- * 扩增了一下到17级缩进了，感觉溢出了，什么时候会有这么多级缩进呢
+ * 扩增了一下到16级缩进了，感觉溢出了，什么时候会有这么多级缩进呢
  * 注意，编译后会被压缩
  */
 .li[data-subtype="o"] .li[data-subtype="o"] .protyle-action--order {
@@ -238,7 +238,7 @@
         @extend %u6;
     }
 
-    & & & & & & & & & & & & & & & & & &>.protyle-action::after {
+    & & & & & & & & & & & & & & & & & & &>.protyle-action::after {
         @extend %u1;
     }
 }
