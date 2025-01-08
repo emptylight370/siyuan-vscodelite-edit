@@ -1,5 +1,10 @@
 # ChangeLog
 
+## v2.0.5
+
+- 微调标题图标样式
+- Minor modify header icon
+
 ## v2.0.4
 
 - 修复无序列表最后的标记显示问题
