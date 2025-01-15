@@ -1,5 +1,14 @@
 # ChangeLog
 
+## v2.0.6
+
+- 修复js代码
+- 导出PDF时禁用文字选择
+- 导出PDF时禁用代码块复制按钮
+- Fix js code
+- Disable text select when expoerting PDF
+- Disable code block copy button when exporting PDF
+
 ## v2.0.5
 
 - 微调标题图标样式

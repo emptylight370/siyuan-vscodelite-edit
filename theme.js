@@ -862,21 +862,22 @@ function addFixedAttribute(settings) {
  */
 async function addPdfStyle(lab) {
     var list = [];
+    list.push("@charset \"UTF-8\";");
     lab.forEach(it => {
         if (it == 'codeBlock') {
-            list.push('@import url(sub/block/codeBlock.css);');
+            list.push('@import url(block/codeBlock.css);');
         } else if (it == 'reference') {
-            list.push('@import url(sub/block/reference.css);');
+            list.push('@import url(block/reference.css);');
         } else if (it == 'title') {
-            list.push('@import url(sub/block/title.css);');
+            list.push('@import url(block/title.css);');
         } else if (it == 'titleShadow') {
-            list.push('@import url(sub/block/title-shadow.css);');
+            list.push('@import url(block/title-shadow.css);');
         } else if (it == 'titleIcon') {
-            list.push('@import url(sub/block/title-icon.css);');
+            list.push('@import url(block/title-icon.css);');
         } else if (it == 'database') {
-            list.push('@import url(sub/block/database.css);');
+            list.push('@import url(block/database.css);');
         } else if (it == 'mark') {
-            list.push('@import url(sub/block/mark.css);');
+            list.push('@import url(block/mark.css);');
         }
     });
     var str = list.join("\n");

@@ -4,3 +4,11 @@
         width: 180px !important;
     }
 }
+
+#preview {
+    user-select: none;
+
+    .code-block:hover .protyle-action {
+        display: none;
+    }
+}
