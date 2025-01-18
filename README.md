@@ -39,14 +39,14 @@ Limited by the configuration loading method, updated configurations for new vers
 
 > Full changelog view [ChangeLog](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/main/changelog.md)
 
+- v2.0.7
+  - Follow up on upstream changes to code block styles
 - v2.0.6
   - Fix js code
   - Disable text select when expoerting PDF
   - Disable code block copy button when exporting PDF
 - v2.0.5
   - Minor modify header icon
-- v2.0.4
-  - Fix the display problem of last label in unordered list
 
 # Special fitness
 

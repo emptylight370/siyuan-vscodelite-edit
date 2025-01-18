@@ -1,5 +1,10 @@
 # ChangeLog
 
+## v2.0.7
+
+- 跟进代码块样式上游更改
+- Follow up on upstream changes to code block styles
+
 ## v2.0.6
 
 - 修复js代码

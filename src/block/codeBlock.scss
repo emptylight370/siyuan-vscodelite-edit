@@ -18,21 +18,26 @@
 
 /* 代码块滚动时语言和按钮固定在编辑器顶部 CSS片段 */
 /* author by JeffreyChen https://ld246.com/article/1728146248791 */
-.b3-typography,
-.protyle-wysiwyg {
-    div.hljs {
-        padding-top: 0;
-    }
-}
-
-.protyle-wysiwyg[contenteditable] .code-block {
+div:not(#preview)>.protyle-wysiwyg .code-block:not(pre) {
     .protyle-action {
         position: sticky;
         top: 0;
+
+        &::after {
+            content: "";
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            pointer-events: none;
+        }
     }
 
     &:hover .protyle-action {
         background-color: var(--sy-codeblock-background);
+    }
+
+    .hljs {
+        padding-top: 0;
     }
 }
 
