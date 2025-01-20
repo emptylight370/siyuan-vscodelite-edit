@@ -39,14 +39,14 @@
 
 > 完整更新日志查看[changelog](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/main/changelog.md)
 
+- v2.0.8
+  - 修改标签样式
 - v2.0.7
   - 跟进代码块样式上游更改
 - v2.0.6
   - 修复js代码
   - 导出PDF时禁用文字选择
   - 导出PDF时禁用代码块复制按钮
-- v2.0.5
-  - 微调标题图标样式
 
 # 特殊适配
 

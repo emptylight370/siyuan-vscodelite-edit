@@ -1,0 +1,16 @@
+.protyle-wysiwyg [data-node-id] span[data-type~=tag] {
+    background-color: var(--b3-theme-primary);
+    color: var(--b3-theme-on-primary);
+    border-radius: var(--b3-border-radius);
+    border-bottom: unset;
+    padding: 1px 3px;
+
+    &::before {
+        content: "#";
+    }
+
+    &:hover {
+        opacity: .99;
+        background-color: var(--b3-theme-primary);
+    }
+}

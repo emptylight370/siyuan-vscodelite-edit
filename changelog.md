@@ -1,5 +1,10 @@
 # ChangeLog
 
+## v2.0.8
+
+- 修改标签样式
+- Modify tag style
+
 ## v2.0.7
 
 - 跟进代码块样式上游更改
