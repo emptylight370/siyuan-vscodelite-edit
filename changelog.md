@@ -1,5 +1,10 @@
 # ChangeLog
 
+## v2.0.9
+
+- 适配替换背景图插件的移动端
+- Adapt Background Cover plugin's mobile
+
 ## v2.0.8
 
 - 修改标签样式

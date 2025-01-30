@@ -39,14 +39,12 @@ Limited by the configuration loading method, updated configurations for new vers
 
 > Full changelog view [ChangeLog](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/main/changelog.md)
 
+- v2.0.9
+  - Adapt Background Cover plugin's mobile
 - v2.0.8
   - Modify tag style
 - v2.0.7
   - Follow up on upstream changes to code block styles
-- v2.0.6
-  - Fix js code
-  - Disable text select when expoerting PDF
-  - Disable code block copy button when exporting PDF
 
 # Special fitness
 
@@ -70,7 +68,8 @@ Bug report & Known issue: [Issue](https://github.com/emptylight370/siyuan-vscode
 
 Don't use GitHub & Can't visit Github?  
 Please [email to me](mailto:1378990254@qq.com)(1378990254@qq.com).  
-Or [join QQ channel](https://pd.qq.com/s/7uxvabgbp).
+Or [join QQ channel](https://pd.qq.com/s/7uxvabgbp).  
+Or [Liandi Forum](https://ld246.com/article/1728034766990).
 
 # LICENSE
 

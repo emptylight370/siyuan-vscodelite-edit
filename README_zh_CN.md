@@ -39,14 +39,12 @@
 
 > 完整更新日志查看[changelog](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/main/changelog.md)
 
+- v2.0.9
+  - 适配替换背景图插件的移动端
 - v2.0.8
   - 修改标签样式
 - v2.0.7
   - 跟进代码块样式上游更改
-- v2.0.6
-  - 修复js代码
-  - 导出PDF时禁用文字选择
-  - 导出PDF时禁用代码块复制按钮
 
 # 特殊适配
 
@@ -70,7 +68,8 @@
 
 不使用GitHub或无法访问？  
 [发邮件](mailto:1378990254@qq.com)（1378990254@qq.com）。  
-或者[加入QQ频道](https://pd.qq.com/s/7uxvabgbp)。
+或者[加入QQ频道](https://pd.qq.com/s/7uxvabgbp)。  
+或者[链滴社区](https://ld246.com/article/1728034766990)。
 
 # 许可证
 
