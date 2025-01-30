@@ -65,7 +65,7 @@ async function loadGlobalVars() {
      * ! 默认配置文件
      */
     globalThis.defaultConf = {
-        "version": 7,
+        "version": 8,
         "theme": {
             "codeBlock": true,
             "reference": true,
@@ -81,7 +81,8 @@ async function loadGlobalVars() {
         "plugins": {
             "shortcutPanel": true,
             "mathPanel": false,
-            "backgroundCover": true
+            "backgroundCoverDesktop": true,
+            "backgroundCoverMobile": false
         }
     };
 
@@ -197,13 +198,17 @@ async function loadGlobalVars() {
             "zh_CN": "文档树和大纲样式",
             "en_US": 'Doc tree and Outline style'
         },
-        "bgitem": {
-            "zh_CN": "（插件）替换背景图片适配",
-            "en_US": "(plugin) Background cover adaption"
+        "bgdesktop": {
+            "zh_CN": "（插件）在电脑端启用“替换背景图片”插件",
+            "en_US": "(plguin) Enable plugin \"Background cover adaption\" on desktop"
         },
         "bgdesc": {
             "zh_CN": "需要打开“替换背景图片”插件设置将“前景透明”调到0哦!建议启用插件的“背景虚化”功能!",
             "en_US": "You need to open the setting of \"Background Cover\" plugin and set the \"Opacity of foreground\" to 0!Suggest turn on the \"Blurring\" setting of the plugin!"
+        },
+        "bgmobile": {
+            "zh_CN": "（插件）在移动端启用“替换背景图片”插件",
+            "en_US": "(plugin) Enable plguin \"Background cover adaption\" on mobile"
         },
         "mathitem": {
             "zh_CN": "（插件）数学增强插件调整",
@@ -419,7 +424,7 @@ async function showElementSettings(settings) {
             lab.push("titleIcon");
         }
     }
-    // 快捷键面板
+    // 快捷键面板插件
     if (settings["plugins"]["shortcutPanel"] == true) {
         lab.push("shortcutPanel");
     }
@@ -431,12 +436,18 @@ async function showElementSettings(settings) {
     if (settings["theme"]["doctree"] == true) {
         lab.push("doctree");
     }
-    if (settings["plugins"]["backgroundCover"] == true) {
-        lab.push("backgroundCover");
+    // 替换背景图插件
+    if (settings["plugins"]["backgroundCoverDesktop"] == true) {
+        lab.push("backgroundCoverDesktop");
     }
+    if (settings["plugins"]["backgroundCoverMobile"] == true) {
+        lab.push("backgroundCoverMobile");
+    }
+    // 数学公式面板插件
     if (settings["plugins"]["mathPanel"] == true) {
         lab.push("mathPanel");
     }
+    // 标记
     if (settings["theme"]["mark"] == true) {
         lab.push("mark");
     }
@@ -484,8 +495,13 @@ function addImports(table, labels) {
         } else if (it == 'doctree') {
             table.insertRule('@import url(sub/app/filetree.css);', 4 + i);
             i += 1;
-        } else if (it == 'backgroundCover') {
+        } else if (it == 'backgroundCoverDesktop') {
             if (!document.body.classList.contains('vscmobile')) {
+                table.insertRule('@import url(sub/plugin/backgroundPlugin.css);', 4 + i);
+                i += 1;
+            }
+        } else if (it == 'backgroundCoverMobile') {
+            if (document.body.classList.contains('vscmobile')) {
                 table.insertRule('@import url(sub/plugin/backgroundPlugin.css);', 4 + i);
                 i += 1;
             }
@@ -628,10 +644,17 @@ async function createSettingsWindow() {
                 settings.push({ label: localMessage["scitem"][defLag], id: 'scPanelStyle', enable: false });
             }
             // 替换背景图片插件
-            if (v["plugins"]["backgroundCover"] == true) {
-                settings.push({ label: localMessage["bgitem"][defLag], description: localMessage["bgdesc"][defLag], id: 'backgroundCover', enable: true });
+            // 电脑端
+            if (v["plugins"]["backgroundCoverDesktop"] == true) {
+                settings.push({ label: localMessage["bgdesktop"][defLag], description: localMessage["bgdesc"][defLag], id: 'backgroundCoverDesktop', enable: true });
             } else {
-                settings.push({ label: localMessage["bgitem"][defLag], description: localMessage["bgdesc"][defLag], id: 'backgroundCover', enable: false });
+                settings.push({ label: localMessage["bgdesktop"][defLag], description: localMessage["bgdesc"][defLag], id: 'backgroundCoverDesktop', enable: false });
+            }
+            // 移动端
+            if (v["plugins"]["backgroundCoverMobile"] == true) {
+                settings.push({ label: localMessage["bgmobile"][defLag], description: localMessage["bgdesc"][defLag], id: 'backgroundCoverMobile', enable: true });
+            } else {
+                settings.push({ label: localMessage["bgmobile"][defLag], description: localMessage["bgdesc"][defLag], id: 'backgroundCoverMobile', enable: false });
             }
             // 数学公式增强插件
             if (v["plugins"]["mathPanel"] == true) {
@@ -712,8 +735,10 @@ async function createSettingsWindow() {
                 saveSt["theme"]["database"] = ck;
             } else if (id == "doctree") {
                 saveSt["theme"]["doctree"] = ck;
-            } else if (id == 'backgroundCover') {
-                saveSt["plugins"]["backgroundCover"] = ck;
+            } else if (id == 'backgroundCoverDesktop') {
+                saveSt["plugins"]["backgroundCoverDesktop"] = ck;
+            } else if (id == 'backgroundCoverMobile') {
+                saveSt["plugins"]["backgroundCoverMobile"] = ck;
             } else if (id == 'mathPanel') {
                 saveSt["plugins"]["mathPanel"] = ck;
             } else if (id == 'mark') {
@@ -834,11 +859,11 @@ function addFixedAttribute(settings) {
             });
             globalThis.timer.bgobserver = null;
         } else {
-            if (times == 0 && !document.body.classList.contains('vscmobile')) {
+            // if (times == 0 && !document.body.classList.contains('vscmobile')) {
+            if (times == 0) {
                 // 运行失败等待5秒
                 globalThis.timer.bgObserTimer = setTimeout(bgobserver, 5000, 1);
-            }
-            else if (times == 1) {
+            } else if (times == 1) {
                 console.error("背景插件监听失败，修改插件启用状态需手动刷新");
                 globalThis.timer.bgObserTimer = null;
             }
@@ -847,7 +872,7 @@ function addFixedAttribute(settings) {
     // 运行
     // >>>>>>>>>>>>>>>>>>>>>>>>>>>>
     // 如果设置启用背景插件才进入判断
-    if (settings.includes("backgroundCover")) {
+    if (settings.includes("backgroundCoverDesktop") || settings.includes("backgroundCoverMobile")) {
         bg(0);
         if (globalThis.observer.bgObserver == null) {
             bgobserver(0);

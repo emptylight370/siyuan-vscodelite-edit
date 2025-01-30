@@ -53,18 +53,102 @@ body.bgenable {
     }
 
     .protyle {
-        &:not(.fullscreen) {
-            /* 编辑器 */
-            background-color: var(--lite-modify-background);
 
-            >.protyle-breadcrumb {
-                /* 编辑器面包屑 */
-                background-color: var(--lite-modify-surface__breadcrumb);
+        // 桌面端
+        &:not(#editor) {
+            &:not(.fullscreen) {
+                /* 编辑器 */
+                background-color: var(--lite-modify-background);
+
+                >.protyle-breadcrumb {
+                    /* 编辑器面包屑 */
+                    background-color: var(--lite-modify-surface__breadcrumb);
+                }
+            }
+
+            &.fullscreen {
+                opacity: 0.75;
+            }
+
+            .av[data-av-type=table] {
+
+                .av__header,
+                .av__scroll {
+                    /* 数据库背景修复 */
+                    background: var(--b3-theme-background);
+                }
+            }
+
+            .protyle-wysiwyg [data-node-id].render-node[data-type=NodeBlockQueryEmbed] {
+                /* 嵌入块背景调整 */
+                background-color: var(--lite-modify-surface);
+            }
+
+            // 设置面板类的弹出面板
+            .b3-dialog--open .b3-dialog__container,
+            // 菜单类的弹出面板
+            .b3-menu,
+            // 设置面板的右半边部分
+            .config__tab-wrap,
+            // 选项的背景框
+            .config__tab-wrap .config__tab-container,
+            // 右边的选项
+            .config__tab-wrap .config__tab-container .b3-label:not(.b3-label--inner) {
+                background-color: var(--lite-modify-surface__menu);
+            }
+
+            .config__tab-container .b3-label:not(.b3-label--inner) {
+                /* 设置面板右边的选项，可以解决一些插件的显示问题，但是也会带来一些其他问题 */
+                box-shadow: none;
+            }
+
+            .b3-menu {
+
+                .b3-menu__item,
+                .b3-menu__item .b3-menu__submenu {
+                    /* 左上角菜单选项 */
+                    background-color: var(--lite-menu-background);
+                }
             }
         }
 
-        &.fullscreen {
-            opacity: 0.75;
+        // 移动端
+        &#editor {
+            /* 编辑器 */
+            background-color: var(--lite-modify-background--mobile);
+
+            .protyle-breadcrumb {
+                /* 移动端面包屑 */
+                background-color: var(--lite-modify-background--mobile);
+            }
+        }
+    }
+
+    // 移动端
+    &.vscmobile {
+
+        .side-panel {
+            background-color: var(--lite-sidebar-background--mobile);
+
+            &#model {
+                background-color: var(--lite-sidebar2-background--mobile);
+            }
+
+            .toolbar {
+                background-color: var(--lite-sidebar-title--mobile);
+            }
+        }
+
+        .b3-menu {
+            background-color: var(--lite-sidebar-background--mobile);
+
+            .b3-menu__item {
+                background-color: var(--lite-sidebar-item--mobile);
+            }
+
+            .b3-menu__separator {
+                background-color: var(--lite-menu-background);
+            }
         }
 
         .av[data-av-type=table] {
@@ -93,25 +177,11 @@ body.bgenable {
         .config__tab-wrap .config__tab-container .b3-label:not(.b3-label--inner) {
             background-color: var(--lite-modify-surface__menu);
         }
-
-
-        .config__tab-container .b3-label:not(.b3-label--inner) {
-            /* 设置面板右边的选项，可以解决一些插件的显示问题，但是也会带来一些其他问题 */
-            box-shadow: none;
-        }
-
-        .b3-menu {
-
-            .b3-menu__item,
-            .b3-menu__item .b3-menu__submenu {
-                /* 左上角菜单选项 */
-                background-color: var(--lite-menu-background);
-            }
-        }
     }
 }
 
 :root[data-theme-mode=light] body.bgenable {
+    --mk-toolbar-text: #222222;
     --lite-status-background: #39cebbc0;
     --lite-modify-surface: #f6f6f640;
     --lite-modify-surface__menu: #f6f6f6c0;
@@ -119,13 +189,19 @@ body.bgenable {
     --lite-modify-surface__breadcrumb: #f6f6f620;
     --lite-modify-surface__darker: #f6f6f6a0;
     --lite-modify-background: #ffffff00;
+    --lite-modify-background--mobile: #ffffff60;
     --lite-tabbar-background-color: #f0ec7f39;
     --lite-tabbar-background-color-item--readonly: #f3f3f350;
     --lite-tabbar-background-color-item--focus: #ffffff80;
     --lite-menu-background: #f6f6f680;
+    --lite-sidebar-background--mobile: #ffffff90;
+    --lite-sidebar2-background--mobile: #ffffffb0;
+    --lite-sidebar-title--mobile: #ffffff70;
+    --lite-sidebar-item--mobile: #ffffff00;
 }
 
 :root[data-theme-mode=dark] body.bgenable {
+    --mk-toolbar-text: #ffffff;
     --lite-status-background: #66ccffc0;
     --lite-modify-surface: #26262670;
     --lite-modify-surface__menu: #262626c0;
@@ -133,8 +209,13 @@ body.bgenable {
     --lite-modify-surface__breadcrumb: #26262620;
     --lite-modify-surface__darker: #262626a0;
     --lite-modify-background: #1e1e1e00;
+    --lite-modify-background--mobile: #1e1e1e60;
     --lite-tabbar-background-color: #c5c6cc39;
     --lite-tabbar-background-color-item--readonly: #25252650;
     --lite-tabbar-background-color-item--focus: #1e1e1e80;
     --lite-menu-background: #26262680;
+    --lite-sidebar-background--mobile: #1e1e1e90;
+    --lite-sidebar2-background--mobile: #1e1e1ed0;
+    --lite-sidebar-title--mobile: #1e1e1e70;
+    --lite-sidebar-item--mobile: #1e1e1e00;
 }
