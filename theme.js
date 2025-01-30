@@ -370,6 +370,16 @@ function addThemeToolBar() {
                 windowControls.parentElement.insertBefore(vscToolBar, windowControls);
             } catch (error) {
                 document.body.classList.add("vscmobile");
+                vscToolBar.className = "block__icon fn__flex-center ariaLabel";
+                var breadcrumbButtons = document.getElementsByClassName("block__icon fn__flex-center ariaLabel");
+                console.log(breadcrumbButtons);
+                setTimeout(() => {
+                    var firstButton = breadcrumbButtons[0];
+                    console.log(firstButton);
+                    if (firstButton) {
+                        firstButton.parentElement.insertBefore(vscToolBar, firstButton);
+                    }
+                }, 1000);
             }
         } else {
             toolbarVIP.parentElement.insertBefore(vscToolBar, toolbarVIP);
@@ -544,7 +554,11 @@ async function createSettingsWindow() {
     // 创建窗口容器
     var dialogContainer = document.createElement('div');
     dialogContainer.classList = "b3-dialog__container";
-    dialogContainer.style.width = '60vw';
+    if (document.body.classList.contains('vscmobile')) {
+        dialogContainer.style.width = '90vw';
+    } else {
+        dialogContainer.style.width = '60vw';
+    }
     dialogContainer.style.height = '80vh';
     dialogContainer.style.maxWidth = '1280px';
     dialog.appendChild(dialogContainer);
