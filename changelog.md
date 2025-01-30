@@ -1,5 +1,10 @@
 # ChangeLog
 
+## v2.0.11
+
+- 在移动端添加主题配置按钮
+- Add theme configure button for mobile view
+
 ## v2.0.10
 
 - 修复替换背景图插件适配中电脑端部分菜单显示问题
