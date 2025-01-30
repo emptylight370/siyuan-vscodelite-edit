@@ -39,12 +39,12 @@
 
 > 完整更新日志查看[changelog](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/main/changelog.md)
 
+- v2.0.10
+  - 修复替换背景图插件适配中电脑端部分菜单显示问题
 - v2.0.9
   - 适配替换背景图插件的移动端
 - v2.0.8
   - 修改标签样式
-- v2.0.7
-  - 跟进代码块样式上游更改
 
 # 特殊适配
 

@@ -1,5 +1,10 @@
 # ChangeLog
 
+## v2.0.10
+
+- 修复替换背景图插件适配中电脑端部分菜单显示问题
+- Fix some menu's display problem with Background Cover plugin adaption
+
 ## v2.0.9
 
 - 适配替换背景图插件的移动端

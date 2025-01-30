@@ -39,12 +39,12 @@ Limited by the configuration loading method, updated configurations for new vers
 
 > Full changelog view [ChangeLog](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/main/changelog.md)
 
+- v2.0.10
+  - Fix some menu's display problem with Background Cover plugin adaption
 - v2.0.9
   - Adapt Background Cover plugin's mobile
 - v2.0.8
   - Modify tag style
-- v2.0.7
-  - Follow up on upstream changes to code block styles
 
 # Special fitness
 

@@ -84,32 +84,6 @@ body.bgenable {
                 background-color: var(--lite-modify-surface);
             }
 
-            // 设置面板类的弹出面板
-            .b3-dialog--open .b3-dialog__container,
-            // 菜单类的弹出面板
-            .b3-menu,
-            // 设置面板的右半边部分
-            .config__tab-wrap,
-            // 选项的背景框
-            .config__tab-wrap .config__tab-container,
-            // 右边的选项
-            .config__tab-wrap .config__tab-container .b3-label:not(.b3-label--inner) {
-                background-color: var(--lite-modify-surface__menu);
-            }
-
-            .config__tab-container .b3-label:not(.b3-label--inner) {
-                /* 设置面板右边的选项，可以解决一些插件的显示问题，但是也会带来一些其他问题 */
-                box-shadow: none;
-            }
-
-            .b3-menu {
-
-                .b3-menu__item,
-                .b3-menu__item .b3-menu__submenu {
-                    /* 左上角菜单选项 */
-                    background-color: var(--lite-menu-background);
-                }
-            }
         }
 
         // 移动端
@@ -164,18 +138,32 @@ body.bgenable {
             /* 嵌入块背景调整 */
             background-color: var(--lite-modify-surface);
         }
+    }
 
-        // 设置面板类的弹出面板
-        .b3-dialog--open .b3-dialog__container,
-        // 菜单类的弹出面板
-        .b3-menu,
-        // 设置面板的右半边部分
-        .config__tab-wrap,
-        // 选项的背景框
-        .config__tab-wrap .config__tab-container,
-        // 右边的选项
-        .config__tab-wrap .config__tab-container .b3-label:not(.b3-label--inner) {
-            background-color: var(--lite-modify-surface__menu);
+    // 设置面板类的弹出面板
+    .b3-dialog--open .b3-dialog__container,
+    // 菜单类的弹出面板
+    .b3-menu,
+    // 设置面板的右半边部分
+    .config__tab-wrap,
+    // 选项的背景框
+    .config__tab-wrap .config__tab-container,
+    // 右边的选项
+    .config__tab-wrap .config__tab-container .b3-label:not(.b3-label--inner) {
+        background-color: var(--lite-modify-surface__menu);
+    }
+
+    .config__tab-container .b3-label:not(.b3-label--inner) {
+        /* 设置面板右边的选项，可以解决一些插件的显示问题，但是也会带来一些其他问题 */
+        box-shadow: none;
+    }
+
+    .b3-menu {
+
+        .b3-menu__item,
+        .b3-menu__item .b3-menu__submenu {
+            /* 左上角菜单选项 */
+            background-color: var(--lite-menu-background);
         }
     }
 }
