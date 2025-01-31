@@ -372,10 +372,8 @@ function addThemeToolBar() {
                 document.body.classList.add("vscmobile");
                 vscToolBar.className = "block__icon fn__flex-center ariaLabel";
                 var breadcrumbButtons = document.getElementsByClassName("block__icon fn__flex-center ariaLabel");
-                console.log(breadcrumbButtons);
                 setTimeout(() => {
                     var firstButton = breadcrumbButtons[0];
-                    console.log(firstButton);
                     if (firstButton) {
                         firstButton.parentElement.insertBefore(vscToolBar, firstButton);
                     }
@@ -569,7 +567,6 @@ async function createSettingsWindow() {
     dialogBody.setAttribute("vslite", "SettingPanel");
     dialogContainer.appendChild(dialogBody);
 
-
     // 创建标题
     var title = document.createElement('h2');
     title.textContent = localMessage["settingPanelTitle"][defLag];
@@ -657,14 +654,13 @@ async function createSettingsWindow() {
             } else {
                 settings.push({ label: localMessage["scitem"][defLag], id: 'scPanelStyle', enable: false });
             }
-            // 替换背景图片插件
-            // 电脑端
+            // 替换背景图片插件电脑端
             if (v["plugins"]["backgroundCoverDesktop"] == true) {
                 settings.push({ label: localMessage["bgdesktop"][defLag], description: localMessage["bgdesc"][defLag], id: 'backgroundCoverDesktop', enable: true });
             } else {
                 settings.push({ label: localMessage["bgdesktop"][defLag], description: localMessage["bgdesc"][defLag], id: 'backgroundCoverDesktop', enable: false });
             }
-            // 移动端
+            // 替换背景图片插件移动端
             if (v["plugins"]["backgroundCoverMobile"] == true) {
                 settings.push({ label: localMessage["bgmobile"][defLag], description: localMessage["bgdesc"][defLag], id: 'backgroundCoverMobile', enable: true });
             } else {
@@ -834,11 +830,6 @@ function addFixedAttribute(settings) {
             var style = window.getComputedStyle(bglayer);
             var body = document.body;
             if (style.getPropertyValue("display") != 'none') {
-                // if (times < 1) {
-                //     globalThis.timer.bgTimer = setTimeout(bg, 2000, times + 1);
-                //     return;
-                // }
-                // console.log("enable background");
                 body.classList.add('bgenable');
             } else if (style.getPropertyValue("display") == 'none') {
                 // console.log("disable background");
@@ -850,9 +841,9 @@ function addFixedAttribute(settings) {
             } else {
                 globalThis.timer.bgTimer = null;
             }
-        } else if (times == 0) {
-            // 未启用插件5秒后重新检测一遍
-            setTimeout(bg, 5000, times + 1);
+        } else if (times == 0 || times == 1) {
+            // 未启用插件3秒后重新检测两遍
+            setTimeout(bg, 3000, times + 1);
         }
     }
     // 监听背景自定义插件的属性修改
