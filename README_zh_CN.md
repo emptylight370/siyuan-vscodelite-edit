@@ -39,13 +39,13 @@
 
 > 完整更新日志查看[changelog](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/main/changelog.md)
 
+- v2.1.1
+  - 修复问题
 - v2.1.0
   - 修复设置面板中不显示标题图标问题
   - 重构JavaScript代码到TypeScript，并优化代码
 - v2.0.11
   - 在移动端添加主题配置按钮
-- v2.0.10
-  - 修复替换背景图插件适配中电脑端部分菜单显示问题
 
 # 特殊适配
 

@@ -39,6 +39,8 @@ Limited by the configuration loading method, updated configurations for new vers
 
 > Full changelog view [ChangeLog](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/main/changelog.md)
 
+- v2.1.1
+  - Fix problems
 - v2.1.0
   - Fix heading icon not display in setting panel
   - Refactor JavaScript to TypeScript and optimize the code

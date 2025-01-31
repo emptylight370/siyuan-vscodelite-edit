@@ -1,5 +1,10 @@
 # ChangeLog
 
+## v2.1.1
+
+- 修复替换背景插件适配样式重复添加问题
+- Fix issue with Background Cover Plugin adaption style duplicate
+
 ## v2.1.0
 
 - 修复设置面板中不显示标题图标问题
