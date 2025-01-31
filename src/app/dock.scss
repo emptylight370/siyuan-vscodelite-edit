@@ -28,6 +28,7 @@
     &:hover,
     &--active {
         background-color: unset;
+        border-radius: 5px;
 
         svg {
             color: var(--mk-dock-item-svg-color--hover);
