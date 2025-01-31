@@ -11,7 +11,7 @@ import { EnableSettings } from "./types";
  * 向思源请求数据
  * @param url 请求url
  * @param data 请求数据(json encode)
- * @returns Promise<any>?
+ * @returns Promise\<any\>?
  */
 export async function _rqFORSiyuan(url: string, data: any) {
     const response = await fetch(url, {
@@ -52,6 +52,7 @@ export async function _getFile(path: string, then = null, obj = null) {
  * @param obj obj?
  * @param isDir 是否是路径
  * @param modTime 修改时间
+ * @returns Promise\<void\>
 */
 export async function _writeFile(path: string, filedata: any, then = null, obj = null, isDir = false, modTime = Date.now()) {
     let blob = new Blob([filedata]);
@@ -79,6 +80,7 @@ export async function _writeFile(path: string, filedata: any, then = null, obj =
  * @param type 消息类型 - "ok" or "error"
  * @param message 消息内容
  * @param time 持续时间
+ * @returns Promise\<void\>
  */
 export async function _postMessage(type: "ok" | "error", message: string, time = null) {
     if (type == "ok")
@@ -93,6 +95,7 @@ export async function _postMessage(type: "ok" | "error", message: string, time =
 
 /**
  * 获取设置
+ * @returns Promise\<EnableSettings[]\>
  */
 export async function getSettings() {
     var str: EnableSettings[];
@@ -110,7 +113,7 @@ export async function getSettings() {
 /**
  * 保存设置
  * @param settings
- * @returns
+ * @returns Promise\<void\>
  */
 export async function putSettings(settings) {
     if (settings == null) {
@@ -122,7 +125,7 @@ export async function putSettings(settings) {
 /**
  * 获取当前启用的设置并返回对应的列表
  * @param settings
- * @returns
+ * @returns Promise\<EnableSettings[]\>
  */
 async function showElementSettings(settings) {
     var lab: EnableSettings[] = [];

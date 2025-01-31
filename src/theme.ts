@@ -15,6 +15,7 @@ import { EnableSettings } from "./ts/types";
 (async function () {
     // 获取自己的css表
     const cssTable = document.getElementById('themeStyle') as HTMLLinkElement;
+    // 添加全局变量
     await loadGlobalVars();
     // console.log(defLag);
     // console.log(cssTable);
@@ -31,9 +32,11 @@ import { EnableSettings } from "./ts/types";
         addFixedAttribute(labels);
         // 修复导出pdf没有样式的问题
         await addPdfStyle(labels);
+        // 加载完成(o゜▽゜)o☆
         console.log(localMessage["loadFinish"][defLag]);
     } else {
-        await _postMessage('error', globalThis.localMessage["localCssFail"][globalThis.defLag], 5000);
+        // 加载失败
+        await _postMessage('error', globalThis.localMessage["localCssFail"][globalThis.defLag]);
     }
 })();
 
@@ -66,6 +69,7 @@ window.destroyTheme = async () => {
     delete globalThis.defLag;
     delete globalThis.timer;
     delete globalThis.observer;
+    // 删除PDF适配
     await addPdfStyle([]);
 };
 
@@ -174,8 +178,10 @@ function addImports(table: HTMLLinkElement, labels: EnableSettings[]) {
                 break;
             case "backgroundCoverDesktop":
             case "backgroundCoverMobile":
-                sheet.insertRule('@import url(sub/plugin/backgroundPlugin.css);', 4 + i);
-                i += 1;
+                if (!sheet.cssRules.toString().includes('backgroundPlugin.css')) {
+                    sheet.insertRule('@import url(sub/plugin/backgroundPlugin.css);', 4 + i);
+                    i += 1;
+                }
                 break;
             case "mathPanel":
                 if (!document.body.classList.contains('vscmobile')) {
@@ -299,7 +305,7 @@ async function addPdfStyle(lab: EnableSettings[]) {
 
 /**
  * 移除CSS规则，用于在可加载js的时候去掉PDF导出适配
- * @param * table 
+ * @param table \<link css\>
  */
 function removeCSSRules(table: HTMLLinkElement) {
     var sheet = table.sheet as CSSStyleSheet;
