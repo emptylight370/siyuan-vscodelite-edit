@@ -26,6 +26,10 @@
             height: 36px;
             min-height: 36px;
 
+            &.item--full {
+                font-size: 16px;
+            }
+
             &:after {
                 /* 标签聚焦 */
                 display: none;
