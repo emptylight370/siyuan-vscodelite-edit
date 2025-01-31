@@ -1,13 +1,9 @@
 import {
-    _rqFORSiyuan,
-    _getFile,
     _postMessage,
-    _writeFile,
-    getSettings,
-    putSettings
+    _writeFile
 } from "./ts/api";
 import { loadGlobalVars } from "./ts/defs";
-import { createSettingsWindow } from "./ts/setting";
+import { createSettingsWindow, getSettings } from "./ts/setting";
 import { EnableSettings } from "./ts/types";
 
 // 主题默认加载时进行的行为
@@ -69,8 +65,6 @@ window.destroyTheme = async () => {
     delete globalThis.defLag;
     delete globalThis.timer;
     delete globalThis.observer;
-    // 删除PDF适配
-    await addPdfStyle([]);
 };
 
 /**
@@ -129,6 +123,8 @@ function addThemeToolBar() {
 
 /**
  * 向css表中插入引用的语句
+ * @param table \<link css\>
+ * @param labels EnableSettings[]
  */
 function addImports(table: HTMLLinkElement, labels: EnableSettings[]) {
     var sheet: CSSStyleSheet = table.sheet;
@@ -201,6 +197,7 @@ function addImports(table: HTMLLinkElement, labels: EnableSettings[]) {
 
 /**
  * ! 添加固定属性
+ * @param settings EnableSettings[]
  */
 function addFixedAttribute(settings: EnableSettings[]) {
     function bg(times: number) {
@@ -268,6 +265,7 @@ function addFixedAttribute(settings: EnableSettings[]) {
 
 /**
  * ! 添加导出pdf时候的样式
+ * @param lab EnableSettings[]
  */
 async function addPdfStyle(lab: EnableSettings[]) {
     var list = [];

@@ -1,9 +1,15 @@
 import {
     _getFile,
-    putSettings,
-    _postMessage
+    _postMessage,
+    _writeFile
 } from "./api";
-import { SettingItem, settingKeyMap, SettingPanelId, ThemeConfig } from "./types";
+import {
+    EnableSettings,
+    SettingItem,
+    settingKeyMap,
+    SettingPanelId,
+    ThemeConfig
+} from "./types";
 
 /** 
  * 创建一个包含标签和复选框的 HTML 结构
@@ -54,56 +60,10 @@ export async function createSettingsWindow() {
     title.className = "h2";
     dialogBody.appendChild(title);
 
-    // 获取设置文件数组
-    async function fetchSettingsArray() {
-        let re: SettingItem[];
-        await _getFile("/data/snippets/vsc_edit.config.json", async (v: ThemeConfig) => {
-            if (v == null) {
-                v = defaultConf;
-            }
-            re = await getSettingArrays(v);
-        });
-        return re;
-
-        async function getSettingArrays(v: ThemeConfig) {
-            let settings: SettingItem[] = [];
-            // ! 设置页添加设置选项
-            // 标题
-            settings.push({ label: localMessage["tititem"][defLag], id: 'titleBlock', enable: v?.theme?.title ?? false });
-            // 标题阴影
-            settings.push({ label: localMessage["titleShadow"][defLag], description: localMessage["titleShadowDesc"][defLag], id: 'titleShadow', enable: v?.theme?.titleShadow ?? false });
-            // 标题图标
-            settings.push({ label: localMessage["titleIcon"][defLag], description: localMessage["titleShadowDesc"][defLag], id: 'titleIcon', enable: v?.theme?.titleIcon ?? false });
-            // 文档树和大纲
-            settings.push({ label: localMessage["ftitem"][defLag], id: 'doctree', enable: v?.theme?.doctree ?? false });
-            // 代码块
-            settings.push({ label: localMessage["cbitem"][defLag], id: 'codeBlock', enable: v?.theme?.codeBlock ?? false });
-            // 引用
-            settings.push({ label: localMessage["refitem"][defLag], id: 'referenceBlock', enable: v?.theme?.reference ?? false });
-            // 标记
-            settings.push({ label: localMessage["markitem"][defLag], id: 'mark', enable: v?.theme?.mark ?? false });
-            // 集市
-            settings.push({ label: localMessage["bazitem"][defLag], id: 'bazaarStyle', enable: v?.theme?.bazaar ?? false });
-            // 嵌入块
-            settings.push({ label: localMessage["emitem"][defLag], description: localMessage["emdesc"][defLag], id: 'embeddedBlock', enable: v?.theme?.embeddedBlock ?? false });
-            // 数据库
-            settings.push({ label: localMessage["dbitem"][defLag], id: 'database', enable: v?.theme?.database ?? false });
-            // 快捷键面板
-            settings.push({ label: localMessage["scitem"][defLag], id: 'scPanelStyle', enable: v?.plugins?.shortcutPanel ?? false });
-            // 替换背景图片插件电脑端
-            settings.push({ label: localMessage["bgdesktop"][defLag], description: localMessage["bgdesc"][defLag], id: 'backgroundCoverDesktop', enable: v?.plugins?.backgroundCoverDesktop ?? false });
-            // 替换背景图片插件移动端
-            settings.push({ label: localMessage["bgmobile"][defLag], description: localMessage["bgdesc"][defLag], id: 'backgroundCoverMobile', enable: v?.plugins?.backgroundCoverMobile ?? false });
-            // 数学公式增强插件
-            settings.push({ label: localMessage["mathitem"][defLag], description: localMessage["mathdesc"][defLag], id: 'mathPanel', enable: v?.plugins?.mathPanel ?? false });
-            return settings;
-        }
-    }
-
-    // 创建标签和复选框
+    // 获取设置数组
     var settings: SettingItem[] = await fetchSettingsArray();
 
-    // 遍历数组添加选项
+    // 遍历数组添加选项，创建标签和复选框
     settings.forEach(setting => {
         var label: HTMLDivElement | HTMLSpanElement;
         if (setting?.description) {
@@ -214,4 +174,111 @@ export async function createSettingsWindow() {
     div3.appendChild(space.cloneNode(true));
     div3.appendChild(refreshButton);
     dialogBody.appendChild(div3);
+}
+
+/**
+ * NOTE 获取设置文件数组
+ * @returns Promise\<SettingItem[]\>
+ */
+async function fetchSettingsArray() {
+    let re: SettingItem[];
+    await _getFile("/data/snippets/vsc_edit.config.json", async (v: ThemeConfig) => {
+        if (v == null) {
+            v = defaultConf;
+        }
+        re = await getSettingArrays(v);
+    });
+    return re;
+}
+
+/**
+ * NOTE 向设置面板中添加设置项（数组）
+ * @param v ThemeConfig
+ * @returns Promise\<SettingItem[]\>
+ */
+async function getSettingArrays(v: ThemeConfig) {
+    let settings: SettingItem[] = [];
+    // ! 设置页添加设置选项
+    // 标题
+    settings.push({ label: localMessage["tititem"][defLag], id: 'titleBlock', enable: v?.theme?.title ?? false });
+    // 标题阴影
+    settings.push({ label: localMessage["titleShadow"][defLag], description: localMessage["titleShadowDesc"][defLag], id: 'titleShadow', enable: v?.theme?.titleShadow ?? false });
+    // 标题图标
+    settings.push({ label: localMessage["titleIcon"][defLag], description: localMessage["titleShadowDesc"][defLag], id: 'titleIcon', enable: v?.theme?.titleIcon ?? false });
+    // 文档树和大纲
+    settings.push({ label: localMessage["ftitem"][defLag], id: 'doctree', enable: v?.theme?.doctree ?? false });
+    // 代码块
+    settings.push({ label: localMessage["cbitem"][defLag], id: 'codeBlock', enable: v?.theme?.codeBlock ?? false });
+    // 引用
+    settings.push({ label: localMessage["refitem"][defLag], id: 'referenceBlock', enable: v?.theme?.reference ?? false });
+    // 标记
+    settings.push({ label: localMessage["markitem"][defLag], id: 'mark', enable: v?.theme?.mark ?? false });
+    // 集市
+    settings.push({ label: localMessage["bazitem"][defLag], id: 'bazaarStyle', enable: v?.theme?.bazaar ?? false });
+    // 嵌入块
+    settings.push({ label: localMessage["emitem"][defLag], description: localMessage["emdesc"][defLag], id: 'embeddedBlock', enable: v?.theme?.embeddedBlock ?? false });
+    // 数据库
+    settings.push({ label: localMessage["dbitem"][defLag], id: 'database', enable: v?.theme?.database ?? false });
+    // 快捷键面板
+    settings.push({ label: localMessage["scitem"][defLag], id: 'scPanelStyle', enable: v?.plugins?.shortcutPanel ?? false });
+    // 替换背景图片插件电脑端
+    settings.push({ label: localMessage["bgdesktop"][defLag], description: localMessage["bgdesc"][defLag], id: 'backgroundCoverDesktop', enable: v?.plugins?.backgroundCoverDesktop ?? false });
+    // 替换背景图片插件移动端
+    settings.push({ label: localMessage["bgmobile"][defLag], description: localMessage["bgdesc"][defLag], id: 'backgroundCoverMobile', enable: v?.plugins?.backgroundCoverMobile ?? false });
+    // 数学公式增强插件
+    settings.push({ label: localMessage["mathitem"][defLag], description: localMessage["mathdesc"][defLag], id: 'mathPanel', enable: v?.plugins?.mathPanel ?? false });
+    return settings;
+}
+
+/**
+ * ! 获取设置
+ * @returns Promise\<EnableSettings[]\>
+ */
+export async function getSettings() {
+    var str: EnableSettings[];
+    // var res = _analyseResponse(_getFile("/data/snippets/vsc_edit.config.json"));
+    await _getFile("/data/snippets/vsc_edit.config.json", async (v) => {
+        if (v == null) {
+            v = globalThis.defaultConf;
+            putSettings(v);
+        }
+        str = await showElementSettings(v);
+    });
+    return str;
+}
+
+/**
+ * ! 保存设置
+ * @param settings
+ * @returns Promise\<void\>
+ */
+export async function putSettings(settings: ThemeConfig) {
+    if (settings == null) {
+        return;
+    }
+    await _writeFile("/data/snippets/vsc_edit.config.json", JSON.stringify(settings), null, null, false, Date.now());
+}
+
+/**
+ * ! 获取当前启用的设置并返回对应的列表
+ * @param settings
+ * @returns Promise\<EnableSettings[]\>
+ */
+async function showElementSettings(settings: ThemeConfig) {
+    var lab: EnableSettings[] = [];
+    // 检测配置文件的版本
+    if (settings["version"] < defaultConf["version"] || settings["version"] == undefined) {
+        // console.log(settings["version"]);
+        await _postMessage("ok", localMessage["confUpdate"][defLag]);
+    }
+    // ! 从设置中获取启用的设置项
+    // 主题设置项
+    Object.entries(settings.theme).forEach(([key, enabled]) => {
+        if (enabled) lab.push(key as EnableSettings);
+    });
+    // 插件设置项
+    Object.entries(settings.plugins).forEach(([key, enabled]) => {
+        if (enabled) lab.push(key as EnableSettings);
+    });
+    return lab;
 }

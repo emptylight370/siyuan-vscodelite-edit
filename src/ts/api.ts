@@ -5,8 +5,6 @@
  * TODO 完成所需的所有api写入
  */
 
-import { EnableSettings } from "./types";
-
 /**
  * 向思源请求数据
  * @param url 请求url
@@ -28,7 +26,7 @@ export async function _rqFORSiyuan(url: string, data: any) {
 }
 
 /** 
- * @Feature 获取文件
+ * 获取文件
  * @param path 文件路径
  * @param then then?
  * @param obj obj?
@@ -91,57 +89,4 @@ export async function _postMessage(type: "ok" | "error", message: string, time =
         await _rqFORSiyuan(url, { "msg": message, "timeout": time });
     else
         await _rqFORSiyuan(url, { "msg": message });
-}
-
-/**
- * 获取设置
- * @returns Promise\<EnableSettings[]\>
- */
-export async function getSettings() {
-    var str: EnableSettings[];
-    // var res = _analyseResponse(_getFile("/data/snippets/vsc_edit.config.json"));
-    await _getFile("/data/snippets/vsc_edit.config.json", async (v) => {
-        if (v == null) {
-            v = globalThis.defaultConf;
-            putSettings(v);
-        }
-        str = await showElementSettings(v);
-    });
-    return str;
-}
-
-/**
- * 保存设置
- * @param settings
- * @returns Promise\<void\>
- */
-export async function putSettings(settings) {
-    if (settings == null) {
-        return;
-    }
-    await _writeFile("/data/snippets/vsc_edit.config.json", JSON.stringify(settings), null, null, false, Date.now());
-}
-
-/**
- * 获取当前启用的设置并返回对应的列表
- * @param settings
- * @returns Promise\<EnableSettings[]\>
- */
-async function showElementSettings(settings) {
-    var lab: EnableSettings[] = [];
-    // 检测配置文件的版本
-    if (settings["version"] < defaultConf["version"] || settings["version"] == undefined) {
-        // console.log(settings["version"]);
-        await _postMessage("ok", localMessage["confUpdate"][defLag]);
-    }
-    // ! 从设置中获取启用的设置项
-    // 主题设置项
-    Object.entries(settings.theme).forEach(([key, enabled]) => {
-        if (enabled) lab.push(key as EnableSettings);
-    });
-    // 插件设置项
-    Object.entries(settings.plugins).forEach(([key, enabled]) => {
-        if (enabled) lab.push(key as EnableSettings);
-    });
-    return lab;
 }
