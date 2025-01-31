@@ -1,0 +1,187 @@
+import { TLang } from "./types";
+
+/**
+ * 加载全局变量
+ */
+export async function loadGlobalVars() {
+    /**
+     * ! 默认配置文件
+     */
+    globalThis.defaultConf = {
+        "version": 8,
+        "theme": {
+            "codeBlock": true,
+            "reference": true,
+            "bazaar": true,
+            "embeddedBlock": true,
+            "title": true,
+            "titleShadow": true,
+            "titleIcon": true,
+            "database": true,
+            "doctree": true,
+            "mark": true
+        },
+        "plugins": {
+            "shortcutPanel": true,
+            "mathPanel": false,
+            "backgroundCoverDesktop": true,
+            "backgroundCoverMobile": false
+        }
+    };
+
+    /**
+     * ! 默认消息本地化
+     */
+    globalThis.localMessage = {
+        "language": {
+            "zh_CN": true,
+            "en_US": true
+        },
+        "loadCssFail": {
+            "zh_CN": "加载主题VSCode Lite Edit失败，无法获取当前样式表",
+            "en_US": "Load theme VSCode Lite Edit failed, can't load current style table"
+        },
+        "loadFinish": {
+            "zh_CN": "主题VSCode Lite Edit加载完成",
+            "en_US": "Theme VSCode Lite Edit load finished"
+        },
+        "confUpdate": {
+            "zh_CN": "主题配置文件需要更新，请点击<code>VC</code>按钮重新保存配置文件",
+            "en_US": "Theme conf file needs update, please click <code>VC</code> button to save the configuration file again"
+        },
+        "confNotSave": {
+            "zh_CN": "配置未保存",
+            "en_US": "Configurations not saved"
+        },
+        "confSave": {
+            "zh_CN": "配置保存成功，稍后自动刷新",
+            "en_US": "Configuration save successed, auto reload later"
+        },
+        "label-aria": {
+            "zh_CN": "VSCode Lite 主题设置",
+            "en_US": "VSCode Lite theme setting"
+        },
+        "settingPanelTitle": {
+            "zh_CN": 'VSCode Lite Edit设置',
+            "en_US": "VSCode Lite Edit Settings"
+        },
+        "saveReload": {
+            "zh_CN": '保存并刷新',
+            "en_US": 'Save and Reload'
+        },
+        "nSave": {
+            "zh_CN": '不保存',
+            "en_US": "NOT Save"
+        },
+        "oReload": {
+            "zh_CN": '刷新思源界面',
+            "en_US": 'Reload Siyuan'
+        },
+        "tip1": {
+            "zh_CN": "直接关闭不保存哦，必须点击保存按钮",
+            "en_US": "Close it directly without saving, you must click the Save button"
+        },
+        "tip2": {
+            "zh_CN": "刷新可能无效，重启思源即可生效",
+            "en_US": "Reload may useless, you can restart Siyuan to enable the changes"
+        },
+        "tip3": {
+            "zh_CN": "点击一行中任意位置",
+            "en_US": "Click anywhere in a row"
+        },
+        "cbitem": {
+            "zh_CN": '代码块样式',
+            "en_US": "code block style"
+        },
+        "refitem": {
+            "zh_CN": '引用标签样式',
+            "en_US": 'reference label style'
+        },
+        "bazitem": {
+            "zh_CN": '集市样式',
+            "en_US": "bazaar style"
+        },
+        "emitem": {
+            "zh_CN": '嵌入块样式',
+            "en_US": "embedded block style"
+        },
+        "emdesc": {
+            "zh_CN": "限制嵌入块高度",
+            "en_US": "Limit the height of embedded block"
+        },
+        "tititem": {
+            "zh_CN": '标题块样式',
+            "en_US": "Heading block style"
+        },
+        "titleShadow": {
+            "zh_CN": "标题添加阴影",
+            "en_US": "Heading add shadow"
+        },
+        "titleShadowDesc": {
+            "zh_CN": "仅启用标题样式有效",
+            "en_US": "Only effective when enable heading style"
+        },
+        "titleIcon": {
+            "zh_CN": "标题前添加图标",
+            "en_US": "Add icon before title"
+        },
+        "dbitem": {
+            "zh_CN": '数据库样式',
+            "en_US": 'database style'
+        },
+        "markitem": {
+            "zh_CN": "高亮标注样式",
+            "en_US": "highlight mark style"
+        },
+        "scitem": {
+            "zh_CN": '（插件）快捷键面板样式',
+            "en_US": '(plugin) Shortcut key panel style'
+        },
+        "ftitem": {
+            "zh_CN": "文档树和大纲样式",
+            "en_US": 'Doc tree and Outline style'
+        },
+        "bgdesktop": {
+            "zh_CN": "（插件）在电脑端启用“替换背景图片”插件",
+            "en_US": "(plguin) Enable plugin \"Background cover adaption\" on desktop"
+        },
+        "bgdesc": {
+            "zh_CN": "需要打开“替换背景图片”插件设置将“前景透明”调到0哦!建议启用插件的“背景虚化”功能!",
+            "en_US": "You need to open the setting of \"Background Cover\" plugin and set the \"Opacity of foreground\" to 0!Suggest turn on the \"Blurring\" setting of the plugin!"
+        },
+        "bgmobile": {
+            "zh_CN": "（插件）在移动端启用“替换背景图片”插件",
+            "en_US": "(plugin) Enable plguin \"Background cover adaption\" on mobile"
+        },
+        "mathitem": {
+            "zh_CN": "（插件）数学增强插件调整",
+            "en_US": "(plugin) math enhance plugin adjustion"
+        },
+        "mathdesc": {
+            "zh_CN": "无法显示水平滚动条",
+            "en_US": "Can't show horizon scroll bar"
+        }
+    };
+
+    // 浏览器获取的默认语言
+    var currentLang = document.documentElement.lang as TLang;
+    if (localMessage["language"][currentLang] != undefined) {
+        // @ts-ignore
+        globalThis.defLag = currentLang;
+    } else {
+        globalThis.defLag = "en_US";
+    }
+
+    // ! 所有用到的计时器
+    globalThis.timer = {
+        // 背景插件加载后可能禁用，使用计时器定时刷新背景插件状态
+        bgTimer: null,
+        // 背景插件属性修改的监听器，用来监测背景状态变化
+        bgObserTimer: null
+    };
+
+    // ! 所有用到的监听器
+    globalThis.observer = {
+        bgObserver: null
+    };
+}

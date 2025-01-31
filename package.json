@@ -5,12 +5,16 @@
   "main": "theme.js",
   "scripts": {
     "build:scss": "sass --load-path=src theme.scss:theme.css src:sub",
-    "build": "npm run build:scss",
+    "build:ts": "rollup -c",
+    "build": "npm-run-all build:scss && npm run build:ts",
     "watch:scss": "sass --watch --load-path=src theme.scss:theme.css src:sub",
-    "watch": "npm run watch:scss",
+    "watch:ts": "rollup -c -w",
+    "watch": "npm-run-all --parallel watch:scss && npm run watch:ts",
     "clean:scss": "rimraf theme.css theme.css.map sub",
-    "clean": "npm run clean:scss"
+    "clean:ts": "rimraf theme.js ts theme.d.ts",
+    "clean": "npm-run-all clean:scss && npm run clean:ts"
   },
+  "type": "module",
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/emptylight370/siyuan-vscodelite-edit.git"
@@ -22,7 +26,12 @@
   },
   "homepage": "https://github.com/emptylight370/siyuan-vscodelite-edit#readme",
   "devDependencies": {
+    "@rollup/plugin-typescript": "^12.1.2",
+    "npm-run-all": "^4.1.5",
     "rimraf": "^6.0.1",
-    "sass": "^1.83.1"
+    "rollup": "^4.32.1",
+    "sass": "^1.83.4",
+    "tslib": "^2.8.1",
+    "typescript": "^5.7.3"
   }
 }
