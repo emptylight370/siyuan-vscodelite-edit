@@ -1,0 +1,18 @@
+.b3-menu {
+    &.b3-menu--list {
+        .b3-menu__items {
+            .b3-menu__item--current {
+                svg {
+                    /* 下拉框的标签关闭按钮 */
+                    color: var(--b3-theme-error);
+                }
+            }
+        }
+    }
+
+    .b3-menu__items {
+        .b3-menu__item.b3-menu__item--current {
+            background-color: var(--b3-toolbar-hover);
+        }
+    }
+}
