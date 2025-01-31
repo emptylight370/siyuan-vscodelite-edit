@@ -1,5 +1,12 @@
 # ChangeLog
 
+## v2.1.0
+
+- 修复设置面板中不显示标题图标问题
+- 重构JavaScript代码到TypeScript，并优化代码
+- Fix heading icon not display in setting panel
+- Refactor JavaScript to TypeScript and optimize the code
+
 ## v2.0.11
 
 - 在移动端添加主题配置按钮
