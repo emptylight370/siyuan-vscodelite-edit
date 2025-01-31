@@ -8,6 +8,7 @@ import {
 } from "./ts/api";
 import { loadGlobalVars } from "./ts/defs";
 import { createSettingsWindow } from "./ts/setting";
+import { EnableSettings } from "./ts/types";
 
 // 主题默认加载时进行的行为
 // ! js代码加载后立即执行
@@ -19,7 +20,7 @@ import { createSettingsWindow } from "./ts/setting";
     // console.log(cssTable);
     if (cssTable) {
         // 读取配置文件或生成配置文件
-        var labels = await getSettings();
+        var labels: EnableSettings[] = await getSettings();
         // 添加主题菜单
         addThemeToolBar();
         // 向css中插入语句
@@ -125,7 +126,7 @@ function addThemeToolBar() {
 /**
  * 向css表中插入引用的语句
  */
-function addImports(table: HTMLLinkElement, labels: string[]) {
+function addImports(table: HTMLLinkElement, labels: EnableSettings[]) {
     var sheet: CSSStyleSheet = table.sheet;
     var i = 0;
     // ! 向css表中插入引用的语句
@@ -195,7 +196,7 @@ function addImports(table: HTMLLinkElement, labels: string[]) {
 /**
  * ! 添加固定属性
  */
-function addFixedAttribute(settings: string[]) {
+function addFixedAttribute(settings: EnableSettings[]) {
     function bg(times: number) {
         // 背景自定义插件，部分情况下插件加载缓慢可重复检测一次
         var bglayer = document.getElementById("bglayer");
@@ -262,7 +263,7 @@ function addFixedAttribute(settings: string[]) {
 /**
  * ! 添加导出pdf时候的样式
  */
-async function addPdfStyle(lab: string[]) {
+async function addPdfStyle(lab: EnableSettings[]) {
     var list = [];
     list.push("@charset \"UTF-8\";");
     lab.forEach(it => {

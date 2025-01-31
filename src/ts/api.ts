@@ -1,14 +1,17 @@
 /** 
- * * 定义需要用到的api
- * * 从[Savor](https://github.com/royc01/notion-theme/blob/main/theme.js)抄的
- * * 来自[思源api文档](https://github.com/siyuan-note/siyuan/blob/master/API_zh_CN.md)
- * TODO: 完成所需的所有api写入
+ * NOTE 定义需要用到的api
+ * 从[Savor](https://github.com/royc01/notion-theme/blob/main/theme.js)抄的
+ * 来自[思源api文档](https://github.com/siyuan-note/siyuan/blob/master/API_zh_CN.md)
+ * TODO 完成所需的所有api写入
  */
 
+import { EnableSettings } from "./types";
+
 /**
- * @Feature 向思源请求数据
+ * 向思源请求数据
  * @param url 请求url
  * @param data 请求数据(json encode)
+ * @returns Promise<any>?
  */
 export async function _rqFORSiyuan(url: string, data: any) {
     const response = await fetch(url, {
@@ -29,6 +32,7 @@ export async function _rqFORSiyuan(url: string, data: any) {
  * @param path 文件路径
  * @param then then?
  * @param obj obj?
+ * @returns 文件内容
  */
 export async function _getFile(path: string, then = null, obj = null) {
     let url = '/api/file/getFile';
@@ -41,7 +45,7 @@ export async function _getFile(path: string, then = null, obj = null) {
 }
 
 /**
- * @Feature 写入文件
+ * 写入文件
  * @param path 文件路径
  * @param filedata 文件数据
  * @param then then?
@@ -71,7 +75,7 @@ export async function _writeFile(path: string, filedata: any, then = null, obj =
 }
 
 /**
- * @Feature 发送消息
+ * 发送消息
  * @param string type 消息类型 - "ok" or "error"
  * @param string message 消息内容
  * @param number time 持续时间
@@ -88,10 +92,10 @@ export async function _postMessage(type: "ok" | "error", message: string, time =
 }
 
 /**
- * @description 获取设置
+ * 获取设置
  */
 export async function getSettings() {
-    var str: string[];
+    var str: EnableSettings[];
     // var res = _analyseResponse(_getFile("/data/snippets/vsc_edit.config.json"));
     await _getFile("/data/snippets/vsc_edit.config.json", async (v) => {
         if (v == null) {
@@ -104,9 +108,9 @@ export async function getSettings() {
 }
 
 /**
- * @description 保存设置
+ * 保存设置
  * @param settings
- * @return 
+ * @returns
  */
 export async function putSettings(settings) {
     if (settings == null) {
@@ -116,12 +120,12 @@ export async function putSettings(settings) {
 }
 
 /**
- * @description 根据设置显示不同的主题
+ * 获取当前启用的设置并返回对应的列表
  * @param settings
- * @return 
+ * @returns
  */
 async function showElementSettings(settings) {
-    var lab: string[] = [];
+    var lab: EnableSettings[] = [];
     // 检测配置文件的版本
     if (settings["version"] < defaultConf["version"] || settings["version"] == undefined) {
         // console.log(settings["version"]);

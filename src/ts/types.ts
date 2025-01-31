@@ -153,12 +153,46 @@ export const settingKeyMap: SettingKeyMap = {
     mark: { section: 'theme', key: 'mark' }, // 标记
     scPanelStyle: { section: 'plugins', key: 'shortcutPanel' }, // 快捷键面板
     mathPanel: { section: 'plugins', key: 'mathPanel' }, // 数学面板
-    backgroundCoverDesktop: { section: 'plugins', key: 'backgroundCoverDesktop' }, // 桌面背景
-    backgroundCoverMobile: { section: 'plugins', key: 'backgroundCoverMobile' }, // 移动端背景
+    backgroundCoverDesktop: { section: 'plugins', key: 'backgroundCoverDesktop' }, // 桌面端图片背景
+    backgroundCoverMobile: { section: 'plugins', key: 'backgroundCoverMobile' }, // 移动端图片背景
 } as const;
 
 /** 设置面板中使用的ID类型 */
 export type SettingPanelId = keyof SettingKeyMap;
+
+/** 配置文件中启用项到配置文件的映射 */
+interface EnableSettingsKeyMap {
+    [K: string]: {
+        section: 'theme';
+        key: ThemeSettingKey;
+    } | {
+        section: 'plugins';
+        key: PluginSettingKey;
+    }
+}
+
+/** 
+ * 具体设置项映射，由配置文件中启用项映射到配置文件中
+ */
+export const EnableSettingsKeyMap: SettingKeyMap = {
+    codeBlock: { section: 'theme', key: 'codeBlock' }, // 代码块样式
+    reference: { section: 'theme', key: 'reference' }, // 引用块样式
+    bazaar: { section: 'theme', key: 'bazaar' }, // 集市样式
+    title: { section: 'theme', key: 'title' }, // 标题块样式
+    embeddedBlock: { section: "theme", key: 'embeddedBlock' }, // 嵌入块样式
+    titleShadow: { section: 'theme', key: 'titleShadow' }, // 标题阴影
+    titleIcon: { section: 'theme', key: 'titleIcon' }, // 标题图标
+    database: { section: 'theme', key: 'database' }, // 数据库
+    doctree: { section: 'theme', key: 'doctree' }, // 文档树
+    mark: { section: 'theme', key: 'mark' }, // 标记
+    shortcutPanel: { section: 'plugins', key: 'shortcutPanel' }, // 快捷键面板
+    mathPanel: { section: 'plugins', key: 'mathPanel' }, // 数学面板
+    backgroundCoverDesktop: { section: 'plugins', key: 'backgroundCoverDesktop' }, // 桌面端图片背景
+    backgroundCoverMobile: { section: 'plugins', key: 'backgroundCoverMobile' }, // 移动端图片背景
+} as const;
+
+/** 设置面板中使用的ID类型 */
+export type EnableSettings = keyof EnableSettingsKeyMap;
 
 // 声明文件作为模块
 export { };
