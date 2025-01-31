@@ -191,7 +191,7 @@ export const EnableSettingsKeyMap: SettingKeyMap = {
     backgroundCoverMobile: { section: 'plugins', key: 'backgroundCoverMobile' }, // 移动端图片背景
 } as const;
 
-/** 设置面板中使用的ID类型 */
+/** 配置文件中启用项类型 */
 export type EnableSettings = keyof EnableSettingsKeyMap;
 
 // 声明文件作为模块

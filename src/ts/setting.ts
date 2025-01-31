@@ -3,7 +3,7 @@ import {
     putSettings,
     _postMessage
 } from "./api";
-import { SettingItem, SettingPanelId, ThemeConfig } from "./types";
+import { SettingItem, settingKeyMap, SettingPanelId, ThemeConfig } from "./types";
 
 /** 
  * 创建一个包含标签和复选框的 HTML 结构
@@ -69,89 +69,33 @@ export async function createSettingsWindow() {
             let settings: SettingItem[] = [];
             // ! 设置页添加设置选项
             // 标题
-            if (v["theme"]["title"] == true) {
-                settings.push({ label: localMessage["tititem"][defLag], id: 'titleBlock', enable: true });
-            } else {
-                settings.push({ label: localMessage["tititem"][defLag], id: 'titleBlock', enable: false });
-            }
+            settings.push({ label: localMessage["tititem"][defLag], id: 'titleBlock', enable: v?.theme?.title ?? false });
             // 标题阴影
-            if (v["theme"]["titleShadow"] == true) {
-                settings.push({ label: localMessage["titleShadow"][defLag], description: localMessage["titleShadowDesc"][defLag], id: 'titleShadow', enable: true });
-            } else {
-                settings.push({ label: localMessage["titleShadow"][defLag], description: localMessage["titleShadowDesc"][defLag], id: 'titleShadow', enable: false });
-            }
+            settings.push({ label: localMessage["titleShadow"][defLag], description: localMessage["titleShadowDesc"][defLag], id: 'titleShadow', enable: v?.theme?.titleShadow ?? false });
             // 标题图标
-            if (v["theme"]["titleIcon"] == true) {
-                settings.push({ label: localMessage["titleIcon"][defLag], description: localMessage["titleShadowDesc"][defLag], id: 'titleIcon', enable: true });
-            } else {
-                settings.push({ label: localMessage["titleIcon"][defLag], description: localMessage["titleShadowDesc"][defLag], id: 'titleIcon', enable: false });
-            }
+            settings.push({ label: localMessage["titleIcon"][defLag], description: localMessage["titleShadowDesc"][defLag], id: 'titleIcon', enable: v?.theme?.titleIcon ?? false });
             // 文档树和大纲
-            if (v["theme"]["doctree"] == true) {
-                settings.push({ label: localMessage["ftitem"][defLag], id: 'doctree', enable: true });
-            } else {
-                settings.push({ label: localMessage["ftitem"][defLag], id: 'doctree', enable: false });
-            }
+            settings.push({ label: localMessage["ftitem"][defLag], id: 'doctree', enable: v?.theme?.doctree ?? false });
             // 代码块
-            if (v["theme"]["codeBlock"] == true) {
-                settings.push({ label: localMessage["cbitem"][defLag], id: 'codeBlock', enable: true });
-            } else {
-                settings.push({ label: localMessage["cbitem"][defLag], id: 'codeBlock', enable: false });
-            }
+            settings.push({ label: localMessage["cbitem"][defLag], id: 'codeBlock', enable: v?.theme?.codeBlock ?? false });
             // 引用
-            if (v["theme"]["reference"] == true) {
-                settings.push({ label: localMessage["refitem"][defLag], id: 'referenceBlock', enable: true });
-            } else {
-                settings.push({ label: localMessage["refitem"][defLag], id: 'referenceBlock', enable: false });
-            }
+            settings.push({ label: localMessage["refitem"][defLag], id: 'referenceBlock', enable: v?.theme?.reference ?? false });
             // 标记
-            if (v["theme"]["mark"] == true) {
-                settings.push({ label: localMessage["markitem"][defLag], id: 'mark', enable: true });
-            } else {
-                settings.push({ label: localMessage["markitem"][defLag], id: 'mark', enable: false });
-            }
+            settings.push({ label: localMessage["markitem"][defLag], id: 'mark', enable: v?.theme?.mark ?? false });
             // 集市
-            if (v["theme"]["bazaar"] == true) {
-                settings.push({ label: localMessage["bazitem"][defLag], id: 'bazaarStyle', enable: true });
-            } else {
-                settings.push({ label: localMessage["bazitem"][defLag], id: 'bazaarStyle', enable: false });
-            }
+            settings.push({ label: localMessage["bazitem"][defLag], id: 'bazaarStyle', enable: v?.theme?.bazaar ?? false });
             // 嵌入块
-            if (v["theme"]["embeddedBlock"] == true) {
-                settings.push({ label: localMessage["emitem"][defLag], description: localMessage["emdesc"][defLag], id: 'embeddedBlock', enable: true });
-            } else {
-                settings.push({ label: localMessage["emitem"][defLag], description: localMessage["emdesc"][defLag], id: 'embeddedBlock', enable: false });
-            }
+            settings.push({ label: localMessage["emitem"][defLag], description: localMessage["emdesc"][defLag], id: 'embeddedBlock', enable: v?.theme?.embeddedBlock ?? false });
             // 数据库
-            if (v["theme"]["database"] == true) {
-                settings.push({ label: localMessage["dbitem"][defLag], id: 'database', enable: true });
-            } else {
-                settings.push({ label: localMessage["dbitem"][defLag], id: 'database', enable: false });
-            }
+            settings.push({ label: localMessage["dbitem"][defLag], id: 'database', enable: v?.theme?.database ?? false });
             // 快捷键面板
-            if (v["plugins"]["shortcutPanel"] == true) {
-                settings.push({ label: localMessage["scitem"][defLag], id: 'scPanelStyle', enable: true });
-            } else {
-                settings.push({ label: localMessage["scitem"][defLag], id: 'scPanelStyle', enable: false });
-            }
+            settings.push({ label: localMessage["scitem"][defLag], id: 'scPanelStyle', enable: v?.plugins?.shortcutPanel ?? false });
             // 替换背景图片插件电脑端
-            if (v["plugins"]["backgroundCoverDesktop"] == true) {
-                settings.push({ label: localMessage["bgdesktop"][defLag], description: localMessage["bgdesc"][defLag], id: 'backgroundCoverDesktop', enable: true });
-            } else {
-                settings.push({ label: localMessage["bgdesktop"][defLag], description: localMessage["bgdesc"][defLag], id: 'backgroundCoverDesktop', enable: false });
-            }
+            settings.push({ label: localMessage["bgdesktop"][defLag], description: localMessage["bgdesc"][defLag], id: 'backgroundCoverDesktop', enable: v?.plugins?.backgroundCoverDesktop ?? false });
             // 替换背景图片插件移动端
-            if (v["plugins"]["backgroundCoverMobile"] == true) {
-                settings.push({ label: localMessage["bgmobile"][defLag], description: localMessage["bgdesc"][defLag], id: 'backgroundCoverMobile', enable: true });
-            } else {
-                settings.push({ label: localMessage["bgmobile"][defLag], description: localMessage["bgdesc"][defLag], id: 'backgroundCoverMobile', enable: false });
-            }
+            settings.push({ label: localMessage["bgmobile"][defLag], description: localMessage["bgdesc"][defLag], id: 'backgroundCoverMobile', enable: v?.plugins?.backgroundCoverMobile ?? false });
             // 数学公式增强插件
-            if (v["plugins"]["mathPanel"] == true) {
-                settings.push({ label: localMessage["mathitem"][defLag], description: localMessage["mathdesc"][defLag], id: 'mathPanel', enable: true });
-            } else {
-                settings.push({ label: localMessage["mathitem"][defLag], description: localMessage["mathdesc"][defLag], id: 'mathPanel', enable: false });
-            }
+            settings.push({ label: localMessage["mathitem"][defLag], description: localMessage["mathdesc"][defLag], id: 'mathPanel', enable: v?.plugins?.mathPanel ?? false });
             return settings;
         }
     }
@@ -205,34 +149,9 @@ export async function createSettingsWindow() {
             var id = checkbox.id as SettingPanelId;
             var ck = (checkbox as HTMLInputElement).checked;
             // ! 保存设置到json
-            if (id == "codeBlock") {
-                saveSt["theme"]["codeBlock"] = ck;
-            } else if (id == "referenceBlock") {
-                saveSt["theme"]["reference"] = ck;
-            } else if (id == "bazaarStyle") {
-                saveSt["theme"]["bazaar"] = ck;
-            } else if (id == "embeddedBlock") {
-                saveSt["theme"]["embeddedBlock"] = ck;
-            } else if (id == "titleBlock") {
-                saveSt["theme"]["title"] = ck;
-            } else if (id == "titleShadow") {
-                saveSt["theme"]["titleShadow"] = ck;
-            } else if (id == "titleIcon") {
-                saveSt["theme"]["titleIcon"] = ck;
-            } else if (id == "scPanelStyle") {
-                saveSt["plugins"]["shortcutPanel"] = ck;
-            } else if (id == "database") {
-                saveSt["theme"]["database"] = ck;
-            } else if (id == "doctree") {
-                saveSt["theme"]["doctree"] = ck;
-            } else if (id == 'backgroundCoverDesktop') {
-                saveSt["plugins"]["backgroundCoverDesktop"] = ck;
-            } else if (id == 'backgroundCoverMobile') {
-                saveSt["plugins"]["backgroundCoverMobile"] = ck;
-            } else if (id == 'mathPanel') {
-                saveSt["plugins"]["mathPanel"] = ck;
-            } else if (id == 'mark') {
-                saveSt["theme"]["mark"] = ck;
+            var mapping = settingKeyMap[id];
+            if (mapping) {
+                saveSt[mapping.section][mapping.key] = ck;
             }
         });
         // 修改配置文件版本
