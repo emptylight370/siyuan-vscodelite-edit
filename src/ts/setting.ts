@@ -3,9 +3,10 @@ import {
     putSettings,
     _postMessage
 } from "./api";
+import { SettingItem, SettingPanelId, ThemeConfig } from "./types";
 
 /** 
- * @description 创建一个包含标签和复选框的 HTML 结构
+ * 创建一个包含标签和复选框的 HTML 结构
  */
 export async function createSettingsWindow() {
     // 创建设置窗口大框
@@ -37,7 +38,6 @@ export async function createSettingsWindow() {
         dialogContainer.style.width = '60vw';
     }
     dialogContainer.style.height = '80vh';
-    dialogContainer.style.maxWidth = '1280px';
     dialog.appendChild(dialogContainer);
 
     // 创建设置窗口
@@ -56,8 +56,8 @@ export async function createSettingsWindow() {
 
     // 获取设置文件数组
     async function fetchSettingsArray() {
-        let re;
-        await _getFile("/data/snippets/vsc_edit.config.json", async (v) => {
+        let re: SettingItem[];
+        await _getFile("/data/snippets/vsc_edit.config.json", async (v: ThemeConfig) => {
             if (v == null) {
                 v = defaultConf;
             }
@@ -65,8 +65,8 @@ export async function createSettingsWindow() {
         });
         return re;
 
-        async function getSettingArrays(v) {
-            let settings = [];
+        async function getSettingArrays(v: ThemeConfig) {
+            let settings: SettingItem[] = [];
             // ! 设置页添加设置选项
             // 标题
             if (v["theme"]["title"] == true) {
@@ -80,7 +80,7 @@ export async function createSettingsWindow() {
             } else {
                 settings.push({ label: localMessage["titleShadow"][defLag], description: localMessage["titleShadowDesc"][defLag], id: 'titleShadow', enable: false });
             }
-            // 标题阴影
+            // 标题图标
             if (v["theme"]["titleIcon"] == true) {
                 settings.push({ label: localMessage["titleIcon"][defLag], description: localMessage["titleShadowDesc"][defLag], id: 'titleIcon', enable: true });
             } else {
@@ -104,6 +104,7 @@ export async function createSettingsWindow() {
             } else {
                 settings.push({ label: localMessage["refitem"][defLag], id: 'referenceBlock', enable: false });
             }
+            // 标记
             if (v["theme"]["mark"] == true) {
                 settings.push({ label: localMessage["markitem"][defLag], id: 'mark', enable: true });
             } else {
@@ -156,7 +157,7 @@ export async function createSettingsWindow() {
     }
 
     // 创建标签和复选框
-    var settings = await fetchSettingsArray();
+    var settings: SettingItem[] = await fetchSettingsArray();
 
     // 遍历数组添加选项
     settings.forEach(setting => {
@@ -167,27 +168,27 @@ export async function createSettingsWindow() {
             label = document.createElement('span');
         }
         label.textContent = setting.label;
-        label.setAttribute("for", setting.id);
+        label.setAttribute("for", (setting.id as string));
         label.className = "fn__flex-1";
 
         if (setting?.description) {
-            var description = document.createElement('div');
+            var description: HTMLDivElement = document.createElement('div');
             description.textContent = setting.description;
-            description.setAttribute("for", setting.id);
+            description.setAttribute("for", (setting.id as string));
             description.className = "b3-label__text";
             label.appendChild(description);
         }
 
-        var space = document.createElement('span');
+        var space: HTMLSpanElement = document.createElement('span');
         space.className = 'fn__space';
 
-        var checkbox = document.createElement('input');
+        var checkbox: HTMLInputElement = document.createElement('input');
         checkbox.type = 'checkbox';
-        checkbox.id = setting.id;
+        checkbox.id = setting.id as string;
         checkbox.checked = setting.enable;
         checkbox.className = "b3-switch fn__flex-center vslite_sets";
 
-        var div = document.createElement('label');
+        var div: HTMLLabelElement = document.createElement('label');
         div.className = "fn__flex b3-label";
         div.appendChild(label);
         div.appendChild(space);
@@ -197,16 +198,15 @@ export async function createSettingsWindow() {
     });
 
     async function closeAndSave() {
-        var saveSt = defaultConf;
+        // 在默认配置的基础上修改配置，可以增加原来没有的配置
+        var saveSt: ThemeConfig = defaultConf;
         var ckb = document.getElementsByClassName("vslite_sets");
         Array.from(ckb).forEach(checkbox => {
-            var id = checkbox.id;
+            var id = checkbox.id as SettingPanelId;
             var ck = (checkbox as HTMLInputElement).checked;
             // ! 保存设置到json
             if (id == "codeBlock") {
                 saveSt["theme"]["codeBlock"] = ck;
-            } else if (id == "referenceBlock") {
-                saveSt["theme"]["reference"] = ck;
             } else if (id == "referenceBlock") {
                 saveSt["theme"]["reference"] = ck;
             } else if (id == "bazaarStyle") {

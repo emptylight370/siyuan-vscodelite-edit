@@ -13,7 +13,7 @@ import { createSettingsWindow } from "./ts/setting";
 // ! js代码加载后立即执行
 (async function () {
     // 获取自己的css表
-    const cssTable = document.getElementById('themeStyle');
+    const cssTable = document.getElementById('themeStyle') as HTMLLinkElement;
     await loadGlobalVars();
     // console.log(defLag);
     // console.log(cssTable);
@@ -69,7 +69,7 @@ window.destroyTheme = async () => {
 };
 
 /**
- * @description 创建工具栏的按钮
+ * 创建工具栏的按钮
  */
 function addThemeToolBar() {
     var vscToolBar = document.getElementById("vscleToolbar");
@@ -78,105 +78,125 @@ function addThemeToolBar() {
         var windowControls = document.getElementById("windowControls");
         vscToolBar = document.createElement("div");
         vscToolBar.id = "vscleToolbar";
-        vscToolBar.setAttribute("class", "toolbar__item ariaLabel");
         vscToolBar.setAttribute("aria-label", localMessage["label-aria"][defLag]);
-        vscToolBar.setAttribute("style", "width=23.5px;height=23.5px");
         if (toolbarVIP == null) {
             try {
+                vscToolBar.className = "toolbar__item ariaLabel";
+                vscToolBar.style.width = "23.5px";
+                vscToolBar.style.height = "23.5px";
                 windowControls.parentElement.insertBefore(vscToolBar, windowControls);
             } catch (error) {
                 document.body.classList.add("vscmobile");
                 vscToolBar.className = "block__icon fn__flex-center ariaLabel";
+                vscToolBar.style.width = "14px";
+                vscToolBar.style.height = "14px";
                 var breadcrumbButtons = document.getElementsByClassName("block__icon fn__flex-center ariaLabel");
-                setTimeout(() => {
+                try {
                     var firstButton = breadcrumbButtons[0];
                     if (firstButton) {
                         firstButton.parentElement.insertBefore(vscToolBar, firstButton);
+                    } else {
+                        throw new Error("Can't find first button in breadcrumb.");
                     }
-                }, 1000);
+                } catch {
+                    setTimeout(() => {
+                        var firstButton = breadcrumbButtons[0];
+                        if (firstButton) {
+                            firstButton.parentElement.insertBefore(vscToolBar, firstButton);
+                        }
+                    }, 1000);
+                }
             }
         } else {
+            vscToolBar.className = "toolbar__item ariaLabel";
+            vscToolBar.style.width = "23.5px";
+            vscToolBar.style.height = "23.5px";
             toolbarVIP.parentElement.insertBefore(vscToolBar, toolbarVIP);
         }
     }
     vscToolBar.innerHTML = "VC";
     // vscToolBar.innerHTML = "<img src=\"resources\\h6.bmp\"\\>";
-    vscToolBar.addEventListener("click", (event) => {
+    vscToolBar.addEventListener("click", () => {
         // 调用函数创建设置窗口
         createSettingsWindow();
     });
 }
 
 /**
- * @description 向css表中插入引用的语句
- * @param table
- * @param labels
- * @return 
+ * 向css表中插入引用的语句
  */
-function addImports(table, labels) {
-    table = table.sheet;
+function addImports(table: HTMLLinkElement, labels: string[]) {
+    var sheet: CSSStyleSheet = table.sheet;
     var i = 0;
     // ! 向css表中插入引用的语句
     labels.forEach(it => {
-        if (it == 'codeBlock') {
-            table.insertRule('@import url(sub/block/codeBlock.css);', 4 + i);
-            i += 1;
-        } else if (it == 'reference') {
-            table.insertRule('@import url(sub/block/reference.css);', 4 + i);
-            i += 1;
-        } else if (it == 'bazaar') {
-            table.insertRule('@import url(sub/app/bazaar.css);', 4 + i);
-            i += 1;
-        } else if (it == 'embeddedBlock') {
-            table.insertRule('@import url(sub/block/embeddedBlock.css);', 4 + i);
-            i += 1;
-        } else if (it == 'title') {
-            table.insertRule('@import url(sub/block/title.css);', 4 + i);
-            i += 1;
-        } else if (it == 'titleShadow') {
-            table.insertRule('@import url(sub/block/title-shadow.css);', 4 + i);
-            i += 1;
-        } else if (it == 'titleIcon') {
-            table.insertRule('@import url(sub/block/title-icon.css);', 4 + i);
-            i += 1;
-        } else if (it == 'shortcutPanel') {
-            table.insertRule('@import url(sub/plugin/keymapPlugin.css);', 4 + i);
-            i += 1;
-        } else if (it == 'database') {
-            table.insertRule('@import url(sub/block/database.css);', 4 + i);
-            i += 1;
-        } else if (it == 'doctree') {
-            table.insertRule('@import url(sub/app/filetree.css);', 4 + i);
-            i += 1;
-        } else if (it == 'backgroundCoverDesktop') {
-            if (!document.body.classList.contains('vscmobile')) {
-                table.insertRule('@import url(sub/plugin/backgroundPlugin.css);', 4 + i);
+        switch (it) {
+            case "codeBlock":
+                sheet.insertRule('@import url(sub/block/codeBlock.css);', 4 + i);
                 i += 1;
-            }
-        } else if (it == 'backgroundCoverMobile') {
-            if (document.body.classList.contains('vscmobile')) {
-                table.insertRule('@import url(sub/plugin/backgroundPlugin.css);', 4 + i);
+                break;
+            case "reference":
+                sheet.insertRule('@import url(sub/block/reference.css);', 4 + i);
                 i += 1;
-            }
-        } else if (it == 'mathPanel') {
-            if (!document.body.classList.contains('vscmobile')) {
-                table.insertRule('@import url(sub/plugin/mathEnhance.css);', 4 + i);
+                break;
+            case "bazaar":
+                sheet.insertRule('@import url(sub/app/bazaar.css);', 4 + i);
                 i += 1;
-            }
-        } else if (it == 'mark') {
-            table.insertRule('@import url(sub/block/mark.css);', 4 + i);
-            i += 1;
+                break;
+            case "embeddedBlock":
+                sheet.insertRule('@import url(sub/block/embeddedBlock.css);', 4 + i);
+                i += 1;
+                break;
+            case "title":
+                sheet.insertRule('@import url(sub/block/title.css);', 4 + i);
+                i += 1;
+                break;
+            case "titleShadow":
+                sheet.insertRule('@import url(sub/block/title-shadow.css);', 4 + i);
+                i += 1;
+                break;
+            case "titleIcon":
+                sheet.insertRule('@import url(sub/block/title-icon.css);', 4 + i);
+                i += 1;
+                break;
+            case "shortcutPanel":
+                sheet.insertRule('@import url(sub/plugin/keymapPlugin.css);', 4 + i);
+                i += 1;
+                break;
+            case "database":
+                sheet.insertRule('@import url(sub/block/database.css);', 4 + i);
+                i += 1;
+                break;
+            case "doctree":
+                sheet.insertRule('@import url(sub/app/filetree.css);', 4 + i);
+                i += 1;
+                break;
+            case "backgroundCoverDesktop":
+            case "backgroundCoverMobile":
+                sheet.insertRule('@import url(sub/plugin/backgroundPlugin.css);', 4 + i);
+                i += 1;
+                break;
+            case "mathPanel":
+                if (!document.body.classList.contains('vscmobile')) {
+                    sheet.insertRule('@import url(sub/plugin/mathEnhance.css);', 4 + i);
+                    i += 1;
+                }
+                break;
+            case "mark":
+                sheet.insertRule('@import url(sub/block/mark.css);', 4 + i);
+                i += 1;
+                break;
+            default:
+                break;
         }
     });
 }
 
 /**
- * @description 添加固定属性
  * ! 添加固定属性
- * @param {String[]} settings 
  */
-function addFixedAttribute(settings) {
-    function bg(times) {
+function addFixedAttribute(settings: string[]) {
+    function bg(times: number) {
         // 背景自定义插件，部分情况下插件加载缓慢可重复检测一次
         var bglayer = document.getElementById("bglayer");
         if (bglayer) {
@@ -200,7 +220,7 @@ function addFixedAttribute(settings) {
         }
     }
     // 监听背景自定义插件的属性修改
-    function bgobserver(times) {
+    function bgobserver(times: number) {
         var bglayer = document.getElementById("bglayer");
         if (bglayer) {
             globalThis.observer.bgObserver = new MutationObserver(function (mutationsList) {
@@ -241,26 +261,35 @@ function addFixedAttribute(settings) {
 
 /**
  * ! 添加导出pdf时候的样式
- * @param {*} lab 
  */
-async function addPdfStyle(lab) {
+async function addPdfStyle(lab: string[]) {
     var list = [];
     list.push("@charset \"UTF-8\";");
     lab.forEach(it => {
-        if (it == 'codeBlock') {
-            list.push('@import url(block/codeBlock.css);');
-        } else if (it == 'reference') {
-            list.push('@import url(block/reference.css);');
-        } else if (it == 'title') {
-            list.push('@import url(block/title.css);');
-        } else if (it == 'titleShadow') {
-            list.push('@import url(block/title-shadow.css);');
-        } else if (it == 'titleIcon') {
-            list.push('@import url(block/title-icon.css);');
-        } else if (it == 'database') {
-            list.push('@import url(block/database.css);');
-        } else if (it == 'mark') {
-            list.push('@import url(block/mark.css);');
+        switch (it) {
+            case "codeBlock":
+                list.push('@import url(block/codeBlock.css);');
+                break;
+            case "reference":
+                list.push('@import url(block/reference.css);');
+                break;
+            case "title":
+                list.push('@import url(block/title.css);');
+                break;
+            case "titleShadow":
+                list.push('@import url(block/title-shadow.css);');
+                break;
+            case "titleIcon":
+                list.push('@import url(block/title-icon.css);');
+                break;
+            case "database":
+                list.push('@import url(block/database.css);');
+                break;
+            case "mark":
+                list.push('@import url(block/mark.css);');
+                break;
+            default:
+                break;
         }
     });
     var str = list.join("\n");
@@ -269,13 +298,13 @@ async function addPdfStyle(lab) {
 
 /**
  * 移除CSS规则，用于在可加载js的时候去掉PDF导出适配
- * @param {*} table 
+ * @param * table 
  */
-function removeCSSRules(table) {
-    table = table.sheet;
+function removeCSSRules(table: HTMLLinkElement) {
+    var sheet = table.sheet as CSSStyleSheet;
 
     // 移除特定的 @import 规则
-    var removeImportRule = (sheet, url) => {
+    var removeImportRule = (sheet: CSSStyleSheet, url: string) => {
         const rules = Array.from(sheet.cssRules);
         for (let i = 0; i < rules.length; i++) {
             const rule = rules[i];
@@ -287,5 +316,5 @@ function removeCSSRules(table) {
     };
 
     // 移除 @import("sub/pdfPreview.css") 规则
-    removeImportRule(table, 'sub/pdfPreview.css');
+    removeImportRule(sheet, 'sub/pdfPreview.css');
 }
