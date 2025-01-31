@@ -14,9 +14,9 @@ div[vslite="SettingPanel"] {
             display: inline-block;
             width: 1.55rem;
             height: 1.55rem;
-            background: url(../../resources/h2.svg) no-repeat center center;
-            background-size: contain;
-            filter: invert(75%);
+            mask: url(../../resources/h2.svg) no-repeat center center;
+            mask-size: contain;
+            background-color: var(--mk-block-header-h2);
             padding-top: 7.44px;
             margin-right: 0.2em;
         }
