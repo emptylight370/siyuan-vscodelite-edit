@@ -39,15 +39,17 @@ Limited by the configuration loading method, updated configurations for new vers
 
 > Full changelog view [ChangeLog](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/main/changelog.md)
 
-- v2.1.3
-  - Fix VC button display problem on desktop
 - v2.1.2
+  - Fix VC button display problem on desktop
   - Migrate the market's tab focus effect to the Property Panel
   - Add rounded corners to the dock bar icon
   - Tab drop-down panel Close tab button Add mouse hover highlight style
   - Add a mouse hover highlight style to the drop-down panel
 - v2.1.1
   - Fix problems
+- v2.1.0
+  - Fix heading icon not display in setting panel
+  - Refactor JavaScript to TypeScript and optimize the code
 
 # Special fitness
 
