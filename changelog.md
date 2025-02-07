@@ -1,5 +1,10 @@
 # ChangeLog
 
+## v2.1.3
+
+- 修复桌面端VC图标显示问题
+- Fix VC button display problem on desktop
+
 ## v2.1.2
 
 - 将集市的标签页聚焦效果移植到属性面板

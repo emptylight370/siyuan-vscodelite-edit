@@ -39,6 +39,8 @@
 
 > 完整更新日志查看[changelog](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/main/changelog.md)
 
+- v2.1.3
+  - 修复桌面端VC按钮显示问题
 - v2.1.2
   - 将集市的标签页聚焦效果移植到属性面板
   - 为dock栏图标添加圆角
@@ -46,9 +48,6 @@
   - 下拉面板添加鼠标悬浮高亮样式
 - v2.1.1
   - 修复问题
-- v2.1.0
-  - 修复设置面板中不显示标题图标问题
-  - 重构JavaScript代码到TypeScript，并优化代码
 
 # 特殊适配
 

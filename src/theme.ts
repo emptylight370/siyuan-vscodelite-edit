@@ -81,7 +81,6 @@ function addThemeToolBar() {
         if (toolbarVIP == null) {
             try {
                 vscToolBar.className = "toolbar__item ariaLabel";
-                vscToolBar.style.width = "23.5px";
                 vscToolBar.style.height = "23.5px";
                 windowControls.parentElement.insertBefore(vscToolBar, windowControls);
             } catch (error) {
@@ -108,7 +107,6 @@ function addThemeToolBar() {
             }
         } else {
             vscToolBar.className = "toolbar__item ariaLabel";
-            vscToolBar.style.width = "23.5px";
             vscToolBar.style.height = "23.5px";
             toolbarVIP.parentElement.insertBefore(vscToolBar, toolbarVIP);
         }
