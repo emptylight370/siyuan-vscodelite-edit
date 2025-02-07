@@ -2,15 +2,17 @@
 
 ## v2.1.3
 
+- 修复移动端VC按钮显示问题(#18)
+- Fix VC button display problem on mobile(#18)
 
 ## v2.1.2
 
-- 修复桌面端VC图标显示问题
+- 修复桌面端VC按钮显示问题(#18)
 - 将集市的标签页聚焦效果移植到属性面板
 - 为dock栏图标添加圆角
 - 标签页下拉面板关闭标签页按钮添加鼠标悬浮高亮样式
 - 下拉面板添加鼠标悬浮高亮样式
-- Fix VC button display problem on desktop
+- Fix VC button display problem on desktop(#18)
 - Migrate the market's tab focus effect to the Property Panel
 - Add rounded corners to the dock bar icon
 - Tab drop-down panel Close tab button Add mouse hover highlight style

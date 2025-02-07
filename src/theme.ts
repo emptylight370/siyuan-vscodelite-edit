@@ -86,7 +86,6 @@ function addThemeToolBar() {
             } catch (error) {
                 document.body.classList.add("vscmobile");
                 vscToolBar.className = "block__icon fn__flex-center ariaLabel";
-                vscToolBar.style.width = "14px";
                 vscToolBar.style.height = "14px";
                 var breadcrumbButtons = document.getElementsByClassName("block__icon fn__flex-center ariaLabel");
                 try {
