@@ -1,9 +1,9 @@
 # VSCode Lite Edit
 
-![GitHub Release Date](https://img.shields.io/github/release-date/emptylight370/siyuan-vscodelite-edit?display_date=published_at)
-![GitHub Release](https://img.shields.io/github/v/release/emptylight370/siyuan-vscodelite-edit)
-![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/emptylight370/siyuan-vscodelite-edit/latest/total)
-![GitHub Repo stars](https://img.shields.io/github/stars/emptylight370/siyuan-vscodelite-edit)
+![GitHub Release Date](https://img.shields.io/github/release-date/emptylight370/siyuan-vscodelite-edit?display_date=published_at&link=https%3A%2F%2Fgithub.com%2Femptylight370%2Fsiyuan-vscodelite-edit/releases/latest)
+![GitHub Release](https://img.shields.io/github/v/release/emptylight370/siyuan-vscodelite-edit?link=https%3A%2F%2Fgithub.com%2Femptylight370%2Fsiyuan-vscodelite-edit/releases/latest)
+![GitHub Downloads (all assets, latest releases)](https://img.shields.io/github/downloads/emptylight370/siyuan-vscodelite-edit/latest/total?link=https%3A%2F%2Fgithub.com%2Femptylight370%2Fsiyuan-vscodelite-edit)
+![GitHub Repo stars](https://img.shields.io/github/stars/emptylight370/siyuan-vscodelite-edit?link=https%3A%2F%2Fgithub.com%2Femptylight370%2Fsiyuan-vscodelite-edit)
 
 A further beautification of the interface from VSCode Lite.
 
