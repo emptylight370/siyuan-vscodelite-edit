@@ -1,5 +1,12 @@
 # ChangeLog
 
+## v2.1.4
+
+- 修复背景图片插件适配开关判断问题
+- 修改退出聚焦按钮颜色
+- Fixed the background image plugin compatibility switch issue
+- Modified the color of the exit focus button
+
 ## v2.1.3
 
 - 修复移动端VC按钮显示问题(#18)

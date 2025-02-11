@@ -39,6 +39,9 @@ Limited by the configuration loading method, updated configurations for new vers
 
 > Full changelog view [ChangeLog](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/main/changelog.md)
 
+- v2.1.4
+  - Fixed the background image plugin compatibility switch issue
+  - Modified the color of the exit focus button
 - v2.1.3
   - Fix VC button display problem on mobile
 - v2.1.2
@@ -47,8 +50,6 @@ Limited by the configuration loading method, updated configurations for new vers
   - Add rounded corners to the dock bar icon
   - Tab drop-down panel Close tab button Add mouse hover highlight style
   - Add a mouse hover highlight style to the drop-down panel
-- v2.1.1
-  - Fix problems
 
 # Special fitness
 

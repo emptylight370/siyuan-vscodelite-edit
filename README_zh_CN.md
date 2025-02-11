@@ -39,6 +39,9 @@
 
 > 完整更新日志查看[changelog](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/main/changelog.md)
 
+- v2.1.4
+  - 修复背景图片插件适配开关判断问题
+  - 修改退出聚焦按钮颜色
 - v2.1.3
   - 修复移动端VC按钮显示问题
 - v2.1.2
@@ -47,8 +50,6 @@
   - 为dock栏图标添加圆角
   - 标签页下拉面板关闭标签页按钮添加鼠标悬浮高亮样式
   - 下拉面板添加鼠标悬浮高亮样式
-- v2.1.1
-  - 修复问题
 
 # 特殊适配
 
