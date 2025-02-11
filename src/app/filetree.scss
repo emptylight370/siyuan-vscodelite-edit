@@ -83,8 +83,17 @@
 }
 
 // 拖动条
-.layout__resize--lr::after {
-    visibility: hidden;
+.layout__resize--lr {
+    &:hover::after {
+        visibility: visible;
+        background-color: #007FD4;
+        width: 2px;
+        left: -1px;
+    }
+
+    &::after {
+        visibility: hidden;
+    }
 }
 
 .block__logo svg {
