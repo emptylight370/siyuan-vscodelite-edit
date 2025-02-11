@@ -251,7 +251,7 @@ function addFixedAttribute(settings: EnableSettings[]) {
     // 运行
     // >>>>>>>>>>>>>>>>>>>>>>>>>>>>
     // 如果设置启用背景插件才进入判断
-    if (settings.includes("backgroundCoverDesktop") || settings.includes("backgroundCoverMobile")) {
+    if (settings.includes("backgroundCoverDesktop") && !document.body.classList.contains('vscmobile') || settings.includes("backgroundCoverMobile") && document.body.classList.contains('vscmobile')) {
         bg(0);
         if (globalThis.observer.bgObserver == null) {
             bgobserver(0);
