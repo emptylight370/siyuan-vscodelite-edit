@@ -12,13 +12,21 @@
     color: var(--lite-li-items);
 }
 
-/* 同时用于修改有序列表和无序列表的块标位置 */
-.li[data-subtype]>.protyle-action::after {
+/* 用于修改有序列表和无序列表的块标位置 */
+.li[data-subtype=o]>.protyle-action::after {
     padding: 3px 2px;
     display: flex;
     justify-content: center;
     /* color: var(--lite-li-items); */
     margin: -1.2em 0 0 -0.5em !important;
+}
+
+.li[data-subtype=u]>.protyle-action::after {
+    padding: 3px 2px;
+    display: flex;
+    justify-content: center;
+    /* color: var(--lite-li-items); */
+    margin: -0.8em 0 0 -0.55em !important;
 }
 
 /*
