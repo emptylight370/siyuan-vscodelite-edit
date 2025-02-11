@@ -4,8 +4,10 @@
 
 - 修复背景图片插件适配开关判断问题
 - 修改退出聚焦按钮颜色
+- 微调列表序号位置
 - Fixed the background image plugin compatibility switch issue
 - Modified the color of the exit focus button
+- Fine tune list sequence position
 
 ## v2.1.3
 

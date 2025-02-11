@@ -15,11 +15,10 @@
 /* 同时用于修改有序列表和无序列表的块标位置 */
 .li[data-subtype]>.protyle-action::after {
     padding: 3px 2px;
-    width: 24px;
     display: flex;
     justify-content: center;
     /* color: var(--lite-li-items); */
-    margin: -20px 0 0 -8px !important;
+    margin: -1.2em 0 0 -0.5em !important;
 }
 
 /*

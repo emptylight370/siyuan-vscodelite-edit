@@ -42,6 +42,7 @@ Limited by the configuration loading method, updated configurations for new vers
 - v2.1.4
   - Fixed the background image plugin compatibility switch issue
   - Modified the color of the exit focus button
+  - Fine tune list sequence position
 - v2.1.3
   - Fix VC button display problem on mobile
 - v2.1.2
