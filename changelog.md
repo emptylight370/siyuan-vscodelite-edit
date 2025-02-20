@@ -1,5 +1,10 @@
 # ChangeLog
 
+## v2.1.5
+
+- 修复任务列表可能不显示标记问题(#20)
+- Fixed issue that task list may not display icon in some cases(#20)
+
 ## v2.1.4
 
 - 修复背景图片插件适配开关判断问题
