@@ -1,4 +1,4 @@
-/** 
+/**
  * NOTE 定义需要用到的api
  * 从[Savor](https://github.com/royc01/notion-theme/blob/main/theme.js)抄的
  * 来自[思源api文档](https://github.com/siyuan-note/siyuan/blob/master/API_zh_CN.md)
@@ -25,7 +25,7 @@ export async function _rqFORSiyuan(url: string, data: any) {
         return null;
 }
 
-/** 
+/**
  * 获取文件
  * @param path 文件路径
  * @param then then?

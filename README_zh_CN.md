@@ -37,7 +37,7 @@
 
 # 更新日志
 
-> 完整更新日志查看[changelog](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/main/changelog.md)
+> 完整更新日志查看[changelog](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/changelog.md)
 
 - v2.1.5
   - 修复任务列表可能不显示标记问题

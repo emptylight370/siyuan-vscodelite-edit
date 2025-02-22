@@ -37,7 +37,7 @@ Limited by the configuration loading method, updated configurations for new vers
 
 # ChangeLog
 
-> Full changelog view [ChangeLog](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/main/changelog.md)
+> Full changelog view [ChangeLog](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/changelog.md)
 
 - v2.1.5
   - Fixed issue that task list may not display icon in some cases
