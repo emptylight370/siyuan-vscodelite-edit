@@ -1,5 +1,10 @@
 # ChangeLog
 
+## v2.2.0
+
+- 能够在导出PDF时手动加载自定义块样式插件的样式文件
+- Be able to load plugin Custom Block Styles' stylesheet manually when exporting PDF
+
 ## v2.1.5
 
 - 修复任务列表可能不显示标记问题(#20)
