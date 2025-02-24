@@ -8,7 +8,7 @@ export async function loadGlobalVars() {
      * ! 默认配置文件
      */
     globalThis.defaultConf = {
-        "version": 9,
+        "version": 10,
         "theme": {
             "codeBlock": true,
             "reference": true,
