@@ -39,8 +39,8 @@ Limited by the configuration loading method, updated configurations for new vers
 
 > Full changelog view [ChangeLog](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/changelog.md)
 
-- 2.2.0
-  - Be able to load plugin Custom Block Styles' stylesheet manually when exporting PDF
+- v2.2.1
+  - Revert changes in 2.2.0
 - v2.1.5
   - Fixed issue that task list may not display icon in some cases
 - v2.1.4
@@ -56,7 +56,7 @@ It is recommended to disable the plugin compatibility switch when no correspondi
 Currently adapted plugins are:
 
 - Shortcut key panel(Category title color)
-- Custom block Styles(fix display problem in embedded block caused by theme, be able to load plugin style manually when exporting PDF)
+- Custom block Styles(fix display problem in embedded block caused by theme)
 - Background Cover(By making the foreground transparent. Please set "foreground transparency" to 0 in the plugin settings to disable it, and enable the Blurring in settings(set to greater than 0))
 - Math Enhancement Plugin(Limit plugin preview width)
 
