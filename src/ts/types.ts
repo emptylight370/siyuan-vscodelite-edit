@@ -142,6 +142,7 @@ interface SettingKeyMap {
 
 /**
  * 具体设置项映射，由设置面板中的id映射到配置文件中
+ * 设置面板配置项id：配置项范围，配置项键名
  */
 export const settingKeyMap: SettingKeyMap = {
     codeBlock: { section: 'theme', key: 'codeBlock' }, // 代码块样式
@@ -177,6 +178,7 @@ interface EnableSettingsKeyMap {
 
 /**
  * 具体设置项映射，由配置文件中启用项映射到配置文件中
+ * 配置文件启用项：设置项所属范围，设置项键名
  */
 export const EnableSettingsKeyMap: SettingKeyMap = {
     codeBlock: { section: 'theme', key: 'codeBlock' }, // 代码块样式
