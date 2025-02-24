@@ -37,7 +37,6 @@ export interface ThemeConfig {
         mathPanel: boolean;
         backgroundCoverDesktop: boolean;
         backgroundCoverMobile: boolean;
-        exportBlockStyle: boolean;
     };
 }
 
@@ -75,8 +74,6 @@ export interface LocalMessage {
     bgmobile: Record<string, string>;
     mathitem: Record<string, string>;
     mathdesc: Record<string, string>;
-    blockstyleitem: Record<string, string>;
-    blockstyledesc: Record<string, string>;
 }
 
 /** 计时器接口 */
@@ -159,7 +156,6 @@ export const settingKeyMap: SettingKeyMap = {
     mathPanel: { section: 'plugins', key: 'mathPanel' }, // 数学面板
     backgroundCoverDesktop: { section: 'plugins', key: 'backgroundCoverDesktop' }, // 桌面端图片背景
     backgroundCoverMobile: { section: 'plugins', key: 'backgroundCoverMobile' }, // 移动端图片背景
-    exportBlockStyle: { section: 'plugins', key: 'exportBlockStyle' }, //导出块样式
 } as const;
 
 /** 设置面板中使用的ID类型 */
@@ -195,7 +191,6 @@ export const EnableSettingsKeyMap: SettingKeyMap = {
     mathPanel: { section: 'plugins', key: 'mathPanel' }, // 数学面板
     backgroundCoverDesktop: { section: 'plugins', key: 'backgroundCoverDesktop' }, // 桌面端图片背景
     backgroundCoverMobile: { section: 'plugins', key: 'backgroundCoverMobile' }, // 移动端图片背景
-    exportBlockStyle: { section: 'plugins', key: 'exportBlockStyle' }, // 导出块样式
 } as const;
 
 /** 配置文件中启用项类型 */

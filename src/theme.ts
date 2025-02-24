@@ -290,9 +290,6 @@ async function addPdfStyle(lab: EnableSettings[]) {
             case "mark":
                 list.push('@import url(block/mark.css);');
                 break;
-            case "exportBlockStyle":
-                list.push("@import url(../../../../plugins/custom-block/index.css);");
-                break;
             default:
                 break;
         }
