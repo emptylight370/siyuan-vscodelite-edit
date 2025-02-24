@@ -8,7 +8,7 @@ export async function loadGlobalVars() {
      * ! 默认配置文件
      */
     globalThis.defaultConf = {
-        "version": 8,
+        "version": 9,
         "theme": {
             "codeBlock": true,
             "reference": true,
@@ -25,7 +25,8 @@ export async function loadGlobalVars() {
             "shortcutPanel": true,
             "mathPanel": false,
             "backgroundCoverDesktop": true,
-            "backgroundCoverMobile": false
+            "backgroundCoverMobile": false,
+            "exportBlockStyle": false
         }
     };
 
@@ -160,6 +161,14 @@ export async function loadGlobalVars() {
         "mathdesc": {
             "zh_CN": "无法显示水平滚动条",
             "en_US": "Can't show horizon scroll bar"
+        },
+        "blockstyleitem": {
+            "zh_CN": "（插件）导出时加载块样式",
+            "en_US": "(plugin) Load block style when exporting"
+        },
+        "blockstyledesc": {
+            "zh_CN": "请手动使用控制台为\"#preview\"元素添加属性\"custom-block-export\"。",
+            "en_US": "Please add attribute \"custom-block-export\" for \"#preview\" manually in devtool."
         }
     };
 
