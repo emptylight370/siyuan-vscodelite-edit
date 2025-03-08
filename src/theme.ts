@@ -1,8 +1,6 @@
-import {
-    _postMessage,
-    _writeFile
-} from "./ts/api";
+import { _postMessage, _writeFile } from "./ts/api";
 import { loadGlobalVars } from "./ts/defs";
+import { bg, bgobserver } from "./ts/plugins/background";
 import { createSettingsWindow, getSettings } from "./ts/setting";
 import { EnableSettings } from "./ts/types";
 
@@ -197,57 +195,6 @@ function addImports(table: HTMLLinkElement, labels: EnableSettings[]) {
  * @param settings EnableSettings[]
  */
 function addFixedAttribute(settings: EnableSettings[]) {
-    function bg(times: number) {
-        // 背景自定义插件，部分情况下插件加载缓慢可重复检测一次
-        var bglayer = document.getElementById("bglayer");
-        if (bglayer) {
-            var style = window.getComputedStyle(bglayer);
-            var body = document.body;
-            if (style.getPropertyValue("display") != 'none') {
-                body.classList.add('bgenable');
-            } else if (style.getPropertyValue("display") == 'none') {
-                // console.log("disable background");
-                body.classList.remove('bgenable');
-            }
-            // 刚开始每2秒重新检测状态，检测10秒
-            if (times < 5) {
-                globalThis.timer.bgTimer = setTimeout(bg, 2000, times + 1);
-            } else {
-                globalThis.timer.bgTimer = null;
-            }
-        } else if (times == 0 || times == 1) {
-            // 未启用插件3秒后重新检测两遍
-            setTimeout(bg, 3000, times + 1);
-        }
-    }
-    // 监听背景自定义插件的属性修改
-    function bgobserver(times: number) {
-        var bglayer = document.getElementById("bglayer");
-        if (bglayer) {
-            globalThis.observer.bgObserver = new MutationObserver(function (mutationsList) {
-                for (var mutation of mutationsList) {
-                    if (mutation.type === 'attributes' && mutation.attributeName === 'style') {
-                        // 样式发生变化时执行的代码
-                        bg(0);
-                    }
-                }
-            });
-            globalThis.observer.bgObserver.observe(bglayer, {
-                attributes: true, // 监听属性变化
-                attributeFilter: ['style'] // 只监听 style 属性
-            });
-            globalThis.timer.bgObserTimer = null;
-        } else {
-            // if (times == 0 && !document.body.classList.contains('vscmobile')) {
-            if (times == 0) {
-                // 运行失败等待5秒
-                globalThis.timer.bgObserTimer = setTimeout(bgobserver, 5000, 1);
-            } else if (times == 1) {
-                console.error("背景插件监听失败，修改插件启用状态需手动刷新");
-                globalThis.timer.bgObserTimer = null;
-            }
-        }
-    }
     // 运行
     // >>>>>>>>>>>>>>>>>>>>>>>>>>>>
     // 如果设置启用背景插件才进入判断
