@@ -172,7 +172,7 @@ export async function loadGlobalVars() {
         },
         "doubleTabbarMessage": {
             "zh_CN": "VSCE:点击暂时不能改变标签页，请手动点击原标签页",
-            "en_US": "VSCE:Can't change tab while clicking, click original tab manually please"
+            "en_US": "VSCE:Can't change tab while clicking now, click original tab manually please"
         }
     };
 

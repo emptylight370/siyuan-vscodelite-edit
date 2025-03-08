@@ -1,3 +1,5 @@
+import { _postMessage } from "../api";
+
 // 新建并添加第二个标签栏
 export function addSecondTabbar() {
     // 新建一个容器
@@ -27,25 +29,29 @@ export function tabbarobserver(originalTabbar: HTMLUListElement, newTabbar: HTML
         hide_original(originalTabbar, newTabbar);
         globalThis.observer.originalTabbarObserver = new MutationObserver(function (mutationsList) {
             for (var mutation of mutationsList) {
-                if (mutation.type === 'childList') {
+                if (mutation.type === 'childList' || mutation.type === 'characterData') {
                     // 子元素列表发生变化
                     hide_original(originalTabbar, newTabbar);
+                    show_original(originalTabbar, newTabbar);
+                    displayNewTabbar(newTabbar);
                 }
             }
         })
-        globalThis.observer.originalTabbarObserver.observe(originalTabbar, { childList: true, subtree: true });
+        globalThis.observer.originalTabbarObserver.observe(originalTabbar, { childList: true, subtree: true, characterData: true });
     }
     if (newTabbar) {
         // show_original(originalTabbar, newTabbar);
         globalThis.observer.newTabbarObserver = new MutationObserver(function (mutationsList) {
             for (var mutation of mutationsList) {
-                if (mutation.type === 'childList') {
+                if (mutation.type === 'childList' || mutation.type === 'characterData') {
                     // 子元素列表发生变化
+                    hide_original(originalTabbar, newTabbar);
                     show_original(originalTabbar, newTabbar);
+                    displayNewTabbar(newTabbar);
                 }
             }
         })
-        globalThis.observer.newTabbarObserver.observe(newTabbar, { childList: true, subtree: true });
+        globalThis.observer.newTabbarObserver.observe(newTabbar, { childList: true, subtree: true, characterData: true });
     }
 }
 
@@ -61,10 +67,11 @@ function hide_original(original: HTMLUListElement, newTabbar: HTMLUListElement) 
             // 复制新标签
             var newTab = item.cloneNode(true);
             // 点击新标签页时同时激活原标签页
-            newTab.addEventListener("click", () => {
+            newTab.addEventListener("click", async () => {
                 var dataId = (newTab as HTMLLIElement).getAttribute("data-id");
                 var originalTab = original.querySelector(`[data-id="${dataId}"]`);
                 originalTab.classList.remove("fn__none");
+                await _postMessage("ok", globalThis.localMessage.doubleTabbarMessage[globalThis.defLag]);
                 setTimeout(() => {
                     originalTab.classList.add("fn__none");
                 }, 3000);
@@ -79,8 +86,9 @@ function hide_original(original: HTMLUListElement, newTabbar: HTMLUListElement) 
     // 先假定钉住的标签页不会因标签页过多被关闭
     // 同步激活状态
     var activateID = original.querySelector(".item--focus").getAttribute("data-id");
+    newList = newTabbar.querySelectorAll(".item");
     newList.forEach(item => {
-        if (item.getAttribute('data-id') != activateID) {
+        if (item.getAttribute('data-id') !== activateID) {
             item.classList.remove("item--focus");
         }
     })
@@ -99,9 +107,16 @@ function show_original(original: HTMLUListElement, newTabbar: HTMLUListElement) 
         // 找出未钉住的所有标签
         if (!item.classList.contains(".item--pin")) {
             // 显示原本的标签
-            originalTab.classList.remove(".item--pin");
+            originalTab.classList.remove("item--pin");
             originalTab.classList.remove("fn__none");
             // 删除新标签
+            newTabbar.removeChild(item);
+            console.log("显示标签");
+            console.log(originalTab);
+        } else {
+            // 移除新标签
+            item.classList.remove("item--pin");
+            originalTab.classList.remove("fn__none");
             newTabbar.removeChild(item);
             console.log("显示标签");
             console.log(originalTab);
@@ -114,4 +129,16 @@ function show_original(original: HTMLUListElement, newTabbar: HTMLUListElement) 
         // 同步聚焦状态
         item.className = originalTab.className;
     })
+}
+
+// 显示/隐藏新标签栏
+function displayNewTabbar(tabbar: HTMLUListElement) {
+    var count = tabbar.childElementCount;
+    if (count == 0) {
+        tabbar.parentElement.classList.add("fn__none");
+        console.log("隐藏新tab");
+    } else {
+        tabbar.parentElement.classList.remove("fn__none");
+        console.log("显示新tab");
+    }
 }
