@@ -1,7 +1,7 @@
 import { _postMessage, _writeFile } from "./ts/api";
 import { loadGlobalVars } from "./ts/defs";
 import { bg, bgobserver } from "./ts/plugins/background";
-import { addSecondTabbar, tabbarobserver } from "./ts/plugins/tabbar";
+import { addTabbarObserver } from "./ts/plugins/doubleTabbar";
 import { createSettingsWindow, getSettings } from "./ts/setting";
 import { EnableSettings } from "./ts/types";
 
@@ -41,6 +41,12 @@ window.destroyTheme = async () => {
     document.querySelector("#vscleToolbar").remove();
     // 移除body特殊适配语句
     document.body.classList.remove('bgenable');
+    // 移除双标签栏的style
+    Array.from(document.querySelector(".layout__center").querySelectorAll(".item--pin")).forEach((item) => {
+        (item as HTMLLIElement).style.removeProperty("margin-right");
+        if ((item as HTMLLIElement).style.length == 0)
+            (item as HTMLLIElement).removeAttribute("style");
+    })
     // 移除计时器
     for (var key in globalThis.timer) {
         if (globalThis.timer[key] != null) {
@@ -185,6 +191,10 @@ function addImports(table: HTMLLinkElement, labels: EnableSettings[]) {
                 sheet.insertRule('@import url(sub/block/mark.css);', 4 + i);
                 i += 1;
                 break;
+            case "doubleTabbar":
+                sheet.insertRule("@import url(sub/plugin/doubleTabbar.css);", 4 + i);
+                i += 1;
+                break;
             default:
                 break;
         }
@@ -200,21 +210,19 @@ function addFixedAttribute(settings: EnableSettings[]) {
     // >>>>>>>>>>>>>>>>>>>>>>>>>>>>
     // 如果设置启用背景插件才进入判断
     if (settings.includes("backgroundCoverDesktop") && !document.body.classList.contains('vscmobile') || settings.includes("backgroundCoverMobile") && document.body.classList.contains('vscmobile')) {
+        // 首先调用插件状态检测
         bg(0);
-        if (globalThis.observer.bgObserver == null) {
+        // 添加观察器
+        if (globalThis.vscObserver.bgObserver == null) {
             bgobserver(0);
         }
     }
-    // 如果启用双标签栏才进入判断
+    // 如果启用了双标签栏
     if (settings.includes("doubleTabbar") && !document.body.classList.contains("vscmobile")) {
-        // 在添加容器之前先获取原本的标签栏
-        var originalTabbar = document.querySelector(".layout__center").querySelector(".layout-tab-bar") as HTMLUListElement;
-        // 先获取容器，待会比较好操作
-        var container = addSecondTabbar();
-        // 获取新标签栏
-        var newTabbar = container.lastChild as HTMLUListElement;
-        // 添加标签栏的观察器
-        tabbarobserver(originalTabbar, newTabbar);
+        // 添加观察器
+        if (globalThis.vscObserver.tabbarObserver == null) {
+            addTabbarObserver(document.querySelector(".layout__center").querySelector(".layout-tab-bar") as HTMLUListElement);
+        }
     }
     // <<<<<<<<<<<<<<<<<<<<<<<<<<<<
 }

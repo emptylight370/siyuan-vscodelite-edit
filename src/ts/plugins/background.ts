@@ -12,9 +12,9 @@ export function bg(times: number) {
         }
         // 刚开始每2秒重新检测状态，检测10秒
         if (times < 5) {
-            globalThis.timer.bgTimer = setTimeout(bg, 2000, times + 1);
+            globalThis.vscTimer.bgTimer = setTimeout(bg, 2000, times + 1);
         } else {
-            globalThis.timer.bgTimer = null;
+            globalThis.vscTimer.bgTimer = null;
         }
     } else if (times == 0 || times == 1) {
         // 未启用插件3秒后重新检测两遍
@@ -26,7 +26,7 @@ export function bg(times: number) {
 export function bgobserver(times: number) {
     var bglayer = document.getElementById("bglayer");
     if (bglayer) {
-        globalThis.observer.bgObserver = new MutationObserver(function (mutationsList) {
+        globalThis.vscObserver.bgObserver = new MutationObserver(function (mutationsList) {
             for (var mutation of mutationsList) {
                 if (mutation.type === 'attributes' && mutation.attributeName === 'style') {
                     // 样式发生变化时执行的代码
@@ -34,19 +34,19 @@ export function bgobserver(times: number) {
                 }
             }
         });
-        globalThis.observer.bgObserver.observe(bglayer, {
+        globalThis.vscObserver.bgObserver.observe(bglayer, {
             attributes: true, // 监听属性变化
             attributeFilter: ['style'] // 只监听 style 属性
         });
-        globalThis.timer.bgObserTimer = null;
+        globalThis.vscTimer.bgObserTimer = null;
     } else {
         // if (times == 0 && !document.body.classList.contains('vscmobile')) {
         if (times == 0) {
             // 运行失败等待5秒
-            globalThis.timer.bgObserTimer = setTimeout(bgobserver, 5000, 1);
+            globalThis.vscTimer.bgObserTimer = setTimeout(bgobserver, 5000, 1);
         } else if (times == 1) {
             console.error("背景插件监听失败，修改插件启用状态需手动刷新");
-            globalThis.timer.bgObserTimer = null;
+            globalThis.vscTimer.bgObserTimer = null;
         }
     }
 }

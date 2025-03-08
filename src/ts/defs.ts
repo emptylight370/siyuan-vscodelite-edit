@@ -186,7 +186,7 @@ export async function loadGlobalVars() {
     }
 
     // ! 所有用到的计时器
-    globalThis.timer = {
+    globalThis.vscTimer = {
         // 背景插件加载后可能禁用，使用计时器定时刷新背景插件状态
         bgTimer: null,
         // 背景插件属性修改的监听器，用来监测背景状态变化
@@ -194,12 +194,10 @@ export async function loadGlobalVars() {
     };
 
     // ! 所有用到的监听器
-    globalThis.observer = {
+    globalThis.vscObserver = {
         // 背景插件观察器
         bgObserver: null,
-        // 原标签栏状态观察器
-        originalTabbarObserver: null,
-        // 新标签栏状态观察器
-        newTabbarObserver: null
+        // 标签栏状态观察器
+        tabbarObserver: null,
     };
 }

@@ -12,9 +12,9 @@ declare global {
     /** 默认语言，可由浏览器方法获取 */
     var defLag: 'zh_CN' | 'en_US';
     /** 目前所有的计时器 */
-    var timer: Timers;
+    var vscTimer: vscTimers;
     /** 目前所有的观察器 */
-    var observer: Observers;
+    var vscObserver: vscObservers;
 }
 
 /** 主题配置接口 */
@@ -81,16 +81,15 @@ export interface LocalMessage {
 }
 
 /** 计时器接口 */
-export interface Timers {
+export interface vscTimers {
     bgTimer: number | null; // 背景插件状态刷新计时器
     bgObserTimer: number | null; // 背景插件属性修改计时器
 }
 
 /** 观察器接口 */
-export interface Observers {
+export interface vscObservers {
     bgObserver: MutationObserver | null; // 背景图插件状态观察器
-    originalTabbarObserver: MutationObserver | null; // 原标签栏状态观察器
-    newTabbarObserver: MutationObserver | null; // 新标签栏状态观察器
+    tabbarObserver: MutationObserver | null; // 标签栏状态观察器
 }
 
 /**
@@ -182,6 +181,7 @@ interface EnableSettingsKeyMap {
 /**
  * 具体设置项映射，由配置文件中启用项映射到配置文件中
  * 配置文件启用项：设置项所属范围，设置项键名
+ * 这个是列表里面的元素名
  */
 export const EnableSettingsKeyMap: SettingKeyMap = {
     codeBlock: { section: 'theme', key: 'codeBlock' }, // 代码块样式

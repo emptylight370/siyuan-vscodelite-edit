@@ -1,0 +1,10 @@
+.layout-tab-bar {
+    &:has(.item--pin) {
+        flex-wrap: wrap;
+        height: 72px !important;
+    }
+}
+
+.fn__flex:has(.item--pin)>.fn__flex-1:not(:has(.item--pin)) {
+    height: 72px !important;
+}
