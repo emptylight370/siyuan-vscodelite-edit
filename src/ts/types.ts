@@ -77,6 +77,7 @@ export interface LocalMessage {
     mathdesc: Record<string, string>;
     doubleTabbaritem: Record<string, string>;
     doubleTabbardesc: Record<string, string>;
+    doubleTabbarMessage: Record<string, string>;
 }
 
 /** 计时器接口 */

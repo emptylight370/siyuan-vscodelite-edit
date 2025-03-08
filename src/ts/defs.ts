@@ -47,16 +47,16 @@ export async function loadGlobalVars() {
             "en_US": "Theme VSCode Lite Edit load finished"
         },
         "confUpdate": {
-            "zh_CN": "主题配置文件需要更新，请点击<code>VC</code>按钮重新保存配置文件",
-            "en_US": "Theme conf file needs update, please click <code>VC</code> button to save the configuration file again"
+            "zh_CN": "VSCE:主题配置文件需要更新，请点击<code>VC</code>按钮重新保存配置文件",
+            "en_US": "VSCE:Theme conf file needs update, please click <code>VC</code> button to save the configuration file again"
         },
         "confNotSave": {
-            "zh_CN": "配置未保存",
-            "en_US": "Configurations not saved"
+            "zh_CN": "VSCE:配置未保存",
+            "en_US": "VSCE:Configurations not saved"
         },
         "confSave": {
-            "zh_CN": "配置保存成功，稍后自动刷新",
-            "en_US": "Configuration save successed, auto reload later"
+            "zh_CN": "VSCE:配置保存成功，稍后自动刷新",
+            "en_US": "VSCE:Configuration save successed, auto reload later"
         },
         "label-aria": {
             "zh_CN": "VSCode Lite 主题设置",
@@ -163,12 +163,16 @@ export async function loadGlobalVars() {
             "en_US": "Can't show horizon scroll bar"
         },
         "doubleTabbaritem": {
-            "zh_CN": "启用双标签栏",
-            "en_US": "Enable double tab bar"
+            "zh_CN": "（实验性）启用双标签栏",
+            "en_US": "(Expermental) Enable double tab bar"
         },
         "doubleTabbardesc": {
-            "zh_CN": "将钉住的标签移动到新标签栏",
-            "en_US": "Move pinned tab to new tab bar"
+            "zh_CN": "将钉住的标签移动到新标签栏（有缺陷！）",
+            "en_US": "Move pinned tab to new tab bar(WITH BUGS!)"
+        },
+        "doubleTabbarMessage": {
+            "zh_CN": "VSCE:点击暂时不能改变标签页，请手动点击原标签页",
+            "en_US": "VSCE:Can't change tab while clicking, click original tab manually please"
         }
     };
 

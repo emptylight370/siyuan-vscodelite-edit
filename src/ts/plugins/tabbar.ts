@@ -14,27 +14,6 @@ export function addSecondTabbar() {
     var originalTabbar = center.querySelector(".layout-tab-bar");
     // 获取它的父元素
     var originalContainer = originalTabbar.parentElement;
-    // 为容器添加事件，需要转接target给原标签
-    container.addEventListener("click", (e) => {
-        dispatchEventTo(originalContainer, "click", e);
-        var nowTarget = e.target as HTMLElement;
-        if (!nowTarget.classList.contains("item")) {
-            nowTarget = nowTarget.parentElement;
-        }
-        var originalTarget = originalTabbar.querySelector(`[data-id="${nowTarget.getAttribute("data-id")}"]`);
-        Object.defineProperty(e, "target", { value: originalTarget });
-        dispatchEventTo(originalContainer, "click", e);
-    });
-    container.addEventListener("dblclick", (e) => {
-        dispatchEventTo(originalContainer, "dbclick", e);
-        var nowTarget = e.target as HTMLElement;
-        if (!nowTarget.classList.contains("item")) {
-            nowTarget = nowTarget.parentElement;
-        }
-        var originalTarget = originalTabbar.querySelector(`[data-id="${nowTarget.getAttribute("data-id")}"]`);
-        Object.defineProperty(e, "target", { value: originalTarget });
-        dispatchEventTo(originalContainer, "dbclick", e);
-    })
     // 获取更高一级父元素
     var parentContainer = originalContainer.parentElement;
     // 把新建的容器插入到原本的标签栏前面
@@ -83,10 +62,12 @@ function hide_original(original: HTMLUListElement, newTabbar: HTMLUListElement) 
             var newTab = item.cloneNode(true);
             // 点击新标签页时同时激活原标签页
             newTab.addEventListener("click", () => {
-                // item.parentElement.parentElement.click();
-                (item as HTMLLIElement).click();
-                // (item as HTMLLIElement).classList.add("item--focus");
-                // (newTab as HTMLLIElement).classList.add("item--focus");
+                var dataId = (newTab as HTMLLIElement).getAttribute("data-id");
+                var originalTab = original.querySelector(`[data-id="${dataId}"]`);
+                originalTab.classList.remove("fn__none");
+                setTimeout(() => {
+                    originalTab.classList.add("fn__none");
+                }, 3000);
             })
             newTabbar.appendChild(newTab);
             // 隐藏原本的标签
@@ -133,14 +114,4 @@ function show_original(original: HTMLUListElement, newTabbar: HTMLUListElement) 
         // 同步聚焦状态
         item.className = originalTab.className;
     })
-}
-
-// 用于传递事件的事件分派函数
-function dispatchEventTo(targetElement: Element, eventType: string, event: Event) {
-    var newEvent = new Event(eventType, {
-        bubbles: event.bubbles,
-        cancelable: event.cancelable,
-        composed: event.composed
-    });
-    targetElement.dispatchEvent(newEvent);
 }
