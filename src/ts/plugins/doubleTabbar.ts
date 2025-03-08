@@ -36,7 +36,7 @@ function changeTabbar(tabbar: HTMLUListElement) {
         width += (item as HTMLLIElement).getBoundingClientRect().width;
     })
     // 设置钉住页签右侧宽度
-    if (width <= document.querySelector(".layout__center").getBoundingClientRect().width) {
+    if (width <= document.querySelector(".layout__center").getBoundingClientRect().width && width > 0) {
         (pinList[pinList.length - 1] as HTMLLIElement).style.marginRight = `calc(100% - ${width}px)`;
     }
 }

@@ -40,14 +40,12 @@ Limited by the configuration loading method, updated configurations for new vers
 
 > Full changelog view [ChangeLog](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/changelog.md)
 
+- v2.2.3
+  - Fix an error in double tab bar
 - v2.2.2
   - Implement double tab bar partly
 - v2.1.5
   - Fixed issue that task list may not display icon in some cases
-- v2.1.4
-  - Fixed the background image plugin compatibility switch issue
-  - Modified the color of the exit focus button
-  - Fine tune list sequence position
 
 # Special fitness
 

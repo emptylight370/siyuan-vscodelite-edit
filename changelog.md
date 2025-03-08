@@ -1,5 +1,10 @@
 # ChangeLog
 
+## v2.2.3
+
+- 修复双标签栏的报错
+- Fix an error in double tab bar
+
 ## v2.2.2
 
 - 初步实现双标签栏，可以将钉住的标签页显示在一行中
