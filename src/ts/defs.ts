@@ -8,7 +8,7 @@ export async function loadGlobalVars() {
      * ! 默认配置文件
      */
     globalThis.defaultConf = {
-        "version": 10,
+        "version": 11,
         "theme": {
             "codeBlock": true,
             "reference": true,
@@ -25,7 +25,8 @@ export async function loadGlobalVars() {
             "shortcutPanel": true,
             "mathPanel": false,
             "backgroundCoverDesktop": true,
-            "backgroundCoverMobile": false
+            "backgroundCoverMobile": false,
+            "doubleTabbar": false
         }
     };
 
@@ -160,6 +161,14 @@ export async function loadGlobalVars() {
         "mathdesc": {
             "zh_CN": "无法显示水平滚动条",
             "en_US": "Can't show horizon scroll bar"
+        },
+        "doubleTabbaritem": {
+            "zh_CN": "启用双标签栏",
+            "en_US": "Enable double tab bar"
+        },
+        "doubleTabbardesc": {
+            "zh_CN": "将钉住的标签移动到新标签栏",
+            "en_US": "Move pinned tab to new tab bar"
         }
     };
 
@@ -182,6 +191,11 @@ export async function loadGlobalVars() {
 
     // ! 所有用到的监听器
     globalThis.observer = {
-        bgObserver: null
+        // 背景插件观察器
+        bgObserver: null,
+        // 原标签栏状态观察器
+        originalTabbarObserver: null,
+        // 新标签栏状态观察器
+        newTabbarObserver: null
     };
 }

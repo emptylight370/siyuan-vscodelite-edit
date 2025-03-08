@@ -1,6 +1,7 @@
 import { _postMessage, _writeFile } from "./ts/api";
 import { loadGlobalVars } from "./ts/defs";
 import { bg, bgobserver } from "./ts/plugins/background";
+import { addSecondTabbar, tabbarobserver } from "./ts/plugins/tabbar";
 import { createSettingsWindow, getSettings } from "./ts/setting";
 import { EnableSettings } from "./ts/types";
 
@@ -203,6 +204,17 @@ function addFixedAttribute(settings: EnableSettings[]) {
         if (globalThis.observer.bgObserver == null) {
             bgobserver(0);
         }
+    }
+    // 如果启用双标签栏才进入判断
+    if (settings.includes("doubleTabbar") && !document.body.classList.contains("vscmobile")) {
+        // 在添加容器之前先获取原本的标签栏
+        var originalTabbar = document.querySelector(".layout__center").querySelector(".layout-tab-bar") as HTMLUListElement;
+        // 先获取容器，待会比较好操作
+        var container = addSecondTabbar();
+        // 获取新标签栏
+        var newTabbar = container.lastChild as HTMLUListElement;
+        // 添加标签栏的观察器
+        tabbarobserver(originalTabbar, newTabbar);
     }
     // <<<<<<<<<<<<<<<<<<<<<<<<<<<<
 }

@@ -11,7 +11,7 @@ import {
     ThemeConfig
 } from "./types";
 
-/** 
+/**
  * 创建一个包含标签和复选框的 HTML 结构
  */
 export async function createSettingsWindow() {
@@ -227,6 +227,8 @@ async function getSettingArrays(v: ThemeConfig) {
     settings.push({ label: localMessage["bgmobile"][defLag], description: localMessage["bgdesc"][defLag], id: 'backgroundCoverMobile', enable: v?.plugins?.backgroundCoverMobile ?? false });
     // 数学公式增强插件
     settings.push({ label: localMessage["mathitem"][defLag], description: localMessage["mathdesc"][defLag], id: 'mathPanel', enable: v?.plugins?.mathPanel ?? false });
+    // 双标签栏
+    settings.push({ label: localMessage["doubleTabbaritem"][defLag], description: localMessage["doubleTabbardesc"][defLag], id: 'doubleTabbar', enable: v?.plugins?.doubleTabbar ?? false });
     return settings;
 }
 

@@ -37,6 +37,7 @@ export interface ThemeConfig {
         mathPanel: boolean;
         backgroundCoverDesktop: boolean;
         backgroundCoverMobile: boolean;
+        doubleTabbar: boolean;
     };
 }
 
@@ -74,17 +75,21 @@ export interface LocalMessage {
     bgmobile: Record<string, string>;
     mathitem: Record<string, string>;
     mathdesc: Record<string, string>;
+    doubleTabbaritem: Record<string, string>;
+    doubleTabbardesc: Record<string, string>;
 }
 
 /** 计时器接口 */
 export interface Timers {
-    bgTimer: number | null;
-    bgObserTimer: number | null;
+    bgTimer: number | null; // 背景插件状态刷新计时器
+    bgObserTimer: number | null; // 背景插件属性修改计时器
 }
 
 /** 观察器接口 */
 export interface Observers {
-    bgObserver: MutationObserver | null;
+    bgObserver: MutationObserver | null; // 背景图插件状态观察器
+    originalTabbarObserver: MutationObserver | null; // 原标签栏状态观察器
+    newTabbarObserver: MutationObserver | null; // 新标签栏状态观察器
 }
 
 /**
@@ -137,7 +142,7 @@ interface SettingKeyMap {
     }
 }
 
-/** 
+/**
  * 具体设置项映射，由设置面板中的id映射到配置文件中
  * 设置面板配置项id：配置项范围，配置项键名
  */
@@ -156,6 +161,7 @@ export const settingKeyMap: SettingKeyMap = {
     mathPanel: { section: 'plugins', key: 'mathPanel' }, // 数学面板
     backgroundCoverDesktop: { section: 'plugins', key: 'backgroundCoverDesktop' }, // 桌面端图片背景
     backgroundCoverMobile: { section: 'plugins', key: 'backgroundCoverMobile' }, // 移动端图片背景
+    doubleTabbar: { section: 'plugins', key: 'doubleTabbar' }, // 双标签栏
 } as const;
 
 /** 设置面板中使用的ID类型 */
@@ -172,7 +178,7 @@ interface EnableSettingsKeyMap {
     }
 }
 
-/** 
+/**
  * 具体设置项映射，由配置文件中启用项映射到配置文件中
  * 配置文件启用项：设置项所属范围，设置项键名
  */
@@ -191,6 +197,7 @@ export const EnableSettingsKeyMap: SettingKeyMap = {
     mathPanel: { section: 'plugins', key: 'mathPanel' }, // 数学面板
     backgroundCoverDesktop: { section: 'plugins', key: 'backgroundCoverDesktop' }, // 桌面端图片背景
     backgroundCoverMobile: { section: 'plugins', key: 'backgroundCoverMobile' }, // 移动端图片背景
+    doubleTabbar: { section: 'plugins', key: 'doubleTabbar' }, // 双标签栏
 } as const;
 
 /** 配置文件中启用项类型 */
