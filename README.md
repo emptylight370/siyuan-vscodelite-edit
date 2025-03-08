@@ -28,6 +28,7 @@ Instruction for use: [liandi](https://ld246.com/article/1728034766990)
 - Configuration edit page
 - doc tree and outline indentation
 - Adjust highlight mark style
+- Double tab bar, can display pinned tab in single line
 
 # Configure
 
@@ -39,8 +40,8 @@ Limited by the configuration loading method, updated configurations for new vers
 
 > Full changelog view [ChangeLog](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/changelog.md)
 
-- v2.2.1
-  - Revert changes in 2.2.0
+- v2.2.2
+  - Implement double tab bar partly
 - v2.1.5
   - Fixed issue that task list may not display icon in some cases
 - v2.1.4

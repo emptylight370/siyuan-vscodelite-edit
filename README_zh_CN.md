@@ -28,6 +28,7 @@
 - 配置编辑页面
 - 文档树和大纲缩进
 - 调整高亮标注样式
+- 双标签栏，可将钉住标签页单独一行显示
 
 # 配置
 
@@ -39,8 +40,8 @@
 
 > 完整更新日志查看[changelog](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/changelog.md)
 
-- v2.2.1
-  - 回退2.2.0修改
+- v2.2.2
+  - 初步实现双标签栏
 - v2.1.5
   - 修复任务列表可能不显示标记问题
 - v2.1.4

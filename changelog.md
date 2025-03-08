@@ -1,5 +1,10 @@
 # ChangeLog
 
+## v2.2.2
+
+- 初步实现双标签栏，可以将钉住的标签页显示在一行中
+- Implement double tab bar partly, can display pinned tab in single line
+
 ## v2.2.1
 
 - 回退2.2.0修改
