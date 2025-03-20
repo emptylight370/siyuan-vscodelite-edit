@@ -58,8 +58,10 @@
         @for $i from 1 through 7 {
             $selector: '> ul';
 
-            @for $j from 2 through $i {
-                $selector: $selector + ' > ul';
+            @if $i >1 {
+                @for $j from 2 through $i {
+                    $selector: $selector + ' > ul';
+                }
             }
 
             #{$selector}>li.b3-list-item>span.b3-list-item__toggle {

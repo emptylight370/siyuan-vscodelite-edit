@@ -40,12 +40,12 @@
 
 > 完整更新日志查看[changelog](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/changelog.md)
 
+- v2.2.4
+  - 修复文档树缩进异常
 - v2.2.3
   - 修复双标签栏的报错
 - v2.2.2
   - 初步实现双标签栏
-- v2.1.5
-  - 修复任务列表可能不显示标记问题
 
 # 特殊适配
 

@@ -1,5 +1,10 @@
 # ChangeLog
 
+## v2.2.4
+
+- 修复文档树缩进异常
+- Fixed document tree indent exception
+
 ## v2.2.3
 
 - 修复双标签栏的报错
