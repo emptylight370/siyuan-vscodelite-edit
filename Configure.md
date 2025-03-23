@@ -68,11 +68,11 @@ TBC
 
 TBC
 
-#### Change Background Image()
+#### Change Background Image(siyuan-plugin-background-cover)
 
 TBC
 
-#### Math Enhance Plugin()
+#### Math Enhance Plugin(siyuan-plugin-math-enhance)
 
 TBC
 
@@ -159,13 +159,13 @@ TBC
 
 对快捷键面板的标题添加了颜色。
 
-#### 替换背景图片()
+#### 替换背景图片(siyuan-plugin-background-cover)
 
 调整大部分界面的显示效果，适配背景图插件。这会将大部分界面设为半透明状态，需要将插件设置中的**前景透明度**调为0以关闭，并且将**背景虚化**调整到0.3以上。
 
 > 没有安装背景图插件不建议开启，会带来不必要性能消耗。不喜欢当前适配的效果也可以选择关闭。
 
-#### 数学增强插件()
+#### 数学增强插件(siyuan-plugin-math-enhance)
 
 限制了编辑器下方预览框的最大宽度，可以通过横向滚轮或鼠标选中文本移动当前预览位置。
 

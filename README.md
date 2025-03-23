@@ -14,6 +14,7 @@ If display errors appear, reload SiYuan please.
 Origin author: [TinkMingKing](https://github.com/TinkMingKing)
 
 Instruction for use: [liandi](https://ld246.com/article/1728034766990)
+Instruction for config：[GitHub](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/Configure.md)
 
 # Features
 

@@ -14,6 +14,7 @@
 原作者：[TinkMingKing](https://github.com/TinkMingKing)
 
 使用说明：[链滴](https://ld246.com/article/1728034766990)
+配置说明：[GitHub](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/Configure.md)
 
 # 特性
 
