@@ -1,5 +1,10 @@
 # ChangeLog
 
+## v2.2.5
+
+- 添加代码片段：显示钉住文档名 by JeffreyChen
+- Add code snippet: Show pinned doc name by JeffreyChen
+
 ## v2.2.4
 
 - 修复文档树缩进异常

@@ -40,12 +40,12 @@ Limited by the configuration loading method, updated configurations for new vers
 
 > Full changelog view [ChangeLog](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/changelog.md)
 
+- v2.2.5
+  - Add code snippet: Show pinned doc name by JeffreyChen
 - v2.2.4
   - Fixed document tree indent exception
 - v2.2.3
   - Fix an error in double tab bar
-- v2.2.2
-  - Implement double tab bar partly
 
 # Special fitness
 
@@ -61,7 +61,8 @@ Currently adapted plugins are:
 
 ## Snippests
 
-[CodeBlock show action buttons when hover](https://ld246.com/article/1728146248791) by JefferyChen
+[CodeBlock show action buttons when hover](https://ld246.com/article/1728146248791) by JeffreyChen
+[Show pinned doc name(NO icon version)](https://ld246.com/article/1728392178095) by JeffreyChen
 
 # Feedback
 

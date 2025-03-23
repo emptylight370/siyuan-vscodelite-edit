@@ -6,66 +6,86 @@ JUMP TO: [中文](#配置)  [English](#configure)
 
 # Configure
 
-`Your workspace dir/data/snippets/vsc_edit.config.json` is the configuration file.
+TBC(To be completed)
 
-Theme uses configuration file to enable parts of theme. This is the meaning of the file.
+## Siyuan Theme
 
-```json
-{
-    "theme": {
-        "codeBlock": true,
-        "reference": true,
-        "bazaar": true,
-        "embeddedBlock": true,
-        "title": true
-    },
-    "plugins": {
-        "shortcutPanel": true
-    }
-}
-```
+TBC
 
-Change `true` to `false` in the file can disable corresponding part of theme.
+### Siyuan App Section
 
-## SiYuan Theme
+#### Bazaar
 
-### Code Block
+TBC
 
-The width of the line numbers on the left side of the code block has been modified, probably causing the line breaks in the code block and the display of line numbers to be out of sync. If your code block is severely affected, you can change `true` to `false`.
+#### Doc tree and outline panel
 
-`"codeBlock": true/false,`
+TBC
 
-### Reference Anchor Text Styles
+#### Double Tab bar
 
-Reference anchor text styles add background for reference anchor text.
+TBC
 
-`"reference": true/false,`
+### Editor Section
 
-### Bazaar Style
+#### CodeBlock
 
-The style change of bazaar mostly move here, can switch on/off(I don't know what change...).
+TBC
 
-`"bazaar": true/false,`
+#### Reference
 
-### Embedded Block Style
+TBC
 
-It makes great change for embedded block, limit the height of embedded block. And may cause unknown problems.
+#### Embedded Block
 
-`"embeddedBlock": true/false,`
+TBC
 
-### Title Style
+#### Heading
 
-Add special image for each title(h1#,h2##...)
+TBC
 
-`"title": true/false,`
+#### Table
 
-## Plugin Adaption
+TBC
 
-### keymap(siyuan-plugin-keymap)
+#### List
 
-Add color for keymap panel's titles.
+TBC
 
-`"shortcutPanel": true/false,`
+#### Database
+
+TBC
+
+#### Mark
+
+TBC
+
+## Special Adaption
+
+### Plugin Adaption
+
+#### Shortcut key panel(siyuan-plugin-keymap)
+
+TBC
+
+#### Change Background Image()
+
+TBC
+
+#### Math Enhance Plugin()
+
+TBC
+
+### Code Snippets
+
+Theme has integrated some code snippets from the bazaar. The following is the list:
+
+- [CodeBlock show action buttons when hover](https://ld246.com/article/1728146248791) by JeffreyChen
+- [Show pinned doc name(NO icon version)](https://ld246.com/article/1728392178095) by JeffreyChen
+
+## Custom Style
+
+TBC
 
 # 配置
 
@@ -155,7 +175,8 @@ Add color for keymap panel's titles.
 
 主题中合并了部分集市中的代码片段，以下是列表。
 
-- [代码块悬浮显示操作按钮](https://ld246.com/article/1728146248791) by JefferyChen
+- [代码块悬浮显示操作按钮](https://ld246.com/article/1728146248791) by JeffreyChen
+- [显示钉住文档名（无图标版本）](https://ld246.com/article/1728392178095) by JeffreyChen
 
 ## 自定义样式
 

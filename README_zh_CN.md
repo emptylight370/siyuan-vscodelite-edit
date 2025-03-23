@@ -40,12 +40,12 @@
 
 > 完整更新日志查看[changelog](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/changelog.md)
 
+- v2.2.5
+  - 添加代码片段：显示钉住文档名 by JeffreyChen
 - v2.2.4
   - 修复文档树缩进异常
 - v2.2.3
   - 修复双标签栏的报错
-- v2.2.2
-  - 初步实现双标签栏
 
 # 特殊适配
 
@@ -61,7 +61,8 @@
 
 ## 代码片段
 
-[代码块悬浮显示操作按钮](https://ld246.com/article/1728146248791) by JefferyChen
+[代码块悬浮显示操作按钮](https://ld246.com/article/1728146248791) by JeffreyChen
+[显示钉住文档名（无图标版本）](https://ld246.com/article/1728392178095) by JeffreyChen
 
 # 反馈
 

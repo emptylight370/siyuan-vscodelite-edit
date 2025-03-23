@@ -70,3 +70,20 @@ body.body--blur .layout-tab-bar .item.item--focus {
         height: 36px;
     }
 }
+
+/* 显示钉住文档名 */
+/* 因为不含钉子图标所以特别备注一下 */
+/* author by JeffreyChen https://ld246.com/article/1728392178095 */
+.layout-tab-bar {
+    .item--pin {
+        &.item .item__text {
+            width: auto;
+            display: flex !important;
+        }
+
+        .item__graphic,
+        .item__icon {
+            padding: 4px 0 4px 8px;
+        }
+    }
+}
