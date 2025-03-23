@@ -3,7 +3,9 @@
 ## v2.2.5
 
 - 添加代码片段：显示钉住文档名 by JeffreyChen
+- 侧栏分隔线在鼠标悬停时高亮(#19)
 - Add code snippet: Show pinned doc name by JeffreyChen
+- Side dock division line will highlight when mouse hovering(#19)
 
 ## v2.2.4
 
