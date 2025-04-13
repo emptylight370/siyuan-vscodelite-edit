@@ -1,5 +1,10 @@
 # ChangeLog
 
+## v2.2.7
+
+- 修复启用标题图标后角标被压缩问题
+- Fixed the issue that the corner mark was compressed after enabling the title icon
+
 ## v2.2.6
 
 - 微调标题图标显示效果，未解决可能导致运行时错误的问题

@@ -30,8 +30,8 @@
 }
 
 /* h1标签文本 */
-[data-node-id].h1 div:nth-child(1),
-.protyle-preview h1 div:nth-child(1) {
+[data-node-id].h1>div:nth-child(1),
+.protyle-preview h1>div:nth-child(1) {
     display: inline-flex;
     max-width: calc(100% - 1.95rem);
 }
@@ -68,8 +68,8 @@
 }
 
 /* h2标签文本 */
-[data-node-id].h2 div:nth-child(1),
-.protyle-preview h2 div:nth-child(1) {
+[data-node-id].h2>div:nth-child(1),
+.protyle-preview h2>div:nth-child(1) {
     display: inline-flex;
     max-width: calc(100% - 1.75rem);
 }
@@ -106,8 +106,8 @@
 }
 
 /* h3标签文本 */
-[data-node-id].h3 div:nth-child(1),
-.protyle-preview h3 div:nth-child(1) {
+[data-node-id].h3>div:nth-child(1),
+.protyle-preview h3>div:nth-child(1) {
     display: inline-flex;
     max-width: calc(100% - 1.58rem);
 }
@@ -144,8 +144,8 @@
 }
 
 /* h4标签文本 */
-[data-node-id].h4 div:nth-child(1),
-.protyle-preview h4 div:nth-child(1) {
+[data-node-id].h4>div:nth-child(1),
+.protyle-preview h4>div:nth-child(1) {
     display: inline-flex;
     max-width: calc(100% - 1.45rem);
 }
@@ -182,8 +182,8 @@
 }
 
 /* h5标签文本 */
-[data-node-id].h5 div:nth-child(1),
-.protyle-preview h5 div:nth-child(1) {
+[data-node-id].h5>div:nth-child(1),
+.protyle-preview h5>div:nth-child(1) {
     display: inline-flex;
     max-width: calc(100% - 1.33rem);
 }
@@ -220,8 +220,8 @@
 }
 
 /* h6标签文本 */
-[data-node-id].h6 div:nth-child(1),
-.protyle-preview h6 div:nth-child(1) {
+[data-node-id].h6>div:nth-child(1),
+.protyle-preview h6>div:nth-child(1) {
     display: inline-flex;
     max-width: calc(100% - 1.2rem);
 }

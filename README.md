@@ -41,6 +41,8 @@ Limited by the configuration loading method, updated configurations for new vers
 
 > Full changelog view [ChangeLog](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/changelog.md)
 
+- v2.2.7
+  - Fixed the issue that the corner icon was compressed after enabling the title icon
 - v2.2.6
   - Fine-tune the display effect of the title icon to address potential runtime error issues
   - Using Traditional Chinese in SiYuan will show Simplified Chinese setting panel now

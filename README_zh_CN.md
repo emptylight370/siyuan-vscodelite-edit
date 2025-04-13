@@ -41,14 +41,14 @@
 
 > 完整更新日志查看[changelog](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/changelog.md)
 
+- v2.2.7
+  - 修复启用标题图标后角标被压缩问题
 - v2.2.6
   - 微调标题图标显示效果，未解决可能导致运行时错误的问题
   - 思源使用繁体中文现在会显示简体中文设置面板
 - v2.2.5
   - 添加代码片段：显示钉住文档名 by JeffreyChen
   - 侧栏分隔线在鼠标悬停时高亮
-- v2.2.4
-  - 修复文档树缩进异常
 
 # 特殊适配
 
