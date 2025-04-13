@@ -3,7 +3,10 @@
 ## v2.2.6
 
 - 微调标题图标显示效果，未解决可能导致运行时错误的问题
+- 思源使用繁体中文现在会显示简体中文设置面板
 - Fine-tune the display effect of the title icon to address potential runtime error issues.
+- Using Traditional Chinese in SiYuan will show Simplified Chinese setting panel now
+
 ## v2.2.5
 
 - 添加代码片段：显示钉住文档名 by JeffreyChen

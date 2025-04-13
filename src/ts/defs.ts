@@ -186,7 +186,11 @@ export async function loadGlobalVars() {
         // @ts-ignore
         globalThis.defLag = currentLang;
     } else {
-        globalThis.defLag = "en_US";
+        if (currentLang == "zh_CHT") {
+            globalThis.defLag = "zh_CN";
+        } else {
+            globalThis.defLag = "en_US";
+        }
     }
 
     // ! 所有用到的计时器

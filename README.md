@@ -43,6 +43,7 @@ Limited by the configuration loading method, updated configurations for new vers
 
 - v2.2.6
   - Fine-tune the display effect of the title icon to address potential runtime error issues
+  - Using Traditional Chinese in SiYuan will show Simplified Chinese setting panel now
 - v2.2.5
   - Add code snippet: Show pinned doc name by JeffreyChen
   - Side dock division line will highlight when mouse hovering
