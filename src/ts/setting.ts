@@ -204,7 +204,7 @@ async function getSettingArrays(v: ThemeConfig) {
     // 标题阴影
     settings.push({ label: localMessage["titleShadow"][defLag], description: localMessage["titleShadowDesc"][defLag], id: 'titleShadow', enable: v?.theme?.titleShadow ?? false });
     // 标题图标
-    settings.push({ label: localMessage["titleIcon"][defLag], description: localMessage["titleShadowDesc"][defLag], id: 'titleIcon', enable: v?.theme?.titleIcon ?? false });
+    settings.push({ label: localMessage["titleIcon"][defLag], description: localMessage["titleIconDesc"][defLag], id: 'titleIcon', enable: v?.theme?.titleIcon ?? false });
     // 文档树和大纲
     settings.push({ label: localMessage["ftitem"][defLag], id: 'doctree', enable: v?.theme?.doctree ?? false });
     // 代码块

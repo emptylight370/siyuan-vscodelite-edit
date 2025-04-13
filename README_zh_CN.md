@@ -41,13 +41,13 @@
 
 > 完整更新日志查看[changelog](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/changelog.md)
 
+- v2.2.6
+  - 微调标题图标显示效果，未解决可能导致运行时错误的问题
 - v2.2.5
   - 添加代码片段：显示钉住文档名 by JeffreyChen
   - 侧栏分隔线在鼠标悬停时高亮
 - v2.2.4
   - 修复文档树缩进异常
-- v2.2.3
-  - 修复双标签栏的报错
 
 # 特殊适配
 

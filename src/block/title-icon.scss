@@ -1,18 +1,7 @@
-/* 用于修复显示图标之后标题会显示在下一行的问题 */
-@for $i from 1 through 6 {
-
-    [data-node-id].h#{$i} div:nth-child(1),
-    .protyle-preview h#{$i} div:nth-child(1) {
-        display: inline-block;
-        word-wrap: break-word;
-        overflow-wrap: break-word;
-    }
-}
-
 /* h1标签基本样式 */
 %h1 {
     content: "";
-    display: inline-block;
+    display: inline-flex;
     position: relative;
     width: 1.75rem;
     height: 1.75rem;
@@ -40,10 +29,17 @@
     top: 0.2rem !important;
 }
 
+/* h1标签文本 */
+[data-node-id].h1 div:nth-child(1),
+.protyle-preview h1 div:nth-child(1) {
+    display: inline-flex;
+    max-width: calc(100% - 1.95rem);
+}
+
 /* h2标签基本样式 */
 %h2 {
     content: "";
-    display: inline-block;
+    display: inline-flex;
     position: relative;
     width: 1.55rem;
     height: 1.55rem;
@@ -71,10 +67,17 @@
     top: 0.2rem !important;
 }
 
+/* h2标签文本 */
+[data-node-id].h2 div:nth-child(1),
+.protyle-preview h2 div:nth-child(1) {
+    display: inline-flex;
+    max-width: calc(100% - 1.75rem);
+}
+
 /* h3标签基本样式 */
 %h3 {
     content: "";
-    display: inline-block;
+    display: inline-flex;
     position: relative;
     width: 1.38rem;
     height: 1.38rem;
@@ -102,10 +105,17 @@
     top: 0.2rem !important;
 }
 
+/* h3标签文本 */
+[data-node-id].h3 div:nth-child(1),
+.protyle-preview h3 div:nth-child(1) {
+    display: inline-flex;
+    max-width: calc(100% - 1.58rem);
+}
+
 /* h4标签基本样式 */
 %h4 {
     content: "";
-    display: inline-block;
+    display: inline-flex;
     position: relative;
     width: 1.25rem;
     height: 1.25rem;
@@ -133,10 +143,17 @@
     top: 0.15rem !important;
 }
 
+/* h4标签文本 */
+[data-node-id].h4 div:nth-child(1),
+.protyle-preview h4 div:nth-child(1) {
+    display: inline-flex;
+    max-width: calc(100% - 1.45rem);
+}
+
 /* h5标签基本样式 */
 %h5 {
     content: "";
-    display: inline-block;
+    display: inline-flex;
     position: relative;
     width: 1.13rem;
     height: 1.13rem;
@@ -164,10 +181,17 @@
     top: 0.1rem !important;
 }
 
+/* h5标签文本 */
+[data-node-id].h5 div:nth-child(1),
+.protyle-preview h5 div:nth-child(1) {
+    display: inline-flex;
+    max-width: calc(100% - 1.33rem);
+}
+
 /* h6标签基本样式 */
 %h6 {
     content: "";
-    display: inline-block;
+    display: inline-flex;
     position: relative;
     width: 1rem;
     height: 1rem;
@@ -193,4 +217,11 @@
     margin-top: unset;
     left: unset !important;
     top: 0.1rem !important;
+}
+
+/* h6标签文本 */
+[data-node-id].h6 div:nth-child(1),
+.protyle-preview h6 div:nth-child(1) {
+    display: inline-flex;
+    max-width: calc(100% - 1.2rem);
 }

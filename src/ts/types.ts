@@ -66,6 +66,7 @@ export interface LocalMessage {
     titleShadow: Record<string, string>;
     titleShadowDesc: Record<string, string>;
     titleIcon: Record<string, string>;
+    titleIconDesc: Record<string, string>;
     dbitem: Record<string, string>;
     markitem: Record<string, string>;
     scitem: Record<string, string>;

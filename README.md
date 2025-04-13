@@ -41,13 +41,13 @@ Limited by the configuration loading method, updated configurations for new vers
 
 > Full changelog view [ChangeLog](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/changelog.md)
 
+- v2.2.6
+  - Fine-tune the display effect of the title icon to address potential runtime error issues
 - v2.2.5
   - Add code snippet: Show pinned doc name by JeffreyChen
   - Side dock division line will highlight when mouse hovering
 - v2.2.4
   - Fixed document tree indent exception
-- v2.2.3
-  - Fix an error in double tab bar
 
 # Special fitness
 
