@@ -43,6 +43,7 @@ Limited by the configuration loading method, updated configurations for new vers
 
 - v2.2.7
   - Fixed the issue that the corner icon was compressed after enabling the title icon
+  - Mitigate an issue where the title would display exceptions if it contained a special style
 - v2.2.6
   - Fine-tune the display effect of the title icon to address potential runtime error issues
   - Using Traditional Chinese in SiYuan will show Simplified Chinese setting panel now

@@ -3,6 +3,7 @@
 ## v2.2.7
 
 - 修复启用标题图标后角标被压缩问题
+- 缓解标题中如果含有特殊样式会显示异常问题
 - Fixed the issue that the corner mark was compressed after enabling the title icon
 
 ## v2.2.6

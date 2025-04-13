@@ -13,6 +13,17 @@
 }
 
 /* h1标签 */
+[data-node-id].h1,
+.protyle-preview h1 {
+    display: inline-flex;
+
+    span {
+        display: inline;
+        max-width: fit-content;
+    }
+}
+
+/* h1标签 */
 [data-node-id].h1::before,
 .protyle-preview h1::before {
     @extend %h1;
@@ -32,8 +43,9 @@
 /* h1标签文本 */
 [data-node-id].h1>div:nth-child(1),
 .protyle-preview h1>div:nth-child(1) {
-    display: inline-flex;
+    display: inline-flex contents;
     max-width: calc(100% - 1.95rem);
+    flex-direction: column;
 }
 
 /* h2标签基本样式 */
@@ -48,6 +60,17 @@
     background-color: var(--mk-block-header-h2);
     top: 0.2rem;
     margin-right: 0.2rem;
+}
+
+/* h2标签 */
+[data-node-id].h2,
+.protyle-preview h2 {
+    display: inline-flex;
+
+    span {
+        display: inline;
+        max-width: fit-content;
+    }
 }
 
 /* h2标签 */
@@ -70,8 +93,9 @@
 /* h2标签文本 */
 [data-node-id].h2>div:nth-child(1),
 .protyle-preview h2>div:nth-child(1) {
-    display: inline-flex;
+    display: inline-flex contents;
     max-width: calc(100% - 1.75rem);
+    flex-direction: column;
 }
 
 /* h3标签基本样式 */
@@ -86,6 +110,17 @@
     background-color: var(--mk-block-header-h3);
     top: 0.2rem;
     margin-right: 0.2rem;
+}
+
+/* h3标签 */
+[data-node-id].h3,
+.protyle-preview h3 {
+    display: inline-flex;
+
+    span {
+        display: inline;
+        max-width: fit-content;
+    }
 }
 
 /* h3标签 */
@@ -108,8 +143,9 @@
 /* h3标签文本 */
 [data-node-id].h3>div:nth-child(1),
 .protyle-preview h3>div:nth-child(1) {
-    display: inline-flex;
+    display: inline-flex contents;
     max-width: calc(100% - 1.58rem);
+    flex-direction: column;
 }
 
 /* h4标签基本样式 */
@@ -124,6 +160,17 @@
     background-color: var(--mk-block-header-h4);
     top: 0.15rem;
     margin-right: 0.2rem;
+}
+
+/* h4标签 */
+[data-node-id].h4,
+.protyle-preview h4 {
+    display: inline-flex;
+
+    span {
+        display: inline;
+        max-width: fit-content;
+    }
 }
 
 /* h4标签 */
@@ -146,8 +193,9 @@
 /* h4标签文本 */
 [data-node-id].h4>div:nth-child(1),
 .protyle-preview h4>div:nth-child(1) {
-    display: inline-flex;
+    display: inline-flex contents;
     max-width: calc(100% - 1.45rem);
+    flex-direction: column;
 }
 
 /* h5标签基本样式 */
@@ -162,6 +210,17 @@
     background-color: var(--mk-block-header-h5);
     top: 0.1rem;
     margin-right: 0.2rem;
+}
+
+/* h5标签 */
+[data-node-id].h5,
+.protyle-preview h5 {
+    display: inline-flex;
+
+    span {
+        display: inline;
+        max-width: fit-content;
+    }
 }
 
 /* h5标签 */
@@ -184,8 +243,9 @@
 /* h5标签文本 */
 [data-node-id].h5>div:nth-child(1),
 .protyle-preview h5>div:nth-child(1) {
-    display: inline-flex;
+    display: inline-flex contents;
     max-width: calc(100% - 1.33rem);
+    flex-direction: column;
 }
 
 /* h6标签基本样式 */
@@ -200,6 +260,17 @@
     background-color: var(--mk-block-header-h6);
     top: 0.1rem;
     margin-right: 0.2rem;
+}
+
+/* h6标签 */
+[data-node-id].h6,
+.protyle-preview h6 {
+    display: inline-flex;
+
+    span {
+        display: inline;
+        max-width: fit-content;
+    }
 }
 
 /* h6标签 */
@@ -222,6 +293,7 @@
 /* h6标签文本 */
 [data-node-id].h6>div:nth-child(1),
 .protyle-preview h6>div:nth-child(1) {
-    display: inline-flex;
+    display: inline-flex contents;
     max-width: calc(100% - 1.2rem);
+    flex-direction: column;
 }
