@@ -4,7 +4,10 @@
 
 - 修复启用标题图标后角标被压缩问题
 - 缓解标题中如果含有特殊样式会显示异常问题
+- 修复标题中没有文本时不显示光标问题
 - Fixed the issue that the corner mark was compressed after enabling the title icon
+- Mitigate an issue where the heading would display exceptions if it contained a special style
+- Fixed the issue that the cursor was not displayed when there was no text in the heading
 
 ## v2.2.6
 

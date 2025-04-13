@@ -45,7 +45,7 @@
 .protyle-preview h1>div:nth-child(1) {
     display: inline-flex contents;
     max-width: calc(100% - 1.95rem);
-    flex-direction: column;
+    min-width: 1px;
 }
 
 /* h2标签基本样式 */
@@ -95,7 +95,7 @@
 .protyle-preview h2>div:nth-child(1) {
     display: inline-flex contents;
     max-width: calc(100% - 1.75rem);
-    flex-direction: column;
+    min-width: 1px;
 }
 
 /* h3标签基本样式 */
@@ -145,7 +145,7 @@
 .protyle-preview h3>div:nth-child(1) {
     display: inline-flex contents;
     max-width: calc(100% - 1.58rem);
-    flex-direction: column;
+    min-width: 1px;
 }
 
 /* h4标签基本样式 */
@@ -195,7 +195,7 @@
 .protyle-preview h4>div:nth-child(1) {
     display: inline-flex contents;
     max-width: calc(100% - 1.45rem);
-    flex-direction: column;
+    min-width: 1px;
 }
 
 /* h5标签基本样式 */
@@ -245,7 +245,7 @@
 .protyle-preview h5>div:nth-child(1) {
     display: inline-flex contents;
     max-width: calc(100% - 1.33rem);
-    flex-direction: column;
+    min-width: 1px;
 }
 
 /* h6标签基本样式 */
@@ -295,5 +295,5 @@
 .protyle-preview h6>div:nth-child(1) {
     display: inline-flex contents;
     max-width: calc(100% - 1.2rem);
-    flex-direction: column;
+    min-width: 1px;
 }
