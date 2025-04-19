@@ -1,5 +1,10 @@
 # ChangeLog
 
+## v2.2.8
+
+- 为文章内标签使用文章标签颜色
+- Use the color of article tags for tags inside the article.
+
 ## v2.2.7
 
 - 修复启用标题图标后角标被压缩问题

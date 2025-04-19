@@ -1,6 +1,4 @@
 .protyle-wysiwyg [data-node-id] span[data-type~=tag] {
-    background-color: var(--b3-theme-primary);
-    color: var(--b3-theme-on-primary);
     border-radius: var(--b3-border-radius);
     border-bottom: unset;
     padding: 1px 3px;
@@ -12,5 +10,40 @@
     &:hover {
         opacity: .99;
         background-color: var(--b3-theme-primary);
+    }
+
+    &:nth-child(7n+1) {
+        background-color: var(--b3-theme-secondary);
+        color: var(--b3-theme-on-secondary);
+    }
+
+    &:nth-child(7n+2) {
+        background-color: var(--b3-theme-primary);
+        color: var(--b3-theme-on-primary);
+    }
+
+    &:nth-child(7n+3) {
+        background-color: var(--b3-card-info-background);
+        color: var(--b3-card-info-color);
+    }
+
+    &:nth-child(7n+4) {
+        color: var(--b3-card-success-color);
+        background-color: var(--b3-card-success-background);
+    }
+
+    &:nth-child(7n+5) {
+        color: var(--b3-card-warning-color);
+        background-color: var(--b3-card-warning-background);
+    }
+
+    &:nth-child(7n+6) {
+        color: var(--b3-card-error-color);
+        background-color: var(--b3-card-error-background);
+    }
+
+    &:nth-child(7n+7) {
+        color: var(--b3-theme-on-secondary);
+        background-color: #ea4aaa;
     }
 }
