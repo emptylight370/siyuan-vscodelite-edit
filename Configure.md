@@ -6,59 +6,67 @@ JUMP TO: [中文](#配置)  [English](#configure)
 
 # Configure
 
-TBC(To be completed)
+Theme has implement a configure panel, you can edit the config file by the `VC` button on the title bar. You should turn on the new config manually after upgrade to new version.
+
+After setting, you should click the save button in the panel, and reload the interface to take effect.
+
+For the plugin adaption, turn off the switch if not install the plugin, or it would lead to longer loading time and lower performance.
 
 ## Siyuan Theme
 
-TBC
+The items listed below are not the all contents changed by theme, but mostly can switch by configure panel. If doesn't install the plugin please turn off the switch.
 
 ### Siyuan App Section
 
 #### Bazaar
 
-TBC
+Modify the style of category button in the setting panel.
 
 #### Doc tree and outline panel
 
-TBC
+1. Add notebook border for doc tree.
+2. Adjust indent of doc tree and outline tree.
 
 #### Double Tab bar
 
-TBC
+Preliminary implementation of dual tab bars, which can display pinned tabs in a single line.
 
 ### Editor Section
 
 #### CodeBlock
 
-TBC
+CodeBlock style change the width of line-number, and add floating button on code block(feature from code snippet), align the code block language and contents.
 
 #### Reference
 
-TBC
+Reference style add symbol around the anchor text and change background color.
 
 #### Embedded Block
 
-TBC
+Limit the height of embedded block, and add border. Using to reduce the occupied space of embedded block in the editor.
 
 #### Heading
 
-TBC
+1. Set different color of different heading.
+2. Add text shadow of heading.(has single switch)
+3. Add icon to distinguish different level of heading.(has single switch)
 
 #### Table
 
-TBC
+Set the text color of table head and move them to the center of line. It itself has bold style.
 
 #### List
 
-TBC
+1. Sets the color for the ordinal numbers of ordered and unordered lists.
+2. Set different appearance of different level of ordinal number.
 
 #### Database
 
-TBC
+Add border of database, and seperate the title and contents of database.
 
 #### Mark
 
-TBC
+Change the background color and appearance of mark.
 
 ## Special Adaption
 
@@ -66,7 +74,7 @@ TBC
 
 #### Shortcut key panel(siyuan-plugin-keymap)
 
-TBC
+TBC(To be completed)
 
 #### Change Background Image(siyuan-plugin-background-cover)
 

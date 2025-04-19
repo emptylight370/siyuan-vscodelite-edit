@@ -51,8 +51,6 @@ Limited by the configuration loading method, updated configurations for new vers
 - v2.2.5
   - Add code snippet: Show pinned doc name by JeffreyChen
   - Side dock division line will highlight when mouse hovering
-- v2.2.4
-  - Fixed document tree indent exception
 
 # Special fitness
 
