@@ -12,17 +12,21 @@
  * @returns Promise\<any\>?
  */
 export async function _rqFORSiyuan(url: string, data: any) {
-    const response = await fetch(url, {
+    return fetch(url, {
         body: JSON.stringify(data),
         method: 'POST',
         headers: {
-            Authorization: `Token ''`
+            Authorization: `Token `
         }
-    });
-    if (response.status === 200)
-        return await response.json();
-    else
+    }).then(response => {
+        if (response.ok)
+            return response.json();
+        else
+            return null;
+    }).catch(error => {
+        console.log("VSCode Lite Edit api error:", error);
         return null;
+    })
 }
 
 /**
@@ -64,7 +68,7 @@ export async function _writeFile(path: string, filedata: any, then = null, obj =
         body: formdata,
         method: 'POST',
         headers: {
-            Authorization: `Token ""`
+            Authorization: `Token `
         }
     }).then((v) => {
         if (then)

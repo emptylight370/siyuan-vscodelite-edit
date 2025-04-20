@@ -1,5 +1,10 @@
 # ChangeLog
 
+## v2.2.9
+
+- 修复新版本思源中提示 401Unauthorized 问题
+- Fix 401Unauthorized issue in SiYuan new version
+
 ## v2.2.8
 
 - 为文章内标签使用文章标签颜色
