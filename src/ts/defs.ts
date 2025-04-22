@@ -127,8 +127,8 @@ export async function loadGlobalVars() {
             "en_US": "Add icon before title"
         },
         "titleIconDesc": {
-            "zh_CN": "仅启用标题样式有效，经测试可能导致“运行时错误”",
-            "en_US": "Only effective when enable heading style, and accroding to testing, this may cause \"runtime error\""
+            "zh_CN": "仅启用标题样式有效，特定情况下可能导致“运行时错误”，可能已修复",
+            "en_US": "Only effective when enable heading style, and in special cases, this may cause \"runtime error\", maybe fixed"
         },
         "dbitem": {
             "zh_CN": '数据库样式',
