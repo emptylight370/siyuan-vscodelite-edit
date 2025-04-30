@@ -41,14 +41,12 @@
 
 > 完整更新日志查看[changelog](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/changelog.md)
 
+- v2.2.10
+  - 修复列表中标题图标显示问题
 - v2.2.9
   - 修复新版本思源中提示 401Unauthorized 问题
 - v2.2.8
   - 为文章内标签使用文章标签颜色
-- v2.2.7
-  - 修复启用标题图标后角标被压缩问题
-  - 缓解标题中如果含有特殊样式会显示异常问题
-  - 修复标题中没有文本时不显示光标问题
 
 # 特殊适配
 

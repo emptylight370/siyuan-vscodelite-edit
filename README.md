@@ -41,14 +41,12 @@ Limited by the configuration loading method, updated configurations for new vers
 
 > Full changelog view [ChangeLog](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/changelog.md)
 
+- v2.2.10
+  - Fix display issue of heading icon in list
 - v2.2.9
   - Fix 401Unauthorized issue in SiYuan new version
 - v2.2.8
   - Use the color of article tags for tags inside the article.
-- v2.2.7
-  - Fixed the issue that the corner icon was compressed after enabling the heading icon
-  - Mitigate an issue where the heading would display exceptions if it contained a special style
-  - Fixed the issue that the cursor was not displayed when there was no text in the heading
 
 # Special fitness
 

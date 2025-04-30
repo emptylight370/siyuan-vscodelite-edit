@@ -1,5 +1,10 @@
 # ChangeLog
 
+## v2.2.10
+
+- 修复列表中标题图标显示问题
+- Fix display issue of heading icon in list
+
 ## v2.2.9
 
 - 修复新版本思源中提示 401Unauthorized 问题
