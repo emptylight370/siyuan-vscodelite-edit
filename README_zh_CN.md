@@ -62,8 +62,8 @@
 
 ## 代码片段
 
-[代码块悬浮显示操作按钮](https://ld246.com/article/1728146248791) by JeffreyChen
-[显示钉住文档名（无图标版本）](https://ld246.com/article/1728392178095) by JeffreyChen
+- [代码块悬浮显示操作按钮](https://ld246.com/article/1728146248791) by JeffreyChen
+- [显示钉住文档名（无图标版本）](https://ld246.com/article/1728392178095) by JeffreyChen
 
 # 反馈
 

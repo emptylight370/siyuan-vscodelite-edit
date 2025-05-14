@@ -62,8 +62,8 @@ Currently adapted plugins are:
 
 ## Snippests
 
-[CodeBlock show action buttons when hover](https://ld246.com/article/1728146248791) by JeffreyChen
-[Show pinned doc name(NO icon version)](https://ld246.com/article/1728392178095) by JeffreyChen
+- [CodeBlock show action buttons when hover](https://ld246.com/article/1728146248791) by JeffreyChen
+- [Show pinned doc name(NO icon version)](https://ld246.com/article/1728392178095) by JeffreyChen
 
 # Feedback
 
