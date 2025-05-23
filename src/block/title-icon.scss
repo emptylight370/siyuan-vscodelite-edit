@@ -27,12 +27,11 @@
 [data-node-id].h1::before,
 .protyle-preview h1::before {
     @extend %h1;
-}
 
-/* 列表中h1标签 */
-.li>[data-node-id].h1::before,
-.li>.protyle-preview h1::before {
-    top: unset;
+    .li>& {
+        /* 列表中适配 */
+        top: unset;
+    }
 }
 
 /* h1标签 */
@@ -83,12 +82,11 @@
 [data-node-id].h2::before,
 .protyle-preview h2::before {
     @extend %h2;
-}
 
-/* 列表中h2标签 */
-.li>[data-node-id].h2::before,
-.li>.protyle-preview h2::before {
-    top: 0.1rem;
+    .li>& {
+        /* 列表中适配 */
+        top: 0.1rem;
+    }
 }
 
 /* h2标签 */
@@ -139,12 +137,11 @@
 [data-node-id].h3::before,
 .protyle-preview h3::before {
     @extend %h3;
-}
 
-/* 列表中h3标签 */
-.li>[data-node-id].h3::before,
-.li>.protyle-preview h3::before {
-    top: 0.2rem;
+    .li>& {
+        /* 列表中适配 */
+        top: 0.2rem;
+    }
 }
 
 /* h3标签 */
@@ -195,12 +192,11 @@
 [data-node-id].h4::before,
 .protyle-preview h4::before {
     @extend %h4;
-}
 
-/* 列表中h4标签 */
-.li>[data-node-id].h4::before,
-.li>.protyle-preview h4::before {
-    top: 0.15rem;
+    .li>& {
+        /* 列表中适配 */
+        top: 0.15rem;
+    }
 }
 
 /* h4标签 */
@@ -251,12 +247,11 @@
 [data-node-id].h5::before,
 .protyle-preview h5::before {
     @extend %h5;
-}
 
-/* 列表中h5标签 */
-.li>[data-node-id].h5::before,
-.li>.protyle-preview h5::before {
-    top: 0.2rem;
+    .li>& {
+        /* 列表中适配 */
+        top: 0.2rem;
+    }
 }
 
 /* h5标签 */
@@ -307,12 +302,11 @@
 [data-node-id].h6::before,
 .protyle-preview h6::before {
     @extend %h6;
-}
 
-/* 列表中h6标签 */
-.li>[data-node-id].h6::before,
-.li>.protyle-preview h6::before {
-    top: 0.3rem;
+    .li>& {
+        /* 列表中适配 */
+        top: 0.3rem;
+    }
 }
 
 /* h6标签 */
