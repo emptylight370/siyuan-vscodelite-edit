@@ -42,7 +42,7 @@ Limited by the configuration loading method, updated configurations for new vers
 > Full changelog view [ChangeLog](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/changelog.md)
 
 - v2.2.11
-  - Fixed some remaining issues that did not affect normal use
+  - Fixed some legacy issues that did not affect normal use
 - v2.2.10
   - Fix display issue of heading icon in list
 - v2.2.9
