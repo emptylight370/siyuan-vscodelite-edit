@@ -152,7 +152,7 @@ function addThemeToolBar() {
 
 /**
  * 向css表中插入引用的语句
- * @param table \<link css\>
+ * @param table \<link stylesheet\>
  * @param labels EnableSettings[]
  */
 function addImports(table: HTMLLinkElement, labels: EnableSettings[]) {
@@ -234,8 +234,8 @@ function addImports(table: HTMLLinkElement, labels: EnableSettings[]) {
  */
 function addFixedAttribute(settings: EnableSettings[]) {
     // 运行
-    // >>>>>>>>>>>>>>>>>>>>>>>>>>>>
-    // 如果设置启用背景插件才进入判断
+    // *>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+    // ?如果设置启用背景插件才进入判断
     if (settings.includes("backgroundCoverDesktop") && !document.body.classList.contains('vscmobile') || settings.includes("backgroundCoverMobile") && document.body.classList.contains('vscmobile')) {
         // 首先调用插件状态检测
         bg(0);
@@ -244,14 +244,14 @@ function addFixedAttribute(settings: EnableSettings[]) {
             bgobserver(0);
         }
     }
-    // 如果启用了双标签栏
+    // ?如果启用了双标签栏
     if (settings.includes("doubleTabbar") && !document.body.classList.contains("vscmobile")) {
         // 添加观察器
         if (globalThis.vscObserver.tabbarObserver == null) {
             addTabbarObserver(document.querySelector(".layout__center").querySelector(".layout-tab-bar") as HTMLUListElement);
         }
     }
-    // <<<<<<<<<<<<<<<<<<<<<<<<<<<<
+    // *<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 }
 
 /**
@@ -294,7 +294,7 @@ async function addPdfStyle(lab: EnableSettings[]) {
 
 /**
  * 移除CSS规则，用于在可加载js的时候去掉PDF导出适配
- * @param table \<link css\>
+ * @param table \<link stylesheet\>
  */
 function removeCSSRules(table: HTMLLinkElement) {
     var sheet = table.sheet as CSSStyleSheet;
