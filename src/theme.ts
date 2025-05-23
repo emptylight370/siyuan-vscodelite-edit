@@ -11,12 +11,31 @@ import { EnableSettings } from "./ts/types";
     // 获取自己的css表
     const cssTable = document.getElementById('themeStyle') as HTMLLinkElement;
     // 添加全局变量
-    await loadGlobalVars();
+    try {
+        await loadGlobalVars();
+    } catch (e) {
+        // 基本上意味着主题启用失败了
+        console.error(globalThis.localMessage["loadVariableFail"][defLag]);
+        console.error(e);
+        await _postMessage('error', globalThis.localMessage["loadVariableFail"][defLag]);
+        return;
+    }
     // console.log(defLag);
     // console.log(cssTable);
     if (cssTable) {
         // 读取配置文件或生成配置文件
-        var labels: EnableSettings[] = await getSettings();
+        try {
+            var labels: EnableSettings[] = await getSettings();
+        } catch (e) {
+            /*
+             * 加载设置文件失败会使用默认的配置文件初始化一个
+             * 如果还是失败就意味着之前加载也失败了，不管什么地方失败都无法正常使用主题
+             */
+            console.error(globalThis.localMessage["loadConfigFail"][defLag]);
+            console.error(e);
+            await _postMessage('error', globalThis.localMessage["loadConfigFail"][defLag]);
+            return;
+        }
         // 添加主题菜单
         addThemeToolBar();
         // 向css中插入语句
@@ -26,11 +45,18 @@ import { EnableSettings } from "./ts/types";
         // 添加固定属性
         addFixedAttribute(labels);
         // 修复导出pdf没有样式的问题
-        await addPdfStyle(labels);
+        try {
+            await addPdfStyle(labels);
+        } catch (e) {
+            // 加载PDF导出预设失败只会影响导出PDF的视觉效果，不影响正常使用主题，没必要让用户知道这里报错了
+            console.error(globalThis.localMessage["loadPDFPersetFail"][defLag]);
+            console.error(e);
+        }
         // 加载完成(o゜▽゜)o☆
         console.log(localMessage["loadFinish"][defLag]);
     } else {
         // 加载失败
+        console.error(globalThis.localMessage["loadCssFail"][defLag]);
         await _postMessage('error', globalThis.localMessage["localCssFail"][globalThis.defLag]);
     }
 })();
@@ -48,28 +74,29 @@ window.destroyTheme = async () => {
             (item as HTMLLIElement).removeAttribute("style");
     })
     // 移除计时器
-    for (var key in globalThis.timer) {
-        if (globalThis.timer[key] != null) {
+    for (var key in globalThis.vscTimer) {
+        if (globalThis.vscTimer[key] != null) {
             // console.log("remove timer");
-            clearTimeout(globalThis.timer[key]);
-            clearInterval(globalThis.timer[key]);
-            globalThis.timer[key] = null;
+            clearTimeout(globalThis.vscTimer[key]);
+            if (globalThis.vscTimer[key] != null)
+                clearInterval(globalThis.vscTimer[key]);
+            globalThis.vscTimer[key] = null;
         }
     }
     // 移除监视器
-    for (key in globalThis.observer) {
-        if (globalThis.observer[key] != null) {
+    for (key in globalThis.vscObserver) {
+        if (globalThis.vscObserver[key] != null) {
             // console.log("remove observer");
-            globalThis.observer[key].disconnect();
-            globalThis.observer[key] = null;
+            globalThis.vscObserver[key].disconnect();
+            globalThis.vscObserver[key] = null;
         }
     }
     // 删除全局变量
     delete globalThis.defaultConf;
     delete globalThis.localMessage;
     delete globalThis.defLag;
-    delete globalThis.timer;
-    delete globalThis.observer;
+    delete globalThis.vscTimer;
+    delete globalThis.vscObserver;
 };
 
 /**

@@ -42,6 +42,18 @@ export async function loadGlobalVars() {
             "zh_CN": "加载主题VSCode Lite Edit失败，无法获取当前样式表",
             "en_US": "Load theme VSCode Lite Edit failed, can't load current style table"
         },
+        "loadVariableFail": {
+            "zh_CN": "加载主题VSCode Lite Edit失败，无法加载变量",
+            "en_US": "Load theme VSCode Lite Edit failed, can't load variables"
+        },
+        "loadConfigFail": {
+            "zh_CN": "加载主题VSCode Lite Edit失败，无法加载配置",
+            "en_US": "Load theme VSCode Lite Edit failed, can't load configuration"
+        },
+        "loadPDFPersetFail": {
+            "zh_CN": "加载主题VSCode Lite Edit的PDF导出预设失败",
+            "en_US": "Load the PDF export preset of theme VSCode Lite Edit failed"
+        },
         "loadFinish": {
             "zh_CN": "主题VSCode Lite Edit加载完成",
             "en_US": "Theme VSCode Lite Edit load finished"

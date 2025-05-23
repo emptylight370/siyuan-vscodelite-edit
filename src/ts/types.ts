@@ -45,6 +45,9 @@ export interface ThemeConfig {
 export interface LocalMessage {
     language: Record<string, boolean>;
     loadCssFail: Record<string, string>;
+    loadVariableFail: Record<string, string>;
+    loadConfigFail: Record<string, string>;
+    loadPDFPersetFail: Record<string, string>;
     loadFinish: Record<string, string>;
     confUpdate: Record<string, string>;
     confNotSave: Record<string, string>;

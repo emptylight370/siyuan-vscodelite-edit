@@ -2,7 +2,10 @@
 
 ## v2.2.11
 
-- Format code, hopefully nothing changed.
+- 修复一些遗留问题
+- 重新格式化代码
+- Fix some legacy issues
+- Format code again, hopefully nothing changed.
 
 ## v2.2.10
 
