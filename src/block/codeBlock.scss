@@ -18,7 +18,7 @@
 
 /* 代码块滚动时语言和按钮固定在编辑器顶部 CSS片段 */
 /* author by JeffreyChen https://ld246.com/article/1728146248791 */
-div:not(#preview)>.protyle-wysiwyg .code-block:not(pre) {
+div:not(#preview) > .protyle-wysiwyg .code-block:not(pre) {
     .protyle-action {
         position: sticky;
         top: 0;

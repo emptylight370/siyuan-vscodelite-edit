@@ -42,11 +42,11 @@
         }
     }
 
-    >.block__icons {
+    > .block__icons {
         border-bottom: 1px solid var(--mk-filetree-scrollbar-thumb);
     }
 
-    >.b3-list {
+    > .b3-list {
         border-top: 1px solid var(--mk-filetree-scrollbar-thumb);
     }
 
@@ -58,13 +58,13 @@
         @for $i from 1 through 7 {
             $selector: '> ul';
 
-            @if $i >1 {
+            @if $i > 1 {
                 @for $j from 2 through $i {
                     $selector: $selector + ' > ul';
                 }
             }
 
-            #{$selector}>li.b3-list-item>span.b3-list-item__toggle {
+            #{$selector} > li.b3-list-item > span.b3-list-item__toggle {
                 /* 第#{$i}级缩进 */
                 padding-left: $base-padding + ($i - 1) * $indent-step !important;
             }
@@ -77,7 +77,7 @@
 .sy__outline .fn__flex-1 .b3-list {
     @for $i from 2 through 6 {
 
-        .b3-list-item[data-subtype="h#{$i}"]>.b3-list-item__toggle {
+        .b3-list-item[data-subtype="h#{$i}"] > .b3-list-item__toggle {
             /* #{$i}级标题缩进 */
             padding-left: (($i - 1) * 10 + 4) + px !important;
         }

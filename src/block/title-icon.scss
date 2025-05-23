@@ -28,7 +28,7 @@
 .protyle-preview h1::before {
     @extend %h1;
 
-    .li>& {
+    .li > & {
         /* 列表中适配 */
         top: unset;
     }
@@ -46,8 +46,8 @@
 }
 
 /* h1标签文本 */
-[data-node-id].h1>div:nth-child(1),
-.protyle-preview h1>div:nth-child(1) {
+[data-node-id].h1 > div:nth-child(1),
+.protyle-preview h1 > div:nth-child(1) {
     display: inline-flex contents;
     max-width: calc(100% - 1.95rem);
     min-width: 1px;
@@ -83,7 +83,7 @@
 .protyle-preview h2::before {
     @extend %h2;
 
-    .li>& {
+    .li > & {
         /* 列表中适配 */
         top: 0.1rem;
     }
@@ -101,8 +101,8 @@
 }
 
 /* h2标签文本 */
-[data-node-id].h2>div:nth-child(1),
-.protyle-preview h2>div:nth-child(1) {
+[data-node-id].h2 > div:nth-child(1),
+.protyle-preview h2 > div:nth-child(1) {
     display: inline-flex contents;
     max-width: calc(100% - 1.75rem);
     min-width: 1px;
@@ -138,7 +138,7 @@
 .protyle-preview h3::before {
     @extend %h3;
 
-    .li>& {
+    .li > & {
         /* 列表中适配 */
         top: 0.2rem;
     }
@@ -156,8 +156,8 @@
 }
 
 /* h3标签文本 */
-[data-node-id].h3>div:nth-child(1),
-.protyle-preview h3>div:nth-child(1) {
+[data-node-id].h3 > div:nth-child(1),
+.protyle-preview h3 > div:nth-child(1) {
     display: inline-flex contents;
     max-width: calc(100% - 1.58rem);
     min-width: 1px;
@@ -193,7 +193,7 @@
 .protyle-preview h4::before {
     @extend %h4;
 
-    .li>& {
+    .li > & {
         /* 列表中适配 */
         top: 0.15rem;
     }
@@ -211,8 +211,8 @@
 }
 
 /* h4标签文本 */
-[data-node-id].h4>div:nth-child(1),
-.protyle-preview h4>div:nth-child(1) {
+[data-node-id].h4 > div:nth-child(1),
+.protyle-preview h4 > div:nth-child(1) {
     display: inline-flex contents;
     max-width: calc(100% - 1.45rem);
     min-width: 1px;
@@ -248,7 +248,7 @@
 .protyle-preview h5::before {
     @extend %h5;
 
-    .li>& {
+    .li > & {
         /* 列表中适配 */
         top: 0.2rem;
     }
@@ -266,8 +266,8 @@
 }
 
 /* h5标签文本 */
-[data-node-id].h5>div:nth-child(1),
-.protyle-preview h5>div:nth-child(1) {
+[data-node-id].h5 > div:nth-child(1),
+.protyle-preview h5 > div:nth-child(1) {
     display: inline-flex contents;
     max-width: calc(100% - 1.33rem);
     min-width: 1px;
@@ -303,7 +303,7 @@
 .protyle-preview h6::before {
     @extend %h6;
 
-    .li>& {
+    .li > & {
         /* 列表中适配 */
         top: 0.3rem;
     }
@@ -321,8 +321,8 @@
 }
 
 /* h6标签文本 */
-[data-node-id].h6>div:nth-child(1),
-.protyle-preview h6>div:nth-child(1) {
+[data-node-id].h6 > div:nth-child(1),
+.protyle-preview h6 > div:nth-child(1) {
     display: inline-flex contents;
     max-width: calc(100% - 1.2rem);
     min-width: 1px;

@@ -13,7 +13,7 @@
 }
 
 /* 用于修改有序列表和无序列表的块标位置 */
-.li[data-subtype=o]>.protyle-action::after {
+.li[data-subtype=o] > .protyle-action::after {
     padding: 3px 2px;
     display: flex;
     justify-content: center;
@@ -21,7 +21,7 @@
     margin: -1.2em 0 0 -0.5em !important;
 }
 
-.li[data-subtype=u]>.protyle-action::after {
+.li[data-subtype=u] > .protyle-action::after {
     padding: 3px 2px;
     display: flex;
     justify-content: center;
@@ -35,7 +35,7 @@
  * 扩增了一下到16级缩进了，感觉溢出了，什么时候会有这么多级缩进呢
  * 注意，编译后会被压缩
  */
-.li[data-subtype="o"] .li[data-subtype="o"]>.protyle-action--order {
+.li[data-subtype="o"] .li[data-subtype="o"] > .protyle-action--order {
     color: transparent !important;
 }
 
@@ -68,67 +68,67 @@
 }
 
 .li[data-subtype="o"] {
-    & &>.protyle-action::after {
+    & & > .protyle-action::after {
         @extend %o2;
     }
 
-    & & &>.protyle-action::after {
+    & & & > .protyle-action::after {
         @extend %o3;
     }
 
-    & & & &>.protyle-action::after {
+    & & & & > .protyle-action::after {
         @extend %o4;
     }
 
-    & & & & &>.protyle-action::after {
+    & & & & & > .protyle-action::after {
         @extend %o1;
     }
 
-    & & & & & &>.protyle-action::after {
+    & & & & & & > .protyle-action::after {
         @extend %o2;
     }
 
-    & & & & & & &>.protyle-action::after {
+    & & & & & & & > .protyle-action::after {
         @extend %o3;
     }
 
-    & & & & & & & &>.protyle-action::after {
+    & & & & & & & & > .protyle-action::after {
         @extend %o4;
     }
 
-    & & & & & & & & &>.protyle-action::after {
+    & & & & & & & & & > .protyle-action::after {
         @extend %o1;
     }
 
-    & & & & & & & & & &>.protyle-action::after {
+    & & & & & & & & & & > .protyle-action::after {
         @extend %o2;
     }
 
-    & & & & & & & & & & &>.protyle-action::after {
+    & & & & & & & & & & & > .protyle-action::after {
         @extend %o3;
     }
 
-    & & & & & & & & & & & &>.protyle-action::after {
+    & & & & & & & & & & & & > .protyle-action::after {
         @extend %o4;
     }
 
-    & & & & & & & & & & & & &>.protyle-action::after {
+    & & & & & & & & & & & & & > .protyle-action::after {
         @extend %o1;
     }
 
-    & & & & & & & & & & & & & &>.protyle-action::after {
+    & & & & & & & & & & & & & & > .protyle-action::after {
         @extend %o2;
     }
 
-    & & & & & & & & & & & & & & &>.protyle-action::after {
+    & & & & & & & & & & & & & & & > .protyle-action::after {
         @extend %o3;
     }
 
-    & & & & & & & & & & & & & & & &>.protyle-action::after {
+    & & & & & & & & & & & & & & & & > .protyle-action::after {
         @extend %o4;
     }
 
-    & & & & & & & & & & & & & & & & &>.protyle-action::after {
+    & & & & & & & & & & & & & & & & & > .protyle-action::after {
         @extend %o1;
     }
 }
@@ -136,7 +136,7 @@
 /* 无序列表 */
 /* 无序列表着色 */
 /* 导出时预览放到上面去了 */
-.list[data-subtype="u"] .li[data-subtype="u"]>.protyle-action svg {
+.list[data-subtype="u"] .li[data-subtype="u"] > .protyle-action svg {
     fill: transparent;
 }
 
@@ -145,7 +145,7 @@
  * 这次是18级列表，后面依然回到一级列表的样式
  * 注意，编译后会被压缩
  */
-[data-subtype="u"]>.li[data-subtype="u"]>.protyle-action::after {
+[data-subtype="u"] > .li[data-subtype="u"] > .protyle-action::after {
     font-size: 1.5em;
     font-family: Arial;
     content: "•";
@@ -177,75 +177,75 @@
 }
 
 .li[data-subtype="u"] {
-    & &>.protyle-action::after {
+    & & > .protyle-action::after {
         @extend %u2;
     }
 
-    & & &>.protyle-action::after {
+    & & & > .protyle-action::after {
         @extend %u3;
     }
 
-    & & & &>.protyle-action::after {
+    & & & & > .protyle-action::after {
         @extend %u4;
     }
 
-    & & & & &>.protyle-action::after {
+    & & & & & > .protyle-action::after {
         @extend %u5;
     }
 
-    & & & & & &>.protyle-action::after {
+    & & & & & & > .protyle-action::after {
         @extend %u6;
     }
 
-    & & & & & & &>.protyle-action::after {
+    & & & & & & & > .protyle-action::after {
         @extend %u1;
     }
 
-    & & & & & & & &>.protyle-action::after {
+    & & & & & & & & > .protyle-action::after {
         @extend %u2;
     }
 
-    & & & & & & & & &>.protyle-action::after {
+    & & & & & & & & & > .protyle-action::after {
         @extend %u3;
     }
 
-    & & & & & & & & & &>.protyle-action::after {
+    & & & & & & & & & & > .protyle-action::after {
         @extend %u4;
     }
 
-    & & & & & & & & & & &>.protyle-action::after {
+    & & & & & & & & & & & > .protyle-action::after {
         @extend %u5;
     }
 
-    & & & & & & & & & & & &>.protyle-action::after {
+    & & & & & & & & & & & & > .protyle-action::after {
         @extend %u6;
     }
 
-    & & & & & & & & & & & & &>.protyle-action::after {
+    & & & & & & & & & & & & & > .protyle-action::after {
         @extend %u1;
     }
 
-    & & & & & & & & & & & & & &>.protyle-action::after {
+    & & & & & & & & & & & & & & > .protyle-action::after {
         @extend %u2;
     }
 
-    & & & & & & & & & & & & & & &>.protyle-action::after {
+    & & & & & & & & & & & & & & & > .protyle-action::after {
         @extend %u3;
     }
 
-    & & & & & & & & & & & & & & & &>.protyle-action::after {
+    & & & & & & & & & & & & & & & & > .protyle-action::after {
         @extend %u4;
     }
 
-    & & & & & & & & & & & & & & & & &>.protyle-action::after {
+    & & & & & & & & & & & & & & & & & > .protyle-action::after {
         @extend %u5;
     }
 
-    & & & & & & & & & & & & & & & & & &>.protyle-action::after {
+    & & & & & & & & & & & & & & & & & & > .protyle-action::after {
         @extend %u6;
     }
 
-    & & & & & & & & & & & & & & & & & & &>.protyle-action::after {
+    & & & & & & & & & & & & & & & & & & & > .protyle-action::after {
         @extend %u1;
     }
 }
