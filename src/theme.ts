@@ -9,7 +9,7 @@ import { EnableSettings } from "./ts/types";
 // ! js代码加载后立即执行
 (async function () {
     // 获取自己的css表
-    const cssTable = document.getElementById('themeStyle') as HTMLLinkElement;
+    const cssTable = document.getElementById("themeStyle") as HTMLLinkElement;
     // 添加全局变量
     try {
         await loadGlobalVars();
@@ -17,7 +17,7 @@ import { EnableSettings } from "./ts/types";
         // 基本上意味着主题启用失败了
         console.error(globalThis.localMessage["loadVariableFail"][defLag]);
         console.error(e);
-        await _postMessage('error', globalThis.localMessage["loadVariableFail"][defLag]);
+        await _postMessage("error", globalThis.localMessage["loadVariableFail"][defLag]);
         return;
     }
     // console.log(defLag);
@@ -33,7 +33,7 @@ import { EnableSettings } from "./ts/types";
              */
             console.error(globalThis.localMessage["loadConfigFail"][defLag]);
             console.error(e);
-            await _postMessage('error', globalThis.localMessage["loadConfigFail"][defLag]);
+            await _postMessage("error", globalThis.localMessage["loadConfigFail"][defLag]);
             return;
         }
         // 添加主题菜单
@@ -57,7 +57,7 @@ import { EnableSettings } from "./ts/types";
     } else {
         // 加载失败
         console.error(globalThis.localMessage["loadCssFail"][defLag]);
-        await _postMessage('error', globalThis.localMessage["localCssFail"][globalThis.defLag]);
+        await _postMessage("error", globalThis.localMessage["localCssFail"][globalThis.defLag]);
     }
 })();
 
@@ -66,20 +66,18 @@ window.destroyTheme = async () => {
     // 移除主题按钮
     document.querySelector("#vscleToolbar").remove();
     // 移除body特殊适配语句
-    document.body.classList.remove('bgenable');
+    document.body.classList.remove("bgenable");
     // 移除双标签栏的style
     Array.from(document.querySelector(".layout__center").querySelectorAll(".item--pin")).forEach((item) => {
         (item as HTMLLIElement).style.removeProperty("margin-right");
-        if ((item as HTMLLIElement).style.length == 0)
-            (item as HTMLLIElement).removeAttribute("style");
-    })
+        if ((item as HTMLLIElement).style.length == 0) (item as HTMLLIElement).removeAttribute("style");
+    });
     // 移除计时器
     for (var key in globalThis.vscTimer) {
         if (globalThis.vscTimer[key] != null) {
             // console.log("remove timer");
             clearTimeout(globalThis.vscTimer[key]);
-            if (globalThis.vscTimer[key] != null)
-                clearInterval(globalThis.vscTimer[key]);
+            if (globalThis.vscTimer[key] != null) clearInterval(globalThis.vscTimer[key]);
             globalThis.vscTimer[key] = null;
         }
     }
@@ -159,63 +157,63 @@ function addImports(table: HTMLLinkElement, labels: EnableSettings[]) {
     var sheet: CSSStyleSheet = table.sheet;
     var i = 0;
     // ! 向css表中插入引用的语句
-    labels.forEach(it => {
+    labels.forEach((it) => {
         switch (it) {
             case "codeBlock":
-                sheet.insertRule('@import url(sub/block/codeBlock.css);', 4 + i);
+                sheet.insertRule("@import url(sub/block/codeBlock.css);", 4 + i);
                 i += 1;
                 break;
             case "reference":
-                sheet.insertRule('@import url(sub/block/reference.css);', 4 + i);
+                sheet.insertRule("@import url(sub/block/reference.css);", 4 + i);
                 i += 1;
                 break;
             case "bazaar":
-                sheet.insertRule('@import url(sub/app/bazaar.css);', 4 + i);
+                sheet.insertRule("@import url(sub/app/bazaar.css);", 4 + i);
                 i += 1;
                 break;
             case "embeddedBlock":
-                sheet.insertRule('@import url(sub/block/embeddedBlock.css);', 4 + i);
+                sheet.insertRule("@import url(sub/block/embeddedBlock.css);", 4 + i);
                 i += 1;
                 break;
             case "title":
-                sheet.insertRule('@import url(sub/block/title.css);', 4 + i);
+                sheet.insertRule("@import url(sub/block/title.css);", 4 + i);
                 i += 1;
                 break;
             case "titleShadow":
-                sheet.insertRule('@import url(sub/block/title-shadow.css);', 4 + i);
+                sheet.insertRule("@import url(sub/block/title-shadow.css);", 4 + i);
                 i += 1;
                 break;
             case "titleIcon":
-                sheet.insertRule('@import url(sub/block/title-icon.css);', 4 + i);
+                sheet.insertRule("@import url(sub/block/title-icon.css);", 4 + i);
                 i += 1;
                 break;
             case "shortcutPanel":
-                sheet.insertRule('@import url(sub/plugin/keymapPlugin.css);', 4 + i);
+                sheet.insertRule("@import url(sub/plugin/keymapPlugin.css);", 4 + i);
                 i += 1;
                 break;
             case "database":
-                sheet.insertRule('@import url(sub/block/database.css);', 4 + i);
+                sheet.insertRule("@import url(sub/block/database.css);", 4 + i);
                 i += 1;
                 break;
             case "doctree":
-                sheet.insertRule('@import url(sub/app/filetree.css);', 4 + i);
+                sheet.insertRule("@import url(sub/app/filetree.css);", 4 + i);
                 i += 1;
                 break;
             case "backgroundCoverDesktop":
             case "backgroundCoverMobile":
-                if (!sheet.cssRules.toString().includes('backgroundPlugin.css')) {
-                    sheet.insertRule('@import url(sub/plugin/backgroundPlugin.css);', 4 + i);
+                if (!sheet.cssRules.toString().includes("backgroundPlugin.css")) {
+                    sheet.insertRule("@import url(sub/plugin/backgroundPlugin.css);", 4 + i);
                     i += 1;
                 }
                 break;
             case "mathPanel":
-                if (!document.body.classList.contains('vscmobile')) {
-                    sheet.insertRule('@import url(sub/plugin/mathEnhance.css);', 4 + i);
+                if (!document.body.classList.contains("vscmobile")) {
+                    sheet.insertRule("@import url(sub/plugin/mathEnhance.css);", 4 + i);
                     i += 1;
                 }
                 break;
             case "mark":
-                sheet.insertRule('@import url(sub/block/mark.css);', 4 + i);
+                sheet.insertRule("@import url(sub/block/mark.css);", 4 + i);
                 i += 1;
                 break;
             case "doubleTabbar":
@@ -236,7 +234,10 @@ function addFixedAttribute(settings: EnableSettings[]) {
     // 运行
     // *>>>>>>>>>>>>>>>>>>>>>>>>>>>>
     // ?如果设置启用背景插件才进入判断
-    if (settings.includes("backgroundCoverDesktop") && !document.body.classList.contains('vscmobile') || settings.includes("backgroundCoverMobile") && document.body.classList.contains('vscmobile')) {
+    if (
+        (settings.includes("backgroundCoverDesktop") && !document.body.classList.contains("vscmobile")) ||
+        (settings.includes("backgroundCoverMobile") && document.body.classList.contains("vscmobile"))
+    ) {
         // 首先调用插件状态检测
         bg(0);
         // 添加观察器
@@ -248,7 +249,9 @@ function addFixedAttribute(settings: EnableSettings[]) {
     if (settings.includes("doubleTabbar") && !document.body.classList.contains("vscmobile")) {
         // 添加观察器
         if (globalThis.vscObserver.tabbarObserver == null) {
-            addTabbarObserver(document.querySelector(".layout__center").querySelector(".layout-tab-bar") as HTMLUListElement);
+            addTabbarObserver(
+                document.querySelector(".layout__center").querySelector(".layout-tab-bar") as HTMLUListElement,
+            );
         }
     }
     // *<<<<<<<<<<<<<<<<<<<<<<<<<<<<
@@ -260,29 +263,29 @@ function addFixedAttribute(settings: EnableSettings[]) {
  */
 async function addPdfStyle(lab: EnableSettings[]) {
     var list = [];
-    list.push("@charset \"UTF-8\";");
-    lab.forEach(it => {
+    list.push('@charset "UTF-8";');
+    lab.forEach((it) => {
         switch (it) {
             case "codeBlock":
-                list.push('@import url(block/codeBlock.css);');
+                list.push("@import url(block/codeBlock.css);");
                 break;
             case "reference":
-                list.push('@import url(block/reference.css);');
+                list.push("@import url(block/reference.css);");
                 break;
             case "title":
-                list.push('@import url(block/title.css);');
+                list.push("@import url(block/title.css);");
                 break;
             case "titleShadow":
-                list.push('@import url(block/title-shadow.css);');
+                list.push("@import url(block/title-shadow.css);");
                 break;
             case "titleIcon":
-                list.push('@import url(block/title-icon.css);');
+                list.push("@import url(block/title-icon.css);");
                 break;
             case "database":
-                list.push('@import url(block/database.css);');
+                list.push("@import url(block/database.css);");
                 break;
             case "mark":
-                list.push('@import url(block/mark.css);');
+                list.push("@import url(block/mark.css);");
                 break;
             default:
                 break;
@@ -312,5 +315,5 @@ function removeCSSRules(table: HTMLLinkElement) {
     };
 
     // 移除 @import("sub/pdfPreview.css") 规则
-    removeImportRule(sheet, 'sub/pdfPreview.css');
+    removeImportRule(sheet, "sub/pdfPreview.css");
 }

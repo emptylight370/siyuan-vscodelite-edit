@@ -14,19 +14,19 @@
 export async function _rqFORSiyuan(url: string, data: any) {
     return fetch(url, {
         body: JSON.stringify(data),
-        method: 'POST',
+        method: "POST",
         headers: {
-            Authorization: `Token `
-        }
-    }).then(response => {
-        if (response.ok)
-            return response.json();
-        else
-            return null;
-    }).catch(error => {
-        console.log("VSCode Lite Edit api error:", error);
-        return null;
+            Authorization: `Token `,
+        },
     })
+        .then((response) => {
+            if (response.ok) return response.json();
+            else return null;
+        })
+        .catch((error) => {
+            console.log("VSCode Lite Edit api error:", error);
+            return null;
+        });
 }
 
 /**
@@ -37,12 +37,11 @@ export async function _rqFORSiyuan(url: string, data: any) {
  * @returns 文件内容
  */
 export async function _getFile(path: string, then = null, obj = null) {
-    let url = '/api/file/getFile';
+    let url = "/api/file/getFile";
     await _rqFORSiyuan(url, {
-        path: path
+        path: path,
     }).then((v) => {
-        if (then)
-            then(v, obj);
+        if (then) then(v, obj);
     });
 }
 
@@ -55,10 +54,17 @@ export async function _getFile(path: string, then = null, obj = null) {
  * @param isDir 是否是路径
  * @param modTime 修改时间
  * @returns Promise\<void\>
-*/
-export async function _writeFile(path: string, filedata: any, then = null, obj = null, isDir = false, modTime = Date.now()) {
+ */
+export async function _writeFile(
+    path: string,
+    filedata: any,
+    then = null,
+    obj = null,
+    isDir = false,
+    modTime = Date.now(),
+) {
     let blob = new Blob([filedata]);
-    let file = new File([blob], path.split('/').pop());
+    let file = new File([blob], path.split("/").pop());
     let formdata = new FormData();
     formdata.append("path", path);
     formdata.append("file", file);
@@ -66,13 +72,12 @@ export async function _writeFile(path: string, filedata: any, then = null, obj =
     formdata.append("modTime", modTime.toString());
     await fetch("/api/file/putFile", {
         body: formdata,
-        method: 'POST',
+        method: "POST",
         headers: {
-            Authorization: `Token `
-        }
+            Authorization: `Token `,
+        },
     }).then((v) => {
-        if (then)
-            then(obj);
+        if (then) then(obj);
         return v;
     });
 }
@@ -85,12 +90,8 @@ export async function _writeFile(path: string, filedata: any, then = null, obj =
  * @returns Promise\<void\>
  */
 export async function _postMessage(type: "ok" | "error", message: string, time = null) {
-    if (type == "ok")
-        var url = "/api/notification/pushMsg";
-    else if (type == "error")
-        url = "api/notification/pushErrMsg";
-    if (time)
-        await _rqFORSiyuan(url, { "msg": message, "timeout": time });
-    else
-        await _rqFORSiyuan(url, { "msg": message });
+    if (type == "ok") var url = "/api/notification/pushMsg";
+    else if (type == "error") url = "api/notification/pushErrMsg";
+    if (time) await _rqFORSiyuan(url, { msg: message, timeout: time });
+    else await _rqFORSiyuan(url, { msg: message });
 }

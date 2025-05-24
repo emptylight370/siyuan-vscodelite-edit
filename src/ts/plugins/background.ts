@@ -4,11 +4,11 @@ export function bg(times: number) {
     if (bglayer) {
         var style = window.getComputedStyle(bglayer);
         var body = document.body;
-        if (style.getPropertyValue("display") != 'none') {
-            body.classList.add('bgenable');
-        } else if (style.getPropertyValue("display") == 'none') {
+        if (style.getPropertyValue("display") != "none") {
+            body.classList.add("bgenable");
+        } else if (style.getPropertyValue("display") == "none") {
             // console.log("disable background");
-            body.classList.remove('bgenable');
+            body.classList.remove("bgenable");
         }
         // 刚开始每2秒重新检测状态，检测10秒
         if (times < 5) {
@@ -28,7 +28,7 @@ export function bgobserver(times: number) {
     if (bglayer) {
         globalThis.vscObserver.bgObserver = new MutationObserver(function (mutationsList) {
             for (var mutation of mutationsList) {
-                if (mutation.type === 'attributes' && mutation.attributeName === 'style') {
+                if (mutation.type === "attributes" && mutation.attributeName === "style") {
                     // 样式发生变化时执行的代码
                     bg(0);
                 }
@@ -36,7 +36,7 @@ export function bgobserver(times: number) {
         });
         globalThis.vscObserver.bgObserver.observe(bglayer, {
             attributes: true, // 监听属性变化
-            attributeFilter: ['style'] // 只监听 style 属性
+            attributeFilter: ["style"], // 只监听 style 属性
         });
         globalThis.vscTimer.bgObserTimer = null;
     } else {

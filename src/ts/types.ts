@@ -10,7 +10,7 @@ declare global {
     /** 本地化提示信息 */
     var localMessage: LocalMessage;
     /** 默认语言，可由浏览器方法获取 */
-    var defLag: 'zh_CN' | 'en_US';
+    var defLag: "zh_CN" | "en_US";
     /** 目前所有的计时器 */
     var vscTimer: vscTimers;
     /** 目前所有的观察器 */
@@ -104,7 +104,7 @@ export interface vscObservers {
  * @see https://github.com/siyuan-note/siyuan/blob/master/app/src/types/config.d.ts#L265-L283
  */
 export type TLang =
-    "en_US"
+    | "en_US"
     | "es_ES"
     | "fr_FR"
     | "zh_CHT"
@@ -130,20 +130,22 @@ export interface SettingItem {
 }
 
 /** 主题设置键 */
-type ThemeSettingKey = keyof ThemeConfig['theme'];
+type ThemeSettingKey = keyof ThemeConfig["theme"];
 
 /** 插件设置键 */
-type PluginSettingKey = keyof ThemeConfig['plugins'];
+type PluginSettingKey = keyof ThemeConfig["plugins"];
 
 /** 设置面板ID到配置文件的映射 */
 interface SettingKeyMap {
-    [K: string]: {
-        section: 'theme';
-        key: ThemeSettingKey;
-    } | {
-        section: 'plugins';
-        key: PluginSettingKey;
-    }
+    [K: string]:
+        | {
+              section: "theme";
+              key: ThemeSettingKey;
+          }
+        | {
+              section: "plugins";
+              key: PluginSettingKey;
+          };
 }
 
 /**
@@ -151,21 +153,21 @@ interface SettingKeyMap {
  * 设置面板配置项id：配置项范围，配置项键名
  */
 export const settingKeyMap: SettingKeyMap = {
-    codeBlock: { section: 'theme', key: 'codeBlock' }, // 代码块样式
-    referenceBlock: { section: 'theme', key: 'reference' }, // 引用块样式
-    bazaarStyle: { section: 'theme', key: 'bazaar' }, // 集市样式
-    titleBlock: { section: 'theme', key: 'title' }, // 标题块样式
-    embeddedBlock: { section: "theme", key: 'embeddedBlock' }, // 嵌入块样式
-    titleShadow: { section: 'theme', key: 'titleShadow' }, // 标题阴影
-    titleIcon: { section: 'theme', key: 'titleIcon' }, // 标题图标
-    database: { section: 'theme', key: 'database' }, // 数据库
-    doctree: { section: 'theme', key: 'doctree' }, // 文档树
-    mark: { section: 'theme', key: 'mark' }, // 标记
-    scPanelStyle: { section: 'plugins', key: 'shortcutPanel' }, // 快捷键面板
-    mathPanel: { section: 'plugins', key: 'mathPanel' }, // 数学面板
-    backgroundCoverDesktop: { section: 'plugins', key: 'backgroundCoverDesktop' }, // 桌面端图片背景
-    backgroundCoverMobile: { section: 'plugins', key: 'backgroundCoverMobile' }, // 移动端图片背景
-    doubleTabbar: { section: 'plugins', key: 'doubleTabbar' }, // 双标签栏
+    codeBlock: { section: "theme", key: "codeBlock" }, // 代码块样式
+    referenceBlock: { section: "theme", key: "reference" }, // 引用块样式
+    bazaarStyle: { section: "theme", key: "bazaar" }, // 集市样式
+    titleBlock: { section: "theme", key: "title" }, // 标题块样式
+    embeddedBlock: { section: "theme", key: "embeddedBlock" }, // 嵌入块样式
+    titleShadow: { section: "theme", key: "titleShadow" }, // 标题阴影
+    titleIcon: { section: "theme", key: "titleIcon" }, // 标题图标
+    database: { section: "theme", key: "database" }, // 数据库
+    doctree: { section: "theme", key: "doctree" }, // 文档树
+    mark: { section: "theme", key: "mark" }, // 标记
+    scPanelStyle: { section: "plugins", key: "shortcutPanel" }, // 快捷键面板
+    mathPanel: { section: "plugins", key: "mathPanel" }, // 数学面板
+    backgroundCoverDesktop: { section: "plugins", key: "backgroundCoverDesktop" }, // 桌面端图片背景
+    backgroundCoverMobile: { section: "plugins", key: "backgroundCoverMobile" }, // 移动端图片背景
+    doubleTabbar: { section: "plugins", key: "doubleTabbar" }, // 双标签栏
 } as const;
 
 /** 设置面板中使用的ID类型 */
@@ -173,13 +175,15 @@ export type SettingPanelId = keyof SettingKeyMap;
 
 /** 配置文件中启用项到配置文件的映射 */
 interface EnableSettingsKeyMap {
-    [K: string]: {
-        section: 'theme';
-        key: ThemeSettingKey;
-    } | {
-        section: 'plugins';
-        key: PluginSettingKey;
-    }
+    [K: string]:
+        | {
+              section: "theme";
+              key: ThemeSettingKey;
+          }
+        | {
+              section: "plugins";
+              key: PluginSettingKey;
+          };
 }
 
 /**
@@ -188,25 +192,25 @@ interface EnableSettingsKeyMap {
  * 这个是列表里面的元素名
  */
 export const EnableSettingsKeyMap: SettingKeyMap = {
-    codeBlock: { section: 'theme', key: 'codeBlock' }, // 代码块样式
-    reference: { section: 'theme', key: 'reference' }, // 引用块样式
-    bazaar: { section: 'theme', key: 'bazaar' }, // 集市样式
-    title: { section: 'theme', key: 'title' }, // 标题块样式
-    embeddedBlock: { section: "theme", key: 'embeddedBlock' }, // 嵌入块样式
-    titleShadow: { section: 'theme', key: 'titleShadow' }, // 标题阴影
-    titleIcon: { section: 'theme', key: 'titleIcon' }, // 标题图标
-    database: { section: 'theme', key: 'database' }, // 数据库
-    doctree: { section: 'theme', key: 'doctree' }, // 文档树
-    mark: { section: 'theme', key: 'mark' }, // 标记
-    shortcutPanel: { section: 'plugins', key: 'shortcutPanel' }, // 快捷键面板
-    mathPanel: { section: 'plugins', key: 'mathPanel' }, // 数学面板
-    backgroundCoverDesktop: { section: 'plugins', key: 'backgroundCoverDesktop' }, // 桌面端图片背景
-    backgroundCoverMobile: { section: 'plugins', key: 'backgroundCoverMobile' }, // 移动端图片背景
-    doubleTabbar: { section: 'plugins', key: 'doubleTabbar' }, // 双标签栏
+    codeBlock: { section: "theme", key: "codeBlock" }, // 代码块样式
+    reference: { section: "theme", key: "reference" }, // 引用块样式
+    bazaar: { section: "theme", key: "bazaar" }, // 集市样式
+    title: { section: "theme", key: "title" }, // 标题块样式
+    embeddedBlock: { section: "theme", key: "embeddedBlock" }, // 嵌入块样式
+    titleShadow: { section: "theme", key: "titleShadow" }, // 标题阴影
+    titleIcon: { section: "theme", key: "titleIcon" }, // 标题图标
+    database: { section: "theme", key: "database" }, // 数据库
+    doctree: { section: "theme", key: "doctree" }, // 文档树
+    mark: { section: "theme", key: "mark" }, // 标记
+    shortcutPanel: { section: "plugins", key: "shortcutPanel" }, // 快捷键面板
+    mathPanel: { section: "plugins", key: "mathPanel" }, // 数学面板
+    backgroundCoverDesktop: { section: "plugins", key: "backgroundCoverDesktop" }, // 桌面端图片背景
+    backgroundCoverMobile: { section: "plugins", key: "backgroundCoverMobile" }, // 移动端图片背景
+    doubleTabbar: { section: "plugins", key: "doubleTabbar" }, // 双标签栏
 } as const;
 
 /** 配置文件中启用项类型 */
 export type EnableSettings = keyof EnableSettingsKeyMap;
 
 // 声明文件作为模块
-export { };
+export {};

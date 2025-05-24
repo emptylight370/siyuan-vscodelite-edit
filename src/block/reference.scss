@@ -1,14 +1,14 @@
 /* 引用锚文本 */
 .protyle-wysiwyg [data-node-id] {
-    span[data-type~='block-ref']:not(.av__celltext) {
+    span[data-type~="block-ref"]:not(.av__celltext) {
         color: var(--lite-block-ref-color);
 
         &::before {
-            content: '⌈';
+            content: "⌈";
         }
 
         &::after {
-            content: '⌋';
+            content: "⌋";
         }
 
         &:hover {

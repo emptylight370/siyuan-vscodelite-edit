@@ -6,7 +6,7 @@ export function addTabbarObserver(tabbar: HTMLUListElement) {
         // 定义观察器
         globalThis.vscObserver.tabbarObserver = new MutationObserver(function (mutationsList) {
             for (var mutation of mutationsList) {
-                if (mutation.type == 'childList' || mutation.type == 'attributes') {
+                if (mutation.type == "childList" || mutation.type == "attributes") {
                     console.log("调节tab宽度");
                     changeTabbar(tabbar);
                 }
@@ -17,7 +17,7 @@ export function addTabbarObserver(tabbar: HTMLUListElement) {
             childList: true,
             subtree: true,
             attributes: true,
-            attributeFilter: ["class"]
+            attributeFilter: ["class"],
         });
     }
 }
@@ -34,7 +34,7 @@ function changeTabbar(tabbar: HTMLUListElement) {
     // 计算所有钉住页签的宽度
     Array.from(pinList).forEach((item) => {
         width += (item as HTMLLIElement).getBoundingClientRect().width;
-    })
+    });
     // 设置钉住页签右侧宽度
     if (width <= document.querySelector(".layout__center").getBoundingClientRect().width && width > 0) {
         (pinList[pinList.length - 1] as HTMLLIElement).style.marginRight = `calc(100% - ${width}px)`;

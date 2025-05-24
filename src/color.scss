@@ -1,5 +1,5 @@
 /* 明亮模式元数据定义 */
-:root[data-theme-mode=light] {
+:root[data-theme-mode="light"] {
     // 添加的内容，自定义属性
     --lite-status-background: #39cebb;
     --lite-li-items: #5cb83e;
@@ -59,11 +59,11 @@
 
     // [块]
     --mk-block-header-h1: #202124;
-    --mk-block-header-h2: #2E75B5;
-    --mk-block-header-h3: #BF9000;
-    --mk-block-header-h4: #70AD47;
-    --mk-block-header-h5: #E84C22;
-    --mk-block-header-h6: #8064A2;
+    --mk-block-header-h2: #2e75b5;
+    --mk-block-header-h3: #bf9000;
+    --mk-block-header-h4: #70ad47;
+    --mk-block-header-h5: #e84c22;
+    --mk-block-header-h6: #8064a2;
 
     --mk-block-header-background-h1: rgba(32, 33, 36, 0.2);
     --mk-block-header-background-h2: rgba(46, 118, 181, 0.2);
@@ -77,7 +77,7 @@
 }
 
 /* 暗黑模式元数据定义 */
-:root[data-theme-mode=dark] {
+:root[data-theme-mode="dark"] {
     // 添加的内容，自定义属性
     --lite-status-background: #66ccff;
     --lite-li-items: #c6d77b;
@@ -138,9 +138,9 @@
     // [块]
     --mk-block-header-h1: #cbd1d9;
     --mk-block-header-h2: #82b2dc;
-    --mk-block-header-h3: #BF9000;
-    --mk-block-header-h4: #70AD47;
-    --mk-block-header-h5: #E84C22;
+    --mk-block-header-h3: #bf9000;
+    --mk-block-header-h4: #70ad47;
+    --mk-block-header-h5: #e84c22;
     --mk-block-header-h6: #9f8ab9;
 
     // 原本思源自带的属性，换个名字用

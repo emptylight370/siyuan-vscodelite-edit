@@ -20,7 +20,7 @@ body.bgenable {
         }
     }
 
-    [data-type=wnd] {
+    [data-type="wnd"] {
         .layout-tab-container {
             /* 两边的文档树、大纲位置 */
             background-color: var(--lite-modify-surface__darker);
@@ -53,7 +53,6 @@ body.bgenable {
     }
 
     .protyle {
-
         // 桌面端
         &:not(#editor) {
             &:not(.fullscreen) {
@@ -70,8 +69,7 @@ body.bgenable {
                 opacity: 0.75;
             }
 
-            .av[data-av-type=table] {
-
+            .av[data-av-type="table"] {
                 .av__header,
                 .av__scroll {
                     /* 数据库背景修复 */
@@ -79,11 +77,10 @@ body.bgenable {
                 }
             }
 
-            .protyle-wysiwyg [data-node-id].render-node[data-type=NodeBlockQueryEmbed] {
+            .protyle-wysiwyg [data-node-id].render-node[data-type="NodeBlockQueryEmbed"] {
                 /* 嵌入块背景调整 */
                 background-color: var(--lite-modify-surface);
             }
-
         }
 
         // 移动端
@@ -100,7 +97,6 @@ body.bgenable {
 
     // 移动端
     &.vscmobile {
-
         .side-panel {
             background-color: var(--lite-sidebar-background--mobile);
 
@@ -125,8 +121,7 @@ body.bgenable {
             }
         }
 
-        .av[data-av-type=table] {
-
+        .av[data-av-type="table"] {
             .av__header,
             .av__scroll {
                 /* 数据库背景修复 */
@@ -134,7 +129,7 @@ body.bgenable {
             }
         }
 
-        .protyle-wysiwyg [data-node-id].render-node[data-type=NodeBlockQueryEmbed] {
+        .protyle-wysiwyg [data-node-id].render-node[data-type="NodeBlockQueryEmbed"] {
             /* 嵌入块背景调整 */
             background-color: var(--lite-modify-surface);
         }
@@ -159,7 +154,6 @@ body.bgenable {
     }
 
     .b3-menu {
-
         .b3-menu__item,
         .b3-menu__item .b3-menu__submenu {
             /* 左上角菜单选项 */
@@ -168,7 +162,7 @@ body.bgenable {
     }
 }
 
-:root[data-theme-mode=light] body.bgenable {
+:root[data-theme-mode="light"] body.bgenable {
     --mk-toolbar-text: #222222;
     --lite-status-background: #39cebbc0;
     --lite-modify-surface: #f6f6f640;
@@ -188,7 +182,7 @@ body.bgenable {
     --lite-sidebar-item--mobile: #ffffff00;
 }
 
-:root[data-theme-mode=dark] body.bgenable {
+:root[data-theme-mode="dark"] body.bgenable {
     --mk-toolbar-text: #ffffff;
     --lite-status-background: #66ccffc0;
     --lite-modify-surface: #26262670;

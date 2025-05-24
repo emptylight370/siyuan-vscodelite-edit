@@ -5,21 +5,11 @@
         "declaration": false,
         "outDir": "./",
         "rootDir": "./src",
-        "lib": [
-            "ES2015",
-            "ES2020",
-            "DOM",
-            "DOM.Iterable"
-        ],
+        "lib": ["ES2015", "ES2020", "DOM", "DOM.Iterable"],
         "esModuleInterop": true,
         "skipLibCheck": true,
         "forceConsistentCasingInFileNames": true
     },
-    "include": [
-        "src/**/*.ts"
-    ],
-    "exclude": [
-        "node_modules",
-        "dist"
-    ]
+    "include": ["src/**/*.ts"],
+    "exclude": ["node_modules", "dist"]
 }

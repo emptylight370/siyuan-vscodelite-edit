@@ -1,0 +1,13 @@
+{
+  "tabWidth": 4,
+  "printWidth": 120,
+  "bracketSameLine": true,
+  "overrides": [
+    {
+      "files":["*.md"],
+      "options": {
+        "tabWidth": 2
+      }
+    }
+  ]
+}

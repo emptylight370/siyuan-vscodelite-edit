@@ -13,7 +13,7 @@
 }
 
 /* 用于修改有序列表和无序列表的块标位置 */
-.li[data-subtype=o] > .protyle-action::after {
+.li[data-subtype="o"] > .protyle-action::after {
     padding: 3px 2px;
     display: flex;
     justify-content: center;
@@ -21,7 +21,7 @@
     margin: -1.2em 0 0 -0.5em !important;
 }
 
-.li[data-subtype=u] > .protyle-action::after {
+.li[data-subtype="u"] > .protyle-action::after {
     padding: 3px 2px;
     display: flex;
     justify-content: center;
@@ -45,25 +45,25 @@
 
 %o1 {
     counter-increment: o1;
-    content: counter(o1, decimal)".";
+    content: counter(o1, decimal) ".";
     position: absolute;
 }
 
 %o2 {
     counter-increment: o2;
-    content: counter(o2, decimal)")";
+    content: counter(o2, decimal) ")";
     position: absolute;
 }
 
 %o3 {
     counter-increment: o3;
-    content: counter(o3, lower-latin)".";
+    content: counter(o3, lower-latin) ".";
     position: absolute;
 }
 
 %o4 {
     counter-increment: o4;
-    content: counter(o4, lower-roman)".";
+    content: counter(o4, lower-roman) ".";
     position: absolute;
 }
 

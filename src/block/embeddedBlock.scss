@@ -1,5 +1,5 @@
 /* 嵌入块的边框高亮 */
-.protyle-wysiwyg [data-node-id].render-node[data-type=NodeBlockQueryEmbed] {
+.protyle-wysiwyg [data-node-id].render-node[data-type="NodeBlockQueryEmbed"] {
     max-height: 70vh;
     display: flex;
     border: 1px solid white;
@@ -17,7 +17,7 @@
             width: calc(100% - 24px);
         }
 
-        > [data-node-index].render-node:not([data-type=NodeParagraph]),
+        > [data-node-index].render-node:not([data-type="NodeParagraph"]),
         > [data-node-index][custom-block-list-view] {
             /* 嵌入块内部特殊块高度修复 */
             /* 插件自定义块样式的高度修复 */
