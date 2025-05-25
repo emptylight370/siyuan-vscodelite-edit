@@ -1,12 +1,12 @@
 {
-  "tabWidth": 4,
+  "tabWidth": 2,
   "printWidth": 120,
   "bracketSameLine": true,
   "overrides": [
     {
-      "files":["*.md"],
+      "files": ["*.scss", "*.css", "*.ts", "*.js"],
       "options": {
-        "tabWidth": 2
+        "tabWidth": 4
       }
     }
   ]
