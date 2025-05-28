@@ -1,5 +1,5 @@
 /* 表格表头单元格 */
-div.table:not([custom-vsce~="disable-table"]) {
+div.table:not([custom-vsce~="no-thead"]) {
     table {
         thead {
             tr {
