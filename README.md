@@ -56,11 +56,14 @@ Limited by the configuration loading method, updated configurations for new vers
 
 ### How to use
 
-Add `vsce` attribute in block's custom attributes panel, filled with usable attribute value. If using multiple values, you should separate them with whitespace.
+Add `vsce` attribute in block or article's custom attributes panel, filled with usable attribute value. If using multiple values, you should separate them with whitespace.
+To enable custom attributes, add the `vsce` attribute in the **Custom Attributes** panel of a block or article, and assign one or more valid attribute values. If mutiple values are used, separate them with spaces.
 
 ### Usable attribute values
 
-`disable-table`：Disable the table head's color and align.
+|     values      | Scope       | Effect                                               |
+| :-------------: | ----------- | ---------------------------------------------------- |
+| `disable-table` | table block | Disable the color and align of table head(`<thead>`) |
 
 ## Plugin fitness
 
