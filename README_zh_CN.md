@@ -41,14 +41,26 @@
 
 > 完整更新日志查看[changelog](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/changelog.md)
 
+- v2.3.0
+  - 新增自定义属性(beta测)
 - v2.2.11
   - 修复一些遗留问题，不影响正常使用
 - v2.2.10
   - 修复列表中标题图标显示问题
-- v2.2.9
-  - 修复新版本思源中提示 401Unauthorized 问题
 
 # 特殊适配
+
+## 自定义属性
+
+![readme_custom_attribute](./resources/readme_custom_attribute.png)
+
+### 启用方法
+
+在块的自定义属性面板中新增`vsce`属性，在其中填入可用的属性值。如果使用多个属性值需以空格分隔。
+
+### 可用属性值
+
+`disable-table`：禁用表头的颜色和居中对齐。
 
 ## 插件适配
 

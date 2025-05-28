@@ -41,14 +41,26 @@ Limited by the configuration loading method, updated configurations for new vers
 
 > Full changelog view [ChangeLog](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/changelog.md)
 
+- v2.3.0
+  - Add custom attributes(beta testing)
 - v2.2.11
   - Fixed some legacy issues that did not affect normal use
 - v2.2.10
   - Fix display issue of heading icon in list
-- v2.2.9
-  - Fix 401Unauthorized issue in SiYuan new version
 
 # Special fitness
+
+## Custom attributes
+
+![readme_custom_attribute](./resources/readme_custom_attribute.png)
+
+### How to use
+
+Add `vsce` attribute in block's custom attributes panel, filled with usable attribute value. If using multiple values, you should separate them with whitespace.
+
+### Usable attribute values
+
+`disable-table`：Disable the table head's color and align.
 
 ## Plugin fitness
 

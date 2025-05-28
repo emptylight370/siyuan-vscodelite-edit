@@ -1,5 +1,12 @@
 # ChangeLog
 
+## v2.3.0
+
+- 使用Prettier刷一遍代码
+- 新增自定义属性
+- Use Prettier to format code
+- Add custom attribute
+
 ## v2.2.11
 
 - 修复一些遗留问题

@@ -1,10 +1,12 @@
 /* 表格表头单元格 */
-table {
-    thead {
-        tr {
-            th {
-                color: var(--mk-block-header-h6);
-                text-align: center;
+div.table:not([custom-vsce~="disable-table"]) {
+    table {
+        thead {
+            tr {
+                th {
+                    color: var(--mk-block-header-h6);
+                    text-align: center;
+                }
             }
         }
     }
