@@ -11,3 +11,13 @@ div.table:not([custom-vsce~="no-thead"]) {
         }
     }
 }
+
+div.table[custom-vsce~="table-min"] {
+    table {
+        colgroup {
+            col {
+                min-width: unset !important;
+            }
+        }
+    }
+}

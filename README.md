@@ -60,9 +60,10 @@ To enable custom attributes, add the `vsce` attribute in the **Custom Attributes
 
 ### Usable attribute values
 
-|   values   | Scope       | Effect                                               |
-| :--------: | ----------- | ---------------------------------------------------- |
-| `no-thead` | table block | Disable the color and align of table head(`<thead>`) |
+|   values    | Scope       | Effect                                                |
+| :---------: | ----------- | ----------------------------------------------------- |
+| `no-thead`  | table block | Disable the color and align of table head(`<thead>`)  |
+| `table-min` | table block | Force using default column width, no preset min width |
 
 ## Plugin fitness
 
