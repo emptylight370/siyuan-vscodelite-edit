@@ -4,8 +4,10 @@
 
 - 使用Prettier刷一遍代码
 - 新增自定义属性
+- 设置面板中未设置的选项使用默认值
 - Use Prettier to format code
 - Add custom attribute
+- The options not set in setting panel uses their default value
 
 ## v2.2.11
 

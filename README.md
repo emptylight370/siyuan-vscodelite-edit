@@ -43,6 +43,7 @@ Limited by the configuration loading method, updated configurations for new vers
 
 - v2.3.0
   - Add custom attributes(beta testing)
+  - The options not set in setting panel uses their default value
 - v2.2.11
   - Fixed some legacy issues that did not affect normal use
 - v2.2.10

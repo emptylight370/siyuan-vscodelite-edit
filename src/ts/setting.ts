@@ -192,56 +192,56 @@ async function getSettingArrays(v: ThemeConfig) {
     let settings: SettingItem[] = [];
     // ! 设置页添加设置选项
     // 标题
-    settings.push({ label: localMessage["tititem"][defLag], id: "titleBlock", enable: v?.theme?.title ?? false });
+    settings.push({ label: localMessage["tititem"][defLag], id: "titleBlock", enable: v?.theme?.title ?? true });
     // 标题阴影
     settings.push({
         label: localMessage["titleShadow"][defLag],
         description: localMessage["titleShadowDesc"][defLag],
         id: "titleShadow",
-        enable: v?.theme?.titleShadow ?? false,
+        enable: v?.theme?.titleShadow ?? true,
     });
     // 标题图标
     settings.push({
         label: localMessage["titleIcon"][defLag],
         description: localMessage["titleIconDesc"][defLag],
         id: "titleIcon",
-        enable: v?.theme?.titleIcon ?? false,
+        enable: v?.theme?.titleIcon ?? true,
     });
     // 文档树和大纲
-    settings.push({ label: localMessage["ftitem"][defLag], id: "doctree", enable: v?.theme?.doctree ?? false });
+    settings.push({ label: localMessage["ftitem"][defLag], id: "doctree", enable: v?.theme?.doctree ?? true });
     // 代码块
-    settings.push({ label: localMessage["cbitem"][defLag], id: "codeBlock", enable: v?.theme?.codeBlock ?? false });
+    settings.push({ label: localMessage["cbitem"][defLag], id: "codeBlock", enable: v?.theme?.codeBlock ?? true });
     // 引用
     settings.push({
         label: localMessage["refitem"][defLag],
         id: "referenceBlock",
-        enable: v?.theme?.reference ?? false,
+        enable: v?.theme?.reference ?? true,
     });
     // 标记
-    settings.push({ label: localMessage["markitem"][defLag], id: "mark", enable: v?.theme?.mark ?? false });
+    settings.push({ label: localMessage["markitem"][defLag], id: "mark", enable: v?.theme?.mark ?? true });
     // 集市
-    settings.push({ label: localMessage["bazitem"][defLag], id: "bazaarStyle", enable: v?.theme?.bazaar ?? false });
+    settings.push({ label: localMessage["bazitem"][defLag], id: "bazaarStyle", enable: v?.theme?.bazaar ?? true });
     // 嵌入块
     settings.push({
         label: localMessage["emitem"][defLag],
         description: localMessage["emdesc"][defLag],
         id: "embeddedBlock",
-        enable: v?.theme?.embeddedBlock ?? false,
+        enable: v?.theme?.embeddedBlock ?? true,
     });
     // 数据库
-    settings.push({ label: localMessage["dbitem"][defLag], id: "database", enable: v?.theme?.database ?? false });
+    settings.push({ label: localMessage["dbitem"][defLag], id: "database", enable: v?.theme?.database ?? true });
     // 快捷键面板
     settings.push({
         label: localMessage["scitem"][defLag],
         id: "scPanelStyle",
-        enable: v?.plugins?.shortcutPanel ?? false,
+        enable: v?.plugins?.shortcutPanel ?? true,
     });
     // 替换背景图片插件电脑端
     settings.push({
         label: localMessage["bgdesktop"][defLag],
         description: localMessage["bgdesc"][defLag],
         id: "backgroundCoverDesktop",
-        enable: v?.plugins?.backgroundCoverDesktop ?? false,
+        enable: v?.plugins?.backgroundCoverDesktop ?? true,
     });
     // 替换背景图片插件移动端
     settings.push({
@@ -274,7 +274,7 @@ async function getSettingArrays(v: ThemeConfig) {
 export async function getSettings() {
     var str: EnableSettings[];
     // var res = _analyseResponse(_getFile("/data/snippets/vsc_edit.config.json"));
-    await _getFile("/data/snippets/vsc_edit.config.json", async (v) => {
+    await _getFile("/data/snippets/vsc_edit.config.json", async (v: ThemeConfig) => {
         if (v == null) {
             v = globalThis.defaultConf;
             putSettings(v);
