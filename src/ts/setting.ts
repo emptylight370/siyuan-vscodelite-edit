@@ -173,14 +173,11 @@ export async function createSettingsWindow() {
  * @returns Promise\<SettingItem[]\>
  */
 async function fetchSettingsArray() {
-    let re: SettingItem[];
-    await _getFile("/data/snippets/vsc_edit.config.json", async (v: ThemeConfig) => {
-        if (v == null) {
-            v = defaultConf;
-        }
-        re = await getSettingArrays(v);
-    });
-    return re;
+    const config: ThemeConfig | null = await _getFile("/data/snippets/vsc_edit.config.json");
+    // 如果没有获取到配置文件则使用默认配置文件
+    const v: ThemeConfig = config ?? defaultConf;
+    // 生成并返回设置项列表
+    return await getSettingArrays(v);
 }
 
 /**
@@ -278,17 +275,16 @@ async function getSettingArrays(v: ThemeConfig) {
  * ! 获取设置
  * @returns Promise\<EnableSettings[]\>
  */
-export async function getSettings() {
-    var str: EnableSettings[];
+export async function getSettings(): Promise<EnableSettings[]> {
     // var res = _analyseResponse(_getFile("/data/snippets/vsc_edit.config.json"));
-    await _getFile("/data/snippets/vsc_edit.config.json", async (v: ThemeConfig) => {
-        if (v == null) {
-            v = globalThis.defaultConf;
-            putSettings(v);
-        }
-        str = await showElementSettings(v);
-    });
-    return str;
+    var config: ThemeConfig | null = await _getFile("/data/snippets/vsc_edit.config.json");
+    // 如果未获取到配置文件，则使用默认配置生成文件
+    if (!config) {
+        config = globalThis.defaultConf;
+        await putSettings(config);
+    }
+    // 解析并返回当前启用的设置项
+    return await showElementSettings(config);
 }
 
 /**
@@ -300,7 +296,7 @@ export async function putSettings(settings: ThemeConfig) {
     if (settings == null) {
         return;
     }
-    await _writeFile("/data/snippets/vsc_edit.config.json", JSON.stringify(settings), null, null, false, Date.now());
+    await _writeFile("/data/snippets/vsc_edit.config.json", JSON.stringify(settings), false, Date.now());
 }
 
 /**

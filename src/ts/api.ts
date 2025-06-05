@@ -12,21 +12,19 @@
  * @returns Promise\<any\>?
  */
 export async function _rqFORSiyuan(url: string, data: any) {
-    return fetch(url, {
-        body: JSON.stringify(data),
-        method: "POST",
-        headers: {
-            Authorization: `Token `,
-        },
-    })
-        .then((response) => {
-            if (response.ok) return response.json();
-            else return null;
-        })
-        .catch((error) => {
-            console.log("VSCode Lite Edit api error:", error);
-            return null;
+    try {
+        const response = await fetch(url, {
+            body: JSON.stringify(data),
+            method: "POST",
+            headers: {
+                Authorization: `Token ${window.siyuan?.config?.api?.token ?? ""}`,
+            },
         });
+        return response.ok ? await response.json() : null;
+    } catch (error) {
+        console.log("VSCode Lite Edit api error:", error);
+        return null;
+    }
 }
 
 /**
@@ -36,13 +34,31 @@ export async function _rqFORSiyuan(url: string, data: any) {
  * @param obj obj?
  * @returns 文件内容
  */
-export async function _getFile(path: string, then = null, obj = null) {
-    let url = "/api/file/getFile";
-    await _rqFORSiyuan(url, {
+export async function _getFile(path: string) {
+    const result = await _rqFORSiyuan("/api/file/getFile", {
         path: path,
-    }).then((v) => {
-        if (then) then(v, obj);
     });
+    // 未获取到结果
+    if (!result) {
+        console.error(`VSCE: Read file ${path} failed.`);
+        return null;
+    }
+    // 思源返回错误码
+    if (result.code === 403) {
+        console.error(`VSCE(${result.code}): Read file ${path} forbidden, not in workspace.`);
+        return null;
+    } else if (result.code === 404) {
+        console.error(`VSCE(${result.code}): Read file ${path} failed, file not found.`);
+        return null;
+    } else if (result.code === 405) {
+        console.error(`VSCE(${result.code}): Read file ${path} failed, this is a directory.`);
+        return null;
+    } else if (result.code === 500) {
+        console.error(`VSCE(${result.code}): Read file ${path} failed, SiYuan internal error occured.`);
+        return null;
+    }
+    // 正常返回结果
+    return result;
 }
 
 /**
@@ -55,31 +71,27 @@ export async function _getFile(path: string, then = null, obj = null) {
  * @param modTime 修改时间
  * @returns Promise\<void\>
  */
-export async function _writeFile(
-    path: string,
-    filedata: any,
-    then = null,
-    obj = null,
-    isDir = false,
-    modTime = Date.now(),
-) {
+export async function _writeFile(path: string, filedata: any, isDir = false, modTime = Date.now()) {
     let blob = new Blob([filedata]);
     let file = new File([blob], path.split("/").pop());
+
     let formdata = new FormData();
     formdata.append("path", path);
     formdata.append("file", file);
     formdata.append("isDir", isDir.toString());
     formdata.append("modTime", modTime.toString());
-    await fetch("/api/file/putFile", {
-        body: formdata,
-        method: "POST",
-        headers: {
-            Authorization: `Token `,
-        },
-    }).then((v) => {
-        if (then) then(obj);
-        return v;
-    });
+
+    try {
+        await fetch("/api/file/putFile", {
+            body: formdata,
+            method: "POST",
+            headers: {
+                Authorization: `Token ${window.siyuan?.config?.api?.token ?? ""}`,
+            },
+        });
+    } catch (error) {
+        console.error("VSCE: Write file error:", error);
+    }
 }
 
 /**

@@ -46,6 +46,7 @@ Limited by the configuration loading method, updated configurations for new vers
   - The options not set in setting panel uses their default value
   - Change display of the double tab bar
   - Fix heading icon display in incorrect position in SiYuan version 3.1.32 and above
+  - Fix issue that can't load theme when theme config file should update
 - v2.2.11
   - Fixed some legacy issues that did not affect normal use
 - v2.2.10

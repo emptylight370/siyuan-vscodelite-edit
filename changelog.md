@@ -7,11 +7,15 @@
 - 设置面板中未设置的选项使用默认值
 - 修改双标签栏的显示效果
 - 修复思源版本3.1.32以上导致的标题图标错位问题
+- 修复主题配置文件需要更新时无法正常加载主题问题
+- 优化代码以增强稳定性
 - Use Prettier to format code
 - Add custom attribute
 - The options not set in setting panel uses their default value
 - Change display of the double tab bar
 - Fix heading icon display in incorrect position in SiYuan version 3.1.32 and above
+- Fix issue that can't load theme when theme config file should update
+- Optimize code to enhance stability
 
 ## v2.2.11
 

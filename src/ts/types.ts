@@ -2,6 +2,18 @@ declare global {
     interface Window {
         /** 主题移除时由思源触发 */
         destroyTheme?: () => Promise<void>;
+
+        /** 思源的配置项 */
+        siyuan: {
+            config: {
+                api: {
+                    // 设置中的token
+                    token: string;
+                };
+                // 和<html>中的lang一样
+                lang: string;
+            };
+        };
     }
 
     // 主题代码中添加的全局变量
