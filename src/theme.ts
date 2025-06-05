@@ -1,7 +1,6 @@
 import { _postMessage, _writeFile } from "./ts/api";
 import { loadGlobalVars } from "./ts/defs";
 import { bg, bgobserver } from "./ts/plugins/background";
-import { addTabbarObserver } from "./ts/plugins/doubleTabbar";
 import { createSettingsWindow, getSettings } from "./ts/setting";
 import { EnableSettings } from "./ts/types";
 

@@ -6,10 +6,12 @@
 - 新增自定义属性
 - 设置面板中未设置的选项使用默认值
 - 修改双标签栏的显示效果
+- 修复思源版本3.1.32以上导致的标题图标错位问题
 - Use Prettier to format code
 - Add custom attribute
 - The options not set in setting panel uses their default value
 - Change display of the double tab bar
+- Fix heading icon display in incorrect position in SiYuan version 3.1.32 and above
 
 ## v2.2.11
 

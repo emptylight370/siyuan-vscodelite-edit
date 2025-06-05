@@ -8,7 +8,7 @@
     mask: url(../../resources/h1.svg) no-repeat center center;
     mask-size: contain;
     background-color: var(--mk-block-header-h1);
-    top: 0.2rem;
+    top: 0.5rem;
     margin-right: 0.2rem;
 }
 
@@ -42,7 +42,7 @@
     border-radius: unset;
     margin-top: unset;
     left: unset !important;
-    top: 0.2rem !important;
+    top: 0.5rem !important;
 }
 
 /* h1标签文本 */
@@ -63,7 +63,7 @@
     mask: url(../../resources/h2.svg) no-repeat center center;
     mask-size: contain;
     background-color: var(--mk-block-header-h2);
-    top: 0.2rem;
+    top: 0.5rem;
     margin-right: 0.2rem;
 }
 
@@ -97,7 +97,7 @@
     border-radius: unset;
     margin-top: unset;
     left: unset !important;
-    top: 0.2rem !important;
+    top: 0.5rem !important;
 }
 
 /* h2标签文本 */
@@ -118,7 +118,7 @@
     mask: url(../../resources/h3.svg) no-repeat center center;
     mask-size: contain;
     background-color: var(--mk-block-header-h3);
-    top: 0.2rem;
+    top: 0.5rem;
     margin-right: 0.2rem;
 }
 
@@ -152,7 +152,7 @@
     border-radius: unset;
     margin-top: unset;
     left: unset !important;
-    top: 0.2rem !important;
+    top: 0.5rem !important;
 }
 
 /* h3标签文本 */
@@ -173,7 +173,7 @@
     mask: url(../../resources/h4.svg) no-repeat center center;
     mask-size: contain;
     background-color: var(--mk-block-header-h4);
-    top: 0.15rem;
+    top: 0.4rem;
     margin-right: 0.2rem;
 }
 
@@ -207,7 +207,7 @@
     border-radius: unset;
     margin-top: unset;
     left: unset !important;
-    top: 0.15rem !important;
+    top: 0.4rem !important;
 }
 
 /* h4标签文本 */
@@ -228,7 +228,7 @@
     mask: url(../../resources/h5.svg) no-repeat center center;
     mask-size: contain;
     background-color: var(--mk-block-header-h5);
-    top: 0.1rem;
+    top: 0.35rem;
     margin-right: 0.2rem;
 }
 
@@ -262,7 +262,7 @@
     border-radius: unset;
     margin-top: unset;
     left: unset !important;
-    top: 0.1rem !important;
+    top: 0.35rem !important;
 }
 
 /* h5标签文本 */
@@ -283,7 +283,7 @@
     mask: url(../../resources/h6.svg) no-repeat center center;
     mask-size: contain;
     background-color: var(--mk-block-header-h6);
-    top: 0.1rem;
+    top: 0.3rem;
     margin-right: 0.2rem;
 }
 
@@ -317,7 +317,7 @@
     border-radius: unset;
     margin-top: unset;
     left: unset !important;
-    top: 0.1rem !important;
+    top: 0.3rem !important;
 }
 
 /* h6标签文本 */
