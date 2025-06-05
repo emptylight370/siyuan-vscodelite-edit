@@ -31,6 +31,7 @@ export interface ThemeConfig {
         database: boolean;
         doctree: boolean;
         mark: boolean;
+        tag: boolean;
     };
     plugins: {
         shortcutPanel: boolean;
@@ -82,6 +83,8 @@ export interface LocalMessage {
     doubleTabbaritem: Record<string, string>;
     doubleTabbardesc: Record<string, string>;
     doubleTabbarMessage: Record<string, string>;
+    tagitem: Record<string, string>;
+    tagdesc: Record<string, string>;
 }
 
 /** 计时器接口 */
@@ -163,6 +166,7 @@ export const settingKeyMap: SettingKeyMap = {
     database: { section: "theme", key: "database" }, // 数据库
     doctree: { section: "theme", key: "doctree" }, // 文档树
     mark: { section: "theme", key: "mark" }, // 标记
+    tagStyle: { section: "theme", key: "tag" }, // 标签
     scPanelStyle: { section: "plugins", key: "shortcutPanel" }, // 快捷键面板
     mathPanel: { section: "plugins", key: "mathPanel" }, // 数学面板
     backgroundCoverDesktop: { section: "plugins", key: "backgroundCoverDesktop" }, // 桌面端图片背景
@@ -202,6 +206,7 @@ export const EnableSettingsKeyMap: SettingKeyMap = {
     database: { section: "theme", key: "database" }, // 数据库
     doctree: { section: "theme", key: "doctree" }, // 文档树
     mark: { section: "theme", key: "mark" }, // 标记
+    tag: { section: "theme", key: "tag" }, // 标签
     shortcutPanel: { section: "plugins", key: "shortcutPanel" }, // 快捷键面板
     mathPanel: { section: "plugins", key: "mathPanel" }, // 数学面板
     backgroundCoverDesktop: { section: "plugins", key: "backgroundCoverDesktop" }, // 桌面端图片背景

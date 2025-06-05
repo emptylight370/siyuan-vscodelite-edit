@@ -219,6 +219,10 @@ function addImports(table: HTMLLinkElement, labels: EnableSettings[]) {
                 sheet.insertRule("@import url(sub/plugin/doubleTabbar.css);", 4 + i);
                 i += 1;
                 break;
+            case "tag":
+                sheet.insertRule("@import url(sub/block/tag.css);", 4 + i);
+                i += 1;
+                break;
             default:
                 break;
         }
@@ -277,6 +281,8 @@ async function addPdfStyle(lab: EnableSettings[]) {
             case "mark":
                 list.push("@import url(block/mark.css);");
                 break;
+            case "tag":
+                list.push("@import url(block/tag.css);");
             default:
                 break;
         }

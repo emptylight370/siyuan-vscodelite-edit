@@ -8,7 +8,7 @@ export async function loadGlobalVars() {
      * ! 默认配置文件
      */
     globalThis.defaultConf = {
-        version: 11,
+        version: 12,
         theme: {
             codeBlock: true,
             reference: true,
@@ -20,6 +20,7 @@ export async function loadGlobalVars() {
             database: true,
             doctree: true,
             mark: true,
+            tag: true,
         },
         plugins: {
             shortcutPanel: true,
@@ -189,6 +190,14 @@ export async function loadGlobalVars() {
         doubleTabbarMessage: {
             zh_CN: "VSCE:点击暂时不能改变标签页，请手动点击原标签页",
             en_US: "VSCE:Can't change tab while clicking now, click original tab manually please",
+        },
+        tagitem: {
+            zh_CN: "块内标签样式",
+            en_US: "The style of tags",
+        },
+        tagdesc: {
+            zh_CN: "块内标签样式跟随文档标签样式",
+            en_US: "The style of tags in block uses the style of tags of document",
         },
     };
 

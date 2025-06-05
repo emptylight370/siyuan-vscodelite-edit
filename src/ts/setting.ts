@@ -219,6 +219,13 @@ async function getSettingArrays(v: ThemeConfig) {
     });
     // 标记
     settings.push({ label: localMessage["markitem"][defLag], id: "mark", enable: v?.theme?.mark ?? true });
+    // 标签
+    settings.push({
+        label: localMessage["tagitem"][defLag],
+        description: localMessage["tagdesc"][defLag],
+        id: "tagStyle",
+        enable: v?.theme?.tag ?? true,
+    });
     // 集市
     settings.push({ label: localMessage["bazitem"][defLag], id: "bazaarStyle", enable: v?.theme?.bazaar ?? true });
     // 嵌入块
