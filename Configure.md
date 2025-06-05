@@ -1,4 +1,4 @@
-JUMP TO: [中文](#配置)  [English](#configure)
+JUMP TO: [中文](#配置) [English](#configure)
 
 > 请注意：目前文档正在完善中。
 >
@@ -68,6 +68,10 @@ Add border of database, and seperate the title and contents of database.
 
 Change the background color and appearance of mark.
 
+#### Tag
+
+Tags in a content block use the same style as document tags.
+
 ## Special Adaption
 
 ### Plugin Adaption
@@ -92,6 +96,10 @@ Theme has integrated some code snippets from the bazaar. The following is the li
 - [Show pinned doc name(NO icon version)](https://ld246.com/article/1728392178095) by JeffreyChen
 
 ## Custom Style
+
+TBC
+
+## Custom Attribute
 
 TBC
 
@@ -159,6 +167,10 @@ TBC
 
 修改了标记的背景色和外观。
 
+#### 标签样式
+
+在段落中的标签应用类似于文档标签的样式。
+
 ## 特殊适配
 
 ### 插件适配
@@ -193,11 +205,17 @@ TBC
 自定义颜色可以通过以下代码来实现。
 
 ```css
-:root[data-theme-mode=light]{}
+:root[data-theme-mode="light"] {
+}
 
-:root[data-theme-mode=dark]{}
+:root[data-theme-mode="dark"] {
+}
 ```
 
 可自定义的颜色请自行查看`color.scss`或`color.css`。
 
 主题前段时间采用SCSS重构，可能导致部分代码片段失效，需要重新根据新生成的选择器进行调整。如有能力可查看GitHub上的SCSS代码自行理解，或选择查看本地主题代码（未压缩成单行，含少量注释）。
+
+## 自定义属性
+
+目前主题提供了一些可用的自定义属性，请自行前往[说明文档](./README_zh_CN.md#可用属性值)查看。
