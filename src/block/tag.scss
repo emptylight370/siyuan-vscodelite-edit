@@ -1,4 +1,4 @@
-.protyle-wysiwyg [data-node-id] span[data-type~="tag"] {
+.protyle-wysiwyg:not([custom-vsce~="no-tag"]) [data-node-id]:not([custom-vsce~="no-tag"]) span[data-type~="tag"] {
     border-radius: var(--b3-border-radius);
     border-bottom: unset;
     padding: 1px 3px;

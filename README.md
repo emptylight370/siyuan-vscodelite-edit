@@ -64,10 +64,11 @@ To enable custom attributes, add the `vsce` attribute in the **Custom Attributes
 
 ### Usable attribute values
 
-|   values    | Scope       | Effect                                                |
-| :---------: | ----------- | ----------------------------------------------------- |
-| `no-thead`  | table block | Disable the color and align of table head(`<thead>`)  |
-| `table-min` | table block | Force using default column width, no preset min width |
+|   values    | Scope                     | Effect                                                |
+| :---------: | ------------------------- | ----------------------------------------------------- |
+| `no-thead`  | table block               | Disable the color and align of table head(`<thead>`)  |
+| `table-min` | table block               | Force using default column width, no preset min width |
+|  `no-tag`   | document or content block | Disable in-paragraph tag styles in the selected range |
 
 ## Plugin fitness
 
