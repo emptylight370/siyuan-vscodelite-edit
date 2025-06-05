@@ -245,15 +245,6 @@ function addFixedAttribute(settings: EnableSettings[]) {
             bgobserver(0);
         }
     }
-    // ?如果启用了双标签栏
-    if (settings.includes("doubleTabbar") && !document.body.classList.contains("vscmobile")) {
-        // 添加观察器
-        if (globalThis.vscObserver.tabbarObserver == null) {
-            addTabbarObserver(
-                document.querySelector(".layout__center").querySelector(".layout-tab-bar") as HTMLUListElement,
-            );
-        }
-    }
     // *<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 }
 

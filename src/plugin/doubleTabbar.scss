@@ -1,10 +1,26 @@
-.layout-tab-bar {
-    &:has(.item--pin) {
-        flex-wrap: wrap;
-        height: 72px !important;
+.layout-tab-bar:has(.item--pin) {
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-auto-flow: row;
+    overflow-x: auto;
+    height: 72px;
+
+    .item {
+        display: flex;
+        overflow-x: auto;
+        width: max-content;
+        flex-shrink: 0;
+
+        &.item--pin {
+            grid-row: 1;
+        }
+
+        &:not(.item--pin) {
+            grid-row: 2;
+        }
     }
 }
 
-.fn__flex:has(.item--pin) > .fn__flex-1:not(:has(.item--pin)) {
-    height: 72px !important;
+[data-type="wnd"] > .fn__flex:has(.item--pin) {
+    height: 72px;
 }
