@@ -20,6 +20,9 @@ export async function _rqFORSiyuan(url: string, data: any) {
                 Authorization: `Token ${window.siyuan?.config?.api?.token ?? ""}`,
             },
         });
+        // 为_getFile()特别准备一个返回值用于显示错误详情
+        if (response.status === 202) return await response.json();
+        // 如果返回为ok则响应结果，否则返回null
         return response.ok ? await response.json() : null;
     } catch (error) {
         console.log("VSCode Lite Edit api error:", error);
