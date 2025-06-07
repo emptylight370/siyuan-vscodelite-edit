@@ -1,0 +1,188 @@
+// 引述块的Callout样式
+/* 基础Callout模板 */
+%callout {
+    color: var(--b3-theme-on-background);
+
+    > div:first-child {
+        &::before {
+            display: inline-block;
+            user-select: none;
+        }
+
+        > div:first-child {
+            display: inline-block;
+            min-width: 1px;
+        }
+    }
+}
+
+/* Callout-信息 */
+[custom-vsce~="callout-info"].bq {
+    @extend %callout;
+
+    &::before {
+        background-color: #ffffffa5;
+    }
+
+    > div:first-child {
+        &::before {
+            content: "ℹ️";
+        }
+
+        > div:first-child {
+            color: #ffffffa5;
+        }
+    }
+}
+
+/* Callout-笔记 */
+[custom-vsce~="callout-note"].bq {
+    @extend %callout;
+
+    &::before {
+        background-color: #ffffffa5;
+    }
+
+    > div:first-child {
+        &::before {
+            content: "📝";
+        }
+
+        > div:first-child {
+            color: #ffffffa5;
+        }
+    }
+}
+
+/* Callout-成功 */
+[custom-vsce~="callout-success"].bq {
+    @extend %callout;
+
+    &::before {
+        background-color: #18b018d0;
+    }
+
+    > div:first-child {
+        &::before {
+            content: "✅";
+        }
+
+        > div:first-child {
+            color: #18b018d0;
+        }
+    }
+}
+
+/* Callout-待办 */
+[custom-vsce~="callout-todo"].bq {
+    @extend %callout;
+
+    &::before {
+        background-color: #18b018d0;
+    }
+
+    > div:first-child {
+        &::before {
+            content: "☑️";
+        }
+
+        > div:first-child {
+            color: #18b018d0;
+        }
+    }
+}
+
+/* Callout-提示 */
+[custom-vsce~="callout-hint"].bq {
+    @extend %callout;
+
+    &::before {
+        background-color: #1766f0e7;
+    }
+
+    > div:first-child {
+        &::before {
+            content: "💡";
+        }
+
+        > div:first-child {
+            color: #1766f0e7;
+        }
+    }
+}
+
+/* Callout-引用 */
+[custom-vsce~="callout-quote"].bq {
+    @extend %callout;
+
+    &::before {
+        background-color: #1766f0e7;
+    }
+
+    > div:first-child {
+        &::before {
+            content: "📣";
+        }
+
+        > div:first-child {
+            color: #1766f0e7;
+        }
+    }
+}
+
+/* Callout-警告 */
+[custom-vsce~="callout-warning"].bq {
+    @extend %callout;
+
+    &::before {
+        background-color: #efe22bf1;
+    }
+
+    > div:first-child {
+        &::before {
+            content: "⚠️";
+        }
+
+        > div:first-child {
+            color: #efe22bf1;
+        }
+    }
+}
+
+/* Callout-疑问 */
+[custom-vsce~="callout-question"].bq {
+    @extend %callout;
+
+    &::before {
+        background-color: #efe22bf1;
+    }
+
+    > div:first-child {
+        &::before {
+            content: "❓";
+        }
+
+        > div:first-child {
+            color: #efe22bf1;
+        }
+    }
+}
+
+/* Callout-错误 */
+[custom-vsce~="callout-error"].bq {
+    @extend %callout;
+
+    &::before {
+        background-color: #ef0c0cb2;
+    }
+
+    > div:first-child {
+        &::before {
+            content: "❌";
+        }
+
+        > div:first-child {
+            color: #ef0c0cb2;
+        }
+    }
+}

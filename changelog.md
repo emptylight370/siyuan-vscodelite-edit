@@ -1,5 +1,10 @@
 # ChangeLog
 
+## v2.3.1
+
+- 新增引述块Callout样式的自定义属性
+- Add custom attribute for the Callout style of quote block
+
 ## v2.3.0
 
 - 使用Prettier刷一遍代码

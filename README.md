@@ -41,6 +41,8 @@ Limited by the configuration loading method, updated configurations for new vers
 
 > Full changelog view [ChangeLog](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/changelog.md)
 
+- v2.3.1
+  - Add custom attribute for the Callout style of quote block
 - v2.3.0
   - Add custom attributes(beta testing)
   - The options not set in setting panel uses their default value
@@ -49,8 +51,6 @@ Limited by the configuration loading method, updated configurations for new vers
   - Fix issue that can't load theme when theme config file should update
 - v2.2.11
   - Fixed some legacy issues that did not affect normal use
-- v2.2.10
-  - Fix display issue of heading icon in list
 
 # Special fitness
 
@@ -60,15 +60,24 @@ Limited by the configuration loading method, updated configurations for new vers
 
 ### How to use
 
-To enable custom attributes, add the `vsce` attribute in the **Custom Attributes** panel of a block or article, and assign one or more valid attribute values. If mutiple values are used, separate them with spaces.
+To enable custom attributes, add the `vsce` attribute in the **Custom Attributes** panel of a block or document, and assign one or more valid attribute values. If mutiple values are used, separate them with spaces.
 
 ### Usable attribute values
 
-|   values    | Scope                     | Effect                                                | Supported Since | Last Updated |
-| :---------: | ------------------------- | ----------------------------------------------------- | --------------- | ------------ |
-| `no-thead`  | table block               | Disable the color and align of table head(`<thead>`)  | 2.3.0           | 2.3.0        |
-| `table-min` | table block               | Force using default column width, no preset min width | 2.3.0           | 2.3.0        |
-|  `no-tag`   | document or content block | Disable in-paragraph tag styles in the selected range | 2.3.0           | 2.3.0        |
+|       values       | Scope                     | Effect                                                | Supported Since | Last Updated |
+| :----------------: | ------------------------- | ----------------------------------------------------- | --------------- | ------------ |
+|     `no-thead`     | table block               | Disable the color and align of table head(`<thead>`)  | 2.3.0           | 2.3.0        |
+|    `table-min`     | table block               | Force using default column width, no preset min width | 2.3.0           | 2.3.0        |
+|      `no-tag`      | document or content block | Disable in-paragraph tag styles in the selected range | 2.3.0           | 2.3.0        |
+|  `callout-error`   | quote block               | callout❌Red                                          | 2.3.1           | 2.3.1        |
+|   `callout-hint`   | quote block               | callout💡Blue                                         | 2.3.1           | 2.3.1        |
+|   `callout-info`   | quote block               | calloutℹ️White                                        | 2.3.1           | 2.3.1        |
+|   `callout-note`   | quote block               | callout📝White                                        | 2.3.1           | 2.3.1        |
+| `callout-question` | quote block               | callout❓Yellow                                       | 2.3.1           | 2.3.1        |
+|  `callout-quote`   | quote block               | callout📣Blue                                         | 2.3.1           | 2.3.1        |
+| `callout-success`  | quote block               | callout✅Green                                        | 2.3.1           | 2.3.1        |
+|   `callout-todo`   | quote block               | callout☑️Green                                        | 2.3.1           | 2.3.1        |
+| `callout-warning`  | quote block               | callout⚠️Yellow                                       | 2.3.1           | 2.3.1        |
 
 ## Plugin fitness
 
