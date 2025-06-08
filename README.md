@@ -43,6 +43,7 @@ Limited by the configuration loading method, updated configurations for new vers
 
 - v2.3.2
   - Adjust Callout style
+  - Fix pics not display in bazaar's README file
 - v2.3.1
   - Add custom attribute for the Callout style of quote block
 - v2.3.0

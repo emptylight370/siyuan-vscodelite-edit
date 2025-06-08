@@ -3,7 +3,9 @@
 ## v2.3.2
 
 - 调整Callout样式
+- 修复集市中README无法显示图片
 - Adjust Callout style
+- Fix pics not display in bazaar's README file
 
 ## v2.3.1
 
