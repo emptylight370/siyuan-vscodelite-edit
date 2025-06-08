@@ -1,5 +1,10 @@
 # ChangeLog
 
+## v2.3.2
+
+- 调整Callout样式
+- Adjust Callout style
+
 ## v2.3.1
 
 - 新增引述块Callout样式的自定义属性

@@ -107,6 +107,7 @@ function addThemeToolBar() {
         vscToolBar = document.createElement("div");
         vscToolBar.id = "vscleToolbar";
         vscToolBar.setAttribute("aria-label", localMessage["label-aria"][defLag]);
+        vscToolBar.style.userSelect = "none";
         if (toolbarVIP == null) {
             try {
                 vscToolBar.className = "toolbar__item ariaLabel";
