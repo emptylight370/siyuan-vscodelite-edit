@@ -5,10 +5,10 @@ title: "[BUG] Summary your bug here/在这里概括你的问题"
 labels: ["bug"]
 
 body:
-  - type: 'textarea'
+  - type: "textarea"
     id: bug-drscribe
     attributes:
-      label: 'Describe your bug here./在这里描述你的问题。'
+      label: "Describe your bug here./在这里描述你的问题。"
       description: |
         Please describe your bug here clearly.
         请在这里清楚地描述你的问题。
@@ -17,75 +17,75 @@ body:
         我的问题是...
     validations:
       required: true
-  - type: 'textarea'
+  - type: "textarea"
     id: excepted-behavior
     attributes:
-      label: 'Excepted behavior/预期行为'
-      description: | 
+      label: "Excepted behavior/预期行为"
+      description: |
         What you excepted to happen.
         你预期会发生什么。
-  - type: 'textarea'
+  - type: "textarea"
     id: screenshot
     attributes:
-      label: 'Screenshots/屏幕截图'
+      label: "Screenshots/屏幕截图"
       description: |
         If applicable, add screenshots to help explain your problem.
         如果可用的话，附加屏幕截图来帮助解释你的问题。
-      placeholder: '<screenshot>'
-  - type: 'input'
+      placeholder: "<screenshot>"
+  - type: "input"
     attributes:
-      label: 'OS Version/系统版本'
+      label: "OS Version/系统版本"
       description: |
         Your OS version
         你的操作系统版本
-      placeholder: 'Windows 11 23h2'
+      placeholder: "Windows 11 23h2"
     validations:
       required: true
-  - type: 'input'
+  - type: "input"
     attributes:
-      label: 'SiYuan Version/思源版本'
+      label: "SiYuan Version/思源版本"
       description: |
         Your SiYuan version
         你的思源笔记版本
-      placeholder: '3.1.12'
+      placeholder: "3.1.12"
     validations:
       required: true
-  - type: 'input'
+  - type: "input"
     attributes:
-      label: 'Theme Version/主题版本'
+      label: "Theme Version/主题版本"
       description: |
         Your theme version
         你的主题版本
-      placeholder: '1.4.0'
+      placeholder: "1.4.0"
     validations:
       required: true
-  - type: 'textarea'
+  - type: "textarea"
     attributes:
-      label: 'Additional Infomation/附加信息'
+      label: "Additional Infomation/附加信息"
       description: |
         Add any other context about the problem here.
         在这里添加其他和问题有关的信息。
-  - type: 'checkboxes'
+  - type: "checkboxes"
     id: last-check
     attributes:
-      label: '检查清单 - Check list'
+      label: "检查清单 - Check list"
       description: |
         Last check of your bug report.
         最后检查一次你的问题反馈。
       options:
-        - label: 'I have finished the title and delete the hints.(keep the [BUG] there)/我已经填好了标题并且删除了提示文本。(保留[BUG]在原处)'
+        - label: "I have finished the title and delete the hints.(keep the [BUG] there)/我已经填好了标题并且删除了提示文本。(保留[BUG]在原处)"
           required: false
-        - label: 'I have clearly describe the bug./我已经清楚地描述了我遇到的问题。'
+        - label: "I have clearly describe the bug./我已经清楚地描述了我遇到的问题。"
           required: false
-        - label: 'I know how it should behavior./我知道它应该怎样表现。'
+        - label: "I know how it should behavior./我知道它应该怎样表现。"
           required: false
-        - label: 'I have complete OS Version./我已经填写了操作系统版本。'
+        - label: "I have complete OS Version./我已经填写了操作系统版本。"
           required: false
         - label: "I didn't check all the checkboxes and therefore I just checked all of them.Please close and tag this bug report./我没有检查所有的复选框，只是闭眼选中了所有复选框。请关闭并标记这个问题反馈。"
           required: false
-        - label: 'I have complete SiYuan Version./我已经填写了思源版本。'
+        - label: "I have complete SiYuan Version./我已经填写了思源版本。"
           required: false
-        - label: 'I have complete theme Version./我已经填写了主题版本。'
+        - label: "I have complete theme Version./我已经填写了主题版本。"
           required: false
-        - label: 'I confirmed this problem is related to theme./我确信这个问题和主题有关。'
+        - label: "I confirmed this problem is related to theme./我确信这个问题和主题有关。"
           required: false

@@ -1,54 +1,53 @@
-name: 'Feature Request'
-description: '添加一个功能/Suggest an idea for this project'
+name: "Feature Request"
+description: "添加一个功能/Suggest an idea for this project"
 
 title: "[FR] 在这里描述你的功能/Describe your feature here"
 labels: ["enhancement"]
 
 body:
-  - type: 'textarea'
+  - type: "textarea"
     id: related-problem
     attributes:
-      label: 'If your feature request related to a problem, describe it here./如果你的功能和问题相关，在这里描述它。'
+      label: "If your feature request related to a problem, describe it here./如果你的功能和问题相关，在这里描述它。"
       description: |
         Please describe the problem or link to it here.
         请描述你的问题或链接到它。
-      placeholder: 'problem or #1'
-  - type: 'textarea'
+      placeholder: "problem or #1"
+  - type: "textarea"
     id: describe-feature
     attributes:
-      label: 'Describe your feature here./在这里描述你的功能。'
+      label: "Describe your feature here./在这里描述你的功能。"
     validations:
       required: true
-  - type: 'textarea'
+  - type: "textarea"
     id: additional-information
     attributes:
-      label: 'Additional Information/附加信息'
+      label: "Additional Information/附加信息"
       description: |
         Any information need to attach.
         任何需要的信息。
       placeholder: |
         The information might be useful...
         可能有用的信息...
-  - type: 'checkboxes'
+  - type: "checkboxes"
     id: last-check
     attributes:
-      label: '检查清单 - Check list'
+      label: "检查清单 - Check list"
       description: |
         Last check of your feature request.
         最后检查一次你的功能请求。
       options:
-        - label: 'I have finished the title and deleted the hints. (keep the [FR] there)/我已经填好了标题并且删除了提示文本。(保留[FR]在原处)'
+        - label: "I have finished the title and deleted the hints. (keep the [FR] there)/我已经填好了标题并且删除了提示文本。(保留[FR]在原处)"
           required: false
-        - label: 'I have clearly described my feature./我已经清楚地描述了我想要的功能。'
+        - label: "I have clearly described my feature./我已经清楚地描述了我想要的功能。"
           required: false
-        - label: 'I know it should be done by a theme./我知道这是主题应该完成的。'
+        - label: "I know it should be done by a theme./我知道这是主题应该完成的。"
           required: false
         - label: "It isn't a plugin feature./这不是一个插件功能。"
           required: false
         - label: "I didn't check all the checkboxes and therefore I just checked all of them. Please close and tag this feature request./我没有检查所有的复选框，只是闭眼选中了所有复选框。请关闭并标记这个功能请求。"
           required: false
-        - label: 'No plugin does this feature./没有插件完成这个功能。'
+        - label: "No plugin does this feature./没有插件完成这个功能。"
           required: false
-        - label: 'Not too hard for a theme to complete this feature./这个功能对主题来说不难实现。'
+        - label: "Not too hard for a theme to complete this feature./这个功能对主题来说不难实现。"
           required: false
-          
