@@ -41,14 +41,14 @@ Limited by the configuration loading method, updated configurations for new vers
 
 > Full changelog view [ChangeLog](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/changelog.md)
 
+- v2.3.4
+  - Continue to fix heading icon display problem
 - v2.3.3
   - Fix heading icon display error in different editor font size
   - Try to fix editor fullscreen display problem when enable background plugin adaption
 - v2.3.2
   - Adjust Callout style
   - Fix pics not display in bazaar's README file
-- v2.3.1
-  - Add custom attribute for the Callout style of quote block
 
 # Special fitness
 

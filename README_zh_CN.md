@@ -41,14 +41,14 @@
 
 > 完整更新日志查看[changelog](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/changelog.md)
 
+- v2.3.4
+  - 继续修复标题图标显示异常
 - v2.3.3
   - 修复标题图标在不同字号下显示异常问题
   - 尝试修复启用背景插件适配时编辑器全屏显示问题
 - v2.3.2
   - 调整Callout样式
   - 修复集市中README无法显示图片
-- v2.3.1
-  - 新增引述块Callout样式的自定义属性
 
 # 特殊适配
 

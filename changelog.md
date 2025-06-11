@@ -1,5 +1,10 @@
 # ChangeLog
 
+## v2.3.4
+
+- 继续修复标题图标显示异常(#23)
+- Continue to fix heading icon display problem(#23)
+
 ## v2.3.3
 
 - 修复标题图标在不同编辑器字号下显示异常问题(#23)
