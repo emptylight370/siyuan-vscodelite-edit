@@ -41,17 +41,13 @@
 
 > 完整更新日志查看[changelog](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/changelog.md)
 
+- v2.3.3
+  - 修复标题图标在不同字号下显示异常问题
 - v2.3.2
   - 调整Callout样式
   - 修复集市中README无法显示图片
 - v2.3.1
   - 新增引述块Callout样式的自定义属性
-- v2.3.0
-  - 新增自定义属性(beta测)
-  - 设置面板中未设置的选项使用默认值
-  - 修改双标签栏的显示效果
-  - 修复思源版本3.1.32以上导致的标题图标错位问题
-  - 修复主题配置文件需要更新时无法正常加载主题问题
 
 # 特殊适配
 

@@ -1,5 +1,10 @@
 # ChangeLog
 
+## v2.3.3
+
+- 修复标题图标在不同编辑器字号下显示异常问题(#23)
+- Fix heading icon display error in different editor font size(23)
+
 ## v2.3.2
 
 - 调整Callout样式

@@ -41,17 +41,13 @@ Limited by the configuration loading method, updated configurations for new vers
 
 > Full changelog view [ChangeLog](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/changelog.md)
 
+- v2.3.3
+  - Fix heading icon display error in different editor font size
 - v2.3.2
   - Adjust Callout style
   - Fix pics not display in bazaar's README file
 - v2.3.1
   - Add custom attribute for the Callout style of quote block
-- v2.3.0
-  - Add custom attributes(beta testing)
-  - The options not set in setting panel uses their default value
-  - Change display of the double tab bar
-  - Fix heading icon display in incorrect position in SiYuan version 3.1.32 and above
-  - Fix issue that can't load theme when theme config file should update
 
 # Special fitness
 
