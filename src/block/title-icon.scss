@@ -3,12 +3,12 @@
     content: "";
     display: inline-flex;
     position: relative;
-    width: 1.75rem;
-    height: 1.75rem;
+    width: 1em;
+    height: 1em;
     mask: url(../../resources/h1.svg) no-repeat center center;
     mask-size: contain;
     background-color: var(--mk-block-header-h1);
-    top: 0.5rem;
+    top: 0.3em;
     margin-right: 0.2rem;
 }
 
@@ -58,12 +58,12 @@
     content: "";
     display: inline-flex;
     position: relative;
-    width: 1.55rem;
-    height: 1.55rem;
+    width: 1em;
+    height: 1em;
     mask: url(../../resources/h2.svg) no-repeat center center;
     mask-size: contain;
     background-color: var(--mk-block-header-h2);
-    top: 0.5rem;
+    top: 0.3em;
     margin-right: 0.2rem;
 }
 
@@ -113,12 +113,12 @@
     content: "";
     display: inline-flex;
     position: relative;
-    width: 1.38rem;
-    height: 1.38rem;
+    width: 1em;
+    height: 1em;
     mask: url(../../resources/h3.svg) no-repeat center center;
     mask-size: contain;
     background-color: var(--mk-block-header-h3);
-    top: 0.5rem;
+    top: 0.3em;
     margin-right: 0.2rem;
 }
 
@@ -168,12 +168,12 @@
     content: "";
     display: inline-flex;
     position: relative;
-    width: 1.25rem;
-    height: 1.25rem;
+    width: 1em;
+    height: 1em;
     mask: url(../../resources/h4.svg) no-repeat center center;
     mask-size: contain;
     background-color: var(--mk-block-header-h4);
-    top: 0.4rem;
+    top: 0.3em;
     margin-right: 0.2rem;
 }
 
@@ -223,12 +223,12 @@
     content: "";
     display: inline-flex;
     position: relative;
-    width: 1.13rem;
-    height: 1.13rem;
+    width: 1em;
+    height: 1em;
     mask: url(../../resources/h5.svg) no-repeat center center;
     mask-size: contain;
     background-color: var(--mk-block-header-h5);
-    top: 0.35rem;
+    top: 0.3em;
     margin-right: 0.2rem;
 }
 
@@ -278,12 +278,12 @@
     content: "";
     display: inline-flex;
     position: relative;
-    width: 1rem;
-    height: 1rem;
+    width: 1em;
+    height: 1em;
     mask: url(../../resources/h6.svg) no-repeat center center;
     mask-size: contain;
     background-color: var(--mk-block-header-h6);
-    top: 0.3rem;
+    top: 0.3em;
     margin-right: 0.2rem;
 }
 
