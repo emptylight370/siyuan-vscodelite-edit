@@ -55,18 +55,12 @@ body.bgenable {
     .protyle {
         // 桌面端
         &:not(#editor) {
-            &:not(.fullscreen) {
-                /* 编辑器 */
-                background-color: var(--lite-modify-background);
+            /* 编辑器 */
+            background-color: var(--lite-modify-background);
 
-                > .protyle-breadcrumb {
-                    /* 编辑器面包屑 */
-                    background-color: var(--lite-modify-surface__breadcrumb);
-                }
-            }
-
-            &.fullscreen {
-                opacity: 0.75;
+            > .protyle-breadcrumb {
+                /* 编辑器面包屑 */
+                background-color: var(--lite-modify-surface__breadcrumb);
             }
 
             .av[data-av-type="table"] {
@@ -198,9 +192,19 @@ body.bgenable {
 
             // 编辑器
             [data-type="wnd"] {
+                // 编辑器黑框
+                .layout-tab-container {
+                    background-color: transparent;
+                }
+
                 // 选项卡
                 > div:first-child {
                     opacity: 0;
+                }
+
+                // 修复背景
+                .protyle-content {
+                    background-color: var(--lite-modify-surface);
                 }
             }
         }
