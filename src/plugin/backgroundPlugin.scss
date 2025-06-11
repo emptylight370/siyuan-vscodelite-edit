@@ -160,6 +160,51 @@ body.bgenable {
             background-color: var(--lite-menu-background);
         }
     }
+
+    // 修复全屏模式时底下的应用框架会接着显示的问题
+    &:has(#layouts [data-type="wnd"] .protyle.fullscreen) {
+        /* 在全屏显示时隐藏应用框架 */
+        // 左侧栏按钮
+        #dockLeft,
+        // 右侧栏按钮
+        #dockRight,
+        // 底部的状态栏
+        #status {
+            opacity: 0;
+        }
+
+        // 工具栏
+        #toolbar {
+            // 工具栏按钮
+            .toolbar__item {
+                opacity: 0;
+            }
+
+            // 窗口控制按钮
+            #windowControls {
+                .toolbar__item {
+                    opacity: 100;
+                }
+            }
+        }
+
+        #layouts {
+            // 左侧栏
+            .layout__dockl,
+            // 右侧栏
+            .layout__dockr {
+                opacity: 0;
+            }
+
+            // 编辑器
+            [data-type="wnd"] {
+                // 选项卡
+                > div:first-child {
+                    opacity: 0;
+                }
+            }
+        }
+    }
 }
 
 :root[data-theme-mode="light"] body.bgenable {

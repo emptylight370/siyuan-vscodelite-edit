@@ -3,7 +3,9 @@
 ## v2.3.3
 
 - 修复标题图标在不同编辑器字号下显示异常问题(#23)
+- 尝试修复启用背景插件适配时编辑器全屏显示问题(#15)
 - Fix heading icon display error in different editor font size(23)
+- Try to fix editor fullscreen display problem when enable background plugin adaption(#15)
 
 ## v2.3.2
 
