@@ -3,7 +3,9 @@
 ## v2.3.4
 
 - 继续修复标题图标显示异常(#23)
+- 补全状态栏内字体回退
 - Continue to fix heading icon display problem(#23)
+- Complete the fallback of fonts in the status bar
 
 ## v2.3.3
 

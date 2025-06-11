@@ -43,6 +43,7 @@ Limited by the configuration loading method, updated configurations for new vers
 
 - v2.3.4
   - Continue to fix heading icon display problem
+  - Complete the fallback of fonts in the status bar
 - v2.3.3
   - Fix heading icon display error in different editor font size
   - Try to fix editor fullscreen display problem when enable background plugin adaption
