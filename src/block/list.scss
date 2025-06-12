@@ -249,3 +249,27 @@
         @extend %u1;
     }
 }
+
+/*
+ * 修复列表序号选中阴影位置
+ * 感谢QYL主题作者[queguaiya - 链滴](https://ld246.com/member/queguaiya)
+ * https://ld246.com/article/1749707279347/comment/1749718290195?r=EmptyLight#comments
+ */
+.protyle-wysiwyg [data-node-id].li > .protyle-action {
+    width: auto;
+    aspect-ratio: 1 / 1;
+    &::after {
+        // animation: none; /* 我也不知道为什么禁用，大概是VSCE有自己的动画吧 */
+        // border-radius: 50%; /* 区分两种序号的阴影形状 */
+        padding: 0;
+        top: 0;
+        left: 0;
+        right: 0; /* 可以去掉 */
+        bottom: 0; /* 可以去掉 */
+        margin: auto !important;
+        width: 100%;
+        height: 100%;
+        font-size: 1.42em; /* 可以去掉 */
+        transform: scale(0.7);
+    }
+}

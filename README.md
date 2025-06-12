@@ -41,15 +41,15 @@ Limited by the configuration loading method, updated configurations for new vers
 
 > Full changelog view [ChangeLog](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/changelog.md)
 
+- v2.3.5
+  - Fix the issue where the shadow of a custom list sequence was displayed in the wrong position
+  - Add code snippet: Fix the display position of the list sequence shadow by queguaiya
 - v2.3.4
   - Continue to fix heading icon display problem
   - Complete the fallback of fonts in the status bar
 - v2.3.3
   - Fix heading icon display error in different editor font size
   - Try to fix editor fullscreen display problem when enable background plugin adaption
-- v2.3.2
-  - Adjust Callout style
-  - Fix pics not display in bazaar's README file
 
 # Special fitness
 
@@ -92,6 +92,7 @@ Currently adapted plugins are:
 
 - [CodeBlock show action buttons when hover](https://ld246.com/article/1728146248791) by JeffreyChen
 - [Show pinned doc name(NO icon version)](https://ld246.com/article/1728392178095) by JeffreyChen
+- [Fix the display position of the list sequence shadow](https://ld246.com/article/1749707279347/comment/1749718290195) by queguaiya
 
 # Feedback
 

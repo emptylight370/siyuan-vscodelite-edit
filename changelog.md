@@ -1,5 +1,12 @@
 # ChangeLog
 
+## v2.3.5
+
+- 修复自定义列表序号时序号阴影显示错位问题
+- 添加代码片段：修正列表序号阴影显示位置 by queguaiya
+- Fix the issue where the shadow of a custom list sequence was displayed in the wrong position
+- Add code snippet: Fix the display position of the list sequence shadow by queguaiya
+
 ## v2.3.4
 
 - 继续修复标题图标显示异常(#23)
