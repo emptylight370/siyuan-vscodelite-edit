@@ -83,20 +83,6 @@
     }
 }
 
-// 拖动条
-.layout__resize--lr {
-    &:hover::after {
-        visibility: visible;
-        background-color: #007fd4;
-        width: 2px;
-        left: -1px;
-    }
-
-    &::after {
-        visibility: hidden;
-    }
-}
-
 .block__logo svg {
     display: none;
 }

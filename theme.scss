@@ -31,8 +31,8 @@
 @import url(sub/app/breadcrumb.css);
 /* 跟块有关的内容，比如块标 */
 @import url(sub/app/block.css);
-/* 隐藏一些内容 */
-@import url(sub/app/hide.css);
+/* 隐藏一些内容，同时修改一些特殊样式 */
+@import url(sub/app/special.css);
 /* 通用菜单，文章标签页右侧的下拉列表 */
 @import url(sub/app/commonmenu.css);
 /* 标题标签h123456 */

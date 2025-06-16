@@ -3,7 +3,9 @@
 ## v2.3.6
 
 - 修复亮色模式下集市页签颜色问题(#24)
+- 为其他分隔线应用鼠标悬浮效果
 - Fix the issue of bazaar tab color in bright mode(#24)
+- Add mouse hover style for other division line
 
 ## v2.3.5
 

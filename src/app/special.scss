@@ -34,3 +34,33 @@
 /* .b3-tooltips__w[data-type="globalGraph"] {
     display: none;
 } */
+
+/* dock垂直拖动条 */
+.layout__resize--lr {
+    &:hover::after {
+        visibility: visible !important;
+        // background-color: #007fd4;
+        width: 2px;
+        left: -1px;
+    }
+}
+
+#layouts > div:not(.layout__dockb) > .layout__resize--lr::after {
+    visibility: hidden;
+}
+
+/* 普通拖动条 */
+.layout__resize {
+    &:hover::after {
+        background-color: #007fd4;
+    }
+
+    &:not(.layout__resize--lr):hover::after {
+        height: 2px;
+    }
+}
+
+.layout--float > .layout__dockresize:hover {
+    border-right: 2px solid #007fd4;
+    border-color: #007fd4;
+}
