@@ -41,15 +41,14 @@
 
 > 完整更新日志查看[changelog](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/changelog.md)
 
+- v2.3.6
+  - 修复亮色模式下集市页签颜色问题
 - v2.3.5
   - 修复自定义列表序号时序号阴影显示错位问题
   - 添加代码片段：修正列表序号阴影显示位置 by queguaiya
 - v2.3.4
   - 继续修复标题图标显示异常
   - 补全状态栏内字体回退
-- v2.3.3
-  - 修复标题图标在不同字号下显示异常问题
-  - 尝试修复启用背景插件适配时编辑器全屏显示问题
 
 # 特殊适配
 

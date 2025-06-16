@@ -1,5 +1,10 @@
 # ChangeLog
 
+## v2.3.6
+
+- 修复亮色模式下集市页签颜色问题(#24)
+- Fix the issue of bazaar tab color in bright mode(#24)
+
 ## v2.3.5
 
 - 修复自定义列表序号时序号阴影显示错位问题
