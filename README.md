@@ -41,15 +41,14 @@ Limited by the configuration loading method, updated configurations for new vers
 
 > Full changelog view [ChangeLog](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/changelog.md)
 
+- v2.3.7
+  - Fix graph view background with background plugin adaption switch on
 - v2.3.6
   - Fix the issue of bazaar tab color in bright mode
   - Add mouse hover style for other division line
 - v2.3.5
   - Fix the issue where the shadow of a custom list sequence was displayed in the wrong position
   - Add code snippet: Fix the display position of the list sequence shadow by queguaiya
-- v2.3.4
-  - Continue to fix heading icon display problem
-  - Complete the fallback of fonts in the status bar
 
 # Special fitness
 

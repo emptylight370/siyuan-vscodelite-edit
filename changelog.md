@@ -1,5 +1,10 @@
 # ChangeLog
 
+## v2.3.7
+
+- 修复背景插件适配中的关系图背景
+- Fix graph view background with background plugin adaption switch on
+
 ## v2.3.6
 
 - 修复亮色模式下集市页签颜色问题(#24)

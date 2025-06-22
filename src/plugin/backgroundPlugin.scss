@@ -24,6 +24,17 @@ body.bgenable {
         .layout-tab-container {
             /* 两边的文档树、大纲位置 */
             background-color: var(--lite-modify-surface__darker);
+
+            .graph {
+                /* 修复图表背景 */
+                background-color: transparent;
+            }
+
+            .graph__svg,
+            .inbox__list {
+                /* 修复关系图和收集箱背景 */
+                background-color: transparent;
+            }
         }
 
         .layout-tab-bar {
