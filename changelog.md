@@ -1,5 +1,10 @@
 # ChangeLog
 
+## v2.3.8
+
+- 改进代码片段：代码块悬浮显示操作按钮的样式
+- Improve the style of snippet: CodeBlock show action buttons when hover
+
 ## v2.3.7
 
 - 修复背景插件适配中的关系图背景

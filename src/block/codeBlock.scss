@@ -18,6 +18,8 @@
 
 /* 代码块滚动时语言和按钮固定在编辑器顶部 CSS片段 */
 /* author by JeffreyChen https://ld246.com/article/1728146248791 */
+/* NOTE 用:not(#preview)排除导出PDF，用.protyle-wysiwyg排除导出预览，.protyle-wysiwyg[data-readonly="true"]是只读模式 */
+/* NOTE 导出预览的代码块没有 .protyle-action */
 div:not(#preview) > .protyle-wysiwyg .code-block:not(pre) {
     .protyle-action {
         position: sticky;
@@ -33,7 +35,7 @@ div:not(#preview) > .protyle-wysiwyg .code-block:not(pre) {
     }
 
     &:hover .protyle-action {
-        background-color: var(--sy-codeblock-background);
+        background-color: inherit;
     }
 
     .hljs {
