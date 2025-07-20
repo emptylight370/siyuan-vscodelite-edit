@@ -187,3 +187,10 @@
         }
     }
 }
+
+// 标记挖空功能，可以隐藏标记的文本
+[custom-vsce~="mark-hide"] {
+    span[data-type~="mark"]:not(:hover) {
+        color: transparent !important;
+    }
+}

@@ -43,6 +43,7 @@ Limited by the configuration loading method, updated configurations for new vers
 
 - v2.3.8
   - Fix the issue when enabled background plugin adaption, the background of graph is transparent and can't view normally
+  - Add custom attribute: mark hollowing
 - v2.3.7
   - Fix graph view background with background plugin adaption switch on
   - Improve the style of snippet: CodeBlock show action buttons when hover
@@ -62,20 +63,21 @@ To enable custom attributes, add the `vsce` attribute in the **Custom Attributes
 
 ### Usable attribute values
 
-|       values       | Scope                     | Effect                                                | Supported Since | Last Updated |
-| :----------------: | ------------------------- | ----------------------------------------------------- | --------------- | ------------ |
-|     `no-thead`     | table block               | Disable the color and align of table head(`<thead>`)  | 2.3.0           | 2.3.0        |
-|    `table-min`     | table block               | Force using default column width, no preset min width | 2.3.0           | 2.3.0        |
-|      `no-tag`      | document or content block | Disable in-paragraph tag styles in the selected range | 2.3.0           | 2.3.0        |
-|  `callout-error`   | quote block               | callout❌Red                                          | 2.3.1           | 2.3.2        |
-|   `callout-hint`   | quote block               | callout💡Blue                                         | 2.3.1           | 2.3.2        |
-|   `callout-info`   | quote block               | calloutℹ️White                                        | 2.3.1           | 2.3.2        |
-|   `callout-note`   | quote block               | callout📝White                                        | 2.3.1           | 2.3.2        |
-| `callout-question` | quote block               | callout❓Yellow                                       | 2.3.1           | 2.3.2        |
-|  `callout-quote`   | quote block               | callout📣Blue                                         | 2.3.1           | 2.3.2        |
-| `callout-success`  | quote block               | callout✅Green                                        | 2.3.1           | 2.3.2        |
-|   `callout-todo`   | quote block               | callout☑️Green                                        | 2.3.1           | 2.3.2        |
-| `callout-warning`  | quote block               | callout⚠️Yellow                                       | 2.3.1           | 2.3.2        |
+|       values       | Scope                       | Effect                                                   | Supported Since | Last Updated |
+| :----------------: | --------------------------- | -------------------------------------------------------- | --------------- | ------------ |
+|     `no-thead`     | table block                 | Disable the color and align of table head(`<thead>`)     | 2.3.0           | 2.3.0        |
+|    `table-min`     | table block                 | Force using default column width, no preset min width    | 2.3.0           | 2.3.0        |
+|      `no-tag`      | document or content block   | Disable in-paragraph tag styles in the selected range    | 2.3.0           | 2.3.0        |
+|  `callout-error`   | quote block                 | callout❌Red                                             | 2.3.1           | 2.3.2        |
+|   `callout-hint`   | quote block                 | callout💡Blue                                            | 2.3.1           | 2.3.2        |
+|   `callout-info`   | quote block                 | calloutℹ️White                                           | 2.3.1           | 2.3.2        |
+|   `callout-note`   | quote block                 | callout📝White                                           | 2.3.1           | 2.3.2        |
+| `callout-question` | quote block                 | callout❓Yellow                                          | 2.3.1           | 2.3.2        |
+|  `callout-quote`   | quote block                 | callout📣Blue                                            | 2.3.1           | 2.3.2        |
+| `callout-success`  | quote block                 | callout✅Green                                           | 2.3.1           | 2.3.2        |
+|   `callout-todo`   | quote block                 | callout☑️Green                                           | 2.3.1           | 2.3.2        |
+| `callout-warning`  | quote block                 | callout⚠️Yellow                                          | 2.3.1           | 2.3.2        |
+|    `mark-hide`     | document or paragraph block | Mark hollowing, hide marked text, display on mouse hover | 2.3.8           | 2.3.8        |
 
 ## Plugin fitness
 
