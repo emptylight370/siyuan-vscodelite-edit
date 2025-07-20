@@ -44,6 +44,7 @@ Limited by the configuration loading method, updated configurations for new vers
 - v2.3.8
   - Fix the issue when enabled background plugin adaption, the background of graph is transparent and can't view normally
   - Add custom attribute: mark hollowing
+  - Adapt to new database view appearance
 - v2.3.7
   - Fix graph view background with background plugin adaption switch on
   - Improve the style of snippet: CodeBlock show action buttons when hover

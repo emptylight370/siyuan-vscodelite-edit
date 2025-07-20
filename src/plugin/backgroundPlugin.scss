@@ -55,8 +55,10 @@ body.bgenable {
         .code-block,
         // 表格块
         /* body.bgenable [data-type=wnd] .table, */
-        // 数据库块
-        .av[data-av-type=table] {
+        // 数据库表格视图
+        .av[data-av-type=table],
+        // 数据库卡片视图
+        .av[data-av-type=gallery] {
             /* 代码块 */
             /* 数据库块 */
             opacity: 0.8;
@@ -72,19 +74,6 @@ body.bgenable {
             > .protyle-breadcrumb {
                 /* 编辑器面包屑 */
                 background-color: var(--lite-modify-surface__breadcrumb);
-            }
-
-            .av[data-av-type="table"] {
-                .av__header,
-                .av__scroll {
-                    /* 数据库背景修复 */
-                    background: var(--b3-theme-background);
-                }
-            }
-
-            .protyle-wysiwyg [data-node-id].render-node[data-type="NodeBlockQueryEmbed"] {
-                /* 嵌入块背景调整 */
-                background-color: var(--lite-modify-surface);
             }
         }
 
@@ -125,19 +114,11 @@ body.bgenable {
                 background-color: var(--lite-menu-background);
             }
         }
+    }
 
-        .av[data-av-type="table"] {
-            .av__header,
-            .av__scroll {
-                /* 数据库背景修复 */
-                background: var(--b3-theme-background);
-            }
-        }
-
-        .protyle-wysiwyg [data-node-id].render-node[data-type="NodeBlockQueryEmbed"] {
-            /* 嵌入块背景调整 */
-            background-color: var(--lite-modify-surface);
-        }
+    .protyle-wysiwyg [data-node-id].render-node[data-type="NodeBlockQueryEmbed"] {
+        /* 嵌入块背景调整 */
+        background-color: var(--lite-modify-surface);
     }
 
     // 设置面板类的弹出面板
@@ -163,6 +144,39 @@ body.bgenable {
         .b3-menu__item .b3-menu__submenu {
             /* 左上角菜单选项 */
             background-color: var(--lite-menu-background);
+        }
+    }
+
+    // 修复数据库显示效果
+    // 数据库表格视图
+    .av[data-av-type="table"] {
+        .av__header,
+        .av__scroll {
+            /* 数据库背景修复 */
+            background: var(--b3-theme-background);
+        }
+    }
+
+    // 数据库卡片视图
+    .av[data-av-type="gallery"] {
+        .av__header,
+        .av__scroll,
+        .av__gallery {
+            /* 数据库背景修复 */
+            background: var(--b3-theme-background);
+        }
+
+        .av__header,
+        .av__header .av__views .layout-tab-bar {
+            /* 角落背景修复 */
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+
+        .av__gallery {
+            /* 角落背景修复 */
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
         }
     }
 

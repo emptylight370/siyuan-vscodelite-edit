@@ -4,8 +4,10 @@
 
 - 修复背景插件适配开关启用后关系图全屏背景透明无法正常查看问题
 - 添加自定义属性：标记挖空
+- 适配新的数据库视图外观
 - Fix the issue when enabled background plugin adaption, the background of graph is transparent and can't view normally
 - Add custom attribute: mark hollowing
+- Adapt to new database view appearance
 
 ## v2.3.7
 
