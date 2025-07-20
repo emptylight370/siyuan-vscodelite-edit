@@ -25,7 +25,7 @@ body.bgenable {
             /* 两边的文档树、大纲位置 */
             background-color: var(--lite-modify-surface__darker);
 
-            .graph {
+            &:not(:has(.fullscreen)) .graph {
                 /* 修复图表背景 */
                 background-color: transparent;
             }

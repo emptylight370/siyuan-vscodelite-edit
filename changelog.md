@@ -1,5 +1,10 @@
 # ChangeLog
 
+## v2.3.8
+
+- 修复背景插件适配开关启用后关系图全屏背景透明无法正常查看问题
+- Fix the issue when enabled background plugin adaption, the background of graph is transparent and can't view normally
+
 ## v2.3.7
 
 - 修复背景插件适配中的关系图背景
