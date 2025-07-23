@@ -64,21 +64,21 @@ To enable custom attributes, add the `vsce` attribute in the **Custom Attributes
 
 ### Usable attribute values
 
-|       values       | Scope                       | Effect                                                   | Supported Since | Last Updated |
-| :----------------: | --------------------------- | -------------------------------------------------------- | --------------- | ------------ |
-|     `no-thead`     | table block                 | Disable the color and align of table head(`<thead>`)     | 2.3.0           | 2.3.0        |
-|    `table-min`     | table block                 | Force using default column width, no preset min width    | 2.3.0           | 2.3.0        |
-|      `no-tag`      | document or content block   | Disable in-paragraph tag styles in the selected range    | 2.3.0           | 2.3.0        |
-|  `callout-error`   | quote block                 | callout❌Red                                             | 2.3.1           | 2.3.2        |
-|   `callout-hint`   | quote block                 | callout💡Blue                                            | 2.3.1           | 2.3.2        |
-|   `callout-info`   | quote block                 | calloutℹ️White                                           | 2.3.1           | 2.3.2        |
-|   `callout-note`   | quote block                 | callout📝White                                           | 2.3.1           | 2.3.2        |
-| `callout-question` | quote block                 | callout❓Yellow                                          | 2.3.1           | 2.3.2        |
-|  `callout-quote`   | quote block                 | callout📣Blue                                            | 2.3.1           | 2.3.2        |
-| `callout-success`  | quote block                 | callout✅Green                                           | 2.3.1           | 2.3.2        |
-|   `callout-todo`   | quote block                 | callout☑️Green                                           | 2.3.1           | 2.3.2        |
-| `callout-warning`  | quote block                 | callout⚠️Yellow                                          | 2.3.1           | 2.3.2        |
-|    `mark-hide`     | document or paragraph block | Mark hollowing, hide marked text, display on mouse hover | 2.3.8           | 2.3.8        |
+|       values       | Scope                       | Effect                                                           | Supported Since | Last Updated |
+| :----------------: | --------------------------- | ---------------------------------------------------------------- | --------------- | ------------ |
+|     `no-thead`     | table block                 | Disable the color and align of table head(`<thead>`)             | 2.3.0           | 2.3.0        |
+|    `table-min`     | table block                 | Force the minimum column width without affecting manual settings | 2.3.0           | 2.3.0        |
+|      `no-tag`      | document or content block   | Disable in-paragraph tag styles in the selected range            | 2.3.0           | 2.3.0        |
+|  `callout-error`   | quote block                 | callout❌Red                                                     | 2.3.1           | 2.3.2        |
+|   `callout-hint`   | quote block                 | callout💡Blue                                                    | 2.3.1           | 2.3.2        |
+|   `callout-info`   | quote block                 | calloutℹ️White                                                   | 2.3.1           | 2.3.2        |
+|   `callout-note`   | quote block                 | callout📝White                                                   | 2.3.1           | 2.3.2        |
+| `callout-question` | quote block                 | callout❓Yellow                                                  | 2.3.1           | 2.3.2        |
+|  `callout-quote`   | quote block                 | callout📣Blue                                                    | 2.3.1           | 2.3.2        |
+| `callout-success`  | quote block                 | callout✅Green                                                   | 2.3.1           | 2.3.2        |
+|   `callout-todo`   | quote block                 | callout☑️Green                                                   | 2.3.1           | 2.3.2        |
+| `callout-warning`  | quote block                 | callout⚠️Yellow                                                  | 2.3.1           | 2.3.2        |
+|    `mark-hide`     | document or paragraph block | Mark hollowing, hide marked text, display on mouse hover         | 2.3.8           | 2.3.8        |
 
 ## Plugin fitness
 
