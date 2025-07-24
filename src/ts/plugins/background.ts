@@ -16,7 +16,7 @@ export function bg(times: number) {
         } else {
             globalThis.vscTimer.bgTimer = null;
         }
-    } else if (times == 0 || times == 1) {
+    } else if (times === 0 || times === 1) {
         // 未启用插件3秒后重新检测两遍
         setTimeout(bg, 3000, times + 1);
     }

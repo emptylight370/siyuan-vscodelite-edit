@@ -66,23 +66,18 @@ window.destroyTheme = async () => {
     document.querySelector("#vscleToolbar").remove();
     // 移除body特殊适配语句
     document.body.classList.remove("bgenable");
-    // 移除双标签栏的style
-    Array.from(document.querySelector(".layout__center").querySelectorAll(".item--pin")).forEach((item) => {
-        (item as HTMLLIElement).style.removeProperty("margin-right");
-        if ((item as HTMLLIElement).style.length == 0) (item as HTMLLIElement).removeAttribute("style");
-    });
     // 移除计时器
     for (var key in globalThis.vscTimer) {
-        if (globalThis.vscTimer[key] != null) {
+        if (globalThis.vscTimer[key] !== null) {
             // console.log("remove timer");
             clearTimeout(globalThis.vscTimer[key]);
-            if (globalThis.vscTimer[key] != null) clearInterval(globalThis.vscTimer[key]);
+            if (globalThis.vscTimer[key] !== null) clearInterval(globalThis.vscTimer[key]);
             globalThis.vscTimer[key] = null;
         }
     }
     // 移除监视器
     for (key in globalThis.vscObserver) {
-        if (globalThis.vscObserver[key] != null) {
+        if (globalThis.vscObserver[key] !== null) {
             // console.log("remove observer");
             globalThis.vscObserver[key].disconnect();
             globalThis.vscObserver[key] = null;
@@ -101,24 +96,32 @@ window.destroyTheme = async () => {
  */
 function addThemeToolBar() {
     var vscToolBar = document.getElementById("vscleToolbar");
+    // 如果不存在按钮
     if (vscToolBar == null) {
+        // 定位添加位置
         var toolbarVIP = document.getElementById("toolbarVIP");
         var windowControls = document.getElementById("windowControls");
+        // 开始创建按钮
         vscToolBar = document.createElement("div");
         vscToolBar.id = "vscleToolbar";
         vscToolBar.setAttribute("aria-label", localMessage["label-aria"][defLag]);
         vscToolBar.style.userSelect = "none";
+        // 如果不存在思源VIP按钮（设置隐藏只不显示）
         if (toolbarVIP == null) {
             try {
+                // 尝试在窗口控制按钮前添加
                 vscToolBar.className = "toolbar__item ariaLabel";
                 vscToolBar.style.height = "23.5px";
                 windowControls.parentElement.insertBefore(vscToolBar, windowControls);
             } catch (error) {
+                // 添加移动端记号
                 document.body.classList.add("vscmobile");
                 vscToolBar.className = "block__icon fn__flex-center ariaLabel";
                 vscToolBar.style.height = "14px";
+                // 尝试获取移动端的文档操作按钮
                 var breadcrumbButtons = document.getElementsByClassName("block__icon fn__flex-center ariaLabel");
                 try {
+                    // 在第一个按钮前添加
                     var firstButton = breadcrumbButtons[0];
                     if (firstButton) {
                         firstButton.parentElement.insertBefore(vscToolBar, firstButton);
@@ -140,8 +143,10 @@ function addThemeToolBar() {
             toolbarVIP.parentElement.insertBefore(vscToolBar, toolbarVIP);
         }
     }
+    // 设置按钮文本
     vscToolBar.innerHTML = "VC";
     // vscToolBar.innerHTML = "<img src=\"resources\\h6.bmp\"\\>";
+    // 添加点击事件
     vscToolBar.addEventListener("click", () => {
         // 调用函数创建设置窗口
         createSettingsWindow();
@@ -217,8 +222,10 @@ function addImports(table: HTMLLinkElement, labels: EnableSettings[]) {
                 i += 1;
                 break;
             case "doubleTabbar":
-                sheet.insertRule("@import url(sub/plugin/doubleTabbar.css);", 4 + i);
-                i += 1;
+                if (!document.body.classList.contains("vscmobile")) {
+                    sheet.insertRule("@import url(sub/plugin/doubleTabbar.css);", 4 + i);
+                    i += 1;
+                }
                 break;
             case "tag":
                 sheet.insertRule("@import url(sub/block/tag.css);", 4 + i);

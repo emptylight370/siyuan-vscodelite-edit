@@ -2,6 +2,7 @@
  * NOTE 定义需要用到的api
  * 从[Savor](https://github.com/royc01/notion-theme/blob/main/theme.js)抄的
  * 来自[思源api文档](https://github.com/siyuan-note/siyuan/blob/master/API_zh_CN.md)
+ * 参考[社区api文档](https://www.siyuan-note.club/apis)
  * TODO 完成所需的所有api写入
  */
 
@@ -109,4 +110,12 @@ export async function _postMessage(type: "ok" | "error", message: string, time =
     else if (type == "error") url = "api/notification/pushErrMsg";
     if (time) await _rqFORSiyuan(url, { msg: message, timeout: time });
     else await _rqFORSiyuan(url, { msg: message });
+}
+
+/**
+ * 重新加载页面
+ */
+export async function _reloadInterface() {
+    var url = "/api/system/reloadUI";
+    _rqFORSiyuan(url, undefined);
 }

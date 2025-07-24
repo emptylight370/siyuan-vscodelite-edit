@@ -41,6 +41,8 @@ Limited by the configuration loading method, updated configurations for new vers
 
 > Full changelog view [ChangeLog](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/changelog.md)
 
+- v2.3.9
+  - minor changes
 - v2.3.8
   - Fix the issue when enabled background plugin adaption, the background of graph is transparent and can't view normally
   - Add custom attribute: mark hollowing
@@ -48,9 +50,6 @@ Limited by the configuration loading method, updated configurations for new vers
 - v2.3.7
   - Fix graph view background with background plugin adaption switch on
   - Improve the style of snippet: CodeBlock show action buttons when hover
-- v2.3.6
-  - Fix the issue of bazaar tab color in bright mode
-  - Add mouse hover style for other division line
 
 # Special fitness
 

@@ -1,4 +1,4 @@
-import { _getFile, _postMessage, _writeFile } from "./api";
+import { _getFile, _postMessage, _reloadInterface, _writeFile } from "./api";
 import { EnableSettings, SettingItem, settingKeyMap, SettingPanelId, ThemeConfig } from "./types";
 
 /**
@@ -20,17 +20,19 @@ export async function createSettingsWindow() {
     // 可关闭遮罩层
     var scrim: HTMLDivElement = document.createElement("div");
     scrim.className = "b3-dialog__scrim";
-    scrim.onclick = () => {
+    scrim.addEventListener("click", () => {
         closeNotSave();
-    };
+    });
     dialog.appendChild(scrim);
 
     // 创建窗口容器
     var dialogContainer: HTMLDivElement = document.createElement("div");
     dialogContainer.className = "b3-dialog__container";
     if (document.body.classList.contains("vscmobile")) {
+        // 移动端
         dialogContainer.style.width = "90vw";
     } else {
+        // 电脑端
         dialogContainer.style.width = "60vw";
     }
     dialogContainer.style.height = "80vh";
@@ -56,15 +58,18 @@ export async function createSettingsWindow() {
     // 遍历数组添加选项，创建标签和复选框
     settings.forEach((setting) => {
         var label: HTMLDivElement | HTMLSpanElement;
+        // 根据是否有下方注释选择不同的结构
         if (setting?.description) {
             label = document.createElement("div");
         } else {
             label = document.createElement("span");
         }
+        // 设定当前选项标题
         label.textContent = setting.label;
         label.setAttribute("for", setting.id as string);
         label.className = "fn__flex-1";
 
+        // 有注释需要进行添加，没有就跳过
         if (setting?.description) {
             var description: HTMLDivElement = document.createElement("div");
             description.textContent = setting.description;
@@ -73,28 +78,34 @@ export async function createSettingsWindow() {
             label.appendChild(description);
         }
 
+        // 添加中间的间隔
         var space: HTMLSpanElement = document.createElement("span");
         space.className = "fn__space";
 
+        // 右侧的开关
         var checkbox: HTMLInputElement = document.createElement("input");
         checkbox.type = "checkbox";
         checkbox.id = setting.id as string;
         checkbox.checked = setting.enable;
         checkbox.className = "b3-switch fn__flex-center vslite_sets";
 
+        // 创建一整行的容器
         var div: HTMLLabelElement = document.createElement("label");
         div.className = "fn__flex b3-label";
         div.appendChild(label);
         div.appendChild(space);
         div.appendChild(checkbox);
 
+        // 将容器放入设置面板
         dialogBody.appendChild(div);
     });
 
+    // 保存并刷新页面
     async function closeAndSave() {
         // 在默认配置的基础上修改配置，可以增加原来没有的配置
         var saveSt: ThemeConfig = defaultConf;
         var ckb = document.getElementsByClassName("vslite_sets");
+        // 获取当前设置项的启用状态
         Array.from(ckb).forEach((checkbox) => {
             var id = checkbox.id as SettingPanelId;
             var ck = (checkbox as HTMLInputElement).checked;
@@ -106,15 +117,22 @@ export async function createSettingsWindow() {
         });
         // 修改配置文件版本
         saveSt["version"] = defaultConf["version"];
+        // 保存设置文件
         await putSettings(saveSt);
+        // 显示完成通知
         _postMessage("ok", localMessage["confSave"][defLag]);
+        // 稍后重载页面
         setTimeout(() => {
-            window.location.reload();
+            _reloadInterface();
         }, 200);
+        // 移除设置窗口
         document.body.removeChild(dialogSetting);
     }
+    // 不保存修改
     function closeNotSave() {
+        // 显示不保存通知
         _postMessage("error", localMessage["confNotSave"][defLag], 3000);
+        // 移除设置窗口
         document.body.removeChild(dialogSetting);
     }
 
@@ -123,20 +141,24 @@ export async function createSettingsWindow() {
     saveButton.textContent = localMessage["saveReload"][defLag];
     saveButton.className = "b3-button b3-button--outline fn__flex-center fn__size200";
     saveButton.onclick = () => {
+        // 保存并刷新页面
         closeAndSave();
     };
     var notSaveButton = document.createElement("button");
     notSaveButton.textContent = localMessage["nSave"][defLag];
     notSaveButton.className = "b3-button b3-button--outline fn__flex-center fn__size200";
     notSaveButton.onclick = () => {
+        // 不保存修改
         closeNotSave();
     };
     var refreshButton = document.createElement("button");
     refreshButton.textContent = localMessage["oReload"][defLag];
     refreshButton.className = "b3-button b3-button--outline fn__flex-center fn__size200";
     refreshButton.onclick = () => {
-        window.location.reload();
+        // 刷新界面
+        _reloadInterface();
     };
+    // 设定三个按钮左侧的提示文本
     var label1 = document.createElement("span");
     label1.textContent = localMessage["tip1"][defLag];
     label1.className = "fn__flex-1 fn__flex-center";
@@ -148,18 +170,21 @@ export async function createSettingsWindow() {
     label3.className = "fn__flex-1 fn__flex-center";
     var space = document.createElement("span");
     space.className = "fn__space";
+    // 放入保存并刷新按钮
     var div1 = document.createElement("label");
     div1.className = "fn__flex b3-label";
     div1.appendChild(label1);
     div1.appendChild(space.cloneNode(true));
     div1.appendChild(saveButton);
     dialogBody.appendChild(div1);
+    // 放入不保存按钮
     var div2 = document.createElement("label");
     div2.className = "fn__flex b3-label";
     div2.appendChild(label2);
     div2.appendChild(space.cloneNode(true));
     div2.appendChild(notSaveButton);
     dialogBody.appendChild(div2);
+    // 放入刷新页面按钮
     var div3 = document.createElement("label");
     div3.className = "fn__flex b3-label";
     div3.appendChild(label3);
