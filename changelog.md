@@ -3,9 +3,9 @@
 ## v2.3.9
 
 - 修改描述
-- 微调代码
+- 部分代码重构
 - Change description
-- Modify code
+- Some code refactor
 
 ## v2.3.8
 

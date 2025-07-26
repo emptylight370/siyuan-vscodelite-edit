@@ -14,7 +14,7 @@ export async function createSettingsWindow() {
     // 创建一个遮罩层
     var dialog: HTMLDivElement = document.createElement("div");
     dialog.className = "b3-dialog";
-    dialog.style.zIndex = "14";
+    dialog.style.zIndex = "24";
     dialogSetting.appendChild(dialog);
 
     // 可关闭遮罩层
@@ -35,6 +35,7 @@ export async function createSettingsWindow() {
         // 电脑端
         dialogContainer.style.width = "60vw";
     }
+    dialogContainer.style.maxWidth = "1280px";
     dialogContainer.style.height = "80vh";
     dialog.appendChild(dialogContainer);
 
