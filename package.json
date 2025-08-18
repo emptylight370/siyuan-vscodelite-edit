@@ -5,8 +5,8 @@
   "main": "theme.js",
   "packageManager": "npm@11.5.2",
   "volta": {
-    "node": "22.16.0",
-    "npm": "11.5.2"
+    "node": "22.18.0",
+    "npm": "10.9.3"
   },
   "scripts": {
     "build:scss": "sass --load-path=src theme.scss:theme.css src:sub",
