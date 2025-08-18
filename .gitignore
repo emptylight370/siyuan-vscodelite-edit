@@ -3,7 +3,6 @@ sync.ffs_db
 scripts/
 sub/*
 node_modules/
-package-lock.json
 **/*.css
 **/*.css.map
 theme.js
