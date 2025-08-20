@@ -24,9 +24,6 @@ jobs:
       - name: Install deps
         run: npm install
 
-      - name: Install tool
-        run: sudo apt-get install jq
-
       - name: Build scss
         run: npm run build
 
@@ -37,13 +34,16 @@ jobs:
           cat files.txt | zip -@ package.zip
           rm files.txt
 
-      - name: Create tag
-        run: echo "VERSION=$(jq -r ".version" theme.json)" >> $GITHUB_ENV
+      - name: Get current version
+        uses: sergeysova/jq-action@v2
+        id: version
+        with:
+          cmd: 'jq -r ".version" theme.json'
 
       - name: Release
         uses: softprops/action-gh-release@v2
         with:
           files: package.zip
-          name: Release ${{ env.VERSION }}
-          tag_name: ${{ env.VERSION }}
+          name: Release ${{ steps.version.outputs.value }}
+          tag_name: ${{ steps.version.outputs.value }}
           make_latest: true
