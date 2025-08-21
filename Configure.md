@@ -78,15 +78,19 @@ Tags in a content block use the same style as document tags.
 
 #### Shortcut key panel(siyuan-plugin-keymap)
 
-TBC(To be completed)
+Add colors for the plugin panel.
 
 #### Change Background Image(siyuan-plugin-background-cover)
 
-TBC
+Adjust most interface of SiYuan to adapt to background plugin. This will change the most interface into half transparent. You should set the **Opacity of foreground** in the plugin setting to 0, and set the **Blurring** in the plugin setting to greater than 0.3.
+
+> Not recommend to turn this on when the background plugin is not installed, it will cause unnecessary performance consumption. If you don't like this adaption, you can also turn it off.
 
 #### Math Enhance Plugin(siyuan-plugin-math-enhance)
 
-TBC
+Limit the max width of the preview window under the editor, you can scroll by horizonal wheel or select the texts.
+
+> Don't turn this on unless it's necessary for you.
 
 ### Code Snippets
 
@@ -97,11 +101,25 @@ Theme has integrated some code snippets from the bazaar. The following is the li
 
 ## Custom Style
 
-TBC
+Most style of theme can cover by snippets. This is examples: [Turn VSCode Lite Edit into your favourite appearance - LianDi](https://ld246.com/article/1736062978596)(in Chinese), [Scroll bar adjustment - LianDi](https://ld246.com/article/1735903636402)(in Chinese).
+
+You can set colors by the following code:
+
+```css
+:root[data-theme-mode="light"] {
+}
+
+:root[data-theme-mode="dark"] {
+}
+```
+
+Those color you can modify are in `color.scss` or `color.css`.
+
+Theme has refactored with SCSS, may cause some snippets unusable, should rewrite with new CSS selectors. If you can, you can view the SCSS code on GitHub, or view the CSS code in local folder(didn't compress to one line, contains a little comments).
 
 ## Custom Attribute
 
-TBC
+Theme provides some available custom attributes, please view in [README](README.md#custom-attributes).
 
 # 配置
 
@@ -218,4 +236,4 @@ TBC
 
 ## 自定义属性
 
-目前主题提供了一些可用的自定义属性，请自行前往[说明文档](./README_zh_CN.md#可用属性值)查看。
+目前主题提供了一些可用的自定义属性，请自行前往[说明文档](README_zh_CN.md#可用属性值)查看。
