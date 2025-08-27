@@ -3,7 +3,9 @@
 ## v2.3.10
 
 - 修复背景插件适配下数据库分组的显示问题
+- 微调列表中标题图标的显示位置
 - Fix display problem of database group in background plugin adaption
+- Fine-tune title icons' display position in list
 
 ## v2.3.9
 
