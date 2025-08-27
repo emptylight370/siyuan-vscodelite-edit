@@ -41,10 +41,11 @@ Limited by the configuration loading method, updated configurations for new vers
 
 > Full changelog view [ChangeLog](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/changelog.md)
 
-- v2.3.10
+- v2.4.0
   - Fix display problem of database group in background plugin adaption
   - Fine-tune title icons' display position in list
   - Fine-tune title icons' display position
+  - Make the background of setting items on the right of setting panel display in transparent when enable background plugin adaption
 - v2.3.9
   - minor changes
 - v2.3.8

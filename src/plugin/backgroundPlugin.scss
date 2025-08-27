@@ -124,14 +124,17 @@ body.bgenable {
     // 设置面板类的弹出面板
     .b3-dialog--open .b3-dialog__container,
     // 菜单类的弹出面板
-    .b3-menu,
+    .b3-menu {
+        background-color: var(--lite-modify-surface__menu);
+    }
+
     // 设置面板的右半边部分
     .config__tab-wrap,
     // 选项的背景框
     .config__tab-wrap .config__tab-container,
     // 右边的选项
     .config__tab-wrap .config__tab-container .b3-label:not(.b3-label--inner) {
-        background-color: var(--lite-modify-surface__menu);
+        background-color: transparent;
     }
 
     .config__tab-container .b3-label:not(.b3-label--inner) {

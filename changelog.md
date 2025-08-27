@@ -1,13 +1,15 @@
 # ChangeLog
 
-## v2.3.10
+## v2.4.0
 
 - 修复背景插件适配下数据库分组的显示问题
 - 微调列表中标题图标的显示位置
 - 微调标题图标的显示位置
+- 背景插件适配下让设置面板右侧的选项背景透明显示(#5)
 - Fix display problem of database group in background plugin adaption
 - Fine-tune title icons' display position in list
 - Fine-tune title icons' display position
+- Make the background of setting items on the right of setting panel display in transparent when enable background plugin adaption(#5)
 
 ## v2.3.9
 
