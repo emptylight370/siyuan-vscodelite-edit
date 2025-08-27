@@ -44,6 +44,7 @@ Limited by the configuration loading method, updated configurations for new vers
 - v2.3.10
   - Fix display problem of database group in background plugin adaption
   - Fine-tune title icons' display position in list
+  - Fine-tune title icons' display position
 - v2.3.9
   - minor changes
 - v2.3.8
