@@ -41,15 +41,14 @@
 
 > 完整更新日志查看[changelog](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/changelog.md)
 
+- v2.3.10
+  - 修复背景插件适配下数据库分组的显示问题
 - v2.3.9
   - minor changes
 - v2.3.8
   - 修复背景插件适配开关启用后关系图全屏背景透明无法正常查看问题
   - 添加自定义属性：标记挖空
   - 适配新的数据库视图外观
-- v2.3.7
-  - 修复背景插件适配中的关系图背景
-  - 改进代码片段：代码块悬浮显示操作按钮的样式
 
 # 特殊适配
 

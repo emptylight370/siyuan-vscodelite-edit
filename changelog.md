@@ -1,5 +1,10 @@
 # ChangeLog
 
+## v2.3.10
+
+- 修复背景插件适配下数据库分组的显示问题
+- Fix display problem of database group in background plugin adaption
+
 ## v2.3.9
 
 - 修改描述

@@ -159,9 +159,7 @@ body.bgenable {
 
     // 数据库卡片视图
     .av[data-av-type="gallery"] {
-        .av__header,
-        .av__scroll,
-        .av__gallery {
+        .av__container.fn__block {
             /* 数据库背景修复 */
             background: var(--b3-theme-background);
         }

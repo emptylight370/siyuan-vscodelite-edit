@@ -41,15 +41,14 @@ Limited by the configuration loading method, updated configurations for new vers
 
 > Full changelog view [ChangeLog](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/changelog.md)
 
+- v2.3.10
+  - Fix display problem of database group in background plugin adaption
 - v2.3.9
   - minor changes
 - v2.3.8
   - Fix the issue when enabled background plugin adaption, the background of graph is transparent and can't view normally
   - Add custom attribute: mark hollowing
   - Adapt to new database view appearance
-- v2.3.7
-  - Fix graph view background with background plugin adaption switch on
-  - Improve the style of snippet: CodeBlock show action buttons when hover
 
 # Special fitness
 
