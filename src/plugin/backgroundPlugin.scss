@@ -133,7 +133,9 @@ body.bgenable {
     // 选项的背景框
     .config__tab-wrap .config__tab-container,
     // 右边的选项
-    .config__tab-wrap .config__tab-container .b3-label:not(.b3-label--inner) {
+    .config__tab-wrap .config__tab-container .b3-label:not(.b3-label--inner),
+    // 单独适配账户页面的文字部分
+    .config-account__center.config-account__center--text {
         background-color: transparent;
     }
 
