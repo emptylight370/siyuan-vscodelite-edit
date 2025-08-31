@@ -3,7 +3,9 @@
 ## v2.4.1
 
 - 适配API变更(siyuan-note/siyuan#15727)
+- 补充之前一直遗漏的最小思源版本
 - Adapt to API change(siyuan-note/siyuan#15727)
+- Supplement the minimal Siyuan version that has been missing before
 
 ## v2.4.0
 

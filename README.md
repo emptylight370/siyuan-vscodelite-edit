@@ -43,6 +43,7 @@ Limited by the configuration loading method, updated configurations for new vers
 
 - v2.4.1
   - Adapt to API change(siyuan-note/siyuan#15727)
+  - Supplement the minimal Siyuan version that has been missing before
 - v2.4.0
   - Fix display problem of database group in background plugin adaption
   - Fine-tune title icons' display position in list
