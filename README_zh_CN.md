@@ -41,6 +41,8 @@
 
 > 完整更新日志查看[changelog](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/changelog.md)
 
+- v2.4.1
+  - 适配API变更(siyuan-note/siyuan#15727)
 - v2.4.0
   - 修复背景插件适配下数据库分组的显示问题
   - 微调列表中标题图标的显示位置
@@ -48,10 +50,6 @@
   - 背景插件适配下让设置面板右侧的选项背景透明显示
 - v2.3.9
   - minor changes
-- v2.3.8
-  - 修复背景插件适配开关启用后关系图全屏背景透明无法正常查看问题
-  - 添加自定义属性：标记挖空
-  - 适配新的数据库视图外观
 
 # 特殊适配
 

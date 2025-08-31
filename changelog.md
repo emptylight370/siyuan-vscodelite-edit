@@ -1,5 +1,10 @@
 # ChangeLog
 
+## v2.4.1
+
+- 适配API变更(siyuan-note/siyuan#15727)
+- Adapt to API change(siyuan-note/siyuan#15727)
+
 ## v2.4.0
 
 - 修复背景插件适配下数据库分组的显示问题

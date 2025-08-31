@@ -41,6 +41,8 @@ Limited by the configuration loading method, updated configurations for new vers
 
 > Full changelog view [ChangeLog](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/changelog.md)
 
+- v2.4.1
+  - Adapt to API change(siyuan-note/siyuan#15727)
 - v2.4.0
   - Fix display problem of database group in background plugin adaption
   - Fine-tune title icons' display position in list
@@ -48,10 +50,6 @@ Limited by the configuration loading method, updated configurations for new vers
   - Make the background of setting items on the right of setting panel display in transparent when enable background plugin adaption
 - v2.3.9
   - minor changes
-- v2.3.8
-  - Fix the issue when enabled background plugin adaption, the background of graph is transparent and can't view normally
-  - Add custom attribute: mark hollowing
-  - Adapt to new database view appearance
 
 # Special fitness
 

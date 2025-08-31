@@ -116,6 +116,6 @@ export async function _postMessage(type: "ok" | "error", message: string, time =
  * 重新加载页面
  */
 export async function _reloadInterface() {
-    var url = "/api/system/reloadUI";
+    var url = "/api/ui/reloadUI";
     _rqFORSiyuan(url, undefined);
 }
