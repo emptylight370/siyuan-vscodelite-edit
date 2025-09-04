@@ -41,6 +41,8 @@
 
 > 完整更新日志查看[changelog](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/changelog.md)
 
+- v2.4.2
+  - 区分静态锚文本和动态锚文本
 - v2.4.1
   - 适配API变更(siyuan-note/siyuan#15727)
   - 补充之前一直遗漏的最小思源版本
@@ -49,8 +51,6 @@
   - 微调列表中标题图标的显示位置
   - 微调标题图标的显示位置
   - 背景插件适配下让设置面板右侧的选项背景透明显示
-- v2.3.9
-  - minor changes
 
 # 特殊适配
 

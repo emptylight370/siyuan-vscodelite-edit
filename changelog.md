@@ -1,5 +1,10 @@
 # ChangeLog
 
+## v2.4.2
+
+- 区分静态锚文本和动态锚文本
+- Distinguish between static and dynamic anchor text
+
 ## v2.4.1
 
 - 适配API变更(siyuan-note/siyuan#15727)

@@ -41,6 +41,8 @@ Limited by the configuration loading method, updated configurations for new vers
 
 > Full changelog view [ChangeLog](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/changelog.md)
 
+- v2.4.2
+  - Distinguish between static and dynamic anchor text
 - v2.4.1
   - Adapt to API change(siyuan-note/siyuan#15727)
   - Supplement the minimal Siyuan version that has been missing before
@@ -49,8 +51,6 @@ Limited by the configuration loading method, updated configurations for new vers
   - Fine-tune title icons' display position in list
   - Fine-tune title icons' display position
   - Make the background of setting items on the right of setting panel display in transparent when enable background plugin adaption
-- v2.3.9
-  - minor changes
 
 # Special fitness
 

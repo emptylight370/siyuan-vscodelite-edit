@@ -3,17 +3,38 @@
     span[data-type~="block-ref"]:not(.av__celltext) {
         color: var(--lite-block-ref-color);
 
-        &::before {
-            content: "⌈";
+        &[data-subtype="d"] {
+            &::before {
+                content: "⌈";
+            }
+
+            &::after {
+                content: "⌋";
+            }
+
+            &:hover {
+                background-color: var(--lite-block-ref-background-color);
+                border-radius: 3px;
+                border-bottom: dashed;
+                border-bottom-width: 2px;
+            }
         }
 
-        &::after {
-            content: "⌋";
-        }
+        &[data-subtype="s"] {
+            &::before {
+                content: "[";
+            }
 
-        &:hover {
-            background-color: var(--lite-block-ref-background-color);
-            border-radius: 3px;
+            &::after {
+                content: "]";
+            }
+
+            &:hover {
+                background-color: var(--lite-block-ref-background-color);
+                border-radius: 3px;
+                border-bottom: solid;
+                border-bottom-width: 2px;
+            }
         }
     }
 }
