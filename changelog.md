@@ -4,8 +4,12 @@
 
 - 区分静态锚文本和动态锚文本
 - 优化代码
+- 发布模式下不显示主题设置按钮
+- 发布模式下避免出现报错
 - Distinguish between static and dynamic anchor text
 - Optimize the code
+- Don't show theme config button in publish mode
+- Avoid console errors in publish mode
 
 ## v2.4.1
 

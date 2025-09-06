@@ -15,6 +15,8 @@ declare global {
                 // 和<html>中的lang一样
                 lang: string;
             };
+            // 是否是发布模式
+            isPublish: boolean;
         };
     }
 

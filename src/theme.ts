@@ -96,6 +96,8 @@ window.destroyTheme = async () => {
  * 创建工具栏的按钮
  */
 function addThemeToolBar() {
+    // 如果是发布模式就不添加按钮
+    if (window.siyuan?.isPublish) return;
     let vscToolBar = document.getElementById("vscleToolbar");
     // 如果不存在按钮
     if (vscToolBar == null) {
@@ -265,6 +267,8 @@ function addFixedAttribute(settings: EnableSettings[]) {
  * @param lab EnableSettings[]
  */
 async function addPdfStyle(lab: EnableSettings[]) {
+    // 如果是发布模式就不写入文件
+    if (window.siyuan?.isPublish) return;
     const list: string[] = [];
     list.push('@charset "UTF-8";');
     lab.forEach((it) => {
