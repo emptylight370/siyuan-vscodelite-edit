@@ -1,9 +1,9 @@
 export function bg(times: number) {
     // 背景自定义插件，部分情况下插件加载缓慢可重复检测一次
-    var bglayer = document.getElementById("bglayer");
+    const bglayer = document.getElementById("bglayer");
     if (bglayer) {
-        var style = window.getComputedStyle(bglayer);
-        var body = document.body;
+        const style = window.getComputedStyle(bglayer);
+        const body = document.body;
         if (style.getPropertyValue("display") != "none") {
             body.classList.add("bgenable");
         } else if (style.getPropertyValue("display") == "none") {
@@ -24,7 +24,7 @@ export function bg(times: number) {
 
 // 监听背景自定义插件的属性修改
 export function bgobserver(times: number) {
-    var bglayer = document.getElementById("bglayer");
+    const bglayer = document.getElementById("bglayer");
     if (bglayer) {
         globalThis.vscObserver.bgObserver = new MutationObserver(function (mutationsList) {
             for (var mutation of mutationsList) {

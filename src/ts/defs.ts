@@ -1,4 +1,4 @@
-import { TLang } from "./types";
+import { TLang } from "./types.d";
 
 /**
  * 加载全局变量

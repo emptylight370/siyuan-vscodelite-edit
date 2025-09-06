@@ -100,22 +100,32 @@ export async function _writeFile(path: string, filedata: any, isDir = false, mod
 
 /**
  * 发送消息
- * @param type 消息类型 - "ok" or "error"
+ * @param type 消息类型 - "ok" | "error"
  * @param message 消息内容
- * @param time 持续时间
+ * @param time 持续时间 - "number" | "null"
  * @returns Promise\<void\>
  */
 export async function _postMessage(type: "ok" | "error", message: string, time = null) {
-    if (type == "ok") var url = "/api/notification/pushMsg";
-    else if (type == "error") url = "api/notification/pushErrMsg";
+    let url: string;
+    switch (type) {
+        case "ok":
+            url = "/api/notification/pushMsg";
+            break;
+        case "error":
+            url = "api/notification/pushErrMsg";
+            break;
+        default:
+            return;
+    }
     if (time) await _rqFORSiyuan(url, { msg: message, timeout: time });
     else await _rqFORSiyuan(url, { msg: message });
 }
 
 /**
  * 重新加载页面
+ * @returns Promise\<void\>
  */
 export async function _reloadInterface() {
-    var url = "/api/ui/reloadUI";
+    const url = "/api/ui/reloadUI";
     _rqFORSiyuan(url, undefined);
 }

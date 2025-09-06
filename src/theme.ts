@@ -2,7 +2,7 @@ import { _postMessage, _writeFile } from "./ts/api";
 import { loadGlobalVars } from "./ts/defs";
 import { bg, bgobserver } from "./ts/plugins/background";
 import { createSettingsWindow, getSettings } from "./ts/setting";
-import { EnableSettings } from "./ts/types";
+import { EnableSettings } from "./ts/types.d";
 
 // 主题默认加载时进行的行为
 // ! js代码加载后立即执行
@@ -14,25 +14,26 @@ import { EnableSettings } from "./ts/types";
         await loadGlobalVars();
     } catch (e) {
         // 基本上意味着主题启用失败了
-        console.error(globalThis.localMessage["loadVariableFail"][defLag]);
+        console.error(globalThis.localMessage["loadVariableFail"][globalThis.defLag]);
         console.error(e);
-        await _postMessage("error", globalThis.localMessage["loadVariableFail"][defLag]);
+        await _postMessage("error", globalThis.localMessage["loadVariableFail"][globalThis.defLag]);
         return;
     }
     // console.log(defLag);
     // console.log(cssTable);
     if (cssTable) {
         // 读取配置文件或生成配置文件
+        let labels: EnableSettings[];
         try {
-            var labels: EnableSettings[] = await getSettings();
+            labels = await getSettings();
         } catch (e) {
             /*
              * 加载设置文件失败会使用默认的配置文件初始化一个
              * 如果还是失败就意味着之前加载也失败了，不管什么地方失败都无法正常使用主题
              */
-            console.error(globalThis.localMessage["loadConfigFail"][defLag]);
+            console.error(globalThis.localMessage["loadConfigFail"][globalThis.defLag]);
             console.error(e);
-            await _postMessage("error", globalThis.localMessage["loadConfigFail"][defLag]);
+            await _postMessage("error", globalThis.localMessage["loadConfigFail"][globalThis.defLag]);
             return;
         }
         // 添加主题菜单
@@ -48,15 +49,15 @@ import { EnableSettings } from "./ts/types";
             await addPdfStyle(labels);
         } catch (e) {
             // 加载PDF导出预设失败只会影响导出PDF的视觉效果，不影响正常使用主题，没必要让用户知道这里报错了
-            console.error(globalThis.localMessage["loadPDFPersetFail"][defLag]);
+            console.error(globalThis.localMessage["loadPDFPersetFail"][globalThis.defLag]);
             console.error(e);
         }
         // 加载完成(o゜▽゜)o☆
-        console.log(localMessage["loadFinish"][defLag]);
+        console.log(globalThis.localMessage["loadFinish"][globalThis.defLag]);
     } else {
         // 加载失败
-        console.error(globalThis.localMessage["loadCssFail"][defLag]);
-        await _postMessage("error", globalThis.localMessage["localCssFail"][globalThis.defLag]);
+        console.error(globalThis.localMessage["loadCssFail"][globalThis.defLag]);
+        await _postMessage("error", globalThis.localMessage["loadCssFail"][globalThis.defLag]);
     }
 })();
 
@@ -67,16 +68,16 @@ window.destroyTheme = async () => {
     // 移除body特殊适配语句
     document.body.classList.remove("bgenable");
     // 移除计时器
-    for (var key in globalThis.vscTimer) {
+    for (let key in globalThis.vscTimer) {
         if (globalThis.vscTimer[key] !== null) {
             // console.log("remove timer");
+            // 可以清除 timeout 和 interval
             clearTimeout(globalThis.vscTimer[key]);
-            if (globalThis.vscTimer[key] !== null) clearInterval(globalThis.vscTimer[key]);
             globalThis.vscTimer[key] = null;
         }
     }
     // 移除监视器
-    for (key in globalThis.vscObserver) {
+    for (let key in globalThis.vscObserver) {
         if (globalThis.vscObserver[key] !== null) {
             // console.log("remove observer");
             globalThis.vscObserver[key].disconnect();
@@ -95,16 +96,16 @@ window.destroyTheme = async () => {
  * 创建工具栏的按钮
  */
 function addThemeToolBar() {
-    var vscToolBar = document.getElementById("vscleToolbar");
+    let vscToolBar = document.getElementById("vscleToolbar");
     // 如果不存在按钮
     if (vscToolBar == null) {
         // 定位添加位置
-        var toolbarVIP = document.getElementById("toolbarVIP");
-        var windowControls = document.getElementById("windowControls");
+        const toolbarVIP = document.getElementById("toolbarVIP");
+        const windowControls = document.getElementById("windowControls");
         // 开始创建按钮
         vscToolBar = document.createElement("div");
         vscToolBar.id = "vscleToolbar";
-        vscToolBar.setAttribute("aria-label", localMessage["label-aria"][defLag]);
+        vscToolBar.setAttribute("aria-label", globalThis.localMessage["label-aria"][globalThis.defLag]);
         vscToolBar.style.userSelect = "none";
         // 如果不存在思源VIP按钮（设置隐藏只不显示）
         if (toolbarVIP == null) {
@@ -119,10 +120,10 @@ function addThemeToolBar() {
                 vscToolBar.className = "block__icon fn__flex-center ariaLabel";
                 vscToolBar.style.height = "14px";
                 // 尝试获取移动端的文档操作按钮
-                var breadcrumbButtons = document.getElementsByClassName("block__icon fn__flex-center ariaLabel");
+                const breadcrumbButtons = document.getElementsByClassName("block__icon fn__flex-center ariaLabel");
                 try {
                     // 在第一个按钮前添加
-                    var firstButton = breadcrumbButtons[0];
+                    const firstButton = breadcrumbButtons[0];
                     if (firstButton) {
                         firstButton.parentElement.insertBefore(vscToolBar, firstButton);
                     } else {
@@ -130,7 +131,7 @@ function addThemeToolBar() {
                     }
                 } catch {
                     setTimeout(() => {
-                        var firstButton = breadcrumbButtons[0];
+                        const firstButton = breadcrumbButtons[0];
                         if (firstButton) {
                             firstButton.parentElement.insertBefore(vscToolBar, firstButton);
                         }
@@ -159,8 +160,8 @@ function addThemeToolBar() {
  * @param labels EnableSettings[]
  */
 function addImports(table: HTMLLinkElement, labels: EnableSettings[]) {
-    var sheet: CSSStyleSheet = table.sheet;
-    var i = 0;
+    const sheet: CSSStyleSheet = table.sheet;
+    let i = 0;
     // ! 向css表中插入引用的语句
     labels.forEach((it) => {
         switch (it) {
@@ -264,7 +265,7 @@ function addFixedAttribute(settings: EnableSettings[]) {
  * @param lab EnableSettings[]
  */
 async function addPdfStyle(lab: EnableSettings[]) {
-    var list = [];
+    const list: string[] = [];
     list.push('@charset "UTF-8";');
     lab.forEach((it) => {
         switch (it) {
@@ -295,7 +296,7 @@ async function addPdfStyle(lab: EnableSettings[]) {
                 break;
         }
     });
-    var str = list.join("\n");
+    const str = list.join("\n");
     await _writeFile("/conf/appearance/themes/siyuan-vscodelite-edit/sub/pdfPreview.css", str);
 }
 
@@ -304,10 +305,10 @@ async function addPdfStyle(lab: EnableSettings[]) {
  * @param table \<link stylesheet\>
  */
 function removeCSSRules(table: HTMLLinkElement) {
-    var sheet = table.sheet as CSSStyleSheet;
+    const sheet = table.sheet as CSSStyleSheet;
 
     // 移除特定的 @import 规则
-    var removeImportRule = (sheet: CSSStyleSheet, url: string) => {
+    const removeImportRule = (sheet: CSSStyleSheet, url: string) => {
         const rules = Array.from(sheet.cssRules);
         for (let i = 0; i < rules.length; i++) {
             const rule = rules[i];

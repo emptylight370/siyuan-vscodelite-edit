@@ -43,6 +43,7 @@ Limited by the configuration loading method, updated configurations for new vers
 
 - v2.4.2
   - Distinguish between static and dynamic anchor text
+  - Optimize the code
 - v2.4.1
   - Adapt to API change(siyuan-note/siyuan#15727)
   - Supplement the minimal Siyuan version that has been missing before

@@ -3,7 +3,9 @@
 ## v2.4.2
 
 - 区分静态锚文本和动态锚文本
+- 优化代码
 - Distinguish between static and dynamic anchor text
+- Optimize the code
 
 ## v2.4.1
 
