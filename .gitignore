@@ -6,4 +6,3 @@ node_modules/
 **/*.css
 **/*.css.map
 theme.js
-**/*.d.ts
