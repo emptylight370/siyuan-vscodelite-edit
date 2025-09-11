@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "description": "siyuan theme vscode lite edit",
   "main": "theme.js",
-  "packageManager": "npm@11.5.2",
+  "packageManager": "npm@10.9.3",
   "volta": {
     "node": "22.19.0",
     "npm": "10.9.3"
