@@ -44,13 +44,28 @@ import { EnableSettings } from "./ts/types.d";
         removeCSSRules(cssTable);
         // 添加固定属性
         addFixedAttribute(labels);
-        // 修复导出pdf没有样式的问题
-        try {
-            await addPdfStyle(labels);
-        } catch (e) {
-            // 加载PDF导出预设失败只会影响导出PDF的视觉效果，不影响正常使用主题，没必要让用户知道这里报错了
-            console.error(globalThis.localMessage["loadPDFPersetFail"][globalThis.defLag]);
-            console.error(e);
+        // 修复导出pdf没有样式的问题，在空闲时间执行
+        if ("requestIdleCallback" in window) {
+            requestIdleCallback(async () => {
+                try {
+                    await addPdfStyle(labels);
+                } catch (e) {
+                    // 加载PDF导出预设失败只会影响导出PDF的视觉效果，不影响正常使用主题，没必要让用户知道这里报错了
+                    console.error(globalThis.localMessage["loadPDFPersetFail"][globalThis.defLag]);
+                    console.error(e);
+                }
+            });
+        } else {
+            // 如果浏览器没有这个函数，就通过定时器执行
+            setTimeout(async () => {
+                try {
+                    await addPdfStyle(labels);
+                } catch (e) {
+                    // 加载PDF导出预设失败只会影响导出PDF的视觉效果，不影响正常使用主题，没必要让用户知道这里报错了
+                    console.error(globalThis.localMessage["loadPDFPersetFail"][globalThis.defLag]);
+                    console.error(e);
+                }
+            }, 0);
         }
         // 加载完成(o゜▽゜)o☆
         console.log(globalThis.localMessage["loadFinish"][globalThis.defLag]);
