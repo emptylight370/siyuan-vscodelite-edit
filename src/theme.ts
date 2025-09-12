@@ -168,81 +168,80 @@ function addThemeToolBar() {
  */
 function addImports(table: HTMLLinkElement, labels: EnableSettings[]) {
     const sheet: CSSStyleSheet = table.sheet;
-    let i = 0;
-    // ! 向css表中插入引用的语句
-    labels.forEach((it) => {
+    const isMobile = document.body.classList.contains("vscmobile");
+    const existBackgroundPlugin = sheet.cssRules.toString().includes("backgroundPlugin.css");
+    const rulesToInsert: string[] = [];
+
+    for (const it of labels) {
         switch (it) {
             case "codeBlock":
-                sheet.insertRule("@import url(sub/block/codeBlock.css);", 4 + i);
-                i += 1;
+                rulesToInsert.push("@import url(sub/block/codeBlock.css);");
                 break;
             case "reference":
-                sheet.insertRule("@import url(sub/block/reference.css);", 4 + i);
-                i += 1;
+                rulesToInsert.push("@import url(sub/block/reference.css);");
                 break;
             case "bazaar":
-                sheet.insertRule("@import url(sub/app/bazaar.css);", 4 + i);
-                i += 1;
+                rulesToInsert.push("@import url(sub/app/bazaar.css);");
                 break;
             case "embeddedBlock":
-                sheet.insertRule("@import url(sub/block/embeddedBlock.css);", 4 + i);
-                i += 1;
+                rulesToInsert.push("@import url(sub/block/embeddedBlock.css);");
                 break;
             case "title":
-                sheet.insertRule("@import url(sub/block/title.css);", 4 + i);
-                i += 1;
+                rulesToInsert.push("@import url(sub/block/title.css);");
                 break;
             case "titleShadow":
-                sheet.insertRule("@import url(sub/block/title-shadow.css);", 4 + i);
-                i += 1;
+                rulesToInsert.push("@import url(sub/block/title-shadow.css);");
                 break;
             case "titleIcon":
-                sheet.insertRule("@import url(sub/block/title-icon.css);", 4 + i);
-                i += 1;
+                rulesToInsert.push("@import url(sub/block/title-icon.css);");
                 break;
             case "shortcutPanel":
-                sheet.insertRule("@import url(sub/plugin/keymapPlugin.css);", 4 + i);
-                i += 1;
+                rulesToInsert.push("@import url(sub/plugin/keymapPlugin.css);");
                 break;
             case "database":
-                sheet.insertRule("@import url(sub/block/database.css);", 4 + i);
-                i += 1;
+                rulesToInsert.push("@import url(sub/block/database.css);");
                 break;
             case "doctree":
-                sheet.insertRule("@import url(sub/app/filetree.css);", 4 + i);
-                i += 1;
+                rulesToInsert.push("@import url(sub/app/filetree.css);");
                 break;
             case "backgroundCoverDesktop":
             case "backgroundCoverMobile":
-                if (!sheet.cssRules.toString().includes("backgroundPlugin.css")) {
-                    sheet.insertRule("@import url(sub/plugin/backgroundPlugin.css);", 4 + i);
-                    i += 1;
+                if (!existBackgroundPlugin) {
+                    rulesToInsert.push("@import url(sub/plugin/backgroundPlugin.css);");
                 }
                 break;
             case "mathPanel":
-                if (!document.body.classList.contains("vscmobile")) {
-                    sheet.insertRule("@import url(sub/plugin/mathEnhance.css);", 4 + i);
-                    i += 1;
+                if (!isMobile) {
+                    rulesToInsert.push("@import url(sub/plugin/mathEnhance.css);");
                 }
                 break;
             case "mark":
-                sheet.insertRule("@import url(sub/block/mark.css);", 4 + i);
-                i += 1;
+                rulesToInsert.push("@import url(sub/block/mark.css);");
                 break;
             case "doubleTabbar":
-                if (!document.body.classList.contains("vscmobile")) {
-                    sheet.insertRule("@import url(sub/plugin/doubleTabbar.css);", 4 + i);
-                    i += 1;
+                if (!isMobile) {
+                    rulesToInsert.push("@import url(sub/plugin/doubleTabbar.css);");
                 }
                 break;
             case "tag":
-                sheet.insertRule("@import url(sub/block/tag.css);", 4 + i);
-                i += 1;
+                rulesToInsert.push("@import url(sub/block/tag.css);");
                 break;
             default:
                 break;
         }
-    });
+    }
+
+    let index = 4;
+    for (const rule of rulesToInsert) {
+        try {
+            sheet.insertRule(rule, index);
+            index++;
+        } catch (e) {
+            // 加载失败
+            console.error(globalThis.localMessage["loadCssFail"][globalThis.defLag]);
+            _postMessage("error", globalThis.localMessage["loadCssFail"][globalThis.defLag]);
+        }
+    }
 }
 
 /**
