@@ -118,9 +118,9 @@ function addThemeToolBar() {
 
     // 创建按钮
     const vscToolBar = document.createElement("div");
-        vscToolBar.id = "vscleToolbar";
-        vscToolBar.setAttribute("aria-label", globalThis.localMessage["label-aria"][globalThis.defLag]);
-        vscToolBar.style.userSelect = "none";
+    vscToolBar.id = "vscleToolbar";
+    vscToolBar.setAttribute("aria-label", globalThis.localMessage["label-aria"][globalThis.defLag]);
+    vscToolBar.style.userSelect = "none";
     // 设置按钮文本
     vscToolBar.innerHTML = "VC";
     // 添加点击事件
@@ -137,26 +137,26 @@ function addThemeToolBar() {
         toolbarVIP.parentElement.insertBefore(vscToolBar, toolbarVIP);
     } else if (windowControls) {
         // 桌面端，在窗口控制按钮前添加（插件按钮右）
-                vscToolBar.className = "toolbar__item ariaLabel";
-                vscToolBar.style.height = "23.5px";
-                windowControls.parentElement.insertBefore(vscToolBar, windowControls);
+        vscToolBar.className = "toolbar__item ariaLabel";
+        vscToolBar.style.height = "23.5px";
+        windowControls.parentElement.insertBefore(vscToolBar, windowControls);
     } else {
         // 移动端，在文档菜单添加
-                // 添加移动端记号
-                document.body.classList.add("vscmobile");
-                vscToolBar.className = "block__icon fn__flex-center ariaLabel";
-                vscToolBar.style.height = "14px";
+        // 添加移动端记号
+        document.body.classList.add("vscmobile");
+        vscToolBar.className = "block__icon fn__flex-center ariaLabel";
+        vscToolBar.style.height = "14px";
 
         setTimeout(() => {
-                // 尝试获取移动端的文档操作按钮
-                const breadcrumbButtons = document.getElementsByClassName("block__icon fn__flex-center ariaLabel");
-                    // 在第一个按钮前添加
-                    const firstButton = breadcrumbButtons[0];
-                    if (firstButton) {
-                        firstButton.parentElement.insertBefore(vscToolBar, firstButton);
-                    } else {
-                        throw new Error("Can't find first button in breadcrumb.");
-                    }
+            // 尝试获取移动端的文档操作按钮
+            const breadcrumbButtons = document.getElementsByClassName("block__icon fn__flex-center ariaLabel");
+            // 在第一个按钮前添加
+            const firstButton = breadcrumbButtons[0];
+            if (firstButton) {
+                firstButton.parentElement.insertBefore(vscToolBar, firstButton);
+            } else {
+                throw new Error("Can't find first button in breadcrumb.");
+            }
         }, 0);
     }
 }
