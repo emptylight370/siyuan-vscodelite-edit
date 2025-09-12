@@ -249,12 +249,13 @@ function addImports(table: HTMLLinkElement, labels: EnableSettings[]) {
  * @param settings EnableSettings[]
  */
 function addFixedAttribute(settings: EnableSettings[]) {
+    const isMobile = document.body.classList.contains("vscmobile");
     // 运行
     // *>>>>>>>>>>>>>>>>>>>>>>>>>>>>
     // ?如果设置启用背景插件才进入判断
     if (
-        (settings.includes("backgroundCoverDesktop") && !document.body.classList.contains("vscmobile")) ||
-        (settings.includes("backgroundCoverMobile") && document.body.classList.contains("vscmobile"))
+        (settings.includes("backgroundCoverDesktop") && !isMobile) ||
+        (settings.includes("backgroundCoverMobile") && isMobile)
     ) {
         // 首先调用插件状态检测
         bg(0);
@@ -275,7 +276,7 @@ async function addPdfStyle(lab: EnableSettings[]) {
     if (window.siyuan?.isPublish) return;
     const list: string[] = [];
     list.push('@charset "UTF-8";');
-    lab.forEach((it) => {
+    for (const it of lab) {
         switch (it) {
             case "codeBlock":
                 list.push("@import url(block/codeBlock.css);");
@@ -303,7 +304,7 @@ async function addPdfStyle(lab: EnableSettings[]) {
             default:
                 break;
         }
-    });
+    }
     const str = list.join("\n");
     await _writeFile("/conf/appearance/themes/siyuan-vscodelite-edit/sub/pdfPreview.css", str);
 }
@@ -316,16 +317,15 @@ function removeCSSRules(table: HTMLLinkElement) {
     const sheet = table.sheet as CSSStyleSheet;
 
     // 移除特定的 @import 规则
-    const removeImportRule = (sheet: CSSStyleSheet, url: string) => {
-        const rules = Array.from(sheet.cssRules);
-        for (let i = 0; i < rules.length; i++) {
-            const rule = rules[i];
+    function removeImportRule(sheet: CSSStyleSheet, url: string) {
+        for (let i = sheet.cssRules.length - 1; i >= 0; i--) {
+            const rule = sheet.cssRules[i];
             if (rule instanceof CSSImportRule && rule.href.includes(url)) {
                 sheet.deleteRule(i);
                 break; // 找到并删除目标规则后停止遍历
             }
         }
-    };
+    }
 
     // 移除 @import("sub/pdfPreview.css") 规则
     removeImportRule(sheet, "sub/pdfPreview.css");
