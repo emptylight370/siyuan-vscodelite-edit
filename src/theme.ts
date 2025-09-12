@@ -113,32 +113,43 @@ window.destroyTheme = async () => {
 function addThemeToolBar() {
     // 如果是发布模式就不添加按钮
     if (window.siyuan?.isPublish) return;
-    let vscToolBar = document.getElementById("vscleToolbar");
-    // 如果不存在按钮
-    if (vscToolBar == null) {
-        // 定位添加位置
-        const toolbarVIP = document.getElementById("toolbarVIP");
-        const windowControls = document.getElementById("windowControls");
-        // 开始创建按钮
-        vscToolBar = document.createElement("div");
+    // 避免重复添加
+    if (document.getElementById("vscleToolbar")) return;
+
+    // 创建按钮
+    const vscToolBar = document.createElement("div");
         vscToolBar.id = "vscleToolbar";
         vscToolBar.setAttribute("aria-label", globalThis.localMessage["label-aria"][globalThis.defLag]);
         vscToolBar.style.userSelect = "none";
-        // 如果不存在思源VIP按钮（设置隐藏只不显示）
-        if (toolbarVIP == null) {
-            try {
-                // 尝试在窗口控制按钮前添加
+    // 设置按钮文本
+    vscToolBar.innerHTML = "VC";
+    // 添加点击事件
+    vscToolBar.addEventListener("click", createSettingsWindow);
+
+    // 定位添加位置
+    const toolbarVIP = document.getElementById("toolbarVIP");
+    const windowControls = document.getElementById("windowControls");
+
+    if (toolbarVIP) {
+        // 桌面端，在VIP按钮前添加（插件按钮左）
+        vscToolBar.className = "toolbar__item ariaLabel";
+        vscToolBar.style.height = "23.5px";
+        toolbarVIP.parentElement.insertBefore(vscToolBar, toolbarVIP);
+    } else if (windowControls) {
+        // 桌面端，在窗口控制按钮前添加（插件按钮右）
                 vscToolBar.className = "toolbar__item ariaLabel";
                 vscToolBar.style.height = "23.5px";
                 windowControls.parentElement.insertBefore(vscToolBar, windowControls);
-            } catch (error) {
+    } else {
+        // 移动端，在文档菜单添加
                 // 添加移动端记号
                 document.body.classList.add("vscmobile");
                 vscToolBar.className = "block__icon fn__flex-center ariaLabel";
                 vscToolBar.style.height = "14px";
+
+        setTimeout(() => {
                 // 尝试获取移动端的文档操作按钮
                 const breadcrumbButtons = document.getElementsByClassName("block__icon fn__flex-center ariaLabel");
-                try {
                     // 在第一个按钮前添加
                     const firstButton = breadcrumbButtons[0];
                     if (firstButton) {
@@ -146,29 +157,8 @@ function addThemeToolBar() {
                     } else {
                         throw new Error("Can't find first button in breadcrumb.");
                     }
-                } catch {
-                    setTimeout(() => {
-                        const firstButton = breadcrumbButtons[0];
-                        if (firstButton) {
-                            firstButton.parentElement.insertBefore(vscToolBar, firstButton);
-                        }
-                    }, 1000);
-                }
-            }
-        } else {
-            vscToolBar.className = "toolbar__item ariaLabel";
-            vscToolBar.style.height = "23.5px";
-            toolbarVIP.parentElement.insertBefore(vscToolBar, toolbarVIP);
-        }
+        }, 0);
     }
-    // 设置按钮文本
-    vscToolBar.innerHTML = "VC";
-    // vscToolBar.innerHTML = "<img src=\"resources\\h6.bmp\"\\>";
-    // 添加点击事件
-    vscToolBar.addEventListener("click", () => {
-        // 调用函数创建设置窗口
-        createSettingsWindow();
-    });
 }
 
 /**
