@@ -13,58 +13,104 @@
 }
 
 /* 用于修改有序列表和无序列表的块标位置 */
-.li[data-subtype="o"] > .protyle-action::after {
-    padding: 3px 2px;
-    display: flex;
-    justify-content: center;
-    /* color: var(--lite-li-items); */
-    margin: -1.2em 0 0 -0.5em !important;
-}
+/* 在导出图片时禁用 */
+div:not(.export-img) > .protyle-wysiwyg {
+    .li[data-subtype="o"] > .protyle-action::after {
+        padding: 3px 2px;
+        display: flex;
+        justify-content: center;
+        /* color: var(--lite-li-items); */
+        margin: -1.2em 0 0 -0.5em !important;
+    }
 
-.li[data-subtype="u"] > .protyle-action::after {
-    padding: 3px 2px;
-    display: flex;
-    justify-content: center;
-    /* color: var(--lite-li-items); */
-    margin: -0.8em 0 0 -0.55em !important;
-}
+    .li[data-subtype="u"] > .protyle-action::after {
+        padding: 3px 2px;
+        display: flex;
+        justify-content: center;
+        /* color: var(--lite-li-items); */
+        margin: -0.8em 0 0 -0.55em !important;
+    }
 
-/*
- * 修改有序列表的按层级缩进显示序号
- * 这部分代码从Savor抄的，我直接写在这里了
- * 扩增了一下到16级缩进了，感觉溢出了，什么时候会有这么多级缩进呢
- * 注意，编译后会被压缩
- */
-.li[data-subtype="o"] .li[data-subtype="o"] > .protyle-action--order {
-    color: transparent !important;
-}
+    /*
+    * 修改有序列表的按层级缩进显示序号
+    * 这部分代码从Savor抄的，我直接写在这里了
+    * 扩增了一下到16级缩进了，感觉溢出了，什么时候会有这么多级缩进呢
+    * 注意，编译后会被压缩
+    */
+    .li[data-subtype="o"] .li[data-subtype="o"] > .protyle-action--order {
+        color: transparent !important;
+    }
 
-.list[data-subtype="o"] {
-    counter-reset: o1 0 o2 0 o3 0 o4 0;
-}
+    .list[data-subtype="o"] {
+        counter-reset: o1 0 o2 0 o3 0 o4 0;
+    }
 
-%o1 {
-    counter-increment: o1;
-    content: counter(o1, decimal) ".";
-    position: absolute;
-}
+    %o1 {
+        counter-increment: o1;
+        content: counter(o1, decimal) ".";
+        position: absolute;
+    }
 
-%o2 {
-    counter-increment: o2;
-    content: counter(o2, decimal) ")";
-    position: absolute;
-}
+    %o2 {
+        counter-increment: o2;
+        content: counter(o2, decimal) ")";
+        position: absolute;
+    }
 
-%o3 {
-    counter-increment: o3;
-    content: counter(o3, lower-latin) ".";
-    position: absolute;
-}
+    %o3 {
+        counter-increment: o3;
+        content: counter(o3, lower-latin) ".";
+        position: absolute;
+    }
 
-%o4 {
-    counter-increment: o4;
-    content: counter(o4, lower-roman) ".";
-    position: absolute;
+    %o4 {
+        counter-increment: o4;
+        content: counter(o4, lower-roman) ".";
+        position: absolute;
+    }
+
+    /* 无序列表 */
+    /* 无序列表着色 */
+    /* 导出时预览放到上面去了 */
+    .list[data-subtype="u"] .li[data-subtype="u"] > .protyle-action svg {
+        fill: transparent;
+    }
+
+    /*
+    * 无序列表的前面的标记，还是部分参考Savor
+    * 这次是18级列表，后面依然回到一级列表的样式
+    * 注意，编译后会被压缩
+    */
+    [data-subtype="u"] > .li[data-subtype="u"] > .protyle-action::after {
+        font-size: 1.5em;
+        font-family: Arial;
+        content: "•";
+        position: absolute;
+    }
+
+    %u1 {
+        content: "•";
+    }
+
+    %u2 {
+        content: "◦";
+    }
+
+    %u3 {
+        content: "▪";
+    }
+
+    %u4 {
+        content: "▫";
+    }
+
+    %u5 {
+        content: "▴";
+    }
+
+    %u6 {
+        content: "▵";
+    }
 }
 
 .li[data-subtype="o"] {
@@ -131,49 +177,6 @@
     & & & & & & & & & & & & & & & & & > .protyle-action::after {
         @extend %o1;
     }
-}
-
-/* 无序列表 */
-/* 无序列表着色 */
-/* 导出时预览放到上面去了 */
-.list[data-subtype="u"] .li[data-subtype="u"] > .protyle-action svg {
-    fill: transparent;
-}
-
-/*
- * 无序列表的前面的标记，还是部分参考Savor
- * 这次是18级列表，后面依然回到一级列表的样式
- * 注意，编译后会被压缩
- */
-[data-subtype="u"] > .li[data-subtype="u"] > .protyle-action::after {
-    font-size: 1.5em;
-    font-family: Arial;
-    content: "•";
-    position: absolute;
-}
-
-%u1 {
-    content: "•";
-}
-
-%u2 {
-    content: "◦";
-}
-
-%u3 {
-    content: "▪";
-}
-
-%u4 {
-    content: "▫";
-}
-
-%u5 {
-    content: "▴";
-}
-
-%u6 {
-    content: "▵";
 }
 
 .li[data-subtype="u"] {
@@ -255,7 +258,7 @@
  * 感谢QYL主题作者[queguaiya - 链滴](https://ld246.com/member/queguaiya)
  * https://ld246.com/article/1749707279347/comment/1749718290195?r=EmptyLight#comments
  */
-.protyle-wysiwyg [data-node-id].li > .protyle-action {
+div:not(.export-image) > .protyle-wysiwyg [data-node-id].li > .protyle-action {
     width: auto;
     aspect-ratio: 1 / 1;
     &::after {

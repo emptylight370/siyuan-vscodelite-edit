@@ -6,10 +6,12 @@
 - 优化数学增强插件适配
 - 重构主题设置面板
 - 导出图片时暂不显示标题图标（无法加载图片）(#26)
+- 导出图片时暂不显示自定义列表序号(#26)
 - Optimize the code
 - Optimize the adaption of math enhance plugin
 - Refactor theme's setting panel
 - Hide heading icon when exporting image(can't show image)(#26)
+- Not apply customized list sequence when exporting image(#26)
 
 ## v2.4.2
 
