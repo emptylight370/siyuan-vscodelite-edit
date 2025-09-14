@@ -14,9 +14,9 @@ import { EnableSettings } from "./ts/types.d";
         await loadGlobalVars();
     } catch (e) {
         // 基本上意味着主题启用失败了
-        console.error(globalThis.localMessage["loadVariableFail"][globalThis.defLag]);
+        console.error(globalThis.localMessage.loadVariableFail[globalThis.defLag]);
         console.error(e);
-        await _postMessage("error", globalThis.localMessage["loadVariableFail"][globalThis.defLag]);
+        await _postMessage("error", globalThis.localMessage.loadVariableFail[globalThis.defLag]);
         return;
     }
     // console.log(defLag);
@@ -31,9 +31,9 @@ import { EnableSettings } from "./ts/types.d";
              * 加载设置文件失败会使用默认的配置文件初始化一个
              * 如果还是失败就意味着之前加载也失败了，不管什么地方失败都无法正常使用主题
              */
-            console.error(globalThis.localMessage["loadConfigFail"][globalThis.defLag]);
+            console.error(globalThis.localMessage.loadConfigFail[globalThis.defLag]);
             console.error(e);
-            await _postMessage("error", globalThis.localMessage["loadConfigFail"][globalThis.defLag]);
+            await _postMessage("error", globalThis.localMessage.loadConfigFail[globalThis.defLag]);
             return;
         }
         // 添加主题菜单
@@ -51,7 +51,7 @@ import { EnableSettings } from "./ts/types.d";
                     await addPdfStyle(labels);
                 } catch (e) {
                     // 加载PDF导出预设失败只会影响导出PDF的视觉效果，不影响正常使用主题，没必要让用户知道这里报错了
-                    console.error(globalThis.localMessage["loadPDFPersetFail"][globalThis.defLag]);
+                    console.error(globalThis.localMessage.loadPDFPersetFail[globalThis.defLag]);
                     console.error(e);
                 }
             });
@@ -62,17 +62,17 @@ import { EnableSettings } from "./ts/types.d";
                     await addPdfStyle(labels);
                 } catch (e) {
                     // 加载PDF导出预设失败只会影响导出PDF的视觉效果，不影响正常使用主题，没必要让用户知道这里报错了
-                    console.error(globalThis.localMessage["loadPDFPersetFail"][globalThis.defLag]);
+                    console.error(globalThis.localMessage.loadPDFPersetFail[globalThis.defLag]);
                     console.error(e);
                 }
             }, 0);
         }
         // 加载完成(o゜▽゜)o☆
-        console.log(globalThis.localMessage["loadFinish"][globalThis.defLag]);
+        console.log(globalThis.localMessage.loadFinish[globalThis.defLag]);
     } else {
         // 加载失败
-        console.error(globalThis.localMessage["loadCssFail"][globalThis.defLag]);
-        await _postMessage("error", globalThis.localMessage["loadCssFail"][globalThis.defLag]);
+        console.error(globalThis.localMessage.loadCssFail[globalThis.defLag]);
+        await _postMessage("error", globalThis.localMessage.loadCssFail[globalThis.defLag]);
     }
 })();
 
@@ -119,7 +119,7 @@ function addThemeToolBar() {
     // 创建按钮
     const vscToolBar = document.createElement("div");
     vscToolBar.id = "vscleToolbar";
-    vscToolBar.setAttribute("aria-label", globalThis.localMessage["settingButtonAria"][globalThis.defLag]);
+    vscToolBar.setAttribute("aria-label", globalThis.localMessage.settingButtonAria[globalThis.defLag]);
     vscToolBar.style.userSelect = "none";
     // 设置按钮文本
     vscToolBar.innerHTML = "VC";
@@ -245,8 +245,8 @@ function addImports(table: HTMLLinkElement, labels: EnableSettings[]) {
             index++;
         } catch (e) {
             // 加载失败
-            console.error(globalThis.localMessage["loadCssFail"][globalThis.defLag]);
-            _postMessage("error", globalThis.localMessage["loadCssFail"][globalThis.defLag]);
+            console.error(globalThis.localMessage.loadCssFail[globalThis.defLag]);
+            _postMessage("error", globalThis.localMessage.loadCssFail[globalThis.defLag]);
         }
     }
 }

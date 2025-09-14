@@ -1,6 +1,6 @@
 import { _getFile, _postMessage, _reloadInterface, _writeFile } from "./api";
 import { settingKeyMap } from "./types";
-import { EnableSettings, SettingItem, SettingPanelId, ThemeConfig } from "./types.d";
+import { EnableSettings, LocalMessage, SettingItem, SettingPanelId, ThemeConfig } from "./types.d";
 
 /**
  * 创建一个包含标签和复选框的 HTML 结构
@@ -52,7 +52,7 @@ export async function createSettingsWindow() {
 
     // 创建标题
     const title: HTMLHeadingElement = document.createElement("h2");
-    title.textContent = localMessage["settingPanelTitle"][defLag];
+    title.textContent = localMessage.settingPanelTitle[defLag];
     title.setAttribute("data-subtype", "h2");
     // title.setAttribute("data-type", "NodeHeading");
     title.className = "h2";
@@ -61,9 +61,11 @@ export async function createSettingsWindow() {
     // 创建上方的标签页
     const tabbar: HTMLDivElement = document.createElement("div");
     tabbar.className = "layout-tab-bar fn__flex";
-    tabbar.appendChild(createTab(globalThis.localMessage["settingTabSiYuan"][globalThis.defLag], "tabThemeSiYuan"));
-    (tabbar.firstChild as HTMLDivElement).classList.add("item--focus");
-    tabbar.appendChild(createTab(globalThis.localMessage["settingTabPlugin"][globalThis.defLag], "tabThemePlugin"));
+    tabbar.appendChild(createTab(globalThis.localMessage.settingTabSiYuan[globalThis.defLag], "tabThemeSiYuan"));
+    (tabbar.lastChild as HTMLDivElement).classList.add("item--focus");
+    changeHints(tabbar.lastChild as HTMLDivElement, "tabTipSiYuan");
+    tabbar.appendChild(createTab(globalThis.localMessage.settingTabPlugin[globalThis.defLag], "tabThemePlugin"));
+    changeHints(tabbar.lastChild as HTMLDivElement, "tabTipPlugin");
     dialogBody.appendChild(tabbar);
 
     // 创建下方的设置页
@@ -77,6 +79,7 @@ export async function createSettingsWindow() {
     PluginPage.className = "config-bazaar__panel ThemeSettingPage fn__none";
     PluginPage.setAttribute("data-tab", "tabThemePlugin");
     pages.appendChild(PluginPage);
+    changeHints(pages, "tipSwitch");
     dialogBody.appendChild(pages);
 
     // 等待获取到设置数组再进行
@@ -94,47 +97,40 @@ export async function createSettingsWindow() {
     const hints: HTMLSpanElement = document.createElement("span");
     hints.id = "vsceSettingHint";
     hints.className = "fn__flex-1 fn__flex-center";
-    hints.innerText = globalThis.localMessage["tip3"][globalThis.defLag];
+    hints.innerText = globalThis.localMessage.tipSwitch[globalThis.defLag];
     // 创建保存按钮
     const saveButton = document.createElement("button");
-    saveButton.textContent = globalThis.localMessage["saveReload"][globalThis.defLag];
+    saveButton.textContent = globalThis.localMessage.saveReload[globalThis.defLag];
     saveButton.className = "b3-button b3-button--text";
     saveButton.addEventListener("click", closeAndSave); // 保存并刷新页面
-    saveButton.addEventListener("mouseenter", () => {
-        hints.innerText = globalThis.localMessage["tip1"][globalThis.defLag];
-    });
-    saveButton.addEventListener("mouseleave", () => {
-        hints.innerText = globalThis.localMessage["tip3"][globalThis.defLag];
-    });
+    changeHints(saveButton, "tipSave");
     // 创建不保存按钮
     const notSaveButton = document.createElement("button");
-    notSaveButton.textContent = globalThis.localMessage["nSave"][globalThis.defLag];
+    notSaveButton.textContent = globalThis.localMessage.nSave[globalThis.defLag];
     notSaveButton.className = "b3-button b3-button--cancel";
     notSaveButton.addEventListener("click", closeNotSave); // 不保存修改
-    notSaveButton.addEventListener("mouseenter", () => {
-        hints.innerText = globalThis.localMessage["tip2"][globalThis.defLag];
-    });
-    notSaveButton.addEventListener("mouseleave", () => {
-        hints.innerText = globalThis.localMessage["tip3"][globalThis.defLag];
-    });
+    changeHints(notSaveButton, "tipSave");
     // 创建刷新按钮
     const refreshButton = document.createElement("button");
-    refreshButton.ariaLabel = globalThis.localMessage["oReload"][globalThis.defLag];
     refreshButton.innerHTML = '<svg style="margin-right: 0"><use xlink:href="#iconRefresh"></use></svg>';
     refreshButton.className = "b3-button b3-button--cancel";
     refreshButton.addEventListener("click", _reloadInterface); // 刷新界面
-    refreshButton.addEventListener("mouseenter", () => {
-        hints.innerText = globalThis.localMessage["oReload"][globalThis.defLag];
-    });
-    refreshButton.addEventListener("mouseleave", () => {
-        hints.innerText = globalThis.localMessage["tip3"][globalThis.defLag];
-    });
+    changeHints(refreshButton, "oReload");
     // 添加文本和按钮
     buttons.appendChild(hints);
     buttons.appendChild(saveButton);
     buttons.appendChild(notSaveButton);
     buttons.appendChild(refreshButton);
     dialogBody.appendChild(buttons);
+
+    function changeHints(element: HTMLElement, messageKey: keyof LocalMessage) {
+        const showMessage = () => {
+            hints.innerText = globalThis.localMessage[messageKey][globalThis.defLag] as string;
+        };
+
+        element.addEventListener("pointerenter", showMessage);
+        element.addEventListener("touchstart", showMessage);
+    }
 }
 
 /**
@@ -267,7 +263,7 @@ async function closeAndSave() {
     // 保存设置文件
     await putSettings(saveSt);
     // 显示完成通知
-    _postMessage("ok", localMessage["confSave"][defLag]);
+    _postMessage("ok", localMessage.confSave[defLag]);
     // 稍后重载页面
     setTimeout(() => {
         _reloadInterface();
@@ -283,7 +279,7 @@ function closeNotSave() {
     const dialog = document.getElementById("vsceThemeSettingDialog");
 
     // 显示不保存通知
-    _postMessage("error", localMessage["confNotSave"][defLag], 3000);
+    _postMessage("error", localMessage.confNotSave[defLag], 3000);
     // 移除设置窗口
     document.body.removeChild(dialog);
 }
@@ -309,82 +305,82 @@ async function getSettingArrays(v: ThemeConfig) {
     let settings: SettingItem[] = [];
     // ! 设置页添加设置选项
     // 标题
-    settings.push({ label: localMessage["tititem"][defLag], id: "titleBlock", enable: v?.theme?.title ?? true });
+    settings.push({ label: localMessage.tititem[defLag], id: "titleBlock", enable: v?.theme?.title ?? true });
     // 标题阴影
     settings.push({
-        label: localMessage["titleShadow"][defLag],
-        description: localMessage["titleShadowDesc"][defLag],
+        label: localMessage.titleShadow[defLag],
+        description: localMessage.titleShadowDesc[defLag],
         id: "titleShadow",
         enable: v?.theme?.titleShadow ?? true,
     });
     // 标题图标
     settings.push({
-        label: localMessage["titleIcon"][defLag],
-        description: localMessage["titleIconDesc"][defLag],
+        label: localMessage.titleIcon[defLag],
+        description: localMessage.titleIconDesc[defLag],
         id: "titleIcon",
         enable: v?.theme?.titleIcon ?? true,
     });
     // 文档树和大纲
-    settings.push({ label: localMessage["ftitem"][defLag], id: "doctree", enable: v?.theme?.doctree ?? true });
+    settings.push({ label: localMessage.ftitem[defLag], id: "doctree", enable: v?.theme?.doctree ?? true });
     // 代码块
-    settings.push({ label: localMessage["cbitem"][defLag], id: "codeBlock", enable: v?.theme?.codeBlock ?? true });
+    settings.push({ label: localMessage.cbitem[defLag], id: "codeBlock", enable: v?.theme?.codeBlock ?? true });
     // 引用
     settings.push({
-        label: localMessage["refitem"][defLag],
+        label: localMessage.refitem[defLag],
         id: "referenceBlock",
         enable: v?.theme?.reference ?? true,
     });
     // 标记
-    settings.push({ label: localMessage["markitem"][defLag], id: "mark", enable: v?.theme?.mark ?? true });
+    settings.push({ label: localMessage.markitem[defLag], id: "mark", enable: v?.theme?.mark ?? true });
     // 标签
     settings.push({
-        label: localMessage["tagitem"][defLag],
-        description: localMessage["tagdesc"][defLag],
+        label: localMessage.tagitem[defLag],
+        description: localMessage.tagdesc[defLag],
         id: "tagStyle",
         enable: v?.theme?.tag ?? true,
     });
     // 集市
-    settings.push({ label: localMessage["bazitem"][defLag], id: "bazaarStyle", enable: v?.theme?.bazaar ?? true });
+    settings.push({ label: localMessage.bazitem[defLag], id: "bazaarStyle", enable: v?.theme?.bazaar ?? true });
     // 嵌入块
     settings.push({
-        label: localMessage["emitem"][defLag],
-        description: localMessage["emdesc"][defLag],
+        label: localMessage.emitem[defLag],
+        description: localMessage.emdesc[defLag],
         id: "embeddedBlock",
         enable: v?.theme?.embeddedBlock ?? true,
     });
     // 数据库
-    settings.push({ label: localMessage["dbitem"][defLag], id: "database", enable: v?.theme?.database ?? true });
+    settings.push({ label: localMessage.dbitem[defLag], id: "database", enable: v?.theme?.database ?? true });
     // 快捷键面板
     settings.push({
-        label: localMessage["scitem"][defLag],
+        label: localMessage.scitem[defLag],
         id: "scPanelStyle",
         enable: v?.plugins?.shortcutPanel ?? true,
     });
     // 替换背景图片插件电脑端
     settings.push({
-        label: localMessage["bgdesktop"][defLag],
-        description: localMessage["bgdesc"][defLag],
+        label: localMessage.bgdesktop[defLag],
+        description: localMessage.bgdesc[defLag],
         id: "backgroundCoverDesktop",
         enable: v?.plugins?.backgroundCoverDesktop ?? true,
     });
     // 替换背景图片插件移动端
     settings.push({
-        label: localMessage["bgmobile"][defLag],
-        description: localMessage["bgdesc"][defLag],
+        label: localMessage.bgmobile[defLag],
+        description: localMessage.bgdesc[defLag],
         id: "backgroundCoverMobile",
         enable: v?.plugins?.backgroundCoverMobile ?? false,
     });
     // 数学公式增强插件
     settings.push({
-        label: localMessage["mathitem"][defLag],
-        description: localMessage["mathdesc"][defLag],
+        label: localMessage.mathitem[defLag],
+        description: localMessage.mathdesc[defLag],
         id: "mathPanel",
         enable: v?.plugins?.mathPanel ?? false,
     });
     // 双标签栏
     settings.push({
-        label: localMessage["doubleTabbaritem"][defLag],
-        description: localMessage["doubleTabbardesc"][defLag],
+        label: localMessage.doubleTabbaritem[defLag],
+        description: localMessage.doubleTabbardesc[defLag],
         id: "doubleTabbar",
         enable: v?.plugins?.doubleTabbar ?? false,
     });
@@ -429,7 +425,7 @@ async function showElementSettings(settings: ThemeConfig) {
     // 检测配置文件的版本
     if (settings["version"] < defaultConf["version"] || settings["version"] == undefined) {
         // console.log(settings["version"]);
-        await _postMessage("ok", localMessage["confUpdate"][defLag]);
+        await _postMessage("ok", localMessage.confUpdate[defLag]);
     }
     // ! 从设置中获取启用的设置项
     // 主题设置项

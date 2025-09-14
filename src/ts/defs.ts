@@ -87,6 +87,14 @@ export async function loadGlobalVars() {
             zh_CN: "插件",
             en_US: "Plugins",
         },
+        tabTipSiYuan: {
+            zh_CN: "思源内置功能的外观调整",
+            en_US: "Appearance adjustment for SiYuan's built-in functions",
+        },
+        tabTipPlugin: {
+            zh_CN: "适配特定插件的外观调整",
+            en_US: "Appearance adjustment for specific plugins",
+        },
         saveReload: {
             zh_CN: "保存并刷新",
             en_US: "Save and Reload",
@@ -99,15 +107,11 @@ export async function loadGlobalVars() {
             zh_CN: "刷新思源界面",
             en_US: "Reload Siyuan",
         },
-        tip1: {
-            zh_CN: "直接关闭不保存哦，必须点击保存按钮",
-            en_US: "Close it directly without saving, you must click the Save button",
+        tipSave: {
+            zh_CN: "直接关闭设置窗口不保存，必须点击保存按钮。如果刷新无效，请重启思源。",
+            en_US: "Close the setting panel directly will not save changes, you must click the Save button. If refresh doesn't work, restart SiYuan plz.",
         },
-        tip2: {
-            zh_CN: "刷新可能无效，重启思源即可生效",
-            en_US: "Reload may useless, you can restart Siyuan to enable the changes",
-        },
-        tip3: {
+        tipSwitch: {
             zh_CN: "点击一行中任意位置切换开关状态",
             en_US: "Click anywhere in the row to change the status of switch",
         },
@@ -211,7 +215,7 @@ export async function loadGlobalVars() {
 
     // 浏览器获取的默认语言
     var currentLang = document.documentElement.lang as TLang;
-    if (localMessage["language"][currentLang] != undefined) {
+    if (localMessage.language[currentLang] != undefined) {
         // @ts-ignore
         globalThis.defLag = currentLang;
     } else {

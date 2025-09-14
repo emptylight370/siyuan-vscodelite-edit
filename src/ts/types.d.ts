@@ -38,12 +38,13 @@ export interface LocalMessage {
     settingPanelTitle: Record<string, string>;
     settingTabSiYuan: Record<string, string>;
     settingTabPlugin: Record<string, string>;
+    tabTipSiYuan: Record<string, string>;
+    tabTipPlugin: Record<string, string>;
     saveReload: Record<string, string>;
     nSave: Record<string, string>;
     oReload: Record<string, string>;
-    tip1: Record<string, string>;
-    tip2: Record<string, string>;
-    tip3: Record<string, string>;
+    tipSave: Record<string, string>;
+    tipSwitch: Record<string, string>;
     cbitem: Record<string, string>;
     refitem: Record<string, string>;
     bazitem: Record<string, string>;
