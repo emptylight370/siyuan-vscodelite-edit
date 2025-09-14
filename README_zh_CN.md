@@ -41,9 +41,10 @@
 
 > 完整更新日志查看[changelog](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/changelog.md)
 
-- v2.4.3
+- v2.5.0
   - 优化代码
   - 优化数学增强插件适配
+  - 重构主题设置面板
 - v2.4.2
   - 区分静态锚文本和动态锚文本
   - 优化代码

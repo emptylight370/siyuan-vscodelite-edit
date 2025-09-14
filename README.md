@@ -41,9 +41,10 @@ Limited by the configuration loading method, updated configurations for new vers
 
 > Full changelog view [ChangeLog](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/changelog.md)
 
-- v2.4.3
+- v2.5.0
   - Optimize the code
   - Optimize the adaption of math enhance plugin
+  - Refactor theme's setting panel
 - v2.4.2
   - Distinguish between static and dynamic anchor text
   - Optimize the code

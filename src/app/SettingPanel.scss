@@ -21,4 +21,8 @@ div[vslite="SettingPanel"] {
             margin-right: 0.2em;
         }
     }
+
+    div.fn__flex:last-of-type {
+        border-top: 1px solid var(--b3-border-color);
+    }
 }
