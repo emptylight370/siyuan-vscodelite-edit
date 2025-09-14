@@ -6,10 +6,14 @@ import { EnableSettings, SettingItem, SettingPanelId, ThemeConfig } from "./type
  * 创建一个包含标签和复选框的 HTML 结构
  */
 export async function createSettingsWindow() {
+    // 获取设置数组
+    const settingsPromise = fetchSettingsArray();
+
     // 创建设置窗口大框
     const dialogSetting: HTMLDivElement = document.createElement("div");
     dialogSetting.setAttribute("data-key", "dialog-setting");
     dialogSetting.className = "b3-dialog--open";
+    dialogSetting.id = "vsceThemeSettingDialog";
     document.body.appendChild(dialogSetting);
 
     // 创建一个遮罩层
@@ -54,145 +58,234 @@ export async function createSettingsWindow() {
     title.className = "h2";
     dialogBody.appendChild(title);
 
-    // 获取设置数组
-    const settings: SettingItem[] = await fetchSettingsArray();
+    // 创建上方的标签页
+    const tabbar: HTMLDivElement = document.createElement("div");
+    tabbar.className = "layout-tab-bar fn__flex";
+    tabbar.appendChild(createTab(globalThis.localMessage["settingTabSiYuan"][globalThis.defLag], "tabThemeSiYuan"));
+    (tabbar.firstChild as HTMLDivElement).classList.add("item--focus");
+    tabbar.appendChild(createTab(globalThis.localMessage["settingTabPlugin"][globalThis.defLag], "tabThemePlugin"));
+    dialogBody.appendChild(tabbar);
+
+    // 创建下方的设置页
+    const pages: HTMLDivElement = document.createElement("div");
+    pages.className = "fn__flex-1";
+    const SiyuanPage: HTMLDivElement = document.createElement("div");
+    SiyuanPage.className = "config-bazaar__panel ThemeSettingPage";
+    SiyuanPage.setAttribute("data-tab", "tabThemeSiYuan");
+    pages.appendChild(SiyuanPage);
+    const PluginPage: HTMLDivElement = document.createElement("div");
+    PluginPage.className = "config-bazaar__panel ThemeSettingPage fn__none";
+    PluginPage.setAttribute("data-tab", "tabThemePlugin");
+    pages.appendChild(PluginPage);
+    dialogBody.appendChild(pages);
+
+    // 等待获取到设置数组再进行
+    const settings: SettingItem[] = await settingsPromise;
 
     // 遍历数组添加选项，创建标签和复选框
     settings.forEach((setting) => {
-        let label: HTMLDivElement | HTMLSpanElement;
-        // 根据是否有下方注释选择不同的结构
-        if (setting?.description) {
-            label = document.createElement("div");
-        } else {
-            label = document.createElement("span");
-        }
-        // 设定当前选项标题
-        label.textContent = setting.label;
-        label.setAttribute("for", setting.id as string);
-        label.className = "fn__flex-1";
-
-        // 有注释需要进行添加，没有就跳过
-        if (setting?.description) {
-            const description: HTMLDivElement = document.createElement("div");
-            description.textContent = setting.description;
-            description.setAttribute("for", setting.id as string);
-            description.className = "b3-label__text";
-            label.appendChild(description);
-        }
-
-        // 添加中间的间隔
-        const space: HTMLSpanElement = document.createElement("span");
-        space.className = "fn__space";
-
-        // 右侧的开关
-        const checkbox: HTMLInputElement = document.createElement("input");
-        checkbox.type = "checkbox";
-        checkbox.id = setting.id as string;
-        checkbox.checked = setting.enable;
-        checkbox.className = "b3-switch fn__flex-center vslite_sets";
-
-        // 创建一整行的容器
-        const div: HTMLLabelElement = document.createElement("label");
-        div.className = "fn__flex b3-label";
-        div.appendChild(label);
-        div.appendChild(space);
-        div.appendChild(checkbox);
-
-        // 将容器放入设置面板
-        dialogBody.appendChild(div);
+        addSettingsToPage(SiyuanPage, PluginPage, setting);
     });
 
-    // 保存并刷新页面
-    async function closeAndSave() {
-        // 在默认配置的基础上修改配置，可以增加原来没有的配置
-        let saveSt: ThemeConfig = defaultConf;
-        const ckb = document.getElementsByClassName("vslite_sets");
-        // 获取当前设置项的启用状态
-        Array.from(ckb).forEach((checkbox) => {
-            const id = checkbox.id as SettingPanelId;
-            const ck = (checkbox as HTMLInputElement).checked;
-            // ! 保存设置到json
-            const mapping = settingKeyMap[id];
-            if (mapping) {
-                saveSt[mapping.section][mapping.key] = ck;
-            }
-        });
-        // 修改配置文件版本
-        saveSt["version"] = defaultConf["version"];
-        // 保存设置文件
-        await putSettings(saveSt);
-        // 显示完成通知
-        _postMessage("ok", localMessage["confSave"][defLag]);
-        // 稍后重载页面
-        setTimeout(() => {
-            _reloadInterface();
-        }, 200);
-        // 移除设置窗口
-        document.body.removeChild(dialogSetting);
-    }
-    // 不保存修改
-    function closeNotSave() {
-        // 显示不保存通知
-        _postMessage("error", localMessage["confNotSave"][defLag], 3000);
-        // 移除设置窗口
-        document.body.removeChild(dialogSetting);
+    // 创建关闭按钮的容器
+    const buttons: HTMLDivElement = document.createElement("div");
+    buttons.className = "fn__flex";
+    // 创建左侧的提示文本
+    const hints: HTMLSpanElement = document.createElement("span");
+    hints.id = "vsceSettingHint";
+    hints.className = "fn__flex-1 fn__flex-center";
+    hints.innerText = globalThis.localMessage["tip3"][globalThis.defLag];
+    // 创建保存按钮
+    const saveButton = document.createElement("button");
+    saveButton.textContent = globalThis.localMessage["saveReload"][globalThis.defLag];
+    saveButton.className = "b3-button b3-button--text";
+    saveButton.addEventListener("click", closeAndSave); // 保存并刷新页面
+    saveButton.addEventListener("mouseenter", () => {
+        hints.innerText = globalThis.localMessage["tip1"][globalThis.defLag];
+    });
+    saveButton.addEventListener("mouseleave", () => {
+        hints.innerText = globalThis.localMessage["tip3"][globalThis.defLag];
+    });
+    // 创建不保存按钮
+    const notSaveButton = document.createElement("button");
+    notSaveButton.textContent = globalThis.localMessage["nSave"][globalThis.defLag];
+    notSaveButton.className = "b3-button b3-button--cancel";
+    notSaveButton.addEventListener("click", closeNotSave); // 不保存修改
+    notSaveButton.addEventListener("mouseenter", () => {
+        hints.innerText = globalThis.localMessage["tip2"][globalThis.defLag];
+    });
+    notSaveButton.addEventListener("mouseleave", () => {
+        hints.innerText = globalThis.localMessage["tip3"][globalThis.defLag];
+    });
+    // 创建刷新按钮
+    const refreshButton = document.createElement("button");
+    refreshButton.ariaLabel = globalThis.localMessage["oReload"][globalThis.defLag];
+    refreshButton.innerHTML = '<svg style="margin-right: 0"><use xlink:href="#iconRefresh"></use></svg>';
+    refreshButton.className = "b3-button b3-button--cancel";
+    refreshButton.addEventListener("click", _reloadInterface); // 刷新界面
+    refreshButton.addEventListener("mouseenter", () => {
+        hints.innerText = globalThis.localMessage["oReload"][globalThis.defLag];
+    });
+    refreshButton.addEventListener("mouseleave", () => {
+        hints.innerText = globalThis.localMessage["tip3"][globalThis.defLag];
+    });
+    // 添加文本和按钮
+    buttons.appendChild(hints);
+    buttons.appendChild(saveButton);
+    buttons.appendChild(notSaveButton);
+    buttons.appendChild(refreshButton);
+    dialogBody.appendChild(buttons);
+}
+
+/**
+ * NOTE 创建标签页的工具函数
+ * @returns HTMLDivELement
+ */
+function createTab(name: string, id: string) {
+    const tab = document.createElement("div");
+    tab.id = id;
+    // ThemeSettingTab 是标签页的通用类名
+    tab.className = "item item--full ThemeSettingTab";
+    tab.addEventListener("click", switchTab);
+    const flex = document.createElement("span");
+    flex.className = "fn__flex-1";
+    const text = document.createElement("span");
+    text.innerText = name;
+    tab.appendChild(flex.cloneNode(true));
+    tab.appendChild(text);
+    tab.appendChild(flex.cloneNode(true));
+    return tab;
+}
+
+/**
+ * NOTE 切换标签页的工具函数
+ * @param event 鼠标点击事件
+ */
+function switchTab(event: MouseEvent) {
+    // 点击目标
+    const target = event.currentTarget as HTMLDivElement;
+    const id = target.id;
+
+    // 切换标签页状态
+    const tabs = document.getElementsByClassName("ThemeSettingTab");
+    for (let tab of Array.from(tabs)) {
+        if (tab.id === id) {
+            tab.classList.add("item--focus");
+        } else {
+            tab.classList.remove("item--focus");
+        }
     }
 
-    // 创建关闭按钮
-    const saveButton = document.createElement("button");
-    saveButton.textContent = localMessage["saveReload"][defLag];
-    saveButton.className = "b3-button b3-button--outline fn__flex-center fn__size200";
-    saveButton.onclick = () => {
-        // 保存并刷新页面
-        closeAndSave();
-    };
-    const notSaveButton = document.createElement("button");
-    notSaveButton.textContent = localMessage["nSave"][defLag];
-    notSaveButton.className = "b3-button b3-button--outline fn__flex-center fn__size200";
-    notSaveButton.onclick = () => {
-        // 不保存修改
-        closeNotSave();
-    };
-    const refreshButton = document.createElement("button");
-    refreshButton.textContent = localMessage["oReload"][defLag];
-    refreshButton.className = "b3-button b3-button--outline fn__flex-center fn__size200";
-    refreshButton.onclick = () => {
-        // 刷新界面
-        _reloadInterface();
-    };
-    // 设定三个按钮左侧的提示文本
-    const label1 = document.createElement("span");
-    label1.textContent = localMessage["tip1"][defLag];
-    label1.className = "fn__flex-1 fn__flex-center";
-    const label2 = document.createElement("span");
-    label2.textContent = localMessage["tip2"][defLag];
-    label2.className = "fn__flex-1 fn__flex-center";
-    const label3 = document.createElement("span");
-    label3.textContent = localMessage["tip3"][defLag];
-    label3.className = "fn__flex-1 fn__flex-center";
-    const space = document.createElement("span");
+    // 切换设置页状态
+    const pages = document.getElementsByClassName("ThemeSettingPage");
+    for (let page of Array.from(pages)) {
+        if (page.getAttribute("data-tab") === id) {
+            page.classList.remove("fn__none");
+        } else {
+            page.classList.add("fn__none");
+        }
+    }
+}
+
+/**
+ * NOTE 添加设置项到对应的设置页面
+ */
+function addSettingsToPage(siyuan: HTMLDivElement, plugin: HTMLDivElement, setting: SettingItem) {
+    let label: HTMLDivElement | HTMLSpanElement;
+    // 根据是否有下方注释选择不同的结构
+    if (setting?.description) {
+        label = document.createElement("div");
+    } else {
+        label = document.createElement("span");
+    }
+    // 设定当前选项标题
+    label.textContent = setting.label;
+    label.setAttribute("for", setting.id as string);
+    label.className = "fn__flex-1";
+
+    // 有注释需要进行添加，没有就跳过
+    if (setting?.description) {
+        const description: HTMLDivElement = document.createElement("div");
+        description.textContent = setting.description;
+        description.setAttribute("for", setting.id as string);
+        description.className = "b3-label__text";
+        label.appendChild(description);
+    }
+
+    // 添加中间的间隔
+    const space: HTMLSpanElement = document.createElement("span");
     space.className = "fn__space";
-    // 放入保存并刷新按钮
-    const div1 = document.createElement("label");
-    div1.className = "fn__flex b3-label";
-    div1.appendChild(label1);
-    div1.appendChild(space.cloneNode(true));
-    div1.appendChild(saveButton);
-    dialogBody.appendChild(div1);
-    // 放入不保存按钮
-    const div2 = document.createElement("label");
-    div2.className = "fn__flex b3-label";
-    div2.appendChild(label2);
-    div2.appendChild(space.cloneNode(true));
-    div2.appendChild(notSaveButton);
-    dialogBody.appendChild(div2);
-    // 放入刷新页面按钮
-    const div3 = document.createElement("label");
-    div3.className = "fn__flex b3-label";
-    div3.appendChild(label3);
-    div3.appendChild(space.cloneNode(true));
-    div3.appendChild(refreshButton);
-    dialogBody.appendChild(div3);
+
+    // 右侧的开关
+    const checkbox: HTMLInputElement = document.createElement("input");
+    checkbox.type = "checkbox";
+    checkbox.id = setting.id as string;
+    checkbox.checked = setting.enable;
+    checkbox.className = "b3-switch fn__flex-center vslite_sets";
+
+    // 创建一整行的容器
+    const div: HTMLLabelElement = document.createElement("label");
+    div.className = "fn__flex b3-label";
+    div.appendChild(label);
+    div.appendChild(space);
+    div.appendChild(checkbox);
+
+    // 确定它在配置文件中的分类
+    const mapping = settingKeyMap[setting.id as keyof typeof settingKeyMap];
+    if (mapping) {
+        if (mapping.section === "theme") {
+            // 将设置项容器放入思源页面
+            siyuan.appendChild(div);
+        } else if (mapping.section === "plugins") {
+            // 将设置项容器放入插件页面
+            plugin.appendChild(div);
+        }
+    }
+}
+
+/**
+ * NOTE 工具函数，保存设置并刷新思源
+ */
+async function closeAndSave() {
+    const dialog = document.getElementById("vsceThemeSettingDialog");
+
+    // 在默认配置的基础上修改配置，可以增加原来没有的配置
+    let saveSt: ThemeConfig = defaultConf;
+    const ckb = document.getElementsByClassName("vslite_sets");
+    // 获取当前设置项的启用状态
+    Array.from(ckb).forEach((checkbox) => {
+        const id = checkbox.id as SettingPanelId;
+        const ck = (checkbox as HTMLInputElement).checked;
+        // ! 保存设置到json
+        const mapping = settingKeyMap[id];
+        if (mapping) {
+            saveSt[mapping.section][mapping.key] = ck;
+        }
+    });
+    // 修改配置文件版本
+    saveSt["version"] = defaultConf["version"];
+    // 保存设置文件
+    await putSettings(saveSt);
+    // 显示完成通知
+    _postMessage("ok", localMessage["confSave"][defLag]);
+    // 稍后重载页面
+    setTimeout(() => {
+        _reloadInterface();
+    }, 200);
+    // 移除设置窗口
+    document.body.removeChild(dialog);
+}
+
+/**
+ * NOTE 工具函数，不保存设置
+ */
+function closeNotSave() {
+    const dialog = document.getElementById("vsceThemeSettingDialog");
+
+    // 显示不保存通知
+    _postMessage("error", localMessage["confNotSave"][defLag], 3000);
+    // 移除设置窗口
+    document.body.removeChild(dialog);
 }
 
 /**
@@ -208,7 +301,7 @@ async function fetchSettingsArray() {
 }
 
 /**
- * NOTE 向设置面板中添加设置项（数组）
+ * NOTE 定义向设置面板中添加的设置项（数组）
  * @param v ThemeConfig
  * @returns Promise\<SettingItem[]\>
  */

@@ -34,8 +34,10 @@ export interface LocalMessage {
     confUpdate: Record<string, string>;
     confNotSave: Record<string, string>;
     confSave: Record<string, string>;
-    "label-aria": Record<string, string>;
+    settingButtonAria: Record<string, string>;
     settingPanelTitle: Record<string, string>;
+    settingTabSiYuan: Record<string, string>;
+    settingTabPlugin: Record<string, string>;
     saveReload: Record<string, string>;
     nSave: Record<string, string>;
     oReload: Record<string, string>;
@@ -72,6 +74,7 @@ export interface LocalMessage {
 export interface vscTimers {
     bgTimer: number | null; // 背景插件状态刷新计时器
     bgObserTimer: number | null; // 背景插件属性修改计时器
+    settingMobile: number | null; //在移动端添加设置按钮的计时器
 }
 
 /** 观察器接口 */

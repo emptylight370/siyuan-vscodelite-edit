@@ -71,13 +71,21 @@ export async function loadGlobalVars() {
             zh_CN: "VSCE:配置保存成功，稍后自动刷新",
             en_US: "VSCE:Configuration save successed, auto reload later",
         },
-        "label-aria": {
+        settingButtonAria: {
             zh_CN: "VSCode Lite 主题设置",
             en_US: "VSCode Lite theme setting",
         },
         settingPanelTitle: {
             zh_CN: "VSCode Lite Edit设置",
             en_US: "VSCode Lite Edit Settings",
+        },
+        settingTabSiYuan: {
+            zh_CN: "思源",
+            en_US: "SiYuan",
+        },
+        settingTabPlugin: {
+            zh_CN: "插件",
+            en_US: "Plugins",
         },
         saveReload: {
             zh_CN: "保存并刷新",
@@ -100,8 +108,8 @@ export async function loadGlobalVars() {
             en_US: "Reload may useless, you can restart Siyuan to enable the changes",
         },
         tip3: {
-            zh_CN: "点击一行中任意位置",
-            en_US: "Click anywhere in a row",
+            zh_CN: "点击一行中任意位置切换开关状态",
+            en_US: "Click anywhere in the row to change the status of switch",
         },
         cbitem: {
             zh_CN: "代码块样式",
@@ -152,32 +160,32 @@ export async function loadGlobalVars() {
             en_US: "highlight mark style",
         },
         scitem: {
-            zh_CN: "（插件）快捷键面板样式",
-            en_US: "(plugin) Shortcut key panel style",
+            zh_CN: "快捷键面板样式",
+            en_US: "Shortcut key panel style",
         },
         ftitem: {
             zh_CN: "文档树和大纲样式",
             en_US: "Doc tree and Outline style",
         },
         bgdesktop: {
-            zh_CN: "（插件）在电脑端启用“替换背景图片”插件",
-            en_US: '(plguin) Enable plugin "Background cover adaption" on desktop',
+            zh_CN: "在电脑端启用“替换背景图片”插件",
+            en_US: 'Enable plugin "Background cover adaption" on desktop',
         },
         bgdesc: {
             zh_CN: "需要打开“替换背景图片”插件设置将“前景透明”调到0哦!建议启用插件的“背景虚化”功能!",
             en_US: 'You need to open the setting of "Background Cover" plugin and set the "Opacity of foreground" to 0!Suggest turn on the "Blurring" setting of the plugin!',
         },
         bgmobile: {
-            zh_CN: "（插件）在移动端启用“替换背景图片”插件",
-            en_US: '(plugin) Enable plguin "Background cover adaption" on mobile',
+            zh_CN: "在移动端启用“替换背景图片”插件",
+            en_US: 'Enable plguin "Background cover adaption" on mobile',
         },
         mathitem: {
-            zh_CN: "（插件）数学增强插件调整",
-            en_US: "(plugin) math enhance plugin adjustion",
+            zh_CN: "数学增强插件调整",
+            en_US: "Math enhance plugin adjustion",
         },
         mathdesc: {
-            zh_CN: "无法显示水平滚动条",
-            en_US: "Can't show horizon scroll bar",
+            zh_CN: "调整插件默认宽度，无法显示水平滚动条",
+            en_US: "Adjust the default width of the plugin, can't show horizon scroll bar",
         },
         doubleTabbaritem: {
             zh_CN: "（实验性）启用双标签栏",
@@ -220,6 +228,8 @@ export async function loadGlobalVars() {
         bgTimer: null,
         // 背景插件属性修改的监听器，用来监测背景状态变化
         bgObserTimer: null,
+        // 在移动端添加设置按钮的计时器，在初次添加失败后会每秒尝试一次
+        settingMobile: null,
     };
 
     // ! 所有用到的监听器

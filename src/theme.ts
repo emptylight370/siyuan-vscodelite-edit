@@ -119,7 +119,7 @@ function addThemeToolBar() {
     // 创建按钮
     const vscToolBar = document.createElement("div");
     vscToolBar.id = "vscleToolbar";
-    vscToolBar.setAttribute("aria-label", globalThis.localMessage["label-aria"][globalThis.defLag]);
+    vscToolBar.setAttribute("aria-label", globalThis.localMessage["settingButtonAria"][globalThis.defLag]);
     vscToolBar.style.userSelect = "none";
     // 设置按钮文本
     vscToolBar.innerHTML = "VC";
@@ -147,16 +147,23 @@ function addThemeToolBar() {
         vscToolBar.className = "block__icon fn__flex-center ariaLabel";
         vscToolBar.style.height = "14px";
 
-        setTimeout(() => {
+        const insertMobile = () => {
             // 尝试获取移动端的文档操作按钮
             const breadcrumbButtons = document.getElementsByClassName("block__icon fn__flex-center ariaLabel");
             // 在第一个按钮前添加
             const firstButton = breadcrumbButtons[0];
             if (firstButton) {
                 firstButton.parentElement.insertBefore(vscToolBar, firstButton);
+                globalThis.vscTimer.settingMobile = null;
             } else {
-                throw new Error("Can't find first button in breadcrumb.");
+                globalThis.vscTimer.settingMobile = setTimeout(() => {
+                    insertMobile();
+                }, 1000);
             }
+        };
+
+        setTimeout(() => {
+            insertMobile();
         }, 0);
     }
 }
