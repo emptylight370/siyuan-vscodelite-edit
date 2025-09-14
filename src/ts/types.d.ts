@@ -1,87 +1,164 @@
 /** 主题配置接口 */
 export interface ThemeConfig {
+    /** 配置文件版本号 */
     version: number;
+    /** 思源相关配置项 */
     theme: {
+        /** 代码块 */
         codeBlock: boolean;
+        /** 引用 */
         reference: boolean;
+        /** 集市 */
         bazaar: boolean;
+        /** 嵌入块 */
         embeddedBlock: boolean;
+        /** 标题样式 */
         title: boolean;
+        /** 标题阴影样式 */
         titleShadow: boolean;
+        /** 标题图标 */
         titleIcon: boolean;
+        /** 数据库 */
         database: boolean;
+        /** 文档树和大纲 */
         doctree: boolean;
+        /** 高亮标记 */
         mark: boolean;
+        /** 段落内标签 */
         tag: boolean;
     };
+    /** 插件相关配置项 */
     plugins: {
+        /** 快捷键面板 */
         shortcutPanel: boolean;
+        /** 数学增强 */
         mathPanel: boolean;
+        /** 电脑端背景图片 */
         backgroundCoverDesktop: boolean;
+        /** 移动端背景图片 */
         backgroundCoverMobile: boolean;
+        /** 双标签页 */
         doubleTabbar: boolean;
     };
 }
 
 /** 本地化消息接口 */
 export interface LocalMessage {
+    // * 定义某种语言是否存在
+    /** 检查存在的语言 */
     language: Record<string, boolean>;
-    loadCssFail: Record<string, string>;
-    loadVariableFail: Record<string, string>;
-    loadConfigFail: Record<string, string>;
-    loadPDFPersetFail: Record<string, string>;
-    loadFinish: Record<string, string>;
-    confUpdate: Record<string, string>;
+
+    // * 主题发送的提示或者通知文本
+    /** 配置文件修改未保存 */
     confNotSave: Record<string, string>;
+    /** 配置文件修改保存 */
     confSave: Record<string, string>;
-    settingButtonAria: Record<string, string>;
-    settingPanelTitle: Record<string, string>;
-    settingTabSiYuan: Record<string, string>;
-    settingTabPlugin: Record<string, string>;
-    tabTipSiYuan: Record<string, string>;
-    tabTipPlugin: Record<string, string>;
-    saveReload: Record<string, string>;
-    nSave: Record<string, string>;
-    oReload: Record<string, string>;
-    tipSave: Record<string, string>;
-    tipSwitch: Record<string, string>;
-    cbitem: Record<string, string>;
-    refitem: Record<string, string>;
-    bazitem: Record<string, string>;
-    emitem: Record<string, string>;
-    emdesc: Record<string, string>;
-    tititem: Record<string, string>;
-    titleShadow: Record<string, string>;
-    titleShadowDesc: Record<string, string>;
-    titleIcon: Record<string, string>;
-    titleIconDesc: Record<string, string>;
-    dbitem: Record<string, string>;
-    markitem: Record<string, string>;
-    scitem: Record<string, string>;
-    ftitem: Record<string, string>;
-    bgdesktop: Record<string, string>;
-    bgdesc: Record<string, string>;
-    bgmobile: Record<string, string>;
-    mathitem: Record<string, string>;
-    mathdesc: Record<string, string>;
-    doubleTabbaritem: Record<string, string>;
-    doubleTabbardesc: Record<string, string>;
+    /** 配置文件需要更新 */
+    confUpdate: Record<string, string>;
+    /** 双标签栏提示信息 */
     doubleTabbarMessage: Record<string, string>;
-    tagitem: Record<string, string>;
+    /** 加载配置失败 */
+    loadConfigFail: Record<string, string>;
+    /** 加载CSS失败 */
+    loadCssFail: Record<string, string>;
+    /** 主题加载完成 */
+    loadFinish: Record<string, string>;
+    /** 写入PDF适配文件失败 */
+    loadPDFPersetFail: Record<string, string>;
+    /** 加载变量失败 */
+    loadVariableFail: Record<string, string>;
+
+    // * 设置按钮提示文本
+    /** 主题设置按钮提示文本 */
+    settingButtonAria: Record<string, string>;
+
+    // * 设置面板的主要文本
+    /** 设置面板不保存按钮文本 */
+    nSave: Record<string, string>;
+    /** 鼠标进入刷新按钮提示文本 */
+    oReload: Record<string, string>;
+    /** 设置面板保存按钮文本 */
+    saveReload: Record<string, string>;
+    /** 设置面板标题 */
+    settingPanelTitle: Record<string, string>;
+    /** 设置面板插件页签 */
+    settingTabPlugin: Record<string, string>;
+    /** 设置面板思源页签 */
+    settingTabSiYuan: Record<string, string>;
+    /** 鼠标进入插件页签显示提示 */
+    tabTipPlugin: Record<string, string>;
+    /** 鼠标进入思源页签显示提示 */
+    tabTipSiYuan: Record<string, string>;
+    /** 鼠标进入保存按钮提示文本 */
+    tipSave: Record<string, string>;
+    /** 鼠标进入设置项提示文本 */
+    tipSwitch: Record<string, string>;
+
+    // * 设置面板选项文本和提示文本
+    /** 集市样式选项 */
+    bazitem: Record<string, string>;
+    /** 背景插件描述文本 */
+    bgdesc: Record<string, string>;
+    /** 桌面端背景插件选项 */
+    bgdesktop: Record<string, string>;
+    /** 移动端背景插件选项 */
+    bgmobile: Record<string, string>;
+    /** 代码块样式选项 */
+    cbitem: Record<string, string>;
+    /** 数据库样式选项 */
+    dbitem: Record<string, string>;
+    /** 双标签栏描述文本 */
+    doubleTabbardesc: Record<string, string>;
+    /** 双标签栏选项 */
+    doubleTabbaritem: Record<string, string>;
+    /** 嵌入块样式描述文本 */
+    emdesc: Record<string, string>;
+    /** 嵌入块样式选项 */
+    emitem: Record<string, string>;
+    /** 文档树大纲样式选项 */
+    ftitem: Record<string, string>;
+    /** 高亮标注选项 */
+    markitem: Record<string, string>;
+    /** 数学增强插件描述文本 */
+    mathdesc: Record<string, string>;
+    /** 数学增强插件选项 */
+    mathitem: Record<string, string>;
+    /** 引用标签样式选项 */
+    refitem: Record<string, string>;
+    /** 快捷键面板插件选项 */
+    scitem: Record<string, string>;
+    /** 段落内标签描述文本 */
     tagdesc: Record<string, string>;
+    /** 段落内标签选项 */
+    tagitem: Record<string, string>;
+    /** 标题块样式选项 */
+    tititem: Record<string, string>;
+    /** 标题块阴影选项 */
+    titleShadow: Record<string, string>;
+    /** 标题块阴影描述文本 */
+    titleShadowDesc: Record<string, string>;
+    /** 标题块图标选项 */
+    titleIcon: Record<string, string>;
+    /** 标题块图标描述文本 */
+    titleIconDesc: Record<string, string>;
 }
 
 /** 计时器接口 */
 export interface vscTimers {
-    bgTimer: number | null; // 背景插件状态刷新计时器
-    bgObserTimer: number | null; // 背景插件属性修改计时器
-    settingMobile: number | null; //在移动端添加设置按钮的计时器
+    /** 背景插件状态刷新计时器 */
+    bgTimer: number | null;
+    /** 背景插件属性修改计时器 */
+    bgObserTimer: number | null;
+    /** 在移动端添加设置按钮的计时器 */
+    settingMobile: number | null;
 }
 
 /** 观察器接口 */
 export interface vscObservers {
-    bgObserver: MutationObserver | null; // 背景图插件状态观察器
-    tabbarObserver: MutationObserver | null; // 标签栏状态观察器
+    /** 背景图插件状态观察器 */
+    bgObserver: MutationObserver | null;
+    /** 标签栏状态观察器 */
+    tabbarObserver: MutationObserver | null;
 }
 
 /**

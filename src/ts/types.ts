@@ -34,7 +34,7 @@ declare global {
 }
 
 /**
- * 具体设置项映射，由设置面板中的id映射到配置文件中
+ * 具体设置项映射，由设置面板中的id映射到配置文件中  
  * 设置面板配置项id：配置项范围，配置项键名
  */
 export const settingKeyMap: SettingKeyMap = {
@@ -57,8 +57,8 @@ export const settingKeyMap: SettingKeyMap = {
 } as const;
 
 /**
- * 具体设置项映射，由配置文件中启用项映射到配置文件中
- * 配置文件启用项：设置项所属范围，设置项键名
+ * 具体设置项映射，由配置文件中启用项映射到配置文件中  
+ * 配置文件启用项：设置项所属范围，设置项键名  
  * 这个是列表里面的元素名
  */
 export const enableSettingsKeyMap: EnableSettingsKeyMap = {
