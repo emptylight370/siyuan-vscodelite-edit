@@ -45,6 +45,7 @@ Limited by the configuration loading method, updated configurations for new vers
   - Optimize the code
   - Optimize the adaption of math enhance plugin
   - Refactor theme's setting panel
+  - Hide heading icon when exporting image(can't show image)
 - v2.4.2
   - Distinguish between static and dynamic anchor text
   - Optimize the code

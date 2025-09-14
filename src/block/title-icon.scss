@@ -327,3 +327,23 @@
     max-width: calc(100% - 1.2rem);
     min-width: 1px;
 }
+
+/* 导出图片时暂不显示标题图标 */
+.b3-dialog--open[data-key="dialog-exportimage"] {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    .h1,
+    .h2,
+    .h3,
+    .h4,
+    .h5,
+    .h6 {
+        &::before {
+            content: unset;
+        }
+    }
+}
