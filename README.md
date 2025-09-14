@@ -43,6 +43,7 @@ Limited by the configuration loading method, updated configurations for new vers
 
 - v2.4.3
   - Optimize the code
+  - Optimize the adaption of math enhance plugin
 - v2.4.2
   - Distinguish between static and dynamic anchor text
   - Optimize the code

@@ -3,7 +3,9 @@
 ## v2.4.3
 
 - 优化代码
+- 优化数学增强插件适配
 - Optimize the code
+- Optimize the adaption of math enhance plugin
 
 ## v2.4.2
 
