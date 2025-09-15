@@ -113,6 +113,7 @@ div:not(.export-img) > .protyle-wysiwyg {
     }
 }
 
+/* 有序列表不同层级的序号 */
 .li[data-subtype="o"] {
     & & > .protyle-action::after {
         @extend %o2;
@@ -179,6 +180,7 @@ div:not(.export-img) > .protyle-wysiwyg {
     }
 }
 
+/* 无序列表不同层级的序号 */
 .li[data-subtype="u"] {
     & & > .protyle-action::after {
         @extend %u2;

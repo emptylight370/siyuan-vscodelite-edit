@@ -47,6 +47,7 @@ Limited by the configuration loading method, updated configurations for new vers
   - Refactor theme's setting panel
   - Hide heading icon when exporting image(can't show image)
   - Not apply customized list sequence when exporting image
+  - Modify folded block style
 - v2.4.2
   - Distinguish between static and dynamic anchor text
   - Optimize the code
