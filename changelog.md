@@ -8,12 +8,14 @@
 - 导出图片时暂不显示标题图标（无法加载图片）(#26)
 - 导出图片时暂不显示自定义列表序号(#26)
 - 修改折叠块样式
+- 添加自定义属性
 - Optimize the code
 - Optimize the adaption of math enhance plugin
 - Refactor theme's setting panel
 - Hide heading icon when exporting image(can't show image)(#26)
 - Not apply customized list sequence when exporting image(#26)
 - Modify folded block style
+- Add custom attribute
 
 ## v2.4.2
 
