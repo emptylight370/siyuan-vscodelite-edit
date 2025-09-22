@@ -1,4 +1,10 @@
 .protyle-wysiwyg [data-node-id][fold="1"]/* :not(.li):not([data-type="NodeHeading"]) */ {
-    background-color: var(--b3-theme-surface-lighter);
-    box-shadow: inset 0 0 4px 0;
+    background-color: var(--lite-block-fold-background);
+    box-shadow: 0 0 4px 0 var(--lite-block-fold-shadow-background) inset;
+
+    &:not(.li):not([data-type="NodeHeading"]) {
+        &.table {
+            opacity: 0.5;
+        }
+    }
 }
