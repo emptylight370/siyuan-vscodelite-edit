@@ -1,5 +1,9 @@
 # ChangeLog
 
+## v2.5.1
+
+- minor fixes
+
 ## v2.5.0
 
 - 优化代码

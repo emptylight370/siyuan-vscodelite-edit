@@ -176,7 +176,7 @@ function addThemeToolBar() {
 function addImports(table: HTMLLinkElement, labels: EnableSettings[]) {
     const sheet: CSSStyleSheet = table.sheet;
     const isMobile = document.body.classList.contains("vscmobile");
-    const existBackgroundPlugin = sheet.cssRules.toString().includes("backgroundPlugin.css");
+    let existBackgroundPlugin = sheet.cssRules.toString().includes("backgroundPlugin.css") || false;
     const rulesToInsert: string[] = [];
 
     for (const it of labels) {
@@ -215,6 +215,7 @@ function addImports(table: HTMLLinkElement, labels: EnableSettings[]) {
             case "backgroundCoverMobile":
                 if (!existBackgroundPlugin) {
                     rulesToInsert.push("@import url(sub/plugin/backgroundPlugin.css);");
+                    existBackgroundPlugin = true;
                 }
                 break;
             case "mathPanel":
