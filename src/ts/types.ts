@@ -1,4 +1,4 @@
-import { ThemeConfig, LocalMessage, SettingKeyMap, vscObservers, vscTimers, EnableSettingsKeyMap } from "./types.d";
+import { EnableSettingsKeyMap, LocalMessage, SettingKeyMap, ThemeConfig, vscObservers, vscTimers } from "./types.d";
 
 declare global {
     interface Window {

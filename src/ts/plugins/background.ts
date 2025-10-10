@@ -27,7 +27,7 @@ export function bgobserver(times: number) {
     const bglayer = document.getElementById("bglayer");
     if (bglayer) {
         globalThis.vscObserver.bgObserver = new MutationObserver(function (mutationsList) {
-            for (var mutation of mutationsList) {
+            for (const mutation of mutationsList) {
                 if (mutation.type === "attributes" && mutation.attributeName === "style") {
                     // 样式发生变化时执行的代码
                     bg(0);

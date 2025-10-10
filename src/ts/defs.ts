@@ -108,8 +108,8 @@ export async function loadGlobalVars() {
             en_US: "Reload Siyuan",
         },
         tipSave: {
-            zh_CN: "直接关闭设置窗口不保存，必须点击保存按钮。如果刷新无效，请重启思源。",
-            en_US: "Close the setting panel directly will not save changes, you must click the Save button. If refresh doesn't work, restart SiYuan plz.",
+            zh_CN: "直接关闭设置窗口不保存，必须点击保存按钮。如果刷新无效，请重启思源或尝试右侧的刷新按钮。",
+            en_US: "Close the setting panel directly will not save changes, you must click the Save button. If refresh doesn't work, please restart SiYuan or try the refresh button on the right.",
         },
         tipSwitch: {
             zh_CN: "点击一行中任意位置切换开关状态",
