@@ -29,7 +29,7 @@ jobs:
       - name: Package
         run: |
           find ./ -maxdepth 1 -type f \( -name 'theme.*' -o -name 'icon.png' -o -name 'preview.png' -o -name 'README*.md' \) > files.txt
-          find ./ -path './resources/*' -o -path './sub/*' >> files.txt
+          find ./ -path './resources/*' -o -path './sub/*.css' >> files.txt
           cat files.txt | zip -@ package.zip
           rm files.txt
 
