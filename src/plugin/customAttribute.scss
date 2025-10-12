@@ -1,4 +1,6 @@
 // 引述块的Callout样式
+// TODO - https://github.com/siyuan-note/siyuan/issues/16051
+// SECTION - Delete callout
 /* 基础Callout模板 */
 %callout {
     color: var(--b3-theme-on-background);
@@ -187,6 +189,7 @@
         }
     }
 }
+// !SECTION - Delete callout
 
 // 标记挖空功能，可以隐藏标记的文本
 [custom-vsce~="mark-hide"] {
