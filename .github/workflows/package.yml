@@ -2,7 +2,7 @@ name: package
 
 on:
   push:
-    paths: "theme.json"
+    paths: theme.json
   workflow_dispatch:
 
 jobs:
@@ -16,9 +16,7 @@ jobs:
     steps:
       - uses: actions/checkout@v5
 
-      - uses: actions/setup-node@v6
-        with:
-          node-version: 22
+      - uses: volta-cli/action@v4
 
       - name: Install deps
         run: npm install
@@ -27,11 +25,7 @@ jobs:
         run: npm run build
 
       - name: Package
-        run: |
-          find ./ -maxdepth 1 -type f \( -name 'theme.*' -o -name 'icon.png' -o -name 'preview.png' -o -name 'README*.md' \) > files.txt
-          find ./ -path './resources/*' -o -path './sub/*.css' >> files.txt
-          cat files.txt | zip -@ package.zip
-          rm files.txt
+        run: zip -r package.zip . -i 'theme.*' 'icon.png' 'preview.png' 'README*.md' 'resources/*' 'sub/*' -x '**/*.css.map'
 
       - name: Get current version
         uses: sergeysova/jq-action@v2
