@@ -20,22 +20,9 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v5
 
-      - name: Check the checkbox
-        id: check-issue-checkbox
-        uses: actions-cool/issues-helper@v3
-        with:
-          actions: "check-issue"
-          body-includes: "- [X] I didn't check all the checkboxes"
-
-      - name: Check the template
-        id: is-template
-        uses: actions-cool/issues-helper@v3
-        with:
-          actions: "check-issue"
-          body-includes: "I didn't check all the checkboxes"
-
       - name: Close issue on check
-        if: steps.check-issue-checkbox.outputs.check-result == 'true' && steps.is-template.outputs.check-result == 'true'
+        id: close
+        if: contains(github.event.issue.body, '- [X] I didn''t check all the checkboxes')
         uses: actions-cool/issues-helper@v3
         with:
           actions: "create-comment,add-labels,close-issue"
@@ -45,7 +32,8 @@ jobs:
             这个议题因为应被关闭而被关闭了。如果你想要重新打开它，请编辑并检查你的议题再重新打开它。
 
       - name: Comment issue on not check
-        if: steps.check-issue-checkbox.outputs.check-result == 'false' && steps.is-template.outputs.check-result == 'true'
+        id: comment
+        if: contains(github.event.issue.body, '- [ ] I didn''t check all the checkboxes') && steps.close.outcome == 'skipped'
         uses: actions-cool/issues-helper@v3
         with:
           actions: "create-comment,remove-labels,add-assignees"
@@ -56,7 +44,7 @@ jobs:
             感谢提交议题。你的议题会在几天内检查。
 
       - name: Comment issue on no checkbox
-        if: steps.is-template.outputs.check-result == 'false'
+        if: steps.close.outcome == 'skipped' && steps.comment.outcome == 'skipped'
         uses: actions-cool/issues-helper@v3
         with:
           actions: "create-comment,add-labels,add-assignees"
