@@ -35,7 +35,7 @@ jobs:
           body-includes: "I didn't check all the checkboxes"
 
       - name: Close issue on check
-        if: steps.check-issue-checkbox.outputs.check-result == 'false' && steps.is-template.outputs.check-result == 'true'
+        if: steps.check-issue-checkbox.outputs.check-result == 'true' && steps.is-template.outputs.check-result == 'true'
         uses: actions-cool/issues-helper@v3
         with:
           actions: "create-comment,add-labels,close-issue"
@@ -45,7 +45,7 @@ jobs:
             这个议题因为应被关闭而被关闭了。如果你想要重新打开它，请编辑并检查你的议题再重新打开它。
 
       - name: Comment issue on not check
-        if: steps.check-issue-checkbox.outputs.check-result == 'true' && steps.is-template.outputs.check-result == 'true'
+        if: steps.check-issue-checkbox.outputs.check-result == 'false' && steps.is-template.outputs.check-result == 'true'
         uses: actions-cool/issues-helper@v3
         with:
           actions: "create-comment,remove-labels,add-assignees"
