@@ -31,7 +31,7 @@ jobs:
         id: is-template
         uses: actions-cool/issues-helper@v3
         with:
-          actions: "check-template"
+          actions: "check-issue"
           body-includes: "I didn't check all the checkboxes"
 
       - name: Close issue on check
