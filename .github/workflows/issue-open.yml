@@ -18,10 +18,24 @@ jobs:
 
     steps:
       - name: Check out repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
+
+      - name: Check the checkbox
+        id: check-issue-checkbox
+        uses: actions-cool/issues-helper@v3
+        with:
+          actions: "check-issue"
+          body-includes: "- [X] I didn't check all the checkboxes"
+
+      - name: Check the template
+        id: is-template
+        uses: actions-cool/issues-helper@v3
+        with:
+          actions: "check-template"
+          body-includes: "I didn't check all the checkboxes"
 
       - name: Close issue on check
-        if: contains(github.event.issue.body, '- [X] I didn''t check all the checkboxes')
+        if: steps.check-issue-checkbox.outputs.check-result == 'false' && steps.is-template.outputs.check-result == 'true'
         uses: actions-cool/issues-helper@v3
         with:
           actions: "create-comment,add-labels,close-issue"
@@ -31,23 +45,23 @@ jobs:
             这个议题因为应被关闭而被关闭了。如果你想要重新打开它，请编辑并检查你的议题再重新打开它。
 
       - name: Comment issue on not check
-        if: contains(github.event.issue.body, '- [ ] I didn''t check all the checkboxes')
+        if: steps.check-issue-checkbox.outputs.check-result == 'true' && steps.is-template.outputs.check-result == 'true'
         uses: actions-cool/issues-helper@v3
         with:
           actions: "create-comment,remove-labels,add-assignees"
           labels: "invalid"
-          assignees: "lingfengyu-dreaming"
+          assignees: "emptylight370"
           body: |
             Thank you for confirming the issue. Your issue will be reviewed in several days.
             感谢提交议题。你的议题会在几天内检查。
 
       - name: Comment issue on no checkbox
-        if: contains(github.event.issue.body, '- [ ] I didn''t check all the checkboxes') == false && contains(github.event.issue.body, '- [X] I didn''t check all the checkboxes') == false
+        if: steps.is-template.outputs.check-result == 'false'
         uses: actions-cool/issues-helper@v3
         with:
           actions: "create-comment,add-labels,add-assignees"
           labels: "not template,help wanted"
-          assignees: "lingfengyu-dreaming"
+          assignees: "emptylight370"
           body: |
             Your issue is not generated from template. Please make sure your issue includes all the necessary infomation. If not, your issue may be close immediately. If you submitted this issue from template, please ignore this message, there may be some problems.
             你的议题不是从模板生成的。请确保你的议题包含所有必须的信息。如果没有，你的议题可能会立刻被关闭。如果你从模板新建了这个议题，请忽略这条消息，可能出现了一些问题。
