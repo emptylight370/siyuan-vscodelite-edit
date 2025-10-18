@@ -16,9 +16,7 @@ jobs:
     steps:
       - uses: actions/checkout@v5
 
-      - uses: actions/setup-node@v6
-        with:
-          node-version: 22
+      - uses: volta-cli/action@v4
 
       - name: Install deps
         run: npm install
@@ -27,7 +25,7 @@ jobs:
         run: npm run build
 
       - name: Package
-        run: zip -r package.zip . -i 'theme.*' 'icon.png' 'preview.png' 'README*.md' 'resources/*' 'sub/*' -x '**/*.css.map'
+        run: zip -r package.zip . -i 'theme.*' 'icon.png' 'preview.png' 'README*.md' 'resources/*' 'sub/*' -x '**/*.css.map' 'theme.css.map' 'theme.scss'
 
       - name: Get current version
         uses: sergeysova/jq-action@v2
