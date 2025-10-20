@@ -17,7 +17,8 @@
     "watch": "npm-run-all --parallel watch:scss && npm run watch:ts",
     "clean:scss": "rimraf theme.css theme.css.map sub",
     "clean:ts": "rimraf theme.js ts theme.d.ts",
-    "clean": "npm-run-all clean:scss && npm run clean:ts"
+    "clean": "npm-run-all clean:scss && npm run clean:ts",
+    "changelog": "conventional-changelog -i whatschange.md -s -n conventional-changelog.config.json -k theme.json"
   },
   "type": "module",
   "repository": {

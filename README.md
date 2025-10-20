@@ -40,6 +40,7 @@ Limited by the configuration loading method, updated configurations for new vers
 # ChangeLog
 
 > Full changelog view [ChangeLog](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/changelog.md)
+> Commit history view [whatschange](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/whatschange.md)
 
 - v2.5.0
   - Optimize the code
