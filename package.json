@@ -17,7 +17,7 @@
     "clean:scss": "rimraf theme.css theme.css.map sub",
     "clean:ts": "rimraf theme.js ts theme.d.ts",
     "clean": "npm-run-all clean:scss && npm run clean:ts",
-    "changelog": "conventional-changelog -i whatschange.md -s -n conventional-changelog.config.json -k theme.json"
+    "changelog": "conventional-changelog -i whatschange.md -s -n conventional-changelog.config.json -k theme.json -c theme.json && prettier -w whatschange.md"
   },
   "type": "module",
   "repository": {
@@ -34,9 +34,9 @@
     "@rollup/plugin-typescript": "^12.3.0",
     "npm-run-all": "^4.1.5",
     "prettier": "^3.6.2",
-    "rimraf": "^6.0.1",
+    "rimraf": "^6.1.0",
     "rollup": "^4.52.5",
-    "sass": "^1.93.2",
+    "sass": "^1.93.3",
     "tslib": "^2.8.1",
     "typescript": "^5.9.3"
   }
