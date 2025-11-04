@@ -215,7 +215,7 @@ export async function loadGlobalVars() {
 
     // 浏览器获取的默认语言
     var currentLang = document.documentElement.lang as TLang;
-    if (localMessage.language[currentLang] != undefined) {
+    if (globalThis.localMessage.language[currentLang] != undefined) {
         // @ts-ignore
         globalThis.defLag = currentLang;
     } else {

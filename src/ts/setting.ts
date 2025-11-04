@@ -52,7 +52,7 @@ export async function createSettingsWindow() {
 
     // 创建标题
     const title: HTMLHeadingElement = document.createElement("h2");
-    title.textContent = localMessage.settingPanelTitle[defLag];
+    title.textContent = globalThis.localMessage.settingPanelTitle[globalThis.defLag];
     title.setAttribute("data-subtype", "h2");
     // title.setAttribute("data-type", "NodeHeading");
     title.className = "h2";
@@ -135,7 +135,9 @@ export async function createSettingsWindow() {
 
 /**
  * NOTE 创建标签页的工具函数
- * @returns HTMLDivELement
+ * @param name 标签页名称
+ * @param id 标签页id
+ * @returns HTMLDivElement
  */
 function createTab(name: string, id: string) {
     const tab = document.createElement("div");
@@ -185,6 +187,9 @@ function switchTab(event: MouseEvent) {
 
 /**
  * NOTE 添加设置项到对应的设置页面
+ * @param siyuan 思源标签页
+ * @param plugin 插件标签页
+ * @param setting 单个设置项
  */
 function addSettingsToPage(siyuan: HTMLDivElement, plugin: HTMLDivElement, setting: SettingItem) {
     let label: HTMLDivElement | HTMLSpanElement;
@@ -246,7 +251,7 @@ async function closeAndSave() {
     const dialog = document.getElementById("vsceThemeSettingDialog");
 
     // 在默认配置的基础上修改配置，可以增加原来没有的配置
-    let saveSt: ThemeConfig = defaultConf;
+    let saveSt: ThemeConfig = globalThis.defaultConf;
     const ckb = document.getElementsByClassName("vslite_sets");
     // 获取当前设置项的启用状态
     Array.from(ckb).forEach((checkbox) => {
@@ -259,11 +264,11 @@ async function closeAndSave() {
         }
     });
     // 修改配置文件版本
-    saveSt["version"] = defaultConf["version"];
+    saveSt["version"] = globalThis.defaultConf["version"];
     // 保存设置文件
     await putSettings(saveSt);
     // 显示完成通知
-    _postMessage("ok", localMessage.confSave[defLag]);
+    _postMessage("ok", globalThis.localMessage.confSave[globalThis.defLag]);
     // 稍后重载页面
     setTimeout(() => {
         _reloadInterface();
@@ -279,7 +284,7 @@ function closeNotSave() {
     const dialog = document.getElementById("vsceThemeSettingDialog");
 
     // 显示不保存通知
-    _postMessage("error", localMessage.confNotSave[defLag], 3000);
+    _postMessage("error", globalThis.localMessage.confNotSave[globalThis.defLag], 3000);
     // 移除设置窗口
     document.body.removeChild(dialog);
 }
@@ -291,7 +296,7 @@ function closeNotSave() {
 async function fetchSettingsArray() {
     const config: ThemeConfig | null = await _getFile("/data/snippets/vsc_edit.config.json");
     // 如果没有获取到配置文件则使用默认配置文件
-    const v: ThemeConfig = config ?? defaultConf;
+    const v: ThemeConfig = config ?? globalThis.defaultConf;
     // 生成并返回设置项列表
     return await getSettingArrays(v);
 }
@@ -305,82 +310,106 @@ async function getSettingArrays(v: ThemeConfig) {
     let settings: SettingItem[] = [];
     // ! 设置页添加设置选项
     // 标题
-    settings.push({ label: localMessage.tititem[defLag], id: "titleBlock", enable: v?.theme?.title ?? true });
+    settings.push({
+        label: globalThis.localMessage.tititem[globalThis.defLag],
+        id: "titleBlock",
+        enable: v?.theme?.title ?? true,
+    });
     // 标题阴影
     settings.push({
-        label: localMessage.titleShadow[defLag],
-        description: localMessage.titleShadowDesc[defLag],
+        label: globalThis.localMessage.titleShadow[globalThis.defLag],
+        description: globalThis.localMessage.titleShadowDesc[globalThis.defLag],
         id: "titleShadow",
         enable: v?.theme?.titleShadow ?? true,
     });
     // 标题图标
     settings.push({
-        label: localMessage.titleIcon[defLag],
-        description: localMessage.titleIconDesc[defLag],
+        label: globalThis.localMessage.titleIcon[globalThis.defLag],
+        description: globalThis.localMessage.titleIconDesc[globalThis.defLag],
         id: "titleIcon",
         enable: v?.theme?.titleIcon ?? true,
     });
     // 文档树和大纲
-    settings.push({ label: localMessage.ftitem[defLag], id: "doctree", enable: v?.theme?.doctree ?? true });
+    settings.push({
+        label: globalThis.localMessage.ftitem[globalThis.defLag],
+        id: "doctree",
+        enable: v?.theme?.doctree ?? true,
+    });
     // 代码块
-    settings.push({ label: localMessage.cbitem[defLag], id: "codeBlock", enable: v?.theme?.codeBlock ?? true });
+    settings.push({
+        label: globalThis.localMessage.cbitem[globalThis.defLag],
+        id: "codeBlock",
+        enable: v?.theme?.codeBlock ?? true,
+    });
     // 引用
     settings.push({
-        label: localMessage.refitem[defLag],
+        label: globalThis.localMessage.refitem[globalThis.defLag],
         id: "referenceBlock",
         enable: v?.theme?.reference ?? true,
     });
     // 标记
-    settings.push({ label: localMessage.markitem[defLag], id: "mark", enable: v?.theme?.mark ?? true });
+    settings.push({
+        label: globalThis.localMessage.markitem[globalThis.defLag],
+        id: "mark",
+        enable: v?.theme?.mark ?? true,
+    });
     // 标签
     settings.push({
-        label: localMessage.tagitem[defLag],
-        description: localMessage.tagdesc[defLag],
+        label: globalThis.localMessage.tagitem[globalThis.defLag],
+        description: globalThis.localMessage.tagdesc[globalThis.defLag],
         id: "tagStyle",
         enable: v?.theme?.tag ?? true,
     });
     // 集市
-    settings.push({ label: localMessage.bazitem[defLag], id: "bazaarStyle", enable: v?.theme?.bazaar ?? true });
+    settings.push({
+        label: globalThis.localMessage.bazitem[globalThis.defLag],
+        id: "bazaarStyle",
+        enable: v?.theme?.bazaar ?? true,
+    });
     // 嵌入块
     settings.push({
-        label: localMessage.emitem[defLag],
-        description: localMessage.emdesc[defLag],
+        label: globalThis.localMessage.emitem[globalThis.defLag],
+        description: globalThis.localMessage.emdesc[globalThis.defLag],
         id: "embeddedBlock",
         enable: v?.theme?.embeddedBlock ?? true,
     });
     // 数据库
-    settings.push({ label: localMessage.dbitem[defLag], id: "database", enable: v?.theme?.database ?? true });
+    settings.push({
+        label: globalThis.localMessage.dbitem[globalThis.defLag],
+        id: "database",
+        enable: v?.theme?.database ?? true,
+    });
     // 快捷键面板
     settings.push({
-        label: localMessage.scitem[defLag],
+        label: globalThis.localMessage.scitem[globalThis.defLag],
         id: "scPanelStyle",
         enable: v?.plugins?.shortcutPanel ?? true,
     });
     // 替换背景图片插件电脑端
     settings.push({
-        label: localMessage.bgdesktop[defLag],
-        description: localMessage.bgdesc[defLag],
+        label: globalThis.localMessage.bgdesktop[globalThis.defLag],
+        description: globalThis.localMessage.bgdesc[globalThis.defLag],
         id: "backgroundCoverDesktop",
         enable: v?.plugins?.backgroundCoverDesktop ?? true,
     });
     // 替换背景图片插件移动端
     settings.push({
-        label: localMessage.bgmobile[defLag],
-        description: localMessage.bgdesc[defLag],
+        label: globalThis.localMessage.bgmobile[globalThis.defLag],
+        description: globalThis.localMessage.bgdesc[globalThis.defLag],
         id: "backgroundCoverMobile",
         enable: v?.plugins?.backgroundCoverMobile ?? false,
     });
     // 数学公式增强插件
     settings.push({
-        label: localMessage.mathitem[defLag],
-        description: localMessage.mathdesc[defLag],
+        label: globalThis.localMessage.mathitem[globalThis.defLag],
+        description: globalThis.localMessage.mathdesc[globalThis.defLag],
         id: "mathPanel",
         enable: v?.plugins?.mathPanel ?? false,
     });
     // 双标签栏
     settings.push({
-        label: localMessage.doubleTabbaritem[defLag],
-        description: localMessage.doubleTabbardesc[defLag],
+        label: globalThis.localMessage.doubleTabbaritem[globalThis.defLag],
+        description: globalThis.localMessage.doubleTabbardesc[globalThis.defLag],
         id: "doubleTabbar",
         enable: v?.plugins?.doubleTabbar ?? false,
     });
@@ -423,9 +452,9 @@ export async function putSettings(settings: ThemeConfig) {
 async function showElementSettings(settings: ThemeConfig) {
     let lab: EnableSettings[] = [];
     // 检测配置文件的版本
-    if (settings["version"] < defaultConf["version"] || settings["version"] == undefined) {
+    if (settings["version"] < globalThis.defaultConf["version"] || settings["version"] == undefined) {
         // console.log(settings["version"]);
-        await _postMessage("ok", localMessage.confUpdate[defLag]);
+        await _postMessage("ok", globalThis.localMessage.confUpdate[globalThis.defLag]);
     }
     // ! 从设置中获取启用的设置项
     // 主题设置项
