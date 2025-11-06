@@ -35,7 +35,7 @@ jobs:
 
       - name: Generate release log
         run: |
-          npm install conventional-changelog-cli
+          npm install -g conventional-changelog-cli
           conventional-changelog -o release.md -n conventional-changelog.config.json -k theme.json -c theme.json -r 2
           prettier -w release.md
 
