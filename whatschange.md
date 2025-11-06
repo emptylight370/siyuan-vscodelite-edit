@@ -55,7 +55,7 @@
 
 ### 🔨 Refactor | 重构
 
-- 适配一些API变更 ([0ffd922](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/0ffd9220c5e33fca99798086fe9430f5adb85069)), closes [siyuan-note/siyuan#15727](https://github.com/siyuan-note/siyuan/issues/15727)
+- 适配一些API变更 ([0ffd922](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/0ffd9220c5e33fca99798086fe9430f5adb85069))
 
 ## [2.4.0](https://github.com/emptylight370/siyuan-vscodelite-edit/compare/2.3.9...2.4.0) (2025-08-27)
 

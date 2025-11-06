@@ -33,6 +33,12 @@ jobs:
         with:
           cmd: 'jq -r ".version" theme.json'
 
+      - name: Generate release log
+        run: |
+          npm install conventional-changelog-cli
+          conventional-changelog -o release.md -n conventional-changelog.config.json -k theme.json -c theme.json -r 2
+          prettier -w release.md
+
       - name: Release
         uses: softprops/action-gh-release@v2
         with:
@@ -40,3 +46,4 @@ jobs:
           name: Release ${{ steps.version.outputs.value }}
           tag_name: ${{ steps.version.outputs.value }}
           make_latest: true
+          body_path: release.md
