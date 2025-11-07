@@ -42,6 +42,9 @@
 > 完整更新日志查看[changelog](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/changelog.md)
 > 提交历史日志查看[whatschange](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/whatschange.md)
 
+- v2.5.1
+  - 文档树边框适配移动端
+  - 文档树展开按钮添加高亮
 - v2.5.0
   - 优化代码
   - 优化数学增强插件适配
@@ -55,9 +58,6 @@
   - 优化代码
   - 发布模式下不显示主题设置按钮
   - 发布模式下避免出现报错
-- v2.4.1
-  - 适配API变更(siyuan-note/siyuan#15727)
-  - 补充之前一直遗漏的最小思源版本
 
 # 特殊适配
 

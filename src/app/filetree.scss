@@ -1,4 +1,27 @@
-/* 文档树 */
+@mixin fileTreeAdjust($device) {
+    // 文档树文档边框
+    ul.b3-list.b3-list--background {
+        border-radius: 8px;
+        border: 2px solid var(--mk-filetree-scrollbar-thumb--hover);
+
+        // 文档树缩进调整，仅有电脑端生效
+        @if $device == desktop {
+            .b3-list-item {
+                border-radius: unset;
+                padding: 1px 5px;
+                margin: unset;
+            }
+        }
+
+        // 文档树展开箭头
+        span.b3-list-item__toggle {
+            border: 1px solid var(--mk-dock-item-color);
+            background-color: color-mix(in srgb, var(--b3-empty-color), transparent 80%);
+        }
+    }
+}
+
+/* 电脑端文档树 */
 .sy__file {
     div.fn__flex-1 {
         overflow: auto;
@@ -31,16 +54,7 @@
         }
     }
 
-    .b3-list--background {
-        border-radius: 8px;
-        border: 2px solid var(--mk-filetree-scrollbar-thumb--hover);
-
-        .b3-list-item {
-            border-radius: unset;
-            padding: 1px 5px;
-            margin: unset;
-        }
-    }
+    @include fileTreeAdjust(desktop);
 
     > .block__icons {
         border-bottom: 1px solid var(--mk-filetree-scrollbar-thumb);
@@ -51,7 +65,7 @@
     }
 
     ul.b3-list--background {
-        /* 文档树缩进，一共7级 */
+        // 文档树缩进，一共7级
         $base-padding: 12px;
         $indent-step: 8px;
 
@@ -72,7 +86,7 @@
     }
 }
 
-/* 大纲 */
+/* 电脑端大纲 */
 /* 大纲标题缩进，一共6级 */
 .sy__outline .fn__flex-1 .b3-list {
     @for $i from 2 through 6 {
@@ -92,4 +106,11 @@
     font-weight: bold;
     margin-right: unset;
     margin-left: 8px;
+}
+
+/* 移动端文档树 */
+#sidebar.side-panel {
+    .b3-list--mobile {
+        @include fileTreeAdjust(mobile);
+    }
 }

@@ -42,6 +42,9 @@ Limited by the configuration loading method, updated configurations for new vers
 > Full changelog view [ChangeLog](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/changelog.md)
 > Commit history view [whatschange](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/whatschange.md)
 
+- v2.5.1
+  - File tree border adapt to mobile
+  - Add highlight for file tree expand button
 - v2.5.0
   - Optimize the code
   - Optimize the adaption of math enhance plugin
@@ -55,9 +58,6 @@ Limited by the configuration loading method, updated configurations for new vers
   - Optimize the code
   - Don't show theme config button in publish mode
   - Avoid console errors in publish mode
-- v2.4.1
-  - Adapt to API change(siyuan-note/siyuan#15727)
-  - Supplement the minimal Siyuan version that has been missing before
 
 # Special fitness
 

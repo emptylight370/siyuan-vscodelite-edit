@@ -2,6 +2,10 @@
 
 ## v2.5.1
 
+- 文档树边框适配移动端
+- 文档树展开按钮添加高亮
+- File tree border adapt to mobile
+- Add highlight for file tree expand button
 - minor fixes
 
 ## v2.5.0
