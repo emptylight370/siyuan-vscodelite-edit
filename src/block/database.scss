@@ -1,25 +1,30 @@
-/* 数据库添加边框 */
-.av[data-av-type="table"] .av__container {
+%database-basic {
+    /* 添加数据库边框 */
     border: var(--mk-toolbar-item) dashed 1px;
     border-radius: var(--b3-border-radius);
+
+    .av__header {
+        .item--focus {
+            /* 数据库选中视图添加高亮 */
+            background-color: var(--lite-database-header-background);
+        }
+    }
+}
+
+/* 数据库添加边框 */
+.av[data-av-type="table"] .av__container {
+    @extend %database-basic;
 
     .av__header {
         .av__title:not(.fn__none) {
             /* 数据库标题添加分割线 */
             border-bottom: gray dashed 1px;
         }
-
-        .item--focus {
-            /* 数据库选中视图添加高亮 */
-            background-color: var(--lite-database-header-background);
-            /* opacity: 60%; */
-        }
     }
 }
 
 .av[data-av-type="gallery"] .av__container {
-    border: var(--mk-toolbar-item) dashed 1px;
-    border-radius: var(--b3-border-radius);
+    @extend %database-basic;
 
     .av__header {
         /* 角落背景修复 */
@@ -28,12 +33,6 @@
         .av__views .layout-tab-bar {
             /* 角落背景修复 */
             border-top-left-radius: var(--b3-border-radius);
-        }
-
-        .item--focus {
-            /* 数据库选中视图添加高亮 */
-            background-color: var(--lite-database-header-background);
-            /* opacity: 60%; */
         }
     }
 }

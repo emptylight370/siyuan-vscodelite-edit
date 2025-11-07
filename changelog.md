@@ -7,6 +7,7 @@
 - File tree border adapt to mobile
 - Add highlight for file tree expand button
 - minor fixes
+- Optimize the code
 
 ## v2.5.0
 
