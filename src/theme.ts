@@ -282,8 +282,7 @@ function addFixedAttribute(settings: EnableSettings[]) {
 async function addPdfStyle(lab: EnableSettings[]) {
     // 如果是发布模式就不写入文件
     if (window.siyuan?.isPublish) return;
-    const list: string[] = [];
-    list.push('@charset "UTF-8";');
+    const list: string[] = ['@charset "UTF-8";'];
     for (const it of lab) {
         switch (it) {
             case "codeBlock":
@@ -309,6 +308,7 @@ async function addPdfStyle(lab: EnableSettings[]) {
                 break;
             case "tag":
                 list.push("@import url(block/tag.css);");
+                break;
             default:
                 break;
         }
