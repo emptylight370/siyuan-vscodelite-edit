@@ -46,6 +46,7 @@ Limited by the configuration loading method, updated configurations for new vers
   - File tree border adapt to mobile
   - File tree indent adapt to mobile
   - File tree add indent line
+  - Reduce mobile menu transparency
 - v2.5.0
   - Optimize the code
   - Optimize the adaption of math enhance plugin

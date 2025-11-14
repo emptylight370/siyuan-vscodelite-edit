@@ -5,9 +5,11 @@
 - 文档树边框适配移动端(#27)
 - 文档树缩进适配移动端
 - 文档树添加层级缩进线
+- 降低移动端菜单透明度
 - File tree border adapt to mobile(#27)
 - File tree indent adapt to mobile
 - File tree add indent line
+- Reduce mobile menu transparency
 - minor fixes
 - Optimize the code
 
