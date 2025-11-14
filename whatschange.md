@@ -15,6 +15,8 @@
 - 修复因多种原因丢失此文件时产生的报错 ([20dde6e](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/20dde6e618e31c7f00f743e0dcf65b55c6095020))
 - 优化写入pdf导出样式的代码逻辑 ([5641d2b](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/5641d2bfe26e7b2b76f361a13d5b2efba45bca9b))
 - **build:** 改为全局安装，避免调用出现问题 ([e540696](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/e5406967b37c5b9af17bdc0d8acf18c3caa47f55))
+- **build:** 修复无法调用conventional-changelog问题 ([f0a521e](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/f0a521ead08d8132613ec0d89632cc3e113efe1d))
+- **build:** 修复无法调用prettier问题 ([b5fddea](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/b5fddea62be1bc82220a7b3c6f750e8bb7ee2e4a))
 - **ci:** fix an error ([d6cd761](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/d6cd7619f135d622bba5bffc811ee1a2ac82d600))
 
 ### 📄 Documentation | 文档
