@@ -12,11 +12,44 @@
                 margin: unset;
             }
         }
+    }
+}
 
-        // 文档树展开箭头
-        span.b3-list-item__toggle {
-            border: 1px solid var(--mk-dock-item-color);
-            background-color: color-mix(in srgb, var(--b3-empty-color), transparent 80%);
+@mixin fileTreeIndent {
+    ul.b3-list--background {
+        // 文档树缩进，一共7级
+        $base-padding: 12px;
+        $indent-step: 8px;
+
+        @for $i from 1 through 7 {
+            $selector: "> ul";
+
+            @if $i > 1 {
+                @for $j from 2 through $i {
+                    $selector: $selector + " > ul";
+                }
+            }
+
+            #{$selector} > li.b3-list-item > span.b3-list-item__toggle,
+            #{$selector} > li.b3-list-item > span.b3-list-item__toggle1 {
+                /* 第#{$i}级缩进 */
+                padding-left: $base-padding + ($i - 1) * $indent-step !important;
+            }
+        }
+    }
+}
+
+@mixin fileTreeIndentLine {
+    [data-type="navigation-file"] {
+        > .b3-list-item__toggle.fn__hidden {
+            &::before {
+                content: "";
+                visibility: visible;
+                height: 100%;
+                border-left: 2px solid color-mix(in srgb, var(--b3-theme-on-background), transparent 60%);
+                margin-left: -3px;
+                margin-right: 1.4px;
+            }
         }
     }
 }
@@ -64,26 +97,9 @@
         border-top: 1px solid var(--mk-filetree-scrollbar-thumb);
     }
 
-    ul.b3-list--background {
-        // 文档树缩进，一共7级
-        $base-padding: 12px;
-        $indent-step: 8px;
+    @include fileTreeIndent();
 
-        @for $i from 1 through 7 {
-            $selector: "> ul";
-
-            @if $i > 1 {
-                @for $j from 2 through $i {
-                    $selector: $selector + " > ul";
-                }
-            }
-
-            #{$selector} > li.b3-list-item > span.b3-list-item__toggle {
-                /* 第#{$i}级缩进 */
-                padding-left: $base-padding + ($i - 1) * $indent-step !important;
-            }
-        }
-    }
+    @include fileTreeIndentLine();
 }
 
 /* 电脑端大纲 */
@@ -112,5 +128,9 @@
 #sidebar.side-panel {
     .b3-list--mobile {
         @include fileTreeAdjust(mobile);
+
+        @include fileTreeIndent();
+
+        @include fileTreeIndentLine();
     }
 }

@@ -3,9 +3,11 @@
 ## v2.5.1
 
 - 文档树边框适配移动端
-- 文档树展开按钮添加高亮
+- 文档树缩进适配移动端
+- 文档树添加层级缩进线
 - File tree border adapt to mobile
-- Add highlight for file tree expand button
+- File tree indent adapt to mobile
+- File tree add indent line
 - minor fixes
 - Optimize the code
 
