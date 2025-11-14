@@ -36,6 +36,7 @@
 } */
 
 /* dock垂直拖动条 */
+/* 竖直调整宽度，模仿VSCode效果 */
 .layout__resize--lr {
     &:hover::after {
         visibility: visible !important;
@@ -45,21 +46,25 @@
     }
 }
 
+/* 拖动条平时隐藏 */
 #layouts > div:not(.layout__dockb) > .layout__resize--lr::after {
     visibility: hidden;
 }
 
 /* 普通拖动条 */
 .layout__resize {
+    /* 指示线颜色 */
     &:hover::after {
         background-color: #007fd4;
     }
 
+    /* 水平指示线单独设置高度 */
     &:not(.layout__resize--lr):hover::after {
         height: 2px;
     }
 }
 
+/* 拖动调整dock大小指示线 */
 .layout--float > .layout__dockresize:hover {
     border-right: 2px solid #007fd4;
     border-color: #007fd4;

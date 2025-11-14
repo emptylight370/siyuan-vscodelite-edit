@@ -6,8 +6,10 @@
 }
 
 #preview {
+    /* 导出PDF不允许划选文字 */
     user-select: none;
 
+    /* 代码块菜单不显示 */
     .code-block:hover .protyle-action {
         display: none;
     }
