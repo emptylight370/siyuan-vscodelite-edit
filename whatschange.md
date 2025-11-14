@@ -1,3 +1,41 @@
+## [2.5.1](https://github.com/emptylight370/siyuan-vscodelite-edit/compare/2.5.0...2.5.1) (2025-11-14)
+
+### ✨ Features | 功能
+
+- 根据提交历史生成更新日志 ([47a3bf1](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/47a3bf1438c6fb48a18b17ebbde44fd97c12fe72))
+- 简化数据库样式代码 ([dada4f6](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/dada4f62e82dce7979a14ac0441589d2649fe173))
+- 文档树边框适配移动端，添加展开按钮高亮 [#27](https://github.com/emptylight370/siyuan-vscodelite-edit/issues/27) ([8bde769](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/8bde769811f0a0204289fb65d18d4754ef438d9e))
+- 文档树样式更改 ([1ef52ac](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/1ef52acdd8235a614e75a71cb7d482c0a990d6fa))
+
+### 🐛 Bug Fixes | 问题修复
+
+- 代码中使用全局变量方式 ([a6d6f5c](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/a6d6f5c5298e138577c09003210b8d0624a6fe43))
+- 降低移动端菜单透明度 ([6e5db09](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/6e5db09bcaf0481d4d9d389fe8fd3d6ea8bf4e1e))
+- 修复背景插件适配样式会插入两次的问题 ([46733b0](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/46733b053669821e7b5c08d5c680390ed1589c99))
+- 修复因多种原因丢失此文件时产生的报错 ([20dde6e](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/20dde6e618e31c7f00f743e0dcf65b55c6095020))
+- 优化写入pdf导出样式的代码逻辑 ([5641d2b](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/5641d2bfe26e7b2b76f361a13d5b2efba45bca9b))
+- **build:** 改为全局安装，避免调用出现问题 ([e540696](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/e5406967b37c5b9af17bdc0d8acf18c3caa47f55))
+- **ci:** fix an error ([d6cd761](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/d6cd7619f135d622bba5bffc811ee1a2ac82d600))
+
+### 📄 Documentation | 文档
+
+- 补充更新日志 ([c7fa676](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/c7fa6764a24e710b049041a53d45aab4d6b6533a))
+- 代码补充注释 ([374a748](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/374a748b383a830b368792cec3f15bf96aadb2b8))
+- 更新提交日志 ([0ae1c72](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/0ae1c72c027c8ffa11cd3420bbfdacbfc55368a7))
+- 思源官方的Callout block在规划中 ([276cf55](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/276cf550e91a1ec2ed0825e1131f36e7adbd3736))
+- 微调文案 ([8ee89bc](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/8ee89bca156103daa9a4bf968b4e704414957b2f))
+- 优化项目代码 ([0d56d7c](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/0d56d7cb42180d3fa41c96a511ead43a038b8a8d))
+- Update Contribute.md ([034753c](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/034753cd084a9f8e4223c9e2083689153dc6b9cc))
+
+### 🛠️ Build system | 构建系统
+
+- **[skip ci]:** 在编译后的文件夹中只打包css文件 ([4b73b86](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/4b73b860c2f55ff26413a4d7fb77f2ff91b616c7))
+- 更新使用的node版本 ([253fb98](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/253fb982cc6210c73974e29704250a689a1f0bf0))
+- 修正处理逻辑 ([0eb7ba1](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/0eb7ba1f13ebfdd050a3275913d1dbc2e2dbeffd))
+- fix an error ([6c3e5e7](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/6c3e5e7e978c65333a4f542c42267a203989f339))
+- release自动生成发布日志 ([3f645da](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/3f645da093184d86b537e2c2c4b519c72764d41f))
+- Update workflow ([aaf5f1d](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/aaf5f1d823d248fdf7d08d2d496cc9a068e054a7))
+
 ## [2.5.0](https://github.com/emptylight370/siyuan-vscodelite-edit/compare/2.4.2...2.5.0) (2025-09-22)
 
 ### ✨ Features | 功能
