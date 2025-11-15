@@ -65,7 +65,7 @@ Limited by the configuration loading method, updated configurations for new vers
 
 ## Custom attributes
 
-![readme_custom_attribute](resources/readme_custom_attribute.png)
+![readme_custom_attribute](resources/readme_custom_attribute.webp)
 
 ### How to use
 

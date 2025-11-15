@@ -65,7 +65,7 @@
 
 ## 自定义属性
 
-![readme_custom_attribute](resources/readme_custom_attribute.png)
+![readme_custom_attribute](resources/readme_custom_attribute.webp)
 
 ### 启用方法
 
