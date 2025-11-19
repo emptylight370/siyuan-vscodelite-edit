@@ -1,5 +1,10 @@
 # ChangeLog
 
+## v2.5.2
+
+- 数据库样式适配看板视图
+- Database style adapt to kanban view
+
 ## v2.5.1
 
 - 文档树边框适配移动端(#27)

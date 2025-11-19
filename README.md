@@ -42,6 +42,8 @@ Limited by the configuration loading method, updated configurations for new vers
 > Full changelog view [ChangeLog](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/changelog.md)
 > Commit history view [whatschange](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/whatschange.md)
 
+- v2.5.2
+  - Database style adapt to kanban view
 - v2.5.1
   - File tree border adapt to mobile
   - File tree indent adapt to mobile
@@ -55,11 +57,6 @@ Limited by the configuration loading method, updated configurations for new vers
   - Not apply customized list sequence when exporting image
   - Modify folded block style
   - Add custom attribute
-- v2.4.2
-  - Distinguish between static and dynamic anchor text
-  - Optimize the code
-  - Don't show theme config button in publish mode
-  - Avoid console errors in publish mode
 
 # Special fitness
 

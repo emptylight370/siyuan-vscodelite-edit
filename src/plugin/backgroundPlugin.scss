@@ -58,7 +58,9 @@ body.bgenable {
         // 数据库表格视图
         .av[data-av-type=table],
         // 数据库卡片视图
-        .av[data-av-type=gallery] {
+        .av[data-av-type=gallery],
+        // 数据库看板视图
+        .av[data-av-type=kanban] {
             /* 代码块 */
             /* 数据库块 */
             opacity: 0.8;
@@ -164,6 +166,25 @@ body.bgenable {
 
     // 数据库卡片视图
     .av[data-av-type="gallery"] {
+        .av__container.fn__block {
+            /* 数据库背景修复 */
+            background: var(--b3-theme-background);
+        }
+
+        .av__header {
+            /* 角落背景修复 */
+            border-top-right-radius: var(--b3-border-radius);
+        }
+
+        .av__gallery {
+            /* 角落背景修复 */
+            border-bottom-left-radius: var(--b3-border-radius);
+            border-bottom-right-radius: var(--b3-border-radius);
+        }
+    }
+
+    // 数据库看板视图
+    .av[data-av-type="kanban"] {
         .av__container.fn__block {
             /* 数据库背景修复 */
             background: var(--b3-theme-background);

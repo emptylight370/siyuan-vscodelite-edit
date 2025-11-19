@@ -42,6 +42,8 @@
 > 完整更新日志查看[changelog](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/changelog.md)
 > 提交历史日志查看[whatschange](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/whatschange.md)
 
+- v2.5.2
+  - 数据库样式适配看板视图
 - v2.5.1
   - 文档树边框适配移动端
   - 文档树缩进适配移动端
@@ -55,11 +57,6 @@
   - 导出图片时暂不显示自定义列表序号
   - 修改折叠块样式
   - 添加自定义属性
-- v2.4.2
-  - 区分静态锚文本和动态锚文本
-  - 优化代码
-  - 发布模式下不显示主题设置按钮
-  - 发布模式下避免出现报错
 
 # 特殊适配
 
