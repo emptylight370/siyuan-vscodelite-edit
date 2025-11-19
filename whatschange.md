@@ -1,3 +1,26 @@
+## [2.5.2](https://github.com/emptylight370/siyuan-vscodelite-edit/compare/2.5.1...2.5.2) (2025-11-19)
+
+### ✨ Features | 功能
+
+- 数据库样式适配看板视图 ([be43dd9](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/be43dd99b58efdaecb10dd23756525b031e3ace3))
+- 添加隐藏数据库添加按钮的自定义属性 ([98a297d](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/98a297de2b8d15675a9ebe955fd3553849ce5037))
+- 为集市中的说明文档中的表格应用样式 ([5a86ce4](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/5a86ce4339a671a6103100f5e424654bc02e1ba7))
+
+### 🐛 Bug Fixes | 问题修复
+
+- 修复启用标题图标又未启用嵌入块样式时嵌入块中连续标题会在一行中显示问题 ([b831910](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/b8319107aa944c8cf95f7d4fe2425085c503427f))
+
+### 📄 Documentation | 文档
+
+- 更新预览图，添加第二张预览图 ([52c586c](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/52c586cf12af21f6c127fcdbcb8fda78a7f8b9f1))
+- 图片换用WebP ([6ae026d](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/6ae026df545cdb488c85027d21218606aa10c184))
+- 修改英语文案 ([d689b1e](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/d689b1e93472e91697307b3cbcc462cb4c676c84))
+- 重置变更日志 ([385076a](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/385076a1f288d403eebec2852cfefa15fe589a3e))
+
+### ⚡ Performance | 性能优化
+
+- 优化代码 ([49bc518](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/49bc518e4aac12eb00057178c64819f073fa4cdd))
+
 ## [2.5.1](https://github.com/emptylight370/siyuan-vscodelite-edit/compare/2.5.0...2.5.1) (2025-11-14)
 
 ### ✨ Features | 功能
