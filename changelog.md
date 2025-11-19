@@ -3,13 +3,15 @@
 ## v2.5.2
 
 - 数据库样式适配看板视图
-- 添加自定义属性以隐藏数据库添加条目按钮
-- 添加自定义属性以隐藏数据库添加视图按钮
+- 添加*自定义属性*以隐藏数据库添加条目按钮
+- 添加*自定义属性*以隐藏数据库添加视图按钮
 - 修复启用标题图标又未启用嵌入块样式时嵌入块中连续标题会在一行中显示问题
+- 集市说明文档中表格应用主题样式
 - Database style adapt to kanban view
-- Add custom attribute to hide database add item button
-- Add custom attribute to hide database add view button
+- Add _custom attribute_ to hide database add entry button
+- Add _custom attribute_ to hide database add view button
 - Fixed an issue where consecutive titles in embedded blocks were displayed in a line when the title icon was enabled and the embed block style was not enabled
+- Apply theme style in bazaar readme table
 
 ## v2.5.1
 

@@ -33,3 +33,17 @@ div.table {
         }
     }
 }
+
+// 为集市的说明文档启用表格样式
+#configBazaarReadme {
+    table {
+        thead {
+            tr {
+                th {
+                    color: var(--mk-block-header-h6);
+                    text-align: center;
+                }
+            }
+        }
+    }
+}
