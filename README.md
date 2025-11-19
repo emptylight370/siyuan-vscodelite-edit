@@ -46,6 +46,7 @@ Limited by the configuration loading method, updated configurations for new vers
   - Database style adapt to kanban view
   - Add custom attribute to hide database add item button
   - Add custom attribute to hide database add view button
+  - Fixed an issue where consecutive titles in embedded blocks were displayed in a line when the title icon was enabled and the embed block style was not enabled
 - v2.5.1
   - File tree border adapt to mobile
   - File tree indent adapt to mobile
