@@ -197,3 +197,21 @@
         color: transparent !important;
     }
 }
+
+// 数据库隐藏添加条目按钮
+[custom-vsce~="av-no-add-entry"] {
+    .av__gallery-add,
+    [data-type="av-add-top"],
+    [data-type="av-add-more"],
+    [data-type="av-add-more"] + .fn__space {
+        display: none;
+    }
+}
+
+// 数据库隐藏添加视图按钮
+[custom-vsce~="av-no-add-view"] {
+    [data-type="av-add"],
+    [data-type="av-add"] + .fn__flex-1 + .fn__space {
+        display: none;
+    }
+}

@@ -3,7 +3,11 @@
 ## v2.5.2
 
 - 数据库样式适配看板视图
+- 添加自定义属性以隐藏数据库添加条目按钮
+- 添加自定义属性以隐藏数据库添加视图按钮
 - Database style adapt to kanban view
+- Add custom attribute to hide database add item button
+- Add custom attribute to hide database add view button
 
 ## v2.5.1
 
