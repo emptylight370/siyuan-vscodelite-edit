@@ -8,9 +8,9 @@ export function bg(times: number) {
     if (bglayer) {
         const style = window.getComputedStyle(bglayer);
         const body = document.body;
-        if (style.getPropertyValue("display") != "none") {
+        if (style.getPropertyValue("display") !== "none") {
             body.classList.add("bgenable");
-        } else if (style.getPropertyValue("display") == "none") {
+        } else if (style.getPropertyValue("display") === "none") {
             // console.log("disable background");
             body.classList.remove("bgenable");
         }

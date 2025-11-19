@@ -82,6 +82,7 @@ window.destroyTheme = async () => {
     document.querySelector("#vscleToolbar").remove();
     // 移除body特殊适配语句
     document.body.classList.remove("bgenable");
+    document.body.classList.remove("vscmobile");
     // 移除计时器
     for (let key in globalThis.vscTimer) {
         if (globalThis.vscTimer[key] !== null) {
