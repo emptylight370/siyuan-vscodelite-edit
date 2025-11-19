@@ -104,6 +104,11 @@
 - 替换背景图片（通过让前景透明实现，请将插件设置中的前景透明度调到0关闭，并启用背景虚化(调到大于0)）
 - 数学增强插件（限制插件预览宽度）
 
+<details>
+<summary>如果你想看，这里是和替换背景图片插件一起使用的效果</summary>
+<img src="resources/readme_background_plugin.webp" alt="readme_background_plugin" />
+</details>
+
 ## 代码片段
 
 - [代码块悬浮显示操作按钮](https://ld246.com/article/1728146248791) by JeffreyChen

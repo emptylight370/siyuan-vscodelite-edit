@@ -104,6 +104,11 @@ Currently adapted plugins are:
 - Background Cover(By making the foreground transparent. Please set "foreground transparency" to 0 in the plugin settings to disable it, and enable the Blurring in settings(set to greater than 0))
 - Math Enhancement Plugin(Limit plugin preview width)
 
+<details>
+<summary>In case of you want to know, this is the screenshot about using with Background Cover plugin</summary>
+<img src="resources/readme_background_plugin.webp" alt="readme_background_plugin" />
+</details>
+
 ## Snippests
 
 - [CodeBlock show action buttons when hover](https://ld246.com/article/1728146248791) by JeffreyChen
