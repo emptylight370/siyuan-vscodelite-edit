@@ -90,8 +90,8 @@ Since Siyuan will officially release [Callout block](https://github.com/siyuan-n
 | `callout-success`  | quote block                 | callout✅Green                                                   | 2.3.1           | 2.3.2        |
 |   `callout-todo`   | quote block                 | callout☑️Green                                                   | 2.3.1           | 2.3.2        |
 | `callout-warning`  | quote block                 | callout⚠️Yellow                                                  | 2.3.1           | 2.3.2        |
-| `av-no-add-entry`  | database block              | Hide database add entry button (add works fine)                  | 2.5.2           | 2.5.2        |
-|  `av-no-add-view`  | database block              | Hide database add view button (add works fine)                   | 2.5.2           | 2.5.2        |
+| `av-no-add-entry`  | database block              | Hide database add entry button (add function works normally)     | 2.5.2           | 2.5.2        |
+|  `av-no-add-view`  | database block              | Hide database add view button (add function works normally)      | 2.5.2           | 2.5.2        |
 
 ## Plugin fitness
 
