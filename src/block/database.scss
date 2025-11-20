@@ -26,6 +26,13 @@
     @extend %database-basic;
 
     .av__header {
+        .av__title:not(.fn__none) {
+            /* 数据库标题添加分割线 */
+            border-bottom: gray dashed 1px;
+        }
+    }
+
+    .av__header {
         /* 角落背景修复 */
         border-top-left-radius: var(--b3-border-radius);
 
@@ -38,6 +45,13 @@
 
 .av[data-av-type="kanban"] .av__container {
     @extend %database-basic;
+
+    .av__header {
+        .av__title:not(.fn__none) {
+            /* 数据库标题添加分割线 */
+            border-bottom: gray dashed 1px;
+        }
+    }
 
     .av__header {
         /* 角落背景修复 */

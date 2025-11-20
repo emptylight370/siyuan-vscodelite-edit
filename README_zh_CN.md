@@ -42,6 +42,8 @@
 > 完整更新日志查看[changelog](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/changelog.md)
 > 提交历史日志查看[whatschange](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/whatschange.md)
 
+- v2.5.3
+  - 数据库所有视图添加数据库标题下分割线
 - v2.5.2
   - 数据库样式适配看板视图
   - 添加*自定义属性*以隐藏数据库添加条目按钮
@@ -53,14 +55,6 @@
   - 文档树缩进适配移动端
   - 文档树添加层级缩进线
   - 降低移动端菜单透明度
-- v2.5.0
-  - 优化代码
-  - 优化数学增强插件适配
-  - 重构主题设置面板
-  - 导出图片时暂不显示标题图标（无法加载图片）
-  - 导出图片时暂不显示自定义列表序号
-  - 修改折叠块样式
-  - 添加自定义属性
 
 # 特殊适配
 

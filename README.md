@@ -42,6 +42,8 @@ Limited by the configuration loading method, updated configurations for new vers
 > Full changelog view [ChangeLog](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/changelog.md)
 > Commit history view [whatschange](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/whatschange.md)
 
+- v2.5.3
+  - Add division line under database title for all views
 - v2.5.2
   - Database style adapt to kanban view
   - Add _custom attribute_ to hide database add entry button
@@ -53,14 +55,6 @@ Limited by the configuration loading method, updated configurations for new vers
   - File tree indent adapt to mobile
   - File tree add indent line
   - Reduce mobile menu transparency
-- v2.5.0
-  - Optimize the code
-  - Optimize the adaption of math enhance plugin
-  - Refactor theme's setting panel
-  - Hide heading icon when exporting image(can't show image)
-  - Not apply customized list sequence when exporting image
-  - Modify folded block style
-  - Add custom attribute
 
 # Special fitness
 

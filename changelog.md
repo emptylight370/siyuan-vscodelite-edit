@@ -1,5 +1,10 @@
 # ChangeLog
 
+## v2.5.3
+
+- 数据库所有视图添加数据库标题下分割线
+- Add division line under database title for all views
+
 ## v2.5.2
 
 - 数据库样式适配看板视图
