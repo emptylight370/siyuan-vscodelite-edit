@@ -125,10 +125,10 @@ Follow origin repository [TinkMingKing/siyuan-themes-vscodelite](https://github.
 
 # Thanks
 
-|                                  Repository                                  |                        Author                         |                                         Content                                         | License |
-| :--------------------------------------------------------------------------: | :---------------------------------------------------: | :-------------------------------------------------------------------------------------: | :-----: |
-|    [vscodelite](https://github.com/TinkMingKing/siyuan-themes-vscodelite)    |    [TinkMingKing](https://github.com/TinkMingKing)    |                                          theme                                          | GPL3.0  |
-|          [Savor](https://github.com/royc01/notion-theme/tree/main)           |          [royc01](https://github.com/royc01)          | Connect Siyuan API code (js)<br>Configuration file code(js)<br>list-level effects (css) |  None   |
-| [SiYuan api](https://github.com/siyuan-note/siyuan/blob/master/API_zh_CN.md) |                   SiYuan Developers                   |                                      API interface                                      | AGPL3.0 |
-|      [doctree modify](https://github.com/zxkmm/siyuan_doctree_compress)      |           [zxkmm](https://github.com/zxkmm)           |                           Document tree beautification ideas                            |   MIT   |
-|           [Cliff-Dark](https://github.com/chenshinshi/Cliff-Dark)            | [Chensinshi](https://github.com/chenshinshi)&Crowds21 |                              Transparent background ideas                               |  None   |
+|                               Repository                               |                        Author                         |                                         Content                                         | License |
+| :--------------------------------------------------------------------: | :---------------------------------------------------: | :-------------------------------------------------------------------------------------: | :-----: |
+| [vscodelite](https://github.com/TinkMingKing/siyuan-themes-vscodelite) |    [TinkMingKing](https://github.com/TinkMingKing)    |                                          theme                                          | GPL3.0  |
+|       [Savor](https://github.com/royc01/notion-theme/tree/main)        |          [royc01](https://github.com/royc01)          | Connect Siyuan API code (js)<br>Configuration file code(js)<br>list-level effects (css) |  None   |
+| [SiYuan api](https://github.com/siyuan-note/siyuan/blob/master/API.md) |                   SiYuan Developers                   |                                      API interface                                      | AGPL3.0 |
+|   [doctree modify](https://github.com/zxkmm/siyuan_doctree_compress)   |           [zxkmm](https://github.com/zxkmm)           |                           Document tree beautification ideas                            |   MIT   |
+|        [Cliff-Dark](https://github.com/chenshinshi/Cliff-Dark)         | [Chensinshi](https://github.com/chenshinshi)&Crowds21 |                              Transparent background ideas                               |  None   |
