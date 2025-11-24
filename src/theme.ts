@@ -170,8 +170,7 @@ function addImports(table: HTMLLinkElement, labels: EnableSettings[]) {
     for (const it of labels) {
         switch (it) {
             case "codeBlock":
-                // TODO 因为导出PDF时候样式错乱，需要暂时禁用这个样式
-                if (!isExportPDF) rulesToInsert.push("@import url(sub/block/codeBlock.css);");
+                rulesToInsert.push("@import url(sub/block/codeBlock.css);");
                 break;
             case "reference":
                 rulesToInsert.push("@import url(sub/block/reference.css);");
