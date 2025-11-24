@@ -8,9 +8,7 @@ import { EnableSettings } from "./ts/types.d";
 // ! js代码加载后立即执行
 (async function () {
     // 检查是否同时存在主题样式代码和PDF适配代码
-    const hasThemeScript = !!document.getElementById("themeScript");
-    const hasPDFScript = !!document.getElementById("snippetJS-VSCodeLiteEdit");
-    if (hasThemeScript && hasPDFScript) return;
+    if (document.getElementById("themeScript") && document.getElementById("snippetJS-VSCodeLiteEdit")) return;
 
     // 获取自己的css表
     const cssTable = document.getElementById("themeStyle") as HTMLLinkElement;
@@ -100,6 +98,8 @@ window.destroyTheme = async () => {
 function addThemeToolBar() {
     // 如果是发布模式就不添加按钮
     if (window.siyuan?.isPublish) return;
+    // 如果不在主界面
+    if (!document.getElementById("themeScript")) return;
     // 避免重复添加
     if (document.getElementById("vscleToolbar")) return;
 
@@ -164,18 +164,20 @@ function addImports(table: HTMLLinkElement, labels: EnableSettings[]) {
     const sheet: CSSStyleSheet = table.sheet;
     const isMobile = document.body.classList.contains("vscmobile");
     let existBackgroundPlugin = sheet.cssRules.toString().includes("backgroundPlugin.css") || false;
+    const isExportPDF = !document.getElementById("themeScript");
     const rulesToInsert: string[] = [];
 
     for (const it of labels) {
         switch (it) {
             case "codeBlock":
-                rulesToInsert.push("@import url(sub/block/codeBlock.css);");
+                // TODO 因为导出PDF时候样式错乱，需要暂时禁用这个样式
+                if (!isExportPDF) rulesToInsert.push("@import url(sub/block/codeBlock.css);");
                 break;
             case "reference":
                 rulesToInsert.push("@import url(sub/block/reference.css);");
                 break;
             case "bazaar":
-                rulesToInsert.push("@import url(sub/app/bazaar.css);");
+                if (!isExportPDF) rulesToInsert.push("@import url(sub/app/bazaar.css);");
                 break;
             case "embeddedBlock":
                 rulesToInsert.push("@import url(sub/block/embeddedBlock.css);");
@@ -190,23 +192,23 @@ function addImports(table: HTMLLinkElement, labels: EnableSettings[]) {
                 rulesToInsert.push("@import url(sub/block/title-icon.css);");
                 break;
             case "shortcutPanel":
-                rulesToInsert.push("@import url(sub/plugin/keymapPlugin.css);");
+                if (!isExportPDF) rulesToInsert.push("@import url(sub/plugin/keymapPlugin.css);");
                 break;
             case "database":
-                rulesToInsert.push("@import url(sub/block/database.css);");
+                if (!isExportPDF) rulesToInsert.push("@import url(sub/block/database.css);");
                 break;
             case "doctree":
-                rulesToInsert.push("@import url(sub/app/filetree.css);");
+                if (!isExportPDF) rulesToInsert.push("@import url(sub/app/filetree.css);");
                 break;
             case "backgroundCoverDesktop":
             case "backgroundCoverMobile":
-                if (!existBackgroundPlugin) {
+                if (!existBackgroundPlugin && !isExportPDF) {
                     rulesToInsert.push("@import url(sub/plugin/backgroundPlugin.css);");
                     existBackgroundPlugin = true;
                 }
                 break;
             case "mathPanel":
-                if (!isMobile) {
+                if (!isMobile && !isExportPDF) {
                     rulesToInsert.push("@import url(sub/plugin/mathEnhance.css);");
                 }
                 break;
@@ -214,7 +216,7 @@ function addImports(table: HTMLLinkElement, labels: EnableSettings[]) {
                 rulesToInsert.push("@import url(sub/block/mark.css);");
                 break;
             case "doubleTabbar":
-                if (!isMobile) {
+                if (!isMobile && !isExportPDF) {
                     rulesToInsert.push("@import url(sub/plugin/doubleTabbar.css);");
                 }
                 break;
@@ -275,7 +277,7 @@ function addPDFScript() {
         snippet.async = true;
         snippet.src = themeScript.src;
         snippet.id = "snippetJS-VSCodeLiteEdit";
-        document.head.append(snippet);
+        document.head.appendChild(snippet);
     }
 }
 
