@@ -44,29 +44,8 @@ import { EnableSettings } from "./ts/types.d";
         removeCSSRules(cssTable);
         // 添加固定属性
         addFixedAttribute(labels);
-        // 修复导出pdf没有样式的问题，在空闲时间执行
-        if ("requestIdleCallback" in window) {
-            requestIdleCallback(async () => {
-                try {
-                    await addPdfStyle(labels);
-                } catch (e) {
-                    // 加载PDF导出预设失败只会影响导出PDF的视觉效果，不影响正常使用主题，没必要让用户知道这里报错了
-                    console.error(globalThis.localMessage.loadPDFPersetFail[globalThis.defLag]);
-                    console.error(e);
-                }
-            });
-        } else {
-            // 如果浏览器没有这个函数，就通过定时器执行
-            setTimeout(async () => {
-                try {
-                    await addPdfStyle(labels);
-                } catch (e) {
-                    // 加载PDF导出预设失败只会影响导出PDF的视觉效果，不影响正常使用主题，没必要让用户知道这里报错了
-                    console.error(globalThis.localMessage.loadPDFPersetFail[globalThis.defLag]);
-                    console.error(e);
-                }
-            }, 0);
-        }
+        // 在导出PDF时候执行主题的脚本
+        addPDFScript();
         // 加载完成(o゜▽゜)o☆
         console.log(globalThis.localMessage.loadFinish[globalThis.defLag]);
     } else {
@@ -79,7 +58,9 @@ import { EnableSettings } from "./ts/types.d";
 // ! 更换主题时移除修改内容
 window.destroyTheme = async () => {
     // 移除主题按钮
-    document.querySelector("#vscleToolbar").remove();
+    document.getElementById("vscleToolbar").remove();
+    // 移除PDF导出时执行的脚本
+    document.getElementById("snippetJS-VSCodeLiteEdit").remove();
     // 移除body特殊适配语句
     document.body.classList.remove("bgenable");
     document.body.classList.remove("vscmobile");
@@ -277,45 +258,17 @@ function addFixedAttribute(settings: EnableSettings[]) {
 }
 
 /**
- * ! 添加导出pdf时候的样式
- * @param lab EnableSettings[]
+ * ! 添加导出脚本，在导出PDF时可用
+ * @see https://github.com/siyuan-note/siyuan/issues/16300
+ * @requires SiYuan Note Version 3.4.1
  */
-async function addPdfStyle(lab: EnableSettings[]) {
-    // 如果是发布模式就不写入文件
-    if (window.siyuan?.isPublish) return;
-    const list: string[] = ['@charset "UTF-8";'];
-    for (const it of lab) {
-        switch (it) {
-            case "codeBlock":
-                list.push("@import url(block/codeBlock.css);");
-                break;
-            case "reference":
-                list.push("@import url(block/reference.css);");
-                break;
-            case "title":
-                list.push("@import url(block/title.css);");
-                break;
-            case "titleShadow":
-                list.push("@import url(block/title-shadow.css);");
-                break;
-            case "titleIcon":
-                list.push("@import url(block/title-icon.css);");
-                break;
-            case "database":
-                list.push("@import url(block/database.css);");
-                break;
-            case "mark":
-                list.push("@import url(block/mark.css);");
-                break;
-            case "tag":
-                list.push("@import url(block/tag.css);");
-                break;
-            default:
-                break;
-        }
-    }
-    const str = list.join("\n");
-    await _writeFile("/conf/appearance/themes/siyuan-vscodelite-edit/sub/pdfPreview.css", str);
+function addPDFScript() {
+    const themeScript = document.getElementById("themeScript") as HTMLScriptElement;
+    let snippet = document.createElement("script");
+    snippet.async = true;
+    snippet.src = themeScript.src;
+    snippet.id = "snippetJS-VSCodeLiteEdit";
+    document.head.append(snippet);
 }
 
 /**

@@ -1,9 +1,11 @@
 # ChangeLog
 
-## v2.5.3
+## v2.6.0
 
 - 数据库所有视图添加数据库标题下分割线
+- 更换导出PDF时应用主题样式方法
 - Add division line under database title for all views
+- Change method to add theme style for exporting PDF
 
 ## v2.5.2
 

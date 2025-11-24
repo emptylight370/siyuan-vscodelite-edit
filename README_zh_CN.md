@@ -42,8 +42,9 @@
 > 完整更新日志查看[changelog](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/changelog.md)
 > 提交历史日志查看[whatschange](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/whatschange.md)
 
-- v2.5.3
+- v2.6.0
   - 数据库所有视图添加数据库标题下分割线
+  - 更换导出PDF时应用主题样式方法(思源版本3.4.1)
 - v2.5.2
   - 数据库样式适配看板视图
   - 添加*自定义属性*以隐藏数据库添加条目按钮
