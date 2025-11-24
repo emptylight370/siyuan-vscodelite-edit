@@ -7,6 +7,11 @@ import { EnableSettings } from "./ts/types.d";
 // 主题默认加载时进行的行为
 // ! js代码加载后立即执行
 (async function () {
+    // 检查是否同时存在主题样式代码和PDF适配代码
+    const hasThemeScript = !!document.getElementById("themeScript");
+    const hasPDFScript = !!document.getElementById("snippetJS-VSCodeLiteEdit");
+    if (hasThemeScript && hasPDFScript) return;
+
     // 获取自己的css表
     const cssTable = document.getElementById("themeStyle") as HTMLLinkElement;
     // 添加全局变量
@@ -263,12 +268,15 @@ function addFixedAttribute(settings: EnableSettings[]) {
  * @requires SiYuan Note Version 3.4.1
  */
 function addPDFScript() {
-    const themeScript = document.getElementById("themeScript") as HTMLScriptElement;
-    let snippet = document.createElement("script");
-    snippet.async = true;
-    snippet.src = themeScript.src;
-    snippet.id = "snippetJS-VSCodeLiteEdit";
-    document.head.append(snippet);
+    const isExist = !!document.getElementById("snippetJS-VSCodeLiteEdit");
+    if (!isExist) {
+        const themeScript = document.getElementById("themeScript") as HTMLScriptElement;
+        let snippet = document.createElement("script");
+        snippet.async = true;
+        snippet.src = themeScript.src;
+        snippet.id = "snippetJS-VSCodeLiteEdit";
+        document.head.append(snippet);
+    }
 }
 
 /**
