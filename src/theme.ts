@@ -4,8 +4,12 @@ import { bg, bgobserver } from "./ts/plugins/background";
 import { createSettingsWindow, getSettings } from "./ts/setting";
 import { EnableSettings } from "./ts/types.d";
 
-// 主题默认加载时进行的行为
-// ! js代码加载后立即执行
+/**
+ * @description 主题默认加载时进行的行为
+ * ! js代码加载后立即执行
+ * @since 1.2.0
+ * @version 2.6.0
+ */
 (async function () {
     // 获取自己的css表
     const cssTable = document.getElementById("themeStyle") as HTMLLinkElement;
@@ -76,7 +80,11 @@ import { EnableSettings } from "./ts/types.d";
     }
 })();
 
-// ! 更换主题时移除修改内容
+/**
+ * ! 更换主题时移除修改内容
+ * @since 1.2.0
+ * @version 2.6.0
+ */
 window.destroyTheme = async () => {
     // 移除主题按钮
     document.querySelector("#vscleToolbar").remove();
@@ -110,6 +118,8 @@ window.destroyTheme = async () => {
 
 /**
  * 创建工具栏的按钮
+ * @since 1.2.0
+ * @version 2.5.0
  */
 function addThemeToolBar() {
     // 如果是发布模式就不添加按钮
@@ -173,6 +183,8 @@ function addThemeToolBar() {
  * 向css表中插入引用的语句
  * @param table \<link stylesheet\>
  * @param labels EnableSettings[]
+ * @since 1.3.0
+ * @version 2.5.1
  */
 function addImports(table: HTMLLinkElement, labels: EnableSettings[]) {
     const sheet: CSSStyleSheet = table.sheet;
@@ -258,6 +270,8 @@ function addImports(table: HTMLLinkElement, labels: EnableSettings[]) {
 /**
  * ! 添加固定属性
  * @param settings EnableSettings[]
+ * @since 1.3.5
+ * @version 2.5.0
  */
 function addFixedAttribute(settings: EnableSettings[]) {
     const isMobile = document.body.classList.contains("vscmobile");
@@ -323,6 +337,8 @@ async function addPdfStyle(lab: EnableSettings[]) {
 /**
  * 移除CSS规则，用于在可加载js的时候去掉PDF导出适配
  * @param table \<link stylesheet\>
+ * @since 1.5.0
+ * @version 2.5.0
  */
 function removeCSSRules(table: HTMLLinkElement) {
     const sheet = table.sheet as CSSStyleSheet;

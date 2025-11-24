@@ -4,6 +4,8 @@ import { EnableSettings, LocalMessage, SettingItem, SettingPanelId, ThemeConfig 
 
 /**
  * 创建一个包含标签和复选框的 HTML 结构
+ * @since 1.2.2
+ * @version 2.5.1
  */
 export async function createSettingsWindow() {
     // 获取设置数组
@@ -123,6 +125,13 @@ export async function createSettingsWindow() {
     buttons.appendChild(refreshButton);
     dialogBody.appendChild(buttons);
 
+    /**
+     * 在鼠标移动到对应元素时候显示对应的提示
+     * @param element 元素
+     * @param messageKey 消息key名称
+     * @since 2.5.0
+     * @version 2.5.0
+     */
     function changeHints(element: HTMLElement, messageKey: keyof LocalMessage) {
         const showMessage = () => {
             hints.innerText = globalThis.localMessage[messageKey][globalThis.defLag] as string;
@@ -138,6 +147,8 @@ export async function createSettingsWindow() {
  * @param name 标签页名称
  * @param id 标签页id
  * @returns HTMLDivElement
+ * @since 2.5.0
+ * @version 2.5.0
  */
 function createTab(name: string, id: string) {
     const tab = document.createElement("div");
@@ -158,6 +169,8 @@ function createTab(name: string, id: string) {
 /**
  * NOTE 切换标签页的工具函数
  * @param event 鼠标点击事件
+ * @since 2.5.0
+ * @version 2.5.0
  */
 function switchTab(event: MouseEvent) {
     // 点击目标
@@ -190,6 +203,8 @@ function switchTab(event: MouseEvent) {
  * @param siyuan 思源标签页
  * @param plugin 插件标签页
  * @param setting 单个设置项
+ * @since 2.5.0
+ * @version 2.5.1
  */
 function addSettingsToPage(siyuan: HTMLDivElement, plugin: HTMLDivElement, setting: SettingItem) {
     let label: HTMLDivElement | HTMLSpanElement;
@@ -246,6 +261,8 @@ function addSettingsToPage(siyuan: HTMLDivElement, plugin: HTMLDivElement, setti
 
 /**
  * NOTE 工具函数，保存设置并刷新思源
+ * @since 1.2.2
+ * @version 2.5.1
  */
 async function closeAndSave() {
     const dialog = document.getElementById("vsceThemeSettingDialog");
@@ -279,6 +296,8 @@ async function closeAndSave() {
 
 /**
  * NOTE 工具函数，不保存设置
+ * @since 1.2.2
+ * @version 2.5.1
  */
 function closeNotSave() {
     const dialog = document.getElementById("vsceThemeSettingDialog");
@@ -292,6 +311,8 @@ function closeNotSave() {
 /**
  * NOTE 获取设置文件数组
  * @returns Promise\<SettingItem[]\>
+ * @since 2.1.0
+ * @version 2.5.1
  */
 async function fetchSettingsArray() {
     const config: ThemeConfig | null = await _getFile("/data/snippets/vsc_edit.config.json");
@@ -305,6 +326,8 @@ async function fetchSettingsArray() {
  * NOTE 定义向设置面板中添加的设置项（数组）
  * @param v ThemeConfig
  * @returns Promise\<SettingItem[]\>
+ * @since 2.1.0
+ * @version 2.5.1
  */
 async function getSettingArrays(v: ThemeConfig) {
     let settings: SettingItem[] = [];
@@ -419,6 +442,8 @@ async function getSettingArrays(v: ThemeConfig) {
 /**
  * ! 获取设置
  * @returns Promise\<EnableSettings[]\>
+ * @since 1.2.0
+ * @version 2.4.2
  */
 export async function getSettings(): Promise<EnableSettings[]> {
     // var res = _analyseResponse(_getFile("/data/snippets/vsc_edit.config.json"));
@@ -436,6 +461,8 @@ export async function getSettings(): Promise<EnableSettings[]> {
  * ! 保存设置
  * @param settings
  * @returns Promise\<void\>
+ * @since 1.2.0
+ * @version 2.4.2
  */
 export async function putSettings(settings: ThemeConfig) {
     if (settings == null) {
@@ -448,6 +475,8 @@ export async function putSettings(settings: ThemeConfig) {
  * ! 获取当前启用的设置并返回对应的列表
  * @param settings
  * @returns Promise\<EnableSettings[]\>
+ * @since 1.2.0
+ * @version 2.5.1
  */
 async function showElementSettings(settings: ThemeConfig) {
     let lab: EnableSettings[] = [];

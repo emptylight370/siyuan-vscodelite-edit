@@ -1,6 +1,8 @@
 /**
  * 检测背景图片插件是否在运行
  * @param times 运行次数
+ * @since 1.3.5
+ * @version 2.5.2
  */
 export function bg(times: number) {
     // 背景自定义插件，部分情况下插件加载缓慢可重复检测一次
@@ -29,6 +31,8 @@ export function bg(times: number) {
 /**
  * 监听背景图片插件的属性修改
  * @param times 运行次数
+ * @since 1.4.0
+ * @version 2.4.2
  */
 export function bgobserver(times: number) {
     const bglayer = document.getElementById("bglayer");

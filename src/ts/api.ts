@@ -11,6 +11,8 @@
  * @param url 请求url
  * @param data 请求数据(json encode)
  * @returns Promise\<any\>?
+ * @since 1.2.0
+ * @version 2.3.0
  */
 export async function _rqFORSiyuan(url: string, data: any) {
     try {
@@ -37,6 +39,8 @@ export async function _rqFORSiyuan(url: string, data: any) {
  * @param then then?
  * @param obj obj?
  * @returns 文件内容
+ * @since 1.2.0
+ * @version 2.3.0
  */
 export async function _getFile(path: string) {
     const result = await _rqFORSiyuan("/api/file/getFile", {
@@ -74,6 +78,8 @@ export async function _getFile(path: string) {
  * @param isDir 是否是路径
  * @param modTime 修改时间
  * @returns Promise\<void\>
+ * @since 1.2.0
+ * @version 2.3.0
  */
 export async function _writeFile(path: string, filedata: any, isDir = false, modTime = Date.now()) {
     let blob = new Blob([filedata]);
@@ -104,6 +110,8 @@ export async function _writeFile(path: string, filedata: any, isDir = false, mod
  * @param message 消息内容
  * @param time 持续时间 - "number" | "null"
  * @returns Promise\<void\>
+ * @since 1.2.2
+ * @version 2.4.2
  */
 export async function _postMessage(type: "ok" | "error", message: string, time = null) {
     let url: string;
@@ -124,6 +132,8 @@ export async function _postMessage(type: "ok" | "error", message: string, time =
 /**
  * 重新加载页面
  * @returns Promise\<void\>
+ * @since 2.3.9
+ * @version 2.4.2
  */
 export async function _reloadInterface() {
     const url = "/api/ui/reloadUI";

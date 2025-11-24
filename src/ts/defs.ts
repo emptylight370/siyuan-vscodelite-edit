@@ -2,10 +2,14 @@ import { TLang } from "./types.d";
 
 /**
  * 加载全局变量
+ * @since 1.3.3
+ * @version 2.5.0
  */
 export async function loadGlobalVars() {
     /**
      * ! 默认配置文件
+     * @since 1.2.0
+     * @version 2.3.0
      */
     globalThis.defaultConf = {
         version: 12,
@@ -33,6 +37,8 @@ export async function loadGlobalVars() {
 
     /**
      * ! 默认消息本地化
+     * @since 1.3.3
+     * @version 2.5.0
      */
     globalThis.localMessage = {
         language: {
@@ -226,7 +232,11 @@ export async function loadGlobalVars() {
         }
     }
 
-    // ! 所有用到的计时器
+    /**
+     * ! 所有用到的计时器
+     * @since 1.3.5
+     * @version 2.5.0
+     */
     globalThis.vscTimer = {
         // 背景插件加载后可能禁用，使用计时器定时刷新背景插件状态
         bgTimer: null,
@@ -236,7 +246,11 @@ export async function loadGlobalVars() {
         settingMobile: null,
     };
 
-    // ! 所有用到的监听器
+    /**
+     * ! 所有用到的监听器
+     * @since 1.4.0
+     * @version 2.2.2
+     */
     globalThis.vscObserver = {
         // 背景插件观察器
         bgObserver: null,
