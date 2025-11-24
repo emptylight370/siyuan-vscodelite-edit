@@ -177,7 +177,9 @@ function addThemeToolBar() {
 function addImports(table: HTMLLinkElement, labels: EnableSettings[]) {
     const sheet: CSSStyleSheet = table.sheet;
     const isMobile = document.body.classList.contains("vscmobile");
-    let existBackgroundPlugin = sheet.cssRules.toString().includes("backgroundPlugin.css") || false;
+    let existBackgroundPlugin = Array.from(sheet.cssRules).some((rule) =>
+        rule.cssText.includes("backgroundPlugin.css"),
+    );
     const rulesToInsert: string[] = [];
 
     for (const it of labels) {
