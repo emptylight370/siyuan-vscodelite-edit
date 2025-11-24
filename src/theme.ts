@@ -44,7 +44,8 @@ import { EnableSettings } from "./ts/types.d";
         // 向css中插入语句
         addImports(cssTable, labels);
         // 移除CSS规则
-        removeCSSRules(cssTable);
+        // TODO 现在暂不需要移除规则，等待后续判断
+        // removeCSSRules(cssTable);
         // 添加固定属性
         addFixedAttribute(labels);
         // 在导出PDF时候执行主题的脚本
@@ -299,5 +300,6 @@ function removeCSSRules(table: HTMLLinkElement) {
     }
 
     // 移除 @import("sub/pdfPreview.css") 规则
-    removeImportRule(sheet, "sub/pdfPreview.css");
+    // TODO 现在不需要移除这个规则，等待后续合并提交时候判断
+    // removeImportRule(sheet, "sub/pdfPreview.css");
 }
