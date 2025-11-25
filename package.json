@@ -15,7 +15,7 @@
     "watch:ts": "rollup -c -w",
     "watch": "npm-run-all --parallel watch:scss && npm run watch:ts",
     "clean:scss": "rimraf theme.css theme.css.map sub",
-    "clean:ts": "rimraf theme.js ts theme.d.ts",
+    "clean:ts": "rimraf theme.js",
     "clean": "npm-run-all clean:scss && npm run clean:ts",
     "changelog": "conventional-changelog -i whatschange.md -s -n conventional-changelog.config.json -k theme.json -c theme.json && prettier -w whatschange.md"
   },
@@ -34,9 +34,9 @@
     "@rollup/plugin-typescript": "^12.3.0",
     "npm-run-all": "^4.1.5",
     "prettier": "^3.6.2",
-    "rimraf": "^6.1.0",
+    "rimraf": "^6.1.2",
     "rollup": "^4.53.3",
-    "sass": "^1.94.1",
+    "sass": "^1.94.2",
     "tslib": "^2.8.1",
     "typescript": "^5.9.3"
   }
