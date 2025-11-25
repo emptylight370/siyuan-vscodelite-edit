@@ -42,8 +42,9 @@ Limited by the configuration loading method, updated configurations for new vers
 > Full changelog view [ChangeLog](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/changelog.md)
 > Commit history view [whatschange](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/whatschange.md)
 
-- v2.5.3
+- v2.6.0
   - Add division line under database title for all views
+  - Change method to add theme style for exporting PDF(SiYuan version 3.4.1)
 - v2.5.2
   - Database style adapt to kanban view
   - Add _custom attribute_ to hide database add entry button

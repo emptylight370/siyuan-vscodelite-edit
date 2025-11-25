@@ -11,6 +11,9 @@ import { EnableSettings } from "./ts/types.d";
  * @version 2.6.0
  */
 (async function () {
+    // 检查是否同时存在主题样式代码和PDF适配代码
+    if (document.getElementById("themeScript") && document.getElementById("snippetJS-VSCodeLiteEdit")) return;
+
     // 获取自己的css表
     const cssTable = document.getElementById("themeStyle") as HTMLLinkElement;
     // 添加全局变量
@@ -45,32 +48,12 @@ import { EnableSettings } from "./ts/types.d";
         // 向css中插入语句
         addImports(cssTable, labels);
         // 移除CSS规则
-        removeCSSRules(cssTable);
+        // TODO 现在暂不需要移除规则，等待后续判断
+        // removeCSSRules(cssTable);
         // 添加固定属性
         addFixedAttribute(labels);
-        // 修复导出pdf没有样式的问题，在空闲时间执行
-        if ("requestIdleCallback" in window) {
-            requestIdleCallback(async () => {
-                try {
-                    await addPdfStyle(labels);
-                } catch (e) {
-                    // 加载PDF导出预设失败只会影响导出PDF的视觉效果，不影响正常使用主题，没必要让用户知道这里报错了
-                    console.error(globalThis.localMessage.loadPDFPersetFail[globalThis.defLag]);
-                    console.error(e);
-                }
-            });
-        } else {
-            // 如果浏览器没有这个函数，就通过定时器执行
-            setTimeout(async () => {
-                try {
-                    await addPdfStyle(labels);
-                } catch (e) {
-                    // 加载PDF导出预设失败只会影响导出PDF的视觉效果，不影响正常使用主题，没必要让用户知道这里报错了
-                    console.error(globalThis.localMessage.loadPDFPersetFail[globalThis.defLag]);
-                    console.error(e);
-                }
-            }, 0);
-        }
+        // 在导出PDF时候执行主题的脚本
+        addPDFScript();
         // 加载完成(o゜▽゜)o☆
         console.log(globalThis.localMessage.loadFinish[globalThis.defLag]);
     } else {
@@ -87,7 +70,9 @@ import { EnableSettings } from "./ts/types.d";
  */
 window.destroyTheme = async () => {
     // 移除主题按钮
-    document.querySelector("#vscleToolbar").remove();
+    document.getElementById("vscleToolbar").remove();
+    // 移除PDF导出时执行的脚本
+    document.getElementById("snippetJS-VSCodeLiteEdit").remove();
     // 移除body特殊适配语句
     document.body.classList.remove("bgenable");
     document.body.classList.remove("vscmobile");
@@ -124,6 +109,8 @@ window.destroyTheme = async () => {
 function addThemeToolBar() {
     // 如果是发布模式就不添加按钮
     if (window.siyuan?.isPublish) return;
+    // 如果不在主界面
+    if (!document.getElementById("themeScript")) return;
     // 避免重复添加
     if (document.getElementById("vscleToolbar")) return;
 
@@ -192,6 +179,7 @@ function addImports(table: HTMLLinkElement, labels: EnableSettings[]) {
     let existBackgroundPlugin = Array.from(sheet.cssRules).some((rule) =>
         rule.cssText.includes("backgroundPlugin.css"),
     );
+    const isExportPDF = !document.getElementById("themeScript");
     const rulesToInsert: string[] = [];
 
     for (const it of labels) {
@@ -203,7 +191,7 @@ function addImports(table: HTMLLinkElement, labels: EnableSettings[]) {
                 rulesToInsert.push("@import url(sub/block/reference.css);");
                 break;
             case "bazaar":
-                rulesToInsert.push("@import url(sub/app/bazaar.css);");
+                if (!isExportPDF) rulesToInsert.push("@import url(sub/app/bazaar.css);");
                 break;
             case "embeddedBlock":
                 rulesToInsert.push("@import url(sub/block/embeddedBlock.css);");
@@ -218,23 +206,23 @@ function addImports(table: HTMLLinkElement, labels: EnableSettings[]) {
                 rulesToInsert.push("@import url(sub/block/title-icon.css);");
                 break;
             case "shortcutPanel":
-                rulesToInsert.push("@import url(sub/plugin/keymapPlugin.css);");
+                if (!isExportPDF) rulesToInsert.push("@import url(sub/plugin/keymapPlugin.css);");
                 break;
             case "database":
-                rulesToInsert.push("@import url(sub/block/database.css);");
+                if (!isExportPDF) rulesToInsert.push("@import url(sub/block/database.css);");
                 break;
             case "doctree":
-                rulesToInsert.push("@import url(sub/app/filetree.css);");
+                if (!isExportPDF) rulesToInsert.push("@import url(sub/app/filetree.css);");
                 break;
             case "backgroundCoverDesktop":
             case "backgroundCoverMobile":
-                if (!existBackgroundPlugin) {
+                if (!existBackgroundPlugin && !isExportPDF) {
                     rulesToInsert.push("@import url(sub/plugin/backgroundPlugin.css);");
                     existBackgroundPlugin = true;
                 }
                 break;
             case "mathPanel":
-                if (!isMobile) {
+                if (!isMobile && !isExportPDF) {
                     rulesToInsert.push("@import url(sub/plugin/mathEnhance.css);");
                 }
                 break;
@@ -242,7 +230,7 @@ function addImports(table: HTMLLinkElement, labels: EnableSettings[]) {
                 rulesToInsert.push("@import url(sub/block/mark.css);");
                 break;
             case "doubleTabbar":
-                if (!isMobile) {
+                if (!isMobile && !isExportPDF) {
                     rulesToInsert.push("@import url(sub/plugin/doubleTabbar.css);");
                 }
                 break;
@@ -293,45 +281,20 @@ function addFixedAttribute(settings: EnableSettings[]) {
 }
 
 /**
- * ! 添加导出pdf时候的样式
- * @param lab EnableSettings[]
+ * ! 添加导出脚本，在导出PDF时可用
+ * @see https://github.com/siyuan-note/siyuan/issues/16300
+ * @requires SiYuan Note Version 3.4.1
  */
-async function addPdfStyle(lab: EnableSettings[]) {
-    // 如果是发布模式就不写入文件
-    if (window.siyuan?.isPublish) return;
-    const list: string[] = ['@charset "UTF-8";'];
-    for (const it of lab) {
-        switch (it) {
-            case "codeBlock":
-                list.push("@import url(block/codeBlock.css);");
-                break;
-            case "reference":
-                list.push("@import url(block/reference.css);");
-                break;
-            case "title":
-                list.push("@import url(block/title.css);");
-                break;
-            case "titleShadow":
-                list.push("@import url(block/title-shadow.css);");
-                break;
-            case "titleIcon":
-                list.push("@import url(block/title-icon.css);");
-                break;
-            case "database":
-                list.push("@import url(block/database.css);");
-                break;
-            case "mark":
-                list.push("@import url(block/mark.css);");
-                break;
-            case "tag":
-                list.push("@import url(block/tag.css);");
-                break;
-            default:
-                break;
-        }
+function addPDFScript() {
+    const isExist = !!document.getElementById("snippetJS-VSCodeLiteEdit");
+    if (!isExist) {
+        const themeScript = document.getElementById("themeScript") as HTMLScriptElement;
+        let snippet = document.createElement("script");
+        snippet.async = true;
+        snippet.src = themeScript.src;
+        snippet.id = "snippetJS-VSCodeLiteEdit";
+        document.head.appendChild(snippet);
     }
-    const str = list.join("\n");
-    await _writeFile("/conf/appearance/themes/siyuan-vscodelite-edit/sub/pdfPreview.css", str);
 }
 
 /**
@@ -355,5 +318,6 @@ function removeCSSRules(table: HTMLLinkElement) {
     }
 
     // 移除 @import("sub/pdfPreview.css") 规则
-    removeImportRule(sheet, "sub/pdfPreview.css");
+    // TODO 现在不需要移除这个规则，等待后续合并提交时候判断
+    // removeImportRule(sheet, "sub/pdfPreview.css");
 }
