@@ -21,9 +21,15 @@ import { EnableSettings } from "./ts/types.d";
         await loadGlobalVars();
     } catch (e) {
         // 基本上意味着主题启用失败了
-        console.error(globalThis.localMessage.loadVariableFail[globalThis.defLag]);
+        let errMsg: string;
+        if (document.documentElement.lang === "zh_CN") {
+            errMsg = "加载主题VSCode Lite Edit失败，无法加载变量";
+        } else {
+            errMsg = "Load theme VSCode Lite Edit failed, can't load variables";
+        }
+        console.error(errMsg);
         console.error(e);
-        await _postMessage("error", globalThis.localMessage.loadVariableFail[globalThis.defLag]);
+        await _postMessage("error", errMsg);
         return;
     }
     // console.log(defLag);
@@ -74,22 +80,22 @@ window.destroyTheme = async () => {
     document.body.classList.remove("bgenable");
     document.body.classList.remove("vscmobile");
     // 移除计时器
-    for (let key in globalThis.vscTimer) {
+    Object.keys(globalThis.vscTimer).forEach((key) => {
         if (globalThis.vscTimer[key] !== null) {
             // console.log("remove timer");
             // 可以清除 timeout 和 interval
             clearTimeout(globalThis.vscTimer[key]);
             globalThis.vscTimer[key] = null;
         }
-    }
+    });
     // 移除监视器
-    for (let key in globalThis.vscObserver) {
+    Object.keys(globalThis.vscObserver).forEach((key) => {
         if (globalThis.vscObserver[key] !== null) {
             // console.log("remove observer");
-            globalThis.vscObserver[key].disconnect();
+            (globalThis.vscObserver[key] as MutationObserver).disconnect();
             globalThis.vscObserver[key] = null;
         }
-    }
+    });
     // 删除全局变量
     delete globalThis.defaultConf;
     delete globalThis.localMessage;

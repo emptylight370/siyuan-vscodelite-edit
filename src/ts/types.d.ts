@@ -65,8 +65,6 @@ export interface LocalMessage {
     loadFinish: Record<string, string>;
     /** 写入PDF适配文件失败 */
     loadPDFPersetFail: Record<string, string>;
-    /** 加载变量失败 */
-    loadVariableFail: Record<string, string>;
 
     // * 设置按钮提示文本
     /** 主题设置按钮提示文本 */
