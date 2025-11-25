@@ -47,9 +47,6 @@ import { EnableSettings } from "./ts/types.d";
         addThemeToolBar();
         // 向css中插入语句
         addImports(cssTable, labels);
-        // 移除CSS规则
-        // TODO 现在暂不需要移除规则，等待后续判断
-        // removeCSSRules(cssTable);
         // 添加固定属性
         addFixedAttribute(labels);
         // 在导出PDF时候执行主题的脚本
@@ -171,7 +168,7 @@ function addThemeToolBar() {
  * @param table \<link stylesheet\>
  * @param labels EnableSettings[]
  * @since 1.3.0
- * @version 2.5.1
+ * @version 2.6.0
  */
 function addImports(table: HTMLLinkElement, labels: EnableSettings[]) {
     const sheet: CSSStyleSheet = table.sheet;
@@ -284,6 +281,8 @@ function addFixedAttribute(settings: EnableSettings[]) {
  * ! 添加导出脚本，在导出PDF时可用
  * @see https://github.com/siyuan-note/siyuan/issues/16300
  * @requires SiYuan Note Version 3.4.1
+ * @since 2.6.0
+ * @version 2.6.0
  */
 function addPDFScript() {
     const isExist = !!document.getElementById("snippetJS-VSCodeLiteEdit");
@@ -295,29 +294,4 @@ function addPDFScript() {
         snippet.id = "snippetJS-VSCodeLiteEdit";
         document.head.appendChild(snippet);
     }
-}
-
-/**
- * 移除CSS规则，用于在可加载js的时候去掉PDF导出适配
- * @param table \<link stylesheet\>
- * @since 1.5.0
- * @version 2.5.0
- */
-function removeCSSRules(table: HTMLLinkElement) {
-    const sheet = table.sheet as CSSStyleSheet;
-
-    // 移除特定的 @import 规则
-    function removeImportRule(sheet: CSSStyleSheet, url: string) {
-        for (let i = sheet.cssRules.length - 1; i >= 0; i--) {
-            const rule = sheet.cssRules[i];
-            if (rule instanceof CSSImportRule && rule.href.includes(url)) {
-                sheet.deleteRule(i);
-                break; // 找到并删除目标规则后停止遍历
-            }
-        }
-    }
-
-    // 移除 @import("sub/pdfPreview.css") 规则
-    // TODO 现在不需要移除这个规则，等待后续合并提交时候判断
-    // removeImportRule(sheet, "sub/pdfPreview.css");
 }
