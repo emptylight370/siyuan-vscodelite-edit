@@ -183,6 +183,7 @@ function addImports(table: HTMLLinkElement, labels: EnableSettings[]) {
         rule.cssText.includes("backgroundPlugin.css"),
     );
     const isExportPDF = !document.getElementById("themeScript");
+    const isApplyTitle = labels.includes("title");
     const rulesToInsert: string[] = [];
 
     for (const it of labels) {
@@ -203,10 +204,10 @@ function addImports(table: HTMLLinkElement, labels: EnableSettings[]) {
                 rulesToInsert.push("@import url(sub/block/title.css);");
                 break;
             case "titleShadow":
-                rulesToInsert.push("@import url(sub/block/title-shadow.css);");
+                if (isApplyTitle) rulesToInsert.push("@import url(sub/block/title-shadow.css);");
                 break;
             case "titleIcon":
-                rulesToInsert.push("@import url(sub/block/title-icon.css);");
+                if (isApplyTitle) rulesToInsert.push("@import url(sub/block/title-icon.css);");
                 break;
             case "shortcutPanel":
                 if (!isExportPDF) rulesToInsert.push("@import url(sub/plugin/keymapPlugin.css);");

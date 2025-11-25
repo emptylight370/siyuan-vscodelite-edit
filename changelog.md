@@ -4,8 +4,10 @@
 
 - 数据库所有视图添加数据库标题下分割线
 - 更换导出PDF时应用主题样式方法
+- 修复标题样式子开关不跟随主开关问题
 - Add division line under database title for all views
 - Change method to add theme style for exporting PDF
+- Fixed an issue where the title style sub switch did not follow the main switch
 
 ## v2.5.2
 
