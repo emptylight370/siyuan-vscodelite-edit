@@ -44,8 +44,9 @@ Limited by the configuration loading method, updated configurations for new vers
 
 - v2.6.0
   - Add division line under database title for all views
-  - Change method to add theme style for exporting PDF(SiYuan version 3.4.1)
+  - Change method to add theme style for exporting PDF(Require SiYuan version 3.4.1)
   - Fixed an issue where the title style sub switch did not follow the main switch
+  - Optimize code
 - v2.5.2
   - Database style adapt to kanban view
   - Add _custom attribute_ to hide database add entry button
