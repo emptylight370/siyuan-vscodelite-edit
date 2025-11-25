@@ -1,3 +1,45 @@
+## [2.6.0](https://github.com/emptylight370/siyuan-vscodelite-edit/compare/2.5.2...2.6.0) (2025-11-25)
+
+### ⚠ BREAKING CHANGES
+
+- 需要思源版本3.4.1及以上
+
+### ✨ Features | 功能
+
+- 为数据库所有视图添加标题分隔线 ([ac9eace](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/ac9eace673e1051b643bdb1ab409a253b0450898))
+- 移除从样式文件中去掉pdf样式的代码 ([25ae98e](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/25ae98eb8212e93b6243ac8b5f1ca00de2578798))
+- 在导出PDF时调用主题js ([fbea09a](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/fbea09aaf581ab225de99592670a573b7e9fd6a7))
+
+### 🐛 Bug Fixes | 问题修复
+
+- 没有特殊适配导致主题初始化代码一直执行 ([b81ab22](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/b81ab22581408c5018b8731676c71436c7a46d7d))
+- 稍微修改具体执行代码，去掉SCSS中引用PDF样式 ([00dfeee](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/00dfeee471956c3db5f102d4524c8a0a234bdba6))
+- 修复标题样式子开关不跟随主开关问题 ([161eeff](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/161eeffe735f37186aa860489bef1c29dcfe0179))
+- **build:** 拉取一定数量的提交以生成提交日志 ([a5b565b](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/a5b565be8ef7785513dad9731a8fb1321d987b6a))
+
+### 📄 Documentation | 文档
+
+- 更新链接 ([643b110](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/643b110c47000fe9310a318fdf5a3c5737c0f2d1))
+- 更新说明文本 ([877e157](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/877e157e142020b2d70f2afb5f17efb9b1e14275))
+- 完善更新日志 ([c7c6fd9](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/c7c6fd92ded4c42e08a542cf073869158c17b9c0))
+
+### ⚡ Performance | 性能优化
+
+- 压缩图片大小 ([94877b8](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/94877b8eae7388f0f7c384e5e9ec8f99e76a89fb))
+- 优化代码 ([f7a6256](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/f7a62568949c3663baeac718da9d22a541c9b231))
+- 优化导出PDF时执行代码 ([d789933](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/d789933ca963be75c7e8e1a7175247d889988f22))
+- 优化添加样式时检查存在性代码 ([93bc272](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/93bc272658e2a74134b0ce9c6bc4d85a5a47f3f8))
+- 暂停执行移除CSS样式代码 ([ee23b30](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/ee23b30a09ca85a3cfd5abe295978320a1609b29))
+- 重构样式文件，加快加载速度 ([7524b3a](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/7524b3a6980a2ffc7a2dae46d6a12cec0440d86e))
+
+### ⏪ Reverts | 回退
+
+- 发现问题消失，回退代码块相关修改 ([e298bf2](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/e298bf2bea684dc8322ef701f5e8b8c2cf45297b)), closes [#30](https://github.com/emptylight370/siyuan-vscodelite-edit/issues/30)
+
+### 🛠️ Build system | 构建系统
+
+- 限定仅有主分支的提交能触发构建 ([3122139](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/31221397ba01b1265bef3720d60d1f0536309b5e))
+
 ## [2.5.2](https://github.com/emptylight370/siyuan-vscodelite-edit/compare/2.5.1...2.5.2) (2025-11-19)
 
 ### ✨ Features | 功能
