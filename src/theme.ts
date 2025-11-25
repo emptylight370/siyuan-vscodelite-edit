@@ -242,7 +242,7 @@ function addImports(table: HTMLLinkElement, labels: EnableSettings[]) {
         }
     }
 
-    let index = 4;
+    let index = 0;
     for (const rule of rulesToInsert) {
         try {
             sheet.insertRule(rule, index);

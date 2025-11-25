@@ -1,63 +1,61 @@
 @charset "UTF-8";
 /* 导入定义的颜色 */
-@import url(sub/color.css);
-
-/* 动态引用内容 */
+@use "src/color";
 
 /* 插件适配，不用的就注释掉 */
 /* 快捷键面板 */
-/* @import url(sub/plugin/keymapPlugin.css); */
+// @use "src/plugin/keymapPlugin";
 /* 数学公式优化 */
-/* @import url(sub/plugin/mathEnhance.css); */
+// @use "src/plugin/mathEnhance";
 /* 背景插件适配 */
-/* @import url(sub/plugin/backgroundPlugin.css); */
+// @use "src/plugin/backgroundPlugin";
 
 /* 正式内容 */
 /* 应用程序底部状态栏 */
-@import url(sub/app/statusBar.css);
+@use "src/app/statusBar";
 /* 应用程序顶部标题栏 */
-@import url(sub/app/toolbarHead.css);
+@use "src/app/toolbarHead";
 /* 应用程序页面标签 */
-@import url(sub/app/tabBar.css);
+@use "src/app/tabBar";
 /* 应用程序dock栏 */
-@import url(sub/app/dock.css);
+@use "src/app/dock";
 /* 导出预览面板 */
-@import url(sub/app/export.css);
+@use "src/app/export";
 /* 到处的滚动条 */
-@import url(sub/app/scrollbar.css);
+@use "src/app/scrollbar";
 /* 文档树和大纲 */
-/* @import url(sub/app/filetree.css); */
+// @use "src/app/filetree";
 /* 文档面包屑 */
-@import url(sub/app/breadcrumb.css);
+@use "src/app/breadcrumb";
 /* 跟块有关的内容，比如块标 */
-@import url(sub/app/block.css);
+@use "src/app/block";
 /* 隐藏一些内容，同时修改一些特殊样式 */
-@import url(sub/app/special.css);
+@use "src/app/special";
 /* 通用菜单，文章标签页右侧的下拉列表 */
-@import url(sub/app/commonmenu.css);
+@use "src/app/commonmenu";
 /* 标题标签h123456 */
-/* @import url(sub/block/title.css); */
+// @use "src/block/title";
 /* 列表样式 */
-@import url(sub/block/list.css);
+@use "src/block/list";
 /* 代码块样式 */
-/* @import url(sub/block/codeBlock.css); */
+// @use "src/block/codeBlock";
 /* 高亮样式 */
-/* @import url(sub/block/mark.css); */
+// @use "src/block/mark";
 /* 集市相关样式 */
-/* @import url(sub/app/bazaar.css); */
+// @use "src/app/bazaar";
 /* 引用锚文本样式 */
-/* @import url(sub/block/reference.css); */
+// @use "src/block/reference";
 /* 嵌入块样式 */
-/* @import url(sub/block/embeddedBlock.css); */
+// @use "src/block/embeddedBlock";
 /* 主题设置面板 */
-@import url(sub/app/SettingPanel.css);
+@use "src/app/SettingPanel";
 /* 数据库样式 */
-/* @import url(sub/block/database.css); */
+// @use "src/block/database";
 /* 表格样式 */
-@import url(sub/block/table.css);
+@use "src/block/table";
 /* 标签样式 */
-/* @import url(sub/block/tag.css); */
+// @use "src/block/tag";
 /* 自定义属性样式文件 */
-@import url(sub/plugin/customAttribute.css);
+@use "src/plugin/customAttribute";
 /* 折叠块样式 */
-@import url(sub/block/fold.css);
+@use "src/block/fold";

@@ -47,6 +47,7 @@ Limited by the configuration loading method, updated configurations for new vers
   - Change method to add theme style for exporting PDF(Require SiYuan version 3.4.1)
   - Optimize code executing when exporting PDF
   - Fixed an issue where the title style sub switch did not follow the main switch
+  - Refactor style file to speed up loading
   - Optimize code
 - v2.5.2
   - Database style adapt to kanban view
