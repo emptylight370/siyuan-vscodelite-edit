@@ -226,17 +226,13 @@ function addImports(table: HTMLLinkElement, labels: EnableSettings[]) {
                 }
                 break;
             case "mathPanel":
-                if (!isMobile && !isExportPDF) {
-                    rulesToInsert.push("@import url(sub/plugin/mathEnhance.css);");
-                }
+                if (!isMobile && !isExportPDF) rulesToInsert.push("@import url(sub/plugin/mathEnhance.css);");
                 break;
             case "mark":
                 rulesToInsert.push("@import url(sub/block/mark.css);");
                 break;
             case "doubleTabbar":
-                if (!isMobile && !isExportPDF) {
-                    rulesToInsert.push("@import url(sub/plugin/doubleTabbar.css);");
-                }
+                if (!isMobile && !isExportPDF) rulesToInsert.push("@import url(sub/plugin/doubleTabbar.css);");
                 break;
             case "tag":
                 rulesToInsert.push("@import url(sub/block/tag.css);");
@@ -263,16 +259,17 @@ function addImports(table: HTMLLinkElement, labels: EnableSettings[]) {
  * ! 添加固定属性
  * @param settings EnableSettings[]
  * @since 1.3.5
- * @version 2.5.0
+ * @version 2.6.0
  */
 function addFixedAttribute(settings: EnableSettings[]) {
     const isMobile = document.body.classList.contains("vscmobile");
+    const isExportPDF = !document.getElementById("themeScript");
     // 运行
     // *>>>>>>>>>>>>>>>>>>>>>>>>>>>>
     // ?如果设置启用背景插件才进入判断
     if (
-        (settings.includes("backgroundCoverDesktop") && !isMobile) ||
-        (settings.includes("backgroundCoverMobile") && isMobile)
+        (settings.includes("backgroundCoverDesktop") && !isMobile && !isExportPDF) ||
+        (settings.includes("backgroundCoverMobile") && isMobile && !isExportPDF)
     ) {
         // 首先调用插件状态检测
         bg(0);
