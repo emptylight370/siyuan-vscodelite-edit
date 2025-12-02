@@ -4,7 +4,7 @@
   "bracketSameLine": true,
   "overrides": [
     {
-      "files": ["*.scss", "*.css", "*.ts", "*.js"],
+      "files": ["*.scss", "*.css", "*.ts", "*.js", "*.cjs"],
       "options": {
         "tabWidth": 4
       }

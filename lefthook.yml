@@ -1,0 +1,59 @@
+pre-commit:
+  jobs:
+    - name: Check theme version and defs.ts version
+      skip:
+        # 仅在提交了theme.json的时候执行
+        - run: test $(git diff --name-only --cached | grep -c 'theme\.json') -eq 0
+      script: checkVersion.cjs
+      runner: node
+      fail_text: "请确保theme.json与defs.ts中版本号一致"
+    - name: Format code
+      glob:
+        - "*.ts"
+        - "*.scss"
+        - "*.md"
+        - "*.json"
+      run: prettier -w {staged_files}
+      stage_fixed: true
+# EXAMPLE USAGE:
+#
+#   Refer for explanation to following link:
+#   https://lefthook.dev/configuration/
+#
+# pre-push:
+#   jobs:
+#     - name: packages audit
+#       tags:
+#         - frontend
+#         - security
+#       run: yarn audit
+#
+#     - name: gems audit
+#       tags:
+#         - backend
+#         - security
+#       run: bundle audit
+#
+# pre-commit:
+#   parallel: true
+#   jobs:
+#     - run: yarn eslint {staged_files}
+#       glob: "*.{js,ts,jsx,tsx}"
+#
+#     - name: rubocop
+#       glob: "*.rb"
+#       exclude:
+#         - config/application.rb
+#         - config/routes.rb
+#       run: bundle exec rubocop --force-exclusion {all_files}
+#
+#     - name: govet
+#       files: git ls-files -m
+#       glob: "*.go"
+#       run: go vet {files}
+#
+#     - script: "hello.js"
+#       runner: node
+#
+#     - script: "hello.go"
+#       runner: go run

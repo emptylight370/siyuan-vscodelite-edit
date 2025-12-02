@@ -204,9 +204,14 @@ $RECYCLE.BIN/
 sync.ffs_db
 
 # Local scripts
-scripts/
+scripts/*
+!scripts/*.cjs
 
 # Compiled results
 sub/*
 theme.css
 theme.js
+
+# Lefthook
+lefthook-local.yml
+.lefthook-local/**/*
