@@ -15,6 +15,12 @@ pre-commit:
         - "*.json"
       run: prettier -w {staged_files}
       stage_fixed: true
+
+commit-msg:
+  jobs:
+    - name: Conventional commit
+      script: commitmsg.sh
+      runner: bash
 # EXAMPLE USAGE:
 #
 #   Refer for explanation to following link:
