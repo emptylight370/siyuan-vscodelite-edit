@@ -10,7 +10,7 @@
  * 向思源请求数据
  * @param url 请求url
  * @param data 请求数据(json encode)
- * @returns Promise\<any\>?
+ * @returns Promise&lt;any&gt;?
  * @since 1.2.0
  * @version 2.3.0
  */
@@ -77,7 +77,7 @@ export async function _getFile(path: string) {
  * @param obj obj?
  * @param isDir 是否是路径
  * @param modTime 修改时间
- * @returns Promise\<void\>
+ * @returns Promise&lt;void&gt;
  * @since 1.2.0
  * @version 2.3.0
  */
@@ -109,7 +109,7 @@ export async function _writeFile(path: string, filedata: any, isDir = false, mod
  * @param type 消息类型 - "ok" | "error"
  * @param message 消息内容
  * @param time 持续时间 - "number" | "null"
- * @returns Promise\<void\>
+ * @returns Promise&lt;void&gt;
  * @since 1.2.2
  * @version 2.4.2
  */
@@ -131,7 +131,7 @@ export async function _postMessage(type: "ok" | "error", message: string, time =
 
 /**
  * 重新加载页面
- * @returns Promise\<void\>
+ * @returns Promise&lt;void&gt;
  * @since 2.3.9
  * @version 2.4.2
  */

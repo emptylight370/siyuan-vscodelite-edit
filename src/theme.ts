@@ -171,7 +171,7 @@ function addThemeToolBar() {
 
 /**
  * 向css表中插入引用的语句
- * @param table \<link stylesheet\>
+ * @param table &lt;link stylesheet&gt;
  * @param labels EnableSettings[]
  * @since 1.3.0
  * @version 2.6.0
