@@ -8,12 +8,9 @@ pre-commit:
       runner: node
       fail_text: "请确保theme.json与defs.ts中版本号一致"
     - name: Format code
-      glob:
-        - "*.ts"
-        - "*.scss"
-        - "*.md"
-        - "*.json"
-      run: prettier -w {staged_files}
+      skip:
+        - run: git diff --name-only --cached | xargs npx prettier -c
+      run: npx prettier -w {staged_files}
       stage_fixed: true
 
 commit-msg:
