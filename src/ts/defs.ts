@@ -9,10 +9,11 @@ export async function loadGlobalVars() {
     /**
      * ! 默认配置文件
      * @since 1.2.0
-     * @version 2.3.0
+     * @version 2.6.1
      */
     globalThis.defaultConf = {
         version: 12,
+        lastSeen: "2.6.0",
         theme: {
             codeBlock: true,
             reference: true,
@@ -38,7 +39,7 @@ export async function loadGlobalVars() {
     /**
      * ! 默认消息本地化
      * @since 1.3.3
-     * @version 2.6.0
+     * @version 2.6.1
      */
     globalThis.localMessage = {
         language: {
@@ -72,6 +73,10 @@ export async function loadGlobalVars() {
         confSave: {
             zh_CN: "VSCE:配置保存成功，稍后自动刷新",
             en_US: "VSCE:Configuration save successed, auto reload later",
+        },
+        newVersionHint: {
+            zh_CN: "VSCE:感谢更新VSCode Lite Edit主题，主题即将移除引述块的自定义属性，请用官方的Callout块代替。具体移除属性请查看主题介绍。<br/>本通知只应在主题更新后显示一次，如多次反复显示请在非发布模式下打开工作空间或重新保存主题设置。点击本通知以关闭。",
+            en_US: "VSCE: Thanks for update VSCode Lite Edit theme, the custom attribute of quote block is going to be removed, please use the officiall Callout block. Please refer to theme readme to see which attributes will be removed.<br/>This notice should only be displayed once after the theme is updated. If it is displayed repeatedly multiple times, please open the workspace in non-publishing mode or re-save the theme settings. Click this notice to close.",
         },
         settingButtonAria: {
             zh_CN: "VSCode Lite 主题设置",
@@ -108,6 +113,10 @@ export async function loadGlobalVars() {
         oReload: {
             zh_CN: "刷新思源界面",
             en_US: "Reload Siyuan",
+        },
+        oUpdate: {
+            zh_CN: "显示版本更新通知",
+            en_US: "Show version update notice",
         },
         tipSave: {
             zh_CN: "直接关闭设置窗口不保存，必须点击保存按钮。如果刷新无效，请重启思源或尝试右侧的刷新按钮。",

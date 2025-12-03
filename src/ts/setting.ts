@@ -84,44 +84,53 @@ export async function createSettingsWindow() {
     changeHints(pages, "tipSwitch");
     dialogBody.appendChild(pages);
 
-    // 等待获取到设置数组再进行
+    // & 等待获取到设置数组再进行
     const settings: SettingItem[] = await settingsPromise;
 
-    // 遍历数组添加选项，创建标签和复选框
+    // & 遍历数组添加选项，创建标签和复选框
     settings.forEach((setting) => {
         addSettingsToPage(SiyuanPage, PluginPage, setting);
     });
 
-    // 创建关闭按钮的容器
+    // & 创建关闭按钮的容器
     const buttons: HTMLDivElement = document.createElement("div");
     buttons.className = "fn__flex";
-    // 创建左侧的提示文本
+    // * 创建左侧的提示文本
     const hints: HTMLSpanElement = document.createElement("span");
     hints.id = "vsceSettingHint";
     hints.className = "fn__flex-1 fn__flex-center";
     hints.innerText = globalThis.localMessage.tipSwitch[globalThis.defLag];
-    // 创建保存按钮
+    // * 创建保存按钮
     const saveButton = document.createElement("button");
     saveButton.textContent = globalThis.localMessage.saveReload[globalThis.defLag];
     saveButton.className = "b3-button b3-button--text";
     saveButton.addEventListener("click", closeAndSave); // 保存并刷新页面
     changeHints(saveButton, "tipSave");
-    // 创建不保存按钮
+    // * 创建不保存按钮
     const notSaveButton = document.createElement("button");
     notSaveButton.textContent = globalThis.localMessage.nSave[globalThis.defLag];
     notSaveButton.className = "b3-button b3-button--cancel";
     notSaveButton.addEventListener("click", closeNotSave); // 不保存修改
     changeHints(notSaveButton, "tipSave");
-    // 创建刷新按钮
+    // * 创建显示更新提示按钮
+    const newVersionTipsButton = document.createElement("button");
+    newVersionTipsButton.innerHTML = '<svg style="margin-right: 0"><use xlink:href="#iconInbox"></use></svg>';
+    newVersionTipsButton.className = "b3-button b3-button--cancel";
+    newVersionTipsButton.addEventListener("click", () => {
+        updateLastSeen(globalThis.defaultConf.lastSeen, true);
+    });
+    changeHints(newVersionTipsButton, "oUpdate");
+    // * 创建刷新按钮
     const refreshButton = document.createElement("button");
     refreshButton.innerHTML = '<svg style="margin-right: 0"><use xlink:href="#iconRefresh"></use></svg>';
     refreshButton.className = "b3-button b3-button--cancel";
     refreshButton.addEventListener("click", _reloadInterface); // 刷新界面
     changeHints(refreshButton, "oReload");
-    // 添加文本和按钮
+    // * 添加文本和按钮
     buttons.appendChild(hints);
     buttons.appendChild(saveButton);
     buttons.appendChild(notSaveButton);
+    buttons.appendChild(newVersionTipsButton);
     buttons.appendChild(refreshButton);
     dialogBody.appendChild(buttons);
 
@@ -451,6 +460,10 @@ export async function getSettings(): Promise<EnableSettings[]> {
         // console.log(settings["version"]);
         await _postMessage("ok", globalThis.localMessage.confUpdate[globalThis.defLag]);
     }
+    // ! 主题更新后提示通知
+    if (config["lastSeen"] !== globalThis.defaultConf["lastSeen"] || config["lastSeen"] == undefined) {
+        await updateLastSeen(globalThis.defaultConf.lastSeen, false);
+    }
     // ! 从设置中获取启用的设置项
     // 主题设置项
     Object.entries(config.theme).forEach(([key, enabled]) => {
@@ -475,4 +488,29 @@ export async function putSettings(settings: ThemeConfig) {
         return;
     }
     await _writeFile("/data/snippets/vsc_edit.config.json", JSON.stringify(settings), false, Date.now());
+}
+
+/**
+ * 更新上次使用的主题版本号
+ * @param version 新版本号
+ * @param showMsg 是否显示通知
+ * @since 2.6.1
+ * @version 2.6.1
+ */
+async function updateLastSeen(version: string, showMsg: boolean) {
+    // 先发送通知，需要手动关闭，显示10分钟应该够久了
+    if (showMsg) await _postMessage("ok", globalThis.localMessage.newVersionHint[globalThis.defLag], 600000);
+
+    // 发布模式下直接返回避免写入操作被禁止
+    if (window.siyuan.isPublish == true) return;
+
+    // 获取配置文件
+    let config: ThemeConfig | null = await _getFile("/data/snippets/vsc_edit.config.json");
+    // 如果未获取到配置文件，则使用默认配置生成文件
+    if (!config) {
+        config = globalThis.defaultConf;
+        await putSettings(config);
+    }
+    config.lastSeen = version;
+    await _writeFile("/data/snippets/vsc_edit.config.json", JSON.stringify(config), false, Date.now());
 }

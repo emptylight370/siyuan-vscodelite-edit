@@ -2,6 +2,8 @@
 export interface ThemeConfig {
     /** 配置文件版本号 */
     version: number;
+    /** 上次使用的主题版本号 */
+    lastSeen: string;
     /** 思源相关配置项 */
     theme: {
         /** 代码块 */
@@ -65,6 +67,8 @@ export interface LocalMessage {
     loadFinish: Record<string, string>;
     /** 写入PDF适配文件失败 */
     loadPDFPersetFail: Record<string, string>;
+    /** 主题版本更新提示 */
+    newVersionHint: Record<string, string>;
 
     // * 设置按钮提示文本
     /** 主题设置按钮提示文本 */
@@ -75,6 +79,8 @@ export interface LocalMessage {
     nSave: Record<string, string>;
     /** 鼠标进入刷新按钮提示文本 */
     oReload: Record<string, string>;
+    /** 鼠标进入新版本更新按钮提示文本 */
+    oUpdate: Record<string, string>;
     /** 设置面板保存按钮文本 */
     saveReload: Record<string, string>;
     /** 设置面板标题 */
