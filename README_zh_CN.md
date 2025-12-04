@@ -82,15 +82,15 @@
 |    `table-min`     | 表格块       | 强制使用最小列宽，不影响手动设定       | 2.3.0    | 2.3.0    |
 |     `no-thead`     | 表格块       | 禁用表头(`<thead>`)的颜色和居中对齐    | 2.3.0    | 2.3.0    |
 |    `hide-thead`    | 表格块       | 视觉上隐藏表头元素                     | 2.5.0    | 2.5.0    |
-|  `callout-error`   | 引述块       | callout❌红色                          | 2.3.1    | 2.3.2    |
-|   `callout-hint`   | 引述块       | callout💡蓝色                          | 2.3.1    | 2.3.2    |
-|   `callout-info`   | 引述块       | calloutℹ️白色                          | 2.3.1    | 2.3.2    |
-|   `callout-note`   | 引述块       | callout📝白色                          | 2.3.1    | 2.3.2    |
-| `callout-question` | 引述块       | callout❓黄色                          | 2.3.1    | 2.3.2    |
-|  `callout-quote`   | 引述块       | callout📣蓝色                          | 2.3.1    | 2.3.2    |
-| `callout-success`  | 引述块       | callout✅绿色                          | 2.3.1    | 2.3.2    |
-|   `callout-todo`   | 引述块       | callout☑️绿色                          | 2.3.1    | 2.3.2    |
-| `callout-warning`  | 引述块       | callout⚠️黄色                          | 2.3.1    | 2.3.2    |
+|  `callout-error`   | 引述块       | callout❌红色（即将移除）              | 2.3.1    | 2.3.2    |
+|   `callout-hint`   | 引述块       | callout💡蓝色（即将移除）              | 2.3.1    | 2.3.2    |
+|   `callout-info`   | 引述块       | calloutℹ️白色（即将移除）              | 2.3.1    | 2.3.2    |
+|   `callout-note`   | 引述块       | callout📝白色（即将移除）              | 2.3.1    | 2.3.2    |
+| `callout-question` | 引述块       | callout❓黄色（即将移除）              | 2.3.1    | 2.3.2    |
+|  `callout-quote`   | 引述块       | callout📣蓝色（即将移除）              | 2.3.1    | 2.3.2    |
+| `callout-success`  | 引述块       | callout✅绿色（即将移除）              | 2.3.1    | 2.3.2    |
+|   `callout-todo`   | 引述块       | callout☑️绿色（即将移除）              | 2.3.1    | 2.3.2    |
+| `callout-warning`  | 引述块       | callout⚠️黄色（即将移除）              | 2.3.1    | 2.3.2    |
 | `av-no-add-entry`  | 数据库块     | 隐藏数据库添加条目按钮（添加功能正常） | 2.5.2    | 2.5.2    |
 |  `av-no-add-view`  | 数据库块     | 隐藏数据库添加视图按钮（添加功能正常） | 2.5.2    | 2.5.2    |
 

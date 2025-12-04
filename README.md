@@ -82,15 +82,15 @@ Since Siyuan will officially release [Callout block](https://github.com/siyuan-n
 |    `table-min`     | table block                 | Force the minimum column width without affecting manual settings | 2.3.0           | 2.3.0        |
 |     `no-thead`     | table block                 | Disable the color and align of table head(`<thead>`)             | 2.3.0           | 2.3.0        |
 |    `hide-thead`    | table block                 | Hide `<thead>` element visually                                  | 2.5.0           | 2.5.0        |
-|  `callout-error`   | quote block                 | callout❌Red                                                     | 2.3.1           | 2.3.2        |
-|   `callout-hint`   | quote block                 | callout💡Blue                                                    | 2.3.1           | 2.3.2        |
-|   `callout-info`   | quote block                 | calloutℹ️White                                                   | 2.3.1           | 2.3.2        |
-|   `callout-note`   | quote block                 | callout📝White                                                   | 2.3.1           | 2.3.2        |
-| `callout-question` | quote block                 | callout❓Yellow                                                  | 2.3.1           | 2.3.2        |
-|  `callout-quote`   | quote block                 | callout📣Blue                                                    | 2.3.1           | 2.3.2        |
-| `callout-success`  | quote block                 | callout✅Green                                                   | 2.3.1           | 2.3.2        |
-|   `callout-todo`   | quote block                 | callout☑️Green                                                   | 2.3.1           | 2.3.2        |
-| `callout-warning`  | quote block                 | callout⚠️Yellow                                                  | 2.3.1           | 2.3.2        |
+|  `callout-error`   | quote block                 | callout❌Red(to be removed)                                      | 2.3.1           | 2.3.2        |
+|   `callout-hint`   | quote block                 | callout💡Blue(to be removed)                                     | 2.3.1           | 2.3.2        |
+|   `callout-info`   | quote block                 | calloutℹ️White(to be removed)                                    | 2.3.1           | 2.3.2        |
+|   `callout-note`   | quote block                 | callout📝White(to be removed)                                    | 2.3.1           | 2.3.2        |
+| `callout-question` | quote block                 | callout❓Yellow(to be removed)                                   | 2.3.1           | 2.3.2        |
+|  `callout-quote`   | quote block                 | callout📣Blue(to be removed)                                     | 2.3.1           | 2.3.2        |
+| `callout-success`  | quote block                 | callout✅Green(to be removed)                                    | 2.3.1           | 2.3.2        |
+|   `callout-todo`   | quote block                 | callout☑️Green(to be removed)                                    | 2.3.1           | 2.3.2        |
+| `callout-warning`  | quote block                 | callout⚠️Yellow(to be removed)                                   | 2.3.1           | 2.3.2        |
 | `av-no-add-entry`  | database block              | Hide database add entry button (add function works normally)     | 2.5.2           | 2.5.2        |
 |  `av-no-add-view`  | database block              | Hide database add view button (add function works normally)      | 2.5.2           | 2.5.2        |
 
