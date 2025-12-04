@@ -8,11 +8,13 @@ pre-commit:
       script: checkVersion.cjs
       runner: node
       fail_text: "请确保theme.json与defs.ts中版本号一致"
-    - name: Format code
+    - name: Format code with prettier
       skip:
+        # 在需要进行格式化时执行
         - run: git diff --name-only --cached | xargs npx prettier -c
       run: npx prettier -w {staged_files}
       stage_fixed: true
+      fail_text: "请检查prettier安装状态，运行npm install安装依赖"
 
 commit-msg:
   jobs:
