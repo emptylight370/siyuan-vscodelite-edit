@@ -1,4 +1,5 @@
 pre-commit:
+  parallel: true
   jobs:
     - name: Check theme version and defs.ts version
       skip:
