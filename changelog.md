@@ -1,5 +1,12 @@
 # ChangeLog
 
+## v2.6.1
+
+- 添加主题更新后显示通知功能
+- 在启用背景图片插件适配时，将空白初始页的背景设置为透明
+- Added notification feature after theme updates
+- When enabling background image plugin adaptation, set the background of blank initial page to transparent
+
 ## v2.6.0
 
 - 数据库所有视图添加数据库标题下分割线

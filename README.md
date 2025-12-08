@@ -42,6 +42,9 @@ Limited by the configuration loading method, updated configurations for new vers
 > Full changelog view [ChangeLog](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/changelog.md)
 > Commit history view [whatschange](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/whatschange.md)
 
+- v2.6.1
+  - Added notification feature after theme updates
+  - When enabling background image plugin adaptation, set the background of blank initial page to transparent
 - v2.6.0
   - Add division line under database title for all views
   - Change method to add theme style for exporting PDF(Require SiYuan version 3.4.1)
@@ -55,11 +58,6 @@ Limited by the configuration loading method, updated configurations for new vers
   - Add _custom attribute_ to hide database add view button
   - Fixed an issue where consecutive titles in embedded blocks were displayed in a line when the title icon was enabled and the embed block style was not enabled
   - Apply theme style in bazaar readme table
-- v2.5.1
-  - File tree border adapt to mobile
-  - File tree indent adapt to mobile
-  - File tree add indent line
-  - Reduce mobile menu transparency
 
 # Special fitness
 

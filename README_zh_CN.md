@@ -42,6 +42,9 @@
 > 完整更新日志查看[changelog](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/changelog.md)
 > 提交历史日志查看[whatschange](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/whatschange.md)
 
+- v2.6.1
+  - 添加主题更新后显示通知功能
+  - 在启用背景图片插件适配时，将空白初始页的背景设置为透明
 - v2.6.0
   - 数据库所有视图添加数据库标题下分割线
   - 更换导出PDF时应用主题样式方法(需要思源版本3.4.1)
@@ -55,11 +58,6 @@
   - 添加*自定义属性*以隐藏数据库添加视图按钮
   - 修复启用标题图标又未启用嵌入块样式时嵌入块中连续标题会在一行中显示问题
   - 集市说明文档中表格应用主题样式
-- v2.5.1
-  - 文档树边框适配移动端
-  - 文档树缩进适配移动端
-  - 文档树添加层级缩进线
-  - 降低移动端菜单透明度
 
 # 特殊适配
 

@@ -65,6 +65,11 @@ body.bgenable {
             /* 数据库块 */
             opacity: 0.8;
         }
+
+        .layout__empty {
+            /* 空白页 */
+            background-color: transparent;
+        }
     }
 
     .protyle {
