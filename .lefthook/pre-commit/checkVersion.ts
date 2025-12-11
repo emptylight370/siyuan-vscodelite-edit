@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
-const fs = require("fs");
-const path = require("path");
+import fs from "fs";
+import path from "path";
 
 // 读取theme.json中的版本号
 const themeJsonPath = path.join(process.cwd(), "theme.json");

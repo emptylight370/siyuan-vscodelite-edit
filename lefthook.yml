@@ -5,7 +5,7 @@ pre-commit:
       skip:
         # 仅在提交了theme.json的时候执行
         - run: test $(git diff --name-only --cached | grep -c 'theme\.json') -eq 0
-      script: checkVersion.cjs
+      script: checkVersion.ts
       runner: node
       fail_text: "请确保theme.json与defs.ts中版本号一致"
     - name: Format code with prettier

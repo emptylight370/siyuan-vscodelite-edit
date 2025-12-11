@@ -8,6 +8,12 @@
       "options": {
         "tabWidth": 4
       }
+    },
+    {
+      "files": ["theme.json"],
+      "options": {
+        "printWidth": 20
+      }
     }
   ]
 }
