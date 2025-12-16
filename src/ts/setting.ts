@@ -462,7 +462,7 @@ export async function getSettings(): Promise<EnableSettings[]> {
     }
     // ! 主题更新后提示通知
     if (config["lastSeen"] !== globalThis.defaultConf["lastSeen"] || config["lastSeen"] == undefined) {
-        await updateLastSeen(globalThis.defaultConf.lastSeen, false);
+        await updateLastSeen(globalThis.defaultConf.lastSeen, true);
     }
     // ! 从设置中获取启用的设置项
     // 主题设置项

@@ -44,6 +44,7 @@ Limited by the configuration loading method, updated configurations for new vers
 
 - v2.6.1
   - Added notification feature after theme updates
+  - Show notification about removal of quote block's custom attributes after theme update
   - When enabling background image plugin adaptation, set the background of blank initial page to transparent
   - Handle element changes properly when disabling the background image plugin
 - v2.6.0
@@ -70,7 +71,7 @@ Limited by the configuration loading method, updated configurations for new vers
 
 To enable custom attributes, add the `vsce` attribute in the **Custom Attributes** panel of a block or document, and assign one or more valid attribute values. If mutiple values are used, separate them with spaces.
 
-Since Siyuan will officially release [Callout block](https://github.com/siyuan-note/siyuan/issues/16051) in the future, the theme will remove the self-implemented quote block Callout style after this feature is launched. At that time, please perform the migration operation yourself.
+Since Siyuan has officially released [Callout block](https://github.com/siyuan-note/siyuan/issues/16051) feature ([Release Note](https://github.com/siyuan-note/siyuan/releases/tag/v3.5.0)), the theme will remove the self-implemented quote block Callout style in several weeks or several versions. Before removal, you can perform the migration operation following [this guide](https://github.com/emptylight370/siyuan-vscodelite-edit/issues/32#issuecomment-3642491684).
 
 ### Usable attribute values
 
