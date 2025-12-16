@@ -42,6 +42,8 @@ Limited by the configuration loading method, updated configurations for new vers
 > Full changelog view [ChangeLog](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/changelog.md)
 > Commit history view [whatschange](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/whatschange.md)
 
+- v2.6.2
+  - Fix icon missing in settings panel
 - v2.6.1
   - Added notification feature after theme updates
   - Show notification about removal of quote block's custom attributes after theme update
@@ -54,12 +56,6 @@ Limited by the configuration loading method, updated configurations for new vers
   - Fixed an issue where the title style sub switch did not follow the main switch
   - Refactor style file to speed up loading
   - Optimize code
-- v2.5.2
-  - Database style adapt to kanban view
-  - Add _custom attribute_ to hide database add entry button
-  - Add _custom attribute_ to hide database add view button
-  - Fixed an issue where consecutive titles in embedded blocks were displayed in a line when the title icon was enabled and the embed block style was not enabled
-  - Apply theme style in bazaar readme table
 
 # Special fitness
 

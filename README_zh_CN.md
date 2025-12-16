@@ -42,6 +42,8 @@
 > 完整更新日志查看[changelog](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/changelog.md)
 > 提交历史日志查看[whatschange](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/whatschange.md)
 
+- v2.6.2
+  - 修复设置面板图标丢失
 - v2.6.1
   - 添加主题更新后显示通知功能
   - 在主题更新后显示引述块自定义属性移除通知
@@ -54,12 +56,6 @@
   - 修复标题样式细分开关不跟随主开关问题
   - 重构样式文件，加快加载速度
   - 优化代码
-- v2.5.2
-  - 数据库样式适配看板视图
-  - 添加*自定义属性*以隐藏数据库添加条目按钮
-  - 添加*自定义属性*以隐藏数据库添加视图按钮
-  - 修复启用标题图标又未启用嵌入块样式时嵌入块中连续标题会在一行中显示问题
-  - 集市说明文档中表格应用主题样式
 
 # 特殊适配
 

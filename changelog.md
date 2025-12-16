@@ -1,5 +1,10 @@
 # ChangeLog
 
+## v2.6.2
+
+- 修复设置面板图标丢失
+- Fix icon missing in settings panel
+
 ## v2.6.1
 
 - 添加主题更新后显示通知功能
