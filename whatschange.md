@@ -1,3 +1,29 @@
+## [2.6.1](https://github.com/emptylight370/siyuan-vscodelite-edit/compare/2.6.0...2.6.1) (2025-12-16)
+
+### ✨ Features | 功能
+
+- 背景图插件适配两处改动 ([1f62f66](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/1f62f664ed1b074ba67db4891737f8a7e72eb930))
+- 启用主题更新后通知 ([0dcc154](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/0dcc1541836896a2ada5c7822fa07b798b90311f))
+- 添加了主题版本更新的提示通知 ([c44b57f](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/c44b57fb5a321d60ce2ae2209592831174348a04))
+- 在启用背景图片插件适配时，将空白初始页的背景设置为透明 ([4f58f21](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/4f58f212c742abbde8388d7378fe82c39ec269aa))
+
+### 📄 Documentation | 文档
+
+- 更新关于callout自定义属性的说明 ([2b0be04](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/2b0be042e97dc34fbe65f9e0f3482bd8687f1462))
+
+### ⚡ Performance | 性能优化
+
+- 整理代码 ([e5fd2f8](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/e5fd2f84751a3bb028c5a23fb1ab56050d4d9ff2))
+
+### 🛠️ Build system | 构建系统
+
+- 获取tags以确定版本范围 ([a6dcf8e](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/a6dcf8edb00a2245cf1e7a5134565479f2cd2985))
+- **feat:** 添加lefthook以修改git hook ([6ddd4b5](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/6ddd4b5ba1a7e1da5fd2ac2657217c751f49555e))
+- **feat:** 验证提交信息是否符合cc规范 ([0d2654c](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/0d2654c94236630deb514f53ac03f382ea02ffba))
+- **lefthook:** 并行执行pre-commit脚本以加快处理速度 ([80be6c5](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/80be6c55b167f0b8bf1c59300e2d065fabb47d07))
+- **lefthook:** 将检测脚本换为ts文件 ([32e1149](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/32e1149348edab7b7bac2ac12a6d36a10ac9c501))
+- **lefthook:** 修改格式化文件的条件 ([0eeda8c](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/0eeda8ca329e750243fc53d86d95378bedc1f8bb))
+
 ## [2.6.0](https://github.com/emptylight370/siyuan-vscodelite-edit/compare/2.5.2...2.6.0) (2025-11-25)
 
 ### ⚠ BREAKING CHANGES
