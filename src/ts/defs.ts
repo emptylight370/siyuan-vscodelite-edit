@@ -254,11 +254,13 @@ export async function loadGlobalVars() {
     /**
      * ! 所有用到的监听器
      * @since 1.4.0
-     * @version 2.2.2
+     * @version 2.6.1
      */
     globalThis.vscObserver = {
         // 背景插件观察器
         bgObserver: null,
+        // 背景存在观察器
+        bgExistObserver: null,
         // 标签栏状态观察器
         tabbarObserver: null,
     };

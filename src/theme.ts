@@ -1,4 +1,4 @@
-import { _postMessage, _writeFile } from "./ts/api";
+import { _postMessage } from "./ts/api";
 import { loadGlobalVars } from "./ts/defs";
 import { bg, bgobserver } from "./ts/plugins/background";
 import { createSettingsWindow, getSettings } from "./ts/setting";
@@ -157,7 +157,7 @@ function addThemeToolBar() {
                 firstButton.parentElement.insertBefore(vscToolBar, firstButton);
                 globalThis.vscTimer.settingMobile = null;
             } else {
-                globalThis.vscTimer.settingMobile = setTimeout(() => {
+                globalThis.vscTimer.settingMobile = window.setTimeout(() => {
                     insertMobile();
                 }, 1000);
             }
@@ -259,7 +259,7 @@ function addImports(table: HTMLLinkElement, labels: EnableSettings[]) {
  * ! 添加固定属性
  * @param settings EnableSettings[]
  * @since 1.3.5
- * @version 2.6.0
+ * @version 2.6.1
  */
 function addFixedAttribute(settings: EnableSettings[]) {
     const isMobile = document.body.classList.contains("vscmobile");
@@ -274,7 +274,7 @@ function addFixedAttribute(settings: EnableSettings[]) {
         // 首先调用插件状态检测
         bg(0);
         // 添加观察器
-        if (globalThis.vscObserver.bgObserver == null) {
+        if (globalThis.vscObserver.bgObserver === null) {
             bgobserver(0);
         }
     }

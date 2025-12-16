@@ -4,8 +4,10 @@
 
 - 添加主题更新后显示通知功能
 - 在启用背景图片插件适配时，将空白初始页的背景设置为透明
+- 在关闭背景图片插件时，正确处理元素变化
 - Added notification feature after theme updates
 - When enabling background image plugin adaptation, set the background of blank initial page to transparent
+- Handle element changes properly when disabling the background image plugin
 
 ## v2.6.0
 

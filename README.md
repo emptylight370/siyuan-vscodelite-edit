@@ -45,6 +45,7 @@ Limited by the configuration loading method, updated configurations for new vers
 - v2.6.1
   - Added notification feature after theme updates
   - When enabling background image plugin adaptation, set the background of blank initial page to transparent
+  - Handle element changes properly when disabling the background image plugin
 - v2.6.0
   - Add division line under database title for all views
   - Change method to add theme style for exporting PDF(Require SiYuan version 3.4.1)
