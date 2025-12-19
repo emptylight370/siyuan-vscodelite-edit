@@ -45,6 +45,7 @@
 - v2.6.2
   - 修复设置面板图标丢失
   - 在启用背景插件适配时让文本外观选择窗口也透明化
+  - 移除引述块Callout自定义属性
 - v2.6.1
   - 添加主题更新后显示通知功能
   - 在主题更新后显示引述块自定义属性移除通知
@@ -68,7 +69,7 @@
 
 在块或文档的**自定义属性面板**中新增`vsce`属性，在其中填入一个或多个有效的属性值。若使用多个属性值，需以空格分隔。
 
-因为思源官方发布了[Callout block(提示块)](https://github.com/siyuan-note/siyuan/issues/16051)（[发布链接](https://ld246.com/article/1765878002926)），主题会在几周或几个版本后移除自行实现的引述块Callout样式。在移除之前，你可以根据[此文档](https://ld246.com/article/1765879590836)进行迁移操作。
+因为思源官方发布了[Callout block(提示块)](https://github.com/siyuan-note/siyuan/issues/16051)（[发布链接](https://ld246.com/article/1765878002926)），主题在此版本已经移除自行实现的引述块Callout样式。之后，你可以根据[此文档](https://ld246.com/article/1765879590836)进行迁移操作。
 
 ### 可用属性值
 
@@ -79,15 +80,15 @@
 |    `table-min`     | 表格块       | 强制使用最小列宽，不影响手动设定       | 2.3.0    | 2.3.0    |
 |     `no-thead`     | 表格块       | 禁用表头(`<thead>`)的颜色和居中对齐    | 2.3.0    | 2.3.0    |
 |    `hide-thead`    | 表格块       | 视觉上隐藏表头元素                     | 2.5.0    | 2.5.0    |
-|  `callout-error`   | 引述块       | callout❌红色（即将移除）              | 2.3.1    | 2.3.2    |
-|   `callout-hint`   | 引述块       | callout💡蓝色（即将移除）              | 2.3.1    | 2.3.2    |
-|   `callout-info`   | 引述块       | calloutℹ️白色（即将移除）              | 2.3.1    | 2.3.2    |
-|   `callout-note`   | 引述块       | callout📝白色（即将移除）              | 2.3.1    | 2.3.2    |
-| `callout-question` | 引述块       | callout❓黄色（即将移除）              | 2.3.1    | 2.3.2    |
-|  `callout-quote`   | 引述块       | callout📣蓝色（即将移除）              | 2.3.1    | 2.3.2    |
-| `callout-success`  | 引述块       | callout✅绿色（即将移除）              | 2.3.1    | 2.3.2    |
-|   `callout-todo`   | 引述块       | callout☑️绿色（即将移除）              | 2.3.1    | 2.3.2    |
-| `callout-warning`  | 引述块       | callout⚠️黄色（即将移除）              | 2.3.1    | 2.3.2    |
+|  `callout-error`   | 引述块       | callout❌红色（已经移除）              | x        | Removed  |
+|   `callout-hint`   | 引述块       | callout💡蓝色（已经移除）              | x        | Removed  |
+|   `callout-info`   | 引述块       | calloutℹ️白色（已经移除）              | x        | Removed  |
+|   `callout-note`   | 引述块       | callout📝白色（已经移除）              | x        | Removed  |
+| `callout-question` | 引述块       | callout❓黄色（已经移除）              | x        | Removed  |
+|  `callout-quote`   | 引述块       | callout📣蓝色（已经移除）              | x        | Removed  |
+| `callout-success`  | 引述块       | callout✅绿色（已经移除）              | x        | Removed  |
+|   `callout-todo`   | 引述块       | callout☑️绿色（已经移除）              | x        | Removed  |
+| `callout-warning`  | 引述块       | callout⚠️黄色（已经移除）              | x        | Removed  |
 | `av-no-add-entry`  | 数据库块     | 隐藏数据库添加条目按钮（添加功能正常） | 2.5.2    | 2.5.2    |
 |  `av-no-add-view`  | 数据库块     | 隐藏数据库添加视图按钮（添加功能正常） | 2.5.2    | 2.5.2    |
 

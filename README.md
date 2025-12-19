@@ -45,6 +45,7 @@ Limited by the configuration loading method, updated configurations for new vers
 - v2.6.2
   - Fix icon missing in settings panel
   - When enabled background plugin adaption, let text appearance selection window transparent
+  - Remove quote block Callout custom attributes
 - v2.6.1
   - Added notification feature after theme updates
   - Show notification about removal of quote block's custom attributes after theme update
@@ -68,7 +69,7 @@ Limited by the configuration loading method, updated configurations for new vers
 
 To enable custom attributes, add the `vsce` attribute in the **Custom Attributes** panel of a block or document, and assign one or more valid attribute values. If mutiple values are used, separate them with spaces.
 
-Since Siyuan has officially released [Callout block](https://github.com/siyuan-note/siyuan/issues/16051) feature ([Release Note](https://github.com/siyuan-note/siyuan/releases/tag/v3.5.0)), the theme will remove the self-implemented quote block Callout style in several weeks or several versions. Before removal, you can perform the migration operation following [this guide](https://github.com/emptylight370/siyuan-vscodelite-edit/issues/32#issuecomment-3642491684).
+Since Siyuan has officially released [Callout block](https://github.com/siyuan-note/siyuan/issues/16051) feature ([Release Note](https://github.com/siyuan-note/siyuan/releases/tag/v3.5.0)), the theme has removed the self-implemented quote block Callout style in this version. After removal, you can perform the migration operation following [this guide](https://github.com/emptylight370/siyuan-vscodelite-edit/issues/32#issuecomment-3642491684).
 
 ### Usable attribute values
 
@@ -79,15 +80,15 @@ Since Siyuan has officially released [Callout block](https://github.com/siyuan-n
 |    `table-min`     | table block                 | Force the minimum column width without affecting manual settings | 2.3.0           | 2.3.0        |
 |     `no-thead`     | table block                 | Disable the color and align of table head(`<thead>`)             | 2.3.0           | 2.3.0        |
 |    `hide-thead`    | table block                 | Hide `<thead>` element visually                                  | 2.5.0           | 2.5.0        |
-|  `callout-error`   | quote block                 | callout❌Red(to be removed)                                      | 2.3.1           | 2.3.2        |
-|   `callout-hint`   | quote block                 | callout💡Blue(to be removed)                                     | 2.3.1           | 2.3.2        |
-|   `callout-info`   | quote block                 | calloutℹ️White(to be removed)                                    | 2.3.1           | 2.3.2        |
-|   `callout-note`   | quote block                 | callout📝White(to be removed)                                    | 2.3.1           | 2.3.2        |
-| `callout-question` | quote block                 | callout❓Yellow(to be removed)                                   | 2.3.1           | 2.3.2        |
-|  `callout-quote`   | quote block                 | callout📣Blue(to be removed)                                     | 2.3.1           | 2.3.2        |
-| `callout-success`  | quote block                 | callout✅Green(to be removed)                                    | 2.3.1           | 2.3.2        |
-|   `callout-todo`   | quote block                 | callout☑️Green(to be removed)                                    | 2.3.1           | 2.3.2        |
-| `callout-warning`  | quote block                 | callout⚠️Yellow(to be removed)                                   | 2.3.1           | 2.3.2        |
+|  `callout-error`   | quote block                 | callout❌Red(already removed)                                    | x               | Removed      |
+|   `callout-hint`   | quote block                 | callout💡Blue(already removed)                                   | x               | Removed      |
+|   `callout-info`   | quote block                 | calloutℹ️White(already removed)                                  | x               | Removed      |
+|   `callout-note`   | quote block                 | callout📝White(already removed)                                  | x               | Removed      |
+| `callout-question` | quote block                 | callout❓Yellow(already removed)                                 | x               | Removed      |
+|  `callout-quote`   | quote block                 | callout📣Blue(already removed)                                   | x               | Removed      |
+| `callout-success`  | quote block                 | callout✅Green(already removed)                                  | x               | Removed      |
+|   `callout-todo`   | quote block                 | callout☑️Green(already removed)                                  | x               | Removed      |
+| `callout-warning`  | quote block                 | callout⚠️Yellow(already removed)                                 | x               | Removed      |
 | `av-no-add-entry`  | database block              | Hide database add entry button (add function works normally)     | 2.5.2           | 2.5.2        |
 |  `av-no-add-view`  | database block              | Hide database add view button (add function works normally)      | 2.5.2           | 2.5.2        |
 
