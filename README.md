@@ -44,6 +44,7 @@ Limited by the configuration loading method, updated configurations for new vers
 
 - v2.6.2
   - Fix icon missing in settings panel
+  - When enabled background plugin adaption, let text appearance selection window transparent
 - v2.6.1
   - Added notification feature after theme updates
   - Show notification about removal of quote block's custom attributes after theme update

@@ -3,7 +3,9 @@
 ## v2.6.2
 
 - 修复设置面板图标丢失
+- 在启用背景插件适配时让文本外观选择窗口也透明化
 - Fix icon missing in settings panel
+- When enabled background plugin adaption, let text appearance selection window transparent
 
 ## v2.6.1
 
