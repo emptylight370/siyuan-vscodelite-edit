@@ -6,10 +6,12 @@
 - 在启用背景插件适配时让文本外观选择窗口也透明化
 - 移除引述块Callout自定义属性
 - 完善自定义属性`av-no-add-entry`
+- 处理嵌入块样式与Query&View插件兼容性问题(#33)
 - Fix icon missing in settings panel
 - When enabled background plugin adaption, let text appearance selection window transparent
 - Remove quote block Callout custom attributes
 - Improve custom attribute `av-no-add-entry`
+- Handling compatibility issues between embedded block styles and the Query&View plugin(#33)
 
 ## v2.6.1
 

@@ -47,6 +47,7 @@ Limited by the configuration loading method, updated configurations for new vers
   - When enabled background plugin adaption, let text appearance selection window transparent
   - Remove quote block Callout custom attributes
   - Improve custom attribute `av-no-add-entry`
+  - Handling compatibility issues between embedded block styles and the Query&View plugin
 - v2.6.1
   - Added notification feature after theme updates
   - Show notification about removal of quote block's custom attributes after theme update
