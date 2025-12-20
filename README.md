@@ -46,6 +46,7 @@ Limited by the configuration loading method, updated configurations for new vers
   - Fix icon missing in settings panel
   - When enabled background plugin adaption, let text appearance selection window transparent
   - Remove quote block Callout custom attributes
+  - Improve custom attribute `av-no-add-entry`
 - v2.6.1
   - Added notification feature after theme updates
   - Show notification about removal of quote block's custom attributes after theme update
@@ -89,7 +90,7 @@ Since Siyuan has officially released [Callout block](https://github.com/siyuan-n
 | `callout-success`  | quote block                 | callout✅Green(already removed)                                  | x               | Removed      |
 |   `callout-todo`   | quote block                 | callout☑️Green(already removed)                                  | x               | Removed      |
 | `callout-warning`  | quote block                 | callout⚠️Yellow(already removed)                                 | x               | Removed      |
-| `av-no-add-entry`  | database block              | Hide database add entry button (add function works normally)     | 2.5.2           | 2.5.2        |
+| `av-no-add-entry`  | database block              | Hide database add entry button (add function works normally)     | 2.5.2           | 2.6.2        |
 |  `av-no-add-view`  | database block              | Hide database add view button (add function works normally)      | 2.5.2           | 2.5.2        |
 
 ## Plugin fitness

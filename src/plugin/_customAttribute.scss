@@ -7,18 +7,24 @@
 
 // 数据库隐藏添加条目按钮
 [custom-vsce~="av-no-add-entry"] {
-    .av__gallery-add,
-    [data-type="av-add-top"],
-    [data-type="av-add-more"],
-    [data-type="av-add-more"] + .fn__space {
+    .av__gallery-add, // 卡片视图分组中卡片按钮
+    [data-type="av-add-top"], // 分组名称右侧新建按钮
+    [data-type="av-add-more"], // 顶部视图操作栏新建按钮
+    [data-type="av-add-more"] + .fn__space, // 顶部视图操作栏新建按钮右侧空白
+    [data-type="av-header-more"] + .fn__space, // 表格视图字段名称右侧新建按钮左侧空白
+    [data-type="av-header-add"], // 表格视图字段名称右侧新建按钮
+    [data-type="av-add-bottom"], // 表格视图底部操作栏新建按钮
+    [data-type="av-add-bottom"] + .fn__space // 表格视图底部操作栏新建按钮右侧空白
+    {
         display: none;
     }
 }
 
 // 数据库隐藏添加视图按钮
 [custom-vsce~="av-no-add-view"] {
-    [data-type="av-add"],
-    [data-type="av-add"] + .fn__flex-1 + .fn__space {
+    [data-type="av-add"], // 顶部视图操作栏新建按钮
+    [data-type="av-add"] + .fn__flex-1 + .fn__space // 顶部视图操作栏新建按钮右侧空白
+    {
         display: none;
     }
 }

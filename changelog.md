@@ -5,9 +5,11 @@
 - 修复设置面板图标丢失
 - 在启用背景插件适配时让文本外观选择窗口也透明化
 - 移除引述块Callout自定义属性
+- 完善自定义属性`av-no-add-entry`
 - Fix icon missing in settings panel
 - When enabled background plugin adaption, let text appearance selection window transparent
 - Remove quote block Callout custom attributes
+- Improve custom attribute `av-no-add-entry`
 
 ## v2.6.1
 
