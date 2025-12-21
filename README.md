@@ -48,6 +48,7 @@ Limited by the configuration loading method, updated configurations for new vers
   - Remove quote block Callout custom attributes
   - Improve custom attribute `av-no-add-entry`
   - Handling compatibility issues between embedded block styles and the Query&View plugin
+  - Add `/` menu multi-column display feature
 - v2.6.1
   - Added notification feature after theme updates
   - Show notification about removal of quote block's custom attributes after theme update
