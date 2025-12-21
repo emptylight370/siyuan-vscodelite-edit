@@ -158,7 +158,7 @@ export interface vscTimers {
     /** 背景插件属性修改计时器 */
     bgObserTimer: number | null;
     /** 在移动端添加设置按钮的计时器 */
-    settingMobile: number | null;
+    settingMobileTimer: number | null;
     /** 检查斜杠菜单数量的计时器 */
     slashMenuTimer: number | null;
 }

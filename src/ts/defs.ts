@@ -253,7 +253,7 @@ export async function loadGlobalVars() {
         // 背景插件属性修改的监听器，用来监测背景状态变化
         bgObserTimer: null,
         // 在移动端添加设置按钮的计时器，在初次添加失败后会每秒尝试一次
-        settingMobile: null,
+        settingMobileTimer: null,
         // 斜杠菜单检测数量的计时器，定时检测斜杠菜单数量并为每个菜单添加观察器
         slashMenuTimer: null,
     };

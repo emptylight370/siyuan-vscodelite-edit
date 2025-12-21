@@ -108,7 +108,7 @@ window.destroyTheme = async () => {
 /**
  * 创建工具栏的按钮
  * @since 1.2.0
- * @version 2.5.0
+ * @version 2.6.2
  */
 function addThemeToolBar() {
     // 如果是发布模式就不添加按钮
@@ -156,9 +156,9 @@ function addThemeToolBar() {
             const firstButton = breadcrumbButtons[0];
             if (firstButton) {
                 firstButton.parentElement.insertBefore(vscToolBar, firstButton);
-                globalThis.vscTimer.settingMobile = null;
+                globalThis.vscTimer.settingMobileTimer = null;
             } else {
-                globalThis.vscTimer.settingMobile = window.setTimeout(() => {
+                globalThis.vscTimer.settingMobileTimer = window.setTimeout(() => {
                     insertMobile();
                 }, 1000);
             }

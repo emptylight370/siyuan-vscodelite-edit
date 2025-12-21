@@ -2,7 +2,7 @@
  * 检测背景图片插件是否在运行
  * @param times 运行次数
  * @since 1.3.5
- * @version 2.6.1
+ * @version 2.6.2
  */
 export function bg(times: number) {
     // 背景自定义插件，部分情况下插件加载缓慢可重复检测一次
@@ -24,12 +24,14 @@ export function bg(times: number) {
         if (globalThis.vscObserver.bgExistObserver === null) {
             bgExistObserver();
         }
-    } else if ((times === 0 || times === 1) && !bglayer) {
-        // 未启用插件3秒后重新检测两遍
-        setTimeout(bg, 3000, times + 1);
-    } else if (!bglayer) {
-        // 检测不到背景图移除属性
-        document.body.classList.remove("bgenable");
+    } else {
+        if (times === 0 || times === 1) {
+            // 未启用插件3秒后重新检测两遍
+            setTimeout(bg, 3000, times + 1);
+        } else {
+            // 检测不到背景图移除属性
+            document.body.classList.remove("bgenable");
+        }
     }
 }
 
