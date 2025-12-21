@@ -1,6 +1,7 @@
 import { _postMessage } from "./ts/api";
 import { loadGlobalVars } from "./ts/defs";
 import { bg, bgobserver } from "./ts/plugins/background";
+import { getSlashMenusCount, slashMenuObserver } from "./ts/plugins/slashmenu";
 import { createSettingsWindow, getSettings } from "./ts/setting";
 import { EnableSettings } from "./ts/types.d";
 
@@ -174,7 +175,7 @@ function addThemeToolBar() {
  * @param table &lt;link stylesheet&gt;
  * @param labels EnableSettings[]
  * @since 1.3.0
- * @version 2.6.0
+ * @version 2.6.2
  */
 function addImports(table: HTMLLinkElement, labels: EnableSettings[]) {
     const sheet: CSSStyleSheet = table.sheet;
@@ -237,6 +238,9 @@ function addImports(table: HTMLLinkElement, labels: EnableSettings[]) {
             case "tag":
                 rulesToInsert.push("@import url(sub/block/tag.css);");
                 break;
+            case "slashMenu":
+                rulesToInsert.push("@import url(sub/app/slashmenu.css);");
+                break;
             default:
                 break;
         }
@@ -259,7 +263,7 @@ function addImports(table: HTMLLinkElement, labels: EnableSettings[]) {
  * ! 添加固定属性
  * @param settings EnableSettings[]
  * @since 1.3.5
- * @version 2.6.1
+ * @version 2.6.2
  */
 function addFixedAttribute(settings: EnableSettings[]) {
     const isMobile = document.body.classList.contains("vscmobile");
@@ -277,6 +281,16 @@ function addFixedAttribute(settings: EnableSettings[]) {
         if (globalThis.vscObserver.bgObserver === null) {
             bgobserver(0);
         }
+    }
+    // ?如果设置启用斜杠菜单才进入判断
+    if (settings.includes("slashMenu") && globalThis.vscTimer.slashMenuTimer === null) {
+        globalThis.vscTimer.slashMenuTimer = window.setInterval(() => {
+            let slashMenusCount = getSlashMenusCount();
+            if (slashMenusCount !== globalThis.vscCounters.slashMenuCount) {
+                globalThis.vscCounters.slashMenuCount = slashMenusCount;
+                slashMenuObserver(0);
+            }
+        }, 500);
     }
     // *<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 }

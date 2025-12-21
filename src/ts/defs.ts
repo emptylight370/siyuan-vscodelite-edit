@@ -9,10 +9,10 @@ export async function loadGlobalVars() {
     /**
      * ! 默认配置文件
      * @since 1.2.0
-     * @version 2.6.1
+     * @version 2.6.2
      */
     globalThis.defaultConf = {
-        version: 12,
+        version: 13,
         lastSeen: "2.6.1",
         theme: {
             codeBlock: true,
@@ -26,6 +26,7 @@ export async function loadGlobalVars() {
             doctree: true,
             mark: true,
             tag: true,
+            slashMenu: false,
         },
         plugins: {
             shortcutPanel: true,
@@ -222,6 +223,10 @@ export async function loadGlobalVars() {
             zh_CN: "块内标签样式跟随文档标签样式",
             en_US: "The style of tags in block uses the style of tags of document",
         },
+        slashMenuitem: {
+            zh_CN: "斜杠(/)菜单多栏显示",
+            en_US: "Slash(/) menu multi column display",
+        },
     };
 
     // 浏览器获取的默认语言
@@ -240,7 +245,7 @@ export async function loadGlobalVars() {
     /**
      * ! 所有用到的计时器
      * @since 1.3.5
-     * @version 2.5.0
+     * @version 2.6.2
      */
     globalThis.vscTimer = {
         // 背景插件加载后可能禁用，使用计时器定时刷新背景插件状态
@@ -249,12 +254,14 @@ export async function loadGlobalVars() {
         bgObserTimer: null,
         // 在移动端添加设置按钮的计时器，在初次添加失败后会每秒尝试一次
         settingMobile: null,
+        // 斜杠菜单检测数量的计时器，定时检测斜杠菜单数量并为每个菜单添加观察器
+        slashMenuTimer: null,
     };
 
     /**
      * ! 所有用到的监听器
      * @since 1.4.0
-     * @version 2.6.1
+     * @version 2.6.2
      */
     globalThis.vscObserver = {
         // 背景插件观察器
@@ -263,5 +270,17 @@ export async function loadGlobalVars() {
         bgExistObserver: null,
         // 标签栏状态观察器
         tabbarObserver: null,
+        // 斜杠菜单显示状态观察器
+        slashDisplayObserver: null,
+    };
+
+    /**
+     * ! 所有用到的计数器
+     * @since 2.6.2
+     * @version 2.6.2
+     */
+    globalThis.vscCounters = {
+        // 斜杠菜单数量
+        slashMenuCount: 0,
     };
 }

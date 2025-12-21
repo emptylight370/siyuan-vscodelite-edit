@@ -321,7 +321,7 @@ function closeNotSave() {
  * NOTE 获取设置界面的定义数组
  * @returns Promise&lt;SettingItem[]%gt;
  * @since 2.1.0
- * @version 2.6.1
+ * @version 2.6.2
  */
 async function fetchSettingsPanelArray() {
     const config: ThemeConfig | null = await _getFile("/data/snippets/vsc_edit.config.json");
@@ -434,6 +434,12 @@ async function fetchSettingsPanelArray() {
         description: globalThis.localMessage.doubleTabbardesc[globalThis.defLag],
         id: "doubleTabbar",
         enable: v?.plugins?.doubleTabbar ?? globalThis.defaultConf.plugins.doubleTabbar,
+    });
+    // 斜杠菜单多栏显示
+    settings.push({
+        label: globalThis.localMessage.slashMenuitem[globalThis.defLag],
+        id: "slashMenu",
+        enable: v?.theme?.slashMenu ?? globalThis.defaultConf.theme.slashMenu,
     });
     return settings;
 }

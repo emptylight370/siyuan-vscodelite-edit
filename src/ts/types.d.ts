@@ -28,6 +28,8 @@ export interface ThemeConfig {
         mark: boolean;
         /** 段落内标签 */
         tag: boolean;
+        /** 多栏斜杠菜单 */
+        slashMenu: boolean;
     };
     /** 插件相关配置项 */
     plugins: {
@@ -145,6 +147,8 @@ export interface LocalMessage {
     titleIcon: Record<string, string>;
     /** 标题块图标描述文本 */
     titleIconDesc: Record<string, string>;
+    /** 多栏斜杠菜单选项 */
+    slashMenuitem: Record<string, string>;
 }
 
 /** 计时器接口 */
@@ -155,6 +159,8 @@ export interface vscTimers {
     bgObserTimer: number | null;
     /** 在移动端添加设置按钮的计时器 */
     settingMobile: number | null;
+    /** 检查斜杠菜单数量的计时器 */
+    slashMenuTimer: number | null;
 }
 
 /** 观察器接口 */
@@ -165,6 +171,14 @@ export interface vscObservers {
     bgExistObserver: MutationObserver | null;
     /** 标签栏状态观察器 */
     tabbarObserver: MutationObserver | null;
+    /** 斜杠菜单显示状态观察器 */
+    slashDisplayObserver: MutationObserver | null;
+}
+
+/** 计数器接口 */
+export interface vscCounters {
+    /** 斜杠菜单的数量计数器 */
+    slashMenuCount: number;
 }
 
 /**

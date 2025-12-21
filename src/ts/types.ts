@@ -1,4 +1,12 @@
-import { EnableSettingsKeyMap, LocalMessage, SettingKeyMap, ThemeConfig, vscObservers, vscTimers } from "./types.d";
+import {
+    EnableSettingsKeyMap,
+    LocalMessage,
+    SettingKeyMap,
+    ThemeConfig,
+    vscCounters,
+    vscObservers,
+    vscTimers,
+} from "./types.d";
 
 declare global {
     interface Window {
@@ -31,6 +39,8 @@ declare global {
     var vscTimer: vscTimers;
     /** 目前所有的观察器 */
     var vscObserver: vscObservers;
+    /** 目前所有的计数器 */
+    var vscCounters: vscCounters;
 }
 
 /**
@@ -50,6 +60,7 @@ export const settingKeyMap: SettingKeyMap = {
     doctree: { section: "theme", key: "doctree" }, // 文档树
     mark: { section: "theme", key: "mark" }, // 标记
     tagStyle: { section: "theme", key: "tag" }, // 标签
+    slashMenu: { section: "theme", key: "slashMenu" }, // 斜杠菜单
     scPanelStyle: { section: "plugins", key: "shortcutPanel" }, // 快捷键面板
     mathPanel: { section: "plugins", key: "mathPanel" }, // 数学面板
     backgroundCoverDesktop: { section: "plugins", key: "backgroundCoverDesktop" }, // 桌面端图片背景
@@ -76,6 +87,7 @@ export const enableSettingsKeyMap: EnableSettingsKeyMap = {
     doctree: { section: "theme", key: "doctree" }, // 文档树
     mark: { section: "theme", key: "mark" }, // 标记
     tag: { section: "theme", key: "tag" }, // 标签
+    slashMenu: { section: "theme", key: "slashMenu" }, // 斜杠菜单
     shortcutPanel: { section: "plugins", key: "shortcutPanel" }, // 快捷键面板
     mathPanel: { section: "plugins", key: "mathPanel" }, // 数学面板
     backgroundCoverDesktop: { section: "plugins", key: "backgroundCoverDesktop" }, // 桌面端图片背景
