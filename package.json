@@ -13,13 +13,13 @@
   "scripts": {
     "build:scss": "sass --load-path=src theme.scss:theme.css src:sub",
     "build:ts": "rollup -c",
-    "build": "npm-run-all build:scss && npm run build:ts",
+    "build": "npm-run-all -l -p build:scss build:ts",
     "watch:scss": "sass --watch --load-path=src theme.scss:theme.css src:sub",
     "watch:ts": "rollup -c -w",
-    "watch": "npm-run-all --parallel watch:scss && npm run watch:ts",
+    "watch": "npm-run-all -l -p watch:scss watch:ts",
     "clean:scss": "rimraf theme.css theme.css.map sub",
     "clean:ts": "rimraf theme.js",
-    "clean": "npm-run-all clean:scss && npm run clean:ts",
+    "clean": "npm-run-all -l -p clean:scss clean:ts",
     "changelog": "conventional-changelog -i whatschange.md -s -n conventional-changelog.config.json -k theme.json -c theme.json && prettier -w whatschange.md"
   },
   "type": "module",
