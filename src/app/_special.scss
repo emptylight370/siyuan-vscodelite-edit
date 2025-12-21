@@ -53,13 +53,13 @@
 
 /* 普通拖动条 */
 .layout__resize {
-    /* 指示线颜色 */
     &:hover::after {
+        /* 指示线颜色 */
         background-color: #007fd4;
     }
 
-    /* 水平指示线单独设置高度 */
     &:not(.layout__resize--lr):hover::after {
+        /* 水平指示线单独设置高度 */
         height: 2px;
     }
 }

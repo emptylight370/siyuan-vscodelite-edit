@@ -1,5 +1,5 @@
+/* 表格表头单元格样式 */
 div.table {
-    /* 表格表头单元格样式 */
     &:not([custom-vsce~="no-thead"]) {
         table {
             thead {
@@ -13,21 +13,21 @@ div.table {
         }
     }
 
-    /* 最小化单元格宽度 */
     &[custom-vsce~="table-min"] {
         table {
             colgroup {
                 col {
+                    /* 最小化单元格宽度 */
                     min-width: unset !important;
                 }
             }
         }
     }
 
-    /* 隐藏表头 */
     &[custom-vsce~="hide-thead"] {
         table {
             thead {
+                /* 隐藏表头 */
                 display: none;
             }
         }

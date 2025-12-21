@@ -211,13 +211,13 @@ body.bgenable {
 
     // 修复全屏模式时底下的应用框架会接着显示的问题
     &:has(#layouts [data-type="wnd"] .protyle.fullscreen) {
-        /* 在全屏显示时隐藏应用框架 */
         // 左侧栏按钮
         #dockLeft,
         // 右侧栏按钮
         #dockRight,
         // 底部的状态栏
         #status {
+            /* 在全屏显示时隐藏应用框架 */
             opacity: 0;
         }
 
