@@ -72,7 +72,8 @@ Limited by the configuration loading method, updated configurations for new vers
 
 To enable custom attributes, add the `vsce` attribute in the **Custom Attributes** panel of a block or document, and assign one or more valid attribute values. If mutiple values are used, separate them with spaces.
 
-Since Siyuan has officially released [Callout block](https://github.com/siyuan-note/siyuan/issues/16051) feature ([Release Note](https://github.com/siyuan-note/siyuan/releases/tag/v3.5.0)), the theme has removed the self-implemented quote block Callout style in this version. After removal, you can perform the migration operation following [this guide](https://github.com/emptylight370/siyuan-vscodelite-edit/issues/32#issuecomment-3642491684).
+> [!IMPORTANT]
+> Since Siyuan has officially released [Callout block](https://github.com/siyuan-note/siyuan/issues/16051) feature ([Release Note](https://github.com/siyuan-note/siyuan/releases/tag/v3.5.0)), the theme has removed the self-implemented quote block Callout style in this version. After removal, you can perform the migration operation following [this guide](https://github.com/emptylight370/siyuan-vscodelite-edit/issues/32#issuecomment-3642491684).
 
 ### Usable attribute values
 
