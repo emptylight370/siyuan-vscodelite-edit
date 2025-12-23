@@ -77,24 +77,15 @@ To enable custom attributes, add the `vsce` attribute in the **Custom Attributes
 
 ### Usable attribute values
 
-|       values       | Scope                       | Effect                                                           | Supported Since | Last Updated |
-| :----------------: | --------------------------- | ---------------------------------------------------------------- | --------------- | ------------ |
-|      `no-tag`      | document or content block   | Disable in-paragraph tag styles in the selected range            | 2.3.0           | 2.3.0        |
-|    `mark-hide`     | document or paragraph block | Mark hollowing, hide marked text, display on mouse hover         | 2.3.8           | 2.3.8        |
-|    `table-min`     | table block                 | Force the minimum column width without affecting manual settings | 2.3.0           | 2.3.0        |
-|     `no-thead`     | table block                 | Disable the color and align of table head(`<thead>`)             | 2.3.0           | 2.3.0        |
-|    `hide-thead`    | table block                 | Hide `<thead>` element visually                                  | 2.5.0           | 2.5.0        |
-|  `callout-error`   | quote block                 | callout❌Red(already removed)                                    | x               | Removed      |
-|   `callout-hint`   | quote block                 | callout💡Blue(already removed)                                   | x               | Removed      |
-|   `callout-info`   | quote block                 | calloutℹ️White(already removed)                                  | x               | Removed      |
-|   `callout-note`   | quote block                 | callout📝White(already removed)                                  | x               | Removed      |
-| `callout-question` | quote block                 | callout❓Yellow(already removed)                                 | x               | Removed      |
-|  `callout-quote`   | quote block                 | callout📣Blue(already removed)                                   | x               | Removed      |
-| `callout-success`  | quote block                 | callout✅Green(already removed)                                  | x               | Removed      |
-|   `callout-todo`   | quote block                 | callout☑️Green(already removed)                                  | x               | Removed      |
-| `callout-warning`  | quote block                 | callout⚠️Yellow(already removed)                                 | x               | Removed      |
-| `av-no-add-entry`  | database block              | Hide database add entry button (add function works normally)     | 2.5.2           | 2.6.2        |
-|  `av-no-add-view`  | database block              | Hide database add view button (add function works normally)      | 2.5.2           | 2.5.2        |
+|      values       | Scope                       | Effect                                                           | Supported Since | Last Updated |
+| :---------------: | --------------------------- | ---------------------------------------------------------------- | --------------- | ------------ |
+|     `no-tag`      | document or content block   | Disable in-paragraph tag styles in the selected range            | 2.3.0           | 2.3.0        |
+|    `mark-hide`    | document or paragraph block | Mark hollowing, hide marked text, display on mouse hover         | 2.3.8           | 2.3.8        |
+|    `table-min`    | table block                 | Force the minimum column width without affecting manual settings | 2.3.0           | 2.3.0        |
+|    `no-thead`     | table block                 | Disable the color and align of table head(`<thead>`)             | 2.3.0           | 2.3.0        |
+|   `hide-thead`    | table block                 | Hide `<thead>` element visually                                  | 2.5.0           | 2.5.0        |
+| `av-no-add-entry` | database block              | Hide database add entry button (add function works normally)     | 2.5.2           | 2.6.2        |
+| `av-no-add-view`  | database block              | Hide database add view button (add function works normally)      | 2.5.2           | 2.5.2        |
 
 ## Plugin fitness
 
