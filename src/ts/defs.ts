@@ -13,7 +13,7 @@ export async function loadGlobalVars() {
      */
     globalThis.defaultConf = {
         version: 13,
-        lastSeen: "2.6.1",
+        lastSeen: "2.6.2",
         theme: {
             codeBlock: true,
             reference: true,
