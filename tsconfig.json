@@ -1,14 +1,18 @@
+// 最低支持 WebView 95 https://github.com/siyuan-note/siyuan/issues/15147
 {
   "compilerOptions": {
-    "target": "ES5",
+    "target": "es2021",
     "module": "ESNext",
+    "moduleResolution": "bundler",
     "declaration": false,
     "outDir": "./",
     "rootDir": "./src",
-    "lib": ["ES2015", "ES2020", "DOM", "DOM.Iterable"],
+    "lib": ["ES2021", "DOM", "DOM.Iterable"],
     "esModuleInterop": true,
     "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true
+    "forceConsistentCasingInFileNames": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true
   },
   "include": ["src/**/*.ts"],
   "exclude": ["node_modules", "dist"]
