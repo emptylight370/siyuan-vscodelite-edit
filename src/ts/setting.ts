@@ -1,4 +1,4 @@
-import { _getFile, _postMessage, _reloadInterface, _writeFile } from "./api";
+import { _getFile, _postMessage, _reloadInterface, _writeFile, getMsg } from "./api";
 import { settingKeyMap } from "./types";
 import { EnableSettings, vscMessage, SettingItem, SettingPanelId, ThemeConfig } from "./types.d";
 
@@ -54,7 +54,7 @@ export async function createSettingsWindow() {
 
     // 创建标题
     const title: HTMLHeadingElement = document.createElement("h2");
-    title.textContent = globalThis.vscMessage.settingPanelTitle[globalThis.vscLang];
+    title.textContent = getMsg("settingPanelTitle");
     title.setAttribute("data-subtype", "h2");
     // title.setAttribute("data-type", "NodeHeading");
     title.className = "h2";
@@ -63,10 +63,10 @@ export async function createSettingsWindow() {
     // 创建上方的标签页
     const tabbar: HTMLDivElement = document.createElement("div");
     tabbar.className = "layout-tab-bar fn__flex";
-    tabbar.appendChild(createTab(globalThis.vscMessage.settingTabSiYuan[globalThis.vscLang], "tabThemeSiYuan"));
+    tabbar.appendChild(createTab(getMsg("settingTabSiYuan"), "tabThemeSiYuan"));
     (tabbar.lastChild as HTMLDivElement).classList.add("item--focus");
     changeHints(tabbar.lastChild as HTMLDivElement, "tabTipSiYuan");
-    tabbar.appendChild(createTab(globalThis.vscMessage.settingTabPlugin[globalThis.vscLang], "tabThemePlugin"));
+    tabbar.appendChild(createTab(getMsg("settingTabPlugin"), "tabThemePlugin"));
     changeHints(tabbar.lastChild as HTMLDivElement, "tabTipPlugin");
     dialogBody.appendChild(tabbar);
 
@@ -99,16 +99,16 @@ export async function createSettingsWindow() {
     const hints: HTMLSpanElement = document.createElement("span");
     hints.id = "vsceSettingHint";
     hints.className = "fn__flex-1 fn__flex-center";
-    hints.innerText = globalThis.vscMessage.tipSwitch[globalThis.vscLang];
+    hints.innerText = getMsg("tipSwitch");
     // * 创建保存按钮
     const saveButton = document.createElement("button");
-    saveButton.textContent = globalThis.vscMessage.saveReload[globalThis.vscLang];
+    saveButton.textContent = getMsg("saveReload");
     saveButton.className = "b3-button b3-button--text";
     saveButton.addEventListener("click", closeAndSave); // 保存并刷新页面
     changeHints(saveButton, "tipSave");
     // * 创建不保存按钮
     const notSaveButton = document.createElement("button");
-    notSaveButton.textContent = globalThis.vscMessage.nSave[globalThis.vscLang];
+    notSaveButton.textContent = getMsg("nSave");
     notSaveButton.className = "b3-button b3-button--cancel";
     notSaveButton.addEventListener("click", closeNotSave); // 不保存修改
     changeHints(notSaveButton, "tipSave");
@@ -143,7 +143,7 @@ export async function createSettingsWindow() {
      */
     function changeHints(element: HTMLElement, messageKey: keyof vscMessage) {
         const showMessage = () => {
-            hints.innerText = globalThis.vscMessage[messageKey][globalThis.vscLang] as string;
+            hints.innerText = getMsg(messageKey);
         };
 
         element.addEventListener("pointerenter", showMessage);
@@ -294,7 +294,7 @@ async function closeAndSave() {
     // 保存设置文件
     await putSettings(saveSt);
     // 显示完成通知
-    _postMessage("ok", globalThis.vscMessage.confSave[globalThis.vscLang]);
+    _postMessage("ok", getMsg("confSave"));
     // 稍后重载页面
     setTimeout(() => {
         _reloadInterface();
@@ -312,7 +312,7 @@ function closeNotSave() {
     const dialog = document.getElementById("vsceThemeSettingDialog");
 
     // 显示不保存通知
-    _postMessage("error", globalThis.vscMessage.confNotSave[globalThis.vscLang], 3000);
+    _postMessage("error", getMsg("confNotSave"), 3000);
     // 移除设置窗口
     document.body.removeChild(dialog);
 }
@@ -333,111 +333,111 @@ async function fetchSettingsPanelArray() {
     // ! 设置页添加设置选项
     // 标题
     settings.push({
-        label: globalThis.vscMessage.tititem[globalThis.vscLang],
+        label: getMsg("tititem"),
         id: "titleBlock",
         enable: v?.theme?.title ?? globalThis.vscDefaultConf.theme.title,
     });
     // 标题阴影
     settings.push({
-        label: globalThis.vscMessage.titleShadow[globalThis.vscLang],
-        description: globalThis.vscMessage.titleShadowDesc[globalThis.vscLang],
+        label: getMsg("titleShadow"),
+        description: getMsg("titleShadowDesc"),
         id: "titleShadow",
         enable: v?.theme?.titleShadow ?? globalThis.vscDefaultConf.theme.titleShadow,
     });
     // 标题图标
     settings.push({
-        label: globalThis.vscMessage.titleIcon[globalThis.vscLang],
-        description: globalThis.vscMessage.titleIconDesc[globalThis.vscLang],
+        label: getMsg("titleIcon"),
+        description: getMsg("titleIconDesc"),
         id: "titleIcon",
         enable: v?.theme?.titleIcon ?? globalThis.vscDefaultConf.theme.titleIcon,
     });
     // 文档树和大纲
     settings.push({
-        label: globalThis.vscMessage.ftitem[globalThis.vscLang],
+        label: getMsg("ftitem"),
         id: "doctree",
         enable: v?.theme?.doctree ?? globalThis.vscDefaultConf.theme.doctree,
     });
     // 代码块
     settings.push({
-        label: globalThis.vscMessage.cbitem[globalThis.vscLang],
+        label: getMsg("cbitem"),
         id: "codeBlock",
         enable: v?.theme?.codeBlock ?? globalThis.vscDefaultConf.theme.codeBlock,
     });
     // 引用
     settings.push({
-        label: globalThis.vscMessage.refitem[globalThis.vscLang],
+        label: getMsg("refitem"),
         id: "referenceBlock",
         enable: v?.theme?.reference ?? globalThis.vscDefaultConf.theme.reference,
     });
     // 标记
     settings.push({
-        label: globalThis.vscMessage.markitem[globalThis.vscLang],
+        label: getMsg("markitem"),
         id: "mark",
         enable: v?.theme?.mark ?? globalThis.vscDefaultConf.theme.mark,
     });
     // 标签
     settings.push({
-        label: globalThis.vscMessage.tagitem[globalThis.vscLang],
-        description: globalThis.vscMessage.tagdesc[globalThis.vscLang],
+        label: getMsg("tagitem"),
+        description: getMsg("tagdesc"),
         id: "tagStyle",
         enable: v?.theme?.tag ?? globalThis.vscDefaultConf.theme.tag,
     });
     // 集市
     settings.push({
-        label: globalThis.vscMessage.bazitem[globalThis.vscLang],
+        label: getMsg("bazitem"),
         id: "bazaarStyle",
         enable: v?.theme?.bazaar ?? globalThis.vscDefaultConf.theme.bazaar,
     });
     // 嵌入块
     settings.push({
-        label: globalThis.vscMessage.emitem[globalThis.vscLang],
-        description: globalThis.vscMessage.emdesc[globalThis.vscLang],
+        label: getMsg("emitem"),
+        description: getMsg("emdesc"),
         id: "embeddedBlock",
         enable: v?.theme?.embeddedBlock ?? globalThis.vscDefaultConf.theme.embeddedBlock,
     });
     // 数据库
     settings.push({
-        label: globalThis.vscMessage.dbitem[globalThis.vscLang],
+        label: getMsg("dbitem"),
         id: "database",
         enable: v?.theme?.database ?? globalThis.vscDefaultConf.theme.database,
     });
     // 快捷键面板
     settings.push({
-        label: globalThis.vscMessage.scitem[globalThis.vscLang],
+        label: getMsg("scitem"),
         id: "scPanelStyle",
         enable: v?.plugins?.shortcutPanel ?? globalThis.vscDefaultConf.plugins.shortcutPanel,
     });
     // 替换背景图片插件电脑端
     settings.push({
-        label: globalThis.vscMessage.bgdesktop[globalThis.vscLang],
-        description: globalThis.vscMessage.bgdesc[globalThis.vscLang],
+        label: getMsg("bgdesktop"),
+        description: getMsg("bgdesc"),
         id: "backgroundCoverDesktop",
         enable: v?.plugins?.backgroundCoverDesktop ?? globalThis.vscDefaultConf.plugins.backgroundCoverDesktop,
     });
     // 替换背景图片插件移动端
     settings.push({
-        label: globalThis.vscMessage.bgmobile[globalThis.vscLang],
-        description: globalThis.vscMessage.bgdesc[globalThis.vscLang],
+        label: getMsg("bgmobile"),
+        description: getMsg("bgdesc"),
         id: "backgroundCoverMobile",
         enable: v?.plugins?.backgroundCoverMobile ?? globalThis.vscDefaultConf.plugins.backgroundCoverMobile,
     });
     // 数学公式增强插件
     settings.push({
-        label: globalThis.vscMessage.mathitem[globalThis.vscLang],
-        description: globalThis.vscMessage.mathdesc[globalThis.vscLang],
+        label: getMsg("mathitem"),
+        description: getMsg("mathdesc"),
         id: "mathPanel",
         enable: v?.plugins?.mathPanel ?? globalThis.vscDefaultConf.plugins.mathPanel,
     });
     // 双标签栏
     settings.push({
-        label: globalThis.vscMessage.doubleTabbaritem[globalThis.vscLang],
-        description: globalThis.vscMessage.doubleTabbardesc[globalThis.vscLang],
+        label: getMsg("doubleTabbaritem"),
+        description: getMsg("doubleTabbardesc"),
         id: "doubleTabbar",
         enable: v?.plugins?.doubleTabbar ?? globalThis.vscDefaultConf.plugins.doubleTabbar,
     });
     // 斜杠菜单多栏显示
     settings.push({
-        label: globalThis.vscMessage.slashMenuitem[globalThis.vscLang],
+        label: getMsg("slashMenuitem"),
         id: "slashMenu",
         enable: v?.theme?.slashMenu ?? globalThis.vscDefaultConf.theme.slashMenu,
     });
@@ -464,7 +464,7 @@ export async function getSettings(): Promise<EnableSettings[]> {
     // 检测配置文件的版本
     if (config["version"] < globalThis.vscDefaultConf["version"] || config["version"] == undefined) {
         // console.log(settings["version"]);
-        await _postMessage("ok", globalThis.vscMessage.confUpdate[globalThis.vscLang]);
+        await _postMessage("ok", getMsg("confUpdate"));
     }
     // ! 主题更新后提示通知
     if (config["lastSeen"] !== globalThis.vscDefaultConf["lastSeen"] || config["lastSeen"] == undefined) {
@@ -505,7 +505,7 @@ export async function putSettings(settings: ThemeConfig) {
  */
 async function updateLastSeen(version: string, showMsg: boolean) {
     // 先发送通知，需要手动关闭，显示10分钟应该够久了
-    if (showMsg) await _postMessage("ok", globalThis.vscMessage.newVersionHint[globalThis.vscLang], 600000);
+    if (showMsg) await _postMessage("ok", getMsg("newVersionHint"), 600000);
 
     // 发布模式下直接返回避免写入操作被禁止
     if (window.siyuan.isPublish == true) return;

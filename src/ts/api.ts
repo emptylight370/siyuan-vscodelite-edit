@@ -6,6 +6,8 @@
  * TODO 完成所需的所有api写入
  */
 
+import { vscMessage } from "./types.d";
+
 /**
  * 向思源请求数据
  * @param url 请求url
@@ -138,4 +140,31 @@ export async function _postMessage(type: "ok" | "error", message: string, time =
 export async function _reloadInterface() {
     const url = "/api/ui/reloadUI";
     _rqFORSiyuan(url, undefined);
+}
+
+/**
+ * 安全获取本地化文本，如果当前语言不存在则回退到en_US
+ * @param msg 要显示的vscMessage文本
+ * @returns 本地化文本
+ * @since 2.6.3
+ * @version 2.6.3
+ */
+export function getMsg(msg: keyof vscMessage): string {
+    // 当前的本地化文本对象
+    const msgObj = globalThis.vscMessage[msg];
+    // 首先尝试获取当前语言版本
+    if (msgObj[globalThis.vscLang]) {
+        return msgObj[globalThis.vscLang] as string;
+    }
+    // 如果当前语言不存在，尝试回退到en_US
+    if (msgObj["en_US"]) {
+        return msgObj["en_US"] as string;
+    }
+    // 如果en_US也不存在，则返回第一个可用的值
+    const langs = Object.keys(msgObj);
+    if (langs.length > 0) {
+        return msgObj[langs[0]] as string;
+    }
+    // 如果没有可用的文本，返回报错信息
+    return `vscMessage.${msg}.${globalThis.vscLang}`;
 }

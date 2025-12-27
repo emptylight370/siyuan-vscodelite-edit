@@ -1,4 +1,4 @@
-import { _postMessage } from "./ts/api";
+import { _postMessage, getMsg } from "./ts/api";
 import { loadGlobalVars } from "./ts/defs";
 import { bg, bgobserver } from "./ts/plugins/background";
 import { getSlashMenusCount, slashMenuObserver } from "./ts/plugins/slashmenu";
@@ -22,14 +22,14 @@ import { EnableSettings } from "./ts/types.d";
         await loadGlobalVars();
     } catch (e) {
         // 基本上意味着主题启用失败了
+        // 因为无法加载全局变量所以无法用预先定义好的本地化信息
         let errMsg: string;
-        if (document.documentElement.lang === "zh_CN") {
+        if (document.documentElement.lang === "zh_CN" || document.documentElement.lang === "zh_CHT") {
             errMsg = "加载主题VSCode Lite Edit失败，无法加载变量";
         } else {
             errMsg = "Load theme VSCode Lite Edit failed, can't load variables";
         }
-        console.error(errMsg);
-        console.error(e);
+        console.error(errMsg, e);
         await _postMessage("error", errMsg);
         return;
     }
@@ -45,9 +45,9 @@ import { EnableSettings } from "./ts/types.d";
              * 加载设置文件失败会使用默认的配置文件初始化一个
              * 如果还是失败就意味着之前加载也失败了，不管什么地方失败都无法正常使用主题
              */
-            console.error(globalThis.vscMessage.loadConfigFail[globalThis.vscLang]);
+            console.error(getMsg("loadConfigFail"));
             console.error(e);
-            await _postMessage("error", globalThis.vscMessage.loadConfigFail[globalThis.vscLang]);
+            await _postMessage("error", getMsg("loadConfigFail"));
             return;
         }
         // 添加主题菜单
@@ -59,11 +59,11 @@ import { EnableSettings } from "./ts/types.d";
         // 在导出PDF时候执行主题的脚本
         addPDFScript();
         // 加载完成(o゜▽゜)o☆
-        console.log(globalThis.vscMessage.loadFinish[globalThis.vscLang]);
+        console.log(getMsg("loadFinish"));
     } else {
         // 加载失败
-        console.error(globalThis.vscMessage.loadCssFail[globalThis.vscLang]);
-        await _postMessage("error", globalThis.vscMessage.loadCssFail[globalThis.vscLang]);
+        console.error(getMsg("loadCssFail"));
+        await _postMessage("error", getMsg("loadCssFail"));
     }
 })();
 
@@ -121,7 +121,7 @@ function addThemeToolBar() {
     // 创建按钮
     const vscToolBar = document.createElement("div");
     vscToolBar.id = "vscleToolbar";
-    vscToolBar.setAttribute("aria-label", globalThis.vscMessage.settingButtonAria[globalThis.vscLang]);
+    vscToolBar.setAttribute("aria-label", getMsg("settingButtonAria"));
     vscToolBar.style.userSelect = "none";
     // 设置按钮文本
     vscToolBar.innerHTML = "VC";
@@ -253,8 +253,8 @@ function addImports(table: HTMLLinkElement, labels: EnableSettings[]) {
             index++;
         } catch (e) {
             // 加载失败
-            console.error(globalThis.vscMessage.loadCssFail[globalThis.vscLang]);
-            _postMessage("error", globalThis.vscMessage.loadCssFail[globalThis.vscLang]);
+            console.error(getMsg("loadCssFail"));
+            _postMessage("error", getMsg("loadCssFail"));
         }
     }
 }
