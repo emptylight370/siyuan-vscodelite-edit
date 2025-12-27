@@ -2,15 +2,15 @@
  * 添加监听器以观察`/`菜单是否显示
  * @param times 触发次数
  * @since 2.6.2
- * @version 2.6.2
+ * @version 2.6.3
  */
 export function slashMenuObserver(times: number) {
     const slashMenus = Array.from(document.querySelectorAll("div.protyle-hint.hint--menu"));
     if (slashMenus.length > 0) {
-        if (globalThis.vscObserver.slashDisplayObserver !== null) {
-            globalThis.vscObserver.slashDisplayObserver.disconnect();
+        if (globalThis.vscObservers.slashDisplayObserver !== null) {
+            globalThis.vscObservers.slashDisplayObserver.disconnect();
         } else {
-            globalThis.vscObserver.slashDisplayObserver = new MutationObserver(function (mutationsList) {
+            globalThis.vscObservers.slashDisplayObserver = new MutationObserver(function (mutationsList) {
                 for (const mutation of mutationsList) {
                     if (mutation.type === "attributes" && mutation.attributeName === "class") {
                         const slashMenu = mutation.target as HTMLDivElement;
@@ -27,7 +27,7 @@ export function slashMenuObserver(times: number) {
         }
         // 观察斜杠菜单元素变化
         for (const slashMenu of slashMenus) {
-            globalThis.vscObserver.slashDisplayObserver.observe(slashMenu, {
+            globalThis.vscObservers.slashDisplayObserver.observe(slashMenu, {
                 attributes: true,
                 attributeFilter: ["class"],
             });

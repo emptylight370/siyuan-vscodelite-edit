@@ -1,6 +1,6 @@
 import {
     EnableSettingsKeyMap,
-    LocalMessage,
+    vscMessage,
     SettingKeyMap,
     ThemeConfig,
     vscCounters,
@@ -30,15 +30,15 @@ declare global {
 
     // 主题代码中添加的全局变量
     /** 默认配置文件 */
-    var defaultConf: ThemeConfig;
+    var vscDefaultConf: Readonly<ThemeConfig>;
     /** 本地化提示信息 */
-    var localMessage: LocalMessage;
+    var vscMessage: Readonly<vscMessage>;
     /** 默认语言，可由浏览器方法获取 */
-    var defLag: "zh_CN" | "en_US";
+    var vscLang: keyof vscMessage["language"];
     /** 目前所有的计时器 */
-    var vscTimer: vscTimers;
+    var vscTimers: vscTimers;
     /** 目前所有的观察器 */
-    var vscObserver: vscObservers;
+    var vscObservers: vscObservers;
     /** 目前所有的计数器 */
     var vscCounters: vscCounters;
 }

@@ -1,11 +1,11 @@
 import { _getFile, _postMessage, _reloadInterface, _writeFile } from "./api";
 import { settingKeyMap } from "./types";
-import { EnableSettings, LocalMessage, SettingItem, SettingPanelId, ThemeConfig } from "./types.d";
+import { EnableSettings, vscMessage, SettingItem, SettingPanelId, ThemeConfig } from "./types.d";
 
 /**
  * 创建一个包含标签和复选框的 HTML 结构
  * @since 1.2.2
- * @version 2.6.1
+ * @version 2.6.3
  */
 export async function createSettingsWindow() {
     // 获取设置数组
@@ -54,7 +54,7 @@ export async function createSettingsWindow() {
 
     // 创建标题
     const title: HTMLHeadingElement = document.createElement("h2");
-    title.textContent = globalThis.localMessage.settingPanelTitle[globalThis.defLag];
+    title.textContent = globalThis.vscMessage.settingPanelTitle[globalThis.vscLang];
     title.setAttribute("data-subtype", "h2");
     // title.setAttribute("data-type", "NodeHeading");
     title.className = "h2";
@@ -63,10 +63,10 @@ export async function createSettingsWindow() {
     // 创建上方的标签页
     const tabbar: HTMLDivElement = document.createElement("div");
     tabbar.className = "layout-tab-bar fn__flex";
-    tabbar.appendChild(createTab(globalThis.localMessage.settingTabSiYuan[globalThis.defLag], "tabThemeSiYuan"));
+    tabbar.appendChild(createTab(globalThis.vscMessage.settingTabSiYuan[globalThis.vscLang], "tabThemeSiYuan"));
     (tabbar.lastChild as HTMLDivElement).classList.add("item--focus");
     changeHints(tabbar.lastChild as HTMLDivElement, "tabTipSiYuan");
-    tabbar.appendChild(createTab(globalThis.localMessage.settingTabPlugin[globalThis.defLag], "tabThemePlugin"));
+    tabbar.appendChild(createTab(globalThis.vscMessage.settingTabPlugin[globalThis.vscLang], "tabThemePlugin"));
     changeHints(tabbar.lastChild as HTMLDivElement, "tabTipPlugin");
     dialogBody.appendChild(tabbar);
 
@@ -99,16 +99,16 @@ export async function createSettingsWindow() {
     const hints: HTMLSpanElement = document.createElement("span");
     hints.id = "vsceSettingHint";
     hints.className = "fn__flex-1 fn__flex-center";
-    hints.innerText = globalThis.localMessage.tipSwitch[globalThis.defLag];
+    hints.innerText = globalThis.vscMessage.tipSwitch[globalThis.vscLang];
     // * 创建保存按钮
     const saveButton = document.createElement("button");
-    saveButton.textContent = globalThis.localMessage.saveReload[globalThis.defLag];
+    saveButton.textContent = globalThis.vscMessage.saveReload[globalThis.vscLang];
     saveButton.className = "b3-button b3-button--text";
     saveButton.addEventListener("click", closeAndSave); // 保存并刷新页面
     changeHints(saveButton, "tipSave");
     // * 创建不保存按钮
     const notSaveButton = document.createElement("button");
-    notSaveButton.textContent = globalThis.localMessage.nSave[globalThis.defLag];
+    notSaveButton.textContent = globalThis.vscMessage.nSave[globalThis.vscLang];
     notSaveButton.className = "b3-button b3-button--cancel";
     notSaveButton.addEventListener("click", closeNotSave); // 不保存修改
     changeHints(notSaveButton, "tipSave");
@@ -117,7 +117,7 @@ export async function createSettingsWindow() {
     newVersionTipsButton.innerHTML = '<svg style="margin-right: 0"><use xlink:href="#iconInbox"></use></svg>';
     newVersionTipsButton.className = "b3-button b3-button--cancel";
     newVersionTipsButton.addEventListener("click", () => {
-        updateLastSeen(globalThis.defaultConf.lastSeen, true);
+        updateLastSeen(globalThis.vscDefaultConf.lastSeen, true);
     });
     changeHints(newVersionTipsButton, "oUpdate");
     // * 创建刷新按钮
@@ -139,11 +139,11 @@ export async function createSettingsWindow() {
      * @param element 元素
      * @param messageKey 消息key名称
      * @since 2.5.0
-     * @version 2.5.0
+     * @version 2.6.3
      */
-    function changeHints(element: HTMLElement, messageKey: keyof LocalMessage) {
+    function changeHints(element: HTMLElement, messageKey: keyof vscMessage) {
         const showMessage = () => {
-            hints.innerText = globalThis.localMessage[messageKey][globalThis.defLag] as string;
+            hints.innerText = globalThis.vscMessage[messageKey][globalThis.vscLang] as string;
         };
 
         element.addEventListener("pointerenter", showMessage);
@@ -271,13 +271,13 @@ function addSettingsToPage(siyuan: HTMLDivElement, plugin: HTMLDivElement, setti
 /**
  * NOTE 工具函数，保存设置并刷新思源
  * @since 1.2.2
- * @version 2.5.1
+ * @version 2.6.3
  */
 async function closeAndSave() {
     const dialog = document.getElementById("vsceThemeSettingDialog");
 
     // 在默认配置的基础上修改配置，可以增加原来没有的配置
-    let saveSt: ThemeConfig = globalThis.defaultConf;
+    let saveSt: ThemeConfig = globalThis.vscDefaultConf;
     const ckb = document.getElementsByClassName("vslite_sets");
     // 获取当前设置项的启用状态
     Array.from(ckb).forEach((checkbox) => {
@@ -290,11 +290,11 @@ async function closeAndSave() {
         }
     });
     // 修改配置文件版本
-    saveSt["version"] = globalThis.defaultConf["version"];
+    saveSt["version"] = globalThis.vscDefaultConf["version"];
     // 保存设置文件
     await putSettings(saveSt);
     // 显示完成通知
-    _postMessage("ok", globalThis.localMessage.confSave[globalThis.defLag]);
+    _postMessage("ok", globalThis.vscMessage.confSave[globalThis.vscLang]);
     // 稍后重载页面
     setTimeout(() => {
         _reloadInterface();
@@ -306,13 +306,13 @@ async function closeAndSave() {
 /**
  * NOTE 工具函数，不保存设置
  * @since 1.2.2
- * @version 2.5.1
+ * @version 2.6.3
  */
 function closeNotSave() {
     const dialog = document.getElementById("vsceThemeSettingDialog");
 
     // 显示不保存通知
-    _postMessage("error", globalThis.localMessage.confNotSave[globalThis.defLag], 3000);
+    _postMessage("error", globalThis.vscMessage.confNotSave[globalThis.vscLang], 3000);
     // 移除设置窗口
     document.body.removeChild(dialog);
 }
@@ -321,125 +321,125 @@ function closeNotSave() {
  * NOTE 获取设置界面的定义数组
  * @returns Promise&lt;SettingItem[]%gt;
  * @since 2.1.0
- * @version 2.6.2
+ * @version 2.6.3
  */
 async function fetchSettingsPanelArray() {
     const config: ThemeConfig | null = await _getFile("/data/snippets/vsc_edit.config.json");
     // 如果没有获取到配置文件则使用默认配置文件
-    const v: ThemeConfig = config ?? globalThis.defaultConf;
+    const v: ThemeConfig = config ?? globalThis.vscDefaultConf;
     // 生成并返回设置项列表
     // 定义设置页的设置项数组
     let settings: SettingItem[] = [];
     // ! 设置页添加设置选项
     // 标题
     settings.push({
-        label: globalThis.localMessage.tititem[globalThis.defLag],
+        label: globalThis.vscMessage.tititem[globalThis.vscLang],
         id: "titleBlock",
-        enable: v?.theme?.title ?? globalThis.defaultConf.theme.title,
+        enable: v?.theme?.title ?? globalThis.vscDefaultConf.theme.title,
     });
     // 标题阴影
     settings.push({
-        label: globalThis.localMessage.titleShadow[globalThis.defLag],
-        description: globalThis.localMessage.titleShadowDesc[globalThis.defLag],
+        label: globalThis.vscMessage.titleShadow[globalThis.vscLang],
+        description: globalThis.vscMessage.titleShadowDesc[globalThis.vscLang],
         id: "titleShadow",
-        enable: v?.theme?.titleShadow ?? globalThis.defaultConf.theme.titleShadow,
+        enable: v?.theme?.titleShadow ?? globalThis.vscDefaultConf.theme.titleShadow,
     });
     // 标题图标
     settings.push({
-        label: globalThis.localMessage.titleIcon[globalThis.defLag],
-        description: globalThis.localMessage.titleIconDesc[globalThis.defLag],
+        label: globalThis.vscMessage.titleIcon[globalThis.vscLang],
+        description: globalThis.vscMessage.titleIconDesc[globalThis.vscLang],
         id: "titleIcon",
-        enable: v?.theme?.titleIcon ?? globalThis.defaultConf.theme.titleIcon,
+        enable: v?.theme?.titleIcon ?? globalThis.vscDefaultConf.theme.titleIcon,
     });
     // 文档树和大纲
     settings.push({
-        label: globalThis.localMessage.ftitem[globalThis.defLag],
+        label: globalThis.vscMessage.ftitem[globalThis.vscLang],
         id: "doctree",
-        enable: v?.theme?.doctree ?? globalThis.defaultConf.theme.doctree,
+        enable: v?.theme?.doctree ?? globalThis.vscDefaultConf.theme.doctree,
     });
     // 代码块
     settings.push({
-        label: globalThis.localMessage.cbitem[globalThis.defLag],
+        label: globalThis.vscMessage.cbitem[globalThis.vscLang],
         id: "codeBlock",
-        enable: v?.theme?.codeBlock ?? globalThis.defaultConf.theme.codeBlock,
+        enable: v?.theme?.codeBlock ?? globalThis.vscDefaultConf.theme.codeBlock,
     });
     // 引用
     settings.push({
-        label: globalThis.localMessage.refitem[globalThis.defLag],
+        label: globalThis.vscMessage.refitem[globalThis.vscLang],
         id: "referenceBlock",
-        enable: v?.theme?.reference ?? globalThis.defaultConf.theme.reference,
+        enable: v?.theme?.reference ?? globalThis.vscDefaultConf.theme.reference,
     });
     // 标记
     settings.push({
-        label: globalThis.localMessage.markitem[globalThis.defLag],
+        label: globalThis.vscMessage.markitem[globalThis.vscLang],
         id: "mark",
-        enable: v?.theme?.mark ?? globalThis.defaultConf.theme.mark,
+        enable: v?.theme?.mark ?? globalThis.vscDefaultConf.theme.mark,
     });
     // 标签
     settings.push({
-        label: globalThis.localMessage.tagitem[globalThis.defLag],
-        description: globalThis.localMessage.tagdesc[globalThis.defLag],
+        label: globalThis.vscMessage.tagitem[globalThis.vscLang],
+        description: globalThis.vscMessage.tagdesc[globalThis.vscLang],
         id: "tagStyle",
-        enable: v?.theme?.tag ?? globalThis.defaultConf.theme.tag,
+        enable: v?.theme?.tag ?? globalThis.vscDefaultConf.theme.tag,
     });
     // 集市
     settings.push({
-        label: globalThis.localMessage.bazitem[globalThis.defLag],
+        label: globalThis.vscMessage.bazitem[globalThis.vscLang],
         id: "bazaarStyle",
-        enable: v?.theme?.bazaar ?? globalThis.defaultConf.theme.bazaar,
+        enable: v?.theme?.bazaar ?? globalThis.vscDefaultConf.theme.bazaar,
     });
     // 嵌入块
     settings.push({
-        label: globalThis.localMessage.emitem[globalThis.defLag],
-        description: globalThis.localMessage.emdesc[globalThis.defLag],
+        label: globalThis.vscMessage.emitem[globalThis.vscLang],
+        description: globalThis.vscMessage.emdesc[globalThis.vscLang],
         id: "embeddedBlock",
-        enable: v?.theme?.embeddedBlock ?? globalThis.defaultConf.theme.embeddedBlock,
+        enable: v?.theme?.embeddedBlock ?? globalThis.vscDefaultConf.theme.embeddedBlock,
     });
     // 数据库
     settings.push({
-        label: globalThis.localMessage.dbitem[globalThis.defLag],
+        label: globalThis.vscMessage.dbitem[globalThis.vscLang],
         id: "database",
-        enable: v?.theme?.database ?? globalThis.defaultConf.theme.database,
+        enable: v?.theme?.database ?? globalThis.vscDefaultConf.theme.database,
     });
     // 快捷键面板
     settings.push({
-        label: globalThis.localMessage.scitem[globalThis.defLag],
+        label: globalThis.vscMessage.scitem[globalThis.vscLang],
         id: "scPanelStyle",
-        enable: v?.plugins?.shortcutPanel ?? globalThis.defaultConf.plugins.shortcutPanel,
+        enable: v?.plugins?.shortcutPanel ?? globalThis.vscDefaultConf.plugins.shortcutPanel,
     });
     // 替换背景图片插件电脑端
     settings.push({
-        label: globalThis.localMessage.bgdesktop[globalThis.defLag],
-        description: globalThis.localMessage.bgdesc[globalThis.defLag],
+        label: globalThis.vscMessage.bgdesktop[globalThis.vscLang],
+        description: globalThis.vscMessage.bgdesc[globalThis.vscLang],
         id: "backgroundCoverDesktop",
-        enable: v?.plugins?.backgroundCoverDesktop ?? globalThis.defaultConf.plugins.backgroundCoverDesktop,
+        enable: v?.plugins?.backgroundCoverDesktop ?? globalThis.vscDefaultConf.plugins.backgroundCoverDesktop,
     });
     // 替换背景图片插件移动端
     settings.push({
-        label: globalThis.localMessage.bgmobile[globalThis.defLag],
-        description: globalThis.localMessage.bgdesc[globalThis.defLag],
+        label: globalThis.vscMessage.bgmobile[globalThis.vscLang],
+        description: globalThis.vscMessage.bgdesc[globalThis.vscLang],
         id: "backgroundCoverMobile",
-        enable: v?.plugins?.backgroundCoverMobile ?? globalThis.defaultConf.plugins.backgroundCoverMobile,
+        enable: v?.plugins?.backgroundCoverMobile ?? globalThis.vscDefaultConf.plugins.backgroundCoverMobile,
     });
     // 数学公式增强插件
     settings.push({
-        label: globalThis.localMessage.mathitem[globalThis.defLag],
-        description: globalThis.localMessage.mathdesc[globalThis.defLag],
+        label: globalThis.vscMessage.mathitem[globalThis.vscLang],
+        description: globalThis.vscMessage.mathdesc[globalThis.vscLang],
         id: "mathPanel",
-        enable: v?.plugins?.mathPanel ?? globalThis.defaultConf.plugins.mathPanel,
+        enable: v?.plugins?.mathPanel ?? globalThis.vscDefaultConf.plugins.mathPanel,
     });
     // 双标签栏
     settings.push({
-        label: globalThis.localMessage.doubleTabbaritem[globalThis.defLag],
-        description: globalThis.localMessage.doubleTabbardesc[globalThis.defLag],
+        label: globalThis.vscMessage.doubleTabbaritem[globalThis.vscLang],
+        description: globalThis.vscMessage.doubleTabbardesc[globalThis.vscLang],
         id: "doubleTabbar",
-        enable: v?.plugins?.doubleTabbar ?? globalThis.defaultConf.plugins.doubleTabbar,
+        enable: v?.plugins?.doubleTabbar ?? globalThis.vscDefaultConf.plugins.doubleTabbar,
     });
     // 斜杠菜单多栏显示
     settings.push({
-        label: globalThis.localMessage.slashMenuitem[globalThis.defLag],
+        label: globalThis.vscMessage.slashMenuitem[globalThis.vscLang],
         id: "slashMenu",
-        enable: v?.theme?.slashMenu ?? globalThis.defaultConf.theme.slashMenu,
+        enable: v?.theme?.slashMenu ?? globalThis.vscDefaultConf.theme.slashMenu,
     });
     return settings;
 }
@@ -448,27 +448,27 @@ async function fetchSettingsPanelArray() {
  * ! 获取当前启用的设置项
  * @returns Promise&lt;EnableSettings[]&gt;
  * @since 1.2.0
- * @version 2.6.1
+ * @version 2.6.3
  */
 export async function getSettings(): Promise<EnableSettings[]> {
     // var res = _analyseResponse(_getFile("/data/snippets/vsc_edit.config.json"));
     let config: ThemeConfig | null = await _getFile("/data/snippets/vsc_edit.config.json");
     // 如果未获取到配置文件，则使用默认配置生成文件
     if (!config) {
-        config = globalThis.defaultConf;
+        config = globalThis.vscDefaultConf;
         await putSettings(config);
     }
     // 解析并返回当前启用的设置项
     // 建立启用设置项的数组
     let lab: EnableSettings[] = [];
     // 检测配置文件的版本
-    if (config["version"] < globalThis.defaultConf["version"] || config["version"] == undefined) {
+    if (config["version"] < globalThis.vscDefaultConf["version"] || config["version"] == undefined) {
         // console.log(settings["version"]);
-        await _postMessage("ok", globalThis.localMessage.confUpdate[globalThis.defLag]);
+        await _postMessage("ok", globalThis.vscMessage.confUpdate[globalThis.vscLang]);
     }
     // ! 主题更新后提示通知
-    if (config["lastSeen"] !== globalThis.defaultConf["lastSeen"] || config["lastSeen"] == undefined) {
-        await updateLastSeen(globalThis.defaultConf.lastSeen, false);
+    if (config["lastSeen"] !== globalThis.vscDefaultConf["lastSeen"] || config["lastSeen"] == undefined) {
+        await updateLastSeen(globalThis.vscDefaultConf.lastSeen, false);
     }
     // ! 从设置中获取启用的设置项
     // 主题设置项
@@ -501,11 +501,11 @@ export async function putSettings(settings: ThemeConfig) {
  * @param version 新版本号
  * @param showMsg 是否显示通知
  * @since 2.6.1
- * @version 2.6.1
+ * @version 2.6.3
  */
 async function updateLastSeen(version: string, showMsg: boolean) {
     // 先发送通知，需要手动关闭，显示10分钟应该够久了
-    if (showMsg) await _postMessage("ok", globalThis.localMessage.newVersionHint[globalThis.defLag], 600000);
+    if (showMsg) await _postMessage("ok", globalThis.vscMessage.newVersionHint[globalThis.vscLang], 600000);
 
     // 发布模式下直接返回避免写入操作被禁止
     if (window.siyuan.isPublish == true) return;
@@ -514,7 +514,7 @@ async function updateLastSeen(version: string, showMsg: boolean) {
     let config: ThemeConfig | null = await _getFile("/data/snippets/vsc_edit.config.json");
     // 如果未获取到配置文件，则使用默认配置生成文件
     if (!config) {
-        config = globalThis.defaultConf;
+        config = globalThis.vscDefaultConf;
         await putSettings(config);
     }
     config.lastSeen = version;

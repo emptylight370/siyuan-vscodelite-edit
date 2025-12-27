@@ -1,5 +1,10 @@
 # ChangeLog
 
+## v2.6.3
+
+- 优化代码
+- Optimize code
+
 ## v2.6.2
 
 - 修复设置面板图标丢失

@@ -9,7 +9,7 @@ import { EnableSettings } from "./ts/types.d";
  * @description 主题默认加载时进行的行为
  * ! js代码加载后立即执行
  * @since 1.2.0
- * @version 2.6.0
+ * @version 2.6.3
  */
 (async function () {
     // 检查是否同时存在主题样式代码和PDF适配代码
@@ -33,7 +33,7 @@ import { EnableSettings } from "./ts/types.d";
         await _postMessage("error", errMsg);
         return;
     }
-    // console.log(defLag);
+    // console.log(vscLang);
     // console.log(cssTable);
     if (cssTable) {
         // 读取配置文件或生成配置文件
@@ -45,9 +45,9 @@ import { EnableSettings } from "./ts/types.d";
              * 加载设置文件失败会使用默认的配置文件初始化一个
              * 如果还是失败就意味着之前加载也失败了，不管什么地方失败都无法正常使用主题
              */
-            console.error(globalThis.localMessage.loadConfigFail[globalThis.defLag]);
+            console.error(globalThis.vscMessage.loadConfigFail[globalThis.vscLang]);
             console.error(e);
-            await _postMessage("error", globalThis.localMessage.loadConfigFail[globalThis.defLag]);
+            await _postMessage("error", globalThis.vscMessage.loadConfigFail[globalThis.vscLang]);
             return;
         }
         // 添加主题菜单
@@ -59,18 +59,18 @@ import { EnableSettings } from "./ts/types.d";
         // 在导出PDF时候执行主题的脚本
         addPDFScript();
         // 加载完成(o゜▽゜)o☆
-        console.log(globalThis.localMessage.loadFinish[globalThis.defLag]);
+        console.log(globalThis.vscMessage.loadFinish[globalThis.vscLang]);
     } else {
         // 加载失败
-        console.error(globalThis.localMessage.loadCssFail[globalThis.defLag]);
-        await _postMessage("error", globalThis.localMessage.loadCssFail[globalThis.defLag]);
+        console.error(globalThis.vscMessage.loadCssFail[globalThis.vscLang]);
+        await _postMessage("error", globalThis.vscMessage.loadCssFail[globalThis.vscLang]);
     }
 })();
 
 /**
  * ! 更换主题时移除修改内容
  * @since 1.2.0
- * @version 2.6.0
+ * @version 2.6.3
  */
 window.destroyTheme = async () => {
     // 移除主题按钮
@@ -81,34 +81,34 @@ window.destroyTheme = async () => {
     document.body.classList.remove("bgenable");
     document.body.classList.remove("vscmobile");
     // 移除计时器
-    Object.keys(globalThis.vscTimer).forEach((key) => {
-        if (globalThis.vscTimer[key] !== null) {
+    Object.keys(globalThis.vscTimers).forEach((key) => {
+        if (globalThis.vscTimers[key] !== null) {
             // console.log("remove timer");
             // 可以清除 timeout 和 interval
-            clearTimeout(globalThis.vscTimer[key]);
-            globalThis.vscTimer[key] = null;
+            clearTimeout(globalThis.vscTimers[key]);
+            globalThis.vscTimers[key] = null;
         }
     });
     // 移除监视器
-    Object.keys(globalThis.vscObserver).forEach((key) => {
-        if (globalThis.vscObserver[key] !== null) {
+    Object.keys(globalThis.vscObservers).forEach((key) => {
+        if (globalThis.vscObservers[key] !== null) {
             // console.log("remove observer");
-            (globalThis.vscObserver[key] as MutationObserver).disconnect();
-            globalThis.vscObserver[key] = null;
+            (globalThis.vscObservers[key] as MutationObserver).disconnect();
+            globalThis.vscObservers[key] = null;
         }
     });
     // 删除全局变量
-    delete globalThis.defaultConf;
-    delete globalThis.localMessage;
-    delete globalThis.defLag;
-    delete globalThis.vscTimer;
-    delete globalThis.vscObserver;
+    delete globalThis.vscDefaultConf;
+    delete globalThis.vscMessage;
+    delete globalThis.vscLang;
+    delete globalThis.vscTimers;
+    delete globalThis.vscObservers;
 };
 
 /**
  * 创建工具栏的按钮
  * @since 1.2.0
- * @version 2.6.2
+ * @version 2.6.3
  */
 function addThemeToolBar() {
     // 如果是发布模式就不添加按钮
@@ -121,7 +121,7 @@ function addThemeToolBar() {
     // 创建按钮
     const vscToolBar = document.createElement("div");
     vscToolBar.id = "vscleToolbar";
-    vscToolBar.setAttribute("aria-label", globalThis.localMessage.settingButtonAria[globalThis.defLag]);
+    vscToolBar.setAttribute("aria-label", globalThis.vscMessage.settingButtonAria[globalThis.vscLang]);
     vscToolBar.style.userSelect = "none";
     // 设置按钮文本
     vscToolBar.innerHTML = "VC";
@@ -156,9 +156,9 @@ function addThemeToolBar() {
             const firstButton = breadcrumbButtons[0];
             if (firstButton) {
                 firstButton.parentElement.insertBefore(vscToolBar, firstButton);
-                globalThis.vscTimer.settingMobileTimer = null;
+                globalThis.vscTimers.settingMobileTimer = null;
             } else {
-                globalThis.vscTimer.settingMobileTimer = window.setTimeout(() => {
+                globalThis.vscTimers.settingMobileTimer = window.setTimeout(() => {
                     insertMobile();
                 }, 1000);
             }
@@ -175,7 +175,7 @@ function addThemeToolBar() {
  * @param table &lt;link stylesheet&gt;
  * @param labels EnableSettings[]
  * @since 1.3.0
- * @version 2.6.2
+ * @version 2.6.3
  */
 function addImports(table: HTMLLinkElement, labels: EnableSettings[]) {
     const sheet: CSSStyleSheet = table.sheet;
@@ -253,8 +253,8 @@ function addImports(table: HTMLLinkElement, labels: EnableSettings[]) {
             index++;
         } catch (e) {
             // 加载失败
-            console.error(globalThis.localMessage.loadCssFail[globalThis.defLag]);
-            _postMessage("error", globalThis.localMessage.loadCssFail[globalThis.defLag]);
+            console.error(globalThis.vscMessage.loadCssFail[globalThis.vscLang]);
+            _postMessage("error", globalThis.vscMessage.loadCssFail[globalThis.vscLang]);
         }
     }
 }
@@ -263,7 +263,7 @@ function addImports(table: HTMLLinkElement, labels: EnableSettings[]) {
  * ! 添加固定属性
  * @param settings EnableSettings[]
  * @since 1.3.5
- * @version 2.6.2
+ * @version 2.6.3
  */
 function addFixedAttribute(settings: EnableSettings[]) {
     const isMobile = document.body.classList.contains("vscmobile");
@@ -278,13 +278,13 @@ function addFixedAttribute(settings: EnableSettings[]) {
         // 首先调用插件状态检测
         bg(0);
         // 添加观察器
-        if (globalThis.vscObserver.bgObserver === null) {
+        if (globalThis.vscObservers.bgObserver === null) {
             bgobserver(0);
         }
     }
     // ?如果设置启用斜杠菜单才进入判断
-    if (settings.includes("slashMenu") && globalThis.vscTimer.slashMenuTimer === null) {
-        globalThis.vscTimer.slashMenuTimer = window.setInterval(() => {
+    if (settings.includes("slashMenu") && globalThis.vscTimers.slashMenuTimer === null) {
+        globalThis.vscTimers.slashMenuTimer = window.setInterval(() => {
             let slashMenusCount = getSlashMenusCount();
             if (slashMenusCount !== globalThis.vscCounters.slashMenuCount) {
                 globalThis.vscCounters.slashMenuCount = slashMenusCount;

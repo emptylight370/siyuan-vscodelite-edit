@@ -2,7 +2,7 @@
  * 检测背景图片插件是否在运行
  * @param times 运行次数
  * @since 1.3.5
- * @version 2.6.2
+ * @version 2.6.3
  */
 export function bg(times: number) {
     // 背景自定义插件，部分情况下插件加载缓慢可重复检测一次
@@ -17,11 +17,11 @@ export function bg(times: number) {
         }
         // 刚开始每2秒重新检测状态，检测10秒
         if (times < 5) {
-            globalThis.vscTimer.bgTimer = window.setTimeout(bg, 2000, times + 1);
+            globalThis.vscTimers.bgTimer = window.setTimeout(bg, 2000, times + 1);
         } else {
-            globalThis.vscTimer.bgTimer = null;
+            globalThis.vscTimers.bgTimer = null;
         }
-        if (globalThis.vscObserver.bgExistObserver === null) {
+        if (globalThis.vscObservers.bgExistObserver === null) {
             bgExistObserver();
         }
     } else {
@@ -39,12 +39,12 @@ export function bg(times: number) {
  * 监听背景图片插件的属性修改
  * @param times 运行次数
  * @since 1.4.0
- * @version 2.6.1
+ * @version 2.6.3
  */
 export function bgobserver(times: number) {
     const bglayer = document.getElementById("bglayer");
     if (bglayer) {
-        globalThis.vscObserver.bgObserver = new MutationObserver(function (mutationsList) {
+        globalThis.vscObservers.bgObserver = new MutationObserver(function (mutationsList) {
             for (const mutation of mutationsList) {
                 if (mutation.type === "attributes" && mutation.attributeName === "style") {
                     // 样式发生变化时执行的代码
@@ -52,19 +52,19 @@ export function bgobserver(times: number) {
                 }
             }
         });
-        globalThis.vscObserver.bgObserver.observe(bglayer, {
+        globalThis.vscObservers.bgObserver.observe(bglayer, {
             attributes: true, // 监听属性变化
             attributeFilter: ["style"], // 只监听 style 属性
         });
-        globalThis.vscTimer.bgObserTimer = null;
+        globalThis.vscTimers.bgObserTimer = null;
     } else {
         // if (times == 0 && !document.body.classList.contains('vscmobile')) {
         if (times === 0) {
             // 运行失败等待5秒
-            globalThis.vscTimer.bgObserTimer = window.setTimeout(bgobserver, 5000, 1);
+            globalThis.vscTimers.bgObserTimer = window.setTimeout(bgobserver, 5000, 1);
         } else if (times === 1) {
             console.error("背景插件监听失败，修改插件启用状态需手动刷新");
-            globalThis.vscTimer.bgObserTimer = null;
+            globalThis.vscTimers.bgObserTimer = null;
         }
     }
 }
@@ -72,14 +72,14 @@ export function bgobserver(times: number) {
 /**
  * 检测背景是否被移除（插件关闭）
  * @since 2.6.1
- * @version 2.6.1
+ * @version 2.6.3
  */
 function bgExistObserver() {
     const bglayer = document.getElementById("bglayer");
     let parent = null;
     if (bglayer) {
         parent = bglayer.parentElement;
-        globalThis.vscObserver.bgExistObserver = new MutationObserver(function (mutationsList) {
+        globalThis.vscObservers.bgExistObserver = new MutationObserver(function (mutationsList) {
             for (const mutation of mutationsList) {
                 if (mutation.type === "childList") {
                     mutation.addedNodes.forEach((node) => {
@@ -99,7 +99,7 @@ function bgExistObserver() {
                 }
             }
         });
-        globalThis.vscObserver.bgExistObserver.observe(parent, {
+        globalThis.vscObservers.bgExistObserver.observe(parent, {
             childList: true,
         });
     }

@@ -3,15 +3,15 @@ import { TLang } from "./types.d";
 /**
  * 加载全局变量
  * @since 1.3.3
- * @version 2.5.0
+ * @version 2.6.3
  */
 export async function loadGlobalVars() {
     /**
      * ! 默认配置文件
      * @since 1.2.0
-     * @version 2.6.2
+     * @version 2.6.3
      */
-    globalThis.defaultConf = {
+    globalThis.vscDefaultConf = {
         version: 13,
         lastSeen: "2.6.2",
         theme: {
@@ -40,9 +40,9 @@ export async function loadGlobalVars() {
     /**
      * ! 默认消息本地化
      * @since 1.3.3
-     * @version 2.6.2
+     * @version 2.6.3
      */
-    globalThis.localMessage = {
+    globalThis.vscMessage = {
         language: {
             zh_CN: true,
             en_US: true,
@@ -230,24 +230,23 @@ export async function loadGlobalVars() {
     };
 
     // 浏览器获取的默认语言
-    var currentLang = document.documentElement.lang as TLang;
-    if (globalThis.localMessage.language[currentLang] != undefined) {
-        // @ts-ignore
-        globalThis.defLag = currentLang;
+    let currentLang = document.documentElement.lang as TLang;
+    if (globalThis.vscMessage.language[currentLang] != undefined) {
+        globalThis.vscLang = currentLang;
     } else {
         if (currentLang == "zh_CHT") {
-            globalThis.defLag = "zh_CN";
+            globalThis.vscLang = "zh_CN";
         } else {
-            globalThis.defLag = "en_US";
+            globalThis.vscLang = "en_US";
         }
     }
 
     /**
      * ! 所有用到的计时器
      * @since 1.3.5
-     * @version 2.6.2
+     * @version 2.6.3
      */
-    globalThis.vscTimer = {
+    globalThis.vscTimers = {
         // 背景插件加载后可能禁用，使用计时器定时刷新背景插件状态
         bgTimer: null,
         // 背景插件属性修改的监听器，用来监测背景状态变化
@@ -261,9 +260,9 @@ export async function loadGlobalVars() {
     /**
      * ! 所有用到的监听器
      * @since 1.4.0
-     * @version 2.6.2
+     * @version 2.6.3
      */
-    globalThis.vscObserver = {
+    globalThis.vscObservers = {
         // 背景插件观察器
         bgObserver: null,
         // 背景存在观察器

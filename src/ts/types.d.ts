@@ -47,7 +47,7 @@ export interface ThemeConfig {
 }
 
 /** 本地化消息接口 */
-export interface LocalMessage {
+export interface vscMessage {
     // * 定义某种语言是否存在
     /** 检查存在的语言 */
     language: Record<string, boolean>;
@@ -186,7 +186,7 @@ export interface vscCounters {
  *
  * 用户界面语言
  * 与{@link IAppearance.lang}相同
- * @see https://github.com/siyuan-note/siyuan/blob/master/app/src/types/config.d.ts#L265-L284
+ * @see https://github.com/siyuan-note/siyuan/blob/master/app/src/types/config.d.ts#L279-L294
  */
 export type TLang =
     | "en_US"
@@ -197,9 +197,11 @@ export type TLang =
     | "he_IL"
     | "it_IT"
     | "ja_JP"
+    | "ko_KR"
     | "pl_PL"
     | "pt_BR"
     | "ru_RU"
+    | "tr_TR"
     | "zh_CN"
     | "zh_CHT";
 

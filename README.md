@@ -42,6 +42,8 @@ Limited by the configuration loading method, updated configurations for new vers
 > Full changelog view [ChangeLog](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/changelog.md)
 > Commit history view [whatschange](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/whatschange.md)
 
+- v2.6.3
+  - Optimize code
 - v2.6.2
   - Fix icon missing in settings panel
   - When enabled background plugin adaption, let text appearance selection window transparent
@@ -54,13 +56,6 @@ Limited by the configuration loading method, updated configurations for new vers
   - Show notification about removal of quote block's custom attributes after theme update
   - When enabling background image plugin adaptation, set the background of blank initial page to transparent
   - Handle element changes properly when disabling the background image plugin
-- v2.6.0
-  - Add division line under database title for all views
-  - Change method to add theme style for exporting PDF(Require SiYuan version 3.4.1)
-  - Optimize code executing when exporting PDF
-  - Fixed an issue where the title style sub switch did not follow the main switch
-  - Refactor style file to speed up loading
-  - Optimize code
 
 # Special fitness
 

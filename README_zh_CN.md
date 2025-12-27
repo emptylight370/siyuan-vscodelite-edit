@@ -42,6 +42,8 @@
 > 完整更新日志查看[changelog](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/changelog.md)
 > 提交历史日志查看[whatschange](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/whatschange.md)
 
+- v2.6.3
+  - 优化代码
 - v2.6.2
   - 修复设置面板图标丢失
   - 在启用背景插件适配时让文本外观选择窗口也透明化
@@ -54,13 +56,6 @@
   - 在主题更新后显示引述块自定义属性移除通知
   - 在启用背景图片插件适配时，将空白初始页的背景设置为透明
   - 在关闭背景图片插件时，正确处理元素变化
-- v2.6.0
-  - 数据库所有视图添加数据库标题下分割线
-  - 更换导出PDF时应用主题样式方法(需要思源版本3.4.1)
-  - 优化导出PDF时执行代码
-  - 修复标题样式细分开关不跟随主开关问题
-  - 重构样式文件，加快加载速度
-  - 优化代码
 
 # 特殊适配
 
