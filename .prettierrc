@@ -14,6 +14,13 @@
       "options": {
         "printWidth": 20
       }
+    },
+    {
+      "files": ["*.toml"],
+      "options": {
+        "parser": "toml",
+        "plugins": ["prettier-plugin-toml"]
+      }
     }
   ]
 }

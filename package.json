@@ -7,9 +7,6 @@
     "node": ">=22.18.0"
   },
   "packageManager": "npm@11.6.2",
-  "volta": {
-    "node": "24.12.0"
-  },
   "scripts": {
     "build:scss": "sass --load-path=src theme.scss:theme.css src:sub",
     "build:ts": "rollup -c",
@@ -36,9 +33,10 @@
   "devDependencies": {
     "@rollup/plugin-typescript": "^12.3.0",
     "@types/node": "^25.0.3",
-    "lefthook": "^2.0.12",
+    "lefthook": "^2.0.13",
     "npm-run-all": "^4.1.5",
     "prettier": "^3.7.4",
+    "prettier-plugin-toml": "^2.0.6",
     "rimraf": "^6.1.2",
     "rollup": "^4.54.0",
     "sass": "^1.97.1",
