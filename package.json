@@ -25,15 +25,15 @@
     "url": "git+ssh://git@github.com/emptylight370/siyuan-vscodelite-edit.git"
   },
   "author": "EmptyLight",
-  "license": "GPL-3.0-or-later",
+  "license": "GPL-3.0-only",
   "bugs": {
     "url": "https://github.com/emptylight370/siyuan-vscodelite-edit/issues"
   },
   "homepage": "https://github.com/emptylight370/siyuan-vscodelite-edit#readme",
   "devDependencies": {
     "@rollup/plugin-typescript": "^12.3.0",
-    "@types/node": "^25.0.3",
-    "lefthook": "^2.0.13",
+    "@types/node": "^25.0.8",
+    "lefthook": "^2.0.15",
     "npm-run-all": "^4.1.5",
     "prettier": "^3.7.4",
     "prettier-plugin-toml": "^2.0.6",
