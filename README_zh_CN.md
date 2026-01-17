@@ -43,6 +43,8 @@
 > 提交历史日志查看[whatschange](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/whatschange.md)
 
 - v2.6.3
+  - 修复在列表中折叠标题块的图标显示问题
+  - 改善标题图标的显示效果
   - 优化代码
 - v2.6.2
   - 修复设置面板图标丢失

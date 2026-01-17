@@ -7,12 +7,26 @@
     margin-right: 0.2rem;
 }
 
+%fold {
+    height: 1em !important;
+    border-radius: unset;
+    margin-top: unset;
+    left: unset !important;
+}
+
+$h1top: 0.36em;
+$h2top: 0.38em;
+$h3top: 0.36em;
+$h4top: 0.34em;
+$h5top: 0.33em;
+$h6top: 0.32em;
+
 /* h1标签基本样式 */
 %h1 {
     @extend %common;
-    mask: url(../../resources/h1.svg) no-repeat center center / contain;
+    mask: url(../../resources/h1.svg) center center / contain no-repeat;
     background-color: var(--mk-block-header-h1);
-    top: 0.3em;
+    top: $h1top;
 }
 
 /* h1标签 */
@@ -38,14 +52,17 @@
 }
 
 /* h1标签 */
-[data-node-id].h1[fold="1"][data-type="NodeHeading"]::before,
-.protyle-preview h1[fold="1"]::before {
+[data-node-id].h1[fold][data-type="NodeHeading"]::before,
+.protyle-preview h1[fold]::before {
     @extend %h1;
-    height: 1em !important;
-    border-radius: unset;
-    margin-top: unset;
-    left: unset !important;
-    top: 0.3em !important;
+    @extend %fold;
+    top: $h1top !important;
+
+    .li > & {
+        /* 列表中适配 */
+        width: 1em !important;
+        margin-top: -0.35em !important;
+    }
 }
 
 /* h1标签文本 */
@@ -59,9 +76,9 @@
 /* h2标签基本样式 */
 %h2 {
     @extend %common;
-    mask: url(../../resources/h2.svg) no-repeat center center / contain;
+    mask: url(../../resources/h2.svg) center center / contain no-repeat;
     background-color: var(--mk-block-header-h2);
-    top: 0.38em;
+    top: $h2top;
 }
 
 /* h2标签 */
@@ -87,14 +104,17 @@
 }
 
 /* h2标签 */
-[data-node-id].h2[fold="1"][data-type="NodeHeading"]::before,
-.protyle-preview h2[fold="1"]::before {
+[data-node-id].h2[fold][data-type="NodeHeading"]::before,
+.protyle-preview h2[fold]::before {
     @extend %h2;
-    height: 1em !important;
-    border-radius: unset;
-    margin-top: unset;
-    left: unset !important;
-    top: 0.3em !important;
+    @extend %fold;
+    top: $h2top !important;
+
+    .li > & {
+        /* 列表中适配 */
+        width: 1em !important;
+        margin-top: -0.4em !important;
+    }
 }
 
 /* h2标签文本 */
@@ -108,9 +128,9 @@
 /* h3标签基本样式 */
 %h3 {
     @extend %common;
-    mask: url(../../resources/h3.svg) no-repeat center center / contain;
+    mask: url(../../resources/h3.svg) center center / contain no-repeat;
     background-color: var(--mk-block-header-h3);
-    top: 0.36em;
+    top: $h3top;
 }
 
 /* h3标签 */
@@ -136,14 +156,17 @@
 }
 
 /* h3标签 */
-[data-node-id].h3[fold="1"][data-type="NodeHeading"]::before,
-.protyle-preview h3[fold="1"]::before {
+[data-node-id].h3[fold][data-type="NodeHeading"]::before,
+.protyle-preview h3[fold]::before {
     @extend %h3;
-    height: 1em !important;
-    border-radius: unset;
-    margin-top: unset;
-    left: unset !important;
-    top: 0.35em !important;
+    @extend %fold;
+    top: $h3top !important;
+
+    .li > & {
+        /* 列表中适配 */
+        width: 1em !important;
+        margin-top: -0.2em !important;
+    }
 }
 
 /* h3标签文本 */
@@ -157,9 +180,9 @@
 /* h4标签基本样式 */
 %h4 {
     @extend %common;
-    mask: url(../../resources/h4.svg) no-repeat center center / contain;
+    mask: url(../../resources/h4.svg) center center / contain no-repeat;
     background-color: var(--mk-block-header-h4);
-    top: 0.34em;
+    top: $h4top;
 }
 
 /* h4标签 */
@@ -185,14 +208,17 @@
 }
 
 /* h4标签 */
-[data-node-id].h4[fold="1"][data-type="NodeHeading"]::before,
-.protyle-preview h4[fold="1"]::before {
+[data-node-id].h4[fold][data-type="NodeHeading"]::before,
+.protyle-preview h4[fold]::before {
     @extend %h4;
-    height: 1em !important;
-    border-radius: unset;
-    margin-top: unset;
-    left: unset !important;
-    top: 0.3em !important;
+    @extend %fold;
+    top: $h4top !important;
+
+    .li > & {
+        /* 列表中适配 */
+        width: 1em !important;
+        margin-top: -0.2em !important;
+    }
 }
 
 /* h4标签文本 */
@@ -206,9 +232,9 @@
 /* h5标签基本样式 */
 %h5 {
     @extend %common;
-    mask: url(../../resources/h5.svg) no-repeat center center / contain;
+    mask: url(../../resources/h5.svg) center center / contain no-repeat;
     background-color: var(--mk-block-header-h5);
-    top: 0.33em;
+    top: $h5top;
 }
 
 /* h5标签 */
@@ -234,14 +260,17 @@
 }
 
 /* h5标签 */
-[data-node-id].h5[fold="1"][data-type="NodeHeading"]::before,
-.protyle-preview h5[fold="1"]::before {
+[data-node-id].h5[fold][data-type="NodeHeading"]::before,
+.protyle-preview h5[fold]::before {
     @extend %h5;
-    height: 1em !important;
-    border-radius: unset;
-    margin-top: unset;
-    left: unset !important;
-    top: 0.3em !important;
+    @extend %fold;
+    top: $h5top !important;
+
+    .li > & {
+        /* 列表中适配 */
+        width: 1em !important;
+        margin-top: -0.1em !important;
+    }
 }
 
 /* h5标签文本 */
@@ -255,9 +284,9 @@
 /* h6标签基本样式 */
 %h6 {
     @extend %common;
-    mask: url(../../resources/h6.svg) no-repeat center center / contain;
+    mask: url(../../resources/h6.svg) center center / contain no-repeat;
     background-color: var(--mk-block-header-h6);
-    top: 0.32em;
+    top: $h6top;
 }
 
 /* h6标签 */
@@ -283,14 +312,17 @@
 }
 
 /* h6标签 */
-[data-node-id].h6[fold="1"][data-type="NodeHeading"]::before,
-.protyle-preview h6[fold="1"]::before {
+[data-node-id].h6[fold][data-type="NodeHeading"]::before,
+.protyle-preview h6[fold]::before {
     @extend %h6;
-    height: 1em !important;
-    border-radius: unset;
-    margin-top: unset;
-    left: unset !important;
-    top: 0.3em !important;
+    @extend %fold;
+    top: $h6top !important;
+
+    .li > & {
+        /* 列表中适配 */
+        width: 1em !important;
+        margin-top: 0 !important;
+    }
 }
 
 /* h6标签文本 */

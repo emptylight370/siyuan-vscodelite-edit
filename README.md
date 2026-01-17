@@ -43,6 +43,8 @@ Limited by the configuration loading method, updated configurations for new vers
 > Commit history view [whatschange](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/whatschange.md)
 
 - v2.6.3
+  - Fix icon display issue with folded heading in list
+  - Improve the display effect of heading icon
   - Optimize code
 - v2.6.2
   - Fix icon missing in settings panel
