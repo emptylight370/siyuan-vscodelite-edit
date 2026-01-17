@@ -8,10 +8,10 @@
   },
   "packageManager": "npm@11.6.2",
   "scripts": {
-    "build:scss": "sass --load-path=src theme.scss:theme.css src:sub",
+    "build:scss": "sass theme.scss:theme.css src/scss:sub",
     "build:ts": "rollup -c",
     "build": "npm-run-all -l -p build:scss build:ts",
-    "watch:scss": "sass --watch --load-path=src theme.scss:theme.css src:sub",
+    "watch:scss": "sass --watch theme.scss:theme.css src/scss:sub",
     "watch:ts": "rollup -c -w",
     "watch": "npm-run-all -l -p watch:scss watch:ts",
     "clean:scss": "rimraf theme.css theme.css.map sub",

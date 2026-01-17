@@ -1,63 +1,63 @@
 @charset "UTF-8";
 /* 导入定义的颜色 */
-@use "src/color";
+@use "src/scss/color";
 
 /* 插件适配，不用的就注释掉 */
 /* 快捷键面板 */
-// @use "src/plugin/keymapPlugin";
+// @use "src/scss/plugin/keymapPlugin";
 /* 数学公式优化 */
-// @use "src/plugin/mathEnhance";
+// @use "src/scss/plugin/mathEnhance";
 /* 背景插件适配 */
-// @use "src/plugin/backgroundPlugin";
+// @use "src/scss/plugin/backgroundPlugin";
 
 /* 正式内容 */
 /* 应用程序底部状态栏 */
-@use "src/app/statusBar";
+@use "src/scss/app/statusBar";
 /* 应用程序顶部标题栏 */
-@use "src/app/toolbarHead";
+@use "src/scss/app/toolbarHead";
 /* 应用程序页面标签 */
-@use "src/app/tabBar";
+@use "src/scss/app/tabBar";
 /* 应用程序dock栏 */
-@use "src/app/dock";
+@use "src/scss/app/dock";
 /* 导出预览面板 */
-@use "src/app/export";
+@use "src/scss/app/export";
 /* 到处的滚动条 */
-@use "src/app/scrollbar";
+@use "src/scss/app/scrollbar";
 /* 文档树和大纲 */
-// @use "src/app/filetree";
+// @use "src/scss/app/filetree";
 /* 文档面包屑 */
-@use "src/app/breadcrumb";
+@use "src/scss/app/breadcrumb";
 /* 跟块有关的内容，比如块标 */
-@use "src/app/block";
+@use "src/scss/app/block";
 /* 隐藏一些内容，同时修改一些特殊样式 */
-@use "src/app/special";
+@use "src/scss/app/special";
 /* 通用菜单，文章标签页右侧的下拉列表 */
-@use "src/app/commonmenu";
+@use "src/scss/app/commonmenu";
 /* 标题标签h123456 */
-// @use "src/block/title";
+// @use "src/scss/block/title";
 /* 列表样式 */
-@use "src/block/list";
+@use "src/scss/block/list";
 /* 代码块样式 */
-// @use "src/block/codeBlock";
+// @use "src/scss/block/codeBlock";
 /* 高亮样式 */
-// @use "src/block/mark";
+// @use "src/scss/block/mark";
 /* 集市相关样式 */
-// @use "src/app/bazaar";
+// @use "src/scss/app/bazaar";
 /* 引用锚文本样式 */
-// @use "src/block/reference";
+// @use "src/scss/block/reference";
 /* 嵌入块样式 */
-// @use "src/block/embeddedBlock";
+// @use "src/scss/block/embeddedBlock";
 /* 主题设置面板 */
-@use "src/app/SettingPanel";
+@use "src/scss/app/SettingPanel";
 /* 数据库样式 */
-// @use "src/block/database";
+// @use "src/scss/block/database";
 /* 表格样式 */
-@use "src/block/table";
+@use "src/scss/block/table";
 /* 标签样式 */
-// @use "src/block/tag";
+// @use "src/scss/block/tag";
 /* 自定义属性样式文件 */
-@use "src/plugin/customAttribute";
+@use "src/scss/plugin/customAttribute";
 /* 折叠块样式 */
-@use "src/block/fold";
+@use "src/scss/block/fold";
 /* 斜杠菜单分栏 */
-// @use "src/app/slashmenu";
+// @use "src/scss/app/slashmenu";
