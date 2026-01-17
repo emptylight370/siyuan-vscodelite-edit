@@ -62,7 +62,6 @@ function SlashArrowMoveListener(event: KeyboardEvent) {
     if (event.key !== "ArrowLeft" && event.key !== "ArrowRight") return;
     event.preventDefault();
     event.stopPropagation();
-    event.stopImmediatePropagation();
 
     const slashMenu = Array.from(document.querySelectorAll("div.protyle-hint.hint--menu")).find(
         (menu) => !(menu as HTMLDivElement).classList.contains("fn__none"),

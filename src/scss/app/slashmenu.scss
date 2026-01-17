@@ -55,14 +55,11 @@
 
     // 为子元素（按钮）设置基本样式
     .b3-list-item {
-        min-width: 97%;
-        max-width: 97%;
+        width: 100% !important;
     }
 
     // 分隔线
     .b3-menu__separator {
-        width: 97%;
-        min-width: 97%;
-        max-width: 97%;
+        margin-left: 0.6em;
     }
 }

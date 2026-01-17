@@ -4,9 +4,11 @@
 
 - 修复在列表中折叠标题块的图标显示问题
 - 改善标题图标的显示效果
+- 优化`/`菜单多栏显示功能(#34)
 - 优化代码
 - Fix icon display issue with folded heading in list
 - Improve the display effect of heading icon
+- Improve `/` menu multi-column display feature(#34)
 - Optimize code
 
 ## v2.6.2

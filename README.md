@@ -45,6 +45,7 @@ Limited by the configuration loading method, updated configurations for new vers
 - v2.6.3
   - Fix icon display issue with folded heading in list
   - Improve the display effect of heading icon
+  - Improve `/` menu multi-column display feature
   - Optimize code
 - v2.6.2
   - Fix icon missing in settings panel
