@@ -1,9 +1,10 @@
 /* 引用锚文本 */
-/* 区分静态和动态的选择器来源：https://ld246.com/article/1756978556397/comment/1756978674642#comments */
+/* 区分静态和动态的选择器来源：https://ld246.com/article/1756978556397/comment/1756978674642?r=EmptyLight#comments */
 .protyle-wysiwyg [data-node-id] {
     span[data-type~="block-ref"]:not(.av__celltext) {
         color: var(--lite-block-ref-color);
 
+        // 动态锚文本dynamic
         &[data-subtype="d"] {
             &::before {
                 content: "⌈";
@@ -14,13 +15,11 @@
             }
 
             &:hover {
-                background-color: var(--lite-block-ref-background-color);
-                border-radius: 3px;
                 border-bottom: dashed;
-                border-bottom-width: 2px;
             }
         }
 
+        // 静态锚文本static
         &[data-subtype="s"] {
             &::before {
                 content: "[";
@@ -31,11 +30,14 @@
             }
 
             &:hover {
-                background-color: var(--lite-block-ref-background-color);
-                border-radius: 3px;
                 border-bottom: solid;
-                border-bottom-width: 2px;
             }
+        }
+
+        &:hover {
+            background-color: var(--lite-block-ref-background-color);
+            border-radius: 3px;
+            border-bottom-width: 2px;
         }
     }
 }

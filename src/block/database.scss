@@ -8,13 +8,7 @@
             /* 数据库选中视图添加高亮 */
             background-color: var(--lite-database-header-background);
         }
-    }
-}
 
-.av[data-av-type="table"] .av__container {
-    @extend %database-basic;
-
-    .av__header {
         .av__title:not(.fn__none) {
             /* 数据库标题添加分割线 */
             border-bottom: gray dashed 1px;
@@ -22,44 +16,23 @@
     }
 }
 
-.av[data-av-type="gallery"] .av__container {
-    @extend %database-basic;
-
-    .av__header {
-        .av__title:not(.fn__none) {
-            /* 数据库标题添加分割线 */
-            border-bottom: gray dashed 1px;
-        }
+.av__container {
+    .av[data-av-type="table"] & {
+        @extend %database-basic;
     }
 
-    .av__header {
-        /* 角落背景修复 */
-        border-top-left-radius: var(--b3-border-radius);
+    .av[data-av-type="gallery"] &,
+    .av[data-av-type="kanban"] & {
+        @extend %database-basic;
 
-        .av__views .layout-tab-bar {
+        .av__header {
             /* 角落背景修复 */
             border-top-left-radius: var(--b3-border-radius);
-        }
-    }
-}
 
-.av[data-av-type="kanban"] .av__container {
-    @extend %database-basic;
-
-    .av__header {
-        .av__title:not(.fn__none) {
-            /* 数据库标题添加分割线 */
-            border-bottom: gray dashed 1px;
-        }
-    }
-
-    .av__header {
-        /* 角落背景修复 */
-        border-top-left-radius: var(--b3-border-radius);
-
-        .av__views .layout-tab-bar {
-            /* 角落背景修复 */
-            border-top-left-radius: var(--b3-border-radius);
+            .av__views .layout-tab-bar {
+                /* 角落背景修复 */
+                border-top-left-radius: var(--b3-border-radius);
+            }
         }
     }
 }

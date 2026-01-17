@@ -1,15 +1,19 @@
-/* h1标签基本样式 */
-%h1 {
+%common {
     content: "";
     display: inline-flex;
     position: relative;
     width: 1em;
     height: 1em;
-    mask: url(../../resources/h1.svg) no-repeat center center;
     mask-size: contain;
-    background-color: var(--mk-block-header-h1);
     top: 0.3em;
     margin-right: 0.2rem;
+}
+
+/* h1标签基本样式 */
+%h1 {
+    @extend %common;
+    mask: url(../../resources/h1.svg) no-repeat center center;
+    background-color: var(--mk-block-header-h1);
 }
 
 /* h1标签 */
@@ -55,16 +59,9 @@
 
 /* h2标签基本样式 */
 %h2 {
-    content: "";
-    display: inline-flex;
-    position: relative;
-    width: 1em;
-    height: 1em;
+    @extend %common;
     mask: url(../../resources/h2.svg) no-repeat center center;
-    mask-size: contain;
     background-color: var(--mk-block-header-h2);
-    top: 0.3em;
-    margin-right: 0.2rem;
 }
 
 /* h2标签 */
@@ -110,16 +107,10 @@
 
 /* h3标签基本样式 */
 %h3 {
-    content: "";
-    display: inline-flex;
-    position: relative;
-    width: 1em;
-    height: 1em;
+    @extend %common;
     mask: url(../../resources/h3.svg) no-repeat center center;
-    mask-size: contain;
     background-color: var(--mk-block-header-h3);
     top: 0.35em;
-    margin-right: 0.2rem;
 }
 
 /* h3标签 */
@@ -165,16 +156,9 @@
 
 /* h4标签基本样式 */
 %h4 {
-    content: "";
-    display: inline-flex;
-    position: relative;
-    width: 1em;
-    height: 1em;
+    @extend %common;
     mask: url(../../resources/h4.svg) no-repeat center center;
-    mask-size: contain;
     background-color: var(--mk-block-header-h4);
-    top: 0.3em;
-    margin-right: 0.2rem;
 }
 
 /* h4标签 */
@@ -220,16 +204,9 @@
 
 /* h5标签基本样式 */
 %h5 {
-    content: "";
-    display: inline-flex;
-    position: relative;
-    width: 1em;
-    height: 1em;
+    @extend %common;
     mask: url(../../resources/h5.svg) no-repeat center center;
-    mask-size: contain;
     background-color: var(--mk-block-header-h5);
-    top: 0.3em;
-    margin-right: 0.2rem;
 }
 
 /* h5标签 */
@@ -275,16 +252,9 @@
 
 /* h6标签基本样式 */
 %h6 {
-    content: "";
-    display: inline-flex;
-    position: relative;
-    width: 1em;
-    height: 1em;
+    @extend %common;
     mask: url(../../resources/h6.svg) no-repeat center center;
-    mask-size: contain;
     background-color: var(--mk-block-header-h6);
-    top: 0.3em;
-    margin-right: 0.2rem;
 }
 
 /* h6标签 */
@@ -330,20 +300,12 @@
 
 /* 导出图片时暂不显示标题图标 */
 .b3-dialog--open[data-key="dialog-exportimage"] {
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6,
-    .h1,
-    .h2,
-    .h3,
-    .h4,
-    .h5,
-    .h6 {
-        &::before {
-            content: unset;
+    @for $i from 1 through 6 {
+        h#{$i},
+        .h#{$i} {
+            &::before {
+                content: unset;
+            }
         }
     }
 }

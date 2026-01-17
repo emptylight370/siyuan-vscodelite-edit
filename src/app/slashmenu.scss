@@ -1,47 +1,55 @@
 // slash菜单
 .hint--menu {
-    @media screen and (max-width: 959px) {
-        // 对于只能显示两栏的设备，准备一栏空间
-        max-width: 320px;
-        width: 320px;
-    }
-    @media screen and (min-width: 960px) and (max-width: 1279px) {
-        // 对于只能显示三栏的设备，准备两栏空间
-        max-width: 640px;
-        width: 640px;
-    }
-    @media screen and (min-width: 1280px) and (max-width: 1599px) {
-        // 对于只能显示四栏的设备，准备三栏空间
-        max-width: 960px;
-        width: 960px;
-    }
-    @media screen and (min-width: 1600px) and (max-width: 1919px) {
-        // 对于只能显示五栏的设备，准备四栏空间
-        max-width: 1280px;
-        width: 1280px;
-    }
-    @media screen and (min-width: 1920px) {
-        // 对于能显示六栏以上的设备，准备五栏空间
-        max-width: 1600px;
-        width: 1600px;
-    }
+    @media screen {
+        @media (max-width: 959px) {
+            // 对于只能显示两栏的设备，准备一栏空间
+            max-width: 320px;
+            width: 320px;
 
-    // 里面的顶层div(flex:1)
-    > div {
-        @media screen and (max-width: 959px) {
-            column-count: 1;
+            // 里面的顶层div(flex:1)
+            > div {
+                column-count: 1;
+            }
         }
-        @media screen and (min-width: 960px) and (max-width: 1279px) {
-            column-count: 2;
+        @media (min-width: 960px) and (max-width: 1279px) {
+            // 对于只能显示三栏的设备，准备两栏空间
+            max-width: 640px;
+            width: 640px;
+
+            // 里面的顶层div(flex:1)
+            > div {
+                column-count: 2;
+            }
         }
-        @media screen and (min-width: 1280px) and (max-width: 1599px) {
-            column-count: 3;
+        @media (min-width: 1280px) and (max-width: 1599px) {
+            // 对于只能显示四栏的设备，准备三栏空间
+            max-width: 960px;
+            width: 960px;
+
+            // 里面的顶层div(flex:1)
+            > div {
+                column-count: 3;
+            }
         }
-        @media screen and (min-width: 1600px) and (max-width: 1919px) {
-            column-count: 4;
+        @media (min-width: 1600px) and (max-width: 1919px) {
+            // 对于只能显示五栏的设备，准备四栏空间
+            max-width: 1280px;
+            width: 1280px;
+
+            // 里面的顶层div(flex:1)
+            > div {
+                column-count: 4;
+            }
         }
-        @media screen and (min-width: 1920px) {
-            column-count: 5;
+        @media (min-width: 1920px) {
+            // 对于能显示六栏以上的设备，准备五栏空间
+            max-width: 1600px;
+            width: 1600px;
+
+            // 里面的顶层div(flex:1)
+            > div {
+                column-count: 5;
+            }
         }
     }
 
