@@ -4,16 +4,15 @@
     position: relative;
     width: 1em;
     height: 1em;
-    mask-size: contain;
-    top: 0.3em;
     margin-right: 0.2rem;
 }
 
 /* h1标签基本样式 */
 %h1 {
     @extend %common;
-    mask: url(../../resources/h1.svg) no-repeat center center;
+    mask: url(../../resources/h1.svg) no-repeat center center / contain;
     background-color: var(--mk-block-header-h1);
+    top: 0.3em;
 }
 
 /* h1标签 */
@@ -60,8 +59,9 @@
 /* h2标签基本样式 */
 %h2 {
     @extend %common;
-    mask: url(../../resources/h2.svg) no-repeat center center;
+    mask: url(../../resources/h2.svg) no-repeat center center / contain;
     background-color: var(--mk-block-header-h2);
+    top: 0.38em;
 }
 
 /* h2标签 */
@@ -108,9 +108,9 @@
 /* h3标签基本样式 */
 %h3 {
     @extend %common;
-    mask: url(../../resources/h3.svg) no-repeat center center;
+    mask: url(../../resources/h3.svg) no-repeat center center / contain;
     background-color: var(--mk-block-header-h3);
-    top: 0.35em;
+    top: 0.36em;
 }
 
 /* h3标签 */
@@ -157,8 +157,9 @@
 /* h4标签基本样式 */
 %h4 {
     @extend %common;
-    mask: url(../../resources/h4.svg) no-repeat center center;
+    mask: url(../../resources/h4.svg) no-repeat center center / contain;
     background-color: var(--mk-block-header-h4);
+    top: 0.34em;
 }
 
 /* h4标签 */
@@ -205,8 +206,9 @@
 /* h5标签基本样式 */
 %h5 {
     @extend %common;
-    mask: url(../../resources/h5.svg) no-repeat center center;
+    mask: url(../../resources/h5.svg) no-repeat center center / contain;
     background-color: var(--mk-block-header-h5);
+    top: 0.33em;
 }
 
 /* h5标签 */
@@ -253,8 +255,9 @@
 /* h6标签基本样式 */
 %h6 {
     @extend %common;
-    mask: url(../../resources/h6.svg) no-repeat center center;
+    mask: url(../../resources/h6.svg) no-repeat center center / contain;
     background-color: var(--mk-block-header-h6);
+    top: 0.32em;
 }
 
 /* h6标签 */
