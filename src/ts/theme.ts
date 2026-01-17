@@ -1,9 +1,9 @@
-import { _postMessage, getMsg } from "./ts/api";
-import { loadGlobalVars } from "./ts/defs";
-import { bg, bgobserver } from "./ts/plugins/background";
-import { getSlashMenusCount, slashMenuObserver } from "./ts/plugins/slashmenu";
-import { createSettingsWindow, getSettings } from "./ts/setting";
-import { EnableSettings } from "./ts/types.d";
+import { _postMessage, getMsg } from "./api";
+import { loadGlobalVars } from "./defs";
+import { bg, bgobserver } from "./plugins/background";
+import { getSlashMenusCount, slashMenuObserver } from "./plugins/slashmenu";
+import { createSettingsWindow, getSettings } from "./setting";
+import { EnableSettings } from "./types.d";
 
 /**
  * @description 主题默认加载时进行的行为

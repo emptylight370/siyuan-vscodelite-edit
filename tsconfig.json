@@ -6,7 +6,7 @@
     "moduleResolution": "bundler",
     "declaration": false,
     "outDir": "./",
-    "rootDir": "./src",
+    "rootDir": "./src/ts",
     "lib": ["ES2021", "DOM", "DOM.Iterable"],
     "esModuleInterop": true,
     "skipLibCheck": true,
