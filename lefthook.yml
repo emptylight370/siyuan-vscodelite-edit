@@ -13,7 +13,9 @@ pre-commit:
       skip:
         # 仅在提交了theme.json的时候执行
         - run: test $(git diff --name-only --cached | grep -c 'theme\.json') -eq 0
-      run: npm run changelog
+      run: |
+        npm run changelog
+        git add whatschange.md
       stage_fixed: true
       fail_text: "请检查依赖安装状态，运行mise install和npm install安装依赖"
 
