@@ -39,7 +39,7 @@ jobs:
 
       - name: Generate release log
         run: |
-          npx conventional-changelog -o release.md -n conventional-changelog.config.json -k theme.json -c theme.json
+          conventional-changelog -o release.md -n conventional-changelog.config.json -k theme.json -c theme.json
           npx prettier -w release.md
 
       - name: Release
