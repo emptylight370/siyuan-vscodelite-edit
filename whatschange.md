@@ -1,3 +1,40 @@
+## [2.6.3](https://github.com/emptylight370/siyuan-vscodelite-edit/compare/2.6.2...2.6.3) (2026-01-21)
+
+### ✨ Features | 功能
+
+- 禁用主题更新后通知 ([eb35219](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/eb35219d444f5d3d94196b2516d85cfe701f8662))
+- 优化获取本地化文本函数 ([2e6e364](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/2e6e364772aa1fcea449790591dfeccd0610b937))
+- 优化获取本地化信息文本的方法 ([d55e7c3](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/d55e7c3bdc225b99784ebb6e2e10e8f11f4425ca))
+
+### 🐛 Bug Fixes | 问题修复
+
+- 标题图标不显示问题 ([f2346f5](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/f2346f5d906847fff95bc307ea65db2faac02e0e))
+- 优化标题图标的样式及代码 ([6715cec](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/6715cec0162d208a2bdf41411e2d05417a17a19a))
+
+### 📄 Documentation | 文档
+
+- 从文档中移除引述块自定义属性 ([a131c7b](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/a131c7b792676cd890fb3d63a38314efe47c0e9f))
+- 更新贡献文档 ([fe0d9ae](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/fe0d9ae12eeb1893a2c25206f3cc34c3159f90cf))
+
+### ⚡ Performance | 性能优化
+
+- 优化`/`菜单多栏显示功能 ([379fb63](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/379fb63b8bd4ab2a44115fcbe3c9c5c483b85fdc)), closes [#34](https://github.com/emptylight370/siyuan-vscodelite-edit/issues/34)
+- 优化代码 ([e451871](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/e45187140b6a0174d116dbb639121796c5f995c8))
+- 优化SCSS代码 ([bab1782](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/bab178215711bf1c18248fedf970f7cf9b1cbb74))
+
+### 🔨 Refactor | 重构
+
+- **scss:** 调整scss文件在src文件夹中的位置 ([d157daa](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/d157daaf21997cd26ea7557c55cfed915c62b0ef))
+- **ts:** 调整ts文件在src文件夹中的位置 ([d21c35e](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/d21c35ed5574b9a68da261de2731e558e50b9d2a))
+
+### 🛠️ Build system | 构建系统
+
+- 迁移到mise进行管理 ([5d08da1](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/5d08da110a62f9610f3c40f9b478c41fe4a71920))
+- 修改tsconfig配置 ([499479f](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/499479f124eccbe486cca70ab8f5c141a088928d))
+- **lefthook:** 修复生成的日志文件没有提交问题 ([d34b0fb](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/d34b0fb711019c0396c48a4bf8bec8283d058ccf))
+- **lefthook:** 优化提交信息检测脚本 ([2beddc0](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/2beddc0bc8618159119b06234e8724b6500a1679))
+- **lefthook:** 在提交theme.json时自动生成changelog一并提交 ([75afecd](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/75afecda308a9789cfb9661c8b2fd673cc8414d0))
+
 ## [2.6.2](https://github.com/emptylight370/siyuan-vscodelite-edit/compare/2.6.1...2.6.2) (2025-12-23)
 
 ### ⚠ BREAKING CHANGES
