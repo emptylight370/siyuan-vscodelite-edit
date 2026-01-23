@@ -2,8 +2,8 @@ name: package
 
 on:
   push:
-    branches: scss
-    paths: theme.json
+    branches: [scss]
+    paths: [theme.json]
   workflow_dispatch:
 
 jobs:
