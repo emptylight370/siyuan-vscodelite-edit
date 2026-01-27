@@ -1,3 +1,5 @@
+Before all of these steps, you should know: this package is managed by mise(-en-place) and pnpm, if you don't use mise, you should setup pnpm correctly and do the steps manually.
+
 # How to contribute to this theme
 
 1. Fork this repository on GitHub
@@ -27,20 +29,21 @@
 
 1. Clone the repository
 2. Open the folder in your terminal or editing tools (`cd siyuan-vscodelite-edit`)
-3. Use `npm install` to install the dependencies
-4. Use `npm build` to build the files
-5. Now, you have
+3. Use `mise install` to setup the environment
+4. Use `pnpm install` to install the dependencies
+5. Use `pnpm run build` to build the files
+6. Now, you have
    1. theme.\* (EXCLUDE: theme.scss, theme.css.map)
    2. \*.png
    3. README\*.md
    4. resources/\*
    5. sub/\*
 
-6. Copy them to your workspace's VSCode Lite Edit folder (`~/data/conf/appearance/theme/siyuan-vscodelite-edit`) and reload SiYuan interface (OR just restart SiYuan)
+7. Copy them to your workspace's VSCode Lite Edit folder (`~/data/conf/appearance/theme/siyuan-vscodelite-edit`) and reload SiYuan interface (OR just restart SiYuan)
 
 # How to generate changelog
 
-1. Use conventional commit format to organize your commit message (https://www.conventionalcommits.org/)
+1. Use conventional commit format to organize your commit message (https://www.conventionalcommits.org/). This is checked by lefthook and will show error message, you can refer to the message to correct your commit message.
 
-2. Install conventional-changelog-cli via npm (`npm i conventional-changelog-cli -g`)
-3. Run `npm run changelog`
+2. Run `mise i`, you should have installed conventional-changelog-cli correctly
+3. Run `mise run changelog` to generate changelog file

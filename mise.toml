@@ -1,3 +1,14 @@
 [tools]
-node = "24.13"
+lefthook = "latest"
+node = "24"
 "npm:conventional-changelog-cli" = "latest"
+pnpm = "10.28.2"
+prettier = "latest"
+
+[tasks.changelog]
+description = "Generate changelog via git history"
+run = [
+  "conventional-changelog -i whatschange.md -s -n conventional-changelog.config.json -k theme.json -c theme.json",
+  "prettier -w whatschange.md",
+  "git add whatschange.md",
+]

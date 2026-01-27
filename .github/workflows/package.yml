@@ -23,10 +23,10 @@ jobs:
       - uses: jdx/mise-action@v3
 
       - name: Install deps
-        run: npm install
+        run: pnpm install
 
       - name: Build scss
-        run: npm run build
+        run: pnpm run build
 
       - name: Package
         run: zip -r package.zip . -i 'theme.*' 'icon.png' 'preview.png' 'README*.md' 'resources/*' 'sub/*' -x '**/*.css.map' 'theme.css.map' 'theme.scss'
@@ -40,7 +40,7 @@ jobs:
       - name: Generate release log
         run: |
           conventional-changelog -o release.md -n conventional-changelog.config.json -k theme.json -c theme.json
-          npx prettier -w release.md
+          prettier -w release.md
 
       - name: Release
         uses: softprops/action-gh-release@v2
