@@ -223,34 +223,42 @@ type ThemeSettingKey = keyof ThemeConfig["theme"];
 /** 插件设置键 */
 type PluginSettingKey = keyof ThemeConfig["plugins"];
 
-/** 设置面板ID到配置文件的映射 */
-interface SettingKeyMap {
-    [K: string]:
-        | {
-              section: "theme";
-              key: ThemeSettingKey;
-          }
-        | {
-              section: "plugins";
-              key: PluginSettingKey;
-          };
+/**
+ * 设置面板中使用的ID类型
+ */
+export type SettingPanelId = ThemeSettingKey | PluginSettingKey;
+
+declare global {
+    interface Window {
+        /** 主题移除时由思源触发 */
+        destroyTheme?: () => Promise<void>;
+
+        /** 思源的配置项 */
+        siyuan: {
+            config: {
+                api: {
+                    // 设置中的token
+                    token: string;
+                };
+                // 和<html>中的lang一样
+                lang: string;
+            };
+            // 是否是发布模式
+            isPublish: boolean;
+        };
+    }
+
+    // 主题代码中添加的全局变量
+    /** 默认配置文件 */
+    var vscDefaultConf: Readonly<ThemeConfig>;
+    /** 本地化提示信息 */
+    var vscMessage: Readonly<vscMessage>;
+    /** 默认语言，可由浏览器方法获取 */
+    var vscLang: keyof vscMessage["language"];
+    /** 目前所有的计时器 */
+    var vscTimers: vscTimers;
+    /** 目前所有的观察器 */
+    var vscObservers: vscObservers;
+    /** 目前所有的计数器 */
+    var vscCounters: vscCounters;
 }
-
-/** 设置面板中使用的ID类型 */
-export type SettingPanelId = keyof SettingKeyMap;
-
-/** 配置文件中启用项到配置文件的映射 */
-interface EnableSettingsKeyMap {
-    [K: string]:
-        | {
-              section: "theme";
-              key: ThemeSettingKey;
-          }
-        | {
-              section: "plugins";
-              key: PluginSettingKey;
-          };
-}
-
-/** 配置文件中启用项类型 */
-export type EnableSettings = keyof EnableSettingsKeyMap;

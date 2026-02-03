@@ -42,6 +42,8 @@
 > 完整更新日志查看[changelog](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/changelog.md)
 > 提交历史日志查看[whatschange](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/whatschange.md)
 
+- v2.7.0
+  - 优化代码
 - v2.6.3
   - 修复在列表中折叠标题块的图标显示问题
   - 改善标题图标的显示效果
@@ -54,11 +56,6 @@
   - 完善自定义属性`av-no-add-entry`
   - 处理嵌入块样式与Query&View插件兼容性问题
   - 添加`/`菜单多栏显示功能
-- v2.6.1
-  - 添加主题更新后显示通知功能
-  - 在主题更新后显示引述块自定义属性移除通知
-  - 在启用背景图片插件适配时，将空白初始页的背景设置为透明
-  - 在关闭背景图片插件时，正确处理元素变化
 
 # 特殊适配
 

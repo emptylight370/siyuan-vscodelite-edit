@@ -40,7 +40,7 @@ export async function loadGlobalVars() {
     /**
      * ! 默认消息本地化
      * @since 1.3.3
-     * @version 2.6.3
+     * @version 2.7.0
      */
     globalThis.vscMessage = {
         language: {
@@ -234,7 +234,7 @@ export async function loadGlobalVars() {
     if (globalThis.vscMessage.language[currentLang] != undefined) {
         globalThis.vscLang = currentLang;
     } else {
-        if (currentLang == "zh_CHT") {
+        if (currentLang === "zh_CHT") {
             globalThis.vscLang = "zh_CN";
         } else {
             globalThis.vscLang = "en_US";

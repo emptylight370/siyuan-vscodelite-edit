@@ -3,13 +3,13 @@ import { loadGlobalVars } from "./defs";
 import { bg, bgobserver } from "./plugins/background";
 import { getSlashMenusCount, slashMenuObserver } from "./plugins/slashmenu";
 import { createSettingsWindow, getSettings } from "./setting";
-import { EnableSettings } from "./types.d";
+import { SettingPanelId } from "./types";
 
 /**
  * @description 主题默认加载时进行的行为
  * ! js代码加载后立即执行
  * @since 1.2.0
- * @version 2.6.3
+ * @version 2.7.0
  */
 (async function () {
     // 检查是否同时存在主题样式代码和PDF适配代码
@@ -37,7 +37,7 @@ import { EnableSettings } from "./types.d";
     // console.log(cssTable);
     if (cssTable) {
         // 读取配置文件或生成配置文件
-        let labels: EnableSettings[];
+        let labels: SettingPanelId[];
         try {
             labels = await getSettings();
         } catch (e) {
@@ -173,11 +173,11 @@ function addThemeToolBar() {
 /**
  * 向css表中插入引用的语句
  * @param table &lt;link stylesheet&gt;
- * @param labels EnableSettings[]
+ * @param labels SettingPanelId[]
  * @since 1.3.0
- * @version 2.6.3
+ * @version 2.7.0
  */
-function addImports(table: HTMLLinkElement, labels: EnableSettings[]) {
+function addImports(table: HTMLLinkElement, labels: SettingPanelId[]) {
     const sheet: CSSStyleSheet = table.sheet;
     const isMobile = document.body.classList.contains("vscmobile");
     let existBackgroundPlugin = Array.from(sheet.cssRules).some((rule) =>
@@ -261,11 +261,11 @@ function addImports(table: HTMLLinkElement, labels: EnableSettings[]) {
 
 /**
  * ! 添加固定属性
- * @param settings EnableSettings[]
+ * @param settings SettingPanelId[]
  * @since 1.3.5
- * @version 2.6.3
+ * @version 2.7.0
  */
-function addFixedAttribute(settings: EnableSettings[]) {
+function addFixedAttribute(settings: SettingPanelId[]) {
     const isMobile = document.body.classList.contains("vscmobile");
     const isExportPDF = !document.getElementById("themeScript");
     // 运行

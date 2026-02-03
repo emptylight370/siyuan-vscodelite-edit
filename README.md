@@ -42,6 +42,8 @@ Limited by the configuration loading method, updated configurations for new vers
 > Full changelog view [ChangeLog](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/changelog.md)
 > Commit history view [whatschange](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/whatschange.md)
 
+- v2.7.0
+  - Optimize code
 - v2.6.3
   - Fix icon display issue with folded heading in list
   - Improve the display effect of heading icon
@@ -54,11 +56,6 @@ Limited by the configuration loading method, updated configurations for new vers
   - Improve custom attribute `av-no-add-entry`
   - Handling compatibility issues between embedded block styles and the Query&View plugin
   - Add `/` menu multi-column display feature
-- v2.6.1
-  - Added notification feature after theme updates
-  - Show notification about removal of quote block's custom attributes after theme update
-  - When enabling background image plugin adaptation, set the background of blank initial page to transparent
-  - Handle element changes properly when disabling the background image plugin
 
 # Special fitness
 

@@ -1,6 +1,5 @@
 import { _getFile, _postMessage, _reloadInterface, _writeFile, getMsg } from "./api";
-import { settingKeyMap } from "./types";
-import { EnableSettings, vscMessage, SettingItem, SettingPanelId, ThemeConfig } from "./types.d";
+import { SettingItem, SettingPanelId, ThemeConfig, vscMessage } from "./types";
 
 /**
  * 创建一个包含标签和复选框的 HTML 结构
@@ -213,7 +212,7 @@ function switchTab(event: MouseEvent) {
  * @param plugin 插件标签页
  * @param setting 单个设置项
  * @since 2.5.0
- * @version 2.5.1
+ * @version 2.7.0
  */
 function addSettingsToPage(siyuan: HTMLDivElement, plugin: HTMLDivElement, setting: SettingItem) {
     let label: HTMLDivElement | HTMLSpanElement;
@@ -256,22 +255,19 @@ function addSettingsToPage(siyuan: HTMLDivElement, plugin: HTMLDivElement, setti
     div.appendChild(checkbox);
 
     // 确定它在配置文件中的分类
-    const mapping = settingKeyMap[setting.id as keyof typeof settingKeyMap];
-    if (mapping) {
-        if (mapping.section === "theme") {
-            // 将设置项容器放入思源页面
-            siyuan.appendChild(div);
-        } else if (mapping.section === "plugins") {
-            // 将设置项容器放入插件页面
-            plugin.appendChild(div);
-        }
+    if (setting.id in globalThis.vscDefaultConf.theme) {
+        // 将设置项容器放入思源页面
+        siyuan.appendChild(div);
+    } else if (setting.id in globalThis.vscDefaultConf.plugins) {
+        // 将设置项容器放入插件页面
+        plugin.appendChild(div);
     }
 }
 
 /**
  * NOTE 工具函数，保存设置并刷新思源
  * @since 1.2.2
- * @version 2.6.3
+ * @version 2.7.0
  */
 async function closeAndSave() {
     const dialog = document.getElementById("vsceThemeSettingDialog");
@@ -284,9 +280,10 @@ async function closeAndSave() {
         const id = checkbox.id as SettingPanelId;
         const ck = (checkbox as HTMLInputElement).checked;
         // ! 保存设置到json
-        const mapping = settingKeyMap[id];
-        if (mapping) {
-            saveSt[mapping.section][mapping.key] = ck;
+        if (id in globalThis.vscDefaultConf.theme) {
+            saveSt.theme[id] = ck;
+        } else if (id in globalThis.vscDefaultConf.plugins) {
+            saveSt.plugins[id] = ck;
         }
     });
     // 修改配置文件版本
@@ -321,7 +318,7 @@ function closeNotSave() {
  * NOTE 获取设置界面的定义数组
  * @returns Promise&lt;SettingItem[]%gt;
  * @since 2.1.0
- * @version 2.6.3
+ * @version 2.7.0
  */
 async function fetchSettingsPanelArray() {
     const config: ThemeConfig | null = await _getFile("/data/snippets/vsc_edit.config.json");
@@ -334,7 +331,7 @@ async function fetchSettingsPanelArray() {
     // 标题
     settings.push({
         label: getMsg("tititem"),
-        id: "titleBlock",
+        id: "title",
         enable: v?.theme?.title ?? globalThis.vscDefaultConf.theme.title,
     });
     // 标题阴影
@@ -366,7 +363,7 @@ async function fetchSettingsPanelArray() {
     // 引用
     settings.push({
         label: getMsg("refitem"),
-        id: "referenceBlock",
+        id: "reference",
         enable: v?.theme?.reference ?? globalThis.vscDefaultConf.theme.reference,
     });
     // 标记
@@ -379,13 +376,13 @@ async function fetchSettingsPanelArray() {
     settings.push({
         label: getMsg("tagitem"),
         description: getMsg("tagdesc"),
-        id: "tagStyle",
+        id: "tag",
         enable: v?.theme?.tag ?? globalThis.vscDefaultConf.theme.tag,
     });
     // 集市
     settings.push({
         label: getMsg("bazitem"),
-        id: "bazaarStyle",
+        id: "bazaar",
         enable: v?.theme?.bazaar ?? globalThis.vscDefaultConf.theme.bazaar,
     });
     // 嵌入块
@@ -404,7 +401,7 @@ async function fetchSettingsPanelArray() {
     // 快捷键面板
     settings.push({
         label: getMsg("scitem"),
-        id: "scPanelStyle",
+        id: "shortcutPanel",
         enable: v?.plugins?.shortcutPanel ?? globalThis.vscDefaultConf.plugins.shortcutPanel,
     });
     // 替换背景图片插件电脑端
@@ -446,11 +443,11 @@ async function fetchSettingsPanelArray() {
 
 /**
  * ! 获取当前启用的设置项
- * @returns Promise&lt;EnableSettings[]&gt;
+ * @returns Promise&lt;SettingPanelId[]&gt;
  * @since 1.2.0
- * @version 2.6.3
+ * @version 2.7.0
  */
-export async function getSettings(): Promise<EnableSettings[]> {
+export async function getSettings(): Promise<SettingPanelId[]> {
     // var res = _analyseResponse(_getFile("/data/snippets/vsc_edit.config.json"));
     let config: ThemeConfig | null = await _getFile("/data/snippets/vsc_edit.config.json");
     // 如果未获取到配置文件，则使用默认配置生成文件
@@ -460,7 +457,7 @@ export async function getSettings(): Promise<EnableSettings[]> {
     }
     // 解析并返回当前启用的设置项
     // 建立启用设置项的数组
-    let lab: EnableSettings[] = [];
+    let lab: SettingPanelId[] = [];
     // 检测配置文件的版本
     if (config["version"] < globalThis.vscDefaultConf["version"] || config["version"] == undefined) {
         // console.log(settings["version"]);
@@ -473,11 +470,11 @@ export async function getSettings(): Promise<EnableSettings[]> {
     // ! 从设置中获取启用的设置项
     // 主题设置项
     Object.entries(config.theme).forEach(([key, enabled]) => {
-        if (enabled) lab.push(key as EnableSettings);
+        if (enabled) lab.push(key as SettingPanelId);
     });
     // 插件设置项
     Object.entries(config.plugins).forEach(([key, enabled]) => {
-        if (enabled) lab.push(key as EnableSettings);
+        if (enabled) lab.push(key as SettingPanelId);
     });
     return lab;
 }
