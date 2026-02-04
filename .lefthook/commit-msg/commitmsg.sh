@@ -6,7 +6,7 @@ COMMIT_MSG=$(head -n 1 "$COMMIT_MSG_FILE")
 CONVENTIONAL_COMMIT_PATTERN="^(build|chore|ci|docs|feat|fix|perf|refactor|revert|style|test|wip)(\([a-z0-9\-]+\))?!?: .+$"
 
 # 检查是否匹配 Conventional Commits 格式
-if ! echo "$COMMIT_MSG" | grep -Eq "$CONVENTIONAL_COMMIT_PATTERN"; then
+if ! echo "$COMMIT_MSG" | grep -Eiq "$CONVENTIONAL_COMMIT_PATTERN"; then
   echo "❌ 提交信息不符合 Conventional Commits 规范！"
   echo ""
   echo "提交信息应遵循以下格式:"
