@@ -16,9 +16,6 @@ importers:
       npm-run-all:
         specifier: ^4.1.5
         version: 4.1.5
-      prettier-plugin-toml:
-        specifier: ^2.0.6
-        version: 2.0.6(prettier@3.8.1)
       rimraf:
         specifier: ^6.1.2
         version: 6.1.2
@@ -334,14 +331,6 @@ packages:
       { integrity: sha512-mxRFDdHIWRxg3UfIIAwCm6NzvxG0jDX/wBN6KsQFTvKFqqg9vTrWUE68qEjHt19A5wwx5X5aUi2zuZT7YR0jrA== }
     cpu: [x64]
     os: [win32]
-
-  "@taplo/core@0.2.0":
-    resolution:
-      { integrity: sha512-r8bl54Zj1In3QLkiW/ex694bVzpPJ9EhwqT9xkcUVODnVUGirdB1JTsmiIv0o1uwqZiwhi8xNnTOQBRQCpizrQ== }
-
-  "@taplo/lib@0.5.0":
-    resolution:
-      { integrity: sha512-+xIqpQXJco3T+VGaTTwmhxLa51qpkQxCjRwezjFZgr+l21ExlywJFcDfTrNmL6lG6tqb0h8GyJKO3UPGPtSCWg== }
 
   "@types/estree@1.0.8":
     resolution:
@@ -871,19 +860,6 @@ packages:
       { integrity: sha512-/+5VFTchJDoVj3bhoqi6UeymcD00DAwb1nJwamzPvHEszJ4FpF6SNNbUbOS8yI56qHzdV8eK0qEfOSiodkTdxg== }
     engines: { node: ">= 0.4" }
 
-  prettier-plugin-toml@2.0.6:
-    resolution:
-      { integrity: sha512-12N/wBuHa9jd/KVy9pRP20NMKxQfQLMseQCt66lIbLaPLItvGUcSIryE1eZZMJ7loSws6Ig3M2Elc2EreNh76w== }
-    engines: { node: ">=16.0.0" }
-    peerDependencies:
-      prettier: ^3.0.3
-
-  prettier@3.8.1:
-    resolution:
-      { integrity: sha512-UOnG6LftzbdaHZcKoPFtOcCKztrQ57WkHDeRD9t/PTQtmT0NHSeWWepj6pS0z/N7+08BHFDQVUrfmfMRcZwbMg== }
-    engines: { node: ">=14" }
-    hasBin: true
-
   read-pkg@3.0.0:
     resolution:
       { integrity: sha512-BLq/cCO9two+lBgiTYNqD6GdtK8s4NpaWrl6/rCO9w0TUS8oJl7cmToOZfRYllKTISY6nt1U7jQ53brmKqY6BA== }
@@ -1286,12 +1262,6 @@ snapshots:
 
   "@rollup/rollup-win32-x64-msvc@4.57.1":
     optional: true
-
-  "@taplo/core@0.2.0": {}
-
-  "@taplo/lib@0.5.0":
-    dependencies:
-      "@taplo/core": 0.2.0
 
   "@types/estree@1.0.8": {}
 
@@ -1801,13 +1771,6 @@ snapshots:
   pify@3.0.0: {}
 
   possible-typed-array-names@1.1.0: {}
-
-  prettier-plugin-toml@2.0.6(prettier@3.8.1):
-    dependencies:
-      "@taplo/lib": 0.5.0
-      prettier: 3.8.1
-
-  prettier@3.8.1: {}
 
   read-pkg@3.0.0:
     dependencies:

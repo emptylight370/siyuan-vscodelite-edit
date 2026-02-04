@@ -2,7 +2,6 @@
   "tabWidth": 2,
   "printWidth": 120,
   "bracketSameLine": true,
-  "plugins": ["prettier-plugin-toml"],
   "overrides": [
     {
       "files": ["*.scss", "*.css", "*.ts", "*.js", "*.cjs"],

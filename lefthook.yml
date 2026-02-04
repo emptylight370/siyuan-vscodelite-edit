@@ -7,7 +7,7 @@ pre-commit:
         - run: test $(git diff --name-only --cached | grep -c 'theme\.json') -eq 0
       script: checkVersion.ts
       runner: node
-      fail_text: "请确保theme.json与defs.ts中版本号一致"
+      fail_text: '请确保theme.json与defs.ts中版本号一致'
 
     - name: Generate changelog
       skip:
@@ -15,15 +15,19 @@ pre-commit:
         - run: test $(git diff --name-only --cached | grep -c 'theme\.json') -eq 0
       run: mise run changelog
       stage_fixed: true
-      fail_text: "请检查依赖安装状态，运行mise install安装依赖"
+      fail_text: '请检查依赖安装状态，运行mise install安装依赖'
 
     - name: Format code with prettier
       skip:
         # 在需要进行格式化时执行
-        - run: git diff --name-only --cached | xargs prettier -c
-      run: prettier -w {staged_files}
+        - run: git diff --name-only --cached -- '*.md' '*.json' 'src/*' | xargs prettier -c
+      run: prettier -l {staged_files} | prettier -w
       stage_fixed: true
-      fail_text: "请检查prettier安装状态，运行mise install安装依赖"
+      glob:
+        - '*.md'
+        - '*.json'
+        - 'src/*'
+      fail_text: '请检查prettier安装状态，运行mise install安装依赖'
 
 commit-msg:
   jobs:
