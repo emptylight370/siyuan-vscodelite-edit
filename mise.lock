@@ -1,0 +1,19 @@
+[[tools.lefthook]]
+version = "2.1.0"
+backend = "aqua:evilmartians/lefthook"
+
+[[tools.node]]
+version = "24.13.0"
+backend = "core:node"
+
+[[tools."npm:conventional-changelog-cli"]]
+version = "5.0.0"
+backend = "npm:conventional-changelog-cli"
+
+[[tools.pnpm]]
+version = "10.29.1"
+backend = "aqua:pnpm/pnpm"
+
+[[tools.prettier]]
+version = "3.8.1"
+backend = "npm:prettier"

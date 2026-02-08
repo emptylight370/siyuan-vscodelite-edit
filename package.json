@@ -6,7 +6,7 @@
   "engines": {
     "node": ">=22.18.0"
   },
-  "packageManager": "pnpm@10.28.2",
+  "packageManager": "pnpm@10.29.1",
   "scripts": {
     "build:scss": "sass theme.scss:theme.css src/scss:sub",
     "build:ts": "rollup -c",
@@ -31,7 +31,7 @@
   "homepage": "https://github.com/emptylight370/siyuan-vscodelite-edit#readme",
   "devDependencies": {
     "@rollup/plugin-typescript": "^12.3.0",
-    "@types/node": "^25.2.0",
+    "@types/node": "^25.2.2",
     "npm-run-all": "^4.1.5",
     "rimraf": "^6.1.2",
     "rollup": "^4.57.1",
