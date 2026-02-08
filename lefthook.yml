@@ -3,25 +3,21 @@ pre-commit:
   jobs:
     - name: Check theme version and defs.ts version
       skip:
-        # 仅在提交了theme.json的时候执行
-        - run: test $(git diff --name-only --cached | grep -c 'theme\.json') -eq 0
+        # 仅在修改了version的时候执行
+        - run: $(! git diff --cached -U0 'theme.json' | grep -q -F 'version')
       script: checkVersion.ts
       runner: node
       fail_text: '请确保theme.json与defs.ts中版本号一致'
 
     - name: Generate changelog
       skip:
-        # 仅在提交了theme.json的时候执行
-        - run: test $(git diff --name-only --cached | grep -c 'theme\.json') -eq 0
+        # 仅在修改了version的时候执行
+        - run: $(! git diff --cached -U0 'theme.json' | grep -q -F 'version')
       run: mise run changelog
-      stage_fixed: true
       fail_text: '请检查依赖安装状态，运行mise install安装依赖'
 
     - name: Format code with prettier
-      skip:
-        # 在需要进行格式化时执行
-        - run: git diff --name-only --cached -- '*.md' '*.json' 'src/*' | xargs prettier -c
-      run: prettier -l {staged_files} | prettier -w
+      run: prettier -l {staged_files} | xargs -r prettier -w
       stage_fixed: true
       glob:
         - '*.md'
