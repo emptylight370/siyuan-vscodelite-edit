@@ -229,7 +229,7 @@ declare global {
     var vscDefaultConf: Readonly<ThemeConfig>;
     /** 本地化提示信息 */
     var vscMessage: Readonly<vscMessage>;
-    /** 默认语言，可由浏览器方法获取 */
+    /** 主题默认语言 */
     var vscLang: keyof vscMessage["language"];
     /** 目前所有的计时器 */
     var vscTimers: vscTimers;

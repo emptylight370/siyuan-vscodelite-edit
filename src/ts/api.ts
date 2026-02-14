@@ -14,23 +14,25 @@ import { vscMessage } from "./types.d";
  * @param data 请求数据(json encode)
  * @returns Promise&lt;any&gt;?
  * @since 1.2.0
- * @version 2.3.0
+ * @version 2.7.0
  */
 export async function _rqFORSiyuan(url: string, data: any) {
     try {
-        const response = await fetch(url, {
+        let rData = {
             body: JSON.stringify(data),
             method: "POST",
-            headers: {
-                Authorization: `Token ${window.siyuan?.config?.api?.token ?? ""}`,
-            },
-        });
+        } as RequestInit;
+        let header: any = {};
+        const token = window.siyuan?.config?.api?.token;
+        if (token) header.Authorization = `Token ${token}`;
+        if (Object.keys(header).length > 0) rData.headers = header;
+        const response = await fetch(url, rData);
         // 为_getFile()特别准备一个返回值用于显示错误详情
         if (response.status === 202) return await response.json();
         // 如果返回为ok则响应结果，否则返回null
         return response.ok ? await response.json() : null;
     } catch (error) {
-        console.log("VSCode Lite Edit api error:", error);
+        console.error("VSCode Lite Edit api error:", error);
         return null;
     }
 }
