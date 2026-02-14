@@ -1,3 +1,22 @@
+## [2.7.0](https://github.com/emptylight370/siyuan-vscodelite-edit/compare/2.6.3...2.7.0) (2026-02-14)
+
+### 🔨 Refactor | 重构
+
+- 简化类型定义以简化维护负担 ([6eb2204](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/6eb2204fccac247ec1013a11b334342fd7858428))
+- 语言列表直接从siyuan导入 ([c3a97e6](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/c3a97e6ce792e527c3ed4e2c8e8b8690072bab09))
+- 重构API请求方法 ([50f970f](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/50f970ffd8ab2c93774c65260547c8ec422f23f8))
+
+### 🛠️ Build system | 构建系统
+
+- 迁移到pnpm，再整理依赖项 ([e72c8a9](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/e72c8a94703f9a5204a9f3ca7a13eb630eccd624))
+- **actions:** 修复schema语法警告 ([b6365b1](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/b6365b1fb810d9623bc4b339eff452bf72ad6156))
+- **deps:** bump @isaacs/brace-expansion from 5.0.0 to 5.0.1 ([4c36332](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/4c36332c40179ea6b29299877053b9e040a78dbb))
+- **fix:** 修正Prettier插件定义并更新依赖 ([73e9bc1](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/73e9bc1527497e8bd1a139738457d73eb282876f))
+- **lefthook:** 更新git hook触发条件 ([5e1196c](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/5e1196cb08eb505f6f33c97da3eae95f8f74a4e9))
+- **Lefthook:** 在检查commit message时不区分大小写 ([074c236](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/074c23683ca8a752e58f1d8845d7a42888850501))
+- **lefthook:** 重置格式化文件的逻辑 ([62d1e53](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/62d1e535bf51c9da405c84ab813c8bf01bb827a6))
+- **Prettier:** Ignore pnpm lock file ([a52f286](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/a52f28639b000135dccebc7f049813703b32b6fd))
+
 ## [2.6.3](https://github.com/emptylight370/siyuan-vscodelite-edit/compare/2.6.2...2.6.3) (2026-01-21)
 
 ### ✨ Features | 功能
