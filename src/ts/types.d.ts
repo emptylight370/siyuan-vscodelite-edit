@@ -181,30 +181,6 @@ export interface vscCounters {
     slashMenuCount: number;
 }
 
-/**
- * 用户当前使用的语言
- *
- * 用户界面语言
- * 与{@link IAppearance.lang}相同
- * @see https://github.com/siyuan-note/siyuan/blob/master/app/src/types/config.d.ts#L279-L294
- */
-export type TLang =
-    | "en_US"
-    | "ar_SA"
-    | "de_DE"
-    | "es_ES"
-    | "fr_FR"
-    | "he_IL"
-    | "it_IT"
-    | "ja_JP"
-    | "ko_KR"
-    | "pl_PL"
-    | "pt_BR"
-    | "ru_RU"
-    | "tr_TR"
-    | "zh_CN"
-    | "zh_CHT";
-
 /** 在显示设置面板时向数组中传入的元素格式 */
 export interface SettingItem {
     /** 显示文字 */

@@ -26,6 +26,9 @@ importers:
       sass:
         specifier: ^1.97.3
         version: 1.97.3
+      siyuan:
+        specifier: ^1.1.7
+        version: 1.1.7
       tslib:
         specifier: ^2.8.1
         version: 2.8.1
@@ -808,6 +811,9 @@ packages:
   side-channel@1.1.0:
     resolution: {integrity: sha512-ZX99e6tRweoUXqR+VBrslhda51Nh5MTQwou5tnUDgbtyM0dBgmhEDtWGP/xbKn6hqfPRHujUNwz5fy/wbbhnpw==}
     engines: {node: '>= 0.4'}
+
+  siyuan@1.1.7:
+    resolution: {integrity: sha512-ReLjCyE+OT3Ie3iFig/3fhiMreqfyN4mteZliMz62wllLjRIeVGsC75LKW748LiEH7Xr5WcVk0ZQI+UUmlKYQw==}
 
   source-map-js@1.2.1:
     resolution: {integrity: sha512-UXWMKhLOwVKb728IUtQPXxfYU+usdybtUrK/8uGE8CQMvrhOpwvzDBwj0QhSL7MQc7vIsISBG8VQ8+IDQxpfQA==}
@@ -1745,6 +1751,8 @@ snapshots:
       side-channel-list: 1.0.0
       side-channel-map: 1.0.1
       side-channel-weakmap: 1.0.2
+
+  siyuan@1.1.7: {}
 
   source-map-js@1.2.1: {}
 

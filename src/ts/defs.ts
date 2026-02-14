@@ -1,4 +1,4 @@
-import { TLang } from "./types.d";
+import { Config } from "siyuan/types/config";
 
 /**
  * 加载全局变量
@@ -230,7 +230,7 @@ export async function loadGlobalVars() {
     };
 
     // 浏览器获取的默认语言
-    let currentLang = document.documentElement.lang as TLang;
+    let currentLang = document.documentElement.lang as Config.TLang;
     if (globalThis.vscMessage.language[currentLang] != undefined) {
         globalThis.vscLang = currentLang;
     } else {
