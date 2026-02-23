@@ -42,6 +42,8 @@
 > 完整更新日志查看[changelog](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/changelog.md)
 > 提交历史日志查看[whatschange](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/whatschange.md)
 
+- v2.7.1
+  - 更新赞助链接
 - v2.7.0
   - 优化代码
 - v2.6.3
@@ -49,13 +51,6 @@
   - 改善标题图标的显示效果
   - 优化`/`菜单多栏显示功能
   - 优化代码
-- v2.6.2
-  - 修复设置面板图标丢失
-  - 在启用背景插件适配时让文本外观选择窗口也透明化
-  - 移除引述块Callout自定义属性
-  - 完善自定义属性`av-no-add-entry`
-  - 处理嵌入块样式与Query&View插件兼容性问题
-  - 添加`/`菜单多栏显示功能
 
 # 特殊适配
 

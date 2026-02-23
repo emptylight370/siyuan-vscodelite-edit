@@ -42,6 +42,8 @@ Limited by the configuration loading method, updated configurations for new vers
 > Full changelog view [ChangeLog](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/changelog.md)
 > Commit history view [whatschange](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/whatschange.md)
 
+- v2.7.1
+  - Update sponsorship link
 - v2.7.0
   - Optimize code
 - v2.6.3
@@ -49,13 +51,6 @@ Limited by the configuration loading method, updated configurations for new vers
   - Improve the display effect of heading icon
   - Improve `/` menu multi-column display feature
   - Optimize code
-- v2.6.2
-  - Fix icon missing in settings panel
-  - When enabled background plugin adaption, let text appearance selection window transparent
-  - Remove quote block Callout custom attributes
-  - Improve custom attribute `av-no-add-entry`
-  - Handling compatibility issues between embedded block styles and the Query&View plugin
-  - Add `/` menu multi-column display feature
 
 # Special fitness
 

@@ -1,3 +1,15 @@
+## [2.7.1](https://github.com/emptylight370/siyuan-vscodelite-edit/compare/2.7.0...2.7.1) (2026-02-23)
+
+### ✨ Features | 功能
+
+- [skip ci]更新支付链接 ([150cbe6](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/150cbe676f7e4adc69d6828c78227e1474e7b983))
+
+## [2.7.1](https://github.com/emptylight370/siyuan-vscodelite-edit/compare/2.7.0...2.7.1) (2026-02-23)
+
+### ✨ Features | 功能
+
+- [skip ci]更新支付链接 ([150cbe6](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/150cbe676f7e4adc69d6828c78227e1474e7b983))
+
 ## [2.7.0](https://github.com/emptylight370/siyuan-vscodelite-edit/compare/2.6.3...2.7.0) (2026-02-14)
 
 ### 🔨 Refactor | 重构

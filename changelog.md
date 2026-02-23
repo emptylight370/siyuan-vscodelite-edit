@@ -1,5 +1,10 @@
 # ChangeLog
 
+## 2.7.1
+
+- 更新赞助链接
+- Update sponsorship link
+
 ## 2.7.0
 
 - 优化代码
