@@ -112,6 +112,8 @@
 或者[加入QQ频道](https://pd.qq.com/s/7uxvabgbp)。  
 或者[链滴社区](https://ld246.com/article/1728034766990)。
 
+支持开发：[链接](https://blog.emptylight.cn/sponsor)
+
 # 许可证
 
 跟随上级储存库[TinkMingKing/siyuan-themes-vscodelite](https://github.com/TinkMingKing/siyuan-themes-vscodelite)使用GPL3.0协议

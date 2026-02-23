@@ -112,6 +112,8 @@ Please [email to me](mailto:1378990254@qq.com)(1378990254@qq.com).
 Or [join QQ channel](https://pd.qq.com/s/7uxvabgbp).  
 Or [Liandi Forum](https://ld246.com/article/1728034766990).
 
+Support development: [Link](https://emptylight370.github.io/sponsor)
+
 # LICENSE
 
 Follow origin repository [TinkMingKing/siyuan-themes-vscodelite](https://github.com/TinkMingKing/siyuan-themes-vscodelite) use GPL3.0 LICENSE
