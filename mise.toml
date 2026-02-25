@@ -2,7 +2,7 @@
 lefthook = "latest"
 node = "24"
 "npm:conventional-changelog-cli" = "latest"
-pnpm = "latest"
+"npm:pnpm" = "latest"
 prettier = "latest"
 
 [tasks.changelog]

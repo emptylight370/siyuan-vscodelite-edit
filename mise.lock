@@ -20,7 +20,7 @@ backend = "core:node"
 version = "5.0.0"
 backend = "npm:conventional-changelog-cli"
 
-[[tools.pnpm]]
+[[tools."npm:pnpm"]]
 version = "10.30.2"
 backend = "npm:pnpm"
 
