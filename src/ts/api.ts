@@ -6,7 +6,7 @@
  * TODO 完成所需的所有api写入
  */
 
-import { vscMessage } from "./types.d";
+import { vscMessage } from "./types";
 
 /**
  * 向思源请求数据
