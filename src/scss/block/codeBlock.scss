@@ -50,17 +50,18 @@ div:not(#preview) > .protyle-wysiwyg .code-block:not(pre) {
  * 代码块语言选择器
  * https://github.com/siyuan-note/siyuan/pull/15966
  */
+$codeLang-item-shadow: inset 0 0 3px var(--b3-border-color);
 .protyle-util > [data-id="codeLanguage"] {
     .b3-list-item {
         // 清空
         &[data-id="clearLanguage"]:not(.b3-list-item--focus) {
-            box-shadow: inset 0 0 5px var(--b3-border-color);
+            box-shadow: $codeLang-item-shadow;
         }
 
         // 自定义语言
         &[data-id="customLanguage"] {
             &:not(.b3-list-item--focus) {
-                box-shadow: inset 0 0 5px var(--b3-border-color);
+                box-shadow: $codeLang-item-shadow;
             }
 
             &::after {
