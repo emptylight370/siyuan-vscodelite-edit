@@ -44,6 +44,7 @@ Limited by the configuration loading method, updated configurations for new vers
 
 - v2.7.2
   - Add label for code block custom language
+  - Fix the issue where line numbers in code blocks are not fully displayed when exceeding 1000 lines
 - v2.7.1
   - Update sponsorship link
 - v2.7.0

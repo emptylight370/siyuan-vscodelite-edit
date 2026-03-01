@@ -3,7 +3,9 @@
 ## v2.7.2
 
 - 为代码块自定义语言添加标识
+- 修复代码块行号超过1000行时显示不全问题
 - Add label for code block custom language
+- Fix the issue where line numbers in code blocks are not fully displayed when exceeding 1000 lines
 
 ## 2.7.1
 

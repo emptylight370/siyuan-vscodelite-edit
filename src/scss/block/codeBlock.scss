@@ -13,7 +13,8 @@
 
 /* 代码块左边的行号显示 */
 .code-block .protyle-linenumber__rows {
-    width: 2em;
+    width: fit-content;
+    min-width: 2em;
 }
 
 /*
