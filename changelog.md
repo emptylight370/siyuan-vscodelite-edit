@@ -3,8 +3,10 @@
 ## v2.7.2
 
 - 为代码块自定义语言添加标识
+- 为代码块语言列表的清空和自定义语言按钮添加边框
 - 修复代码块行号超过1000行时显示不全问题
 - Add label for code block custom language
+- Add border for clear and custom button in language list of code block
 - Fix the issue where line numbers in code blocks are not fully displayed when exceeding 1000 lines
 
 ## 2.7.1

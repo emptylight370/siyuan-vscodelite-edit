@@ -52,13 +52,24 @@ div:not(#preview) > .protyle-wysiwyg .code-block:not(pre) {
  */
 .protyle-util > [data-id="codeLanguage"] {
     .b3-list-item {
+        // 清空
+        &[data-id="clearLanguage"]:not(.b3-list-item--focus) {
+            box-shadow: inset 0 0 5px var(--b3-border-color);
+        }
+
         // 自定义语言
-        &[data-id="customLanguage"]::after {
-            content: "custom";
-            font-size: 80%;
-            position: absolute;
-            right: 0;
-            top: -1em;
+        &[data-id="customLanguage"] {
+            &:not(.b3-list-item--focus) {
+                box-shadow: inset 0 0 5px var(--b3-border-color);
+            }
+
+            &::after {
+                content: "custom";
+                font-size: 80%;
+                position: absolute;
+                right: 0;
+                top: -1em;
+            }
         }
     }
 }

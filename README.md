@@ -44,6 +44,7 @@ Limited by the configuration loading method, updated configurations for new vers
 
 - v2.7.2
   - Add label for code block custom language
+  - Add border for clear and custom button in language list of code block
   - Fix the issue where line numbers in code blocks are not fully displayed when exceeding 1000 lines
 - v2.7.1
   - Update sponsorship link
