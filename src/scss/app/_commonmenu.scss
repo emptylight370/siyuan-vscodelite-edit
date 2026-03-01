@@ -1,3 +1,4 @@
+/* 应用菜单 */
 .b3-menu {
     &.b3-menu--list {
         .b3-menu__items {
@@ -14,5 +15,13 @@
         .b3-menu__item.b3-menu__item--current {
             background-color: var(--b3-toolbar-hover);
         }
+    }
+}
+
+/* 列表菜单 */
+.b3-list--background {
+    .b3-list-item:hover:not(.b3-list-item--focus),
+    .b3-list-item--focus:not(.dragover):not(.dragover__top):not(.dragover__bottom) {
+        background-color: var(--mk-filetree-list--hover);
     }
 }
