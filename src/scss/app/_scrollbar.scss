@@ -10,11 +10,9 @@
 }
 
 .protyle-content {
-    &:hover {
-        &::-webkit-scrollbar-thumb {
-            opacity: 1;
-            background: var(--mk-protyle-content-scrollbar-thumb);
-        }
+    &:hover::-webkit-scrollbar-thumb {
+        opacity: 1;
+        background: var(--mk-protyle-content-scrollbar-thumb);
     }
 
     &::-webkit-scrollbar {
@@ -47,10 +45,8 @@
 }
 
 #editor {
-    .protyle-content {
-        &::-webkit-scrollbar {
-            /* 移除移动端编辑器滚动条 */
-            display: none;
-        }
+    .protyle-content::-webkit-scrollbar {
+        /* 移除移动端编辑器滚动条 */
+        display: none;
     }
 }

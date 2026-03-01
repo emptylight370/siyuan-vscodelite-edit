@@ -6,16 +6,14 @@ button.protyle-breadcrumb__icon[data-type="exit-focus"] {
 }
 
 /* 没找到在哪，但姑且认为是面包屑 */
-.protyle {
-    &:not(:has(.protyle-content[data-scrolltop="0"])) {
-        .protyle-breadcrumb {
-            box-shadow: 0 5px 10px -10px grey;
-        }
+.protyle:not(:has(.protyle-content[data-scrolltop="0"])) {
+    .protyle-breadcrumb {
+        box-shadow: 0 5px 10px -10px grey;
+    }
 
-        &:has(.protyle-content:not([data-scrolltop])) {
-            .protyle-breadcrumb {
-                box-shadow: none;
-            }
+    &:has(.protyle-content:not([data-scrolltop])) {
+        .protyle-breadcrumb {
+            box-shadow: none;
         }
     }
 }

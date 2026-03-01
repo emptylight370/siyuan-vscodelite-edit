@@ -27,13 +27,11 @@
 
 /* dock垂直拖动条 */
 /* 竖直调整宽度，模仿VSCode效果 */
-.layout__resize--lr {
-    &:hover::after {
-        visibility: visible !important;
-        // background-color: #007fd4;
-        width: 2px;
-        left: -1px;
-    }
+.layout__resize--lr:hover::after {
+    visibility: visible !important;
+    // background-color: #007fd4;
+    width: 2px;
+    left: -1px;
 }
 
 /* 拖动条平时隐藏 */
