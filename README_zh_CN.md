@@ -42,14 +42,11 @@
 > 完整更新日志查看[changelog](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/changelog.md)
 > 提交历史日志查看[whatschange](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/whatschange.md)
 
+- v2.7.2
+  - 为代码块自定义语言添加标识
 - v2.7.1
   - 更新赞助链接
 - v2.7.0
-  - 优化代码
-- v2.6.3
-  - 修复在列表中折叠标题块的图标显示问题
-  - 改善标题图标的显示效果
-  - 优化`/`菜单多栏显示功能
   - 优化代码
 
 # 特殊适配

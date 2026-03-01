@@ -1,5 +1,10 @@
 # ChangeLog
 
+## v2.7.2
+
+- 为代码块自定义语言添加标识
+- Add label for code block custom language
+
 ## 2.7.1
 
 - 更新赞助链接

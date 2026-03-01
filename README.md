@@ -42,14 +42,11 @@ Limited by the configuration loading method, updated configurations for new vers
 > Full changelog view [ChangeLog](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/changelog.md)
 > Commit history view [whatschange](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/whatschange.md)
 
+- v2.7.2
+  - Add label for code block custom language
 - v2.7.1
   - Update sponsorship link
 - v2.7.0
-  - Optimize code
-- v2.6.3
-  - Fix icon display issue with folded heading in list
-  - Improve the display effect of heading icon
-  - Improve `/` menu multi-column display feature
   - Optimize code
 
 # Special fitness

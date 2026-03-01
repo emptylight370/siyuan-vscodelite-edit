@@ -16,10 +16,12 @@
     width: 2em;
 }
 
-/* 代码块滚动时语言和按钮固定在编辑器顶部 CSS片段 */
-/* author by JeffreyChen https://ld246.com/article/1728146248791 */
-/* NOTE 用:not(#preview)排除导出PDF，用.protyle-wysiwyg排除导出预览，.protyle-wysiwyg[data-readonly="true"]是只读模式 */
-/* NOTE 导出预览的代码块没有 .protyle-action */
+/*
+ * 代码块滚动时语言和按钮固定在编辑器顶部 CSS片段
+ * author by JeffreyChen https://ld246.com/article/1728146248791
+ ^ 用:not(#preview)排除导出PDF，用.protyle-wysiwyg排除导出预览，.protyle-wysiwyg[data-readonly="true"]是只读模式
+ ^ 导出预览的代码块没有 .protyle-action
+ */
 div:not(#preview) > .protyle-wysiwyg .code-block:not(pre) {
     .protyle-action {
         position: sticky;
@@ -40,5 +42,22 @@ div:not(#preview) > .protyle-wysiwyg .code-block:not(pre) {
 
     .hljs {
         padding-top: 0;
+    }
+}
+
+/*
+ * 代码块语言选择器
+ * https://github.com/siyuan-note/siyuan/pull/15966
+ */
+.protyle-util > [data-id="codeLanguage"] {
+    .b3-list-item {
+        // 自定义语言
+        &[data-id="customLanguage"]::after {
+            content: "custom";
+            font-size: 80%;
+            position: absolute;
+            right: 0;
+            top: -1em;
+        }
     }
 }
