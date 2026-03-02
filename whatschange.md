@@ -1,3 +1,27 @@
+## [2.7.2](https://github.com/emptylight370/siyuan-vscodelite-edit/compare/2.7.1...2.7.2) (2026-03-02)
+
+### ✨ Features | 功能
+
+- 缩小文档内标签字体大小 ([a2cdefb](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/a2cdefba553c7c5d624ca2a14c3790fb89c5186b))
+- 为代码块语言列表的清空和自定义语言按钮添加边框 ([527bed6](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/527bed63aa9081136417b870f3eb854c082aa761))
+- 为代码块自定义语言添加标识 ([f65f2af](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/f65f2af628d73f11e67d123d70407927a9c62859))
+
+### 🐛 Bug Fixes | 问题修复
+
+- 代码块行号超过1000行时显示不全 ([bc16cb4](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/bc16cb4e6295ca7511bf4447da0968841817bb86))
+
+### ⚡ Performance | 性能优化
+
+- 提取重复样式定义到一个变量中 ([ef92b9f](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/ef92b9fc9fa4db643924d316a862acb736ba93c6))
+
+### ⏪ Reverts | 回退
+
+- 移除未使用的颜色定义 ([858622c](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/858622c5f43e94ecaa7049e3aa8419045f3b722b))
+
+### 🔨 Refactor | 重构
+
+- 简化样式嵌套结构 ([ff14d5b](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/ff14d5bca99cf805b37f514b02ef1dba06f95a2f))
+
 ## [2.7.1](https://github.com/emptylight370/siyuan-vscodelite-edit/compare/2.7.0...2.7.1) (2026-02-23)
 
 ### ✨ Features | 功能
