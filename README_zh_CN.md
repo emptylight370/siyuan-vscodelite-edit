@@ -42,6 +42,8 @@
 > 完整更新日志查看[changelog](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/changelog.md)
 > 提交历史日志查看[whatschange](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/whatschange.md)
 
+- v2.7.3
+  - 修改点击选中图片样式
 - v2.7.2
   - 为代码块自定义语言添加标识
   - 为代码块语言列表的清空和自定义语言按钮添加边框
@@ -49,8 +51,6 @@
   - 缩小文档内标签字体大小
 - v2.7.1
   - 更新赞助链接
-- v2.7.0
-  - 优化代码
 
 # 特殊适配
 

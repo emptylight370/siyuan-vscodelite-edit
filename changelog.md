@@ -1,5 +1,10 @@
 # ChangeLog
 
+## v2.7.3
+
+- 修改点击选中图片样式
+- Modify the style when clicking to select an image
+
 ## v2.7.2
 
 - 为代码块自定义语言添加标识
