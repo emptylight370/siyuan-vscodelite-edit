@@ -70,7 +70,7 @@ To enable custom attributes, add the `vsce` attribute in the **Custom Attributes
 |      values       | Scope                       | Effect                                                           | Supported Since | Last Updated |
 | :---------------: | --------------------------- | ---------------------------------------------------------------- | --------------- | ------------ |
 |     `no-tag`      | document or content block   | Disable in-paragraph tag styles in the selected range            | 2.3.0           | 2.3.0        |
-|    `mark-hide`    | document or paragraph block | Mark hollowing, hide marked text, display on mouse hover         | 2.3.8           | 2.3.8        |
+|    `mark-hide`    | document or paragraph block | Mark Cloze, hide marked text, display on mouse hover             | 2.3.8           | 2.3.8        |
 |    `table-min`    | table block                 | Force the minimum column width without affecting manual settings | 2.3.0           | 2.3.0        |
 |    `no-thead`     | table block                 | Disable the color and align of table head(`<thead>`)             | 2.3.0           | 2.3.0        |
 |   `hide-thead`    | table block                 | Hide `<thead>` element visually                                  | 2.5.0           | 2.5.0        |
