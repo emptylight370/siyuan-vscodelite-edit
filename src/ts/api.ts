@@ -145,6 +145,30 @@ export async function _reloadInterface() {
 }
 
 /**
+ * 切换到默认主题再切换回主题
+ * @since 2.7.4
+ * @version 2.7.4
+ */
+export async function _reEnableTheme() {
+    const appearance = window.siyuan.config.appearance;
+    const url = "/api/setting/setAppearance";
+    if (appearance.mode === 0) {
+        appearance.themeLight = "daylight";
+        appearance.themeVer = "";
+    } else if (appearance.mode === 1) {
+        appearance.themeDark = "midnight";
+        appearance.themeVer = "";
+    }
+    await _rqFORSiyuan(url, appearance);
+    if (appearance.mode === 0) {
+        appearance.themeLight = "siyuan-vscodelite-edit";
+    } else if (appearance.mode === 1) {
+        appearance.themeDark = "siyuan-vscodelite-edit";
+    }
+    await _rqFORSiyuan(url, appearance);
+}
+
+/**
  * 安全获取本地化文本，如果当前语言不存在则回退到en_US
  * @param msg 要显示的vscMessage文本
  * @returns 本地化文本

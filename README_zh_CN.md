@@ -42,6 +42,8 @@
 > 完整更新日志查看[changelog](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/changelog.md)
 > 提交历史日志查看[whatschange](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/whatschange.md)
 
+- v2.7.4
+  - 修改主题设置不需要重载界面
 - v2.7.3
   - 修改点击选中图片样式
   - 修改表格标题外观与图片标题一致
@@ -50,8 +52,6 @@
   - 为代码块语言列表的清空和自定义语言按钮添加边框
   - 修复代码块行号超过1000行时显示不全问题
   - 缩小文档内标签字体大小
-- v2.7.1
-  - 更新赞助链接
 
 # 特殊适配
 

@@ -1,5 +1,10 @@
 # ChangeLog
 
+## v2.7.4
+
+- 修改主题设置不需要重载界面
+- Theme setting changes do not require interface reload
+
 ## v2.7.3
 
 - 修改点击选中图片样式

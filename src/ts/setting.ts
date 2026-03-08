@@ -1,4 +1,4 @@
-import { _getFile, _postMessage, _reloadInterface, _writeFile, getMsg } from "./api";
+import { _getFile, _postMessage, _reEnableTheme, _reloadInterface, _writeFile, getMsg } from "./api";
 import { SettingItem, SettingPanelId, ThemeConfig, vscMessage } from "./types";
 
 /**
@@ -294,7 +294,8 @@ async function closeAndSave() {
     _postMessage("ok", getMsg("confSave"));
     // 稍后重载页面
     setTimeout(() => {
-        _reloadInterface();
+        // _reloadInterface();
+        _reEnableTheme();
     }, 200);
     // 移除设置窗口
     document.body.removeChild(dialog);
