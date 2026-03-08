@@ -1,3 +1,14 @@
+## [2.7.3](https://github.com/emptylight370/siyuan-vscodelite-edit/compare/2.7.2...2.7.3) (2026-03-08)
+
+### ✨ Features | 功能
+
+- 修改表格标题外观与图片标题一致 ([3bed837](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/3bed837cca82d0bbeb8c826728fbac757cb9add5))
+- 修改点击选中图片样式 ([5daa395](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/5daa39572332a33196a604a83bacac270bc0791b))
+
+### 📄 Documentation | 文档
+
+- 更新高亮挖空文案 ([bbd34d6](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/bbd34d6168af768039c6d8802759dc054dc18d45))
+
 ## [2.7.2](https://github.com/emptylight370/siyuan-vscodelite-edit/compare/2.7.1...2.7.2) (2026-03-02)
 
 ### ✨ Features | 功能
