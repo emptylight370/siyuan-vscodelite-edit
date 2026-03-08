@@ -3,7 +3,9 @@
 ## v2.7.3
 
 - 修改点击选中图片样式
+- 修改表格标题外观与图片标题一致
 - Modify the style when clicking to select an image
+- Make table caption appearance consistent with image caption
 
 ## v2.7.2
 

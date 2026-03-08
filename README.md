@@ -44,6 +44,7 @@ Limited by the configuration loading method, updated configurations for new vers
 
 - v2.7.3
   - Modify the style when clicking to select an image
+  - Make table caption appearance consistent with image caption
 - v2.7.2
   - Add label for code block custom language
   - Add border for clear and custom button in language list of code block
