@@ -1,3 +1,10 @@
+## [2.7.4](https://github.com/emptylight370/siyuan-vscodelite-edit/compare/2.7.3...2.7.4) (2026-03-08)
+
+### ✨ Features | 功能
+
+- 修改主题设置不需要重载界面 ([0754616](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/0754616cb4b97c7213ff5d1af4cf5956bc818191))
+- 在类型定义中直接引入思源的定义 ([75ff494](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/75ff4947fc7a5b89bd003f2752216464ca9a5019))
+
 ## [2.7.3](https://github.com/emptylight370/siyuan-vscodelite-edit/compare/2.7.2...2.7.3) (2026-03-08)
 
 ### ✨ Features | 功能
