@@ -1,3 +1,5 @@
+import { Config } from "siyuan/types/Config";
+
 /** 主题配置接口 */
 export interface ThemeConfig {
     /** 配置文件版本号 */
@@ -216,8 +218,9 @@ declare global {
                     // 设置中的token
                     token: string;
                 };
+                appearance: Config.IAppearance;
                 // 和<html>中的lang一样
-                lang: string;
+                lang: Config.TLang;
             };
             // 是否是发布模式
             isPublish: boolean;
