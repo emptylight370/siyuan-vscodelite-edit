@@ -1,5 +1,10 @@
 # ChangeLog
 
+## v2.7.5
+
+- 修复思源 3.6.1 斜杠菜单横向滚动条
+- Fix slash menu has horizonal scrollbar on SiYuan 3.6.1
+
 ## v2.7.4
 
 - 修改主题设置不需要重载界面

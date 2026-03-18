@@ -42,16 +42,13 @@ Limited by the configuration loading method, updated configurations for new vers
 > Full changelog view [ChangeLog](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/changelog.md)
 > Commit history view [whatschange](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/whatschange.md)
 
+- v2.7.5
+  - Fix slash menu has horizonal scrollbar on SiYuan 3.6.1
 - v2.7.4
   - Theme setting changes do not require interface reload
 - v2.7.3
   - Modify the style when clicking to select an image
   - Make table caption appearance consistent with image caption
-- v2.7.2
-  - Add label for code block custom language
-  - Add border for clear and custom button in language list of code block
-  - Fix the issue where line numbers in code blocks are not fully displayed when exceeding 1000 lines
-  - Reduce the font size of tags within the document
 
 # Special fitness
 
