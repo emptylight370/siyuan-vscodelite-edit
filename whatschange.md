@@ -1,3 +1,9 @@
+## [2.7.5](https://github.com/emptylight370/siyuan-vscodelite-edit/compare/2.7.4...2.7.5) (2026-03-18)
+
+### 🐛 Bug Fixes | 问题修复
+
+- 修复思源 3.6.1 斜杠菜单横向滚动条 ([9ce7cb5](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/9ce7cb56d1c5e6335beb74c103f3d2aedf9c41bc))
+
 ## [2.7.4](https://github.com/emptylight370/siyuan-vscodelite-edit/compare/2.7.3...2.7.4) (2026-03-08)
 
 ### ✨ Features | 功能
