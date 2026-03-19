@@ -61,7 +61,7 @@
 在块或文档的**自定义属性面板**中新增`vsce`属性，在其中填入一个或多个有效的属性值。若使用多个属性值，需以空格分隔。
 
 > [!IMPORTANT]
-> 因为思源官方发布了[Callout block(提示块)](https://github.com/siyuan-note/siyuan/issues/16051)（[发布链接](https://ld246.com/article/1765878002926)），主题在此版本已经移除自行实现的引述块Callout样式。之后，你可以根据[此文档](https://ld246.com/article/1765879590836)进行迁移操作。
+> 因为思源官方发布了[Callout block(提示块)](https://github.com/siyuan-note/siyuan/issues/16051)（[发布链接](https://ld246.com/article/1765878002926)），主题在之前的版本已经移除自行实现的引述块Callout样式。现在，你可以根据[此文档](https://ld246.com/article/1765879590836)进行迁移操作。
 
 ### 可用属性值
 
