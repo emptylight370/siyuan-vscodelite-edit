@@ -5,6 +5,8 @@ node = "24"
 pnpm = "latest"
 prettier = "latest"
 
+[prepare.pnpm]
+
 [tasks.changelog]
 description = "Generate changelog via git history"
 run = [
