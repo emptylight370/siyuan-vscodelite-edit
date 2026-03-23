@@ -32,10 +32,11 @@ jobs:
         run: zip -r package.zip . -i 'theme.*' 'icon.png' 'preview.png' 'README*.md' 'resources/*' 'sub/*' -x '**/*.css.map' 'theme.css.map' 'theme.scss'
 
       - name: Get current version
-        uses: sergeysova/jq-action@v2
+        uses: flex-development/jq-action@main
         id: version
         with:
-          cmd: 'jq -r ".version" theme.json'
+          data: plugin.json
+          filter: .version
 
       - name: Generate release log
         run: |
@@ -46,7 +47,7 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           files: package.zip
-          name: Release ${{ steps.version.outputs.value }}
-          tag_name: ${{ steps.version.outputs.value }}
+          name: Release ${{ steps.version.outputs.result }}
+          tag_name: ${{ steps.version.outputs.result }}
           make_latest: true
           body_path: release.md
