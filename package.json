@@ -6,7 +6,7 @@
   "engines": {
     "node": ">=22.18.0"
   },
-  "packageManager": "pnpm@10.32.1",
+  "packageManager": "pnpm@10.33.0",
   "scripts": {
     "build:scss": "sass theme.scss:theme.css src/scss:sub",
     "build:ts": "rollup -c",
@@ -38,6 +38,6 @@
     "sass": "^1.98.0",
     "siyuan": "^1.1.8",
     "tslib": "^2.8.1",
-    "typescript": "^5.9.3"
+    "typescript": "^6.0.2"
   }
 }
