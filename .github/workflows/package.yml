@@ -2,8 +2,10 @@ name: package
 
 on:
   push:
-    branches: [scss]
-    paths: [theme.json]
+    branches:
+      - scss
+    paths:
+      - theme.json
   workflow_dispatch:
 
 jobs:
@@ -20,7 +22,7 @@ jobs:
           fetch-depth: 50
           fetch-tags: true
 
-      - uses: jdx/mise-action@v3
+      - uses: jdx/mise-action@v4
 
       - name: Install deps
         run: pnpm install
@@ -32,7 +34,7 @@ jobs:
         run: zip -r package.zip . -i 'theme.*' 'icon.png' 'preview.png' 'README*.md' 'resources/*' 'sub/*' -x '**/*.css.map' 'theme.css.map' 'theme.scss'
 
       - name: Get current version
-        uses: flex-development/jq-action@main
+        uses: emptylight370/jq-action@v1
         id: version
         with:
           data: plugin.json
