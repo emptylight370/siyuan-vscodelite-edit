@@ -1,3 +1,17 @@
+## [2.7.6](https://github.com/emptylight370/siyuan-vscodelite-edit/compare/2.7.5...2.7.6) (2026-03-29)
+
+### 📄 Documentation | 文档
+
+- 提示块 ([ff21a5c](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/ff21a5caecc5a149ce01166c3ae08b5a650bbc28))
+
+### 🛠️ Build system | 构建系统
+
+- 更换获取版本号工作流 ([2fcf202](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/2fcf202c2ba5d4f96b4f974f809e966b28e782bd))
+- 更新工作流文件 ([da9fbff](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/da9fbff5175061653cf24bd0199446bd1604af6d))
+- 修整rollup配置，压缩js输出 ([ad18585](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/ad1858575dddef91aba03bbcaba76fa1eb039f9d))
+- **fix:** 修复文件名错误问题 ([1e23270](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/1e2327001b3b4288940ef2b387be95837d2c1a01))
+- mise处理pnpm依赖 ([71aaa40](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/71aaa401482ee466bf8deee9a67dbe78be1f31cd))
+
 ## [2.7.5](https://github.com/emptylight370/siyuan-vscodelite-edit/compare/2.7.4...2.7.5) (2026-03-18)
 
 ### 🐛 Bug Fixes | 问题修复

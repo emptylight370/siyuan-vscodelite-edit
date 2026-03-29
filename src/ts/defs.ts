@@ -3,17 +3,17 @@ import { Config } from "siyuan/types/config";
 /**
  * 加载全局变量
  * @since 1.3.3
- * @version 2.7.5
+ * @version 2.7.6
  */
 export async function loadGlobalVars() {
     /**
      * ! 默认配置文件
      * @since 1.2.0
-     * @version 2.7.5
+     * @version 2.7.6
      */
     globalThis.vscDefaultConf = {
         version: 13,
-        lastSeen: "2.7.5",
+        lastSeen: "2.7.6",
         theme: {
             codeBlock: true,
             reference: true,
