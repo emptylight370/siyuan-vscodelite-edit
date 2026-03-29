@@ -37,7 +37,7 @@ jobs:
         uses: emptylight370/jq-action@v1
         id: version
         with:
-          data: plugin.json
+          data: theme.json
           filter: .version
 
       - name: Generate release log
