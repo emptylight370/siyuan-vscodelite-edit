@@ -42,13 +42,12 @@
 > 完整更新日志查看[changelog](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/changelog.md)
 > 提交历史日志查看[whatschange](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/whatschange.md)
 
+- v2.7.6
+  - 压缩代码输出
 - v2.7.5
   - 修复思源 3.6.1 斜杠菜单横向滚动条
 - v2.7.4
   - 修改主题设置不需要重载界面
-- v2.7.3
-  - 修改点击选中图片样式
-  - 修改表格标题外观与图片标题一致
 
 # 特殊适配
 

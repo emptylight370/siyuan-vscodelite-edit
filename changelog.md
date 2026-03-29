@@ -1,5 +1,12 @@
 # ChangeLog
 
+## v2.7.6
+
+- 更新文档
+- 压缩代码输出
+- Update docs
+- Compress code output
+
 ## v2.7.5
 
 - 修复思源 3.6.1 斜杠菜单横向滚动条
