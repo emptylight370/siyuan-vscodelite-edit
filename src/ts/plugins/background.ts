@@ -72,7 +72,7 @@ export function bgobserver(times: number) {
 /**
  * 检测背景是否被移除（插件关闭）
  * @since 2.6.1
- * @version 2.6.3
+ * @version 2.7.7
  */
 function bgExistObserver() {
     const bglayer = document.getElementById("bglayer");
@@ -99,7 +99,7 @@ function bgExistObserver() {
                 }
             }
         });
-        globalThis.vscObservers.bgExistObserver.observe(parent, {
+        globalThis.vscObservers.bgExistObserver.observe(parent!, {
             childList: true,
         });
     }

@@ -267,10 +267,10 @@ function addSettingsToPage(siyuan: HTMLDivElement, plugin: HTMLDivElement, setti
 /**
  * NOTE 工具函数，保存设置并刷新思源
  * @since 1.2.2
- * @version 2.7.0
+ * @version 2.7.7
  */
 async function closeAndSave() {
-    const dialog = document.getElementById("vsceThemeSettingDialog");
+    const dialog = document.getElementById("vsceThemeSettingDialog") as HTMLDivElement;
 
     // 在默认配置的基础上修改配置，可以增加原来没有的配置
     let saveSt: ThemeConfig = globalThis.vscDefaultConf;
@@ -281,9 +281,9 @@ async function closeAndSave() {
         const ck = (checkbox as HTMLInputElement).checked;
         // ! 保存设置到json
         if (id in globalThis.vscDefaultConf.theme) {
-            saveSt.theme[id] = ck;
+            saveSt.theme[id as keyof typeof globalThis.vscDefaultConf.theme] = ck;
         } else if (id in globalThis.vscDefaultConf.plugins) {
-            saveSt.plugins[id] = ck;
+            saveSt.plugins[id as keyof typeof globalThis.vscDefaultConf.plugins] = ck;
         }
     });
     // 修改配置文件版本
@@ -304,10 +304,10 @@ async function closeAndSave() {
 /**
  * NOTE 工具函数，不保存设置
  * @since 1.2.2
- * @version 2.6.3
+ * @version 2.7.7
  */
 function closeNotSave() {
-    const dialog = document.getElementById("vsceThemeSettingDialog");
+    const dialog = document.getElementById("vsceThemeSettingDialog") as HTMLDivElement;
 
     // 显示不保存通知
     _postMessage("error", getMsg("confNotSave"), 3000);

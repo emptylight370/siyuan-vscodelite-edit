@@ -83,11 +83,11 @@ export async function _getFile(path: string) {
  * @param modTime 修改时间
  * @returns Promise&lt;void&gt;
  * @since 1.2.0
- * @version 2.3.0
+ * @version 2.7.7
  */
 export async function _writeFile(path: string, filedata: any, isDir = false, modTime = Date.now()) {
     let blob = new Blob([filedata]);
-    let file = new File([blob], path.split("/").pop());
+    let file = new File([blob], path.split("/")[path.length - 1]);
 
     let formdata = new FormData();
     formdata.append("path", path);
@@ -115,9 +115,9 @@ export async function _writeFile(path: string, filedata: any, isDir = false, mod
  * @param time 持续时间 - "number" | "null"
  * @returns Promise&lt;void&gt;
  * @since 1.2.2
- * @version 2.4.2
+ * @version 2.7.7
  */
-export async function _postMessage(type: "ok" | "error", message: string, time = null) {
+export async function _postMessage(type: "ok" | "error", message: string, time?: number) {
     let url: string;
     switch (type) {
         case "ok":

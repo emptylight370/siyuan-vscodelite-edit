@@ -70,45 +70,45 @@ import { SettingPanelId } from "./types";
 /**
  * ! 更换主题时移除修改内容
  * @since 1.2.0
- * @version 2.6.3
+ * @version 2.7.7
  */
 window.destroyTheme = async () => {
     // 移除主题按钮
-    document.getElementById("vscleToolbar").remove();
+    document.getElementById("vscleToolbar")?.remove();
     // 移除PDF导出时执行的脚本
-    document.getElementById("snippetJS-VSCodeLiteEdit").remove();
+    document.getElementById("snippetJS-VSCodeLiteEdit")?.remove();
     // 移除body特殊适配语句
     document.body.classList.remove("bgenable");
     document.body.classList.remove("vscmobile");
     // 移除计时器
     Object.keys(globalThis.vscTimers).forEach((key) => {
-        if (globalThis.vscTimers[key] !== null) {
+        if (globalThis.vscTimers[key as keyof typeof globalThis.vscTimers] !== null) {
             // console.log("remove timer");
             // 可以清除 timeout 和 interval
-            clearTimeout(globalThis.vscTimers[key]);
-            globalThis.vscTimers[key] = null;
+            clearTimeout(globalThis.vscTimers[key as keyof typeof globalThis.vscTimers] as number);
+            globalThis.vscTimers[key as keyof typeof globalThis.vscTimers] = null;
         }
     });
     // 移除监视器
     Object.keys(globalThis.vscObservers).forEach((key) => {
-        if (globalThis.vscObservers[key] !== null) {
+        if (globalThis.vscObservers[key as keyof typeof globalThis.vscObservers] !== null) {
             // console.log("remove observer");
-            (globalThis.vscObservers[key] as MutationObserver).disconnect();
-            globalThis.vscObservers[key] = null;
+            (globalThis.vscObservers[key as keyof typeof globalThis.vscObservers] as MutationObserver).disconnect();
+            globalThis.vscObservers[key as keyof typeof globalThis.vscObservers] = null;
         }
     });
     // 删除全局变量
-    delete globalThis.vscDefaultConf;
-    delete globalThis.vscMessage;
-    delete globalThis.vscLang;
-    delete globalThis.vscTimers;
-    delete globalThis.vscObservers;
+    Reflect.deleteProperty(globalThis, "vscDefaultConf");
+    Reflect.deleteProperty(globalThis, "vscMessage");
+    Reflect.deleteProperty(globalThis, "vscLang");
+    Reflect.deleteProperty(globalThis, "vscTimers");
+    Reflect.deleteProperty(globalThis, "vscObservers");
 };
 
 /**
  * 创建工具栏的按钮
  * @since 1.2.0
- * @version 2.6.3
+ * @version 2.7.7
  */
 function addThemeToolBar() {
     // 如果是发布模式就不添加按钮
@@ -136,12 +136,12 @@ function addThemeToolBar() {
         // 桌面端，在VIP按钮前添加（插件按钮左）
         vscToolBar.className = "toolbar__item ariaLabel";
         vscToolBar.style.height = "23.5px";
-        toolbarVIP.parentElement.insertBefore(vscToolBar, toolbarVIP);
+        toolbarVIP.parentElement!.insertBefore(vscToolBar, toolbarVIP);
     } else if (windowControls) {
         // 桌面端，在窗口控制按钮前添加（插件按钮右）
         vscToolBar.className = "toolbar__item ariaLabel";
         vscToolBar.style.height = "23.5px";
-        windowControls.parentElement.insertBefore(vscToolBar, windowControls);
+        windowControls.parentElement!.insertBefore(vscToolBar, windowControls);
     } else {
         // 移动端，在文档菜单添加
         // 添加移动端记号
@@ -155,7 +155,7 @@ function addThemeToolBar() {
             // 在第一个按钮前添加
             const firstButton = breadcrumbButtons[0];
             if (firstButton) {
-                firstButton.parentElement.insertBefore(vscToolBar, firstButton);
+                firstButton.parentElement!.insertBefore(vscToolBar, firstButton);
                 globalThis.vscTimers.settingMobileTimer = null;
             } else {
                 globalThis.vscTimers.settingMobileTimer = window.setTimeout(() => {
@@ -175,10 +175,10 @@ function addThemeToolBar() {
  * @param table &lt;link stylesheet&gt;
  * @param labels SettingPanelId[]
  * @since 1.3.0
- * @version 2.7.0
+ * @version 2.7.7
  */
 function addImports(table: HTMLLinkElement, labels: SettingPanelId[]) {
-    const sheet: CSSStyleSheet = table.sheet;
+    const sheet: CSSStyleSheet = table.sheet as CSSStyleSheet;
     const isMobile = document.body.classList.contains("vscmobile");
     let existBackgroundPlugin = Array.from(sheet.cssRules).some((rule) =>
         rule.cssText.includes("backgroundPlugin.css"),

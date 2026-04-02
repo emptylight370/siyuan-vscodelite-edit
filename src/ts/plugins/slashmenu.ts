@@ -55,7 +55,7 @@ export function slashMenuObserver(times: number) {
 /**
  * `/`菜单的`keydown`监听器
  * @since 2.6.2
- * @version 2.6.2
+ * @version 2.7.7
  */
 function SlashArrowMoveListener(event: KeyboardEvent) {
     // 按键不是左方向键或右方向键时返回
@@ -66,7 +66,7 @@ function SlashArrowMoveListener(event: KeyboardEvent) {
     const slashMenu = Array.from(document.querySelectorAll("div.protyle-hint.hint--menu")).find(
         (menu) => !(menu as HTMLDivElement).classList.contains("fn__none"),
     ) as HTMLDivElement;
-    const currentActive = slashMenu.querySelector("button.b3-list-item--focus");
+    const currentActive = slashMenu.querySelector("button.b3-list-item--focus") as HTMLButtonElement;
     const menuItems = Array.from(document.querySelectorAll("button.b3-list-item.b3-list-item--two"));
 
     const currentRect = currentActive.getBoundingClientRect();

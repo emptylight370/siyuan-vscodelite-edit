@@ -1,5 +1,10 @@
 # ChangeLog
 
+## v2.7.7
+
+- 优化代码
+- Optimize code
+
 ## v2.7.6
 
 - 更新文档
