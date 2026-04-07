@@ -11,8 +11,8 @@
     "strict": true,
     "forceConsistentCasingInFileNames": true,
     "noFallthroughCasesInSwitch": true,
-    // 模块解析
-    "esModuleInterop": true,
+    // 对齐rollup
+    "isolatedModules": true,
     // 性能优化
     "skipLibCheck": true,
     // 输出配置
@@ -20,6 +20,6 @@
     "rootDir": "./src/ts",
     "declaration": false
   },
-  "include": ["src/**/*.ts"],
+  "include": ["src/ts/**/*.ts", "src/ts/**/*.d.ts"],
   "exclude": ["node_modules", "dist"]
 }
