@@ -23,12 +23,10 @@ import { SettingPanelId } from "./types";
     } catch (e) {
         // 基本上意味着主题启用失败了
         // 因为无法加载全局变量所以无法用预先定义好的本地化信息
-        let errMsg: string;
-        if (document.documentElement.lang === "zh_CN" || document.documentElement.lang === "zh_CHT") {
-            errMsg = "加载主题VSCode Lite Edit失败，无法加载变量";
-        } else {
-            errMsg = "Load theme VSCode Lite Edit failed, can't load variables";
-        }
+        const lang = document.documentElement.lang;
+        const errMsg = lang.startsWith("zh")
+            ? "加载主题VSCode Lite Edit失败，无法加载变量"
+            : "Load theme VSCode Lite Edit failed, can't load variables";
         console.error(errMsg, e);
         await _postMessage("error", errMsg);
         return;
@@ -37,9 +35,9 @@ import { SettingPanelId } from "./types";
     // console.log(cssTable);
     if (cssTable) {
         // 读取配置文件或生成配置文件
-        let labels: SettingPanelId[];
+        let enabledSettings: SettingPanelId[];
         try {
-            labels = await getSettings();
+            enabledSettings = await getSettings();
         } catch (e) {
             /*
              * 加载设置文件失败会使用默认的配置文件初始化一个
@@ -53,9 +51,9 @@ import { SettingPanelId } from "./types";
         // 添加主题菜单
         addThemeToolBar();
         // 向css中插入语句
-        addImports(cssTable, labels);
+        addImports(cssTable, enabledSettings);
         // 添加固定属性
-        addFixedAttribute(labels);
+        addFixedAttribute(enabledSettings);
         // 在导出PDF时候执行主题的脚本
         addPDFScript();
         // 加载完成(o゜▽゜)o☆
