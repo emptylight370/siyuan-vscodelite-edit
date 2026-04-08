@@ -1,4 +1,5 @@
 import { Config } from "siyuan/types/config";
+import { SupportedLang } from "./types";
 
 /**
  * 加载全局变量
@@ -231,14 +232,32 @@ export async function loadGlobalVars() {
 
     // 浏览器获取的默认语言
     let currentLang = document.documentElement.lang as Config.TLang;
-    if (globalThis.vscMessage.language[currentLang] != undefined) {
-        globalThis.vscLang = currentLang;
+
+    // 将 currentLang 转换为 SupportedLang 类型
+    let supportedLang: SupportedLang;
+
+    // 类型守卫：检查一个字符串是否是 SupportedLang
+    function isSupportedLang(lang: string): lang is SupportedLang {
+        return lang === "zh_CN" || lang === "en_US";
+    }
+
+    if (isSupportedLang(currentLang)) {
+        // 如果已经是支持的语言，直接使用
+        supportedLang = currentLang;
+    } else if (currentLang === "zh_CHT") {
+        // 繁体中文回退到简体中文
+        supportedLang = "zh_CN";
     } else {
-        if (currentLang === "zh_CHT") {
-            globalThis.vscLang = "zh_CN";
-        } else {
-            globalThis.vscLang = "en_US";
-        }
+        // 其他语言回退到英文
+        supportedLang = "en_US";
+    }
+
+    // 检查该语言是否在 language 对象中标记为可用
+    if (globalThis.vscMessage.language[supportedLang] != undefined) {
+        globalThis.vscLang = supportedLang;
+    } else {
+        // 如果标记为不可用，使用 en_US 作为回退
+        globalThis.vscLang = "en_US";
     }
 
     /**

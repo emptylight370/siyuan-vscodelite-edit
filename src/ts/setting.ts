@@ -138,9 +138,9 @@ export async function createSettingsWindow() {
      * @param element 元素
      * @param messageKey 消息key名称
      * @since 2.5.0
-     * @version 2.6.3
+     * @version 2.7.7
      */
-    function changeHints(element: HTMLElement, messageKey: keyof vscMessage) {
+    function changeHints(element: HTMLElement, messageKey: Exclude<keyof vscMessage, "language">) {
         const showMessage = () => {
             hints.innerText = getMsg(messageKey);
         };

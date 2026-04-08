@@ -6,7 +6,7 @@
  * TODO 完成所需的所有api写入
  */
 
-import { vscMessage } from "./types";
+import { vscMessage, SupportedLang } from "./types";
 
 /**
  * 向思源请求数据
@@ -173,24 +173,35 @@ export async function _reEnableTheme() {
  * @param msg 要显示的vscMessage文本
  * @returns 本地化文本
  * @since 2.6.3
- * @version 2.6.3
+ * @version 2.7.7
  */
-export function getMsg(msg: keyof vscMessage) {
-    // 当前的本地化文本对象
-    const msgObj = globalThis.vscMessage[msg] as Record<string, string>;
-    // 首先尝试获取当前语言版本
+export function getMsg(msg: Exclude<keyof vscMessage, "language">) {
+    // 获取消息对象，使用更精确的类型
+    const msgObj = globalThis.vscMessage[msg];
+
+    // 1. 首先尝试获取当前语言版本
     if (msgObj[globalThis.vscLang]) {
         return msgObj[globalThis.vscLang];
     }
-    // 如果当前语言不存在，尝试回退到en_US
-    if (msgObj["en_US"]) {
-        return msgObj["en_US"];
+
+    // 2. 如果当前语言不存在，尝试回退到en_US
+    if (msgObj.en_US) {
+        console.warn(
+            `VSCE: Localized text for "${msg}" in language "${globalThis.vscLang}" not found, fallback to en_US.`,
+        );
+        return msgObj.en_US;
     }
-    // 如果en_US也不存在，则返回第一个可用的值
-    const langs = Object.keys(msgObj);
+
+    // 3. 如果en_US也不存在，则返回第一个可用的值
+    const langs = Object.keys(msgObj) as SupportedLang[];
     if (langs.length > 0) {
-        return msgObj[langs[0]];
+        const firstLang = langs[0];
+        console.warn(`VSCE: Localized text for "${msg}" not found in current language or en_US, using "${firstLang}".`);
+        return msgObj[firstLang];
     }
-    // 如果没有可用的文本，返回报错信息
-    return `vscMessage.${msg}.${globalThis.vscLang}`;
+
+    // 4. 如果没有可用的文本，返回友好的错误信息
+    const errorMsg = `[Localization Error] Missing text for: ${msg}`;
+    console.error(`VSCE: ${errorMsg} in language: ${globalThis.vscLang}`);
+    return errorMsg;
 }

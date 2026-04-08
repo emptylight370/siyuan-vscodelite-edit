@@ -48,109 +48,115 @@ export interface ThemeConfig {
     };
 }
 
+/** 支持的语言类型 */
+export type SupportedLang = "zh_CN" | "en_US";
+
+/** 本地化消息文本接口 */
+export type LocalizedMessage = Record<SupportedLang, string>;
+
 /** 本地化消息接口 */
 export interface vscMessage {
     // * 定义某种语言是否存在
     /** 检查存在的语言 */
-    language: Record<string, boolean>;
+    language: Record<SupportedLang, boolean>;
 
     // * 主题发送的提示或者通知文本
     /** 配置文件修改未保存 */
-    confNotSave: Record<string, string>;
+    confNotSave: LocalizedMessage;
     /** 配置文件修改保存 */
-    confSave: Record<string, string>;
+    confSave: LocalizedMessage;
     /** 配置文件需要更新 */
-    confUpdate: Record<string, string>;
+    confUpdate: LocalizedMessage;
     /** 双标签栏提示信息 */
-    doubleTabbarMessage: Record<string, string>;
+    doubleTabbarMessage: LocalizedMessage;
     /** 加载配置失败 */
-    loadConfigFail: Record<string, string>;
+    loadConfigFail: LocalizedMessage;
     /** 加载CSS失败 */
-    loadCssFail: Record<string, string>;
+    loadCssFail: LocalizedMessage;
     /** 主题加载完成 */
-    loadFinish: Record<string, string>;
+    loadFinish: LocalizedMessage;
     /** 写入PDF适配文件失败 */
-    loadPDFPersetFail: Record<string, string>;
+    loadPDFPersetFail: LocalizedMessage;
     /** 主题版本更新提示 */
-    newVersionHint: Record<string, string>;
+    newVersionHint: LocalizedMessage;
 
     // * 设置按钮提示文本
     /** 主题设置按钮提示文本 */
-    settingButtonAria: Record<string, string>;
+    settingButtonAria: LocalizedMessage;
 
     // * 设置面板的主要文本
     /** 设置面板不保存按钮文本 */
-    nSave: Record<string, string>;
+    nSave: LocalizedMessage;
     /** 鼠标进入刷新按钮提示文本 */
-    oReload: Record<string, string>;
+    oReload: LocalizedMessage;
     /** 鼠标进入新版本更新按钮提示文本 */
-    oUpdate: Record<string, string>;
+    oUpdate: LocalizedMessage;
     /** 设置面板保存按钮文本 */
-    saveReload: Record<string, string>;
+    saveReload: LocalizedMessage;
     /** 设置面板标题 */
-    settingPanelTitle: Record<string, string>;
+    settingPanelTitle: LocalizedMessage;
     /** 设置面板插件页签 */
-    settingTabPlugin: Record<string, string>;
+    settingTabPlugin: LocalizedMessage;
     /** 设置面板思源页签 */
-    settingTabSiYuan: Record<string, string>;
+    settingTabSiYuan: LocalizedMessage;
     /** 鼠标进入插件页签显示提示 */
-    tabTipPlugin: Record<string, string>;
+    tabTipPlugin: LocalizedMessage;
     /** 鼠标进入思源页签显示提示 */
-    tabTipSiYuan: Record<string, string>;
+    tabTipSiYuan: LocalizedMessage;
     /** 鼠标进入保存按钮提示文本 */
-    tipSave: Record<string, string>;
+    tipSave: LocalizedMessage;
     /** 鼠标进入设置项提示文本 */
-    tipSwitch: Record<string, string>;
+    tipSwitch: LocalizedMessage;
 
     // * 设置面板选项文本和提示文本
     /** 集市样式选项 */
-    bazitem: Record<string, string>;
+    bazitem: LocalizedMessage;
     /** 背景插件描述文本 */
-    bgdesc: Record<string, string>;
+    bgdesc: LocalizedMessage;
     /** 桌面端背景插件选项 */
-    bgdesktop: Record<string, string>;
+    bgdesktop: LocalizedMessage;
     /** 移动端背景插件选项 */
-    bgmobile: Record<string, string>;
+    bgmobile: LocalizedMessage;
     /** 代码块样式选项 */
-    cbitem: Record<string, string>;
+    cbitem: LocalizedMessage;
     /** 数据库样式选项 */
-    dbitem: Record<string, string>;
+    dbitem: LocalizedMessage;
     /** 双标签栏描述文本 */
-    doubleTabbardesc: Record<string, string>;
+    doubleTabbardesc: LocalizedMessage;
     /** 双标签栏选项 */
-    doubleTabbaritem: Record<string, string>;
+    doubleTabbaritem: LocalizedMessage;
     /** 嵌入块样式描述文本 */
-    emdesc: Record<string, string>;
+    emdesc: LocalizedMessage;
     /** 嵌入块样式选项 */
-    emitem: Record<string, string>;
+    emitem: LocalizedMessage;
     /** 文档树大纲样式选项 */
-    ftitem: Record<string, string>;
+    ftitem: LocalizedMessage;
     /** 高亮标注选项 */
-    markitem: Record<string, string>;
+    markitem: LocalizedMessage;
     /** 数学增强插件描述文本 */
-    mathdesc: Record<string, string>;
+    mathdesc: LocalizedMessage;
     /** 数学增强插件选项 */
-    mathitem: Record<string, string>;
+    mathitem: LocalizedMessage;
     /** 引用标签样式选项 */
-    refitem: Record<string, string>;
+    refitem: LocalizedMessage;
     /** 快捷键面板插件选项 */
-    scitem: Record<string, string>;
+    scitem: LocalizedMessage;
     /** 段落内标签描述文本 */
-    tagdesc: Record<string, string>;
+    tagdesc: LocalizedMessage;
     /** 段落内标签选项 */
-    tagitem: Record<string, string>;
+    tagitem: LocalizedMessage;
     /** 标题块样式选项 */
-    tititem: Record<string, string>;
+    tititem: LocalizedMessage;
     /** 标题块阴影选项 */
-    titleShadow: Record<string, string>;
+    titleShadow: LocalizedMessage;
     /** 标题块阴影描述文本 */
-    titleShadowDesc: Record<string, string>;
+    titleShadowDesc: LocalizedMessage;
     /** 标题块图标选项 */
-    titleIcon: Record<string, string>;
+    titleIcon: LocalizedMessage;
     /** 标题块图标描述文本 */
-    titleIconDesc: Record<string, string>;
+    titleIconDesc: LocalizedMessage;
     /** 多栏斜杠菜单选项 */
-    slashMenuitem: Record<string, string>;
+    slashMenuitem: LocalizedMessage;
 }
 
 /** 计时器接口 */
@@ -233,7 +239,7 @@ declare global {
     /** 本地化提示信息 */
     var vscMessage: Readonly<vscMessage>;
     /** 主题默认语言 */
-    var vscLang: keyof vscMessage["language"];
+    var vscLang: SupportedLang;
     /** 目前所有的计时器 */
     var vscTimers: vscTimers;
     /** 目前所有的观察器 */
