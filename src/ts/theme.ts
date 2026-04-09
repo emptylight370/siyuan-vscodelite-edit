@@ -70,7 +70,7 @@ import { SettingPanelId } from "./types";
  * @since 1.2.0
  * @version 2.7.7
  */
-window.destroyTheme = async () => {
+window.destroyTheme = () => {
     // 移除主题按钮
     document.getElementById("vscleToolbar")?.remove();
     // 移除PDF导出时执行的脚本
@@ -79,28 +79,28 @@ window.destroyTheme = async () => {
     document.body.classList.remove("bgenable");
     document.body.classList.remove("vscmobile");
     // 移除计时器
-    Object.keys(globalThis.vscTimers).forEach((key) => {
-        if (globalThis.vscTimers[key as keyof typeof globalThis.vscTimers] !== null) {
-            // console.log("remove timer");
-            // 可以清除 timeout 和 interval
-            clearTimeout(globalThis.vscTimers[key as keyof typeof globalThis.vscTimers] as number);
-            globalThis.vscTimers[key as keyof typeof globalThis.vscTimers] = null;
-        }
-    });
+    if (globalThis.vscTimers)
+        Object.keys(globalThis.vscTimers).forEach((key) => {
+            if (globalThis.vscTimers[key as keyof typeof globalThis.vscTimers] !== null) {
+                // console.log("remove timer");
+                // 可以清除 timeout 和 interval
+                clearTimeout(globalThis.vscTimers[key as keyof typeof globalThis.vscTimers] as number);
+                globalThis.vscTimers[key as keyof typeof globalThis.vscTimers] = null;
+            }
+        });
     // 移除监视器
-    Object.keys(globalThis.vscObservers).forEach((key) => {
-        if (globalThis.vscObservers[key as keyof typeof globalThis.vscObservers] !== null) {
-            // console.log("remove observer");
-            (globalThis.vscObservers[key as keyof typeof globalThis.vscObservers] as MutationObserver).disconnect();
-            globalThis.vscObservers[key as keyof typeof globalThis.vscObservers] = null;
-        }
-    });
+    if (globalThis.vscObservers)
+        Object.keys(globalThis.vscObservers).forEach((key) => {
+            if (globalThis.vscObservers[key as keyof typeof globalThis.vscObservers] !== null) {
+                // console.log("remove observer");
+                (globalThis.vscObservers[key as keyof typeof globalThis.vscObservers] as MutationObserver).disconnect();
+                globalThis.vscObservers[key as keyof typeof globalThis.vscObservers] = null;
+            }
+        });
     // 删除全局变量
-    Reflect.deleteProperty(globalThis, "vscDefaultConf");
-    Reflect.deleteProperty(globalThis, "vscMessage");
-    Reflect.deleteProperty(globalThis, "vscLang");
-    Reflect.deleteProperty(globalThis, "vscTimers");
-    Reflect.deleteProperty(globalThis, "vscObservers");
+    for (const i in ["vscDefaultConf", "vscMessage", "vscLang", "vscTimers", "vscObservers"]) {
+        Reflect.deleteProperty(globalThis, i);
+    }
 };
 
 /**

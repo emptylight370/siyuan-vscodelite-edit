@@ -215,7 +215,7 @@ export type SettingPanelId = ThemeSettingKey | PluginSettingKey;
 declare global {
     interface Window {
         /** 主题移除时由思源触发 */
-        destroyTheme?: () => Promise<void>;
+        destroyTheme?: () => void;
 
         /** 思源的配置项 */
         siyuan: {
