@@ -1,3 +1,30 @@
+## [2.7.7](https://github.com/emptylight370/siyuan-vscodelite-edit/compare/2.7.6...2.7.7) (2026-04-09)
+
+### ✨ Features | 功能
+
+- 电脑端设置面板项在鼠标悬停时放大加粗显示 ([94b185e](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/94b185e460321d40a151724920f8894bf2151108))
+- 设置项放大高亮同样应用到主题设置面板 ([d3a4cba](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/d3a4cba8744511401ee053fba312a70968b70415))
+- 优化启用背景插件时移动端设置侧栏显示背景 ([73675d5](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/73675d5e579539e5e77dfa60837e02531b1ca059))
+
+### 🐛 Bug Fixes | 问题修复
+
+- 处理静态警告 ([3cbc547](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/3cbc5477a033f226cc735c69ad4dcbbf2fb39304))
+- 修复主题设置面板设置项在放大时出现滚动条问题 ([509e77e](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/509e77e9fd5a3021a6fb0b61180c41d7aa551b7b))
+
+### ⚡ Performance | 性能优化
+
+- 优化获取本地化文本相关代码 ([6a6e8af](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/6a6e8afeb3deda4a375a783b7fadeca9d8ef0024))
+- 优化加载主题js函数 ([be8009a](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/be8009a6e620a02ae547257de15df9d6f66c2506))
+- 优化移除主题代码 ([f6be4b4](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/f6be4b4813ebee07acd9e44e0e4870aae921e7ba))
+- 优化移动端插入按钮函数 ([a12613d](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/a12613d9816c97eabc7ea9d7565766d3ade09e3b))
+- let改const ([45f025c](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/45f025cc7334354dd34bb6d68e7e530448b0cc7e))
+
+### 🛠️ Build system | 构建系统
+
+- 调整ts配置 ([05387ec](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/05387ec3255e9ec5f2a20f7b5a9f0edb09b257a2))
+- 调整TypeScript配置 ([48b3233](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/48b32332525574b8524b61a8b3fb2ff7a9deff32))
+- 添加配置注释 ([f2d2082](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/f2d20823e6fca9e933de811b330bb1302915bde4))
+
 ## [2.7.6](https://github.com/emptylight370/siyuan-vscodelite-edit/compare/2.7.5...2.7.6) (2026-03-29)
 
 ### 📄 Documentation | 文档
