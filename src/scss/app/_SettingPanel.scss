@@ -25,4 +25,11 @@ div[vslite="SettingPanel"] {
     div.fn__flex:last-of-type {
         border-top: 1px solid var(--b3-border-color);
     }
+
+    .config-bazaar__panel.ThemeSettingPage {
+        .fn__flex.b3-label .fn__flex-1:hover {
+            font-weight: bold;
+            font-size: calc(var(--b3-font-size) + 1px);
+        }
+    }
 }
