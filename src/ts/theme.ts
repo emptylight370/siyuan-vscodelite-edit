@@ -299,13 +299,13 @@ function addFixedAttribute(settings: SettingPanelId[]) {
  * @see https://github.com/siyuan-note/siyuan/issues/16300
  * @requires SiYuan Note Version 3.4.1
  * @since 2.6.0
- * @version 2.6.0
+ * @version 2.7.7
  */
 function addPDFScript() {
     const isExist = !!document.getElementById("snippetJS-VSCodeLiteEdit");
     if (!isExist) {
         const themeScript = document.getElementById("themeScript") as HTMLScriptElement;
-        let snippet = document.createElement("script");
+        const snippet = document.createElement("script");
         snippet.async = true;
         snippet.src = themeScript.src;
         snippet.id = "snippetJS-VSCodeLiteEdit";
