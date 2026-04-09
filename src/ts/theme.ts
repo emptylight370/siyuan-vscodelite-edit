@@ -147,7 +147,8 @@ function addThemeToolBar() {
         vscToolBar.className = "block__icon fn__flex-center ariaLabel";
         vscToolBar.style.height = "14px";
 
-        const insertMobile = () => {
+        const insertMobile = (count = 0) => {
+            if (count > 10) return;
             // 尝试获取移动端的文档操作按钮
             const breadcrumbButtons = document.getElementsByClassName("block__icon fn__flex-center ariaLabel");
             // 在第一个按钮前添加
@@ -157,13 +158,13 @@ function addThemeToolBar() {
                 globalThis.vscTimers.settingMobileTimer = null;
             } else {
                 globalThis.vscTimers.settingMobileTimer = window.setTimeout(() => {
-                    insertMobile();
+                    insertMobile(count + 1);
                 }, 1000);
             }
         };
 
         setTimeout(() => {
-            insertMobile();
+            insertMobile(0);
         }, 0);
     }
 }
