@@ -3,8 +3,10 @@
 ## v2.7.7
 
 - 电脑端设置面板项在鼠标悬停时放大加粗显示
+- 优化启用背景插件时移动端设置侧栏显示背景
 - 优化代码
 - Settings panel items on desktop become larger and bold on hover
+- Optimize background display for mobile settings sidebar when background plugin is enabled
 - Optimize code
 
 ## v2.7.6

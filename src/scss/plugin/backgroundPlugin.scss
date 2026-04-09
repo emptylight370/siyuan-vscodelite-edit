@@ -275,7 +275,7 @@ body.bgenable {
     --lite-sidebar-background--mobile: #ffffffa0;
     --lite-sidebar2-background--mobile: #ffffffc0;
     --lite-sidebar-title--mobile: #ffffff70;
-    --lite-sidebar-item--mobile: #ffffff00;
+    --lite-sidebar-item--mobile: #f6f6f680;
 }
 
 :root[data-theme-mode="dark"] body.bgenable {
@@ -295,5 +295,5 @@ body.bgenable {
     --lite-sidebar-background--mobile: #1e1e1eb0;
     --lite-sidebar2-background--mobile: #1e1e1ed0;
     --lite-sidebar-title--mobile: #1e1e1e70;
-    --lite-sidebar-item--mobile: #1e1e1e00;
+    --lite-sidebar-item--mobile: #26262680;
 }
