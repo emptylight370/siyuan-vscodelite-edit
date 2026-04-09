@@ -23,3 +23,14 @@
         }
     }
 }
+
+.config__tab-container {
+    .fn__flex.b3-label .fn__flex-1:hover {
+        font-weight: bold;
+        font-size: calc(var(--b3-font-size) + 1px);
+
+        .b3-label__text {
+            font-size: unset;
+        }
+    }
+}

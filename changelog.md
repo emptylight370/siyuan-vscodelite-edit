@@ -2,7 +2,9 @@
 
 ## v2.7.7
 
+- 电脑端设置面板项在鼠标悬停时放大加粗显示
 - 优化代码
+- Settings panel items on desktop become larger and bold on hover
 - Optimize code
 
 ## v2.7.6

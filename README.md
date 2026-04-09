@@ -42,12 +42,12 @@ Limited by the configuration loading method, updated configurations for new vers
 > Full changelog view [ChangeLog](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/changelog.md)
 > Commit history view [whatschange](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/whatschange.md)
 
+- v2.7.7
+  - Settings panel items on desktop become larger and bold on hover
 - v2.7.6
   - Compress code output
 - v2.7.5
   - Fix slash menu has horizonal scrollbar on SiYuan 3.6.1
-- v2.7.4
-  - Theme setting changes do not require interface reload
 
 # Special fitness
 
