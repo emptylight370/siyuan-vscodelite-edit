@@ -2,7 +2,7 @@
   "name": "siyuan-vscodelite-edit",
   "author": "Emptylight",
   "url": "https://github.com/emptylight370/siyuan-vscodelite-edit",
-  "version": "2.7.7",
+  "version": "2.7.8",
   "minAppVersion": "3.4.1",
   "displayName": {
     "default": "VSCode Lite Edit"
@@ -17,25 +17,9 @@
     "zh_CN": "README_zh_CN.md",
     "zh_CHT": "README_zh_CN.md"
   },
-  "i18n": [
-    "en_US",
-    "zh_CN"
-  ],
   "funding": {
-    "openCollective": "",
-    "patreon": "",
-    "github": "",
-    "custom": [
-      "https://blog.emptylight.cn/sponsor"
-    ]
+    "custom": ["https://blog.emptylight.cn/sponsor"]
   },
-  "modes": [
-    "light",
-    "dark"
-  ],
-  "keywords": [
-    "VSCE",
-    "VSCE主题",
-    "VSCE theme"
-  ]
+  "modes": ["light", "dark"],
+  "keywords": ["VSCE", "VSCE主题", "VSCE theme"]
 }

@@ -1,3 +1,13 @@
+## [2.7.8](https://github.com/emptylight370/siyuan-vscodelite-edit/compare/2.7.7...2.7.8) (2026-04-10)
+
+### 🐛 Bug Fixes | 问题修复
+
+- 修复设置面板项在放大加粗时可能出现滚动条问题 ([41d8b05](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/41d8b0599eec7e8b4252cd16cde4eb6eec68fcea))
+
+### 📄 Documentation | 文档
+
+- 将繁体中文说明文档指向简体中文[skip ci] ([3ac6a98](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/3ac6a9818668653647d071d377c6faae4f28f9bb))
+
 ## [2.7.7](https://github.com/emptylight370/siyuan-vscodelite-edit/compare/2.7.6...2.7.7) (2026-04-09)
 
 ### ✨ Features | 功能
