@@ -44,6 +44,7 @@ Limited by the configuration loading method, updated configurations for new vers
 
 - v2.7.8
   - Fix issue where setting panel items may have scrollbar when enlarged and bolded
+  - Redirect Traditional Chinese docs to Simplified Chinese
 - v2.7.7
   - Settings panel items on desktop become larger and bold on hover
   - Optimize background display for mobile settings sidebar when background plugin is enabled

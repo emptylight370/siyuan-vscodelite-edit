@@ -3,7 +3,9 @@
 ## v2.7.8
 
 - 修复设置面板项在放大加粗时可能出现滚动条问题
+- 将繁体中文说明文档指向简体中文
 - Fix issue where setting panel items may have scrollbar when enlarged and bolded
+- Redirect Traditional Chinese docs to Simplified Chinese
 
 ## v2.7.7
 

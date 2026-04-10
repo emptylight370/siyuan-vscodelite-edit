@@ -9,11 +9,13 @@
   },
   "description": {
     "default": "Evolved from VSCode Lite, further beautifying the interface.",
-    "zh_CN": "从VSCode Lite中改造而来，进一步美化界面。"
+    "zh_CN": "从VSCode Lite中改造而来，进一步美化界面。",
+    "zh_CHT": "從VSCode Lite中改造而來，進一步美化界面。"
   },
   "readme": {
     "default": "README.md",
-    "zh_CN": "README_zh_CN.md"
+    "zh_CN": "README_zh_CN.md",
+    "zh_CHT": "README_zh_CN.md"
   },
   "i18n": [
     "en_US",
