@@ -1,5 +1,10 @@
 # ChangeLog
 
+## v2.7.8
+
+- 修复设置面板项在放大加粗时可能出现滚动条问题
+- Fix issue where setting panel items may have scrollbar when enlarged and bolded
+
 ## v2.7.7
 
 - 电脑端设置面板项在鼠标悬停时放大加粗显示

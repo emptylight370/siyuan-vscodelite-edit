@@ -42,13 +42,13 @@
 > 完整更新日志查看[changelog](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/changelog.md)
 > 提交历史日志查看[whatschange](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/whatschange.md)
 
+- v2.7.8
+  - 修复设置面板项在放大加粗时可能出现滚动条问题
 - v2.7.7
   - 电脑端设置面板项在鼠标悬停时放大加粗显示
   - 优化启用背景插件时移动端设置侧栏显示背景
 - v2.7.6
   - 压缩代码输出
-- v2.7.5
-  - 修复思源 3.6.1 斜杠菜单横向滚动条
 
 # 特殊适配
 
