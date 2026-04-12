@@ -46,7 +46,7 @@ jobs:
           prettier -w release.md
 
       - name: Release
-        uses: softprops/action-gh-release@v2
+        uses: softprops/action-gh-release@v3
         with:
           files: package.zip
           name: Release ${{ steps.version.outputs.result }}

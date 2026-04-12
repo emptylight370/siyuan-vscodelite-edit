@@ -7,6 +7,11 @@ prettier = "latest"
 
 [prepare.pnpm]
 
+[prepare.lefthook]
+description = "Install lefthook hooks"
+run = "lefthook install"
+sources = ["lefthook.yml"]
+
 [tasks.changelog]
 description = "Generate changelog via git history"
 run = [
