@@ -10,7 +10,7 @@ prettier = "latest"
 [prepare.lefthook]
 description = "Install lefthook hooks"
 run = "lefthook install"
-sources = ["lefthook.yml"]
+sources = ["lefthook.yml", ".lefthook", ".lefthook-local"]
 
 [tasks.changelog]
 description = "Generate changelog via git history"
