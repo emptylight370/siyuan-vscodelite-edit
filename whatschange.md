@@ -103,12 +103,6 @@
 
 - [skip ci]更新支付链接 ([150cbe6](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/150cbe676f7e4adc69d6828c78227e1474e7b983))
 
-## [2.7.1](https://github.com/emptylight370/siyuan-vscodelite-edit/compare/2.7.0...2.7.1) (2026-02-23)
-
-### ✨ Features | 功能
-
-- [skip ci]更新支付链接 ([150cbe6](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/150cbe676f7e4adc69d6828c78227e1474e7b983))
-
 ## [2.7.0](https://github.com/emptylight370/siyuan-vscodelite-edit/compare/2.6.3...2.7.0) (2026-02-14)
 
 ### 🔨 Refactor | 重构
@@ -161,6 +155,7 @@
 
 - 迁移到mise进行管理 ([5d08da1](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/5d08da110a62f9610f3c40f9b478c41fe4a71920))
 - 修改tsconfig配置 ([499479f](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/499479f124eccbe486cca70ab8f5c141a088928d))
+- **actions:** 修复生成发布日志失败问题 ([95f844c](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/95f844c8b6a784b0216bddc5201df5389acd79f9))
 - **lefthook:** 修复生成的日志文件没有提交问题 ([d34b0fb](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/d34b0fb711019c0396c48a4bf8bec8283d058ccf))
 - **lefthook:** 优化提交信息检测脚本 ([2beddc0](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/2beddc0bc8618159119b06234e8724b6500a1679))
 - **lefthook:** 在提交theme.json时自动生成changelog一并提交 ([75afecd](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/75afecda308a9789cfb9661c8b2fd673cc8414d0))
