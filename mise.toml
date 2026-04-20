@@ -5,9 +5,9 @@ node = "24"
 pnpm = "latest"
 prettier = "latest"
 
-[prepare.pnpm]
+[deps.pnpm]
 
-[prepare.lefthook]
+[deps.lefthook]
 description = "Install lefthook hooks"
 run = "lefthook install"
 sources = ["lefthook.yml", ".lefthook", ".lefthook-local"]
