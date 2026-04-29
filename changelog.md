@@ -1,5 +1,10 @@
 # ChangeLog
 
+## v3.0.0
+
+- 背景插件适配样式适配新默认主题
+- Background plugin adaption style adapt to new default theme
+
 ## v2.7.8
 
 - 修复设置面板项在放大加粗时可能出现滚动条问题

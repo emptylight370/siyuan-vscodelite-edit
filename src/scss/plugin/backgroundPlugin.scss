@@ -20,6 +20,15 @@ body.bgenable {
         }
     }
 
+    #layouts {
+        // 新默认主题添加了背景色
+        .layout__center,
+        .layout__dockl,
+        .layout__dockr {
+            background-color: transparent;
+        }
+    }
+
     [data-type="wnd"] {
         .layout-tab-container {
             /* 两边的文档树、大纲位置 */
@@ -147,6 +156,10 @@ body.bgenable {
         }
     }
 
+    // 新默认主题设置面板背景色
+    .config__panel,
+    // 新默认主题设置面板设置组
+    .config-group,
     // 设置面板的右半边部分
     .config__tab-wrap,
     // 选项的背景框
