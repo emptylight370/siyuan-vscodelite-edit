@@ -44,6 +44,7 @@ Limited by the configuration loading method, updated configurations for new vers
 
 - v3.0.0
   - Background plugin adaption style adapt to new default theme
+  - Top bar workspace menu adapt to new default theme
 - v2.7.8
   - Fix issue where setting panel items may have scrollbar when enlarged and bolded
   - Redirect Traditional Chinese docs to Simplified Chinese

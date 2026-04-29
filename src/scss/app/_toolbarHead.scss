@@ -20,9 +20,17 @@ body.body--blur .toolbar {
 }
 
 /* 应用顶部工具栏 */
-.toolbar {
+#toolbar {
     background-color: var(--mk-toolbar-background);
     border-bottom: none;
+
+    #barWorkspace {
+        background-color: var(--mk-toolbar-item--active);
+
+        &:hover {
+            background-color: var(--mk-toolbar-item-barWorkspace--hover);
+        }
+    }
 
     #drag {
         /* 应用顶部标题 */
@@ -52,12 +60,4 @@ body.body--blur .toolbar {
 
 .toolbar__item--active {
     background-color: var(--mk-toolbar-item--active);
-}
-
-#barWorkspace:hover {
-    background-color: var(--mk-toolbar-item-barWorkspace--hover);
-}
-
-#closeWindow:hover {
-    color: white;
 }
