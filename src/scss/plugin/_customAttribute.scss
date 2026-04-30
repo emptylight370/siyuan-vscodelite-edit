@@ -28,3 +28,12 @@
         display: none;
     }
 }
+
+// 数据库隐藏主键
+[custom-vsce~="av-no-main-key"] {
+    .av__gallery-field.av__gallery-field--name:has([data-dtype="block"]), // 卡片、看板显示字段名
+    .av__cell[data-dtype="block"] // 表格视图
+    {
+        display: none;
+    }
+}

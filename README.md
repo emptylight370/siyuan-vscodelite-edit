@@ -46,6 +46,8 @@ Limited by the configuration loading method, updated configurations for new vers
   - Background plugin adaption style adapt to new default theme
   - Top bar workspace menu adapt to new default theme
   - Document tag bar adapt to new default theme
+  - Add custom attribute: hide database primary key
+  - Database style adapt to new default theme
 - v2.7.8
   - Fix issue where setting panel items may have scrollbar when enlarged and bolded
   - Redirect Traditional Chinese docs to Simplified Chinese
@@ -77,6 +79,7 @@ To enable custom attributes, add the `vsce` attribute in the **Custom Attributes
 |   `hide-thead`    | table block                 | Hide `<thead>` element visually                                  | 2.5.0           | 2.5.0        |
 | `av-no-add-entry` | database block              | Hide database add entry button (add function works normally)     | 2.5.2           | 2.6.2        |
 | `av-no-add-view`  | database block              | Hide database add view button (add function works normally)      | 2.5.2           | 2.5.2        |
+| `av-no-main-key`  | database block              | Hide database primary key                                        | 3.0.0           | 3.0.0        |
 
 ## Plugin fitness
 

@@ -59,7 +59,7 @@ body.bgenable {
                 background-color: transparent;
             }
 
-            .item.item--focus {
+            .item.item--focus:not([data-av-type]) {
                 background-color: var(--lite-tabbar-background-color-item--focus);
             }
 
