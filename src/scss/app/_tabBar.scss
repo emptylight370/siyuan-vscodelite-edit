@@ -4,27 +4,27 @@
     background-color: var(--mk-tabbar-background-color);
     border-bottom: none;
     height: 36px;
-    min-height: 36px;
 
     &.layout-tab-bar--readonly {
-        /* 标签栏 */
-        background-color: var(--mk-tabbar-background-color-item--readonly);
+        /* 标签栏右侧的按钮 */
         border-bottom: none;
         height: 36px;
-        min-height: 36px;
+        min-width: 56px;
+
+        span[data-type] {
+            background-color: var(--mk-tabbar-background-color-item--readonly);
+        }
     }
 
     .item {
         /* 标签栏中标题标签 */
         background-color: var(--mk-tabbar-background-color);
-        height: 36px;
-        min-height: 36px;
+        height: 32px;
+        margin: 2px 2px;
 
         &.item--focus {
             /* 标签聚焦 */
             background-color: var(--mk-tabbar-background-color-item--focus);
-            height: 36px;
-            min-height: 36px;
 
             &.item--full {
                 font-size: 16px;
@@ -33,8 +33,6 @@
             &:after {
                 /* 标签聚焦 */
                 display: none;
-                height: 36px;
-                min-height: 36px;
             }
         }
 
@@ -44,11 +42,6 @@
             border-bottom: 2px solid transparent;
             box-sizing: border-box;
         }
-    }
-
-    .item--readonly {
-        /* 标签栏空地 */
-        min-height: 36px;
     }
 
     .item__close:hover {
@@ -62,12 +55,12 @@
 body.body--blur .layout-tab-bar .item.item--focus {
     /* 标签栏聚焦 */
     box-shadow: none;
-    height: 36px;
+    height: 32px;
 
     &:after {
         /* 标签栏聚焦 */
         display: none;
-        height: 36px;
+        height: 32px;
     }
 }
 
