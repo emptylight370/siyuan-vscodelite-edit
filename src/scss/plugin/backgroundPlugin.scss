@@ -50,13 +50,22 @@ body.bgenable {
             /* 顶上的标签页 */
             background-color: var(--lite-modify-surface__darker);
 
-            .item,
-            .item--readonly {
+            .item {
                 background-color: var(--lite-tabbar-background-color-item--readonly);
+            }
+
+            .item--readonly {
+                /* 修复两按钮后面的背景色 */
+                background-color: transparent;
             }
 
             .item.item--focus {
                 background-color: var(--lite-tabbar-background-color-item--focus);
+            }
+
+            &.layout-tab-bar--readonly {
+                /* 修复两按钮左侧的大黑块 */
+                margin-left: 0;
             }
         }
 
