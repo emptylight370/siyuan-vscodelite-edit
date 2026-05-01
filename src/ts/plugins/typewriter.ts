@@ -9,7 +9,7 @@ const SCROLL_THROTTLE_MS = 300;
  * @since 3.0.0
  * @version 3.0.0
  */
-function scrollToCenter(sourceElement?: HTMLElement, scrollToElement: HTMLElement | null = null): void {
+function scrollToCenter(sourceElement?: HTMLElement): void {
     // 触发前节流检查
     const now = performance.now();
     if (now - lastScrollTime < SCROLL_THROTTLE_MS) return;
@@ -48,7 +48,6 @@ function scrollToCenter(sourceElement?: HTMLElement, scrollToElement: HTMLElemen
     let targetElement: HTMLElement | null = currentTargetElement.closest("[data-node-id]") as HTMLElement;
 
     if (!targetElement) return;
-    console.log("currentTarget", currentTargetElement);
 
     // ===== 表格特殊处理 =====
     let actualTarget: HTMLElement = targetElement;
@@ -147,7 +146,6 @@ function scrollToCenter(sourceElement?: HTMLElement, scrollToElement: HTMLElemen
         actualTarget = currentTargetElement.closest(".hljs") as HTMLElement;
     }
     // ===== 代码块处理结束 =====
-    console.log("actualTarget", actualTarget);
 
     actualTarget.scrollIntoView({ block: "center", behavior: "smooth" });
 }
@@ -184,16 +182,11 @@ function handleClick(event: MouseEvent): void {
     // 仅在编辑器内触发
     const target = event.target as HTMLElement;
     if (!target?.closest(".protyle-wysiwyg")) return;
-    if (target.tagName === "IMG") {
-        requestAnimationFrame(() => {
-            scrollToCenter(target, target);
-        });
-    } else {
-        // 使用 requestAnimationFrame 确保光标已定位
-        requestAnimationFrame(() => {
-            scrollToCenter(target);
-        });
-    }
+
+    // 使用 requestAnimationFrame 确保光标已定位
+    requestAnimationFrame(() => {
+        scrollToCenter(target);
+    });
 }
 
 /**
