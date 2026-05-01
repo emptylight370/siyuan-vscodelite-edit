@@ -9,6 +9,7 @@
 - 数据库外观适配新默认主题
 - 添加打字机模式
 - 图片查看器背景不透明
+- 段落内标签样式适配新默认主题
 - Background plugin adaption style adapt to new default theme
 - Top bar workspace menu adapt to new default theme
 - Document tag bar adapt to new default theme
@@ -16,6 +17,7 @@
 - Database style adapt to new default theme
 - Add typewriter mode
 - Image viewer background not transparent
+- Inline tag style adapt to new default theme
 
 ## v2.7.8
 
