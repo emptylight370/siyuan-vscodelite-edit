@@ -8,12 +8,14 @@
 - 添加自定义属性：隐藏数据库主键
 - 数据库外观适配新默认主题
 - 添加打字机模式
+- 图片查看器背景不透明
 - Background plugin adaption style adapt to new default theme
 - Top bar workspace menu adapt to new default theme
 - Document tag bar adapt to new default theme
 - Add custom attribute: hide database primary key
 - Database style adapt to new default theme
 - Add typewriter mode
+- Image viewer background not transparent
 
 ## v2.7.8
 

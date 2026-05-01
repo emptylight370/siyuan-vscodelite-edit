@@ -50,6 +50,7 @@ Limited by the configuration loading method, updated configurations for new vers
   - Add custom attribute: hide database primary key
   - Database style adapt to new default theme
   - **Add typewriter mode**_!_
+  - Image viewer background not transparent
 - v2.7.8
   - Fix issue where setting panel items may have scrollbar when enlarged and bolded
   - Redirect Traditional Chinese docs to Simplified Chinese
