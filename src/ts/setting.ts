@@ -319,7 +319,7 @@ function closeNotSave() {
  * NOTE 获取设置界面的定义数组
  * @returns Promise&lt;SettingItem[]%gt;
  * @since 2.1.0
- * @version 2.7.0
+ * @version 3.0.0
  */
 async function fetchSettingsPanelArray() {
     const config: ThemeConfig | null = await _getFile("/data/snippets/vsc_edit.config.json");
@@ -438,6 +438,13 @@ async function fetchSettingsPanelArray() {
         label: getMsg("slashMenuitem"),
         id: "slashMenu",
         enable: v?.theme?.slashMenu ?? globalThis.vscDefaultConf.theme.slashMenu,
+    });
+    // 打字机模式
+    settings.push({
+        label: getMsg("typewriteritem"),
+        description: getMsg("typewriterdesc"),
+        id: "typewriter",
+        enable: v?.plugins?.typewriter ?? globalThis.vscDefaultConf.plugins.typewriter,
     });
     return settings;
 }

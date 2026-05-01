@@ -2,6 +2,7 @@ import { _postMessage, getMsg } from "./api";
 import { loadGlobalVars } from "./defs";
 import { bg, bgobserver } from "./plugins/background";
 import { getSlashMenusCount, slashMenuObserver } from "./plugins/slashmenu";
+import { destroyTypewriterMode, initTypewriterMode } from "./plugins/typewriter";
 import { createSettingsWindow, getSettings } from "./setting";
 import { SettingPanelId } from "./types";
 
@@ -68,7 +69,7 @@ import { SettingPanelId } from "./types";
 /**
  * ! 更换主题时移除修改内容
  * @since 1.2.0
- * @version 2.7.7
+ * @version 3.0.0
  */
 window.destroyTheme = () => {
     // 移除主题按钮
@@ -78,6 +79,8 @@ window.destroyTheme = () => {
     // 移除body特殊适配语句
     document.body.classList.remove("bgenable");
     document.body.classList.remove("vscmobile");
+    // 移除打字机模式监听
+    destroyTypewriterMode();
     // 移除计时器
     if (globalThis.vscTimers)
         Object.keys(globalThis.vscTimers).forEach((key) => {
@@ -262,7 +265,7 @@ function addImports(table: HTMLLinkElement, labels: SettingPanelId[]) {
  * ! 添加固定属性
  * @param settings SettingPanelId[]
  * @since 1.3.5
- * @version 2.7.0
+ * @version 3.0.0
  */
 function addFixedAttribute(settings: SettingPanelId[]) {
     const isMobile = document.body.classList.contains("vscmobile");
@@ -290,6 +293,13 @@ function addFixedAttribute(settings: SettingPanelId[]) {
                 slashMenuObserver(0);
             }
         }, 500);
+    }
+    // ?如果设置启用打字机模式才进入判断
+    if (settings.includes("typewriter") && !isExportPDF) {
+        initTypewriterMode();
+    } else {
+        // 发现快速切换两个主题不会触发destroyTheme函数
+        destroyTypewriterMode();
     }
     // *<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 }

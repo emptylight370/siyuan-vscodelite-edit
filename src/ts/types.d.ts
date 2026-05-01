@@ -45,6 +45,8 @@ export interface ThemeConfig {
         backgroundCoverMobile: boolean;
         /** 双标签页 */
         doubleTabbar: boolean;
+        /** 打字机模式 */
+        typewriter: boolean;
     };
 }
 
@@ -157,6 +159,10 @@ export interface vscMessage {
     titleIconDesc: LocalizedMessage;
     /** 多栏斜杠菜单选项 */
     slashMenuitem: LocalizedMessage;
+    /** 打字机模式选项 */
+    typewriteritem: LocalizedMessage;
+    /** 打字机模式描述 */
+    typewriterdesc: LocalizedMessage;
 }
 
 /** 计时器接口 */

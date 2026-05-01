@@ -4,16 +4,16 @@ import { SupportedLang } from "./types";
 /**
  * 加载全局变量
  * @since 1.3.3
- * @version 2.7.8
+ * @version 3.0.0
  */
 export async function loadGlobalVars() {
     /**
      * ! 默认配置文件
      * @since 1.2.0
-     * @version 2.7.8
+     * @version 3.0.0
      */
     globalThis.vscDefaultConf = {
-        version: 13,
+        version: 14,
         lastSeen: "2.7.8",
         theme: {
             codeBlock: true,
@@ -35,13 +35,14 @@ export async function loadGlobalVars() {
             backgroundCoverDesktop: true,
             backgroundCoverMobile: false,
             doubleTabbar: false,
+            typewriter: false,
         },
     };
 
     /**
      * ! 默认消息本地化
      * @since 1.3.3
-     * @version 2.7.0
+     * @version 3.0.0
      */
     globalThis.vscMessage = {
         language: {
@@ -227,6 +228,14 @@ export async function loadGlobalVars() {
         slashMenuitem: {
             zh_CN: "斜杠(/)菜单多栏显示",
             en_US: "Slash(/) menu multi column display",
+        },
+        typewriteritem: {
+            zh_CN: "打字机模式",
+            en_US: "Typewriter mode",
+        },
+        typewriterdesc: {
+            zh_CN: "编辑时光标所在块始终保持在屏幕中央(可能带来性能问题)",
+            en_US: "Keep the cursor block centered in the viewport while editing(may cause performance issues)",
         },
     };
 
