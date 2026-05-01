@@ -1,3 +1,5 @@
+import { getMsg } from "../api";
+
 /** 上一次滚动时间 */
 let lastScrollTime = 0;
 /** 最小触发间隔(ms) */
@@ -57,7 +59,7 @@ function scrollToCenter(sourceElement?: HTMLElement): void {
         if (tr) {
             actualTarget = tr;
         } else if (currentTargetElement.tagName === "CAPTION") {
-            // 如果点击的是表头就以表头为目标居中
+            // 如果点击的是表题就以表题为目标居中
             actualTarget = currentTargetElement;
         }
     }
@@ -202,7 +204,7 @@ export function initTypewriterMode(): void {
     document.addEventListener("keydown", handleKeydown, true); // 捕获阶段
     document.addEventListener("click", handleClick, true); // 捕获阶段
 
-    console.log("VSCE:Typewriter mode enabled");
+    console.log(getMsg("typewriterON"));
 }
 
 /**
@@ -216,5 +218,5 @@ export function destroyTypewriterMode(): void {
     document.removeEventListener("click", handleClick, true);
 
     lastScrollTime = 0;
-    console.log("VSCE:Typewriter mode disabled");
+    console.log(getMsg("typewriterOFF"));
 }

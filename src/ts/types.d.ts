@@ -81,6 +81,10 @@ export interface vscMessage {
     loadPDFPersetFail: LocalizedMessage;
     /** 主题版本更新提示 */
     newVersionHint: LocalizedMessage;
+    /** 打字机模式启动 */
+    typewriterON: LocalizedMessage;
+    /** 打字机模式关闭 */
+    typewriterOFF: LocalizedMessage;
 
     // * 设置按钮提示文本
     /** 主题设置按钮提示文本 */

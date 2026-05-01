@@ -81,6 +81,14 @@ export async function loadGlobalVars() {
             zh_CN: "VSCE:感谢更新VSCode Lite Edit主题，主题已经移除引述块的自定义属性，请用官方的Callout块代替。具体移除属性请查看主题介绍。<br/>本通知只应在主题更新后显示一次，如多次反复显示请在非发布模式下打开工作空间或重新保存主题设置。点击本通知以关闭。",
             en_US: "VSCE: Thanks for update VSCode Lite Edit theme, the custom attributes of quote block have been removed, please use the officiall Callout block. Please refer to theme readme to see which attributes will be removed.<br/>This notice should only be displayed once after the theme is updated. If it is displayed repeatedly multiple times, please open the workspace in non-publishing mode or re-save the theme settings. Click this notice to close.",
         },
+        typewriterON: {
+            zh_CN: "VSCE:打字机模式已开启",
+            en_US: "VSCE:Typewriter mode is ON",
+        },
+        typewriterOFF: {
+            zh_CN: "VSCE:打字机模式已关闭",
+            en_US: "VSCE:Typewriter mode is OFF",
+        },
         settingButtonAria: {
             zh_CN: "VSCode Lite 主题设置",
             en_US: "VSCode Lite theme setting",
