@@ -52,6 +52,7 @@
     }
 }
 
+/* 窗口没有焦点时应用以下样式 */
 body.body--blur .layout-tab-bar .item.item--focus {
     /* 标签栏聚焦 */
     box-shadow: none;
@@ -78,5 +79,26 @@ body.body--blur .layout-tab-bar .item.item--focus {
         .item__icon {
             padding: 4px 0 4px 8px;
         }
+    }
+}
+
+/* 适配新默认主题顶栏融合样式 */
+.layout__wnd--center.layout__wnd--left.layout__wnd--right {
+    .layout-tab-bar {
+        &:not(.layout-tab-bar--readonly) {
+            margin-top: 3px;
+
+            .item {
+                margin: 2px 2px;
+            }
+        }
+
+        &.layout-tab-bar--readonly {
+            margin-top: -1px;
+        }
+    }
+
+    .layout-tab-container {
+        margin-top: 3px;
     }
 }

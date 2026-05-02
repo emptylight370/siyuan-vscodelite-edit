@@ -1,26 +1,29 @@
-.layout-tab-bar:has(.item--pin) {
-    display: grid;
-    grid-template-rows: auto auto;
-    grid-auto-flow: row;
-    overflow-x: auto;
-    height: 72px;
-
-    .item {
-        display: flex;
+// 新默认主题顶栏融合情况下有问题，先别用
+:not(.layout__wnd--center.layout__wnd--left.layout__wnd--right) {
+    .layout-tab-bar:has(.item--pin) {
+        display: grid;
+        grid-template-rows: auto auto;
+        grid-auto-flow: row;
         overflow-x: auto;
-        width: max-content;
-        flex-shrink: 0;
+        height: 72px;
 
-        &.item--pin {
-            grid-row: 1;
-        }
+        .item {
+            display: flex;
+            overflow-x: auto;
+            width: max-content;
+            flex-shrink: 0;
 
-        &:not(.item--pin) {
-            grid-row: 2;
+            &.item--pin {
+                grid-row: 1;
+            }
+
+            &:not(.item--pin) {
+                grid-row: 2;
+            }
         }
     }
-}
 
-[data-type="wnd"] > .fn__flex:has(.item--pin) {
-    height: 72px;
+    [data-type="wnd"] > .fn__flex:has(.item--pin) {
+        height: 72px;
+    }
 }
