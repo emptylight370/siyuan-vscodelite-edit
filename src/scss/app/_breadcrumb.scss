@@ -5,15 +5,22 @@ button.protyle-breadcrumb__icon[data-type="exit-focus"] {
     text-shadow: thistle 0 0 1px;
 }
 
-/* 没找到在哪，但姑且认为是面包屑 */
-.protyle:not(:has(.protyle-content[data-scrolltop="0"])) {
-    .protyle-breadcrumb {
-        box-shadow: 0 5px 10px -10px grey;
+/* 面包屑在不同状态下的样式 */
+.protyle {
+    /* 编辑器向下滚动了一段距离 */
+    &:not(:has(.protyle-content[data-scrolltop="0"])) {
+        .protyle-breadcrumb {
+            box-shadow: 0 5px 10px -10px grey;
+            min-height: 30px;
+        }
     }
 
-    &:has(.protyle-content:not([data-scrolltop])) {
+    /* 编辑器回到顶部 */
+    &:has(.protyle-content[data-scrolltop="0"]),
+    &:not(:has(.protyle-content[data-scrolltop])) {
         .protyle-breadcrumb {
             box-shadow: none;
+            min-height: 30px;
         }
     }
 }

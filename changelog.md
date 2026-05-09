@@ -11,6 +11,7 @@
 - 图片查看器背景不透明
 - 段落内标签样式适配新默认主题
 - 初步适配新默认主题顶栏融合样式
+- 面包屑高度适配新默认主题
 - Background plugin adaption style adapt to new default theme
 - Top bar workspace menu adapt to new default theme
 - Document tag bar adapt to new default theme
@@ -20,6 +21,7 @@
 - Image viewer background not transparent
 - Inline tag style adapt to new default theme
 - Initial adaption to new default theme top bar fusion style
+- Breadcrumb height adapt to new default theme
 
 ## v2.7.8
 

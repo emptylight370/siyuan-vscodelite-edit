@@ -53,6 +53,7 @@ Limited by the configuration loading method, updated configurations for new vers
   - Image viewer background not transparent
   - Inline tag style adapt to new default theme
   - Initial adaption to new default theme top bar fusion style
+  - Breadcrumb height adapt to new default theme
 - v2.7.8
   - Fix issue where setting panel items may have scrollbar when enlarged and bolded
   - Redirect Traditional Chinese docs to Simplified Chinese
