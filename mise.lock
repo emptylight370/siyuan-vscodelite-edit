@@ -76,37 +76,37 @@ version = "7.2.0"
 backend = "npm:conventional-changelog"
 
 [[tools.pnpm]]
-version = "11.0.6"
+version = "11.0.9"
 backend = "aqua:pnpm/pnpm"
 
 [tools.pnpm."platforms.linux-arm64"]
-checksum = "sha256:8cff0a79557ffabcd9b25d40e70d9d859a160f05b5405b483142237460ea850d"
-url = "https://github.com/pnpm/pnpm/releases/download/v11.0.6/pnpm-linux-arm64.tar.gz"
+checksum = "sha256:eeb0ccc8652aa21f87ebf656724f1f3a0553e898c35699b0040698252262823e"
+url = "https://github.com/pnpm/pnpm/releases/download/v11.0.9/pnpm-linux-arm64.tar.gz"
 provenance = "github-attestations"
 
 [tools.pnpm."platforms.linux-arm64-musl"]
-checksum = "sha256:3c2ba745a621e1fd6937675a7609eeddcfbbcf3d737ed90667bc56ec1f300052"
-url = "https://github.com/pnpm/pnpm/releases/download/v11.0.6/pnpm-linux-arm64-musl.tar.gz"
+checksum = "sha256:c9dd4f1a2049590a820e429370231b9bf7170fcedf88de8f081caefb00d8b947"
+url = "https://github.com/pnpm/pnpm/releases/download/v11.0.9/pnpm-linux-arm64-musl.tar.gz"
 provenance = "github-attestations"
 
 [tools.pnpm."platforms.linux-x64"]
-checksum = "sha256:f2781f9e250a7505bfaa6b80fed79f2a967885677c01a09dfadd024f8dce92c9"
-url = "https://github.com/pnpm/pnpm/releases/download/v11.0.6/pnpm-linux-x64.tar.gz"
+checksum = "sha256:ec84b7750ed24a47e55b71fba528499862bddaf8d9770b2f58a294b8692a8cbf"
+url = "https://github.com/pnpm/pnpm/releases/download/v11.0.9/pnpm-linux-x64.tar.gz"
 provenance = "github-attestations"
 
 [tools.pnpm."platforms.linux-x64-musl"]
-checksum = "sha256:ca4ba0c69d6c5c36134d866bbb998825dabab6599b5ddb2a63744d1702e668e5"
-url = "https://github.com/pnpm/pnpm/releases/download/v11.0.6/pnpm-linux-x64-musl.tar.gz"
+checksum = "sha256:964f716be77cab7cbd796a72bc2ec60703bccdfc8ac524fb3b5cbe7a105799b0"
+url = "https://github.com/pnpm/pnpm/releases/download/v11.0.9/pnpm-linux-x64-musl.tar.gz"
 provenance = "github-attestations"
 
 [tools.pnpm."platforms.macos-arm64"]
-checksum = "sha256:ae419c3a40f02988840e9424ba1a97eb88c5bdb2135056cb754c6fb4f4f0f6a7"
-url = "https://github.com/pnpm/pnpm/releases/download/v11.0.6/pnpm-darwin-arm64.tar.gz"
+checksum = "sha256:b7264bfdcbcee37d8fb302256fae799dd067f4e8996d7202fcb4a5a3ee2665f7"
+url = "https://github.com/pnpm/pnpm/releases/download/v11.0.9/pnpm-darwin-arm64.tar.gz"
 provenance = "github-attestations"
 
 [tools.pnpm."platforms.windows-x64"]
-checksum = "sha256:ebb3ccdb8dc5d67db4e5e72b558b3db646b3ba623904f889bbdc81e1dff2704a"
-url = "https://github.com/pnpm/pnpm/releases/download/v11.0.6/pnpm-win32-x64.zip"
+checksum = "sha256:608c56dc746444f133ca901a5a0a32be779d28dcbcf4e7d7bf48372b005b907a"
+url = "https://github.com/pnpm/pnpm/releases/download/v11.0.9/pnpm-win32-x64.zip"
 provenance = "github-attestations"
 
 [[tools.prettier]]
