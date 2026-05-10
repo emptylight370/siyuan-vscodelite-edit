@@ -95,6 +95,11 @@ body.body--blur .layout-tab-bar .item.item--focus {
 
         &.layout-tab-bar--readonly {
             margin-top: -1px;
+
+            .item.item--readonly {
+                background-color: transparent;
+                margin-top: 6.5px;
+            }
         }
     }
 
