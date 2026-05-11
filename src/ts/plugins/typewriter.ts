@@ -45,6 +45,7 @@ function scrollToCenter(sourceElement?: HTMLElement): void {
     // 如果点击的元素是个按钮，则跳过
     else if (currentTargetElement.closest(".block__icon")) return;
     else if (currentTargetElement.closest(".protyle-icons")) return;
+    else if (currentTargetElement.closest(".av__gallery-actions")) return;
 
     // 从光标位置的容器节点向上查找最近的 [data-node-id] 元素
     let targetElement: HTMLElement | null = currentTargetElement.closest("[data-node-id]") as HTMLElement;
