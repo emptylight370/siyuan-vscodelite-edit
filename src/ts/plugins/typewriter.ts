@@ -193,7 +193,7 @@ function handleClick(event: MouseEvent): void {
     const target = event.target as HTMLElement;
     if (!target?.closest(".protyle-wysiwyg")) return;
     // 如果点击的元素是引用和链接，则跳过
-    if (target.dataset.type === "block-ref" || target.dataset.type === "a") return;
+    if (target.dataset.type?.split(" ").includes("block-ref") || target.dataset.type?.split(" ").includes("a")) return;
 
     // 使用 requestAnimationFrame 确保光标已定位
     requestAnimationFrame(() => {
