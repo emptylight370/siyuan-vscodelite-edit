@@ -43,9 +43,7 @@ function scrollToCenter(sourceElement?: HTMLElement): void {
     // 如果点击的元素为数据库视图栏，则跳过
     else if (currentTargetElement.classList.contains("av__views")) return;
     // 如果点击的元素是个按钮，则跳过
-    else if (currentTargetElement.closest(".block__icon")) return;
-    else if (currentTargetElement.closest(".protyle-icons")) return;
-    else if (currentTargetElement.closest(".av__gallery-actions")) return;
+    else if (currentTargetElement.closest(".block__icon, .protyle-icons, .av__gallery-actions")) return;
 
     // 从光标位置的容器节点向上查找最近的 [data-node-id] 元素
     let targetElement: HTMLElement | null = currentTargetElement.closest("[data-node-id]") as HTMLElement;
@@ -141,10 +139,8 @@ function scrollToCenter(sourceElement?: HTMLElement): void {
             if (targetElement) {
                 actualTarget = targetElement as HTMLElement;
             }
-        } else if (currentTargetElement.closest(".av__row--footer")) {
+        } else if (currentTargetElement.closest(".av__row--footer, .av__row--util")) {
             // 表格视图底部的统计
-            return;
-        } else if (currentTargetElement.closest(".av__row--util")) {
             // 表格视图底部的加载更多
             return;
         }
