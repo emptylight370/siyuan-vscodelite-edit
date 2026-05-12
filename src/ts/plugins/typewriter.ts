@@ -65,84 +65,89 @@ function scrollToCenter(sourceElement?: HTMLElement): void {
     // ===== 表格处理结束 =====
     // ===== 数据库特殊处理 =====
     else if (currentTargetElement.closest(".av")) {
-        if (
-            currentTargetElement.classList.contains("av__cell") ||
-            currentTargetElement.classList.contains("av__celltext")
-        ) {
-            // 从光标位置往上找 .av__row
-            let rowElement: HTMLElement | null = currentTargetElement.closest("div.av__row");
-            if (!rowElement) {
-                // 上面是表格视图，下面是卡片、看板视图
-                rowElement = currentTargetElement.closest("div.av__gallery-field");
-            }
-            if (rowElement) {
-                actualTarget = rowElement;
-            }
-        } else if (currentTargetElement.classList.contains("av__cursor")) {
-            // 键盘方向键在数据库表格视图移动
-            const cellElement = currentTargetElement.parentElement?.querySelector(".av__cell--select.av__cell--active");
-            if (cellElement) {
-                actualTarget = (cellElement as HTMLElement).closest(".av__row") as HTMLElement;
-            }
-        } else if (currentTargetElement.classList.contains("av__gallery-name")) {
-            // 卡片视图的字段名
-            const rowElement: HTMLElement | null = currentTargetElement.closest("div.av__gallery-field");
-            if (rowElement) {
-                actualTarget = rowElement;
-            }
-        } else if (currentTargetElement.classList.contains("av__gallery-cover")) {
-            // 卡片视图的封面图
-            const targetElement = currentTargetElement.closest(".av__gallery-item");
-            if (targetElement) {
-                actualTarget = targetElement as HTMLElement;
-            }
-        } else if (currentTargetElement.closest(".av__gallery-cover")) {
-            // 显示文字内容作为预览图
-            const targetElement = currentTargetElement.closest(".av__gallery-item");
-            if (targetElement) {
-                actualTarget = targetElement as HTMLElement;
-            }
-        } else if (currentTargetElement.classList.contains("av__title")) {
+        const attributeView = currentTargetElement.closest(".av") as HTMLElement;
+        let skip = false;
+
+        // 数据库的通用组件
+        if (currentTargetElement.classList.contains("av__title")) {
             // 编辑数据库名称
             actualTarget = currentTargetElement;
+            skip = true;
         } else if (currentTargetElement.closest(".av__header")) {
             // 数据库右上角的按钮，除名称之外
             return;
-        } else if (currentTargetElement.classList.contains("b3-chip")) {
-            if (currentTargetElement.parentElement?.classList.contains("av__group-name")) {
-                // 数据库分组名
-                const targetElement = currentTargetElement.closest(".av__group-title") as HTMLElement;
-                if (targetElement) {
-                    actualTarget = targetElement;
+        } else if (currentTargetElement.closest(".av__group-title")) {
+            // 数据库分组一整行
+            actualTarget = currentTargetElement.closest(".av__group-title") as HTMLElement;
+            skip = true;
+        }
+
+        // 判断数据库类型
+        // 表格视图
+        if (attributeView.dataset.avType === "table" && !skip) {
+            if (
+                // 单元格
+                currentTargetElement.classList.contains("av__cell") ||
+                // 单元格里面的文本
+                currentTargetElement.classList.contains("av__celltext") ||
+                // 单元格里面的东西
+                currentTargetElement.parentElement?.classList.contains("av__cell") ||
+                // 直接点中行
+                currentTargetElement.classList.contains("av__row") ||
+                // 每行前面的复选框
+                currentTargetElement.closest(".av__firstcol")
+            ) {
+                actualTarget = currentTargetElement.closest("div.av__row") as HTMLElement;
+            } else if (currentTargetElement.classList.contains("av__cursor")) {
+                // 键盘方向键在单元格间移动
+                const cellElement = currentTargetElement.parentElement?.querySelector(
+                    ".av__cell--select.av__cell--active",
+                );
+                if (cellElement) {
+                    actualTarget = (cellElement as HTMLElement).closest(".av__row") as HTMLElement;
                 }
-            } else if (currentTargetElement.parentElement?.classList.contains("av__cell")) {
-                // 数据库单选字段，跟前面av__cell逻辑一样
-                // 从光标位置往上找 .av__row
-                let rowElement: HTMLElement | null = currentTargetElement.closest("div.av__row");
-                if (!rowElement) {
-                    // 上面是表格视图，下面是卡片、看板视图
-                    rowElement = currentTargetElement.closest("div.av__gallery-field");
-                }
-                if (rowElement) {
-                    actualTarget = rowElement;
-                }
+            } else if (currentTargetElement.closest(".av__row--footer, .av__row--util")) {
+                // 底部的统计
+                // 底部的加载更多
+                return;
             }
-        } else if (currentTargetElement.classList.contains("av__group-title")) {
-            // 数据库分组标题
-            actualTarget = currentTargetElement;
-        } else if (currentTargetElement.classList.contains("av__row")) {
-            // 数据库表格视图的行
-            actualTarget = currentTargetElement;
-        } else if (currentTargetElement.closest(".av__firstcol")) {
-            // 数据库前面的复选框
-            const targetElement = currentTargetElement.closest(".av__row");
-            if (targetElement) {
-                actualTarget = targetElement as HTMLElement;
+        }
+        // 卡片视图、看板视图
+        else if ((attributeView.dataset.avType === "gallery" || attributeView.dataset.avType === "kanban") && !skip) {
+            if (
+                // 单元格
+                currentTargetElement.classList.contains("av__cell") ||
+                // 单元格里面的文本
+                currentTargetElement.classList.contains("av__celltext") ||
+                // 单元格里面的东西
+                currentTargetElement.parentElement?.classList.contains("av__cell")
+            ) {
+                actualTarget = currentTargetElement.closest("div.av__gallery-field") as HTMLElement;
+            } else if (currentTargetElement.classList.contains("av__gallery-name")) {
+                // 字段名
+                actualTarget = currentTargetElement.closest("div.av__gallery-field") as HTMLElement;
+            } else if (currentTargetElement.closest(".av__gallery-cover")) {
+                // 封面图
+                actualTarget = currentTargetElement.closest(".av__gallery-cover") as HTMLElement;
+            } else if (
+                // 卡片视图的空白
+                currentTargetElement.classList.contains("av__gallery")
+            ) {
+                if (attributeView.dataset.avType === "gallery") {
+                    // 卡片视图是行
+                    actualTarget = currentTargetElement;
+                } else if (attributeView.dataset.avType === "kanban") {
+                    // 看板视图是列
+                    return;
+                }
+            } else if (
+                // 看板视图的空白
+                currentTargetElement.classList.contains("av__kanban") ||
+                // 看板视图的空白
+                currentTargetElement.classList.contains("av__kanban-group")
+            ) {
+                return;
             }
-        } else if (currentTargetElement.closest(".av__row--footer, .av__row--util")) {
-            // 表格视图底部的统计
-            // 表格视图底部的加载更多
-            return;
         }
     }
     // ===== 数据库处理结束 =====
