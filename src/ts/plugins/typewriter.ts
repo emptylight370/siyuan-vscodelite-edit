@@ -141,6 +141,12 @@ function scrollToCenter(sourceElement?: HTMLElement): void {
             if (targetElement) {
                 actualTarget = targetElement as HTMLElement;
             }
+        } else if (currentTargetElement.closest(".av__row--footer")) {
+            // 表格视图底部的统计
+            return;
+        } else if (currentTargetElement.closest(".av__row--util")) {
+            // 表格视图底部的加载更多
+            return;
         }
     }
     // ===== 数据库处理结束 =====
