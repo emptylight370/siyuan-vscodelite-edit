@@ -153,7 +153,7 @@ function scrollToCenter(sourceElement?: HTMLElement): void {
     // ===== 数据库处理结束 =====
     // ===== 代码块特殊处理 =====
     else if (currentTargetElement.closest(".hljs")) {
-        actualTarget = currentTargetElement.closest(".hljs") as HTMLElement;
+        return;
     }
     // ===== 代码块处理结束 =====
 
