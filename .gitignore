@@ -214,4 +214,3 @@ lefthook-local.yml
 # mise-en-place
 mise.local.toml
 mise.local.lock
-.mise/deps-state.toml
