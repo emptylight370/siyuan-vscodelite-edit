@@ -976,4 +976,4 @@
 
 - 有序列表不同层级添加不同样式 ([9b639dc](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/9b639dc2b699ec64a2e7d0ce52754fc349f23cad))
 
-## 1.0.0 (2024-03-24)
+## [1.0.0](https://github.com/emptylight370/siyuan-vscodelite-edit/compare/130d1da0f0bbc5379c49b0eac459b963323d1c13...1.0.0) (2024-03-24)
