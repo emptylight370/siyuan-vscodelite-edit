@@ -54,6 +54,7 @@ Limited by the configuration loading method, updated configurations for new vers
   - Inline tag style adapt to new default theme
   - Initial adaption to new default theme top bar fusion style
   - Breadcrumb height adapt to new default theme
+  - Fixed an issue where the heading icon was displayed incorrectly in heading blocks containing inline formulas
 - v2.7.8
   - Fix issue where setting panel items may have scrollbar when enlarged and bolded
   - Redirect Traditional Chinese docs to Simplified Chinese
