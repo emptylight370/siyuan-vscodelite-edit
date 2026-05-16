@@ -34,7 +34,7 @@ $h6top: 0.32em;
 .protyle-preview h1 {
     display: flex;
 
-    span {
+    > span {
         display: inline;
         max-width: fit-content;
     }
@@ -86,7 +86,7 @@ $h6top: 0.32em;
 .protyle-preview h2 {
     display: flex;
 
-    span {
+    > span {
         display: inline;
         max-width: fit-content;
     }
@@ -138,7 +138,7 @@ $h6top: 0.32em;
 .protyle-preview h3 {
     display: flex;
 
-    span {
+    > span {
         display: inline;
         max-width: fit-content;
     }
@@ -190,7 +190,7 @@ $h6top: 0.32em;
 .protyle-preview h4 {
     display: flex;
 
-    span {
+    > span {
         display: inline;
         max-width: fit-content;
     }
@@ -242,7 +242,7 @@ $h6top: 0.32em;
 .protyle-preview h5 {
     display: flex;
 
-    span {
+    > span {
         display: inline;
         max-width: fit-content;
     }
@@ -294,7 +294,7 @@ $h6top: 0.32em;
 .protyle-preview h6 {
     display: flex;
 
-    span {
+    > span {
         display: inline;
         max-width: fit-content;
     }
