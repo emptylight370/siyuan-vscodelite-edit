@@ -56,7 +56,7 @@ body.body--blur .toolbar {
     }
 }
 
-.toolbar__item:not(.toolbar__item--disabled):not(.toolbar__item--close):hover {
+.toolbar__item:not(.toolbar__item--disabled, .toolbar__item--close):hover {
     background-color: var(--mk-toolbar-item--hover);
 }
 

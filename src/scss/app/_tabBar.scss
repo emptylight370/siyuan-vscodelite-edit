@@ -20,7 +20,7 @@
         /* 标签栏中标题标签 */
         background-color: var(--mk-tabbar-background-color);
         height: 32px;
-        margin: 2px 2px;
+        margin: 2px;
 
         &.item--focus {
             /* 标签聚焦 */
@@ -30,7 +30,7 @@
                 font-size: 16px;
             }
 
-            &:after {
+            &::after {
                 /* 标签聚焦 */
                 display: none;
             }
@@ -58,7 +58,7 @@ body.body--blur .layout-tab-bar .item.item--focus {
     box-shadow: none;
     height: 32px;
 
-    &:after {
+    &::after {
         /* 标签栏聚焦 */
         display: none;
         height: 32px;
@@ -89,7 +89,7 @@ body.body--blur .layout-tab-bar .item.item--focus {
             margin-top: 3px;
 
             .item {
-                margin: 2px 2px;
+                margin: 2px;
             }
         }
 

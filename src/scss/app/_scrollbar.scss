@@ -1,4 +1,4 @@
-/*隐藏块滚动条*/
+/* 隐藏块滚动条 */
 /* 就是动态加载的那个 */
 .protyle-scroll {
     display: none;
@@ -28,7 +28,7 @@
     &::-webkit-scrollbar-thumb {
         opacity: 0;
         border-radius: 0;
-        background: rgba(0, 0, 0, 0);
+        background: rgb(0, 0, 0, 0%);
         transition:
             all 0.2s cubic-bezier(0, 0, 0.2, 1) 0ms,
             opacity 1s cubic-bezier(0, 0, 0.2, 1) 0ms;

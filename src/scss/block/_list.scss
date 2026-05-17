@@ -75,7 +75,7 @@ div:not(.export-img) > .protyle-wysiwyg {
 
     [data-subtype="u"] > .li[data-subtype="u"] > .protyle-action::after {
         font-size: 1.5em;
-        font-family: Arial;
+        font-family: Arial var(--b3-font-family); /* stylelint-disable-line font-family-no-missing-generic-family-keyword */
         content: "•";
         position: absolute;
     }
@@ -255,14 +255,12 @@ div:not(.export-img) > .protyle-wysiwyg {
 div:not(.export-image) > .protyle-wysiwyg [data-node-id].li > .protyle-action {
     width: auto;
     aspect-ratio: 1 / 1;
+
     &::after {
         // animation: none; /* 我也不知道为什么禁用，大概是VSCE有自己的动画吧 */
         // border-radius: 50%; /* 区分两种序号的阴影形状 */
         padding: 0;
-        top: 0;
-        left: 0;
-        right: 0; /* 可以去掉 */
-        bottom: 0; /* 可以去掉 */
+        inset: 0;
         margin: auto !important;
         width: 100%;
         height: 100%;

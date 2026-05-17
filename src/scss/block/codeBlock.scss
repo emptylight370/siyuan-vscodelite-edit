@@ -51,6 +51,7 @@ div:not(#preview) > .protyle-wysiwyg .code-block:not(pre) {
  * https://github.com/siyuan-note/siyuan/pull/15966
  */
 $codeLang-item-shadow: inset 0 0 3px var(--b3-border-color);
+
 .protyle-util > [data-id="codeLanguage"] {
     .b3-list-item {
         // 清空

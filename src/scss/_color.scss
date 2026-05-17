@@ -4,30 +4,30 @@
     --lite-status-background: #39cebb;
     --lite-li-items: #5cb83e;
     --lite-block-ref-color: #9e46e6;
-    --lite-block-ref-background-color: #00000022;
+    --lite-block-ref-background-color: #0002;
     --lite-database-header-background: #9a9a9a80;
-    --lite-bg-dock-item-background: #00000022;
+    --lite-bg-dock-item-background: #0002;
     --lite-bg-dock-item-active: #3b3838;
     --lite-header-shadow: #2b8f74;
     --lite-mark-top: transparent;
-    --lite-mark-bottom: rgba(124, 245, 94, 0.45);
+    --lite-mark-bottom: rgb(124, 245, 94, 45%);
     --lite-bc-focus: green;
     --lite-bazaar-focus-background: var(--mk-tabbar-background-color-item--focus);
-    --lite-block-fold-background: rgba(224, 224, 224, 0.2);
-    --lite-block-fold-shadow-background: rgba(34, 34, 34, 0.4);
+    --lite-block-fold-background: rgb(224, 224, 224, 20%);
+    --lite-block-fold-shadow-background: rgb(34, 34, 34, 40%);
 
     // [区域]
     // toolbar 顶部工具栏
-    --mk-toolbar-background: #dddddd;
+    --mk-toolbar-background: #ddd;
     --mk-toolbar-background--blur: #e5e5e5;
     --mk-toolbar--blur-item: #7b7b7b;
-    --mk-toolbar-item: #333333;
+    --mk-toolbar-item: #333;
     --mk-toolbar-item--hover: #bfbfbf;
-    --mk-toolbar-item--active: #66ccff;
+    --mk-toolbar-item--active: #6cf;
     --mk-toolbar-item-barWorkspace--hover: #39c5bb;
-    --mk-toolbar-text: #ffffff;
+    --mk-toolbar-text: #fff;
     --mk-toolbar-svg: var(--mk-toolbar-text);
-    --mk-toolbar-text--blur: rgba(255, 255, 255, 0.6);
+    --mk-toolbar-text--blur: rgb(255, 255, 255, 60%);
     --mk-toolbar-svg--blur: var(--mk-toolbar-text--blur);
 
     // file-tree 文档树
@@ -39,7 +39,7 @@
     // tabbar 标签栏
     --mk-tabbar-background-color: #ececec;
     --mk-tabbar-background-color-item--readonly: #f3f3f3;
-    --mk-tabbar-background-color-item--focus: #ffffff;
+    --mk-tabbar-background-color-item--focus: #fff;
 
     // dock
     --mk-dock-background: #2c2c2c;
@@ -58,7 +58,7 @@
     --mk-scrollbar-track-border: #dcdcdc;
     --mk-scrollbar-thumb: #c1c1c1;
     --mk-scrollbar-thumb--hover: #929292;
-    --mk-scrollbar-thumb--active: #666666;
+    --mk-scrollbar-thumb--active: #666;
 
     // [块]
     --mk-block-header-h1: #202124;
@@ -68,44 +68,44 @@
     --mk-block-header-h5: #e84c22;
     --mk-block-header-h6: #8064a2;
 
-    --mk-block-header-background-h1: rgba(32, 33, 36, 0.2);
-    --mk-block-header-background-h2: rgba(46, 118, 181, 0.2);
-    --mk-block-header-background-h3: rgba(191, 143, 0, 0.2);
-    --mk-block-header-background-h4: rgba(112, 173, 71, 0.2);
-    --mk-block-header-background-h5: rgba(232, 77, 34, 0.2);
-    --mk-block-header-background-h6: rgba(128, 100, 162, 0.2);
+    --mk-block-header-background-h1: rgb(32, 33, 36, 20%);
+    --mk-block-header-background-h2: rgb(46, 118, 181, 20%);
+    --mk-block-header-background-h3: rgb(191, 143, 0, 20%);
+    --mk-block-header-background-h4: rgb(112, 173, 71, 20%);
+    --mk-block-header-background-h5: rgb(232, 77, 34, 20%);
+    --mk-block-header-background-h6: rgb(128, 100, 162, 20%);
 }
 
 /* 暗黑模式元数据定义 */
 :root[data-theme-mode="dark"] {
     // 添加的内容，自定义属性
-    --lite-status-background: #66ccff;
+    --lite-status-background: #6cf;
     --lite-li-items: #c6d77b;
     --lite-block-ref-color: #49b0f0;
-    --lite-block-ref-background-color: #ffffff22;
+    --lite-block-ref-background-color: #fff2;
     --lite-database-header-background: #efefef30;
     --lite-bg-dock-item-active: #f4f4f4;
-    --lite-bg-dock-item-background: #00000022;
+    --lite-bg-dock-item-background: #0002;
     --lite-header-shadow: #2b4c8f;
     --lite-mark-top: transparent;
-    --lite-mark-bottom: rgba(124, 245, 94, 0.45);
+    --lite-mark-bottom: rgb(124, 245, 94, 45%);
     --lite-bc-focus: greenyellow;
     --lite-bazaar-focus-background: rgb(72, 72, 72);
-    --lite-block-fold-background: rgba(230, 230, 230, 0.06);
-    --lite-block-fold-shadow-background: rgba(218, 218, 218, 0.6);
+    --lite-block-fold-background: rgb(230, 230, 230, 6%);
+    --lite-block-fold-shadow-background: rgb(218, 218, 218, 60%);
 
     // [区域]
     // toolbar 顶部工具栏
     --mk-toolbar-background: #3c3c3c;
     --mk-toolbar-background--blur: #323233;
     --mk-toolbar--blur-item: #8e8e8e;
-    --mk-toolbar-item: #cccccc;
+    --mk-toolbar-item: #ccc;
     --mk-toolbar-item--hover: #565656;
     --mk-toolbar-item--active: #39c5bb;
-    --mk-toolbar-item-barWorkspace--hover: #66ccff;
-    --mk-toolbar-text: #ffffff;
+    --mk-toolbar-item-barWorkspace--hover: #6cf;
+    --mk-toolbar-text: #fff;
     --mk-toolbar-svg: var(--mk-toolbar-text);
-    --mk-toolbar-text--blur: rgba(255, 255, 255, 0.6);
+    --mk-toolbar-text--blur: rgb(255, 255, 255, 60%);
     --mk-toolbar-svg--blur: var(--mk-toolbar-text--blur);
 
     // file-tree 文档树
@@ -120,7 +120,7 @@
     --mk-tabbar-background-color-item--focus: #1e1e1e;
 
     // dock
-    --mk-dock-background: #333333;
+    --mk-dock-background: #333;
     --mk-dock-item-color: #727272;
     --mk-dock-item-svg-color--hover: #f4f4f4;
 

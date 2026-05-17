@@ -7,23 +7,28 @@ pre-commit:
         - run: $(! git diff --cached -U0 'theme.json' | grep -q -F 'version')
       script: checkVersion.ts
       runner: node
-      fail_text: '请确保theme.json与defs.ts中版本号一致'
+      fail_text: "请确保theme.json与defs.ts中版本号一致"
 
     - name: Generate changelog
       skip:
         # 仅在修改了version的时候执行
         - run: $(! git diff --cached -U0 'theme.json' | grep -q -F 'version')
       run: mise run changelog
-      fail_text: '请检查依赖安装状态，运行mise install安装依赖'
+      fail_text: "请检查依赖安装状态，运行mise install安装依赖"
 
     - name: Format code with prettier
       run: prettier -l {staged_files} | xargs -r prettier -w
       stage_fixed: true
       glob:
-        - '*.md'
-        - '*.json'
-        - 'src/*'
-      fail_text: '请检查prettier安装状态，运行mise install安装依赖'
+        - "*.md"
+        - "*.json"
+        - "src/*"
+      fail_text: "请检查prettier安装状态，运行mise install安装依赖"
+
+    - name: Lint Sass code
+      run: pnpm run lint
+      glob:
+        - "*.scss"
 
 commit-msg:
   jobs:

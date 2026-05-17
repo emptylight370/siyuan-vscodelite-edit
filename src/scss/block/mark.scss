@@ -2,9 +2,8 @@
 .b3-typography span[data-type~="mark"],
 .protyle-wysiwyg mark,
 .protyle-wysiwyg span[data-type~="mark"] {
-    background-color: unset;
     background: linear-gradient(to bottom, var(--lite-mark-top) 40%, var(--lite-mark-bottom) 60%);
     border-radius: 0.2rem;
     box-decoration-break: clone;
-    -webkit-box-decoration-break: clone;
+    // -webkit-box-decoration-break: clone;
 }

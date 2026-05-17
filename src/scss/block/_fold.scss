@@ -2,7 +2,7 @@
     background-color: var(--lite-block-fold-background);
     box-shadow: 0 0 4px 0 var(--lite-block-fold-shadow-background) inset;
 
-    &:not(.li):not([data-type="NodeHeading"]).table {
+    &:not(.li, [data-type="NodeHeading"]).table {
         opacity: 0.5;
     }
 }

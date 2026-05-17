@@ -6,13 +6,16 @@
   "scripts": {
     "build:scss": "sass theme.scss:theme.css src/scss:sub",
     "build:ts": "esbuild src/ts/theme.ts --bundle --format=iife --outfile=theme.js --minify",
-    "build": "run-p -l build:scss build:ts",
+    "build": "run-p -l build:*",
     "dev:scss": "sass --watch theme.scss:theme.css src/scss:sub",
     "dev:ts": "esbuild src/ts/theme.ts --bundle --format=iife --outfile=theme.js --watch",
-    "dev": "run-p -l dev:scss dev:ts",
+    "dev": "run-p -l dev:*",
     "clean:scss": "rimraf theme.css theme.css.map sub",
     "clean:ts": "rimraf theme.js",
-    "clean": "run-p -l clean:scss clean:ts"
+    "clean": "run-p -l clean:*",
+    "lint:scss": "stylelint \"**/*.scss\"",
+    "lint:ts": "tsc --noEmit",
+    "lint": "run-p -l lint:*"
   },
   "type": "module",
   "repository": {
@@ -36,6 +39,8 @@
     "rimraf": "^6.1.3",
     "sass": "^1.99.0",
     "siyuan": "^1.2.1",
+    "stylelint": "^17.11.1",
+    "stylelint-config-standard-scss": "^17.0.0",
     "tslib": "^2.8.1",
     "typescript": "^6.0.3"
   }

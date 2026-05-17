@@ -74,11 +74,11 @@ body.bgenable {
         // 表格块
         /* body.bgenable [data-type=wnd] .table, */
         // 数据库表格视图
-        .av[data-av-type=table],
+        .av[data-av-type="table"],
         // 数据库卡片视图
-        .av[data-av-type=gallery],
+        .av[data-av-type="gallery"],
         // 数据库看板视图
-        .av[data-av-type=kanban] {
+        .av[data-av-type="kanban"] {
             /* 代码块 */
             /* 数据库块 */
             opacity: 0.8;
@@ -281,14 +281,14 @@ body.bgenable {
 }
 
 :root[data-theme-mode="light"] body.bgenable {
-    --mk-toolbar-text: #222222;
+    --mk-toolbar-text: #222;
     --lite-status-background: #39cebbc0;
     --lite-modify-surface: #f6f6f640;
     --lite-modify-surface__menu: #f6f6f6c0;
     --lite-modify-surface__dock: #f6f6f6a0;
     --lite-modify-surface__breadcrumb: transparent;
     --lite-modify-surface__darker: #f6f6f6a0;
-    --lite-modify-background: #ffffff00;
+    --lite-modify-background: #fff0;
     --lite-modify-background--mobile: #ffffff60;
     --lite-tabbar-background-color: #f0ec7f39;
     --lite-tabbar-background-color-item--readonly: #f3f3f350;
@@ -301,7 +301,7 @@ body.bgenable {
 }
 
 :root[data-theme-mode="dark"] body.bgenable {
-    --mk-toolbar-text: #ffffff;
+    --mk-toolbar-text: #fff;
     --lite-status-background: #66ccffc0;
     --lite-modify-surface: #26262670;
     --lite-modify-surface__menu: #262626c0;
