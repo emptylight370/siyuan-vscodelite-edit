@@ -198,8 +198,8 @@ export async function loadGlobalVars() {
             en_US: 'Enable plugin "Background cover adaption" on desktop',
         },
         bgdesc: {
-            zh_CN: "需要打开“替换背景图片”插件设置将“前景透明”调到0哦!建议启用插件的“背景虚化”功能!",
-            en_US: 'You need to open the setting of "Background Cover" plugin and set the "Opacity of foreground" to 0!Suggest turn on the "Blurring" setting of the plugin!',
+            zh_CN: "强制禁用插件设置的“前景透明”效果。建议启用插件的“背景虚化”功能!",
+            en_US: 'Force disable the "Opacity of foreground" effect of plugin setting. It is recommended to turn on the "Blurring" setting of the plugin!',
         },
         bgmobile: {
             zh_CN: "在移动端启用“替换背景图片”插件",
