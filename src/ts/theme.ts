@@ -1,6 +1,6 @@
 import { _postMessage, getMsg } from "./api";
 import { loadGlobalVars } from "./defs";
-import { bg, bgobserver } from "./plugins/background";
+import { bg, bgObserve } from "./plugins/background";
 import { getSlashMenusCount, slashMenuObserver } from "./plugins/slashmenu";
 import { destroyTypewriterMode, initTypewriterMode } from "./plugins/typewriter";
 import { createSettingsWindow, getSettings } from "./setting";
@@ -281,7 +281,7 @@ function addFixedAttribute(settings: SettingPanelId[]) {
         bg(0);
         // 添加观察器
         if (globalThis.vscObservers.bgObserver === null) {
-            bgobserver(0);
+            bgObserve(0);
         }
     }
     // ?如果设置启用斜杠菜单才进入判断

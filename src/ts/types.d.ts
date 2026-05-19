@@ -183,9 +183,9 @@ export interface vscTimers {
 
 /** 观察器接口 */
 export interface vscObservers {
-    /** 背景图插件状态观察器 */
+    /** 背景图插件显示状态观察器 */
     bgObserver: MutationObserver | null;
-    /** 背景图存在状态观察器 */
+    /** 背景图插件启用状态观察器 */
     bgExistObserver: MutationObserver | null;
     /** 标签栏状态观察器 */
     tabbarObserver: MutationObserver | null;

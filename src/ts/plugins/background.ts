@@ -1,17 +1,66 @@
 /**
+ * 获取背景图片元素
+ * @returns HTMLElement
+ * @since 3.0.0
+ * @version 3.0.0
+ */
+function getBgLayer() {
+    return document.getElementById("bglayer");
+}
+
+/**
+ * 获取背景视频元素
+ * @returns HTMLElement
+ * @since 3.0.0
+ * @version 3.0.0
+ */
+function getBgVideo() {
+    return document.getElementById("bgvideo");
+}
+
+/**
+ * 判断当前背景插件是否显示
+ * @returns boolean
+ * @since 3.0.0
+ * @version 3.0.0
+ */
+function isBgVisible() {
+    const layer = getBgLayer();
+    const video = getBgVideo();
+    if (layer?.style.display !== "none" || video?.style.display !== "none") {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+/**
+ * 判断背景插件是否启用
+ * @returns boolean
+ * @since 3.0.0
+ * @version 3.0.0
+ */
+function isBgEnable() {
+    const layer = getBgLayer();
+    const video = getBgVideo();
+    if (layer || video) return true;
+    else return false;
+}
+
+/**
  * 检测背景图片插件是否在运行
  * @param times 运行次数
  * @since 1.3.5
- * @version 2.6.3
+ * @version 3.0.0
  */
 export function bg(times: number) {
     // 背景自定义插件，部分情况下插件加载缓慢可重复检测一次
-    const bglayer = document.getElementById("bglayer");
-    if (bglayer) {
-        const style = window.getComputedStyle(bglayer);
-        if (style.getPropertyValue("display") !== "none") {
+    const isEnabled = isBgEnable();
+    if (isEnabled) {
+        const isVisible = isBgVisible();
+        if (isVisible) {
             document.body.classList.add("bgenable");
-        } else if (style.getPropertyValue("display") === "none") {
+        } else {
             // console.log("disable background");
             document.body.classList.remove("bgenable");
         }
@@ -39,11 +88,14 @@ export function bg(times: number) {
  * 监听背景图片插件的属性修改
  * @param times 运行次数
  * @since 1.4.0
- * @version 2.6.3
+ * @version 3.0.0
  */
-export function bgobserver(times: number) {
-    const bglayer = document.getElementById("bglayer");
-    if (bglayer) {
+export function bgObserve(times: number) {
+    const isEnabled = isBgEnable();
+    if (isEnabled) {
+        if (globalThis.vscObservers.bgObserver) {
+            globalThis.vscObservers.bgObserver.disconnect();
+        }
         globalThis.vscObservers.bgObserver = new MutationObserver(function (mutationsList) {
             for (const mutation of mutationsList) {
                 if (mutation.type === "attributes" && mutation.attributeName === "style") {
@@ -52,16 +104,26 @@ export function bgobserver(times: number) {
                 }
             }
         });
-        globalThis.vscObservers.bgObserver.observe(bglayer, {
-            attributes: true, // 监听属性变化
-            attributeFilter: ["style"], // 只监听 style 属性
-        });
+        const bglayer = getBgLayer();
+        if (bglayer) {
+            globalThis.vscObservers.bgObserver.observe(bglayer as HTMLElement, {
+                attributes: true, // 监听属性变化
+                attributeFilter: ["style"], // 只监听 style 属性
+            });
+        }
+        const bgvideo = getBgVideo();
+        if (bgvideo) {
+            globalThis.vscObservers.bgObserver.observe(bgvideo as HTMLElement, {
+                attributes: true,
+                attributeFilter: ["style"],
+            });
+        }
         globalThis.vscTimers.bgObserTimer = null;
     } else {
         // if (times == 0 && !document.body.classList.contains('vscmobile')) {
         if (times === 0) {
             // 运行失败等待5秒
-            globalThis.vscTimers.bgObserTimer = window.setTimeout(bgobserver, 5000, 1);
+            globalThis.vscTimers.bgObserTimer = window.setTimeout(bgObserve, 5000, 1);
         } else if (times === 1) {
             console.error("背景插件监听失败，修改插件启用状态需手动刷新");
             globalThis.vscTimers.bgObserTimer = null;
@@ -72,34 +134,41 @@ export function bgobserver(times: number) {
 /**
  * 检测背景是否被移除（插件关闭）
  * @since 2.6.1
- * @version 2.7.7
+ * @version 3.0.0
  */
 function bgExistObserver() {
-    const bglayer = document.getElementById("bglayer");
+    const bglayer = getBgLayer();
+    const bgvideo = getBgVideo();
     let parent = null;
-    if (bglayer) {
-        parent = bglayer.parentElement;
+    if (bglayer || bgvideo) {
+        parent = bglayer?.parentElement || bgvideo?.parentElement;
+        if (globalThis.vscObservers.bgExistObserver) {
+            globalThis.vscObservers.bgExistObserver.disconnect();
+        }
+        if (!parent) return;
         globalThis.vscObservers.bgExistObserver = new MutationObserver(function (mutationsList) {
             for (const mutation of mutationsList) {
                 if (mutation.type === "childList") {
                     mutation.addedNodes.forEach((node) => {
-                        if (node.nodeType === Node.ELEMENT_NODE && (node as HTMLCanvasElement).id === "bglayer") {
-                            // 检测存在时添加属性
-                            bg(0);
-                            return;
+                        if (node.nodeType === Node.ELEMENT_NODE) {
+                            if ((node as HTMLElement).id === "bglayer" || (node as HTMLElement).id === "bgvideo") {
+                                bg(0);
+                                return;
+                            }
                         }
                     });
                     mutation.removedNodes.forEach((node) => {
-                        if (node.nodeType === node.ELEMENT_NODE && (node as HTMLCanvasElement).id === "bglayer") {
-                            // 检测不存在时直接移除属性
-                            bg(2);
-                            return;
+                        if (node.nodeType === Node.ELEMENT_NODE) {
+                            if ((node as HTMLElement).id === "bglayer" || (node as HTMLElement).id === "bgvideo") {
+                                bg(2);
+                                return;
+                            }
                         }
                     });
                 }
             }
         });
-        globalThis.vscObservers.bgExistObserver.observe(parent!, {
+        globalThis.vscObservers.bgExistObserver.observe(parent, {
             childList: true,
         });
     }

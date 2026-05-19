@@ -56,6 +56,7 @@ Limited by the configuration loading method, updated configurations for new vers
   - Breadcrumb height adapt to new default theme
   - Fixed an issue where the heading icon was displayed incorrectly in heading blocks containing inline formulas
   - Force disable new background plugin's background transparency effect
+  - Adapt to new background plugin(v1.x.x)
 - v2.7.8
   - Fix issue where setting panel items may have scrollbar when enlarged and bolded
   - Redirect Traditional Chinese docs to Simplified Chinese
