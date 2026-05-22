@@ -25,3 +25,8 @@
         background-color: var(--mk-filetree-list--hover);
     }
 }
+
+/* 样式修改面板背景透明 */
+.protyle-util:has(.protyle-font) {
+    background-color: var(--lite-text-style-menu-background);
+}

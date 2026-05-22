@@ -57,6 +57,7 @@ Limited by the configuration loading method, updated configurations for new vers
   - Fixed an issue where the heading icon was displayed incorrectly in heading blocks containing inline formulas
   - Force disable new background plugin's background transparency effect
   - Adapt to new background plugin(v1.x.x)
+  - Move text style popup background transparency from background plugin adaption to general style
 - v2.7.8
   - Fix issue where setting panel items may have scrollbar when enlarged and bolded
   - Redirect Traditional Chinese docs to Simplified Chinese

@@ -148,9 +148,7 @@ body.bgenable {
     }
 
     // 设置面板类的弹出面板
-    .b3-dialog--open .b3-dialog__container,
-    // 样式修改面板
-    .protyle-util:has(.protyle-font) {
+    .b3-dialog--open .b3-dialog__container {
         background-color: var(--lite-modify-surface__menu);
     }
 

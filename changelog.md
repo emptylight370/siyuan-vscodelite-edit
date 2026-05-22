@@ -15,6 +15,7 @@
 - 修复启用标题图标后标题块中含有行级公式时显示错误问题
 - 强制禁用新版背景图片插件的背景透明效果
 - 适配新版背景图片插件(v1.x.x)
+- 将文本样式弹窗背景透明从背景插件适配移动到通用样式
 - Background plugin adaption style adapt to new default theme
 - Top bar workspace menu adapt to new default theme
 - Document tag bar adapt to new default theme
@@ -28,6 +29,7 @@
 - Fixed an issue where the heading icon was displayed incorrectly in heading blocks containing inline formulas
 - Force disable new background plugin's background transparency effect
 - Adapt to new background plugin(v1.x.x)
+- Move text style popup background transparency from background plugin adaption to general style
 
 ## v2.7.8
 
