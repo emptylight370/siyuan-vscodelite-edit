@@ -1,5 +1,10 @@
 ## [3.0.0](https://github.com/emptylight370/siyuan-vscodelite-edit/compare/2.7.8...3.0.0) (2026-06-02)
 
+### ⚠ BREAKING CHANGES
+
+- This version requires SiYuan Note version 3.7.0, **DO NOT** update to this version if you are not using dev version.
+  此版本要求思源笔记3.7.0版本，如果未使用测试版，**请不要**更新到此版本。
+
 ### ✨ Features | 功能
 
 - 背景插件适配样式适配新默认主题 ([8c60ec8](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/8c60ec8fd34f824a3752c4f9526a695f3370a8d4))
@@ -56,6 +61,10 @@
 - 将获取版本号的方法换成PowerShell内置方法 ([a34f109](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/a34f10974c0dd05e6b7add8620a1510334a7db85))
 - 替换构建工具 ([649856a](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/649856a0c2cc47be3151c86b6e9ca01f576a21a5))
 - **(deps)** bump ini from 1.3.5 to 1.3.8 ([d8f78a5](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/d8f78a5041f1bcbf8286a298d00faedc29d95976))
+
+### chore
+
+- **(version)** Release 3.0.0 ([f0f141f](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/f0f141f8f2834db2a4b23474f63fde7bc4cd68ce))
 
 ## [2.7.8](https://github.com/emptylight370/siyuan-vscodelite-edit/compare/2.7.7...2.7.8) (2026-04-10)
 
