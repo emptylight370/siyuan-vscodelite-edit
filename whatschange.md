@@ -1,3 +1,62 @@
+## [3.0.0](https://github.com/emptylight370/siyuan-vscodelite-edit/compare/2.7.8...3.0.0) (2026-06-02)
+
+### ✨ Features | 功能
+
+- 背景插件适配样式适配新默认主题 ([8c60ec8](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/8c60ec8fd34f824a3752c4f9526a695f3370a8d4))
+- 顶部栏工作空间菜单适配新默认主题 ([97cc141](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/97cc1415ef6e33a595cc6d778d7cfd83f33c0790))
+- 文档标签栏适配新默认主题 ([9fb7b45](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/9fb7b454440fc8f230d458e75e0af55a36f52ca2))
+- 文档标签栏适配新默认主题 ([825473d](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/825473d159e140e93990b756028b25cc615b1a7f))
+- 背景插件适配样式适配新默认主题 ([104ce08](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/104ce08fc164df28bb402dcb7b1000f395095008))
+- 数据库外观适配新默认主题&自定义属性 ([fa3db0b](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/fa3db0b81574c1fa955ac0d60793af8305662965))
+- 添加打字机模式 ([d1532b3](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/d1532b3cc6cdaaaf06f68c047270b1a270ea009c))
+- 点击块引用和链接跳过打字机模式运行 ([bd734f7](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/bd734f740ff3596e2c5d84b5cd1a6f2fd61e7140))
+- 图片查看器背景不透明 ([0adaefd](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/0adaefd313ccff17c7f8d25d044ffebc5e6d90cf))
+- 段落内标签样式适配新默认主题 ([15d9079](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/15d9079e55ba315ff9e29cbd6978439233424345))
+- 初步适配新默认主题顶栏融合样式 ([5519968](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/5519968d3de904fe4b0c29147e7f31cb168b5193))
+- 面包屑高度适配新默认主题 ([324e652](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/324e65260210ebe41cb39e6a67d0a4335bd5439d))
+- **(typewriter)** 数据库表格视图底部的固定行 ([55425cb](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/55425cb05a64eb16c6fc3b650574279ad3925de4))
+- **(changelog)** 生成首个版本的链接 ([6c83c49](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/6c83c497fe44dca63532386026ad9c23c1a08905))
+- 强制禁用新版背景图片插件的背景透明效果 ([81ea8ad](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/81ea8ada3c99942ba2c16093a02e348fc025acfc))
+- 适配新版背景图片插件 ([c6b2771](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/c6b27713f73da34b373d4c4e3c3dcd362d80daee))
+- 将文本样式弹窗背景透明从背景插件适配移动到通用样式 ([51dc019](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/51dc0199701ddaa2a7dff2a3a694f0c246d767ab))
+
+### 🐛 Bug Fixes | 问题修复
+
+- 修复非背景插件情况页签右侧操作按钮背景色 ([bd5d27e](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/bd5d27e0aa4786977ee748c4a500e54574dd2167))
+- 修复打字机模式画廊视图操作按钮跳转问题 ([0d2368c](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/0d2368ce225ec14503c624ef0d3d5deb03e5707f))
+- **(typewriter)** 不处理代码块 ([bb2ec25](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/bb2ec25044542a19759d8db8b670204857d92aa4))
+- 标题块中含有公式时显示错误 ([ac8e8d7](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/ac8e8d7261a846f1bebb8cb6df1abf58e014c4e4))
+- 修复标签页在分屏情况下的显示 ([bbe567d](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/bbe567d3a82c4a92bc6190990fef413f1d7723a6))
+
+### 📄 Documentation | 文档
+
+- 更新changelog ([d07fec5](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/d07fec50f24e1612647d2f82fbce35f4c075a58b))
+- 打字机模式 ([f96dc4c](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/f96dc4c0b16205c28790c861b4e7fd56381ef4c4))
+- 更新预览图 ([b7327fe](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/b7327fe541ec8de377fa658fb9e0b6554d73c74e))
+- 暂且还是回到CODEBUDDY.md ([e9a1a19](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/e9a1a1994f3cdce7fcdb8f79ae6816675fd16124))
+- 标题块中含有公式时显示错误 ([d4e42a1](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/d4e42a1f331d4180f35bb0671f2db35d869f7142))
+
+### ⚡ Performance | 性能优化
+
+- 移除未使用参数 ([e30fff1](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/e30fff1d6b0b824f76d3f87fd1f7ce6e46ec34a3))
+- 打字机模式日志使用本地化文本 ([f621854](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/f621854ed4e2a8288e1b3a094dd72ab4c9dc7eab))
+- **(typewriter)** 合并部分closet遍历 ([839762e](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/839762efebc76a3d6a5bcbc9029340882fc53fa4))
+- **(typewriter)** 优化性能 ([003011b](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/003011bcef03c9fdec14a29f540f9050b9bf25e7))
+
+### 🔨 Refactor | 重构
+
+- **(typewriter)** 重构数据库内部的判断 ([10b618e](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/10b618ea10c1759365e35afe1e35513dc2234ed2))
+- **(typewriter)** 重构点击块引和链接的判断 ([8ccf600](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/8ccf600f7b32312bce30dc27506a95784458a59a))
+
+### 🛠️ Build system | 构建系统
+
+- 迁移到conventional-changelog，未测试 ([5cf59ed](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/5cf59ed1fd4372474b23a4f1bc35e4c2eeea21e7))
+- 添加agents.md ([8c671be](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/8c671bee8acaad6a2a3cc44cc76cd1e43c2d3fd6))
+- 将生成变更日志的工作流换成git-cliff ([3437566](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/34375667d55fbe3e9b87fcbbe7b390a39cba9823))
+- 将获取版本号的方法换成PowerShell内置方法 ([a34f109](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/a34f10974c0dd05e6b7add8620a1510334a7db85))
+- 替换构建工具 ([649856a](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/649856a0c2cc47be3151c86b6e9ca01f576a21a5))
+- **(deps)** bump ini from 1.3.5 to 1.3.8 ([d8f78a5](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/d8f78a5041f1bcbf8286a298d00faedc29d95976))
+
 ## [2.7.8](https://github.com/emptylight370/siyuan-vscodelite-edit/compare/2.7.7...2.7.8) (2026-04-10)
 
 ### 🐛 Bug Fixes | 问题修复
