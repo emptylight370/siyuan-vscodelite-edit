@@ -4,6 +4,8 @@ import { getMsg } from "../api";
 let lastScrollTime = 0;
 /** 最小触发间隔(ms) */
 const SCROLL_THROTTLE_MS = 300;
+/** rAF 标识，防止同一帧内重复调度滚动 */
+let pendingScrollRAF = 0;
 
 /**
  * 处理打字机模式的滚动逻辑
@@ -174,8 +176,10 @@ function handleKeydown(event: KeyboardEvent): void {
     const target = event.target as HTMLElement;
     if (!target?.closest(".protyle-wysiwyg")) return;
 
-    // 使用 requestAnimationFrame 确保 DOM 已更新后再计算位置
-    requestAnimationFrame(() => {
+    // 取消上一帧的待处理滚动，避免 rAF 堆积
+    if (pendingScrollRAF) cancelAnimationFrame(pendingScrollRAF);
+    pendingScrollRAF = requestAnimationFrame(() => {
+        pendingScrollRAF = 0;
         scrollToCenter();
     });
 }
@@ -196,7 +200,9 @@ function handleClick(event: MouseEvent): void {
     if (target.dataset.type?.split(" ").includes("block-ref") || target.dataset.type?.split(" ").includes("a")) return;
 
     // 使用 requestAnimationFrame 确保光标已定位
-    requestAnimationFrame(() => {
+    if (pendingScrollRAF) cancelAnimationFrame(pendingScrollRAF);
+    pendingScrollRAF = requestAnimationFrame(() => {
+        pendingScrollRAF = 0;
         scrollToCenter(target);
     });
 }
@@ -225,6 +231,11 @@ export function destroyTypewriterMode(): void {
     document.removeEventListener("keydown", handleKeydown, true);
     document.removeEventListener("click", handleClick, true);
 
+    // 清理待处理的 rAF 和所有状态
+    if (pendingScrollRAF) {
+        cancelAnimationFrame(pendingScrollRAF);
+        pendingScrollRAF = 0;
+    }
     lastScrollTime = 0;
     console.log(getMsg("typewriterOFF"));
 }
