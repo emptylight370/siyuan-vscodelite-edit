@@ -1,9 +1,9 @@
 # VSCode Lite Edit
 
-![GitHub Release Date](https://img.shields.io/github/release-date/emptylight370/siyuan-vscodelite-edit?display_date=published_at&link=https%3A%2F%2Fgithub.com%2Femptylight370%2Fsiyuan-vscodelite-edit/releases/latest)
-![GitHub Release](https://img.shields.io/github/v/release/emptylight370/siyuan-vscodelite-edit?link=https%3A%2F%2Fgithub.com%2Femptylight370%2Fsiyuan-vscodelite-edit/releases/latest)
-![GitHub issue custom search in repo](https://img.shields.io/github/issues-search/emptylight370/siyuan-vscodelite-edit?query=state%3Aopen%20label%3A%22help%20wanted%22&label=Issues%20need%20helps&labelColor=%23112E32)
-![GitHub Repo stars](https://img.shields.io/github/stars/emptylight370/siyuan-vscodelite-edit?link=https%3A%2F%2Fgithub.com%2Femptylight370%2Fsiyuan-vscodelite-edit)
+[![GitHub Release Date](https://img.shields.io/github/release-date/emptylight370/siyuan-vscodelite-edit?display_date=published_at)](https://github.com/emptylight370/siyuan-vscodelite-edit/releases/latest)
+[![GitHub Release](https://img.shields.io/github/v/release/emptylight370/siyuan-vscodelite-edit)](https://github.com/emptylight370/siyuan-vscodelite-edit/releases/latest)
+[![GitHub issue custom search in repo](https://img.shields.io/github/issues-search/emptylight370/siyuan-vscodelite-edit?query=state%3Aopen%20label%3A%22help%20wanted%22&label=Issues%20need%20help&labelColor=%23112E32)](https://github.com/emptylight370/siyuan-vscodelite-edit/issues?q=is%3Aissue%20state%3Aopen%20label%3A%22help%20wanted%22)
+[![GitHub Repo stars](https://img.shields.io/github/stars/emptylight370/siyuan-vscodelite-edit)](https://github.com/emptylight370/siyuan-vscodelite-edit)
 
 > [!WARNING]
 > Theme 3.0.0 version requires at least SiYuan Note 3.7.0 version, but currently it is still in dev, so the version requirement is relaxed to 3.6.5 version to make it easier for users to download and update through the bazaar.

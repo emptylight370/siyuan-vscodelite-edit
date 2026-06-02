@@ -1,9 +1,9 @@
 # VSCode Lite Edit
 
-![GitHub Release Date](https://img.shields.io/github/release-date/emptylight370/siyuan-vscodelite-edit?display_date=published_at&link=https%3A%2F%2Fgithub.com%2Femptylight370%2Fsiyuan-vscodelite-edit/releases/latest)
-![GitHub Release](https://img.shields.io/github/v/release/emptylight370/siyuan-vscodelite-edit?link=https%3A%2F%2Fgithub.com%2Femptylight370%2Fsiyuan-vscodelite-edit/releases/latest)
-![GitHub issue custom search in repo](https://img.shields.io/github/issues-search/emptylight370/siyuan-vscodelite-edit?query=state%3Aopen%20label%3A%22help%20wanted%22&label=Issues%20need%20helps&labelColor=%23112E32)
-![GitHub Repo stars](https://img.shields.io/github/stars/emptylight370/siyuan-vscodelite-edit?link=https%3A%2F%2Fgithub.com%2Femptylight370%2Fsiyuan-vscodelite-edit)
+[![GitHub Release Date](https://img.shields.io/github/release-date/emptylight370/siyuan-vscodelite-edit?display_date=published_at)](https://github.com/emptylight370/siyuan-vscodelite-edit/releases/latest)
+[![GitHub Release](https://img.shields.io/github/v/release/emptylight370/siyuan-vscodelite-edit)](https://github.com/emptylight370/siyuan-vscodelite-edit/releases/latest)
+[![GitHub issue custom search in repo](https://img.shields.io/github/issues-search/emptylight370/siyuan-vscodelite-edit?query=state%3Aopen%20label%3A%22help%20wanted%22&label=Issues%20need%20help&labelColor=%23112E32)](https://github.com/emptylight370/siyuan-vscodelite-edit/issues?q=is%3Aissue%20state%3Aopen%20label%3A%22help%20wanted%22)
+[![GitHub Repo stars](https://img.shields.io/github/stars/emptylight370/siyuan-vscodelite-edit)](https://github.com/emptylight370/siyuan-vscodelite-edit)
 
 > [!WARNING]
 > 主题3.0.0版本至少需要思源笔记3.7.0版本，由于目前仍在测试中，暂时将版本号要求放宽至3.6.5版本，方便使用测试版用户通过集市下载更新。
