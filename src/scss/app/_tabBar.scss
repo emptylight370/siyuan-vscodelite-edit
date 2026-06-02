@@ -20,7 +20,7 @@
         /* 标签栏中标题标签 */
         background-color: var(--mk-tabbar-background-color);
         height: 32px;
-        margin: 2px;
+        margin: 2px !important;
 
         &.item--focus {
             /* 标签聚焦 */
@@ -83,22 +83,24 @@ body.body--blur .layout-tab-bar .item.item--focus {
 }
 
 /* 适配新默认主题顶栏融合样式 */
-.layout__wnd--center.layout__wnd--left.layout__wnd--right {
+.layout__wnd--center,
+.layout__wnd--left,
+.layout__wnd--right {
     .layout-tab-bar {
         &:not(.layout-tab-bar--readonly) {
             margin-top: 3px;
 
-            .item {
-                margin: 2px;
-            }
+            // .item {
+            //     margin: 2px !important;
+            // }
         }
 
         &.layout-tab-bar--readonly {
-            margin-top: -1px;
+            margin-top: 3.5px;
 
             .item.item--readonly {
                 background-color: transparent;
-                margin-top: 6.5px;
+                // margin-top: 6.5px;
             }
         }
     }

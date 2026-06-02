@@ -55,10 +55,10 @@ body.bgenable {
                 background-color: var(--lite-tabbar-background-color-item--readonly);
             }
 
-            // .item--readonly {
-            //     /* 修复两按钮后面的背景色 */
-            //     background-color: transparent;
-            // }
+            .item--readonly {
+                /* 修复两按钮后面的背景色 */
+                background-color: transparent;
+            }
 
             .item.item--focus:not([data-av-type]) {
                 background-color: var(--lite-tabbar-background-color-item--focus);
