@@ -6,7 +6,7 @@
       "script": "build",
       "problemMatcher": [],
       "label": "npm: build",
-      "detail": "npm-run-all -l -p build:scss build:ts",
+      "detail": "run-p -l build:*",
       "runOptions": { "instanceLimit": 1 },
       "presentation": {
         "echo": true,
@@ -23,7 +23,7 @@
       "script": "clean",
       "problemMatcher": [],
       "label": "npm: clean",
-      "detail": "npm-run-all -l -p clean:scss clean:ts",
+      "detail": "run-p -l clean:*",
       "runOptions": { "instanceLimit": 1 },
       "presentation": {
         "echo": true,
