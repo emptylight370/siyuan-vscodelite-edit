@@ -109,7 +109,7 @@ window.destroyTheme = () => {
 /**
  * 创建工具栏的按钮
  * @since 1.2.0
- * @version 2.7.7
+ * @version 3.0.1
  */
 function addThemeToolBar() {
     // 如果是发布模式就不添加按钮
