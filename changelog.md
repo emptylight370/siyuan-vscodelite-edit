@@ -1,5 +1,10 @@
 # ChangeLog
 
+## v3.0.1
+
+- 增强移动端添加设置按钮的适应性
+- Enhance the adaptability of the add settings button on mobile
+
 ## v3.0.0
 
 - 背景插件适配样式适配新默认主题

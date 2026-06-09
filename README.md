@@ -48,6 +48,8 @@ Limited by the configuration loading method, updated configurations for new vers
 > Full changelog view [ChangeLog](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/changelog.md)
 > Commit history view [whatschange](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/whatschange.md)
 
+- v3.0.1
+  - Enhance the adaptability of the add settings button on mobile
 - v3.0.0
   - Background plugin adaption style adapt to new default theme
   - Top bar workspace menu adapt to new default theme
@@ -66,9 +68,6 @@ Limited by the configuration loading method, updated configurations for new vers
 - v2.7.8
   - Fix issue where setting panel items may have scrollbar when enlarged and bolded
   - Redirect Traditional Chinese docs to Simplified Chinese
-- v2.7.7
-  - Settings panel items on desktop become larger and bold on hover
-  - Optimize background display for mobile settings sidebar when background plugin is enabled
 
 # Special fitness
 

@@ -48,6 +48,8 @@
 > 完整更新日志查看[changelog](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/changelog.md)
 > 提交历史日志查看[whatschange](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/whatschange.md)
 
+- v3.0.1
+  - 增强移动端添加设置按钮的适应性
 - v3.0.0
   - 背景插件适配样式适配新默认主题
   - 顶部栏工作空间菜单适配新默认主题
@@ -66,9 +68,6 @@
 - v2.7.8
   - 修复设置面板项在放大加粗时可能出现滚动条问题
   - 将繁体中文说明文档指向简体中文
-- v2.7.7
-  - 电脑端设置面板项在鼠标悬停时放大加粗显示
-  - 优化启用背景插件时移动端设置侧栏显示背景
 
 # 特殊适配
 

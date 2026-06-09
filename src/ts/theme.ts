@@ -153,12 +153,10 @@ function addThemeToolBar() {
         const insertMobile = (count = 0) => {
             if (count > 10) return;
             // 尝试获取移动端的文档操作按钮
-            const breadcrumbButtons = document.getElementsByClassName("block__icon fn__flex-center ariaLabel");
-            // 在第一个按钮前添加
-            const firstButton = breadcrumbButtons[0];
-            if (firstButton) {
-                firstButton.parentElement!.insertBefore(vscToolBar, firstButton);
-                globalThis.vscTimers.settingMobileTimer = null;
+            const exitFocus = document.querySelector('button[data-type="exit-focus"]');
+            if (exitFocus) {
+                // 在第一个按钮前添加
+                exitFocus?.parentElement?.insertBefore(vscToolBar, exitFocus.nextElementSibling);
             } else {
                 globalThis.vscTimers.settingMobileTimer = window.setTimeout(() => {
                     insertMobile(count + 1);
