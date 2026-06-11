@@ -1,4 +1,19 @@
-## [3.0.0](https://github.com/emptylight370/siyuan-vscodelite-edit/compare/2.7.8...3.0.0) (2026-06-02)
+## [3.0.0](https://github.com/emptylight370/siyuan-vscodelite-edit/compare/3.0.0...3.0.0) (2026-06-11)
+
+### ✨ Features | 功能
+
+- 增强移动端添加设置按钮的适应性 ([c967909](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/c9679093af47f31bae3d15fa4c57c0dddd73a1af))
+
+### 📄 Documentation | 文档
+
+- 更新badge链接 ([b0a2a62](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/b0a2a623898f507a2e76f43577de6d7e5d53050b))
+- 增强移动端添加设置按钮的适应性 ([f6b32c5](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/f6b32c51189b885c5875e5ea5a2d043587403979))
+
+### ⚡ Performance | 性能优化
+
+- Remove unused code ([4ff45e0](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/4ff45e048e89fafab501afbf0b030ce5fae40936))
+
+## [3.0.0](https://github.com/emptylight370/siyuan-vscodelite-edit/compare/2.7.8...3.0.0) (2026-06-11)
 
 ### ⚠ BREAKING CHANGES
 
@@ -40,6 +55,7 @@
 - 更新预览图 ([b7327fe](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/b7327fe541ec8de377fa658fb9e0b6554d73c74e))
 - 暂且还是回到CODEBUDDY.md ([e9a1a19](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/e9a1a1994f3cdce7fcdb8f79ae6816675fd16124))
 - 标题块中含有公式时显示错误 ([d4e42a1](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/d4e42a1f331d4180f35bb0671f2db35d869f7142))
+- 重新生成changelog ([8b233ad](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/8b233ad122b3a9dd1ff645360851c246d55a392c))
 
 ### ⚡ Performance | 性能优化
 
