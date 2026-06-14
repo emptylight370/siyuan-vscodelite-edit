@@ -51,7 +51,7 @@ export interface ThemeConfig {
 }
 
 /** 支持的语言类型 */
-export type SupportedLang = "zh_CN" | "en_US";
+export type SupportedLang = "zh-CN" | "en-US";
 
 /** 本地化消息文本接口 */
 export type LocalizedMessage = Record<SupportedLang, string>;

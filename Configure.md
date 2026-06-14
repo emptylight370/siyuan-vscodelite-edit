@@ -236,4 +236,4 @@ Theme provides some available custom attributes, please view in [README](README.
 
 ## 自定义属性
 
-目前主题提供了一些可用的自定义属性，请自行前往[说明文档](README_zh_CN.md#可用属性值)查看。
+目前主题提供了一些可用的自定义属性，请自行前往[说明文档](README_zh-CN.md#可用属性值)查看。

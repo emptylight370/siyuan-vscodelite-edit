@@ -169,11 +169,11 @@ export async function _reEnableTheme() {
 }
 
 /**
- * 安全获取本地化文本，如果当前语言不存在则回退到en_US
+ * 安全获取本地化文本，如果当前语言不存在则回退到en-US
  * @param msg 要显示的vscMessage文本
  * @returns 本地化文本
  * @since 2.6.3
- * @version 2.7.7
+ * @version 3.0.1
  */
 export function getMsg(msg: Exclude<keyof vscMessage, "language">) {
     // 获取消息对象，使用更精确的类型
@@ -184,19 +184,19 @@ export function getMsg(msg: Exclude<keyof vscMessage, "language">) {
         return msgObj[globalThis.vscLang];
     }
 
-    // 2. 如果当前语言不存在，尝试回退到en_US
-    if (msgObj.en_US) {
+    // 2. 如果当前语言不存在，尝试回退到en-US
+    if (msgObj["en-US"]) {
         console.warn(
-            `VSCE: Localized text for "${msg}" in language "${globalThis.vscLang}" not found, fallback to en_US.`,
+            `VSCE: Localized text for "${msg}" in language "${globalThis.vscLang}" not found, fallback to en-US.`,
         );
-        return msgObj.en_US;
+        return msgObj["en-US"];
     }
 
-    // 3. 如果en_US也不存在，则返回第一个可用的值
+    // 3. 如果en-US也不存在，则返回第一个可用的值
     const langs = Object.keys(msgObj) as SupportedLang[];
     if (langs.length > 0) {
         const firstLang = langs[0];
-        console.warn(`VSCE: Localized text for "${msg}" not found in current language or en_US, using "${firstLang}".`);
+        console.warn(`VSCE: Localized text for "${msg}" not found in current language or en-US, using "${firstLang}".`);
         return msgObj[firstLang];
     }
 
