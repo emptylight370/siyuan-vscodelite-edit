@@ -50,8 +50,8 @@ export interface ThemeConfig {
     };
 }
 
-/** 支持的语言类型 */
-export type SupportedLang = "zh-CN" | "en-US";
+/** 支持的语言类型（RFC 5646 简化格式） */
+export type SupportedLang = "zh-CN" | "en";
 
 /** 本地化消息文本接口 */
 export type LocalizedMessage = Record<SupportedLang, string>;

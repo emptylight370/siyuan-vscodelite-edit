@@ -47,208 +47,204 @@ export async function loadGlobalVars() {
     globalThis.vscMessage = {
         language: {
             "zh-CN": true,
-            "en-US": true,
+            en: true,
         },
         loadCssFail: {
             "zh-CN": "加载主题VSCode Lite Edit失败，无法获取当前样式表",
-            "en-US": "Load theme VSCode Lite Edit failed, can't load current style table",
+            en: "Load theme VSCode Lite Edit failed, can't load current style table",
         },
         loadConfigFail: {
             "zh-CN": "加载主题VSCode Lite Edit失败，无法加载配置",
-            "en-US": "Load theme VSCode Lite Edit failed, can't load configuration",
+            en: "Load theme VSCode Lite Edit failed, can't load configuration",
         },
         loadPDFPersetFail: {
             "zh-CN": "加载主题VSCode Lite Edit的PDF导出预设失败",
-            "en-US": "Load the PDF export preset of theme VSCode Lite Edit failed",
+            en: "Load the PDF export preset of theme VSCode Lite Edit failed",
         },
         loadFinish: {
             "zh-CN": "主题VSCode Lite Edit加载完成",
-            "en-US": "Theme VSCode Lite Edit load finished",
+            en: "Theme VSCode Lite Edit load finished",
         },
         confUpdate: {
             "zh-CN": "VSCE:主题配置文件需要更新，请点击<code>VC</code>按钮重新保存配置文件",
-            "en-US":
-                "VSCE:Theme conf file needs update, please click <code>VC</code> button to save the configuration file again",
+            en: "VSCE:Theme conf file needs update, please click <code>VC</code> button to save the configuration file again",
         },
         confNotSave: {
             "zh-CN": "VSCE:配置未保存",
-            "en-US": "VSCE:Configurations not saved",
+            en: "VSCE:Configurations not saved",
         },
         confSave: {
             "zh-CN": "VSCE:配置保存成功，稍后自动刷新",
-            "en-US": "VSCE:Configuration save successed, auto reload later",
+            en: "VSCE:Configuration save successed, auto reload later",
         },
         newVersionHint: {
             "zh-CN":
                 "VSCE:感谢更新VSCode Lite Edit主题，主题已经移除引述块的自定义属性，请用官方的Callout块代替。具体移除属性请查看主题介绍。<br/>本通知只应在主题更新后显示一次，如多次反复显示请在非发布模式下打开工作空间或重新保存主题设置。点击本通知以关闭。",
-            "en-US":
-                "VSCE: Thanks for update VSCode Lite Edit theme, the custom attributes of quote block have been removed, please use the officiall Callout block. Please refer to theme readme to see which attributes will be removed.<br/>This notice should only be displayed once after the theme is updated. If it is displayed repeatedly multiple times, please open the workspace in non-publishing mode or re-save the theme settings. Click this notice to close.",
+            en: "VSCE: Thanks for update VSCode Lite Edit theme, the custom attributes of quote block have been removed, please use the officiall Callout block. Please refer to theme readme to see which attributes will be removed.<br/>This notice should only be displayed once after the theme is updated. If it is displayed repeatedly multiple times, please open the workspace in non-publishing mode or re-save the theme settings. Click this notice to close.",
         },
         typewriterON: {
             "zh-CN": "VSCE:打字机模式已开启",
-            "en-US": "VSCE:Typewriter mode is ON",
+            en: "VSCE:Typewriter mode is ON",
         },
         typewriterOFF: {
             "zh-CN": "VSCE:打字机模式已关闭",
-            "en-US": "VSCE:Typewriter mode is OFF",
+            en: "VSCE:Typewriter mode is OFF",
         },
         settingButtonAria: {
             "zh-CN": "VSCode Lite 主题设置",
-            "en-US": "VSCode Lite theme setting",
+            en: "VSCode Lite theme setting",
         },
         settingPanelTitle: {
             "zh-CN": "VSCode Lite Edit设置",
-            "en-US": "VSCode Lite Edit Settings",
+            en: "VSCode Lite Edit Settings",
         },
         settingTabSiYuan: {
             "zh-CN": "思源",
-            "en-US": "SiYuan",
+            en: "SiYuan",
         },
         settingTabPlugin: {
             "zh-CN": "插件",
-            "en-US": "Plugins",
+            en: "Plugins",
         },
         tabTipSiYuan: {
             "zh-CN": "思源内置功能的外观调整",
-            "en-US": "Appearance adjustment for SiYuan's built-in functions",
+            en: "Appearance adjustment for SiYuan's built-in functions",
         },
         tabTipPlugin: {
             "zh-CN": "适配特定插件的外观调整",
-            "en-US": "Appearance adjustment for specific plugins",
+            en: "Appearance adjustment for specific plugins",
         },
         saveReload: {
             "zh-CN": "保存并刷新",
-            "en-US": "Save and Reload",
+            en: "Save and Reload",
         },
         nSave: {
             "zh-CN": "不保存",
-            "en-US": "NOT Save",
+            en: "NOT Save",
         },
         oReload: {
             "zh-CN": "刷新思源界面",
-            "en-US": "Reload Siyuan",
+            en: "Reload Siyuan",
         },
         oUpdate: {
             "zh-CN": "显示版本更新通知",
-            "en-US": "Show version update notice",
+            en: "Show version update notice",
         },
         tipSave: {
             "zh-CN": "直接关闭设置窗口不保存，必须点击保存按钮。如果刷新无效，请重启思源或尝试右侧的刷新按钮。",
-            "en-US":
-                "Close the setting panel directly will not save changes, you must click the Save button. If refresh doesn't work, please restart SiYuan or try the refresh button on the right.",
+            en: "Close the setting panel directly will not save changes, you must click the Save button. If refresh doesn't work, please restart SiYuan or try the refresh button on the right.",
         },
         tipSwitch: {
             "zh-CN": "点击一行中任意位置切换开关状态",
-            "en-US": "Click anywhere in the row to change the status of switch",
+            en: "Click anywhere in the row to change the status of switch",
         },
         cbitem: {
             "zh-CN": "代码块样式",
-            "en-US": "code block style",
+            en: "code block style",
         },
         refitem: {
             "zh-CN": "引用标签样式",
-            "en-US": "reference label style",
+            en: "reference label style",
         },
         bazitem: {
             "zh-CN": "集市样式",
-            "en-US": "bazaar style",
+            en: "bazaar style",
         },
         emitem: {
             "zh-CN": "嵌入块样式",
-            "en-US": "embedded block style",
+            en: "embedded block style",
         },
         emdesc: {
             "zh-CN": "限制嵌入块高度",
-            "en-US": "Limit the height of embedded block",
+            en: "Limit the height of embedded block",
         },
         tititem: {
             "zh-CN": "标题块样式",
-            "en-US": "Heading block style",
+            en: "Heading block style",
         },
         titleShadow: {
             "zh-CN": "标题添加阴影",
-            "en-US": "Heading add shadow",
+            en: "Heading add shadow",
         },
         titleShadowDesc: {
             "zh-CN": "仅启用标题样式有效",
-            "en-US": "Only effective when enable heading style",
+            en: "Only effective when enable heading style",
         },
         titleIcon: {
             "zh-CN": "标题前添加图标",
-            "en-US": "Add icon before title",
+            en: "Add icon before title",
         },
         titleIconDesc: {
             "zh-CN": "仅启用标题样式有效",
-            "en-US": "Only effective when enable heading style",
+            en: "Only effective when enable heading style",
         },
         dbitem: {
             "zh-CN": "数据库样式",
-            "en-US": "database style",
+            en: "database style",
         },
         markitem: {
             "zh-CN": "高亮标注样式",
-            "en-US": "highlight mark style",
+            en: "highlight mark style",
         },
         scitem: {
             "zh-CN": "快捷键面板样式",
-            "en-US": "Shortcut key panel style",
+            en: "Shortcut key panel style",
         },
         ftitem: {
             "zh-CN": "文档树和大纲样式",
-            "en-US": "Doc tree and Outline style",
+            en: "Doc tree and Outline style",
         },
         bgdesktop: {
             "zh-CN": "在电脑端启用“替换背景图片”插件",
-            "en-US": 'Enable plugin "Background cover adaption" on desktop',
+            en: 'Enable plugin "Background cover adaption" on desktop',
         },
         bgdesc: {
             "zh-CN": "强制禁用插件设置的“前景透明”效果。建议启用插件的“背景虚化”功能!",
-            "en-US":
-                'Force disable the "Opacity of foreground" effect of plugin setting. It is recommended to turn on the "Blurring" setting of the plugin!',
+            en: 'Force disable the "Opacity of foreground" effect of plugin setting. It is recommended to turn on the "Blurring" setting of the plugin!',
         },
         bgmobile: {
             "zh-CN": "在移动端启用“替换背景图片”插件",
-            "en-US": 'Enable plguin "Background cover adaption" on mobile',
+            en: 'Enable plguin "Background cover adaption" on mobile',
         },
         mathitem: {
             "zh-CN": "数学增强插件调整",
-            "en-US": "Math enhance plugin adjustion",
+            en: "Math enhance plugin adjustion",
         },
         mathdesc: {
             "zh-CN": "调整插件默认宽度，无法显示水平滚动条",
-            "en-US": "Adjust the default width of the plugin, can't show horizon scroll bar",
+            en: "Adjust the default width of the plugin, can't show horizon scroll bar",
         },
         doubleTabbaritem: {
             "zh-CN": "（实验性）启用双标签栏",
-            "en-US": "(Expermental) Enable double tab bar",
+            en: "(Expermental) Enable double tab bar",
         },
         doubleTabbardesc: {
             "zh-CN": "将钉住的标签移动到新标签栏（有缺陷！）",
-            "en-US": "Move pinned tab to new tab bar(WITH BUGS!)",
+            en: "Move pinned tab to new tab bar(WITH BUGS!)",
         },
         doubleTabbarMessage: {
             "zh-CN": "VSCE:点击暂时不能改变标签页，请手动点击原标签页",
-            "en-US": "VSCE:Can't change tab while clicking now, click original tab manually please",
+            en: "VSCE:Can't change tab while clicking now, click original tab manually please",
         },
         tagitem: {
             "zh-CN": "块内标签样式",
-            "en-US": "The style of tags",
+            en: "The style of tags",
         },
         tagdesc: {
             "zh-CN": "块内标签样式跟随文档标签样式",
-            "en-US": "The style of tags in block uses the style of tags of document",
+            en: "The style of tags in block uses the style of tags of document",
         },
         slashMenuitem: {
             "zh-CN": "斜杠(/)菜单多栏显示",
-            "en-US": "Slash(/) menu multi column display",
+            en: "Slash(/) menu multi column display",
         },
         typewriteritem: {
             "zh-CN": "打字机模式",
-            "en-US": "Typewriter mode",
+            en: "Typewriter mode",
         },
         typewriterdesc: {
             "zh-CN": "编辑时光标所在块始终保持在屏幕中央(可能带来性能问题)",
-            "en-US": "Keep the cursor block centered in the viewport while editing(may cause performance issues)",
+            en: "Keep the cursor block centered in the viewport while editing(may cause performance issues)",
         },
     };
 
@@ -260,26 +256,26 @@ export async function loadGlobalVars() {
 
     // 类型守卫：检查一个字符串是否是 SupportedLang
     function isSupportedLang(lang: string): lang is SupportedLang {
-        return lang === "zh-CN" || lang === "en-US";
+        return lang === "zh-CN" || lang === "en";
     }
 
     if (isSupportedLang(currentLang)) {
         // 如果已经是支持的语言，直接使用
         supportedLang = currentLang;
-    } else if (currentLang === "zh_CHT") {
+    } else if (currentLang === "zh-TW") {
         // 繁体中文回退到简体中文
         supportedLang = "zh-CN";
     } else {
         // 其他语言回退到英文
-        supportedLang = "en-US";
+        supportedLang = "en";
     }
 
     // 检查该语言是否在 language 对象中标记为可用
     if (globalThis.vscMessage.language[supportedLang] != undefined) {
         globalThis.vscLang = supportedLang;
     } else {
-        // 如果标记为不可用，使用 en-US 作为回退
-        globalThis.vscLang = "en-US";
+        // 如果标记为不可用，使用 en 作为回退
+        globalThis.vscLang = "en";
     }
 
     /**
