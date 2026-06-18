@@ -3,7 +3,9 @@
 ## v3.0.1
 
 - 增强移动端添加设置按钮的适应性
+- 优化打字机模式
 - Enhance the adaptability of the add settings button on mobile
+- Optimize typewriter mode
 
 ## v3.0.0
 

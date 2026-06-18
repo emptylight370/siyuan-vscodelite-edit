@@ -187,17 +187,24 @@ function handleKeydown(event: KeyboardEvent): void {
 /**
  * 鼠标点击事件处理器
  * @since 3.0.0
- * @version 3.0.0
+ * @version 3.0.1
  */
 function handleClick(event: MouseEvent): void {
     // 仅响应鼠标左键
     if (event.button !== 0) return;
 
-    // 仅在编辑器内触发
     const target = event.target as HTMLElement;
+    // 仅在编辑器内触发
     if (!target?.closest(".protyle-wysiwyg")) return;
     // 如果点击的元素是引用和链接，则跳过
     if (target.dataset.type?.split(" ").includes("block-ref") || target.dataset.type?.split(" ").includes("a")) return;
+    // 在选中不可编辑元素时检查
+    if (target.contentEditable === "false") {
+        // 多选单元格
+        if (target.parentElement?.classList.contains("table")) {
+            return;
+        }
+    }
 
     // 使用 requestAnimationFrame 确保光标已定位
     if (pendingScrollRAF) cancelAnimationFrame(pendingScrollRAF);

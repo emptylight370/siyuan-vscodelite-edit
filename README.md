@@ -50,6 +50,7 @@ Limited by the configuration loading method, updated configurations for new vers
 
 - v3.0.1
   - Enhance the adaptability of the add settings button on mobile
+  - Optimize typewriter mode
 - v3.0.0
   - Background plugin adaption style adapt to new default theme
   - Top bar workspace menu adapt to new default theme
