@@ -6,7 +6,7 @@
 [![GitHub Repo stars](https://img.shields.io/github/stars/emptylight370/siyuan-vscodelite-edit)](https://github.com/emptylight370/siyuan-vscodelite-edit)
 
 > [!WARNING]
-> 主题3.0.0版本至少需要思源笔记3.7.0版本，由于目前仍在测试中，暂时将版本号要求放宽至3.6.5版本，方便使用测试版用户通过集市下载更新。
+> 主题3.0.1版本至少需要思源笔记3.7.0-dev15版本，由于目前仍在测试中，暂时将版本号要求放宽至3.6.5版本，方便使用测试版用户通过集市下载更新。
 >
 > 如果未将思源笔记更新至测试版，请不要更新至3.0.0版本。
 
