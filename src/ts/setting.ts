@@ -1,4 +1,5 @@
 import { _getFile, _postMessage, _reEnableTheme, _reloadInterface, _writeFile, getMsg } from "./api";
+import { destroyTypewriterMode } from "./plugins/typewriter";
 import { SettingItem, SettingPanelId, ThemeConfig, vscMessage } from "./types";
 
 /**
@@ -267,7 +268,7 @@ function addSettingsToPage(siyuan: HTMLDivElement, plugin: HTMLDivElement, setti
 /**
  * NOTE 工具函数，保存设置并刷新思源
  * @since 1.2.2
- * @version 2.7.7
+ * @version 3.0.1
  */
 async function closeAndSave() {
     const dialog = document.getElementById("vsceThemeSettingDialog") as HTMLDivElement;
@@ -292,6 +293,8 @@ async function closeAndSave() {
     await putSettings(saveSt);
     // 显示完成通知
     _postMessage("ok", getMsg("confSave"));
+    // 先移除打字机模式的事件监听器
+    destroyTypewriterMode();
     // 稍后重载页面
     setTimeout(() => {
         // _reloadInterface();

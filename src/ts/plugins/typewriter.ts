@@ -218,12 +218,20 @@ function handleClick(event: MouseEvent): void {
  * 初始化打字机模式
  * 在所有 .protyle-wysiwyg 编辑器上绑定事件监听
  * @since 3.0.0
- * @version 3.0.0
+ * @version 3.0.1
  */
 export function initTypewriterMode(): void {
+    // 如果已有激活的 AbortController（来自上一次模块加载），先 abort
+    if (globalThis.vscTypewriterAbort) {
+        globalThis.vscTypewriterAbort.abort();
+    }
+
+    globalThis.vscTypewriterAbort = new AbortController();
+    const { signal } = globalThis.vscTypewriterAbort;
+
     // 使用事件委托，在 document 上监听，但内部过滤 .protyle-wysiwyg 范围
-    document.addEventListener("keydown", handleKeydown, true); // 捕获阶段
-    document.addEventListener("click", handleClick, true); // 捕获阶段
+    document.addEventListener("keydown", handleKeydown, { capture: true, signal });
+    document.addEventListener("click", handleClick, { capture: true, signal });
 
     console.log(getMsg("typewriterON"));
 }
@@ -232,11 +240,14 @@ export function initTypewriterMode(): void {
  * 销毁打字机模式
  * 移除事件监听器
  * @since 3.0.0
- * @version 3.0.0
+ * @version 3.0.1
  */
 export function destroyTypewriterMode(): void {
-    document.removeEventListener("keydown", handleKeydown, true);
-    document.removeEventListener("click", handleClick, true);
+    if (!globalThis.vscTypewriterAbort) return;
+
+    // abort() 会移除所有通过此 signal 注册的监听器，无需手动 removeEventListener
+    globalThis.vscTypewriterAbort.abort();
+    globalThis.vscTypewriterAbort = null;
 
     // 清理待处理的 rAF 和所有状态
     if (pendingScrollRAF) {

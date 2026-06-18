@@ -256,4 +256,6 @@ declare global {
     var vscObservers: vscObservers;
     /** 目前所有的计数器 */
     var vscCounters: vscCounters;
+    /** 打字机模式的 AbortController，跨模块重载持久化 */
+    var vscTypewriterAbort: AbortController | null;
 }

@@ -263,7 +263,7 @@ function addImports(table: HTMLLinkElement, labels: SettingPanelId[]) {
  * ! 添加固定属性
  * @param settings SettingPanelId[]
  * @since 1.3.5
- * @version 3.0.0
+ * @version 3.0.1
  */
 function addFixedAttribute(settings: SettingPanelId[]) {
     const isMobile = document.body.classList.contains("vscmobile");
@@ -295,9 +295,6 @@ function addFixedAttribute(settings: SettingPanelId[]) {
     // ?如果设置启用打字机模式才进入判断
     if (settings.includes("typewriter") && !isExportPDF) {
         initTypewriterMode();
-    } else {
-        // 发现快速切换两个主题不会触发destroyTheme函数
-        destroyTypewriterMode();
     }
     // *<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 }
