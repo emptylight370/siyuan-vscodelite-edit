@@ -3,8 +3,10 @@
 ## v3.0.1
 
 - 增强移动端添加设置按钮的适应性
+- 适配思源笔记3.7.0版本新语言代码
 - 优化打字机模式
 - Enhance the adaptability of the add settings button on mobile
+- Adapt to the new language code of SiYuan Note 3.7.0 version
 - Optimize typewriter mode
 
 ## v3.0.0
