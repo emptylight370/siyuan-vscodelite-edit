@@ -124,7 +124,7 @@ export async function _postMessage(type: "ok" | "error", message: string, time?:
             url = "/api/notification/pushMsg";
             break;
         case "error":
-            url = "api/notification/pushErrMsg";
+            url = "/api/notification/pushErrMsg";
             break;
         default:
             return;

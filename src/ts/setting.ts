@@ -271,10 +271,11 @@ function addSettingsToPage(siyuan: HTMLDivElement, plugin: HTMLDivElement, setti
  * @version 3.0.1
  */
 async function closeAndSave() {
-    const dialog = document.getElementById("vsceThemeSettingDialog") as HTMLDivElement;
+    const dialog = document.getElementById("vsceThemeSettingDialog");
+    if (!dialog) return;
 
     // 在默认配置的基础上修改配置，可以增加原来没有的配置
-    let saveSt: ThemeConfig = globalThis.vscDefaultConf;
+    let saveSt: ThemeConfig = JSON.parse(JSON.stringify(globalThis.vscDefaultConf));
     const ckb = document.getElementsByClassName("vslite_sets");
     // 获取当前设置项的启用状态
     Array.from(ckb).forEach((checkbox) => {

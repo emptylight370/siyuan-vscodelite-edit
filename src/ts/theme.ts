@@ -101,8 +101,8 @@ window.destroyTheme = () => {
             }
         });
     // 删除全局变量
-    for (const i in ["vscDefaultConf", "vscMessage", "vscLang", "vscTimers", "vscObservers"]) {
-        Reflect.deleteProperty(globalThis, i);
+    for (const key of ["vscDefaultConf", "vscMessage", "vscLang", "vscTimers", "vscObservers"]) {
+        Reflect.deleteProperty(globalThis, key);
     }
 };
 
