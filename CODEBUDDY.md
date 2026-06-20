@@ -14,6 +14,12 @@
 - `pnpm run clean:scss`：仅清理SCSS编译输出
 - `pnpm run clean:ts`：仅清理TypeScript编译输出
 
+### 代码质量检查
+
+- `pnpm run lint`：同时检查SCSS和TypeScript代码
+- `pnpm run lint:scss`：仅检查SCSS文件（使用stylelint）
+- `pnpm run lint:ts`：仅检查TypeScript文件（使用`tsc --noEmit`）
+
 ### 开发工具
 
 - `mise install`：使用mise安装项目依赖和工具链
@@ -46,6 +52,13 @@
    - esbuild：TypeScript打包，输出为IIFE格式，比Rollup更快
    - SCSS通过sass编译器直接输出，支持source map
    - 使用npm-run-all2（命令为`run-p`）并行执行构建任务
+
+### TypeScript配置要点
+
+- 目标环境：ES2021，最低支持WebView 95
+- 严格模式：启用`strict`严格类型检查（含`forceConsistentCasingInFileNames`、`noFallthroughCasesInSwitch`）
+- 模块系统：ESNext + bundler模块解析，配合`isolatedModules`对齐esbuild打包行为
+- 输出配置：`rootDir`为`src/ts`，`outDir`为项目根目录，不生成声明文件
 
 ### 配置系统
 
