@@ -53,6 +53,7 @@ Limited by the configuration loading method, updated configurations for new vers
   - **Adapt to the new language code of SiYuan Note 3.7.0 version**
   - Optimize typewriter mode
   - Disable typewriter mode properly when the typewriter mode switch is turned off in the theme settings
+  - Remove desktop settings panel items on hover from enlarging and bolding
 - v3.0.0
   - Background plugin adaption style adapt to new default theme
   - Top bar workspace menu adapt to new default theme
