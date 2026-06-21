@@ -166,8 +166,6 @@ body.bgenable {
 
     // 新默认主题设置面板背景色
     .config__panel,
-    // 新默认主题设置面板设置组
-    .config-group,
     // 设置面板的右半边部分
     .config__tab-wrap,
     // 选项的背景框
@@ -177,6 +175,13 @@ body.bgenable {
     // 单独适配账户页面的文字部分
     .config-account__center.config-account__center--text {
         background-color: transparent;
+    }
+
+    // 新默认主题设置面板设置组
+    .config-items {
+        background-color: transparent;
+        border: 4px solid var(--b3-theme-surface);
+        margin: -4px;
     }
 
     .config__tab-container {
@@ -275,6 +280,14 @@ body.bgenable {
                     background-color: var(--lite-modify-surface);
                 }
             }
+        }
+    }
+
+    .config-about__motto {
+        color: transparent;
+
+        &::selection {
+            color: var(--b3-theme-surface);
         }
     }
 }

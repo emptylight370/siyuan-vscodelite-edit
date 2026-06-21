@@ -7,12 +7,14 @@
 - 优化打字机模式
 - 在主题设置中关闭打字机模式开关后正确禁用打字机模式
 - 移除电脑端设置面板项在鼠标悬停时放大加粗显示效果
+- 适配新默认主题设置面板外观
 - 优化代码
 - Enhance the adaptability of the add settings button on mobile
 - Adapt to the new language code of SiYuan Note 3.7.0 version
 - Optimize typewriter mode
 - Disable typewriter mode properly when the typewriter mode switch is turned off in the theme settings
 - Remove desktop settings panel items on hover from enlarging and bolding
+- Adapt to new default theme settings panel appearance
 - Optimize code
 
 ## v3.0.0
