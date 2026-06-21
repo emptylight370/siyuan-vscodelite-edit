@@ -262,6 +262,8 @@ export async function loadGlobalVars() {
     if (isSupportedLang(currentLang)) {
         // 如果已经是支持的语言，直接使用
         supportedLang = currentLang;
+        // FIXME - 依赖更新后移除忽略
+        // @ts-expect-error 等待定义更新
     } else if (currentLang === "zh-TW") {
         // 繁体中文回退到简体中文
         supportedLang = "zh-CN";
