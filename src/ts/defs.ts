@@ -10,11 +10,11 @@ export async function loadGlobalVars() {
     /**
      * ! 默认配置文件
      * @since 1.2.0
-     * @version 3.0.0
+     * @version 3.0.1
      */
     globalThis.vscDefaultConf = {
         version: 14,
-        lastSeen: "3.0.0",
+        lastSeen: "3.0.1",
         theme: {
             codeBlock: true,
             reference: true,

@@ -1,19 +1,50 @@
-## [3.0.0](https://github.com/emptylight370/siyuan-vscodelite-edit/compare/3.0.0...3.0.0) (2026-06-11)
+## [3.0.1](https://github.com/emptylight370/siyuan-vscodelite-edit/compare/3.0.0...3.0.1) (2026-06-23)
+
+### ⚠ BREAKING CHANGES
+
+- This version requires SiYuan Note version 3.7.0-dev15, DO NOT update to this version if you are not using dev version.
+  此版本要求思源笔记3.7.0-dev15版本，如果未使用测试版，请不要更新到此版本。
 
 ### ✨ Features | 功能
 
 - 增强移动端添加设置按钮的适应性 ([c967909](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/c9679093af47f31bae3d15fa4c57c0dddd73a1af))
+- 适配新默认主题设置面板外观 ([57b3182](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/57b3182f592f15b142a896687b485efc6a6c766d))
+
+### 🐛 Bug Fixes | 问题修复
+
+- **(typewriter)** 多选表格单元格时不滚动 ([6d057b0](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/6d057b0f0e1e0cdad816250159a73263b5b97eaa))
+- **(typewriter)** 关闭后正确禁用打字机模式 ([0eb2724](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/0eb27248f8cd6431d91ba595589f9b518b346cad))
+- 修复若干问题 ([01a6dc1](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/01a6dc1c6b2478de81bde83076ababd8a41c66da))
+- 修复集市顶栏高度 ([51cb55e](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/51cb55e7f5fc351c9a57eca74e449ca16d4570ab))
 
 ### 📄 Documentation | 文档
 
 - 更新badge链接 ([b0a2a62](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/b0a2a623898f507a2e76f43577de6d7e5d53050b))
 - 增强移动端添加设置按钮的适应性 ([f6b32c5](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/f6b32c51189b885c5875e5ea5a2d043587403979))
+- 添加适配版本说明[skip ci] ([4d64c04](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/4d64c04f553e256defe46a6797bc56bbd22d1884))
+- 声明测试版版本号要求 ([c54974a](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/c54974a26ad2101207041b9cd40009a6862c4dc8))
+- 适配思源笔记3.7.0版本语言代码 ([f68693c](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/f68693cbf46830af181b3d1f14f3436a19277db9))
+- 更新文档 ([097f14b](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/097f14b96dd9d4bad9781c1e37f9e3d48527bce3))
+- 适配思源3.7.0-dev15+ ([1e5757c](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/1e5757c1008ae3b3bd66cf4a8d03f187a239894b))
 
 ### ⚡ Performance | 性能优化
 
 - Remove unused code ([4ff45e0](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/4ff45e048e89fafab501afbf0b030ce5fae40936))
 
-## [3.0.0](https://github.com/emptylight370/siyuan-vscodelite-edit/compare/2.7.8...3.0.0) (2026-06-11)
+### ⏪ Reverts | 回退
+
+- 移除电脑端设置面板项在鼠标悬停时放大加粗显示效果 ([d6b6a5d](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/d6b6a5d18d381e85ecfec6cf68780e08e0dd194c))
+
+### 🔨 Refactor | 重构
+
+- 适配BCP 47规范[skip ci] ([a5fbf6e](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/a5fbf6ed9b4e320c534ebddb6f4725a1f59eb7ea))
+- 适配RFC 5646规范 ([e5ac046](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/e5ac046c7f02e6ea48322c8de9047077541ae40d))
+
+### 🛠️ Build system | 构建系统
+
+- **(deps-dev)** bump esbuild from 0.28.0 to 0.28.1 ([267e668](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/267e66847bb6010f874f9cee22fe424e6bcd72f8))
+
+## [3.0.0](https://github.com/emptylight370/siyuan-vscodelite-edit/compare/2.7.8...3.0.0) (2026-06-02)
 
 ### ⚠ BREAKING CHANGES
 
