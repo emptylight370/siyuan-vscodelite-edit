@@ -57,3 +57,12 @@
     border-right: 2px solid #007fd4;
     border-color: #007fd4;
 }
+
+/* 调整超级块宽度拖动条 */
+.protyle-wysiwyg [data-node-id].sb[data-sb-layout="col"] > .sb__resize {
+    background-color: #007fd4;
+
+    &:hover {
+        transition: opacity 400ms;
+    }
+}

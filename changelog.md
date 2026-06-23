@@ -1,5 +1,10 @@
 # ChangeLog
 
+## v3.0.2
+
+- 修改超级块中间宽度拖拽条样式
+- Modify the style of the middle width drag bar of super block
+
 ## v3.0.1
 
 - 增强移动端添加设置按钮的适应性

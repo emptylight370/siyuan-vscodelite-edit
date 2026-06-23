@@ -48,6 +48,8 @@ Limited by the configuration loading method, updated configurations for new vers
 > Full changelog view [ChangeLog](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/changelog.md)
 > Commit history view [whatschange](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/whatschange.md)
 
+- v3.0.2
+  - Modify the style of the middle width drag bar of super block
 - v3.0.1
   - Enhance the adaptability of the add settings button on mobile
   - **Adapt to the new language code of SiYuan Note 3.7.0 version**
@@ -70,9 +72,6 @@ Limited by the configuration loading method, updated configurations for new vers
   - Force disable new background plugin's background transparency effect
   - Adapt to new background plugin(v1.x.x)
   - Move text style popup background transparency from background plugin adaption to general style
-- v2.7.8
-  - Fix issue where setting panel items may have scrollbar when enlarged and bolded
-  - Redirect Traditional Chinese docs to Simplified Chinese
 
 # Special fitness
 

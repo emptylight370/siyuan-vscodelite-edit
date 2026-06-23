@@ -48,6 +48,8 @@
 > 完整更新日志查看[changelog](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/changelog.md)
 > 提交历史日志查看[whatschange](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/whatschange.md)
 
+- v3.0.2
+  - 修改超级块中间宽度拖拽条样式
 - v3.0.1
   - 增强移动端添加设置按钮的适应性
   - **适配思源笔记3.7.0版本新语言代码**
@@ -70,9 +72,6 @@
   - 强制禁用新版背景图片插件的背景透明效果
   - 适配新版背景图片插件(v1.x.x)
   - 将文本样式弹窗背景透明从背景插件适配移动到通用样式
-- v2.7.8
-  - 修复设置面板项在放大加粗时可能出现滚动条问题
-  - 将繁体中文说明文档指向简体中文
 
 # 特殊适配
 
