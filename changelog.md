@@ -3,7 +3,9 @@
 ## v3.0.2
 
 - 修改超级块中间宽度拖拽条样式
+- 优化打字机模式
 - Modify the style of the middle width drag bar of super block
+- Optimize typewriter mode
 
 ## v3.0.1
 

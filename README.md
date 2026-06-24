@@ -50,6 +50,7 @@ Limited by the configuration loading method, updated configurations for new vers
 
 - v3.0.2
   - Modify the style of the middle width drag bar of super block
+  - Optimize typewriter mode
 - v3.0.1
   - Enhance the adaptability of the add settings button on mobile
   - **Adapt to the new language code of SiYuan Note 3.7.0 version**

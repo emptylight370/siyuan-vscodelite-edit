@@ -44,6 +44,8 @@ function scrollToCenter(sourceElement?: HTMLElement): void {
     else if (currentTargetElement.classList.contains("fn__flex-1")) return;
     // 如果点击的元素为数据库视图栏，则跳过
     else if (currentTargetElement.classList.contains("av__views")) return;
+    // 如果多选数据库表格视图单元格，则跳过
+    else if (currentTargetElement.classList.contains("av__body")) return;
     // 如果点击的元素是个按钮，则跳过
     else if (currentTargetElement.closest(".block__icon, .protyle-icons, .av__gallery-actions")) return;
 
