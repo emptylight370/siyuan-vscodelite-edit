@@ -249,7 +249,7 @@ export async function loadGlobalVars() {
     };
 
     // 浏览器获取的默认语言
-    let currentLang = document.documentElement.lang as Config.TLang;
+    let currentLang = window.siyuan.config.lang;
 
     // 将 currentLang 转换为 SupportedLang 类型
     let supportedLang: SupportedLang;

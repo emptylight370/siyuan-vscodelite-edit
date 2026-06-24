@@ -4,8 +4,10 @@
 
 - 修改超级块中间宽度拖拽条样式
 - 优化打字机模式
+- 优化代码
 - Modify the style of the middle width drag bar of super block
 - Optimize typewriter mode
+- Optimize code
 
 ## v3.0.1
 
