@@ -17,7 +17,6 @@ function scrollToCenter(sourceElement?: HTMLElement): void {
     // 触发前节流检查
     const now = performance.now();
     if (now - lastScrollTime < SCROLL_THROTTLE_MS) return;
-    lastScrollTime = now;
 
     const selection = window.getSelection();
     if (!selection || selection.rangeCount === 0) return;
@@ -50,7 +49,7 @@ function scrollToCenter(sourceElement?: HTMLElement): void {
     else if (currentTargetElement.closest(".block__icon, .protyle-icons, .av__gallery-actions")) return;
 
     // 从光标位置的容器节点向上查找最近的 [data-node-id] 元素
-    let targetElement: HTMLElement | null = currentTargetElement.closest("[data-node-id]") as HTMLElement;
+    const targetElement = currentTargetElement.closest<HTMLElement>("[data-node-id]");
 
     if (!targetElement) return;
 
@@ -69,7 +68,8 @@ function scrollToCenter(sourceElement?: HTMLElement): void {
     // ===== 表格处理结束 =====
     // ===== 数据库特殊处理 =====
     else if (currentTargetElement.closest(".av")) {
-        const attributeView = currentTargetElement.closest(".av") as HTMLElement;
+        const attributeView = currentTargetElement.closest<HTMLElement>(".av");
+        if (!attributeView) return;
         let skip = false;
 
         // 数据库的通用组件
@@ -82,7 +82,7 @@ function scrollToCenter(sourceElement?: HTMLElement): void {
             return;
         } else if (currentTargetElement.closest(".av__group-title")) {
             // 数据库分组一整行
-            actualTarget = currentTargetElement.closest(".av__group-title") as HTMLElement;
+            actualTarget = currentTargetElement.closest<HTMLElement>(".av__group-title")!;
             skip = true;
         }
 
@@ -101,14 +101,14 @@ function scrollToCenter(sourceElement?: HTMLElement): void {
                 // 每行前面的复选框
                 currentTargetElement.closest(".av__firstcol")
             ) {
-                actualTarget = currentTargetElement.closest("div.av__row") as HTMLElement;
+                actualTarget = currentTargetElement.closest<HTMLElement>("div.av__row")!;
             } else if (currentTargetElement.classList.contains("av__cursor")) {
                 // 键盘方向键在单元格间移动
                 const cellElement = currentTargetElement.parentElement?.querySelector(
                     ".av__cell--select.av__cell--active",
                 );
                 if (cellElement) {
-                    actualTarget = (cellElement as HTMLElement).closest(".av__row") as HTMLElement;
+                    actualTarget = (cellElement as HTMLElement).closest<HTMLElement>(".av__row")!;
                 }
             } else if (currentTargetElement.closest(".av__row--footer, .av__row--util")) {
                 // 底部的统计
@@ -126,13 +126,13 @@ function scrollToCenter(sourceElement?: HTMLElement): void {
                 // 单元格里面的东西
                 currentTargetElement.parentElement?.classList.contains("av__cell")
             ) {
-                actualTarget = currentTargetElement.closest("div.av__gallery-field") as HTMLElement;
+                actualTarget = currentTargetElement.closest<HTMLElement>("div.av__gallery-field")!;
             } else if (currentTargetElement.classList.contains("av__gallery-name")) {
                 // 字段名
-                actualTarget = currentTargetElement.closest("div.av__gallery-field") as HTMLElement;
+                actualTarget = currentTargetElement.closest<HTMLElement>("div.av__gallery-field")!;
             } else if (currentTargetElement.closest(".av__gallery-cover")) {
                 // 封面图
-                actualTarget = currentTargetElement.closest(".av__gallery-cover") as HTMLElement;
+                actualTarget = currentTargetElement.closest<HTMLElement>(".av__gallery-cover")!;
             } else if (
                 // 卡片视图的空白
                 currentTargetElement.classList.contains("av__gallery")
@@ -161,6 +161,7 @@ function scrollToCenter(sourceElement?: HTMLElement): void {
     }
     // ===== 代码块处理结束 =====
 
+    lastScrollTime = performance.now();
     actualTarget.scrollIntoView({ block: "center", behavior: "smooth" });
 }
 
@@ -199,7 +200,8 @@ function handleClick(event: MouseEvent): void {
     // 仅在编辑器内触发
     if (!target?.closest(".protyle-wysiwyg")) return;
     // 如果点击的元素是引用和链接，则跳过
-    if (target.dataset.type?.split(" ").includes("block-ref") || target.dataset.type?.split(" ").includes("a")) return;
+    const dataType = target.dataset.type?.split(" ");
+    if (dataType?.includes("block-ref") || dataType?.includes("a")) return;
     // 在选中不可编辑元素时检查
     if (target.contentEditable === "false") {
         // 多选单元格
