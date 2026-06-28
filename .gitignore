@@ -209,7 +209,7 @@ theme.js
 
 # Lefthook
 lefthook-local.yml
-.lefthook-local/**/*
+.lefthook-local
 
 # mise-en-place
 mise.local.toml

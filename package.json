@@ -4,11 +4,11 @@
   "description": "siyuan theme vscode lite edit",
   "main": "theme.js",
   "scripts": {
-    "build:scss": "sass theme.scss:theme.css src/scss:sub",
+    "build:scss": "sass theme.scss:theme.css src/scss:sub --no-source-map",
     "build:ts": "esbuild src/ts/theme.ts --bundle --format=iife --outfile=theme.js --minify",
     "build": "run-p -l build:*",
     "dev:scss": "sass --watch theme.scss:theme.css src/scss:sub",
-    "dev:ts": "esbuild src/ts/theme.ts --bundle --format=iife --outfile=theme.js --watch",
+    "dev:ts": "esbuild src/ts/theme.ts --bundle --format=iife --outfile=theme.js --watch --sourcemap",
     "dev": "run-p -l dev:*",
     "clean:scss": "rimraf theme.css theme.css.map sub",
     "clean:ts": "rimraf theme.js",
