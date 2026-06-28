@@ -4,6 +4,7 @@
     // 目标环境
     "target": "es2021",
     "lib": ["ES2021", "DOM", "DOM.Iterable"],
+    "types": ["siyuan"],
     // 模块系统
     "module": "ESNext",
     "moduleResolution": "bundler",
@@ -11,15 +12,15 @@
     "strict": true,
     "forceConsistentCasingInFileNames": true,
     "noFallthroughCasesInSwitch": true,
-    // 对齐rollup
+    // 需开启 isolatedModules 以约束跨文件类型导入语法
     "isolatedModules": true,
     // 性能优化
     "skipLibCheck": true,
     // 输出配置
-    "outDir": "./",
+    "noEmit": true,
     "rootDir": "./src/ts",
     "declaration": false
   },
-  "include": ["src/ts/**/*.ts", "src/ts/**/*.d.ts"],
+  "include": ["src/ts/**/*.ts"],
   "exclude": ["node_modules", "dist"]
 }
