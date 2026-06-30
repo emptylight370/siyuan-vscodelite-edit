@@ -6,9 +6,7 @@
 [![GitHub Repo stars](https://img.shields.io/github/stars/emptylight370/siyuan-vscodelite-edit)](https://github.com/emptylight370/siyuan-vscodelite-edit)
 
 > [!WARNING]
-> Theme 3.0.1 version requires at least SiYuan Note 3.7.0-dev15 version, but currently it is still in dev, so the version requirement is relaxed to 3.6.5 version to make it easier for users to download and update through the bazaar.
->
-> If you have not updated SiYuan Note to the dev version, please do not update to version 3.0.0.
+> Theme version 3.0.0 and above is adapted for SiYuan Note 3.7.0. For older SiYuan versions, please download and install the 2.x version of this theme.
 
 A further beautification of the interface from VSCode Lite.
 
