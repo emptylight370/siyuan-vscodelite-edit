@@ -3,14 +3,14 @@
   "author": "Emptylight",
   "url": "https://github.com/emptylight370/siyuan-vscodelite-edit",
   "version": "3.0.1",
-  "minAppVersion": "3.6.5",
+  "minAppVersion": "3.7.0",
   "displayName": {
     "default": "VSCode Lite Edit"
   },
   "description": {
-    "default": "Evolved from VSCode Lite, further beautifying the interface. The latest version is adapted for SiYuan 3.7.0. Do NOT update if you are using version 3.6.5.",
-    "zh-CN": "从VSCode Lite中改造而来，进一步美化界面。最新版为思源3.7.0版本适配，3.6.5版本切勿更新。",
-    "zh-TW": "從VSCode Lite中改造而來，進一步美化界面。最新版為思源3.7.0版本適配，3.6.5版本切勿更新。"
+    "default": "Evolved from VSCode Lite, further beautifying the interface.",
+    "zh-CN": "从VSCode Lite中改造而来，进一步美化界面。",
+    "zh-TW": "從VSCode Lite中改造而來，進一步美化界面。"
   },
   "readme": {
     "default": "README.md",
