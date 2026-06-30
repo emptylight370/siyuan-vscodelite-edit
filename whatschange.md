@@ -1,4 +1,4 @@
-## [3.0.1](https://github.com/emptylight370/siyuan-vscodelite-edit/compare/3.0.1...3.0.1) (2026-06-30)
+## [3.0.2](https://github.com/emptylight370/siyuan-vscodelite-edit/compare/3.0.1...3.0.2) (2026-06-30)
 
 ### ✨ Features | 功能
 
@@ -9,6 +9,11 @@
 - **(typewriter)** 数据库表格视图多选单元格时不滚动 ([a01ad93](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/a01ad9349008efba539ff3dae3b5b979ce1303ab))
 - **(typewriter)** 处理若干问题 ([395d37d](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/395d37d438c4bb759904a8cadf4107de30c9126b))
 
+### 📄 Documentation | 文档
+
+- 更新主题声明[skip ci] ([5ffc7c5](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/5ffc7c5331e9a4f7bee907ebca8d6242b0318244))
+- 更新说明文档 ([e5d0c2d](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/e5d0c2d0506bda669063a43aeafd07c0d0294360))
+
 ### ⚡ Performance | 性能优化
 
 - 优化ts声明 ([5fa2168](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/5fa216892f820e3a6b6b24b823f4b2c5503e30dd))
@@ -18,7 +23,7 @@
 
 - 获取当前语言方法换读配置 ([0c23140](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/0c23140d6c22449be59e5846cc36c9b7af63a161))
 
-## [3.0.1](https://github.com/emptylight370/siyuan-vscodelite-edit/compare/3.0.0...3.0.1) (2026-06-30)
+## [3.0.1](https://github.com/emptylight370/siyuan-vscodelite-edit/compare/3.0.0...3.0.1) (2026-06-23)
 
 ### ⚠ BREAKING CHANGES
 
