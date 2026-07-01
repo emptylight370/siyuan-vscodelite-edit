@@ -92,7 +92,7 @@ Currently adapted plugins are:
 
 - Shortcut key panel(Category title color)
 - Custom block Styles(fix display problem in embedded block caused by theme)
-- Background Cover(By making the foreground transparent. Please set "foreground transparency" to 0 in the plugin settings to disable it, and enable the Blurring in settings(set to greater than 0))
+- Background Cover(Overrides some plugin settings; it is normal if related settings do not take effect)
 - Math Enhancement Plugin(Limit plugin preview width)
 
 <details>
