@@ -13,7 +13,7 @@ export async function loadGlobalVars() {
      */
     globalThis.vscDefaultConf = {
         version: 14,
-        lastSeen: "3.0.2",
+        lastSeen: "3.0.3",
         theme: {
             codeBlock: true,
             reference: true,

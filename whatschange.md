@@ -1,3 +1,9 @@
+## [3.0.3](https://github.com/emptylight370/siyuan-vscodelite-edit/compare/3.0.2...3.0.3) (2026-07-01)
+
+### ✨ Features | 功能
+
+- 适配新版本背景插件 ([36566dd](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/36566dd52c83f07354416467cccd7fd590783aed))
+
 ## [3.0.2](https://github.com/emptylight370/siyuan-vscodelite-edit/compare/3.0.1...3.0.2) (2026-06-30)
 
 ### ✨ Features | 功能
@@ -680,7 +686,7 @@
 - docs error ([6296ac5](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/6296ac5be0d76bf2cf4890314172eef27890676c))
 - 修复思源在3.1.32修改标题样式导致标题图标错位 ([fe978cc](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/fe978cce39236d86ee7feae48f20cd9c8ccb10fa))
 - 修复一些问题，增强代码稳定性 ([eaf0576](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/eaf05763ab8e3f53a03c79fe65a8e7923a075aee))
-- 为\_getFile显示错误详情 ([d837bb9](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/d837bb98b35b2ef554fd8a616640f725d4577bd2))
+- 为_getFile显示错误详情 ([d837bb9](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/d837bb98b35b2ef554fd8a616640f725d4577bd2))
 
 ### 📄 Documentation | 文档
 
