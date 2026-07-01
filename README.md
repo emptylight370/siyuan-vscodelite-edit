@@ -46,6 +46,8 @@ Limited by the configuration loading method, updated configurations for new vers
 > Full changelog view [ChangeLog](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/changelog.md)
 > Commit history view [whatschange](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/whatschange.md)
 
+- v3.0.3
+  - Adapt to background plugin new version
 - v3.0.2
   - Modify the style of the middle width drag bar of super block
   - Optimize typewriter mode
@@ -56,21 +58,6 @@ Limited by the configuration loading method, updated configurations for new vers
   - Disable typewriter mode properly when the typewriter mode switch is turned off in the theme settings
   - Remove desktop settings panel items on hover from enlarging and bolding
   - Adapt to new default theme settings panel appearance
-- v3.0.0
-  - Background plugin adaption style adapt to new default theme
-  - Top bar workspace menu adapt to new default theme
-  - Document tag bar adapt to new default theme
-  - Add custom attribute: hide database primary key
-  - Database style adapt to new default theme
-  - **Add typewriter mode**_!_
-  - Image viewer background not transparent
-  - Inline tag style adapt to new default theme
-  - Initial adaption to new default theme top bar fusion style
-  - Breadcrumb height adapt to new default theme
-  - Fixed an issue where the heading icon was displayed incorrectly in heading blocks containing inline formulas
-  - Force disable new background plugin's background transparency effect
-  - Adapt to new background plugin(v1.x.x)
-  - Move text style popup background transparency from background plugin adaption to general style
 
 # Special fitness
 

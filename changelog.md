@@ -1,5 +1,10 @@
 # ChangeLog
 
+## v3.0.3
+
+- 适配新版本背景插件
+- Adapt to background plugin new version
+
 ## v3.0.2
 
 - 修改超级块中间宽度拖拽条样式

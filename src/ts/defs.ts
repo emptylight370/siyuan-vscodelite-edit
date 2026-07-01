@@ -1,16 +1,15 @@
-import { Config } from "siyuan/types/config";
 import { SupportedLang } from "./types";
 
 /**
  * 加载全局变量
  * @since 1.3.3
- * @version 3.0.2
+ * @version 3.0.3
  */
 export async function loadGlobalVars() {
     /**
      * ! 默认配置文件
      * @since 1.2.0
-     * @version 3.0.2
+     * @version 3.0.3
      */
     globalThis.vscDefaultConf = {
         version: 14,
@@ -42,7 +41,7 @@ export async function loadGlobalVars() {
     /**
      * ! 默认消息本地化
      * @since 1.3.3
-     * @version 3.0.1
+     * @version 3.0.3
      */
     globalThis.vscMessage = {
         language: {
@@ -199,8 +198,8 @@ export async function loadGlobalVars() {
             en: 'Enable plugin "Background cover adaption" on desktop',
         },
         bgdesc: {
-            "zh-CN": "强制禁用插件设置的“前景透明”效果。建议启用插件的“背景虚化”功能!",
-            en: 'Force disable the "Opacity of foreground" effect of plugin setting. It is recommended to turn on the "Blurring" setting of the plugin!',
+            "zh-CN": "覆写部分插件设置，相关设置失效属正常现象。",
+            en: "Overrides some plugin settings. It is normal if related settings do not take effect.",
         },
         bgmobile: {
             "zh-CN": "在移动端启用“替换背景图片”插件",
@@ -262,8 +261,6 @@ export async function loadGlobalVars() {
     if (isSupportedLang(currentLang)) {
         // 如果已经是支持的语言，直接使用
         supportedLang = currentLang;
-        // FIXME - 依赖更新后移除忽略
-        // @ts-expect-error 等待定义更新
     } else if (currentLang === "zh-TW") {
         // 繁体中文回退到简体中文
         supportedLang = "zh-CN";
