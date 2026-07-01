@@ -142,5 +142,5 @@ url = "https://github.com/pnpm/pnpm/releases/download/v11.9.0/pnpm-win32-x64.zip
 provenance = "github-attestations"
 
 [[tools.prettier]]
-version = "3.9.1"
+version = "3.9.4"
 backend = "npm:prettier"
