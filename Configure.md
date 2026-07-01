@@ -82,9 +82,18 @@ Add colors for the plugin panel.
 
 #### Change Background Image(siyuan-plugin-background-cover)
 
-Adjust most interface of SiYuan to adapt to background plugin. This will change the most interface into half transparent. You should set the **Opacity of foreground** in the plugin setting to 0, and set the **Blurring** in the plugin setting to greater than 0.3.
+Adjust the display effect of most interfaces to adapt to the background image plugin. This will set most interfaces to a semi-transparent state. If you need to adjust background visibility, open the `sub/backgroundPlugin.css` file in the theme folder and modify:
 
-> Not recommend to turn this on when the background plugin is not installed, it will cause unnecessary performance consumption. If you don't like this adaption, you can also turn it off.
+```css
+#bglayer,
+#bgvideo {
+  opacity: 1 !important;
+}
+```
+
+Change `1` to a value between 0 and 1. You can also try adding a code snippet, but its effect is not guaranteed.
+
+> Not recommended to turn this on when the background plugin is not installed, as it will cause unnecessary performance consumption. You can also turn it off if you don't like the current adaptation effect.
 
 #### Math Enhance Plugin(siyuan-plugin-math-enhance)
 
@@ -199,7 +208,16 @@ Theme provides some available custom attributes, please view in [README](README.
 
 #### 替换背景图片(siyuan-plugin-background-cover)
 
-调整大部分界面的显示效果，适配背景图插件。这会将大部分界面设为半透明状态，需要将插件设置中的**前景透明度**调为0以关闭，并且将**背景虚化**调整到0.3以上。
+调整大部分界面的显示效果，适配背景图插件。这会将大部分界面设为半透明状态。如需调整背景可见度，打开主题文件夹/sub/backgroundPlugin.css文件，修改其中的：
+
+```css
+#bglayer,
+#bgvideo {
+  opacity: 1 !important;
+}
+```
+
+将 `1` 改为 0\~1 之间的数值即可。也可尝试添加代码片段，但不保证生效。
 
 > 没有安装背景图插件不建议开启，会带来不必要性能消耗。不喜欢当前适配的效果也可以选择关闭。
 
