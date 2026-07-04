@@ -112,6 +112,16 @@ export async function createSettingsWindow() {
     notSaveButton.className = "b3-button b3-button--cancel";
     notSaveButton.addEventListener("click", closeNotSave); // 不保存修改
     changeHints(notSaveButton, "tipSave");
+    // * 创建打开集市按钮
+    // NOTE - 需要思源3.7.1版本
+    const bazaarButton = document.createElement("button");
+    bazaarButton.innerHTML = '<svg style="margin-right: 0"><use xlink:href="#iconBazaar"></use></svg>';
+    bazaarButton.className = "b3-button b3-button--cancel";
+    bazaarButton.addEventListener("click", () => {
+        window.open("siyuan://bazaar/themes/siyuan-vscodelite-edit/readme");
+        closeNotSave();
+    });
+    changeHints(bazaarButton, "oBazaar");
     // * 创建显示更新提示按钮
     const newVersionTipsButton = document.createElement("button");
     newVersionTipsButton.innerHTML = '<svg style="margin-right: 0"><use xlink:href="#iconInbox"></use></svg>';
@@ -130,6 +140,7 @@ export async function createSettingsWindow() {
     buttons.appendChild(hints);
     buttons.appendChild(saveButton);
     buttons.appendChild(notSaveButton);
+    buttons.appendChild(bazaarButton);
     buttons.appendChild(newVersionTipsButton);
     buttons.appendChild(refreshButton);
     dialogBody.appendChild(buttons);

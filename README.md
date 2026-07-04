@@ -46,18 +46,13 @@ Limited by the configuration loading method, updated configurations for new vers
 > Full changelog view [ChangeLog](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/changelog.md)
 > Commit history view [whatschange](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/whatschange.md)
 
+- v3.0.4
+  - Add open bazaar button in theme settings page
 - v3.0.3
   - Adapt to background plugin new version
 - v3.0.2
   - Modify the style of the middle width drag bar of super block
   - Optimize typewriter mode
-- v3.0.1
-  - Enhance the adaptability of the add settings button on mobile
-  - **Adapt to the new language code of SiYuan Note 3.7.0 version**
-  - Optimize typewriter mode
-  - Disable typewriter mode properly when the typewriter mode switch is turned off in the theme settings
-  - Remove desktop settings panel items on hover from enlarging and bolding
-  - Adapt to new default theme settings panel appearance
 
 # Special fitness
 

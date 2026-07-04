@@ -1,5 +1,10 @@
 # ChangeLog
 
+## v3.0.4
+
+- 主题设置页中添加打开集市页面按钮
+- Add open bazaar button in theme settings page
+
 ## v3.0.3
 
 - 适配新版本背景插件

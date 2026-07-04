@@ -97,6 +97,8 @@ export interface vscMessage {
     oReload: LocalizedMessage;
     /** 鼠标进入新版本更新按钮提示文本 */
     oUpdate: LocalizedMessage;
+    /** 鼠标进入打开集市按钮提示文本 */
+    oBazaar: LocalizedMessage;
     /** 设置面板保存按钮文本 */
     saveReload: LocalizedMessage;
     /** 设置面板标题 */

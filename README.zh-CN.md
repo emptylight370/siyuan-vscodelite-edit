@@ -46,18 +46,13 @@
 > 完整更新日志查看[changelog](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/changelog.md)
 > 提交历史日志查看[whatschange](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/whatschange.md)
 
+- v3.0.4
+  - 主题设置页中添加打开集市页面按钮
 - v3.0.3
   - 适配新版本背景插件
 - v3.0.2
   - 修改超级块中间宽度拖拽条样式
   - 优化打字机模式
-- v3.0.1
-  - 增强移动端添加设置按钮的适应性
-  - **适配思源笔记3.7.0版本新语言代码**
-  - 优化打字机模式
-  - 在主题设置中关闭打字机模式开关后正确禁用打字机模式
-  - 移除电脑端设置面板项在鼠标悬停时放大加粗显示效果
-  - 适配新默认主题设置面板外观
 
 # 特殊适配
 
