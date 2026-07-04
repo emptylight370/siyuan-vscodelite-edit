@@ -5,7 +5,7 @@ import { SettingItem, SettingPanelId, ThemeConfig, vscMessage } from "./types";
 /**
  * 创建一个包含标签和复选框的 HTML 结构
  * @since 1.2.2
- * @version 3.0.4
+ * @version 3.0.5
  */
 export async function createSettingsWindow() {
     // 获取设置数组
@@ -118,7 +118,7 @@ export async function createSettingsWindow() {
     bazaarButton.innerHTML = '<svg style="margin-right: 0"><use xlink:href="#iconBazaar"></use></svg>';
     bazaarButton.className = "b3-button b3-button--cancel";
     bazaarButton.addEventListener("click", () => {
-        window.open("siyuan://bazaar/themes/siyuan-vscodelite-edit/readme");
+        window.open("siyuan://bazaar/themes/siyuan-vscodelite-edit/readme-installed");
         closeNotSave();
     });
     changeHints(bazaarButton, "oBazaar");

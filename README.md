@@ -46,13 +46,12 @@ Limited by the configuration loading method, updated configurations for new vers
 > Full changelog view [ChangeLog](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/changelog.md)
 > Commit history view [whatschange](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/whatschange.md)
 
+- v3.0.5
+  - Open bazaar button in theme settings page is local now
 - v3.0.4
   - Add open bazaar button in theme settings page
 - v3.0.3
   - Adapt to background plugin new version
-- v3.0.2
-  - Modify the style of the middle width drag bar of super block
-  - Optimize typewriter mode
 
 # Special fitness
 

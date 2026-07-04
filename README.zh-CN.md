@@ -46,13 +46,12 @@
 > 完整更新日志查看[changelog](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/changelog.md)
 > 提交历史日志查看[whatschange](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/whatschange.md)
 
+- v3.0.5
+  - 主题设置页中打开集市按钮改为本地
 - v3.0.4
   - 主题设置页中添加打开集市页面按钮
 - v3.0.3
   - 适配新版本背景插件
-- v3.0.2
-  - 修改超级块中间宽度拖拽条样式
-  - 优化打字机模式
 
 # 特殊适配
 
