@@ -5,7 +5,7 @@ import { SettingItem, SettingPanelId, ThemeConfig, vscMessage } from "./types";
 /**
  * 创建一个包含标签和复选框的 HTML 结构
  * @since 1.2.2
- * @version 2.6.3
+ * @version 3.0.4
  */
 export async function createSettingsWindow() {
     // 获取设置数组

@@ -1,8 +1,26 @@
+## [3.0.4](https://github.com/emptylight370/siyuan-vscodelite-edit/compare/3.0.3...3.0.4) (2026-07-04)
+
+### ✨ Features | 功能
+
+- 主题设置页中添加打开集市页面按钮 ([4ad9e2b](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/4ad9e2b8da2962f1d8c6e23bb2e25b3850aca88f))
+
+### 📄 Documentation | 文档
+
+- 替换背景插件适配 ([7ee5356](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/7ee5356ff26f854140ea07cd72ec81314ad85ecd))
+
+### 🛠️ Build system | 构建系统
+
+- Update workflow ([7d5a143](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/7d5a143f5e1dacd658de39156378bfcd86fb1807))
+
 ## [3.0.3](https://github.com/emptylight370/siyuan-vscodelite-edit/compare/3.0.2...3.0.3) (2026-07-01)
 
 ### ✨ Features | 功能
 
 - 适配新版本背景插件 ([36566dd](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/36566dd52c83f07354416467cccd7fd590783aed))
+
+### 📄 Documentation | 文档
+
+- 适配新版本背景插件 ([2b81cf1](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/2b81cf11fe72fdd896e2c8ebc62265d262d5955b))
 
 ## [3.0.2](https://github.com/emptylight370/siyuan-vscodelite-edit/compare/3.0.1...3.0.2) (2026-06-30)
 

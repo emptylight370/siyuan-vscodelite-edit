@@ -3,17 +3,17 @@ import { SupportedLang } from "./types";
 /**
  * 加载全局变量
  * @since 1.3.3
- * @version 3.0.3
+ * @version 3.0.4
  */
 export async function loadGlobalVars() {
     /**
      * ! 默认配置文件
      * @since 1.2.0
-     * @version 3.0.3
+     * @version 3.0.4
      */
     globalThis.vscDefaultConf = {
         version: 14,
-        lastSeen: "3.0.3",
+        lastSeen: "3.0.4",
         theme: {
             codeBlock: true,
             reference: true,
@@ -41,7 +41,7 @@ export async function loadGlobalVars() {
     /**
      * ! 默认消息本地化
      * @since 1.3.3
-     * @version 3.0.3
+     * @version 3.0.4
      */
     globalThis.vscMessage = {
         language: {
