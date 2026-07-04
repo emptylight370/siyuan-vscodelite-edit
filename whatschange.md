@@ -1,3 +1,9 @@
+## [3.0.5](https://github.com/emptylight370/siyuan-vscodelite-edit/compare/3.0.4...3.0.5) (2026-07-04)
+
+### ✨ Features | 功能
+
+- 主题设置页中打开集市按钮改为本地 ([c1086d0](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/c1086d00580802d1b3201b8141cd67ae33752009))
+
 ## [3.0.4](https://github.com/emptylight370/siyuan-vscodelite-edit/compare/3.0.3...3.0.4) (2026-07-04)
 
 ### ✨ Features | 功能
