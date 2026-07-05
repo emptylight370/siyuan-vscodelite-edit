@@ -1,5 +1,10 @@
 # ChangeLog
 
+## v3.0.6
+
+- 移动端界面不显示打开集市按钮
+- Not show open bazaar button in mobile interface
+
 ## v3.0.5
 
 - 主题设置页中打开集市按钮改为本地

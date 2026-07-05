@@ -140,7 +140,10 @@ export async function createSettingsWindow() {
     buttons.appendChild(hints);
     buttons.appendChild(saveButton);
     buttons.appendChild(notSaveButton);
-    buttons.appendChild(bazaarButton);
+    if (!document.body.classList.contains("vscmobile")) {
+        // 移动端不显示
+        buttons.appendChild(bazaarButton);
+    }
     buttons.appendChild(newVersionTipsButton);
     buttons.appendChild(refreshButton);
     dialogBody.appendChild(buttons);

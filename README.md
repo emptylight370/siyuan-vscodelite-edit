@@ -46,12 +46,12 @@ Limited by the configuration loading method, updated configurations for new vers
 > Full changelog view [ChangeLog](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/changelog.md)
 > Commit history view [whatschange](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/whatschange.md)
 
+- v3.0.6
+  - Not show open bazaar button in mobile interface
 - v3.0.5
   - Open bazaar button in theme settings page is local now
 - v3.0.4
   - Add open bazaar button in theme settings page
-- v3.0.3
-  - Adapt to background plugin new version
 
 # Special fitness
 
