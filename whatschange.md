@@ -1,3 +1,9 @@
+## [3.0.6](https://github.com/emptylight370/siyuan-vscodelite-edit/compare/3.0.5...3.0.6) (2026-07-05)
+
+### ✨ Features | 功能
+
+- 移动端界面不显示打开集市按钮 ([55e47b0](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/55e47b05f2554db4f5dd5d2b4de8fd867ff48969))
+
 ## [3.0.5](https://github.com/emptylight370/siyuan-vscodelite-edit/compare/3.0.4...3.0.5) (2026-07-04)
 
 ### ✨ Features | 功能
