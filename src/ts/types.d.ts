@@ -1,5 +1,5 @@
 import { Config } from "siyuan/types/Config";
-import type { SettingKey, SettingGroup } from "./settingsSchema";
+import type { SettingGroup, SettingKey } from "./settingsSchema";
 
 /** 主题配置接口 */
 export interface ThemeConfig {

@@ -1,5 +1,5 @@
-import { SupportedLang, ThemeConfig } from "./types";
 import { settingsSchema } from "./settingsSchema";
+import { SupportedLang, ThemeConfig } from "./types";
 
 /**
  * 加载全局变量
