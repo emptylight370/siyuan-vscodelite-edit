@@ -104,7 +104,7 @@
 
 1. `theme.json`定义主题元数据和默认配置
 2. `defs.ts`中的`vscDefaultConf`定义运行时默认配置
-3. 用户配置通过设置面板修改，存储在思源笔记的`data/conf/appearance/theme/`目录
+3. 用户配置通过设置面板修改，存储在思源笔记的`data/snippets/`目录
 4. 样式注入在`theme.ts`中通过动态插入`@import`规则实现模块化加载
 
 ### 版本更新
