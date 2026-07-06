@@ -1,41 +1,27 @@
-import { SupportedLang } from "./types";
+import { SupportedLang, ThemeConfig } from "./types";
+import { settingsSchema } from "./settingsSchema";
 
 /**
  * 加载全局变量
  * @since 1.3.3
- * @version 3.0.6
+ * @version 3.0.7
  */
 export async function loadGlobalVars() {
     /**
      * ! 默认配置文件
      * @since 1.2.0
-     * @version 3.0.6
+     * @version 3.0.7
      */
     globalThis.vscDefaultConf = {
         version: 14,
         lastSeen: "3.0.6",
-        theme: {
-            codeBlock: true,
-            reference: true,
-            bazaar: true,
-            embeddedBlock: true,
-            title: true,
-            titleShadow: true,
-            titleIcon: true,
-            database: true,
-            doctree: true,
-            mark: true,
-            tag: true,
-            slashMenu: false,
-        },
-        plugins: {
-            shortcutPanel: true,
-            mathPanel: false,
-            backgroundCoverDesktop: true,
-            backgroundCoverMobile: false,
-            doubleTabbar: false,
-            typewriter: false,
-        },
+        // 由 settingsSchema 自动聚合默认配置
+        theme: Object.fromEntries(
+            settingsSchema.filter((s) => s.group === "theme").map((s) => [s.key, s.default]),
+        ) as ThemeConfig["theme"],
+        plugins: Object.fromEntries(
+            settingsSchema.filter((s) => s.group === "plugins").map((s) => [s.key, s.default]),
+        ) as ThemeConfig["plugins"],
     };
 
     /**

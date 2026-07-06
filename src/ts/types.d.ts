@@ -1,4 +1,5 @@
 import { Config } from "siyuan/types/Config";
+import type { SettingKey, SettingGroup } from "./settingsSchema";
 
 /** 主题配置接口 */
 export interface ThemeConfig {
@@ -207,22 +208,34 @@ export interface SettingItem {
     label: string;
     /** 设置项id，注意分别对应 */
     id: SettingPanelId;
+    /** 所属分组，直接决定渲染到哪个标签页 */
+    group: SettingGroup;
     /** 设置项的描述，可选 */
     description?: string;
     /** 当前是否启用，也是开关的默认状态 */
     enable: boolean;
 }
 
-/** 主题设置键 */
-type ThemeSettingKey = keyof ThemeConfig["theme"];
-
-/** 插件设置键 */
-type PluginSettingKey = keyof ThemeConfig["plugins"];
+/**
+ * 设置面板中使用的ID类型。
+ * 直接由 settingsSchema 推导（字面量联合），作为编辑器补全与类型安全的唯一来源。
+ */
+export type SettingPanelId = SettingKey;
 
 /**
- * 设置面板中使用的ID类型
+ * 编译期断言：约束 ThemeConfig 与 settingsSchema 的键名双向一致，
+ * 防止“接口加了键、schema 漏登记”或反之导致的补全/行为不一致。
  */
-export type SettingPanelId = ThemeSettingKey | PluginSettingKey;
+type Assert<T extends true> = T;
+// ThemeConfig 的每个键都必须在 schema 中
+type _AssertSchemaCoversTheme = Assert<Exclude<keyof ThemeConfig["theme"], SettingKey> extends never ? true : false>;
+type _AssertSchemaCoversPlugins = Assert<
+    Exclude<keyof ThemeConfig["plugins"], SettingKey> extends never ? true : false
+>;
+// schema 的每个键也必须存在于 ThemeConfig 中
+type _AssertConfigCoversSchema = Assert<
+    SettingKey extends keyof ThemeConfig["theme"] | keyof ThemeConfig["plugins"] ? true : false
+>;
 
 declare global {
     interface Window {
