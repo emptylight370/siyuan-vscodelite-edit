@@ -1,5 +1,4 @@
 import { _getFile, _postMessage, _reEnableTheme, _reloadInterface, _writeFile, getMsg } from "./api";
-import { destroyTypewriterMode } from "./plugins/typewriter";
 import { settingsSchema } from "./settingsSchema";
 import { SettingItem, SettingPanelId, ThemeConfig, vscMessage } from "./types";
 
@@ -307,8 +306,6 @@ async function closeAndSave() {
     await putSettings(saveSt);
     // 显示完成通知
     _postMessage("ok", getMsg("confSave"));
-    // 先移除打字机模式的事件监听器
-    destroyTypewriterMode();
     // 稍后重载页面
     setTimeout(() => {
         // _reloadInterface();
