@@ -147,25 +147,21 @@ export async function _reloadInterface() {
 /**
  * 切换到默认主题再切换回主题
  * @since 2.7.4
- * @version 2.7.4
+ * @version 3.0.7
  */
 export async function _reEnableTheme() {
-    const appearance = window.siyuan.config.appearance;
-    const url = "/api/setting/setAppearance";
-    if (appearance.mode === 0) {
-        appearance.themeLight = "daylight";
-        appearance.themeVer = "";
-    } else if (appearance.mode === 1) {
-        appearance.themeDark = "midnight";
-        appearance.themeVer = "";
+    const currentMode = window.siyuan.config.appearance.mode;
+    // 需求思源3.6.1
+    const url = "/api/setting/setTheme";
+    let data: { theme: string; modes: number[] } = { theme: "", modes: [currentMode] };
+    if (currentMode === 0) {
+        data.theme = "daylight";
+    } else if (currentMode === 1) {
+        data.theme = "midnight";
     }
-    await _rqFORSiyuan(url, appearance);
-    if (appearance.mode === 0) {
-        appearance.themeLight = "siyuan-vscodelite-edit";
-    } else if (appearance.mode === 1) {
-        appearance.themeDark = "siyuan-vscodelite-edit";
-    }
-    await _rqFORSiyuan(url, appearance);
+    await _rqFORSiyuan(url, data);
+    data.theme = "siyuan-vscodelite-edit";
+    _rqFORSiyuan(url, data);
 }
 
 /**

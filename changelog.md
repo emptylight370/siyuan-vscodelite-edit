@@ -1,5 +1,12 @@
 # ChangeLog
 
+## v3.0.7
+
+- 重构保存设置时重载主题方法
+- 优化代码
+- Refactor save settings reload theme method
+- Optimize code
+
 ## v3.0.6
 
 - 移动端界面不显示打开集市按钮
