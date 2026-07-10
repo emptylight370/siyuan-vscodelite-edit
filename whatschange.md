@@ -1,3 +1,18 @@
+## [3.0.7](https://github.com/emptylight370/siyuan-vscodelite-edit/compare/3.0.6...3.0.7) (2026-07-10)
+
+### 📄 Documentation | 文档
+
+- 更新配置文件路径 ([2900709](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/2900709d54e9f6fa7059282e3da6634947df8540))
+
+### ⏪ Reverts | 回退
+
+- 移除不需要的适配 ([7d670e3](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/7d670e361723d21135957338e6f6aea8f34f2c0c))
+
+### 🔨 Refactor | 重构
+
+- 重构主题设置 ([ac56362](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/ac56362dc1222d189932d61ed40fdf73205cc444))
+- 重构保存设置时重载主题方法 ([be00b26](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/be00b26072dab6123caa733fa687f5fa011f9b9d))
+
 ## [3.0.6](https://github.com/emptylight370/siyuan-vscodelite-edit/compare/3.0.5...3.0.6) (2026-07-05)
 
 ### ✨ Features | 功能

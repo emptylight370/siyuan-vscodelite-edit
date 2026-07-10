@@ -14,7 +14,7 @@ export async function loadGlobalVars() {
      */
     globalThis.vscDefaultConf = {
         version: 14,
-        lastSeen: "3.0.6",
+        lastSeen: "3.0.7",
         // 由 settingsSchema 自动聚合默认配置
         theme: Object.fromEntries(
             settingsSchema.filter((s) => s.group === "theme").map((s) => [s.key, s.default]),
