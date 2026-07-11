@@ -1,5 +1,10 @@
 # ChangeLog
 
+## v3.0.8
+
+- 修复启用背景插件适配下移动端设置侧栏背景不透明问题
+- Fix issue that mobile settings sidebar background is not transparent when enabled background plugin adaption
+
 ## v3.0.7
 
 - 重构保存设置时重载主题方法
