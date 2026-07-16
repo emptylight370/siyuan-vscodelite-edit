@@ -1,3 +1,9 @@
+## [3.0.8](https://github.com/emptylight370/siyuan-vscodelite-edit/compare/3.0.7...3.0.8) (2026-07-16)
+
+### 🐛 Bug Fixes | 问题修复
+
+- 启用背景插件适配下移动端设置侧栏背景不透明 ([8a056b1](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/8a056b1aa594b2d7ae59aa672c7d6e0e58589bf1))
+
 ## [3.0.7](https://github.com/emptylight370/siyuan-vscodelite-edit/compare/3.0.6...3.0.7) (2026-07-10)
 
 ### 📄 Documentation | 文档
