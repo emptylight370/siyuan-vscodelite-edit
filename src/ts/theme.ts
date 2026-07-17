@@ -241,6 +241,9 @@ function addImports(table: HTMLLinkElement, labels: SettingPanelId[]) {
             case "slashMenu":
                 rulesToInsert.push("@import url(sub/app/slashmenu.css);");
                 break;
+            case "filetreeExpand":
+                rulesToInsert.push("@import url(sub/app/filetree-cursor.css);");
+                break;
             default:
                 break;
         }

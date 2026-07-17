@@ -13,7 +13,7 @@ export async function loadGlobalVars() {
      * @version 3.0.8
      */
     globalThis.vscDefaultConf = {
-        version: 14,
+        version: 15,
         lastSeen: "3.0.8",
         // 由 settingsSchema 自动聚合默认配置
         theme: Object.fromEntries(
@@ -234,6 +234,15 @@ export async function loadGlobalVars() {
         typewriterdesc: {
             "zh-CN": "编辑时光标所在块始终保持在屏幕中央(可能带来性能问题)",
             en: "Keep the cursor block centered in the viewport while editing(may cause performance issues)",
+        },
+        filetreeExpanditem: {
+            "zh-CN": "鼠标光标适配点击标题、图标展开收起文档树",
+            en: "Mouse cursor adaption click title, icon to expand or collapse the document tree",
+        },
+        filetreeExpanddesc: {
+            "zh-CN":
+                "适配电脑端设置：点击文档树图标、标题展开收起文档树，仅在启用这两个设置项时启用。在可打开文档处显示特殊光标",
+            en: "Adapt desktop settings: Click the document tree icon, title to expand or collapse the document tree, only enable when enable these two settings. Show special cursor on where you can open the document",
         },
     };
 

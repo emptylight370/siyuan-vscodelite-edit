@@ -48,6 +48,8 @@ export interface ThemeConfig {
         doubleTabbar: boolean;
         /** 打字机模式 */
         typewriter: boolean;
+        /** 点击标题或图标展开收起文档树 */
+        filetreeExpand: boolean;
     };
 }
 
@@ -170,6 +172,10 @@ export interface vscMessage {
     typewriteritem: LocalizedMessage;
     /** 打字机模式描述 */
     typewriterdesc: LocalizedMessage;
+    /** 点击标题或图表展开收起文档树选项 */
+    filetreeExpanditem: LocalizedMessage;
+    /** 点击标题或图表展开收起文档树描述 */
+    filetreeExpanddesc: LocalizedMessage;
 }
 
 /** 计时器接口 */

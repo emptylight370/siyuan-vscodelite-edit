@@ -1,0 +1,14 @@
+// 电脑端文档树，点击标题或图标展开收起适配
+.sy__file {
+    // 在可以点击打开文档处显示不一样的指针
+    li.b3-list-item.b3-list-item--hide-action {
+        cursor: crosshair;
+
+        // 在展开收起文档处还原指针
+        .b3-list-item__toggle.b3-list-item__toggle--hl,
+        .b3-list-item__icon.ariaLabel.popover__block,
+        .b3-list-item__text.ariaLabel {
+            cursor: pointer;
+        }
+    }
+}
