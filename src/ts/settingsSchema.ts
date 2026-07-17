@@ -1,4 +1,4 @@
-import type { vscMessage } from "./types";
+import type { ThemeConfig, vscMessage } from "./types";
 
 /**
  * 设置项所属分组
@@ -10,22 +10,50 @@ import type { vscMessage } from "./types";
 export type SettingGroup = "theme" | "plugins";
 
 /**
- * 单个设置项的声明式定义
+ * 思源内置功能设置项：key 被约束为 ThemeConfig["theme"] 的字段名，
+ * 且 group 固定为 "theme"，与 key 在类型层面绑定。
  * @since 3.0.7
- * @version 3.0.7
+ * @version 3.0.8
  */
-export interface SettingSchemaEntry {
-    /** 配置键，必须与 ThemeConfig.theme / ThemeConfig.plugins 的字段名一致 */
-    key: string;
-    /** 分组，直接决定渲染到哪个标签页 */
-    group: SettingGroup;
+type ThemeSchemaEntry = {
+    /** 配置键，必须是 ThemeConfig.theme 的字段名 */
+    key: keyof ThemeConfig["theme"];
+    /** 分组，固定为 theme */
+    group: "theme";
     /** 默认值 */
     default: boolean;
     /** 标题文案的 i18n key（对应 vscMessage 中的键） */
     label: Exclude<keyof vscMessage, "language">;
     /** 描述文案的 i18n key（可选） */
     desc?: Exclude<keyof vscMessage, "language">;
-}
+};
+
+/**
+ * 插件适配设置项：key 被约束为 ThemeConfig["plugins"] 的字段名，
+ * 且 group 固定为 "plugins"，与 key 在类型层面绑定。
+ * @since 3.0.7
+ * @version 3.0.8
+ */
+type PluginSchemaEntry = {
+    /** 配置键，必须是 ThemeConfig.plugins 的字段名 */
+    key: keyof ThemeConfig["plugins"];
+    /** 分组，固定为 plugins */
+    group: "plugins";
+    /** 默认值 */
+    default: boolean;
+    /** 标题文案的 i18n key（对应 vscMessage 中的键） */
+    label: Exclude<keyof vscMessage, "language">;
+    /** 描述文案的 i18n key（可选） */
+    desc?: Exclude<keyof vscMessage, "language">;
+};
+
+/**
+ * 单个设置项的声明式定义（判别联合）。
+ * group 与 key 绑定：theme 的键不能误放进 plugins 分组，反之亦然。
+ * @since 3.0.7
+ * @version 3.0.8
+ */
+export type SettingSchemaEntry = ThemeSchemaEntry | PluginSchemaEntry;
 
 /**
  * ! 设置项唯一数据源（Single Source of Truth）
@@ -100,3 +128,24 @@ export type SettingKey = (typeof settingsSchema)[number]["key"];
  * @version 3.0.7
  */
 export type SettingEntry = (typeof settingsSchema)[number];
+
+/**
+ * ! 编译期断言：约束 ThemeConfig 与 settingsSchema 的键名双向一致。
+ *
+ * 注意：本文件为 `.ts`（非 `.d.ts`），会被 tsc 实际类型检查；
+ * 若放在 `types.d.ts` 中，会被 `skipLibCheck` 跳过而失效。
+ * 任一侧新增/删除键都会使下方断言不满足，强制同步修改另一侧。
+ * @since 3.0.8
+ * @version 3.0.8
+ */
+type Assert<T extends true> = T;
+// ThemeConfig.theme 的每个键都必须出现在 schema 中，否则需补登记
+type _AssertSchemaCoversTheme = Assert<Exclude<keyof ThemeConfig["theme"], SettingKey> extends never ? true : false>;
+// ThemeConfig.plugins 的每个键都必须出现在 schema 中，否则需补登记
+type _AssertSchemaCoversPlugins = Assert<
+    Exclude<keyof ThemeConfig["plugins"], SettingKey> extends never ? true : false
+>;
+// schema 中的每个键也必须存在于 ThemeConfig 中（防止拼写错误或残留旧键）
+type _AssertConfigCoversSchema = Assert<
+    SettingKey extends keyof ThemeConfig["theme"] | keyof ThemeConfig["plugins"] ? true : false
+>;

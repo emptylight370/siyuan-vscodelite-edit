@@ -295,9 +295,11 @@ async function closeAndSave() {
         const cb = document.getElementById(s.key) as HTMLInputElement | null;
         if (!cb) return;
         if (s.group === "theme") {
-            saveSt.theme[s.key as keyof ThemeConfig["theme"]] = cb.checked;
+            // 判别联合已收窄 s.key 为 ThemeConfig["theme"] 的键
+            saveSt.theme[s.key] = cb.checked;
         } else {
-            saveSt.plugins[s.key as keyof ThemeConfig["plugins"]] = cb.checked;
+            // 其余分支 s.key 收窄为 ThemeConfig["plugins"] 的键
+            saveSt.plugins[s.key] = cb.checked;
         }
     });
     // 修改配置文件版本
@@ -346,11 +348,11 @@ async function fetchSettingsPanelArray() {
         label: getMsg(setting.label),
         description: "desc" in setting ? getMsg(setting.desc) : undefined,
         // 优先读取已保存配置；若该配置项缺失，则回退到默认配置文件的默认状态
+        // 判别联合：setting.group === "theme" 已将 setting.key 收窄为 ThemeConfig["theme"] 的键
         enable:
-            v?.[setting.group]?.[setting.key as keyof (typeof v)[typeof setting.group]] ??
-            globalThis.vscDefaultConf[setting.group][
-                setting.key as keyof (typeof globalThis.vscDefaultConf)[typeof setting.group]
-            ],
+            setting.group === "theme"
+                ? (v.theme[setting.key] ?? globalThis.vscDefaultConf.theme[setting.key])
+                : (v.plugins[setting.key] ?? globalThis.vscDefaultConf.plugins[setting.key]),
     })) satisfies SettingItem[];
 }
 
@@ -382,7 +384,12 @@ export async function getSettings(): Promise<SettingPanelId[]> {
     }
     // ! 从设置中获取启用的设置项
     settingsSchema.forEach((s) => {
-        if (config[s.group][s.key as keyof (typeof config)[typeof s.group]]) lab.push(s.key);
+        // 判别联合：按 group 收窄后 s.key 与对应分组配置类型一致
+        if (s.group === "theme") {
+            if (config.theme[s.key]) lab.push(s.key);
+        } else {
+            if (config.plugins[s.key]) lab.push(s.key);
+        }
     });
     return lab;
 }

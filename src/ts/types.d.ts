@@ -228,21 +228,6 @@ export interface SettingItem {
  */
 export type SettingPanelId = SettingKey;
 
-/**
- * 编译期断言：约束 ThemeConfig 与 settingsSchema 的键名双向一致，
- * 防止“接口加了键、schema 漏登记”或反之导致的补全/行为不一致。
- */
-type Assert<T extends true> = T;
-// ThemeConfig 的每个键都必须在 schema 中
-type _AssertSchemaCoversTheme = Assert<Exclude<keyof ThemeConfig["theme"], SettingKey> extends never ? true : false>;
-type _AssertSchemaCoversPlugins = Assert<
-    Exclude<keyof ThemeConfig["plugins"], SettingKey> extends never ? true : false
->;
-// schema 的每个键也必须存在于 ThemeConfig 中
-type _AssertConfigCoversSchema = Assert<
-    SettingKey extends keyof ThemeConfig["theme"] | keyof ThemeConfig["plugins"] ? true : false
->;
-
 declare global {
     interface Window {
         /** 主题移除时由思源触发 */
