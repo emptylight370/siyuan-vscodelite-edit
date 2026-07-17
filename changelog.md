@@ -1,5 +1,10 @@
 # ChangeLog
 
+## v3.0.9
+
+- 暂时禁用文档树缩进线
+- Temporarily disable document tree indent line
+
 ## v3.0.8
 
 - 修复启用背景插件适配下移动端设置侧栏背景不透明问题

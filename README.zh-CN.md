@@ -46,12 +46,12 @@
 > 完整更新日志查看[changelog](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/changelog.md)
 > 提交历史日志查看[whatschange](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/whatschange.md)
 
+- v3.0.9
+  - 暂时禁用文档树缩进线
 - v3.0.8
   - 修复启用背景插件适配下移动端设置侧栏背景不透明问题
 - v3.0.7
   - 重构保存设置时重载主题方法
-- v3.0.6
-  - 移动端界面不显示打开集市按钮
 
 # 特殊适配
 

@@ -40,6 +40,7 @@
 }
 
 // 文档树缩进指示线
+// TODO - 暂时禁用，3.7.3版本修改过大，无法适配
 @mixin fileTreeIndentLine {
     [data-type="navigation-file"] {
         > .b3-list-item__toggle.fn__hidden {
@@ -100,7 +101,7 @@
 
     @include fileTreeIndent;
 
-    @include fileTreeIndentLine;
+    // @include fileTreeIndentLine;
 }
 
 /* 电脑端大纲 */
@@ -132,6 +133,6 @@
 
         @include fileTreeIndent;
 
-        @include fileTreeIndentLine;
+        // @include fileTreeIndentLine;
     }
 }
