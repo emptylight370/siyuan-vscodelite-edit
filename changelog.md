@@ -4,8 +4,10 @@
 
 - 暂时禁用文档树缩进线
 - 在通过标题、图标展开收起文档树时，在可点击打开文档处显示特殊光标。需在主题设置中启用
+- 优化打字机模式
 - Temporarily disable document tree indent line
 - When expanding and collapsing the document tree by clicking the title or icon, show a special cursor at where you can open the document. Need to enable in theme settings
+- Optimize typewriter mode
 
 ## v3.0.8
 

@@ -49,6 +49,7 @@ Limited by the configuration loading method, updated configurations for new vers
 - v3.0.9
   - Temporarily disable document tree indent line
   - When expanding and collapsing the document tree by clicking the title or icon, show a special cursor at where you can open the document. Need to enable in theme settings
+  - Optimize typewriter mode
 - v3.0.8
   - Fix issue that mobile settings sidebar background is not transparent when enabled background plugin adaption
 - v3.0.7

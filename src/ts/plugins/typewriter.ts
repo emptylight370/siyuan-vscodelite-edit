@@ -77,8 +77,9 @@ function scrollToCenter(sourceElement?: HTMLElement): void {
             // 编辑数据库名称
             actualTarget = currentTargetElement;
             skip = true;
-        } else if (currentTargetElement.closest(".av__header")) {
+        } else if (currentTargetElement.closest(".av__header, .av__row-actions")) {
             // 数据库右上角的按钮，除名称之外
+            // 数据库表格视图的主键菜单
             return;
         } else if (currentTargetElement.closest(".av__group-title")) {
             // 数据库分组一整行
