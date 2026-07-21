@@ -1,3 +1,9 @@
+## [3.0.10](https://github.com/emptylight370/siyuan-vscodelite-edit/compare/3.0.9...3.0.10) (2026-07-21)
+
+### 🐛 Bug Fixes | 问题修复
+
+- Minify icon.png ([0017e89](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/0017e898244703b6b9a9edb9a2dc64d5674a224f))
+
 ## [3.0.9](https://github.com/emptylight370/siyuan-vscodelite-edit/compare/3.0.8...3.0.9) (2026-07-21)
 
 ### ✨ Features | 功能

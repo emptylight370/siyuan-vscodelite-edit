@@ -1,5 +1,10 @@
 # ChangeLog
 
+## v3.0.10
+
+- 压缩icon.png
+- Minify icon.png
+
 ## v3.0.9
 
 - 暂时禁用文档树缩进线
