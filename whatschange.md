@@ -1,3 +1,19 @@
+## [3.0.9](https://github.com/emptylight370/siyuan-vscodelite-edit/compare/3.0.8...3.0.9) (2026-07-21)
+
+### ✨ Features | 功能
+
+- 文档树特殊光标样式 ([3516d0e](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/3516d0e6374f7c1beb6c836f7ad09c0318aec909))
+- **(typewriter)** 点击数据库表格视图的主键的菜单不跳转 ([57880df](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/57880df0c9f41fed858d5f4f20db7ffe158ccbb1))
+- 3.7.3修改添加按钮 ([ba67441](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/ba674417ac7e4b2b157237f20ebc792d62a04c57))
+
+### ⚡ Performance | 性能优化
+
+- 增强主题配置类型检查 ([6ce6d52](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/6ce6d529fd4cdf42a1fec0aa25de6b796f4d9f5b))
+
+### ⏪ Reverts | 回退
+
+- 暂时禁用文档树缩进线 ([a701146](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/a701146ea49204c2fd3172734a74049a4fe4e738))
+
 ## [3.0.8](https://github.com/emptylight370/siyuan-vscodelite-edit/compare/3.0.7...3.0.8) (2026-07-16)
 
 ### 🐛 Bug Fixes | 问题修复
