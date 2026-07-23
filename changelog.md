@@ -1,5 +1,10 @@
 # ChangeLog
 
+## v3.0.11
+
+- 适配标题序号
+- Adapt to heading number
+
 ## v3.0.10
 
 - 压缩icon.png

@@ -8,10 +8,19 @@
         color: var(--mk-block-header-h#{$i});
     }
 
+    // 标题前序号
+    [data-node-id].h#{$i} > [contenteditable]:first-child::before {
+        color: var(--mk-block-header-h#{$i}) !important;
+    }
+
     /* #{$i}级大纲样式 */
-    .sy__outline ul.b3-list.b3-list--background [data-subtype="h#{$i}"],
-    ul.b3-list.b3-list--background [data-subtype="h#{$i}"] .b3-list-item__text {
-        color: var(--mk-block-header-h#{$i});
+    .sy__outline {
+        [data-subtype="h#{$i}"], // 标题前符号
+        [data-subtype="h#{$i}"] .b3-list-item__number, // 标题前序号
+        [data-subtype="h#{$i}"] .b3-list-item__text // 标题文本
+        {
+            color: var(--mk-block-header-h#{$i});
+        }
     }
 }
 
