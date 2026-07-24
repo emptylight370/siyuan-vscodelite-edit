@@ -48,6 +48,7 @@ Limited by the configuration loading method, updated configurations for new vers
 
 - v3.0.11
   - Adapt to heading number
+  - Adapt to database tab before document
 - v3.0.9
   - Temporarily disable document tree indent line
   - When expanding and collapsing the document tree by clicking the title or icon, show a special cursor at where you can open the document. Need to enable in theme settings

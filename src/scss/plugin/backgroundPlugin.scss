@@ -73,6 +73,11 @@ body.bgenable {
                 /* 修复两按钮左侧的大黑块 */
                 margin-left: 0;
             }
+
+            &.protyle-db-attr__tabs {
+                /* 文档前数据库页签 */
+                background-color: transparent;
+            }
         }
 
         // 代码块

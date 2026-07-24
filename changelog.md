@@ -3,7 +3,9 @@
 ## v3.0.11
 
 - 适配标题序号
+- 适配文档前数据库页签
 - Adapt to heading number
+- Adapt to database tab before document
 
 ## v3.0.10
 
