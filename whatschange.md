@@ -1,3 +1,14 @@
+## [3.0.11](https://github.com/emptylight370/siyuan-vscodelite-edit/compare/3.0.10...3.0.11) (2026-07-26)
+
+### ✨ Features | 功能
+
+- 适配标题序号 ([fc224c2](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/fc224c2502d9bbf58ee992267e19b16fa76097fa))
+- 适配文档前数据库页签 ([bf11cae](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/bf11cae8da2dcdbb0fa37bbe943a5d713b5939a1))
+
+### 🐛 Bug Fixes | 问题修复
+
+- 修复导出PDF报错 ([9b24022](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/9b24022fad99bf0d0299501035f289ce6ee8891e))
+
 ## [3.0.10](https://github.com/emptylight370/siyuan-vscodelite-edit/compare/3.0.9...3.0.10) (2026-07-21)
 
 ### 🐛 Bug Fixes | 问题修复
