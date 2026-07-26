@@ -4,8 +4,10 @@
 
 - 适配标题序号
 - 适配文档前数据库页签
+- 修复导出PDF报错
 - Adapt to heading number
 - Adapt to database tab before document
+- Fix export PDF error
 
 ## v3.0.10
 
