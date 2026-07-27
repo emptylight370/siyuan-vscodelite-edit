@@ -41,3 +41,32 @@
         }
     }
 }
+
+// 单独适配大纲面板
+.sy__outline {
+    span[data-type~="block-ref"] {
+        color: var(--lite-block-ref-color) !important;
+
+        // 动态锚文本dynamic
+        &[data-subtype="d"] {
+            &::before {
+                content: "⌈";
+            }
+
+            &::after {
+                content: "⌋";
+            }
+        }
+
+        // 静态锚文本static
+        &[data-subtype="s"] {
+            &::before {
+                content: "[";
+            }
+
+            &::after {
+                content: "]";
+            }
+        }
+    }
+}

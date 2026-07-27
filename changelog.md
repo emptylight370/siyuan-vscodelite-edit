@@ -1,5 +1,10 @@
 # ChangeLog
 
+## v3.0.12
+
+- 适配大纲渲染块引用样式
+- Adapt to outline render block reference style
+
 ## v3.0.11
 
 - 适配标题序号

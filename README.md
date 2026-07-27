@@ -46,6 +46,8 @@ Limited by the configuration loading method, updated configurations for new vers
 > Full changelog view [ChangeLog](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/changelog.md)
 > Commit history view [whatschange](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/whatschange.md)
 
+- v3.0.12
+  - Adapt to outline render block reference style
 - v3.0.11
   - Adapt to heading number
   - Adapt to database tab before document
@@ -54,8 +56,6 @@ Limited by the configuration loading method, updated configurations for new vers
   - Temporarily disable document tree indent line
   - When expanding and collapsing the document tree by clicking the title or icon, show a special cursor at where you can open the document. Need to enable in theme settings
   - Optimize typewriter mode
-- v3.0.8
-  - Fix issue that mobile settings sidebar background is not transparent when enabled background plugin adaption
 
 # Special fitness
 
