@@ -50,6 +50,7 @@ Limited by the configuration loading method, updated configurations for new vers
   - Adapt to outline render block reference style
   - Adapt to outline render tag style
   - Adapt to outline render mark style
+  - Fix heading icon shrinks due to heading word count increase
 - v3.0.11
   - Adapt to heading number
   - Adapt to database tab before document

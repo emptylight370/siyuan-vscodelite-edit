@@ -5,9 +5,11 @@
 - 适配大纲渲染块引用样式
 - 适配大纲渲染标签样式
 - 适配大纲渲染标记样式
+- 修复标题图标因标题字数增加缩小问题
 - Adapt to outline render block reference style
 - Adapt to outline render tag style
 - Adapt to outline render mark style
+- Fix heading icon shrinks due to heading word count increase
 
 ## v3.0.11
 
