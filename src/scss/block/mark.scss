@@ -7,3 +7,11 @@
     box-decoration-break: clone;
     // -webkit-box-decoration-break: clone;
 }
+
+// 单独适配大纲面板
+.sy__outline span[data-type~="mark"] {
+    background: linear-gradient(to bottom, var(--lite-mark-top) 40%, var(--lite-mark-bottom) 60%);
+    border-radius: 0.2rem;
+    box-decoration-break: clone;
+    background-color: unset !important;
+}

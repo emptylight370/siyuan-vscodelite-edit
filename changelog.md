@@ -4,8 +4,10 @@
 
 - 适配大纲渲染块引用样式
 - 适配大纲渲染标签样式
+- 适配大纲渲染标记样式
 - Adapt to outline render block reference style
 - Adapt to outline render tag style
+- Adapt to outline render mark style
 
 ## v3.0.11
 
