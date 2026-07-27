@@ -48,6 +48,7 @@ Limited by the configuration loading method, updated configurations for new vers
 
 - v3.0.12
   - Adapt to outline render block reference style
+  - Adapt to outline render tag style
 - v3.0.11
   - Adapt to heading number
   - Adapt to database tab before document

@@ -14,3 +14,16 @@
         color: var(--b3-theme-on-background);
     }
 }
+
+// 单独适配大纲面板
+.sy__outline span[data-type~="tag"] {
+    border-radius: var(--b3-border-radius);
+    border-bottom: unset !important;
+    background-color: var(--b3-list-hover);
+    padding: 1px 3px !important;
+    font-size: 90%;
+
+    &::before {
+        content: "#";
+    }
+}
