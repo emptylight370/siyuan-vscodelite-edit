@@ -322,6 +322,27 @@ $h6top: 0.32em;
     min-width: 1px;
 }
 
+// 修复导出预览中部分元素偏移问题
+.protyle-preview {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        > span[data-type~="sup"],
+        > span[data-type~="sub"],
+        sup,
+        sub {
+            margin-top: 1.2em;
+        }
+
+        > span[data-type~="kbd"] {
+            padding-top: 0.5em;
+        }
+    }
+}
+
 /* 导出图片时暂不显示标题图标 */
 .b3-dialog--open[data-key="dialog-exportimage"] {
     @for $i from 1 through 6 {
