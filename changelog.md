@@ -7,11 +7,13 @@
 - 适配大纲渲染标记样式
 - 修复标题图标因标题字数增加缩小问题
 - 修复导出预览模式中部分情况下标题显示问题
+- 优化打字机模式
 - Adapt to outline render block reference style
 - Adapt to outline render tag style
 - Adapt to outline render mark style
 - Fix heading icon shrinks due to heading word count increase
 - Fix heading display issue in export preview mode in some cases
+- Optimize typewriter mode
 
 ## v3.0.11
 
