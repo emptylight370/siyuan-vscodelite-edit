@@ -53,6 +53,7 @@ Limited by the configuration loading method, updated configurations for new vers
   - Fix heading icon shrinks due to heading word count increase
   - Fix heading display issue in export preview mode in some cases
   - Optimize typewriter mode
+  - Fix bazaar back button disappears
 - v3.0.11
   - Adapt to heading number
   - Adapt to database tab before document
