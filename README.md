@@ -54,6 +54,7 @@ Limited by the configuration loading method, updated configurations for new vers
   - Fix heading display issue in export preview mode in some cases
   - Optimize typewriter mode
   - Fix bazaar back button disappears
+  - Fix bazaar style
 - v3.0.11
   - Adapt to heading number
   - Adapt to database tab before document

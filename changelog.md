@@ -9,6 +9,7 @@
 - 修复导出预览模式中部分情况下标题显示问题
 - 优化打字机模式
 - 修复集市返回按钮消失问题
+- 修复集市样式
 - Adapt to outline render block reference style
 - Adapt to outline render tag style
 - Adapt to outline render mark style
@@ -16,6 +17,7 @@
 - Fix heading display issue in export preview mode in some cases
 - Optimize typewriter mode
 - Fix bazaar back button disappears
+- Fix bazaar style
 
 ## v3.0.11
 
