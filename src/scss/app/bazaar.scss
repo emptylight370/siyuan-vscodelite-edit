@@ -12,6 +12,12 @@
             //     padding: 0 8px;
             // }
         }
+
+        .counter {
+            /* 高亮集市计数 */
+            background-color: var(--b3-switch-checked-background);
+            color: var(--b3-switch-checked);
+        }
     }
 
     .layout-tab-bar {

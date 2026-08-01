@@ -55,6 +55,7 @@ Limited by the configuration loading method, updated configurations for new vers
   - Optimize typewriter mode
   - Fix bazaar back button disappears
   - Fix bazaar style
+  - Highlight bazaar statistics numbers
 - v3.0.11
   - Adapt to heading number
   - Adapt to database tab before document
