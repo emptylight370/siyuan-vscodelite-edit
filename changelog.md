@@ -11,6 +11,7 @@
 - 修复集市返回按钮消失问题
 - 修复集市样式
 - 高亮集市统计数字
+- 加长移动端插入设置按钮检测时间
 - Adapt to outline render block reference style
 - Adapt to outline render tag style
 - Adapt to outline render mark style
@@ -20,6 +21,7 @@
 - Fix bazaar back button disappears
 - Fix bazaar style
 - Highlight bazaar statistics numbers
+- Extend mobile insert settings button detection time
 
 ## v3.0.11
 
