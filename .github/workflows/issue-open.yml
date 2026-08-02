@@ -18,12 +18,12 @@ jobs:
 
     steps:
       - name: Check out repository
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
 
       - name: Close issue on check
         id: close
         if: contains(github.event.issue.body, '- [X] I didn''t check all the checkboxes')
-        uses: actions-cool/issues-helper@v3
+        uses: actions-cool/issues-helper-backup@d65454423c6fbbd20026b9b499d403f79422ac69
         with:
           actions: "create-comment,add-labels,close-issue"
           labels: "invalid"
@@ -34,7 +34,7 @@ jobs:
       - name: Comment issue on not check
         id: comment
         if: contains(github.event.issue.body, '- [ ] I didn''t check all the checkboxes') && steps.close.outcome == 'skipped'
-        uses: actions-cool/issues-helper@v3
+        uses: actions-cool/issues-helper-backup@d65454423c6fbbd20026b9b499d403f79422ac69
         with:
           actions: "create-comment,remove-labels,add-assignees"
           labels: "invalid"
@@ -45,7 +45,7 @@ jobs:
 
       - name: Comment issue on no checkbox
         if: steps.close.outcome == 'skipped' && steps.comment.outcome == 'skipped'
-        uses: actions-cool/issues-helper@v3
+        uses: actions-cool/issues-helper-backup@d65454423c6fbbd20026b9b499d403f79422ac69
         with:
           actions: "create-comment,add-labels,add-assignees"
           labels: "not template,help wanted"
