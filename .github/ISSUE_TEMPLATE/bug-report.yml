@@ -5,6 +5,11 @@ title: "[BUG] Summary your bug here/在这里概括你的问题"
 labels: ["bug"]
 
 body:
+  - type: "markdown"
+    attributes:
+      value: |
+        Before submitting a bug report, you should check the [Known issues](https://github.com/emptylight370/siyuan-vscodelite-edit/discussions/42), and make sure your issue is not in there.
+        在提交问题反馈之前，你应该检查[已知问题列表](https://github.com/emptylight370/siyuan-vscodelite-edit/discussions/42)，确保你的问题不在其中。
   - type: "textarea"
     id: bug-drscribe
     attributes:
@@ -74,6 +79,8 @@ body:
         最后检查一次你的问题反馈。
       options:
         - label: "I have finished the title and delete the hints.(keep the [BUG] there)/我已经填好了标题并且删除了提示文本。(保留[BUG]在原处)"
+          required: true
+        - label: "I have checked the Known issues and my issue is not in it./我已经检查了已知问题列表，我的问题不在其中。"
           required: false
         - label: "I have clearly describe the bug./我已经清楚地描述了我遇到的问题。"
           required: false

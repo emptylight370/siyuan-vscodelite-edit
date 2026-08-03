@@ -38,7 +38,7 @@ body:
         最后检查一次你的功能请求。
       options:
         - label: "I have finished the title and deleted the hints. (keep the [FR] there)/我已经填好了标题并且删除了提示文本。(保留[FR]在原处)"
-          required: false
+          required: true
         - label: "I have clearly described my feature./我已经清楚地描述了我想要的功能。"
           required: false
         - label: "I know it should be done by a theme./我知道这是主题应该完成的。"
