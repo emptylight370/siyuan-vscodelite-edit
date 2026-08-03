@@ -57,6 +57,7 @@ Limited by the configuration loading method, updated configurations for new vers
   - Fix bazaar style
   - Highlight bazaar statistics numbers
   - Extend mobile insert settings button detection time
+  - Add custom attributes to recover old table highlight style
 - v3.0.11
   - Adapt to heading number
   - Adapt to database tab before document
@@ -88,6 +89,8 @@ To enable custom attributes, add the `vsce` attribute in the **Custom Attributes
 |    `table-min`    | table block                 | Force the minimum column width without affecting manual settings | 2.3.0           | 2.3.0        |
 |    `no-thead`     | table block                 | Disable the color and align of table head(`<thead>`)             | 2.3.0           | 2.3.0        |
 |   `hide-thead`    | table block                 | Hide `<thead>` element visually                                  | 2.5.0           | 2.5.0        |
+|     `row-bg`      | table block                 | Add background color to even rows                                | 3.0.12          | 3.0.12       |
+|     `col-bg`      | table block                 | Add background color to even columns                             | 3.0.12          | 3.0.12       |
 | `av-no-add-entry` | database block              | Hide database add entry button (add function works normally)     | 2.5.2           | 2.6.2        |
 | `av-no-add-view`  | database block              | Hide database add view button (add function works normally)      | 2.5.2           | 2.5.2        |
 | `av-no-main-key`  | database block              | Hide database primary key                                        | 3.0.0           | 3.0.0        |

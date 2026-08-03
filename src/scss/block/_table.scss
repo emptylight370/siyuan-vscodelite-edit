@@ -33,6 +33,30 @@ div.table {
         }
     }
 
+    &[custom-vsce~="row-bg"] {
+        table {
+            tbody {
+                tr:nth-child(even) {
+                    td {
+                        background-color: var(--b3-table-even-background);
+                    }
+                }
+            }
+        }
+    }
+
+    &[custom-vsce~="col-bg"] {
+        table {
+            tbody {
+                tr {
+                    td:nth-child(even) {
+                        background-color: var(--b3-table-even-background);
+                    }
+                }
+            }
+        }
+    }
+
     caption {
         // display: flex;
         font-size: 85%;
