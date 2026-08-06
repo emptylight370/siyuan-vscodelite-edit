@@ -58,6 +58,7 @@ Limited by the configuration loading method, updated configurations for new vers
   - Highlight bazaar statistics numbers
   - Extend mobile insert settings button detection time
   - Add custom attributes to recover old table highlight style
+  - Mobile menu adapt to background cover plugin
 - v3.0.11
   - Adapt to heading number
   - Adapt to database tab before document

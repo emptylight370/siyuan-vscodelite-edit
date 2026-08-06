@@ -13,6 +13,7 @@
 - 高亮集市统计数字
 - 加长移动端插入设置按钮检测时间
 - 添加自定义属性恢复旧表格高亮
+- 移动端菜单适配背景图片插件
 - Adapt to outline render block reference style
 - Adapt to outline render tag style
 - Adapt to outline render mark style
@@ -24,6 +25,7 @@
 - Highlight bazaar statistics numbers
 - Extend mobile insert settings button detection time
 - Add custom attributes to recover old table highlight style
+- Mobile menu adapt to background cover plugin
 
 ## v3.0.11
 

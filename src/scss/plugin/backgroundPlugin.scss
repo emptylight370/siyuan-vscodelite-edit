@@ -132,6 +132,32 @@ body.bgenable {
 
             &#model {
                 background-color: var(--lite-sidebar2-background--mobile);
+
+                // 移动端的菜单项，新设置菜单仍然有效
+                .b3-menu__item,
+                .b3-menu__items {
+                    background-color: var(--lite-sidebar-item--mobile);
+                }
+
+                // 设置的二级菜单
+                .b3-menu__groups {
+                    background-color: transparent;
+                }
+
+                // 移动端的菜单分组
+                .b3-menu__group-items {
+                    background-color: transparent;
+                }
+
+                // 设置里面的具体分类
+                .config--mobile:has(> .config-group) {
+                    background-color: transparent;
+
+                    // 具体分组下面的设置项
+                    .config-items {
+                        background-color: transparent;
+                    }
+                }
             }
 
             .toolbar {
@@ -139,16 +165,36 @@ body.bgenable {
             }
         }
 
-        .b3-menu {
+        #menu.b3-menu {
             background-color: var(--lite-sidebar-background--mobile);
 
+            // 移动端的菜单项，新设置菜单仍然有效
             .b3-menu__item,
             .b3-menu__items {
                 background-color: var(--lite-sidebar-item--mobile);
             }
 
-            .b3-menu__separator {
-                background-color: var(--lite-menu-background);
+            // 移动端的菜单分割线，应该是没了
+            // .b3-menu__separator {
+            //     background-color: var(--lite-menu-background);
+            // }
+
+            // 移动端的菜单分组
+            .b3-menu__group-items {
+                background-color: transparent;
+            }
+        }
+
+        // 移动端的页签
+        .mobile-tabs__item {
+            background-color: var(--lite-sidebar-item--mobile);
+        }
+
+        // 左侧栏弹出菜单
+        #commonMenu {
+            .b3-menu__title,
+            .b3-menu__items {
+                background-color: transparent;
             }
         }
     }
