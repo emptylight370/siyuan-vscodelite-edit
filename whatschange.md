@@ -1,3 +1,28 @@
+## [3.0.12](https://github.com/emptylight370/siyuan-vscodelite-edit/compare/3.0.11...3.0.12) (2026-08-07)
+
+### ✨ Features | 功能
+
+- 适配大纲渲染块引用样式 ([a4a212f](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/a4a212fbc7556010e789088eb43c1291a81d4e2c))
+- 适配大纲渲染标签样式 ([b325659](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/b325659f61af44dcbdd79ac913178c5e5dd19b53))
+- 适配大纲渲染标记样式 ([5344398](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/534439830665a50cd87e7a20dfc0fe0e1547c09e))
+- 高亮集市统计数字 ([67e551c](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/67e551c6aa97d30a26a32dd8a0abcf594290efb4))
+- 添加表格高亮自定义属性 ([6cd4d94](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/6cd4d940112ad8593fec33a1906c8ab2e2c9b92d))
+- 移动端菜单适配背景图片插件 ([9a9ebe3](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/9a9ebe37ad96e8aafa2ea89646aee1fe57caba26))
+
+### 🐛 Bug Fixes | 问题修复
+
+- 标题图标因标题字数增加缩小 ([5450e80](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/5450e800ab6ebb3eba519865db08d854e9e52a73))
+- 启用标题图标时导出预览中部分标题元素偏移 ([e6ae264](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/e6ae2648f358492fb8f2b7ada367fbd455f3d51a))
+- **(typewriter)** 在数据库添加条目时不滚动 ([df3e233](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/df3e2331439fbe3face05ea609f6b3d8a20faec4))
+- 集市返回按钮消失 ([34b0cdb](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/34b0cdb88ee48ad680b5f377442519a69f7e079d))
+- 集市已下载分类按钮高度 ([ebf5cef](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/ebf5cef15d018a3f22433009667a68c4d4746f3e))
+- 延长移动端插入设置按钮检测时间 ([b99eb61](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/b99eb61d43bb3f8367382f65ee8ad49f48f2bd56))
+
+### 🛠️ Build system | 构建系统
+
+- Reset actions ([427fca6](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/427fca621592243b9cec5ebeb08f953df97197d6))
+- 更新反馈模板 ([199b07e](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/199b07e8fe8a238ef7143a269e55fac817b35a33))
+
 ## [3.0.11](https://github.com/emptylight370/siyuan-vscodelite-edit/compare/3.0.10...3.0.11) (2026-07-26)
 
 ### ✨ Features | 功能
