@@ -101,10 +101,10 @@ To enable custom attributes, add the `vsce` attribute in the **Custom Attributes
 It is recommended to disable the plugin compatibility switch when no corresponding plugin is installed to reduce the burden on theme loading.  
 Currently adapted plugins are:
 
-- Shortcut key panel(Category title color)
-- Custom block Styles(fix display problem in embedded block caused by theme)
-- Background Cover(Overrides some plugin settings; it is normal if related settings do not take effect)
-- Math Enhancement Plugin(Limit plugin preview width)
+- Shortcut key panel(`siyuan-plugin-keymap`)(Category title color)
+- Custom block Styles(`custom-block`)(fix display problem in embedded block caused by theme)
+- Background Cover(`siyuan-plugin-background-cover`)(Overrides some plugin settings; it is normal if related settings do not take effect)
+- Math Enhancement Plugin(`siyuan-plugin-math-enhance`)(Limit plugin preview width)
 
 <details>
 <summary>In case of you want to know, this is the screenshot about using with Background Cover plugin</summary>
