@@ -46,6 +46,8 @@
 > 完整更新日志查看[changelog](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/changelog.md)
 > 提交历史日志查看[whatschange](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/whatschange.md)
 
+- v3.0.13
+  - 适配移动端页签页面
 - v3.0.12
   - 适配大纲渲染块引用样式
   - 适配大纲渲染标签样式
@@ -63,10 +65,6 @@
   - 适配标题序号
   - 适配文档前数据库页签
   - 修复导出PDF报错
-- v3.0.9
-  - 暂时禁用文档树缩进线
-  - 在通过标题、图标展开收起文档树时，在可点击打开文档处显示特殊光标。需在主题设置中启用
-  - 优化打字机模式
 
 # 特殊适配
 

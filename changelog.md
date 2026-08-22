@@ -1,5 +1,10 @@
 # ChangeLog
 
+## v3.0.13
+
+- 适配移动端页签页面
+- Adapt to mobile tab page
+
 ## v3.0.12
 
 - 适配大纲渲染块引用样式

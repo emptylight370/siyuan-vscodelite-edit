@@ -46,6 +46,8 @@ Limited by the configuration loading method, updated configurations for new vers
 > Full changelog view [ChangeLog](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/changelog.md)
 > Commit history view [whatschange](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/whatschange.md)
 
+- v3.0.13
+  - Adapt to mobile tab page
 - v3.0.12
   - Adapt to outline render block reference style
   - Adapt to outline render tag style
@@ -63,10 +65,6 @@ Limited by the configuration loading method, updated configurations for new vers
   - Adapt to heading number
   - Adapt to database tab before document
   - Fix export PDF error
-- v3.0.9
-  - Temporarily disable document tree indent line
-  - When expanding and collapsing the document tree by clicking the title or icon, show a special cursor at where you can open the document. Need to enable in theme settings
-  - Optimize typewriter mode
 
 # Special fitness
 

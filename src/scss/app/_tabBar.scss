@@ -109,3 +109,13 @@ body.body--blur .layout-tab-bar .item.item--focus {
         margin-top: 3px;
     }
 }
+
+/* 移动端页签 */
+.mobile-tabs {
+    .mobile-tabs__list {
+        .b3-button.mobile-tabs__close {
+            /* 标签关闭按钮 */
+            color: var(--b3-theme-error);
+        }
+    }
+}
