@@ -3,7 +3,9 @@
 ## v3.0.13
 
 - 适配移动端页签页面
+- 优化移动端背景插件适配
 - Adapt to mobile tab page
+- Optimize mobile background plugin adaption
 
 ## v3.0.12
 
