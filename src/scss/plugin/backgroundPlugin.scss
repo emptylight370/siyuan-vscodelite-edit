@@ -202,6 +202,17 @@ body.bgenable {
         #mobileBottomBar {
             background-color: var(--lite-modify-surface__menu);
         }
+
+        // 移动端数据库背景透明
+        // 数据库表格视图
+        .av.av--touch[data-av-type="table"],
+        // 数据库卡片视图
+        .av.av--touch[data-av-type="gallery"],
+        // 数据库看板视图
+        .av.av--touch[data-av-type="kanban"] {
+            /* 数据库块 */
+            opacity: 0.85;
+        }
     }
 
     .protyle-wysiwyg [data-node-id].render-node[data-type="NodeBlockQueryEmbed"] {
