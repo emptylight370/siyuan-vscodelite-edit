@@ -9,6 +9,10 @@
     /* 导出PDF不允许划选文字 */
     user-select: none;
 
+    [data-type="inline-math"] {
+        user-select: none;
+    }
+
     /* 代码块菜单不显示 */
     .code-block:hover .protyle-action {
         display: none;
@@ -17,5 +21,10 @@
     /* 代码块限制高度时不折叠 */
     .code-block[style*="max-height:"]:not(pre) {
         max-height: unset !important;
+    }
+
+    /* 修复分隔线上的指针样式 */
+    .hr {
+        cursor: default;
     }
 }

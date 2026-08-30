@@ -4,8 +4,10 @@
 
 - 修复代码块设置最大高度时顶部空行
 - 在导出PDF时取消代码块最大高度
+- 修复导出PDF时若干问题
 - Remove the space at the top of the code block when set the max height
 - Remove the max height of the code block when exporting PDF
+- Fix several problems when exporting PDF
 
 ## v3.0.14
 
