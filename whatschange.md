@@ -1,3 +1,19 @@
+## [3.0.13](https://github.com/emptylight370/siyuan-vscodelite-edit/compare/3.0.12...3.0.13) (2026-08-30)
+
+### ✨ Features | 功能
+
+- 适配移动端页签页面 ([3b84377](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/3b8437766ec8a61f9ca94593c71d17bedf1b1923))
+- 优化移动端背景插件适配 ([79fdbd2](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/79fdbd23f859524cefa48e76b2ea6806ba54529e))
+- 移动端大纲块引用、标记样式 ([a1ddb07](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/a1ddb079c5f7e5cdda54913adb12c9e6bd8e32e2))
+
+### 🐛 Bug Fixes | 问题修复
+
+- 移动端背景插件适配数据库 ([f2ed0d2](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/f2ed0d22a0e09550b5e1d29270bba47ff0f78334))
+
+### 📄 Documentation | 文档
+
+- 指定适配插件的包名 ([5be17bb](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/5be17bbca760c0715b967400a693aacb066dcf26))
+
 ## [3.0.12](https://github.com/emptylight370/siyuan-vscodelite-edit/compare/3.0.11...3.0.12) (2026-08-07)
 
 ### ✨ Features | 功能
