@@ -4,8 +4,12 @@
 
 - 适配移动端页签页面
 - 优化移动端背景插件适配
+- 适配移动端大纲渲染块引用样式
+- 适配移动端大纲渲染标记样式
 - Adapt to mobile tab page
 - Optimize mobile background plugin adaption
+- Adapt to mobile outline render block reference style
+- Adapt to mobile outline render mark style
 
 ## v3.0.12
 
