@@ -1,5 +1,10 @@
 # ChangeLog
 
+## v3.0.14
+
+- 修复桌面端大纲缩进策略
+- Fix desktop outline indent strategy
+
 ## v3.0.13
 
 - 适配移动端页签页面

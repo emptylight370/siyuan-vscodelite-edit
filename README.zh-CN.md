@@ -46,6 +46,8 @@
 > 完整更新日志查看[changelog](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/changelog.md)
 > 提交历史日志查看[whatschange](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/whatschange.md)
 
+- v3.0.14
+  - 修复桌面端大纲缩进策略
 - v3.0.13
   - 适配移动端页签页面
   - 优化移动端背景插件适配
@@ -64,10 +66,6 @@
   - 加长移动端插入设置按钮检测时间
   - 添加自定义属性恢复旧表格高亮
   - 移动端菜单适配背景图片插件
-- v3.0.11
-  - 适配标题序号
-  - 适配文档前数据库页签
-  - 修复导出PDF报错
 
 # 特殊适配
 

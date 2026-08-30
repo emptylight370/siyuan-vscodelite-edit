@@ -46,6 +46,8 @@ Limited by the configuration loading method, updated configurations for new vers
 > Full changelog view [ChangeLog](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/changelog.md)
 > Commit history view [whatschange](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/whatschange.md)
 
+- v3.0.14
+  - Fix desktop outline indent strategy
 - v3.0.13
   - Adapt to mobile tab page
   - Optimize mobile background plugin adaption
@@ -64,10 +66,6 @@ Limited by the configuration loading method, updated configurations for new vers
   - Extend mobile insert settings button detection time
   - Add custom attributes to recover old table highlight style
   - Mobile menu adapt to background cover plugin
-- v3.0.11
-  - Adapt to heading number
-  - Adapt to database tab before document
-  - Fix export PDF error
 
 # Special fitness
 

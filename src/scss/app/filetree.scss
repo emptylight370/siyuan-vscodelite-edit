@@ -107,10 +107,18 @@
 /* 电脑端大纲 */
 /* 大纲标题缩进，一共6级 */
 .sy__outline .fn__flex-1 .b3-list {
-    @for $i from 2 through 6 {
-        .b3-list-item[data-subtype="h#{$i}"] > .b3-list-item__toggle {
-            /* #{$i}级标题缩进 */
-            padding-left: (($i - 1) * 10 + 4) + px !important;
+    @for $i from 1 through 5 {
+        $selector: "> ul";
+
+        @if $i > 1 {
+            @for $j from 2 through $i {
+                $selector: $selector + " > ul";
+            }
+        }
+
+        #{$selector} > .b3-list-item[data-subtype] > .b3-list-item__toggle {
+            /* #{$i}级大纲标题缩进 */
+            padding-left: ($i * 10 + 4) + px !important;
         }
     }
 }
