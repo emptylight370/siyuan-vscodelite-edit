@@ -1,3 +1,9 @@
+## [3.0.14](https://github.com/emptylight370/siyuan-vscodelite-edit/compare/3.0.13...3.0.14) (2026-08-30)
+
+### 🐛 Bug Fixes | 问题修复
+
+- 桌面端大纲根据相对层级缩进 ([c6ee5b4](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/c6ee5b47cd819b27d30b74f32ba589097c4aee3b))
+
 ## [3.0.13](https://github.com/emptylight370/siyuan-vscodelite-edit/compare/3.0.12...3.0.13) (2026-08-30)
 
 ### ✨ Features | 功能
