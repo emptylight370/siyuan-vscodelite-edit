@@ -48,7 +48,6 @@ Limited by the configuration loading method, updated configurations for new vers
 
 - v3.0.15
   - Remove the space at the top of the code block when set the max height
-  - Remove the max height of the code block when exporting PDF
   - Fix several problems when exporting PDF
 - v3.0.14
   - Fix desktop outline indent strategy

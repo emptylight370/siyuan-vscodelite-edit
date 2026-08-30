@@ -18,11 +18,6 @@
         display: none;
     }
 
-    /* 代码块限制高度时不折叠 */
-    .code-block[style*="max-height:"]:not(pre) {
-        max-height: unset !important;
-    }
-
     /* 修复分隔线上的指针样式 */
     .hr {
         cursor: default;
