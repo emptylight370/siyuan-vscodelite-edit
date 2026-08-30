@@ -11,10 +11,19 @@
     }
 }
 
-/* 代码块左边的行号显示 */
-.code-block .protyle-linenumber__rows {
-    width: fit-content;
-    min-width: 2em;
+.code-block {
+    /* 代码块左边的行号显示 */
+    .protyle-linenumber__rows {
+        width: fit-content;
+        min-width: 2em;
+    }
+
+    /* 代码块设置最大高度时顶部空行 */
+    &[style*="max-height:"]:not(pre) {
+        &:not(#preview *) {
+            padding-top: unset !important;
+        }
+    }
 }
 
 /*

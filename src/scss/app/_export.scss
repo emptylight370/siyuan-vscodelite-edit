@@ -13,4 +13,9 @@
     .code-block:hover .protyle-action {
         display: none;
     }
+
+    /* 代码块限制高度时不折叠 */
+    .code-block[style*="max-height:"]:not(pre) {
+        max-height: unset !important;
+    }
 }

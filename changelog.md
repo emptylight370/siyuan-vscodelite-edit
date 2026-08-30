@@ -1,5 +1,12 @@
 # ChangeLog
 
+## v3.0.15
+
+- 修复代码块设置最大高度时顶部空行
+- 在导出PDF时取消代码块最大高度
+- Remove the space at the top of the code block when set the max height
+- Remove the max height of the code block when exporting PDF
+
 ## v3.0.14
 
 - 修复桌面端大纲缩进策略

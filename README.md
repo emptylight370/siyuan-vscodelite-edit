@@ -46,6 +46,9 @@ Limited by the configuration loading method, updated configurations for new vers
 > Full changelog view [ChangeLog](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/changelog.md)
 > Commit history view [whatschange](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/whatschange.md)
 
+- v3.0.15
+  - Remove the space at the top of the code block when set the max height
+  - Remove the max height of the code block when exporting PDF
 - v3.0.14
   - Fix desktop outline indent strategy
 - v3.0.13
@@ -53,19 +56,6 @@ Limited by the configuration loading method, updated configurations for new vers
   - Optimize mobile background plugin adaption
   - Adapt to mobile outline render block reference style
   - Adapt to mobile outline render mark style
-- v3.0.12
-  - Adapt to outline render block reference style
-  - Adapt to outline render tag style
-  - Adapt to outline render mark style
-  - Fix heading icon shrinks due to heading word count increase
-  - Fix heading display issue in export preview mode in some cases
-  - Optimize typewriter mode
-  - Fix bazaar back button disappears
-  - Fix bazaar style
-  - Highlight bazaar statistics numbers
-  - Extend mobile insert settings button detection time
-  - Add custom attributes to recover old table highlight style
-  - Mobile menu adapt to background cover plugin
 
 # Special fitness
 
