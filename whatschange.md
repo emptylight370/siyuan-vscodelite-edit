@@ -1,3 +1,22 @@
+## [3.0.15](https://github.com/emptylight370/siyuan-vscodelite-edit/compare/3.0.14...3.0.15) (2026-08-31)
+
+### ✨ Features | 功能
+
+- 移动端大纲适配标题颜色 ([3bbfcbb](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/3bbfcbb0bffea152091e00377dde45dfd8a5dcc3))
+
+### 🐛 Bug Fixes | 问题修复
+
+- 适配代码块最大高度显示 ([7b0c97e](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/7b0c97ea5b23b3aff3864f9aaac1169409426f94))
+- 导出PDF时若干问题 ([d6f74a2](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/d6f74a2b40b156b946461e6869332da6f0a38041))
+
+### ⏪ Reverts | 回退
+
+- 导出PDF时代码块高度不影响 ([a2774f1](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/a2774f1e15343020cc92b2f594736a2eff9190ec))
+
+### 🔨 Refactor | 重构
+
+- 迁移至AGENTS.md ([9caaffe](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/9caaffe305e4368e389cbda0340ffd2f05c9dd1e))
+
 ## [3.0.14](https://github.com/emptylight370/siyuan-vscodelite-edit/compare/3.0.13...3.0.14) (2026-08-30)
 
 ### 🐛 Bug Fixes | 问题修复
