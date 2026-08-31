@@ -49,6 +49,7 @@ Limited by the configuration loading method, updated configurations for new vers
 - v3.0.15
   - Remove the space at the top of the code block when set the max height
   - Fix several problems when exporting PDF
+  - Mobile outline panel adapt to heading color
 - v3.0.14
   - Fix desktop outline indent strategy
 - v3.0.13

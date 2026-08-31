@@ -4,8 +4,10 @@
 
 - 修复代码块设置最大高度时顶部空行
 - 修复导出PDF时若干问题
+- 移动端大纲适配标题颜色
 - Remove the space at the top of the code block when set the max height
 - Fix several problems when exporting PDF
+- Mobile outline panel adapt to heading color
 
 ## v3.0.14
 

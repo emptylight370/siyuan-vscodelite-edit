@@ -14,7 +14,8 @@
     }
 
     /* #{$i}级大纲样式 */
-    .sy__outline {
+    .sy__outline,
+    body.vscmobile .side-panel {
         [data-subtype="h#{$i}"], // 标题前符号
         [data-subtype="h#{$i}"] .b3-list-item__number, // 标题前序号
         [data-subtype="h#{$i}"] .b3-list-item__text // 标题文本
