@@ -133,12 +133,9 @@ function addThemeToolBar() {
     const toolbarVIP = document.getElementById("toolbarVIP");
     const windowControls = document.getElementById("windowControls");
 
-    if (toolbarVIP) {
-        // 桌面端，在VIP按钮前添加（插件按钮左）
-        vscToolBar.className = "toolbar__item ariaLabel";
-        vscToolBar.style.height = "23.5px";
-        toolbarVIP.parentElement!.insertBefore(vscToolBar, toolbarVIP);
-    } else if (windowControls) {
+    if (toolbarVIP && windowControls) {
+        // 在3.8.3版本，非插件添加的按钮会统一整理到左边，此处插入到最右边以避免
+        // 被整理，同时有个好处，在宽度不足时不会被收纳
         // 桌面端，在窗口控制按钮前添加（插件按钮右）
         vscToolBar.className = "toolbar__item ariaLabel";
         vscToolBar.style.height = "23.5px";

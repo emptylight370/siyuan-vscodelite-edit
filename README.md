@@ -46,17 +46,14 @@ Limited by the configuration loading method, updated configurations for new vers
 > Full changelog view [ChangeLog](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/changelog.md)
 > Commit history view [whatschange](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/whatschange.md)
 
+- v3.1.0
+  - Fix issue that theme settings button moved to leftmost in SiYuan 3.8.3
 - v3.0.15
   - Remove the space at the top of the code block when set the max height
   - Fix several problems when exporting PDF
   - Mobile outline panel adapt to heading color
 - v3.0.14
   - Fix desktop outline indent strategy
-- v3.0.13
-  - Adapt to mobile tab page
-  - Optimize mobile background plugin adaption
-  - Adapt to mobile outline render block reference style
-  - Adapt to mobile outline render mark style
 
 # Special fitness
 

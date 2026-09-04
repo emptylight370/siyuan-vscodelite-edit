@@ -1,5 +1,10 @@
 # ChangeLog
 
+## v3.1.0
+
+- 修复思源3.8.3版本中主题设置按钮移动到最左侧问题
+- Fix issue that theme settings button moved to leftmost in SiYuan 3.8.3
+
 ## v3.0.15
 
 - 修复代码块设置最大高度时顶部空行
