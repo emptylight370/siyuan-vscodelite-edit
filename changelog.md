@@ -3,7 +3,9 @@
 ## v3.1.0
 
 - 修复思源3.8.3版本中主题设置按钮移动到最左侧问题
+- 调整集市外观
 - Fix issue that theme settings button moved to leftmost in SiYuan 3.8.3
+- Adjust bazaar appearance
 
 ## v3.0.15
 

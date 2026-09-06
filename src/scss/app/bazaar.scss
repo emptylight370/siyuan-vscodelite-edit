@@ -4,6 +4,7 @@
         .config-bazaar__title {
             /* 设置中集市的上方筛选栏 */
             padding: 8px 16px;
+            background-color: color-mix(in srgb, var(--b3-theme-background) 0%, transparent);
 
             // 思源3.7.4版本调整了这部分样式
             // .b3-button {

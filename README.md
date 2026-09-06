@@ -48,6 +48,7 @@ Limited by the configuration loading method, updated configurations for new vers
 
 - v3.1.0
   - Fix issue that theme settings button moved to leftmost in SiYuan 3.8.3
+  - Adjust bazaar appearance
 - v3.0.15
   - Remove the space at the top of the code block when set the max height
   - Fix several problems when exporting PDF
