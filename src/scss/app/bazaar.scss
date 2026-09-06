@@ -22,6 +22,12 @@
     }
 
     .layout-tab-bar {
+        // 3.8.3修改了集市顶部样式，添加了阴影
+        &.fn__flex {
+            padding-top: 10px;
+            padding-bottom: 4px;
+        }
+
         .item.item--focus {
             /* 集市中选中的标签栏 */
             font-weight: 400;
