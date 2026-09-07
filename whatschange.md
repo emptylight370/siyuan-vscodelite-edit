@@ -1,3 +1,15 @@
+## [3.1.0](https://github.com/emptylight370/siyuan-vscodelite-edit/compare/3.0.15...3.1.0) (2026-09-07)
+
+### ✨ Features | 功能
+
+- 调整集市顶部筛选栏外观 ([d59f42d](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/d59f42db44a38828550f5f59a08147da3388bf47))
+- 调整集市顶部分类高度 ([1818a60](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/1818a606bd57caaee7e2f19962e05ac23c32250d))
+- 调整集市顶部分类栏高度 ([3989682](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/39896826258c0a14b7e5c2fe5d48681839bd6e04))
+
+### 🐛 Bug Fixes | 问题修复
+
+- 主题设置按钮移动到最左侧 ([53bc1ac](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/53bc1ac2126e110bfb700290960ce5cc17d1977b))
+
 ## [3.0.15](https://github.com/emptylight370/siyuan-vscodelite-edit/compare/3.0.14...3.0.15) (2026-08-31)
 
 ### ✨ Features | 功能
