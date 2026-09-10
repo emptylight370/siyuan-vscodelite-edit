@@ -46,6 +46,8 @@
 > 完整更新日志查看[changelog](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/changelog.md)
 > 提交历史日志查看[whatschange](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/whatschange.md)
 
+- v3.1.1
+  - 保持块引用样式不变
 - v3.1.0
   - 修复思源3.8.3版本中主题设置按钮移动到最左侧问题
   - 调整集市外观
@@ -53,8 +55,6 @@
   - 修复代码块设置最大高度时顶部空行
   - 修复导出PDF时若干问题
   - 移动端大纲适配标题颜色
-- v3.0.14
-  - 修复桌面端大纲缩进策略
 
 # 特殊适配
 

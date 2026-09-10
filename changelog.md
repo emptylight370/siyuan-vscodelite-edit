@@ -1,5 +1,10 @@
 # ChangeLog
 
+## v3.1.1
+
+- 保持块引用样式不变
+- Keep block reference style unchanged
+
 ## v3.1.0
 
 - 修复思源3.8.3版本中主题设置按钮移动到最左侧问题
