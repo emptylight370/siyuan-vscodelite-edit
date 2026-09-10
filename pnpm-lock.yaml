@@ -125,8 +125,8 @@ importers:
         specifier: ^1.104.0
         version: 1.104.0
       siyuan:
-        specifier: ^1.2.6
-        version: 1.2.6
+        specifier: ^1.2.7
+        version: 1.2.7
       stylelint:
         specifier: ^17.15.0
         version: 17.15.0(supports-color@10.2.2)(typescript@6.0.3)
@@ -924,8 +924,8 @@ packages:
     resolution: {integrity: sha512-bzyZ1e88w9O1iNJbKnOlvYTrWPDl46O1bG0D3XInv+9tkPrxrN8jUUTiFlDkkmKWgn1M6CfIA13SuGqOa9Korw==}
     engines: {node: '>=14'}
 
-  siyuan@1.2.6:
-    resolution: {integrity: sha512-rgLgWcMvUwC/1pWjIoVNfWdeOivrz6QDd65JEaBzA5j/wTnZAOEQQGB9+APRshcAjeyNV+LUknWAc7FJPBJMrA==}
+  siyuan@1.2.7:
+    resolution: {integrity: sha512-IskEiST5wpnYbzwuCo4P98vRxnIj0a1nz9FyKfubqWmDKTjq0q/e39Pm9clVYpbOE9a7KDgoFqwF+0wjBR7UQg==}
 
   slash@5.1.0:
     resolution: {integrity: sha512-ZA6oR3T/pEyuqwMgAKT0/hAv8oAXckzbkmR0UkUosQ+Mc4RxGoJkRmwHgHufaenlyAgE1Mxgpdcrf75y6XcnDg==}
@@ -1681,7 +1681,7 @@ snapshots:
 
   signal-exit@4.1.0: {}
 
-  siyuan@1.2.6:
+  siyuan@1.2.7:
     dependencies:
       '@dop251/types-goja_nodejs-buffer': 0.0.0-20260212111938-1f56ff5bcf14
       '@dop251/types-goja_nodejs-global': 0.0.0-20260212111938-1f56ff5bcf14
