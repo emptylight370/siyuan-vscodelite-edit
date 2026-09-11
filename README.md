@@ -48,6 +48,7 @@ Limited by the configuration loading method, updated configurations for new vers
 
 - v3.1.1
   - Keep block reference style unchanged
+  - Tab block adapt to background plugin
 - v3.1.0
   - Fix issue that theme settings button moved to leftmost in SiYuan 3.8.3
   - Adjust bazaar appearance

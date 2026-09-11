@@ -3,7 +3,9 @@
 ## v3.1.1
 
 - 保持块引用样式不变
+- 页签块适配背景插件
 - Keep block reference style unchanged
+- Tab block adapt to background plugin
 
 ## v3.1.0
 

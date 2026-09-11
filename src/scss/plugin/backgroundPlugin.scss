@@ -89,7 +89,9 @@ body.bgenable {
         // 数据库卡片视图
         .av[data-av-type="gallery"],
         // 数据库看板视图
-        .av[data-av-type="kanban"] {
+        .av[data-av-type="kanban"],
+        // 页签块
+        .tabs[data-type="NodeTabs"] {
             /* 代码块 */
             /* 数据库块 */
             opacity: 0.8;
@@ -298,6 +300,11 @@ body.bgenable {
             border-bottom-left-radius: var(--b3-border-radius);
             border-bottom-right-radius: var(--b3-border-radius);
         }
+    }
+
+    // 修复页签块显示效果
+    .tabs[data-type="NodeTabs"] {
+        background-color: var(--b3-theme-background);
     }
 
     // 修复全屏模式时底下的应用框架会接着显示的问题
