@@ -1,3 +1,18 @@
+## [3.1.1](https://github.com/emptylight370/siyuan-vscodelite-edit/compare/3.1.0...3.1.1) (2026-09-12)
+
+### ✨ Features | 功能
+
+- 保持块引用样式不变 ([6ca59ed](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/6ca59ed537d428bf810a062ffaa04121559378cd))
+- 页签块适配背景插件 ([c2cdb6d](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/c2cdb6dea217f5f032b571cf5f95c8f0a58ab55f))
+
+### 🐛 Bug Fixes | 问题修复
+
+- 3.8.4-alpha6调整块引用下划线样式 ([d8bebfb](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/d8bebfbc6fe2a441e2c1547e3e9909b0d5f75e00))
+
+### 🛠️ Build system | 构建系统
+
+- 优化构建工作流 ([1d7a725](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/1d7a7253b5b3f90851981ceb2ff4905c50208951))
+
 ## [3.1.0](https://github.com/emptylight370/siyuan-vscodelite-edit/compare/3.0.15...3.1.0) (2026-09-07)
 
 ### ✨ Features | 功能
