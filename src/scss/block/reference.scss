@@ -3,7 +3,8 @@
 .protyle-wysiwyg [data-node-id] {
     span[data-type~="block-ref"]:not(.av__celltext) {
         color: var(--lite-block-ref-color);
-        border-bottom: unset;
+        // 3.8.4 调整默认块引用样式
+        background-image: unset;
 
         // 动态锚文本dynamic
         &[data-subtype="d"] {
