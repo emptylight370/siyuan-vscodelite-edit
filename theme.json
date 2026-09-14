@@ -17,6 +17,8 @@
     "zh-CN": "README.zh-CN.md",
     "zh-TW": "README.zh-CN.md"
   },
+  "icon": "icon.png",
+  "preview": "preview.png",
   "funding": {
     "custom": ["https://blog.emptylight.cn/sponsor", "https://emptylight370.github.io/sponsor"]
   },
