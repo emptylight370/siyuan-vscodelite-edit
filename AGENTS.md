@@ -5,7 +5,7 @@
 ### 环境准备
 
 - `mise install`：安装 node / pnpm / prettier / lefthook / git-cliff 工具链，并通过 `[deps.lefthook]` 自动执行 `lefthook install`。
-- `pnpm install`：安装依赖。仓库由 mise + pnpm 管理，Node ≥ 22.18.0。
+- `pnpm install`：安装依赖。仓库由 mise + pnpm 管理，Node ≥ 24.15.0。
 - 增删依赖一律用 `pnpm add` / `pnpm remove`，**不要**直接编辑 `package.json`。
 
 ### 构建
