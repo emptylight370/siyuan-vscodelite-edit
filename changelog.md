@@ -1,5 +1,10 @@
 # ChangeLog
 
+## v3.1.2
+
+- 修复水平页签块顶部圆角
+- Fix horizontal tab block top round
+
 ## v3.1.1
 
 - 保持块引用样式不变

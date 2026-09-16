@@ -305,6 +305,13 @@ body.bgenable {
     // 修复页签块显示效果
     .tabs[data-type="NodeTabs"] {
         background-color: var(--b3-theme-background);
+
+        .tabs-header {
+            &:has(> .tabs-list[aria-orientation="horizontal"]) {
+                border-top-left-radius: var(--tabs-border-top-left-radius);
+                border-top-right-radius: var(--tabs-border-top-right-radius);
+            }
+        }
     }
 
     // 修复全屏模式时底下的应用框架会接着显示的问题
