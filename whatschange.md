@@ -1,3 +1,9 @@
+## [3.1.2](https://github.com/emptylight370/siyuan-vscodelite-edit/compare/3.1.1...3.1.2) (2026-09-18)
+
+### 🐛 Bug Fixes | 问题修复
+
+- 背景插件下水平页签块顶部圆角 ([bb70300](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/bb70300d1d0d38253e0814ee2a99a3f619431e14))
+
 ## [3.1.1](https://github.com/emptylight370/siyuan-vscodelite-edit/compare/3.1.0...3.1.1) (2026-09-12)
 
 ### ✨ Features | 功能
