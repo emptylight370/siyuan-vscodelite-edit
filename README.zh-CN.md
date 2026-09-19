@@ -46,14 +46,13 @@
 > 完整更新日志查看[changelog](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/changelog.md)
 > 提交历史日志查看[whatschange](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/whatschange.md)
 
+- v3.1.3
+  - 背景图片插件样式适配3.8.4数据快照面板
 - v3.1.2
   - 修复水平页签块顶部圆角
 - v3.1.1
   - 保持块引用样式不变
   - 页签块适配背景插件
-- v3.1.0
-  - 修复思源3.8.3版本中主题设置按钮移动到最左侧问题
-  - 调整集市外观
 
 # 特殊适配
 

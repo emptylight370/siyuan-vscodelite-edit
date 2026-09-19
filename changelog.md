@@ -1,5 +1,10 @@
 # ChangeLog
 
+## v3.1.3
+
+- 背景图片插件样式适配3.8.4数据快照面板
+- Background cover plugin style adapt to 3.8.4 data snapshot panel
+
 ## v3.1.2
 
 - 修复水平页签块顶部圆角

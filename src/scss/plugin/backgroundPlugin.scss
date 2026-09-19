@@ -377,6 +377,11 @@ body.bgenable {
             color: var(--b3-theme-surface);
         }
     }
+
+    // 3.8.4新增的数据快照面板标题
+    .history__snapshot-heading {
+        background-color: transparent;
+    }
 }
 
 :root[data-theme-mode="light"] body.bgenable {

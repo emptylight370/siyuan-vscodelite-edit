@@ -46,14 +46,13 @@ Limited by the configuration loading method, updated configurations for new vers
 > Full changelog view [ChangeLog](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/changelog.md)
 > Commit history view [whatschange](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/whatschange.md)
 
+- v3.1.3
+  - Background cover plugin style adapt to 3.8.4 data snapshot panel
 - v3.1.2
   - Fix horizontal tab block top round
 - v3.1.1
   - Keep block reference style unchanged
   - Tab block adapt to background plugin
-- v3.1.0
-  - Fix issue that theme settings button moved to leftmost in SiYuan 3.8.3
-  - Adjust bazaar appearance
 
 # Special fitness
 
