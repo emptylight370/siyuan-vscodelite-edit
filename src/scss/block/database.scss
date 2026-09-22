@@ -17,7 +17,9 @@
 }
 
 .av__container {
-    .av[data-av-type="table"] & {
+    .av[data-av-type="table"] &,
+    .av[data-av-type="calendar"] &,
+    .av[data-av-type="list"] & {
         @extend %database-basic;
     }
 

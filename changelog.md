@@ -4,8 +4,10 @@
 
 - 背景图片插件样式适配3.8.4数据快照面板
 - 适配数据库日历视图
+- 适配数据库列表视图
 - Background cover plugin style adapt to 3.8.4 data snapshot panel
 - Adapt to database calendar view
+- Adapt to database list view
 
 ## v3.1.2
 

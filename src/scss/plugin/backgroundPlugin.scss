@@ -92,6 +92,8 @@ body.bgenable {
         .av[data-av-type="kanban"],
         // 数据库日历视图
         .av[data-av-type="calendar"],
+        // 数据库列表视图
+        .av[data-av-type="list"],
         // 页签块
         .tabs[data-type="NodeTabs"] {
             /* 代码块 */
@@ -215,7 +217,9 @@ body.bgenable {
         // 数据库看板视图
         .av.av--touch[data-av-type="kanban"],
         // 数据库日历视图
-        .av.av--touch[data-av-type="calendar"] {
+        .av.av--touch[data-av-type="calendar"],
+        // 数据库列表视图
+        .av.av--touch[data-av-type="list"] {
             /* 数据库块 */
             opacity: 0.85;
         }
@@ -322,6 +326,14 @@ body.bgenable {
         .av__calendar-scroll {
             border-bottom-left-radius: var(--b3-border-radius);
             border-bottom-right-radius: var(--b3-border-radius);
+        }
+    }
+
+    // 数据库列表视图
+    .av[data-av-type="list"] {
+        .av__container {
+            background-color: var(--b3-theme-background);
+            border-radius: var(--b3-border-radius);
         }
     }
 
