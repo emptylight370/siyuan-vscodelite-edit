@@ -1,8 +1,20 @@
+## [3.1.3](https://github.com/emptylight370/siyuan-vscodelite-edit/compare/3.1.2...3.1.3) (2026-09-22)
+
+### ✨ Features | 功能
+
+- 背景图片插件适配数据快照面板 ([79f54e3](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/79f54e37c9b194e3aeced7af3740f296cb7d30f2))
+- 背景插件适配数据库日历视图 ([53d990f](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/53d990fb35f42af810ffc272c3cc1d6dc7517a6d))
+- 背景插件适配数据库列表视图 ([4edfcbb](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/4edfcbba84c6eb07b91c58569e64108c08da524e))
+
 ## [3.1.2](https://github.com/emptylight370/siyuan-vscodelite-edit/compare/3.1.1...3.1.2) (2026-09-18)
 
 ### 🐛 Bug Fixes | 问题修复
 
 - 背景插件下水平页签块顶部圆角 ([bb70300](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/bb70300d1d0d38253e0814ee2a99a3f619431e14))
+
+### 🛠️ Build system | 构建系统
+
+- **(fix)** mise npm后端换用内置aube以兼容ci环境 ([90fc558](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/90fc558be14d4951e4cba31c5d9ad08b537efa38))
 
 ## [3.1.1](https://github.com/emptylight370/siyuan-vscodelite-edit/compare/3.1.0...3.1.1) (2026-09-12)
 
