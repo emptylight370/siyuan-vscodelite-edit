@@ -48,6 +48,7 @@ Limited by the configuration loading method, updated configurations for new vers
 
 - v3.1.3
   - Background cover plugin style adapt to 3.8.4 data snapshot panel
+  - Adapt to database calendar view
 - v3.1.2
   - Fix horizontal tab block top round
 - v3.1.1
