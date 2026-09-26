@@ -1,5 +1,7 @@
 // TODO - 移除打字机模式，自思源 3.8.6 开始计算三个版本内不移除，
 // 理论上即 3.8.6 - 3.8.7 - 3.8.8，在 3.8.9 移除
+// 最低版本提升至 3.8.6-alpha.5
+// GitHub issue: emptylight370/siyuan-vscodelite-edit#44
 
 import { getMsg } from "../api";
 
