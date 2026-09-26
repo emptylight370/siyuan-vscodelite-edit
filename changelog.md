@@ -1,5 +1,10 @@
 # ChangeLog
 
+## v3.1.4
+
+- 添加功能移除提示
+- Add feature removal hint
+
 ## v3.1.3
 
 - 背景图片插件样式适配3.8.4数据快照面板

@@ -46,15 +46,14 @@
 > 完整更新日志查看[changelog](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/changelog.md)
 > 提交历史日志查看[whatschange](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/whatschange.md)
 
+- v3.1.4
+  - 添加功能移除提示
 - v3.1.3
   - 背景图片插件样式适配3.8.4数据快照面板
   - 适配数据库日历视图
   - 适配数据库列表视图
 - v3.1.2
   - 修复水平页签块顶部圆角
-- v3.1.1
-  - 保持块引用样式不变
-  - 页签块适配背景插件
 
 # 特殊适配
 
