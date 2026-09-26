@@ -64,8 +64,8 @@ export async function loadGlobalVars() {
         },
         newVersionHint: {
             "zh-CN":
-                "VSCE:感谢更新VSCode Lite Edit主题，主题即将移除自行实现的打字机功能，请用设置中的“光标上下文行数”代替。<br/>本通知只应在主题更新后显示一次，如多次反复显示请在非发布模式下打开工作空间或重新保存主题设置。点击本通知以关闭。",
-            en: 'VSCE: Thanks for update VSCode Lite Edit theme, the self-implement typewriter feature will be removed, please use the "Cursor surrounding lines" setting instead.<br/>This notice should only be displayed once after the theme is updated. If it is displayed repeatedly multiple times, please open the workspace in non-publishing mode or re-save the theme settings. Click this notice to close.',
+                "VSCE:感谢更新VSCode Lite Edit主题，主题即将移除自行实现的打字机功能与文档树特殊光标样式，请用设置中的“光标上下文行数”代替打字机；文档树可直接双击打开文档。<br/>本通知只应在主题更新后显示一次，如多次反复显示请在非发布模式下打开工作空间或重新保存主题设置。点击本通知以关闭。",
+            en: 'VSCE: Thanks for update VSCode Lite Edit theme, the self-implement typewriter feature and the special filetree cursor style will be removed. Please use the "Cursor surrounding lines" setting instead of typewriter; double-click to open documents in the filetree.<br/>This notice should only be displayed once after the theme is updated. If it is displayed repeatedly multiple times, please open the workspace in non-publishing mode or re-save the theme settings. Click this notice to close.',
         },
         typewriterON: {
             "zh-CN": "VSCE:打字机模式已开启",

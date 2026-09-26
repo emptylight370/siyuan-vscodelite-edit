@@ -380,8 +380,11 @@ export async function getSettings(): Promise<SettingPanelId[]> {
     }
     // ! 主题更新后提示通知
     if (config["lastSeen"] !== globalThis.vscDefaultConf["lastSeen"] || config["lastSeen"] == undefined) {
-        // TODO - 临时措施，仅在启用设置项时显示通知
-        await updateLastSeen(globalThis.vscDefaultConf.lastSeen, config.plugins.typewriter);
+        // TODO - 临时措施，仅在启用打字机或文档树特殊光标设置项时显示通知
+        await updateLastSeen(
+            globalThis.vscDefaultConf.lastSeen,
+            config.plugins.typewriter || config.plugins.filetreeExpand,
+        );
     }
     // ! 从设置中获取启用的设置项
     settingsSchema.forEach((s) => {
