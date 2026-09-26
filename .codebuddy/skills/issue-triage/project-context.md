@@ -27,6 +27,7 @@
 | `SPACE:Theme`          | 主题出现问题                                           |
 | `SPACE:PluginAdaption` | 插件适配                                               |
 | `SPACE:Configure`      | 设置项调整                                             |
+| `feature removal`      | 从主题中移除功能（2026-09-26 经用户同意创建）          |
 | `No Reproduce`         | 无法复现                                               |
 | `not template`         | 不是从模板创建的                                       |
 | `template-triangle`    | Issue created with template, needs configuration       |
