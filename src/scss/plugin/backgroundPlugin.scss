@@ -95,9 +95,13 @@ body.bgenable {
         // 数据库列表视图
         .av[data-av-type="list"],
         // 页签块
-        .tabs[data-type="NodeTabs"] {
+        .tabs[data-type="NodeTabs"],
+        // 思维导图块
+        .mindmap[data-type="NodeMindmap"] {
             /* 代码块 */
             /* 数据库块 */
+            /* 页签块 */
+            /* 思维导图块 */
             opacity: 0.8;
         }
 

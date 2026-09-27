@@ -3,7 +3,9 @@
 ## v3.1.4
 
 - 添加功能移除提示
+- 背景图片插件样式适配思维导图块
 - Add feature removal hint
+- Background cover plugin style adatp to mindmap block
 
 ## v3.1.3
 
