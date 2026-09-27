@@ -47,7 +47,7 @@
 > 提交历史日志查看[whatschange](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/whatschange.md)
 
 - v3.1.4
-  - 添加功能移除提示
+  - 即将移除主题设置内打字机模式与文档树特殊适配
   - 背景图片插件样式适配思维导图块
 - v3.1.3
   - 背景图片插件样式适配3.8.4数据快照面板
