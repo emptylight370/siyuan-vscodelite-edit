@@ -30,8 +30,7 @@
                 }
             }
 
-            #{$selector} > li.b3-list-item > span.b3-list-item__toggle,
-            #{$selector} > li.b3-list-item > span.b3-list-item__toggle1 {
+            #{$selector} > li.b3-list-item > span.b3-list-item__toggle {
                 /* 第#{$i}级缩进 */
                 padding-left: $base-padding + ($i - 1) * $indent-step !important;
             }
