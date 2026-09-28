@@ -201,6 +201,7 @@ $RECYCLE.BIN/
 
 # Local scripts
 scripts/*
+!scripts/check-selectors.ts
 
 # Compiled results
 sub/*
