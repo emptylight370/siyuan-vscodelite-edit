@@ -45,9 +45,8 @@ body.bgenable {
                 background-color: transparent;
             }
 
-            .graph__svg,
-            .inbox__list {
-                /* 修复关系图和收集箱背景 */
+            .graph__svg {
+                /* 修复关系图背景 */
                 background-color: transparent;
             }
         }
@@ -258,9 +257,7 @@ body.bgenable {
     // 选项的背景框
     .config__tab-wrap .config__tab-container,
     // 右边的选项
-    .config__tab-wrap .config__tab-container .b3-label:not(.b3-label--inner),
-    // 单独适配账户页面的文字部分
-    .config-account__center.config-account__center--text {
+    .config__tab-wrap .config__tab-container .b3-label:not(.b3-label--inner) {
         background-color: transparent;
     }
 
