@@ -49,6 +49,7 @@ Limited by the configuration loading method, updated configurations for new vers
 - v3.1.4
   - The typewriter mode and document tree special adaption in theme setting will be removed
   - Background cover plugin style adatp to mindmap block
+  - Remove some invalid selectors
 - v3.1.3
   - Background cover plugin style adapt to 3.8.4 data snapshot panel
   - Adapt to database calendar view

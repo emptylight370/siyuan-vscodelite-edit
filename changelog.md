@@ -4,8 +4,10 @@
 
 - 添加功能移除提示
 - 背景图片插件样式适配思维导图块
+- 移除若干无效选择器
 - Add feature removal hint
 - Background cover plugin style adatp to mindmap block
+- Remove some invalid selectors
 
 ## v3.1.3
 
