@@ -148,7 +148,7 @@ function addThemeToolBar() {
         vscToolBar.style.height = "14px";
 
         const insertMobile = (count = 0) => {
-            if (count > 60) return;
+            if (count > 600) return;
             // 尝试获取移动端的文档操作按钮
             const exitFocus = document.querySelector('button[data-type="exit-focus"]');
             if (exitFocus) {
