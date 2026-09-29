@@ -1,3 +1,34 @@
+## [3.1.4](https://github.com/emptylight370/siyuan-vscodelite-edit/compare/3.1.3...3.1.4) (2026-09-29)
+
+### ✨ Features | 功能
+
+- 添加移除打字机功能的提示，仅在启用功能时发送通知 ([2188451](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/2188451364a405ff7b6d24e2171d49681bdc6129))
+- 添加处理issue的skill ([ecb3b93](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/ecb3b932f06a90b9c3c2e2c73a9025909da174c4))
+- 添加移除文档树特殊光标样式的提示#45 ([ea66d30](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/ea66d30cb49b15141caf90607a0b73a82c9d9a49))
+- 背景插件适配思维导图块 ([427e6ee](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/427e6eec09eb3a8108eebca55987f7bc9b6c8f32))
+- 移动端添加按钮检测时间拉长到十分钟 ([08c7c95](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/08c7c95f96c384a38ec0bb9326cae9c24a55d9e5))
+
+### 🐛 Bug Fixes | 问题修复
+
+- 修正旧拼写错误 ([22533f0](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/22533f056e09ea4ddac7974d8f4f97f79a8f7e55))
+
+### 📄 Documentation | 文档
+
+- 完善备注#44 ([4853058](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/4853058dd6e7a635d7ccee17f438e00cb6a4101a))
+- 准备更新日志 #44 #45 ([546e2d6](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/546e2d698618bc58855f39d653a3b0e6897cc86e))
+- 说明即将移除的功能#44 #45 ([66f6e01](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/66f6e016231c60e8011df7cd7ee6df39b8920f6d))
+- 移除若干无效选择器 ([e0387e9](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/e0387e98d2b5f11d0f326fa358df18ed41bc783a))
+
+### ⏪ Reverts | 回退
+
+- 移除死选择器 ([7e5782e](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/7e5782e5718603af5e93b4660eb8b28aa6624969))
+- 移除死选择器 ([39ec611](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/39ec611ed332469d59eaecdd90534e67219fa607))
+
+### 🛠️ Build system | 构建系统
+
+- **(issue)** 增加一个label ([8e09880](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/8e09880cba93c28fb032b131053b5a78fb8b214c))
+- 添加扫描选择器脚本 ([d76e312](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/d76e312badce5119c3ca8b9c242c695e81d99c26))
+
 ## [3.1.3](https://github.com/emptylight370/siyuan-vscodelite-edit/compare/3.1.2...3.1.3) (2026-09-22)
 
 ### ✨ Features | 功能
