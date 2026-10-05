@@ -1,5 +1,10 @@
 # ChangeLog
 
+## v3.1.5
+
+- 移动端支持设置页跳转集市
+- Mobile support jump to bazaar from settings page
+
 ## v3.1.4
 
 - 添加功能移除提示

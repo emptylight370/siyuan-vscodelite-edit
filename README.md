@@ -46,6 +46,8 @@ Limited by the configuration loading method, updated configurations for new vers
 > Full changelog view [ChangeLog](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/changelog.md)
 > Commit history view [whatschange](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/whatschange.md)
 
+- v3.1.5
+  - Mobile support jump to bazaar from settings page
 - v3.1.4
   - The typewriter mode and document tree special adaption in theme setting will be removed
   - Background cover plugin style adatp to mindmap block
@@ -54,8 +56,6 @@ Limited by the configuration loading method, updated configurations for new vers
   - Background cover plugin style adapt to 3.8.4 data snapshot panel
   - Adapt to database calendar view
   - Adapt to database list view
-- v3.1.2
-  - Fix horizontal tab block top round
 
 # Special fitness
 

@@ -46,6 +46,8 @@
 > 完整更新日志查看[changelog](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/changelog.md)
 > 提交历史日志查看[whatschange](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/whatschange.md)
 
+- v3.1.5
+  - 移动端支持设置页跳转集市
 - v3.1.4
   - 即将移除主题设置内打字机模式与文档树特殊适配
   - 背景图片插件样式适配思维导图块
@@ -54,8 +56,6 @@
   - 背景图片插件样式适配3.8.4数据快照面板
   - 适配数据库日历视图
   - 适配数据库列表视图
-- v3.1.2
-  - 修复水平页签块顶部圆角
 
 # 特殊适配
 
