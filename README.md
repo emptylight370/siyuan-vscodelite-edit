@@ -48,6 +48,7 @@ Limited by the configuration loading method, updated configurations for new vers
 
 - v3.1.5
   - Mobile support jump to bazaar from settings page
+  - Improve bazzar package detail page callout block appearance
 - v3.1.4
   - The typewriter mode and document tree special adaption in theme setting will be removed
   - Background cover plugin style adatp to mindmap block

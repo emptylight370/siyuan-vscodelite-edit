@@ -3,7 +3,9 @@
 ## v3.1.5
 
 - 移动端支持设置页跳转集市
+- 优化集市包详情页提示块外观
 - Mobile support jump to bazaar from settings page
+- Improve bazzar package detail page callout block appearance
 
 ## v3.1.4
 
