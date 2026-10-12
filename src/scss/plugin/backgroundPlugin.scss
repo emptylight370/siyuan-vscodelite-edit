@@ -1,6 +1,6 @@
 #bglayer,
 #bgvideo {
-    opacity: 1 !important;
+    opacity: 0.8 !important;
 }
 
 body.bgenable {
@@ -171,6 +171,15 @@ body.bgenable {
 
             .toolbar {
                 background-color: var(--lite-sidebar-title--mobile);
+            }
+        }
+
+        #sidebar,
+        #sidebarRight {
+            background-color: var(--lite-sidebar-background--mobile);
+
+            .toolbar--dark {
+                background-color: var(--lite-sidebar-background--mobile);
             }
         }
 

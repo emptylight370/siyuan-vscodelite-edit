@@ -4,8 +4,10 @@
 
 - 移动端支持设置页跳转集市
 - 优化集市包详情页提示块外观
+- 优化背景图片插件适配
 - Mobile support jump to bazaar from settings page
 - Improve bazzar package detail page callout block appearance
+- Improve background cover plugin adaption
 
 ## v3.1.4
 
