@@ -1,3 +1,15 @@
+## [3.1.5](https://github.com/emptylight370/siyuan-vscodelite-edit/compare/3.1.4...3.1.5) (2026-10-13)
+
+### ✨ Features | 功能
+
+- 移动端支持设置页跳转集市 ([8140d15](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/8140d15b1aa6c0966aa04817caa6083fda4fe827))
+- 优化集市包详情页提示块外观 ([74dfc87](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/74dfc871530bd13654cb927d3ec6a0dbb4806c82))
+- 优化背景图片插件适配 ([4343855](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/4343855a66ec9497e821db3a349388c32d6580ad))
+
+### 🐛 Bug Fixes | 问题修复
+
+- 背景插件适配新窗口页签栏 ([9e8345e](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/9e8345e1f8250031f739ff28b64f10b7a755f0d4))
+
 ## [3.1.4](https://github.com/emptylight370/siyuan-vscodelite-edit/compare/3.1.3...3.1.4) (2026-09-29)
 
 ### ✨ Features | 功能
