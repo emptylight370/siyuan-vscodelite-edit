@@ -427,6 +427,16 @@ body.bgenable {
     .history__snapshot-heading {
         background-color: transparent;
     }
+
+    // 适配新窗口打开，不完整的窗口
+    &.body--window {
+        [data-type="wnd"] {
+            // 新窗口中的页签栏，默认无背景
+            > .fn__flex {
+                background-color: var(--mk-toolbar-background);
+            }
+        }
+    }
 }
 
 :root[data-theme-mode="light"] body.bgenable {
