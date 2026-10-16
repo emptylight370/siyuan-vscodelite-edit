@@ -43,7 +43,7 @@ Limited by the configuration loading method, updated configurations for new vers
 
 # ChangeLog
 
-> Full changelog view [ChangeLog](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/changelog.md)
+> Full changelog view [ChangeLog](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/changelog.md)  
 > Commit history view [whatschange](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/whatschange.md)
 
 - v3.1.5
@@ -113,9 +113,7 @@ Currently adapted plugins are:
 Bug report & Known issue: [Issue](https://github.com/emptylight370/siyuan-vscodelite-edit/issues)
 
 Don't use GitHub & Can't visit Github?  
-Please [email to me](mailto:1378990254@qq.com)(1378990254@qq.com).  
-Or [join QQ channel](https://pd.qq.com/s/7uxvabgbp).  
-Or [Liandi Forum](https://ld246.com/article/1728034766990).
+Please [email to me](mailto:1378990254@qq.com)(1378990254@qq.com).
 
 Support development: [Link](https://emptylight370.github.io/sponsor)
 
