@@ -101,16 +101,6 @@ export const settingsSchema = [
     { key: "mathPanel", group: "plugins", default: false, label: "mathitem", desc: "mathdesc" },
     // 双标签页
     { key: "doubleTabbar", group: "plugins", default: false, label: "doubleTabbaritem", desc: "doubleTabbardesc" },
-    // 打字机模式
-    { key: "typewriter", group: "plugins", default: false, label: "typewriteritem", desc: "typewriterdesc" },
-    // 点击标题或图标展开收起文档树
-    {
-        key: "filetreeExpand",
-        group: "plugins",
-        default: false,
-        label: "filetreeExpanditem",
-        desc: "filetreeExpanddesc",
-    },
 ] as const satisfies readonly SettingSchemaEntry[];
 
 /**

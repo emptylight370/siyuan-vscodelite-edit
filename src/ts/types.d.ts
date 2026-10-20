@@ -46,10 +46,6 @@ export interface ThemeConfig {
         backgroundCoverMobile: boolean;
         /** 双标签页 */
         doubleTabbar: boolean;
-        /** 打字机模式 */
-        typewriter: boolean;
-        /** 点击标题或图标展开收起文档树 */
-        filetreeExpand: boolean;
     };
 }
 
@@ -84,10 +80,6 @@ export interface vscMessage {
     loadPDFPersetFail: LocalizedMessage;
     /** 主题版本更新提示 */
     newVersionHint: LocalizedMessage;
-    /** 打字机模式启动 */
-    typewriterON: LocalizedMessage;
-    /** 打字机模式关闭 */
-    typewriterOFF: LocalizedMessage;
 
     // * 设置按钮提示文本
     /** 主题设置按钮提示文本 */
@@ -168,14 +160,6 @@ export interface vscMessage {
     titleIconDesc: LocalizedMessage;
     /** 多栏斜杠菜单选项 */
     slashMenuitem: LocalizedMessage;
-    /** 打字机模式选项 */
-    typewriteritem: LocalizedMessage;
-    /** 打字机模式描述 */
-    typewriterdesc: LocalizedMessage;
-    /** 点击标题或图表展开收起文档树选项 */
-    filetreeExpanditem: LocalizedMessage;
-    /** 点击标题或图表展开收起文档树描述 */
-    filetreeExpanddesc: LocalizedMessage;
 }
 
 /** 计时器接口 */
@@ -262,6 +246,4 @@ declare global {
     var vscObservers: vscObservers;
     /** 目前所有的计数器 */
     var vscCounters: vscCounters;
-    /** 打字机模式的 AbortController，跨模块重载持久化 */
-    var vscTypewriterAbort: AbortController | null;
 }

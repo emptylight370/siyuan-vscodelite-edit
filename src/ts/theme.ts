@@ -2,7 +2,6 @@ import { _postMessage, getMsg } from "./api";
 import { loadGlobalVars } from "./defs";
 import { bg, bgObserve } from "./plugins/background";
 import { getSlashMenusCount, slashMenuObserver } from "./plugins/slashmenu";
-import { destroyTypewriterMode, initTypewriterMode } from "./plugins/typewriter";
 import { createSettingsWindow, getSettings } from "./setting";
 import { SettingPanelId } from "./types";
 
@@ -79,8 +78,6 @@ window.destroyTheme = () => {
     // 移除body特殊适配语句
     document.body.classList.remove("bgenable");
     document.body.classList.remove("vscmobile");
-    // 移除打字机模式监听
-    destroyTypewriterMode();
     // 移除计时器
     if (globalThis.vscTimers)
         Object.keys(globalThis.vscTimers).forEach((key) => {
@@ -238,9 +235,6 @@ function addImports(table: HTMLLinkElement, labels: SettingPanelId[]) {
             case "slashMenu":
                 rulesToInsert.push("@import url(sub/app/slashmenu.css);");
                 break;
-            case "filetreeExpand":
-                rulesToInsert.push("@import url(sub/app/filetree-cursor.css);");
-                break;
             default:
                 break;
         }
@@ -291,10 +285,6 @@ function addFixedAttribute(settings: SettingPanelId[]) {
                 slashMenuObserver(0);
             }
         }, 500);
-    }
-    // ?如果设置启用打字机模式才进入判断
-    if (settings.includes("typewriter") && !isExportPDF) {
-        initTypewriterMode();
     }
     // *<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 }

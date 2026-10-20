@@ -13,7 +13,7 @@ export async function loadGlobalVars() {
      * @version 3.1.5
      */
     globalThis.vscDefaultConf = {
-        version: 15,
+        version: 16,
         lastSeen: "3.1.5",
         // 由 settingsSchema 自动聚合默认配置
         theme: Object.fromEntries(
@@ -64,16 +64,8 @@ export async function loadGlobalVars() {
         },
         newVersionHint: {
             "zh-CN":
-                "VSCE:感谢更新VSCode Lite Edit主题，主题即将移除自行实现的打字机功能与文档树特殊光标样式，请用设置中的“光标上下文行数”代替打字机；文档树可直接双击打开文档。<br/>本通知只应在主题更新后显示一次，如多次反复显示请在非发布模式下打开工作空间或重新保存主题设置。点击本通知以关闭。",
-            en: 'VSCE: Thanks for update VSCode Lite Edit theme, the self-implement typewriter feature and the special filetree cursor style will be removed. Please use the "Cursor surrounding lines" setting instead of typewriter; double-click to open documents in the filetree.<br/>This notice should only be displayed once after the theme is updated. If it is displayed repeatedly multiple times, please open the workspace in non-publishing mode or re-save the theme settings. Click this notice to close.',
-        },
-        typewriterON: {
-            "zh-CN": "VSCE:打字机模式已开启",
-            en: "VSCE:Typewriter mode is ON",
-        },
-        typewriterOFF: {
-            "zh-CN": "VSCE:打字机模式已关闭",
-            en: "VSCE:Typewriter mode is OFF",
+                "VSCE:感谢更新VSCode Lite Edit主题，主题已移除自行实现的打字机功能与文档树特殊光标样式，请使用思源设置中的“光标上下文行数”实现打字机效果；文档树可直接双击打开文档。<br/>本通知只应在主题更新后显示一次，如多次反复显示请在非发布模式下打开工作空间或重新保存主题设置。点击本通知以关闭。",
+            en: 'VSCE: Thanks for update VSCode Lite Edit theme, the self-implement typewriter feature and the special filetree cursor style have been removed. Please use the "Cursor surrounding lines" setting in SiYuan for typewriter effect; double-click to open documents in the filetree.<br/>This notice should only be displayed once after the theme is updated. If it is displayed repeatedly multiple times, please open the workspace in non-publishing mode or re-save the theme settings. Click this notice to close.',
         },
         settingButtonAria: {
             "zh-CN": "VSCode Lite 主题设置",
@@ -226,23 +218,6 @@ export async function loadGlobalVars() {
         slashMenuitem: {
             "zh-CN": "斜杠(/)菜单多栏显示",
             en: "Slash(/) menu multi column display",
-        },
-        typewriteritem: {
-            "zh-CN": "打字机模式",
-            en: "Typewriter mode",
-        },
-        typewriterdesc: {
-            "zh-CN": "编辑时光标所在块始终保持在屏幕中央(可能带来性能问题)",
-            en: "Keep the cursor block centered in the viewport while editing(may cause performance issues)",
-        },
-        filetreeExpanditem: {
-            "zh-CN": "鼠标光标适配点击标题、图标展开收起文档树",
-            en: "Mouse cursor adaption click title, icon to expand or collapse the document tree",
-        },
-        filetreeExpanddesc: {
-            "zh-CN":
-                "适配电脑端设置：点击文档树图标、标题展开收起文档树，仅在启用这两个设置项时启用。在可打开文档处显示特殊光标",
-            en: "Adapt desktop settings: Click the document tree icon, title to expand or collapse the document tree, only enable when enable these two settings. Show special cursor on where you can open the document",
         },
     };
 

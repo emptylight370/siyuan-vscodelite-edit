@@ -1,5 +1,10 @@
 # ChangeLog
 
+## v3.1.6
+
+- 移除文档树指针适配与打字机模式
+- Remove filetree cursor adaption and typewriter
+
 ## v3.1.5
 
 - 移动端支持设置页跳转集市
