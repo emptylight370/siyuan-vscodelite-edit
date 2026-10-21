@@ -49,6 +49,7 @@ Limited by the configuration loading method, updated configurations for new vers
 - v3.1.6
   - Remove filetree cursor adaption and typewriter
   - Highlight document tag, database single and multiple selection options close button
+  - Optimize bazaar top category style
 - v3.1.5
   - Mobile support jump to bazaar from settings page
   - Improve bazzar package detail page callout block appearance

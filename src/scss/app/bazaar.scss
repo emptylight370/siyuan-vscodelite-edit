@@ -24,8 +24,8 @@
     .layout-tab-bar {
         // 3.8.3修改了集市顶部样式
         &.fn__flex {
-            padding-top: 4px;
-            padding-bottom: 4px;
+            padding-top: 2px;
+            padding-bottom: 2px;
         }
 
         .item.item--focus {
@@ -34,6 +34,10 @@
             font-size: 16px;
             background-color: var(--lite-bazaar-focus-background);
             padding-top: 1px;
+
+            .item__text {
+                margin-top: -2px;
+            }
         }
     }
 
