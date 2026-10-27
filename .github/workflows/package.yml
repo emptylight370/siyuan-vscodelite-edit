@@ -21,17 +21,6 @@ jobs:
           fetch-depth: 0
           fetch-tags: true
 
-      - uses: jdx/mise-action@82a612c5ab8bcda7cc5db6b7e81a8e7584c3dc6e # v5.2.3
-
-      - name: Install deps
-        run: pnpm install --frozen-lockfile
-
-      - name: Build scss
-        run: pnpm run build
-
-      - name: Package
-        run: zip -r package.zip . -i 'theme.*' 'icon.png' 'preview.png' 'README*.md' 'resources/*' 'sub/*' -x '**/*.css.map' 'theme.css.map' 'theme.scss'
-
       - name: Get current version
         uses: emptylight370/jq-action@v1
         id: version
@@ -39,12 +28,35 @@ jobs:
           data: theme.json
           filter: .version
 
+      - name: Skip if release exists
+        uses: mukunku/release-exists-action@12f0514a28ffd4801e771c59e7b9c4f9a60428f2 # v1.1.0
+        id: compare
+        with:
+          tag: ${{ steps.version.outputs.result }}
+
+      - if: steps.compare.outputs.exists != 'true'
+        uses: jdx/mise-action@82a612c5ab8bcda7cc5db6b7e81a8e7584c3dc6e # v5.2.3
+
+      - name: Install deps
+        if: steps.compare.outputs.exists != 'true'
+        run: pnpm install --frozen-lockfile
+
+      - name: Build scss
+        if: steps.compare.outputs.exists != 'true'
+        run: pnpm run build
+
+      - name: Package
+        if: steps.compare.outputs.exists != 'true'
+        run: zip -r package.zip . -i 'theme.*' 'icon.png' 'preview.png' 'README*.md' 'resources/*' 'sub/*' -x '**/*.css.map' 'theme.css.map' 'theme.scss'
+
       - name: Generate release log
+        if: steps.compare.outputs.exists != 'true'
         run: |
           git cliff -u -o release.md -t ${{ steps.version.outputs.result }}
           prettier -w release.md
 
       - name: Release
+        if: steps.compare.outputs.exists != 'true'
         uses: softprops/action-gh-release@efb35369e0ad2afab669f228072c1b0d510eae64 # v3.0.3
         with:
           files: package.zip
