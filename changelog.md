@@ -5,9 +5,11 @@
 - 移除文档树指针适配与打字机模式
 - 文档标签、数据库单选多选选项关闭按钮高亮
 - 优化集市顶部分类样式
+- 优化顶栏融合样式
 - Remove filetree cursor adaption and typewriter
 - Highlight document tag, database single and multiple selection options close button
 - Optimize bazaar top category style
+- Optimize top bar fusion style
 
 ## v3.1.5
 

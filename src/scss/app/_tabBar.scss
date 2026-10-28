@@ -105,9 +105,10 @@ body.body--blur .layout-tab-bar .item.item--focus {
         }
     }
 
-    .layout-tab-container {
-        margin-top: 3px;
-    }
+    // 3.8.8 还是 3.8.9 会留空
+    // .layout-tab-container {
+    //     margin-top: 3px;
+    // }
 }
 
 /* 移动端页签 */
