@@ -7,6 +7,12 @@ body.bgenable {
     background-color: var(--lite-modify-background);
     opacity: 1 !important;
 
+    .dock__backdrop {
+        /* 浮动侧栏悬浮弹出的侧栏 */
+        backdrop-filter: blur(2px);
+        opacity: 0.8;
+    }
+
     .dock {
         /* 两边的dock栏 */
         background: var(--lite-modify-surface__dock);
@@ -138,6 +144,7 @@ body.bgenable {
     &.vscmobile {
         .side-panel {
             background-color: var(--lite-sidebar-background--mobile);
+            backdrop-filter: blur(2px);
 
             &#model {
                 background-color: var(--lite-sidebar2-background--mobile);
@@ -185,6 +192,7 @@ body.bgenable {
 
         #menu.b3-menu {
             background-color: var(--lite-sidebar-background--mobile);
+            backdrop-filter: blur(2px);
 
             // 移动端的菜单项，新设置菜单仍然有效
             .b3-menu__item,
@@ -219,6 +227,7 @@ body.bgenable {
         // 移动端底部快捷栏
         #mobileBottomBar {
             background-color: var(--lite-modify-surface__menu);
+            backdrop-filter: blur(2px);
         }
 
         // 移动端数据库背景透明
@@ -245,6 +254,21 @@ body.bgenable {
     // 设置面板类的弹出面板
     .b3-dialog--open .b3-dialog__container {
         background-color: var(--lite-modify-surface__menu);
+        backdrop-filter: blur(2px);
+
+        // 适配命令面板
+        .search__header {
+            background-color: transparent;
+
+            > input {
+                background-color: transparent;
+            }
+        }
+
+        // 适配命令面板
+        #commands {
+            background-color: transparent;
+        }
     }
 
     // 菜单类的弹出面板
@@ -268,6 +292,7 @@ body.bgenable {
     // 右边的选项
     .config__tab-wrap .config__tab-container .b3-label:not(.b3-label--inner) {
         background-color: transparent;
+        backdrop-filter: blur(2px);
     }
 
     // 新默认主题设置面板设置组
