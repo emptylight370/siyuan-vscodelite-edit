@@ -28,7 +28,7 @@
 ### 部署到思源
 
 - 部署脚本由用户自行编写，不同步到仓库。需根据当前用户实际情况调用或编写。
-- 手工部署需复制：`theme.*`（排除 `theme.scss`、`*.css.map`）、`*.png`、`README*.md`、`resources/`、`sub/`，目标为工作空间的 `conf/appearance/themes/siyuan-vscodelite-edit/`。
+- 手工部署需复制：`theme.*`（排除 `theme.scss`、`*.css.map`）、`*.png`、`README*.md`、`resources/`、`sub/`，目标为工作空间的 `data/themes/siyuan-vscodelite-edit/`。
 
 ### 版本与日志
 
