@@ -2,9 +2,9 @@
 #MISE description="Deploy to SiYuan workspace"
 
 param (
-  [Parameter(HelpMessage = "Target workspace name")]
+  # 目标工作空间名称Target workspace name
   [string]$target,
-  [Parameter(HelpMessage = "Deploy to all workspaces")]
+  # 部署到所有工作空间Deploy to all workspaces
   [switch]$all
 )
 
