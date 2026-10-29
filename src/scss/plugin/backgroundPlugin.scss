@@ -286,13 +286,13 @@ body.bgenable {
     // 新默认主题设置面板背景色
     .config__panel,
     // 设置面板的右半边部分
+    // 对此应用 backdrop-filter 会导致弹窗错位
     .config__tab-wrap,
     // 选项的背景框
     .config__tab-wrap .config__tab-container,
     // 右边的选项
     .config__tab-wrap .config__tab-container .b3-label:not(.b3-label--inner) {
         background-color: transparent;
-        backdrop-filter: blur(2px);
     }
 
     // 新默认主题设置面板设置组
