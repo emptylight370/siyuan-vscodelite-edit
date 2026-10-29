@@ -48,6 +48,7 @@ Limited by the configuration loading method, updated configurations for new vers
 
 - v3.1.7
   - Adapt to 3.8.9 new loading animation
+  - Adapt to 3.8.9 exit popup
 - v3.1.6
   - Remove filetree cursor adaption and typewriter
   - Highlight document tag, database single and multiple selection options close button

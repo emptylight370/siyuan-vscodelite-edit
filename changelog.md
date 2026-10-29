@@ -3,7 +3,9 @@
 ## v3.1.7
 
 - 适配3.8.9新加载动画
+- 适配3.8.9退出弹窗
 - Adapt to 3.8.9 new loading animation
+- Adapt to 3.8.9 exit popup
 
 ## v3.1.6
 

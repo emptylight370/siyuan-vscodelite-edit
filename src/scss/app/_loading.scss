@@ -1,0 +1,27 @@
+// 退出弹窗
+#exitProgress {
+    // 背景遮罩模糊效果
+    .b3-dialog__scrim.b3-dialog__scrim--progress {
+        @supports (backdrop-filter: blur(4px)) {
+            background-color: rgb(255, 255, 255, 8%);
+            backdrop-filter: blur(4px) saturate(105%);
+
+            :root[data-theme-mode="dark"] & {
+                background-color: rgb(0, 0, 0, 6%);
+            }
+        }
+
+        @media (prefers-reduced-transparency: reduce), (forced-colors: active) {
+            &,
+            :root[data-theme-mode="dark"] & {
+                background-color: var(--b3-mask-background);
+                backdrop-filter: none;
+            }
+        }
+    }
+
+    // 弹窗本体
+    .b3-dialog__loading {
+        width: min(720px, calc(100vw - 32px));
+    }
+}
