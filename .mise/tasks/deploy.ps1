@@ -58,7 +58,12 @@ else {
     }
   }
   else {
-    $workspace = $current_workspace
+    # workspace info 接口没有 name 字段，按 path 反查列表中的完整条目
+    $workspace = $workspaces | Where-Object { $_.path -eq $current_workspace.path }
+    if (-not $workspace) {
+      Write-Error -Message "Current workspace not found in workspace list!"
+      exit 1
+    }
   }
   $target_dir = Join-Path $workspace.path "data/themes/siyuan-vscodelite-edit"
   CopyToWorkspace $source_dir $target_dir
