@@ -1,3 +1,31 @@
+## [3.1.6](https://github.com/emptylight370/siyuan-vscodelite-edit/compare/3.1.5...3.1.6) (2026-10-29)
+
+### ✨ Features | 功能
+
+- 鼠标悬浮高亮chip关闭按钮 ([78c9b80](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/78c9b8091fccb790e6126c5a44512b658bbf80ca))
+- 优化集市顶部分类样式 ([5e67e01](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/5e67e01cfea1a7c1f0d2965717b0329bfc8e1b72))
+- 增加一些透明效果 ([2ccbe51](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/2ccbe516fc9f8c513cd8c931c9a69ea6ba1e6769))
+
+### 🐛 Bug Fixes | 问题修复
+
+- 顶栏融合时编辑器顶部留空 ([9dece2c](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/9dece2c705af1a6d835001a6a232799885f47120))
+- 修复集市包详情页、AI配置不能覆盖整个窗口问题 ([9e5ae8e](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/9e5ae8e0336bcaf516fce47a9b2f9939f4f6279f))
+
+### 📄 Documentation | 文档
+
+- update readme ([caa918e](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/caa918ea3720b733107dc944a408d8b90c6ca45c))
+- 更新主题存放路径 ([41235fe](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/41235fecd2ad3d1c80a6976f8335af7cb9d09fef))
+
+### ⏪ Reverts | 回退
+
+- 移除文档树指针适配和打字机模式 ([d5954f6](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/d5954f601df985ec958482ff572f0a82409fd23f))
+
+### 🛠️ Build system | 构建系统
+
+- **(workflow)** 添加发布跳过检测逻辑 ([29d407a](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/29d407a77004cf47bf131b6dc917b7780055831e))
+- 改写部署脚本为mise任务 ([5d76333](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/5d763331f105b3f8797422d3b5b16c81a5d84fbf))
+- 改进脚本参数提示信息 ([d03f68b](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/d03f68b50689da32e3e03d092927a5e1bf532f57))
+
 ## [3.1.5](https://github.com/emptylight370/siyuan-vscodelite-edit/compare/3.1.4...3.1.5) (2026-10-13)
 
 ### ✨ Features | 功能
