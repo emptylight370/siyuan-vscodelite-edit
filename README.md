@@ -46,6 +46,8 @@ Limited by the configuration loading method, updated configurations for new vers
 > Full changelog view [ChangeLog](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/changelog.md)  
 > Commit history view [whatschange](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/whatschange.md)
 
+- v3.1.7
+  - Adapt to 3.8.9 new loading animation
 - v3.1.6
   - Remove filetree cursor adaption and typewriter
   - Highlight document tag, database single and multiple selection options close button
@@ -56,10 +58,6 @@ Limited by the configuration loading method, updated configurations for new vers
   - Mobile support jump to bazaar from settings page
   - Improve bazzar package detail page callout block appearance
   - Improve background cover plugin adaption
-- v3.1.4
-  - The typewriter mode and document tree special adaption in theme setting will be removed
-  - Background cover plugin style adatp to mindmap block
-  - Remove some invalid selectors
 
 # Special fitness
 

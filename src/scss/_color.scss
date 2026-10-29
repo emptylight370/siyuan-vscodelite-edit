@@ -75,6 +75,9 @@
     --mk-block-header-background-h4: rgb(112, 173, 71, 20%);
     --mk-block-header-background-h5: rgb(232, 77, 34, 20%);
     --mk-block-header-background-h6: rgb(128, 100, 162, 20%);
+
+    // [思源自带]
+    --b3-loading-color: #39c5bb; // 加载动画，3.8.9+
 }
 
 /* 暗黑模式元数据定义 */
@@ -147,4 +150,7 @@
     --mk-block-header-h4: #70ad47;
     --mk-block-header-h5: #e84c22;
     --mk-block-header-h6: #9f8ab9;
+
+    // [思源自带]
+    --b3-loading-color: #6cf; // 加载动画，3.8.9+
 }

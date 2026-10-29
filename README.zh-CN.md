@@ -46,6 +46,8 @@
 > 完整更新日志查看[changelog](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/changelog.md)  
 > 提交历史日志查看[whatschange](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/whatschange.md)
 
+- v3.1.7
+  - 适配3.8.9新加载动画
 - v3.1.6
   - 移除文档树指针适配与打字机模式
   - 文档标签、数据库单选多选选项关闭按钮高亮
@@ -56,10 +58,6 @@
   - 移动端支持设置页跳转集市
   - 优化集市包详情页提示块外观
   - 优化背景图片插件适配
-- v3.1.4
-  - 即将移除主题设置内打字机模式与文档树特殊适配
-  - 背景图片插件样式适配思维导图块
-  - 移除若干无效选择器
 
 # 特殊适配
 

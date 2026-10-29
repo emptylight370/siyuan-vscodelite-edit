@@ -1,5 +1,10 @@
 # ChangeLog
 
+## v3.1.7
+
+- 适配3.8.9新加载动画
+- Adapt to 3.8.9 new loading animation
+
 ## v3.1.6
 
 - 移除文档树指针适配与打字机模式
