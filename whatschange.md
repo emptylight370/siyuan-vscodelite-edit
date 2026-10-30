@@ -1,3 +1,18 @@
+## [3.1.7](https://github.com/emptylight370/siyuan-vscodelite-edit/compare/3.1.6...3.1.7) (2026-10-30)
+
+### ✨ Features | 功能
+
+- 禁用主题更新后通知 ([8ace717](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/8ace7172425cf06d0ef9ed8c85fa8429c15b81e3))
+- 适配3.8.9新加载动画 ([a966cbe](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/a966cbe1e601c5a22c17c2f01a0f8e89161e15e1))
+- 适配3.8.9退出弹窗 ([9dc0458](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/9dc04584006ab1c48fb1b687d19d8b8b71f89b30))
+- 为所有无进度加载弹窗调整宽度 ([1031366](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/1031366bde54c79f3efc6a758925f10fa953e0fd))
+
+### 🛠️ Build system | 构建系统
+
+- 修正当前工作空间无名称问题 ([3f3ddf9](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/3f3ddf947494e11a8d3da90077861fd0698ed06e))
+- 更新到node26 ([8e92e0e](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/8e92e0ed81d7455f0c99b58ccd95c83dad46a372))
+- 重构刷新界面方法 ([4f8bfce](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/4f8bfce059013322099ccaeb8525c5c7b56f513f))
+
 ## [3.1.6](https://github.com/emptylight370/siyuan-vscodelite-edit/compare/3.1.5...3.1.6) (2026-10-29)
 
 ### ✨ Features | 功能
