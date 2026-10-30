@@ -71,12 +71,31 @@ else {
 }
 
 try {
-  $res = (Invoke-WebRequest -Uri "http://localhost:6806/api/ui/reloadUI" -Method Post).Content | ConvertFrom-Json
-  if ($res.code -eq 0) {
-    Write-Output "刷新界面成功"
-  }
-  else {
-    Write-Output "刷新界面失败"
+  $kernel = Get-Process -Name SiYuan-Kernel
+  $net = Get-NetTCPConnection -OwningProcess $kernel.Id -RemotePort 0 -LocalAddress 127.0.0.1
+  foreach ($conn in $net) {
+    $workspace = Invoke-WebRequest -Uri "http://127.0.0.1:$($conn.LocalPort)/api/system/getWorkspaceInfo" -Method Post | ConvertFrom-Json
+    if (!$all && $workspace.data.workspaceDir -eq $workspace.path) {
+      $res = Invoke-WebRequest -Uri "http://127.0.0.1:$($conn.LocalPort)/api/ui/reloadUI" -Method Post
+      if ($res.StatusCode -eq 200) {
+        Write-Output "刷新$($workspace.name)界面完成"
+      }
+      else {
+        Write-Output "刷新$($workspace.name)界面失败"
+      }
+      exit 0
+    }
+    elseif ($all) {
+      if ($conn.LocalPort -ne 6806) {
+        $res = Invoke-WebRequest -Uri "http://127.0.0.1:$($conn.LocalPort)/api/ui/reloadUI" -Method Post
+        if ($res.StatusCode -eq 200) {
+          Write-Output "刷新界面完成"
+        }
+        else {
+          Write-Output "刷新界面失败"
+        }
+      }
+    }
   }
 }
 catch {
