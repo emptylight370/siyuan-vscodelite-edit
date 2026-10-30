@@ -12,7 +12,7 @@ $source_dir = $env:MISE_CONFIG_ROOT
 
 $workspaces = @(siyuan workspace list --format json | ConvertFrom-Json)
 
-$current_workspace = siyuan workspace info --format json | ConvertFrom-Json
+$target_workspace = $null
 
 if ($workspaces.Count -le 0) {
   Write-Error -Message "SiYuan workspace not found!"
@@ -51,48 +51,50 @@ if ($all) {
 }
 else {
   if ($target) {
-    $workspace = $workspaces | Where-Object { $_.name -eq $target }
-    if (-not $workspace) {
+    $target_workspace = $workspaces | Where-Object { $_.name -eq $target } | Select-Object -First 1
+    if (-not $target_workspace) {
       Write-Error -Message "Workspace '$target' not found!"
       exit 1
     }
   }
   else {
     # workspace info 接口没有 name 字段，按 path 反查列表中的完整条目
-    $workspace = $workspaces | Where-Object { $_.path -eq $current_workspace.path }
-    if (-not $workspace) {
+    $current_workspace = siyuan workspace info --format json | ConvertFrom-Json
+    $target_workspace = $workspaces | Where-Object { $_.path -eq $current_workspace.path } | Select-Object -First 1
+    if (-not $target_workspace) {
       Write-Error -Message "Current workspace not found in workspace list!"
       exit 1
     }
   }
-  $target_dir = Join-Path $workspace.path "data/themes/siyuan-vscodelite-edit"
+  $target_dir = Join-Path $target_workspace.path "data/themes/siyuan-vscodelite-edit"
   CopyToWorkspace $source_dir $target_dir
-  Write-Output "Deploy to workspace $($workspace.name)"
+  Write-Output "Deploy to workspace $($target_workspace.name)"
 }
 
 try {
   $kernel = Get-Process -Name SiYuan-Kernel
   $net = Get-NetTCPConnection -OwningProcess $kernel.Id -RemotePort 0 -LocalAddress 127.0.0.1
   foreach ($conn in $net) {
-    $workspace = Invoke-WebRequest -Uri "http://127.0.0.1:$($conn.LocalPort)/api/system/getWorkspaceInfo" -Method Post | ConvertFrom-Json
-    if (!$all && $workspace.data.workspaceDir -eq $workspace.path) {
+    $info = Invoke-WebRequest -Uri "http://127.0.0.1:$($conn.LocalPort)/api/system/getWorkspaceInfo" -Method Post | ConvertFrom-Json
+    if (-not $all -and $info.data.workspaceDir -eq $target_workspace.path) {
       $res = Invoke-WebRequest -Uri "http://127.0.0.1:$($conn.LocalPort)/api/ui/reloadUI" -Method Post
       if ($res.StatusCode -eq 200) {
-        Write-Output "刷新$($workspace.name)界面完成"
+        Write-Output "刷新$($target_workspace.name)界面完成"
       }
       else {
-        Write-Output "刷新$($workspace.name)界面失败"
+        Write-Output "刷新$($target_workspace.name)界面失败"
       }
       exit 0
     }
     elseif ($all) {
       if ($conn.LocalPort -ne 6806) {
+        $name = Split-Path -Path $info.data.workspaceDir -Leaf
         $res = Invoke-WebRequest -Uri "http://127.0.0.1:$($conn.LocalPort)/api/ui/reloadUI" -Method Post
         if ($res.StatusCode -eq 200) {
-          Write-Output "刷新界面完成"
+          Write-Output "刷新${name}界面完成"
         }
         else {
-          Write-Output "刷新界面失败"
+          Write-Output "刷新${name}界面失败"
         }
       }
     }
