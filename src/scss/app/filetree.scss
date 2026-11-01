@@ -38,11 +38,11 @@
     }
 }
 
-@mixin fileTreeIndent {
+@mixin fileTreeIndent($base-padding: 2px, $indent-step: 8px) {
     ul.b3-list--background {
         // 文档树缩进，一共7级
-        $base-padding: 2px;
-        $indent-step: 8px;
+        // $base-padding: 2px;
+        // $indent-step: 8px;
 
         @for $i from 2 through 8 {
             [aria-level="#{$i}"] > .b3-list-item__toggle {
@@ -151,6 +151,8 @@
 /* 移动端文档树 */
 [data-type="sidebar-file"] {
     @include fileTreeGroupDivider;
+
+    @include fileTreeIndent(0, 8px);
 
     @include fileTreeIndentLine;
 }
