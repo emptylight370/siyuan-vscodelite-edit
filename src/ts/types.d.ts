@@ -172,8 +172,6 @@ export interface vscTimers {
     settingMobileTimer: number | null;
     /** 检查斜杠菜单数量的计时器 */
     slashMenuTimer: number | null;
-    /** 斜杠菜单元素未找到时的重试计时器 */
-    slashMenuRetryTimer: number | null;
 }
 
 /** 观察器接口 */

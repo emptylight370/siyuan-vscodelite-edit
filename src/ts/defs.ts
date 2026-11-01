@@ -265,8 +265,6 @@ export async function loadGlobalVars() {
         settingMobileTimer: null,
         // 斜杠菜单检测数量的计时器，定时检测斜杠菜单数量并为每个菜单添加观察器
         slashMenuTimer: null,
-        // 斜杠菜单元素未找到时的重试计时器
-        slashMenuRetryTimer: null,
     };
 
     /**

@@ -1,7 +1,7 @@
 import { _postMessage, getMsg } from "./api";
 import { loadGlobalVars } from "./defs";
 import { bg, bgObserve } from "./plugins/background";
-import { getSlashMenusCount, slashMenuObserver } from "./plugins/slashmenu";
+import { destroySlashMenu, getSlashMenusCount, slashMenuObserver } from "./plugins/slashmenu";
 import { createSettingsWindow, getSettings } from "./setting";
 import { SettingPanelId } from "./types";
 
@@ -78,6 +78,8 @@ window.destroyTheme = () => {
     // 移除body特殊适配语句
     document.body.classList.remove("bgenable");
     document.body.classList.remove("vscmobile");
+    // 清理斜杠菜单的按键监听与观察器
+    destroySlashMenu();
     // 移除计时器
     if (globalThis.vscTimers)
         Object.keys(globalThis.vscTimers).forEach((key) => {
@@ -281,10 +283,12 @@ function addFixedAttribute(settings: SettingPanelId[]) {
     // ?如果设置启用斜杠菜单才进入判断
     if (settings.includes("slashMenu") && globalThis.vscTimers.slashMenuTimer === null) {
         globalThis.vscTimers.slashMenuTimer = window.setInterval(() => {
+            // 页面不可见（切标签/最小化）时菜单不可能被操作，跳过扫描
+            if (document.hidden) return;
             let slashMenusCount = getSlashMenusCount();
             if (slashMenusCount !== globalThis.vscCounters.slashMenuCount) {
                 globalThis.vscCounters.slashMenuCount = slashMenusCount;
-                slashMenuObserver(0);
+                slashMenuObserver();
             }
         }, 500);
     }

@@ -1,10 +1,10 @@
 /**
  * 添加监听器以观察`/`菜单是否显示
- * @param times 触发次数
+ * 仅在斜杠菜单数量变化时由 theme.ts 的定时器调用
  * @since 2.6.2
- * @version 2.6.3
+ * @version 3.1.8
  */
-export function slashMenuObserver(times: number) {
+export function slashMenuObserver() {
     const slashMenus = Array.from(document.querySelectorAll("div.protyle-hint.hint--menu"));
     if (slashMenus.length > 0) {
         if (globalThis.vscObservers.slashDisplayObserver !== null) {
@@ -25,30 +25,25 @@ export function slashMenuObserver(times: number) {
                 }
             });
         }
-        // 观察斜杠菜单元素变化
+        // 观察斜杠菜单元素变化，跳过已脱离DOM的元素
         for (const slashMenu of slashMenus) {
+            if (!slashMenu.isConnected) continue;
             globalThis.vscObservers.slashDisplayObserver.observe(slashMenu, {
                 attributes: true,
                 attributeFilter: ["class"],
             });
         }
         // 自行触发一次事件监听器
-        if (
-            slashMenus.every((menu) => {
-                menu.classList.contains("fn__none");
-            })
-        ) {
+        if (slashMenus.every((menu) => menu.classList.contains("fn__none"))) {
             window.removeEventListener("keydown", SlashArrowMoveListener, true);
         } else {
             window.addEventListener("keydown", SlashArrowMoveListener, true);
         }
     } else {
-        // 未找到元素在1s后重新检测
-        if (times === 0 || times === 1) {
-            globalThis.vscTimers.slashMenuRetryTimer = window.setTimeout(slashMenuObserver, 1000, times + 1);
-        } else {
-            console.warn("VSCE: slash menu not found! Your multi-column slash menu can't move with left/right arrows!");
-        }
+        // 斜杠菜单全部消失（该编辑器显示了其他类型的提示）时清理观察器与按键监听
+        globalThis.vscObservers.slashDisplayObserver?.disconnect();
+        globalThis.vscObservers.slashDisplayObserver = null;
+        window.removeEventListener("keydown", SlashArrowMoveListener, true);
     }
 }
 
@@ -137,6 +132,15 @@ function SlashArrowMoveListener(event: KeyboardEvent) {
  * @version 2.6.2
  */
 export function getSlashMenusCount() {
-    let slashMenus = Array.from(document.querySelectorAll("div.protyle-hint.hint--menu"));
-    return slashMenus.length;
+    return document.querySelectorAll("div.protyle-hint.hint--menu").length;
+}
+
+/**
+ * 销毁斜杠菜单相关的监听器与观察器，主题切换时由 destroyTheme 调用
+ * @since 3.1.8
+ */
+export function destroySlashMenu() {
+    globalThis.vscObservers.slashDisplayObserver?.disconnect();
+    globalThis.vscObservers.slashDisplayObserver = null;
+    window.removeEventListener("keydown", SlashArrowMoveListener, true);
 }
