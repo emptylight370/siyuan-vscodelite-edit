@@ -46,6 +46,8 @@
 > 完整更新日志查看[changelog](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/changelog.md)  
 > 提交历史日志查看[whatschange](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/whatschange.md)
 
+- v3.2.0
+  - 适配3.8.10文档树面板
 - v3.1.7
   - 适配3.8.9新加载动画
   - 适配3.8.9退出弹窗
@@ -54,10 +56,6 @@
   - 文档标签、数据库单选多选选项关闭按钮高亮
   - 优化集市顶部分类样式
   - 优化顶栏融合样式
-  - 优化背景图片插件适配
-- v3.1.5
-  - 移动端支持设置页跳转集市
-  - 优化集市包详情页提示块外观
   - 优化背景图片插件适配
 
 # 特殊适配

@@ -1,16 +1,39 @@
-@mixin fileTreeAdjust($device) {
-    // 文档树文档边框
-    ul.b3-list.b3-list--background {
-        border-radius: 8px;
-        border: 2px solid var(--mk-filetree-scrollbar-thumb--hover);
+// 笔记本分块边框
+@mixin fileTreeGroupDivider {
+    // 顶部边框
+    li[data-type="navigation-root"] {
+        border-top: 2px solid var(--mk-filetree-scrollbar-thumb--hover);
+        border-left: 2px solid var(--mk-filetree-scrollbar-thumb--hover);
+        border-right: 2px solid var(--mk-filetree-scrollbar-thumb--hover);
 
-        // 文档树缩进调整，仅有电脑端生效
-        @if $device == desktop {
-            .b3-list-item {
-                border-radius: unset;
-                padding: 1px 5px;
-                margin: unset;
-            }
+        // 修边框圆角
+        &[aria-expanded="true"] {
+            border-bottom-left-radius: unset;
+            border-bottom-right-radius: unset;
+        }
+
+        // 未展开时底部边框
+        &[aria-expanded="false"] {
+            border-bottom: 2px solid var(--mk-filetree-scrollbar-thumb--hover);
+        }
+    }
+
+    // 展开时底部边框
+    li[data-type="navigation-file"] {
+        border-left: 2px solid var(--mk-filetree-scrollbar-thumb--hover);
+        border-right: 2px solid var(--mk-filetree-scrollbar-thumb--hover);
+        // 修边框圆角
+        border-top-left-radius: unset;
+        border-top-right-radius: unset;
+
+        // 修边框圆角
+        &:has(+ [data-type="navigation-file"]) {
+            border-bottom-left-radius: unset;
+            border-bottom-right-radius: unset;
+        }
+
+        &:has(+ [data-type="navigation-root"]) {
+            border-bottom: 2px solid var(--mk-filetree-scrollbar-thumb--hover);
         }
     }
 }
@@ -18,19 +41,11 @@
 @mixin fileTreeIndent {
     ul.b3-list--background {
         // 文档树缩进，一共7级
-        $base-padding: 12px;
+        $base-padding: 2px;
         $indent-step: 8px;
 
-        @for $i from 1 through 7 {
-            $selector: "> ul";
-
-            @if $i > 1 {
-                @for $j from 2 through $i {
-                    $selector: $selector + " > ul";
-                }
-            }
-
-            #{$selector} > li.b3-list-item > span.b3-list-item__toggle {
+        @for $i from 2 through 8 {
+            [aria-level="#{$i}"] > .b3-list-item__toggle {
                 /* 第#{$i}级缩进 */
                 padding-left: $base-padding + ($i - 1) * $indent-step !important;
             }
@@ -39,17 +54,17 @@
 }
 
 // 文档树缩进指示线
-// TODO - 暂时禁用，3.7.3版本修改过大，无法适配
 @mixin fileTreeIndentLine {
     [data-type="navigation-file"] {
         > .b3-list-item__toggle.fn__hidden {
-            &::before {
+            &::after {
                 content: "";
+                order: -1;
                 visibility: visible;
                 height: 100%;
-                border-left: 2px solid color-mix(in srgb, var(--b3-theme-on-background), transparent 60%);
-                margin-left: -3px;
-                margin-right: 1.4px;
+                flex-shrink: 0;
+                border-left: 2px solid color-mix(in srgb, var(--b3-theme-on-surface-light), transparent 50%);
+                margin-left: -2px;
             }
         }
     }
@@ -88,7 +103,7 @@
         }
     }
 
-    @include fileTreeAdjust(desktop);
+    @include fileTreeGroupDivider;
 
     > .block__icons {
         border-bottom: 1px solid var(--mk-filetree-scrollbar-thumb);
@@ -100,7 +115,7 @@
 
     @include fileTreeIndent;
 
-    // @include fileTreeIndentLine;
+    @include fileTreeIndentLine;
 }
 
 /* 电脑端大纲 */
@@ -134,12 +149,8 @@
 }
 
 /* 移动端文档树 */
-#sidebar.side-panel {
-    .b3-list--mobile {
-        @include fileTreeAdjust(mobile);
+[data-type="sidebar-file"] {
+    @include fileTreeGroupDivider;
 
-        @include fileTreeIndent;
-
-        // @include fileTreeIndentLine;
-    }
+    @include fileTreeIndentLine;
 }
