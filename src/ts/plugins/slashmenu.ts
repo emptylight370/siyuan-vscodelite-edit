@@ -45,7 +45,7 @@ export function slashMenuObserver(times: number) {
     } else {
         // 未找到元素在1s后重新检测
         if (times === 0 || times === 1) {
-            setTimeout(slashMenuObserver, 1000, times + 1);
+            globalThis.vscTimers.slashMenuRetryTimer = window.setTimeout(slashMenuObserver, 1000, times + 1);
         } else {
             console.warn("VSCE: slash menu not found! Your multi-column slash menu can't move with left/right arrows!");
         }

@@ -76,7 +76,7 @@ export function bg(times: number) {
     } else {
         if (times === 0 || times === 1) {
             // 未启用插件3秒后重新检测两遍
-            setTimeout(bg, 3000, times + 1);
+            globalThis.vscTimers.bgTimer = window.setTimeout(bg, 3000, times + 1);
         } else {
             // 检测不到背景图移除属性
             document.body.classList.remove("bgenable");

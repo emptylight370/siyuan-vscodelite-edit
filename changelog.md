@@ -3,7 +3,9 @@
 ## v3.2.0
 
 - 适配3.8.10文档树面板
+- 优化代码
 - Adapt to 3.8.10 document tree panel
+- Optimize code
 
 ## v3.1.7
 

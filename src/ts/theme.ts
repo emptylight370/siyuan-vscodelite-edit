@@ -98,7 +98,7 @@ window.destroyTheme = () => {
             }
         });
     // 删除全局变量
-    for (const key of ["vscDefaultConf", "vscMessage", "vscLang", "vscTimers", "vscObservers"]) {
+    for (const key of ["vscDefaultConf", "vscMessage", "vscLang", "vscTimers", "vscObservers", "vscCounters"]) {
         Reflect.deleteProperty(globalThis, key);
     }
 };
@@ -151,6 +151,8 @@ function addThemeToolBar() {
             if (exitFocus) {
                 // 在第一个按钮前添加
                 exitFocus?.parentElement?.insertBefore(vscToolBar, exitFocus.nextElementSibling);
+                // 插入成功后复位计时器
+                globalThis.vscTimers.settingMobileTimer = null;
             } else {
                 globalThis.vscTimers.settingMobileTimer = window.setTimeout(() => {
                     insertMobile(count + 1);
@@ -158,7 +160,7 @@ function addThemeToolBar() {
             }
         };
 
-        setTimeout(() => {
+        globalThis.vscTimers.settingMobileTimer = window.setTimeout(() => {
             insertMobile(0);
         }, 0);
     }
