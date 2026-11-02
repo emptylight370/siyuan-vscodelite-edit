@@ -36,6 +36,20 @@
             border-bottom: 2px solid var(--mk-filetree-scrollbar-thumb--hover);
         }
     }
+
+    // 已关闭笔记本
+    li[data-type="navigation-closed"] {
+        border: 2px solid var(--mk-filetree-scrollbar-thumb--hover);
+        border-radius: var(--b3-border-radius);
+    }
+
+    // 钉住的文档
+    div.file-tree__pins {
+        li[data-type="navigation-file"] {
+            border: 2px solid var(--mk-filetree-scrollbar-thumb--hover);
+            border-radius: var(--b3-border-radius);
+        }
+    }
 }
 
 @mixin fileTreeIndent($base-padding: 2px, $indent-step: 8px) {
