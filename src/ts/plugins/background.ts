@@ -54,6 +54,11 @@ function isBgEnable() {
  * @version 3.0.0
  */
 export function bg(times: number) {
+    // 取消旧的待触发检测链，避免多次style变化导致链并行叠加
+    if (globalThis.vscTimers.bgTimer !== null) {
+        clearTimeout(globalThis.vscTimers.bgTimer);
+        globalThis.vscTimers.bgTimer = null;
+    }
     // 背景自定义插件，部分情况下插件加载缓慢可重复检测一次
     const isEnabled = isBgEnable();
     if (isEnabled) {
