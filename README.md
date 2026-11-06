@@ -50,6 +50,7 @@ Limited by the configuration loading method, updated configurations for new vers
   - Adapt to 3.8.10 document tree panel
   - Optimize multi-column slash menu code
   - Improve background cover plugin adaption
+  - Fix sidebar width drag bar highlight
 - v3.1.7
   - Adapt to 3.8.9 new loading animation
   - Adapt to 3.8.9 exit popup

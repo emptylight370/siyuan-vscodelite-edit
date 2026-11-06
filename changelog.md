@@ -5,10 +5,12 @@
 - 适配3.8.10文档树面板
 - 优化多栏斜杠菜单代码
 - 优化背景图片插件适配
+- 修复侧栏宽度拖动条高亮
 - 优化代码
 - Adapt to 3.8.10 document tree panel
 - Optimize multi-column slash menu code
 - Improve background cover plugin adaption
+- Fix sidebar width drag bar highlight
 - Optimize code
 
 ## v3.1.7
