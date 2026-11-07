@@ -54,15 +54,10 @@
 
 @mixin fileTreeIndent {
     ul.b3-list--background {
-        // 文档树缩进，一共7级
-        $base-padding: 0;
-        $indent-step: 10px;
-
-        @for $i from 2 through 8 {
-            [aria-level="#{$i}"] > .b3-list-item__toggle {
-                /* 第#{$i}级缩进 */
-                padding-left: $base-padding + ($i - 1) * $indent-step !important;
-            }
+        // 思源3.8.10
+        .file-tree__row {
+            --file-tree-indent: 10px;
+            // --file-tree-toggle-padding: 0px;
         }
     }
 }
