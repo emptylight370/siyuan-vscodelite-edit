@@ -115,7 +115,7 @@
 反馈问题和已知问题：[issue list](https://github.com/emptylight370/siyuan-vscodelite-edit/issues) & [known issue](https://github.com/emptylight370/siyuan-vscodelite-edit/discussions/42)。
 
 不使用GitHub或无法访问？  
-[发邮件给我](<mailto:1378990254@qq.com?subject=%5BVSCE%5D%20&body=SiYuan%20version%3A%0D%0AVSCE%20theme%20version%3A%0D%0AOperation%20system%3A%0D%0A%0D%0A(write%20here)>)，  
+[发邮件给我](<mailto:emptylight@foxmail.com?subject=%5BVSCE%5D%20&body=SiYuan%20%E7%89%88%E6%9C%AC%3A%0D%0AVSCE%20%E4%B8%BB%E9%A2%98%E7%89%88%E6%9C%AC%3A%0D%0A%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%3A%0D%0A%0D%0A(%E5%9C%A8%E6%AD%A4%E5%A4%84%E8%BE%93%E5%85%A5%E5%B9%B6%E5%88%A0%E9%99%A4%E8%BF%99%E9%83%A8%E5%88%86)>)，  
 或者[加入QQ频道](https://pd.qq.com/s/7uxvabgbp)，  
 或者[链滴社区](https://ld246.com/article/1728034766990)。
 

@@ -115,7 +115,7 @@ Currently adapted plugins are:
 Bug report & Known issue: [issue list](https://github.com/emptylight370/siyuan-vscodelite-edit/issues) & [known issue](https://github.com/emptylight370/siyuan-vscodelite-edit/discussions/42)
 
 Don't use GitHub & Can't visit Github?  
-Please [email to me](<mailto:1378990254@qq.com?subject=%5BVSCE%5D%20&body=SiYuan%20version%3A%0D%0AVSCE%20theme%20version%3A%0D%0AOperation%20system%3A%0D%0A%0D%0A(write%20here)>).
+Please [email to me](<mailto:emptylight@foxmail.com?subject=%5BVSCE%5D%20&body=SiYuan%20version%3A%0D%0AVSCE%20theme%20version%3A%0D%0AOperation%20system%3A%0D%0A%0D%0A(write%20here%20and%20delete%20this)>).
 
 Support development: [Link](https://emptylight370.github.io/sponsor)
 
