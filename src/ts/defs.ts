@@ -4,17 +4,17 @@ import { SupportedLang, ThemeConfig } from "./types";
 /**
  * 加载全局变量
  * @since 1.3.3
- * @version 3.1.7
+ * @version 3.2.0
  */
 export async function loadGlobalVars() {
     /**
      * ! 默认配置文件
      * @since 1.2.0
-     * @version 3.1.7
+     * @version 3.2.0
      */
     globalThis.vscDefaultConf = {
         version: 16,
-        lastSeen: "3.1.7",
+        lastSeen: "3.2.0",
         // 由 settingsSchema 自动聚合默认配置
         theme: Object.fromEntries(
             settingsSchema.filter((s) => s.group === "theme").map((s) => [s.key, s.default]),
