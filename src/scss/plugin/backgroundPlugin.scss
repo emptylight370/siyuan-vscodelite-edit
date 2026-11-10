@@ -271,6 +271,37 @@ body.bgenable {
         }
     }
 
+    // 同步检出进度弹窗
+    #sync-checkout-progress {
+        // 阻断态遮罩是 --b3-mask-background 实底，会盖住背景图
+        // 沿用进度加载弹窗（_loading.scss）的遮罩处理
+        .sync-checkout__scrim {
+            @supports (backdrop-filter: blur(2px)) {
+                background-color: rgb(255, 255, 255, 8%);
+                backdrop-filter: blur(2px) saturate(105%);
+
+                :root[data-theme-mode="dark"] & {
+                    background-color: rgb(0, 0, 0, 6%);
+                }
+            }
+
+            @media (prefers-reduced-transparency: reduce), (forced-colors: active) {
+                &,
+                :root[data-theme-mode="dark"] & {
+                    background-color: var(--b3-mask-background);
+                    backdrop-filter: none;
+                }
+            }
+        }
+
+        // 居中面板（阻断态 / 非阻断 / 底部悬浮条 / 移动端 sheet 共用），
+        // 实底来自 b3-dialog__loading 的 --b3-theme-background，改为半透明
+        .sync-checkout__panel {
+            background-color: var(--lite-modify-surface__menu);
+            backdrop-filter: blur(2px);
+        }
+    }
+
     // 菜单类的弹出面板
     .b3-menu {
         background-color: var(--lite-modify-surface__menu);
