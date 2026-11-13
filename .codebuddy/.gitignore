@@ -1,1 +1,2 @@
-/issue-triage
+/issue-triage/*
+!/issue-triage/project-context.md

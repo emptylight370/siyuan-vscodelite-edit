@@ -5,7 +5,7 @@ Use this template when generating `project-context.md`. Rules:
 - The agent **auto-fills the card by inspecting the repository** (README / CONTRIBUTING, directory structure, CI configuration, issue templates, `gh label list`, etc.); never substitute guesses for facts;
 - Mark fields that cannot be inferred from the repository as `pending` and list them in the report;
 - The **user preferences** field does not come from repository inspection - always obtain it **by asking the user**, then fill it in;
-- Draft → user review → write to `project-context.md` in the SKILL.md directory.
+- Draft → user review → write to `project-context.md` in the skill's data directory, i.e. `<agentRoot>/issue-triage/project-context.md` (e.g. `.agents/issue-triage/project-context.md`). Never write it inside the skill folder (`<agentRoot>/skills/issue-triage/`).
 
 ---
 
@@ -55,6 +55,6 @@ Use this template when generating `project-context.md`. Rules:
 <!-- Obtained by asking the user, not from repository inspection; applied directly on subsequent runs without re-asking -->
 
 - **Progress tracking**: (enabled / disabled)
-- **Progress directory**: (one progress file per issue, e.g. .codebuddy/issue-triage/progress/; default suggestion: a subfolder named after the skill under the running tool's data subdirectory)
+- **Progress directory**: (one progress file per issue; default `<data directory>/progress/`, e.g. .agents/issue-triage/progress/; the user may pin another path)
 - **Other preferences**:
 ```

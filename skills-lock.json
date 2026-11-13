@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "skills": {
+    "issue-triage": {
+      "source": "emptylight370/personal-skills",
+      "sourceType": "github",
+      "skillPath": "issue-triage/SKILL.md",
+      "computedHash": "5993f546cc1c50c84ae81ab719d1bb14acd34ec635eb9befbc0b44954ec0d217"
+    }
+  }
+}
