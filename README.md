@@ -46,6 +46,8 @@ Limited by the configuration loading method, updated configurations for new vers
 > Full changelog view [ChangeLog](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/changelog.md)  
 > Commit history view [whatschange](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/whatschange.md)
 
+- v3.2.1
+  - Improve background color plugin adaption
 - v3.2.0
   - Adapt to 3.8.10 document tree panel
   - Optimize multi-column slash menu code
@@ -54,12 +56,6 @@ Limited by the configuration loading method, updated configurations for new vers
 - v3.1.7
   - Adapt to 3.8.9 new loading animation
   - Adapt to 3.8.9 exit popup
-- v3.1.6
-  - Remove filetree cursor adaption and typewriter
-  - Highlight document tag, database single and multiple selection options close button
-  - Optimize bazaar top category style
-  - Optimize top bar fusion style
-  - Improve background cover plugin adaption
 
 # Special fitness
 

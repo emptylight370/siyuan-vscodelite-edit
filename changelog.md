@@ -1,5 +1,10 @@
 # ChangeLog
 
+## v3.2.1
+
+- 优化背景图片插件适配
+- Improve background color plugin adaption
+
 ## v3.2.0
 
 - 适配3.8.10文档树面板
