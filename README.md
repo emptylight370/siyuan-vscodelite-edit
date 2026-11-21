@@ -46,6 +46,8 @@ Limited by the configuration loading method, updated configurations for new vers
 > Full changelog view [ChangeLog](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/changelog.md)  
 > Commit history view [whatschange](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/whatschange.md)
 
+- v3.2.2
+  - Fix main menu style
 - v3.2.1
   - Improve background color plugin adaption
 - v3.2.0
@@ -53,9 +55,6 @@ Limited by the configuration loading method, updated configurations for new vers
   - Optimize multi-column slash menu code
   - Improve background cover plugin adaption
   - Fix sidebar width drag bar highlight
-- v3.1.7
-  - Adapt to 3.8.9 new loading animation
-  - Adapt to 3.8.9 exit popup
 
 # Special fitness
 

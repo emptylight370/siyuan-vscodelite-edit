@@ -3,7 +3,7 @@
   "author": "Emptylight",
   "url": "https://github.com/emptylight370/siyuan-vscodelite-edit",
   "version": "3.2.0",
-  "minAppVersion": "3.8.10",
+  "minAppVersion": "3.8.12-alpha.1",
   "displayName": {
     "default": "VSCode Lite Edit"
   },
