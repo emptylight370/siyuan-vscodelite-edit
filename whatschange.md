@@ -1,3 +1,13 @@
+## [3.2.1](https://github.com/emptylight370/siyuan-vscodelite-edit/compare/3.2.0...3.2.1) (2026-11-24)
+
+### ✨ Features | 功能
+
+- 跟进主菜单更名 ([25005e6](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/25005e68ad6b42e25b47b4a3e42b3192ebe31d99))
+
+### 🐛 Bug Fixes | 问题修复
+
+- 底部dock栏适配背景图片插件 ([c24be09](https://github.com/emptylight370/siyuan-vscodelite-edit/commit/c24be095086cfe3de941c9c77b5dad03a49c01f2))
+
 ## [3.2.0](https://github.com/emptylight370/siyuan-vscodelite-edit/compare/3.1.7...3.2.0) (2026-11-10)
 
 ### ✨ Features | 功能

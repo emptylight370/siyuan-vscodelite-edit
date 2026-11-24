@@ -1,14 +1,11 @@
 # ChangeLog
 
-## v3.2.2
-
-- 修复主菜单样式
-- Fix main menu style
-
 ## v3.2.1
 
 - 优化背景图片插件适配
+- 修复主菜单样式
 - Improve background color plugin adaption
+- Fix main menu style
 
 ## v3.2.0
 

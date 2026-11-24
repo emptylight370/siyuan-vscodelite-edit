@@ -46,15 +46,17 @@
 > 完整更新日志查看[changelog](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/changelog.md)  
 > 提交历史日志查看[whatschange](https://github.com/emptylight370/siyuan-vscodelite-edit/blob/scss/whatschange.md)
 
-- v3.2.2
-  - 修复主菜单样式
 - v3.2.1
   - 优化背景图片插件适配
+  - 修复主菜单样式
 - v3.2.0
   - 适配3.8.10文档树面板
   - 优化多栏斜杠菜单代码
   - 优化背景图片插件适配
   - 修复侧栏宽度拖动条高亮
+- v3.1.7
+  - 适配3.8.9新加载动画
+  - 适配3.8.9退出弹窗
 
 # 特殊适配
 
