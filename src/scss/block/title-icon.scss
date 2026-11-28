@@ -1,3 +1,5 @@
+@use "sass:map";
+
 %common {
     content: "";
     display: inline-flex;
@@ -15,311 +17,92 @@
     left: unset !important;
 }
 
-$h1top: 0.36em;
-$h2top: 0.38em;
-$h3top: 0.36em;
-$h4top: 0.34em;
-$h5top: 0.33em;
-$h6top: 0.32em;
+$heading-icons: (
+    1: (
+        top: 0.36em,
+        li-top: 0.02em,
+        fold-li-margin: -0.35em,
+        text-width: 1.95rem,
+    ),
+    2: (
+        top: 0.38em,
+        li-top: 0.04em,
+        fold-li-margin: -0.4em,
+        text-width: 1.75rem,
+    ),
+    3: (
+        top: 0.36em,
+        li-top: 0.1em,
+        fold-li-margin: -0.2em,
+        text-width: 1.58rem,
+    ),
+    4: (
+        top: 0.34em,
+        li-top: 0.15em,
+        fold-li-margin: -0.2em,
+        text-width: 1.45rem,
+    ),
+    5: (
+        top: 0.33em,
+        li-top: 0.2em,
+        fold-li-margin: -0.1em,
+        text-width: 1.33rem,
+    ),
+    6: (
+        top: 0.32em,
+        li-top: 0.35em,
+        fold-li-margin: 0,
+        text-width: 1.2rem,
+    ),
+);
 
-/* h1标签基本样式 */
-%h1 {
+@mixin heading-icon($level, $top) {
     @extend %common;
-    mask: url(../../resources/h1.svg) center center / contain no-repeat;
-    background-color: var(--mk-block-header-h1);
-    top: $h1top;
+    mask: url(../../resources/h#{$level}.svg) center center / contain no-repeat;
+    background-color: var(--mk-block-header-h#{$level});
+    top: $top;
 }
 
-/* h1标签 */
-[data-node-id].h1,
-.protyle-preview h1 {
-    display: flex;
+@each $level, $cfg in $heading-icons {
+    /* 基本块 */
+    [data-node-id].h#{$level},
+    .protyle-preview h#{$level} {
+        display: flex;
 
-    > span {
-        display: inline;
-        max-width: fit-content;
-    }
+        > span {
+            display: inline;
+            max-width: fit-content;
+        }
 
-    &::before {
-        @extend %h1;
+        &::before {
+            @include heading-icon($level, map.get($cfg, top));
 
-        .li > & {
-            /* 列表中适配 */
-            top: 0.02em;
+            .li > & {
+                top: map.get($cfg, li-top);
+            }
         }
     }
-}
 
-/* h1标签 */
-[data-node-id].h1[fold][data-type="NodeHeading"]::before,
-.protyle-preview h1[fold]::before {
-    @extend %h1;
-    @extend %fold;
-    top: $h1top !important;
-
-    .li > & {
-        /* 列表中适配 */
-        width: 1em !important;
-        margin-top: -0.35em !important;
-    }
-}
-
-/* h1标签文本 */
-[data-node-id].h1 > div:nth-child(1),
-.protyle-preview h1 > div:nth-child(1) {
-    display: inline-flex contents;
-    max-width: calc(100% - 1.95rem);
-    min-width: 1px;
-}
-
-/* h2标签基本样式 */
-%h2 {
-    @extend %common;
-    mask: url(../../resources/h2.svg) center center / contain no-repeat;
-    background-color: var(--mk-block-header-h2);
-    top: $h2top;
-}
-
-/* h2标签 */
-[data-node-id].h2,
-.protyle-preview h2 {
-    display: flex;
-
-    > span {
-        display: inline;
-        max-width: fit-content;
-    }
-
-    &::before {
-        @extend %h2;
+    /* 折叠块 */
+    [data-node-id].h#{$level}[fold][data-type="NodeHeading"]::before,
+    .protyle-preview h#{$level}[fold]::before {
+        @include heading-icon($level, map.get($cfg, top));
+        @extend %fold;
+        top: map.get($cfg, top) !important;
 
         .li > & {
-            /* 列表中适配 */
-            top: 0.04em;
+            width: 1em !important;
+            margin-top: map.get($cfg, fold-li-margin) !important;
         }
     }
-}
 
-/* h2标签 */
-[data-node-id].h2[fold][data-type="NodeHeading"]::before,
-.protyle-preview h2[fold]::before {
-    @extend %h2;
-    @extend %fold;
-    top: $h2top !important;
-
-    .li > & {
-        /* 列表中适配 */
-        width: 1em !important;
-        margin-top: -0.4em !important;
+    /* 文本块 */
+    [data-node-id].h#{$level} > div:nth-child(1),
+    .protyle-preview h#{$level} > div:nth-child(1) {
+        display: inline-flex contents;
+        max-width: calc(100% - #{map.get($cfg, text-width)});
+        min-width: 1px;
     }
-}
-
-/* h2标签文本 */
-[data-node-id].h2 > div:nth-child(1),
-.protyle-preview h2 > div:nth-child(1) {
-    display: inline-flex contents;
-    max-width: calc(100% - 1.75rem);
-    min-width: 1px;
-}
-
-/* h3标签基本样式 */
-%h3 {
-    @extend %common;
-    mask: url(../../resources/h3.svg) center center / contain no-repeat;
-    background-color: var(--mk-block-header-h3);
-    top: $h3top;
-}
-
-/* h3标签 */
-[data-node-id].h3,
-.protyle-preview h3 {
-    display: flex;
-
-    > span {
-        display: inline;
-        max-width: fit-content;
-    }
-
-    &::before {
-        @extend %h3;
-
-        .li > & {
-            /* 列表中适配 */
-            top: 0.1em;
-        }
-    }
-}
-
-/* h3标签 */
-[data-node-id].h3[fold][data-type="NodeHeading"]::before,
-.protyle-preview h3[fold]::before {
-    @extend %h3;
-    @extend %fold;
-    top: $h3top !important;
-
-    .li > & {
-        /* 列表中适配 */
-        width: 1em !important;
-        margin-top: -0.2em !important;
-    }
-}
-
-/* h3标签文本 */
-[data-node-id].h3 > div:nth-child(1),
-.protyle-preview h3 > div:nth-child(1) {
-    display: inline-flex contents;
-    max-width: calc(100% - 1.58rem);
-    min-width: 1px;
-}
-
-/* h4标签基本样式 */
-%h4 {
-    @extend %common;
-    mask: url(../../resources/h4.svg) center center / contain no-repeat;
-    background-color: var(--mk-block-header-h4);
-    top: $h4top;
-}
-
-/* h4标签 */
-[data-node-id].h4,
-.protyle-preview h4 {
-    display: flex;
-
-    > span {
-        display: inline;
-        max-width: fit-content;
-    }
-
-    &::before {
-        @extend %h4;
-
-        .li > & {
-            /* 列表中适配 */
-            top: 0.15em;
-        }
-    }
-}
-
-/* h4标签 */
-[data-node-id].h4[fold][data-type="NodeHeading"]::before,
-.protyle-preview h4[fold]::before {
-    @extend %h4;
-    @extend %fold;
-    top: $h4top !important;
-
-    .li > & {
-        /* 列表中适配 */
-        width: 1em !important;
-        margin-top: -0.2em !important;
-    }
-}
-
-/* h4标签文本 */
-[data-node-id].h4 > div:nth-child(1),
-.protyle-preview h4 > div:nth-child(1) {
-    display: inline-flex contents;
-    max-width: calc(100% - 1.45rem);
-    min-width: 1px;
-}
-
-/* h5标签基本样式 */
-%h5 {
-    @extend %common;
-    mask: url(../../resources/h5.svg) center center / contain no-repeat;
-    background-color: var(--mk-block-header-h5);
-    top: $h5top;
-}
-
-/* h5标签 */
-[data-node-id].h5,
-.protyle-preview h5 {
-    display: flex;
-
-    > span {
-        display: inline;
-        max-width: fit-content;
-    }
-
-    &::before {
-        @extend %h5;
-
-        .li > & {
-            /* 列表中适配 */
-            top: 0.2em;
-        }
-    }
-}
-
-/* h5标签 */
-[data-node-id].h5[fold][data-type="NodeHeading"]::before,
-.protyle-preview h5[fold]::before {
-    @extend %h5;
-    @extend %fold;
-    top: $h5top !important;
-
-    .li > & {
-        /* 列表中适配 */
-        width: 1em !important;
-        margin-top: -0.1em !important;
-    }
-}
-
-/* h5标签文本 */
-[data-node-id].h5 > div:nth-child(1),
-.protyle-preview h5 > div:nth-child(1) {
-    display: inline-flex contents;
-    max-width: calc(100% - 1.33rem);
-    min-width: 1px;
-}
-
-/* h6标签基本样式 */
-%h6 {
-    @extend %common;
-    mask: url(../../resources/h6.svg) center center / contain no-repeat;
-    background-color: var(--mk-block-header-h6);
-    top: $h6top;
-}
-
-/* h6标签 */
-[data-node-id].h6,
-.protyle-preview h6 {
-    display: flex;
-
-    > span {
-        display: inline;
-        max-width: fit-content;
-    }
-
-    &::before {
-        @extend %h6;
-
-        .li > & {
-            /* 列表中适配 */
-            top: 0.35em;
-        }
-    }
-}
-
-/* h6标签 */
-[data-node-id].h6[fold][data-type="NodeHeading"]::before,
-.protyle-preview h6[fold]::before {
-    @extend %h6;
-    @extend %fold;
-    top: $h6top !important;
-
-    .li > & {
-        /* 列表中适配 */
-        width: 1em !important;
-        margin-top: 0 !important;
-    }
-}
-
-/* h6标签文本 */
-[data-node-id].h6 > div:nth-child(1),
-.protyle-preview h6 > div:nth-child(1) {
-    display: inline-flex contents;
-    max-width: calc(100% - 1.2rem);
-    min-width: 1px;
 }
 
 // 修复导出预览中部分元素偏移问题

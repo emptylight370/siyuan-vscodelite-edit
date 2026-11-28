@@ -3,7 +3,9 @@
 ## 3.2.2
 
 - 优化主题模糊样式
+- 优化代码
 - Improve theme blur style
+- Optimize code
 
 ## v3.2.1
 
