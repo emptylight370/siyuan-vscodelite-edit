@@ -1,3 +1,5 @@
+@use "../global";
+
 // 选中的图片样式
 .protyle-wysiwyg [data-node-id] .img--select {
     filter: unset;
@@ -8,4 +10,5 @@
 // 图片查看器背景不透明
 .viewer-container.viewer-backdrop.viewer-fixed {
     background-color: color-mix(in srgb, var(--b3-theme-background) 80%, transparent);
+    @include global.lite-backdrop;
 }

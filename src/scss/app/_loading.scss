@@ -1,5 +1,3 @@
-// 退出弹窗，注释之后应用于所有同类无进度加载弹窗
-// #exitProgress {
 // 背景遮罩模糊效果
 .b3-dialog__scrim.b3-dialog__scrim--progress {
     @supports (backdrop-filter: blur(2px)) {
@@ -19,4 +17,20 @@
         }
     }
 }
-// }
+
+// 退出弹窗
+#exitProgress {
+    .b3-dialog__scrim--frosted {
+        animation: exit-progress-blur 1.5s ease-in-out;
+    }
+
+    @keyframes exit-progress-blur {
+        from {
+            backdrop-filter: blur(0) saturate(100%);
+        }
+
+        to {
+            backdrop-filter: blur(2px) saturate(105%);
+        }
+    }
+}

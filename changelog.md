@@ -1,5 +1,10 @@
 # ChangeLog
 
+## 3.2.2
+
+- 优化主题模糊样式
+- Improve theme blur style
+
 ## v3.2.1
 
 - 优化背景图片插件适配

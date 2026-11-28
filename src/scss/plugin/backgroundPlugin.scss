@@ -1,3 +1,5 @@
+@use "../global";
+
 #bglayer,
 #bgvideo {
     opacity: 0.8 !important;
@@ -9,7 +11,7 @@ body.bgenable {
 
     .dock__backdrop {
         /* 浮动侧栏悬浮弹出的侧栏 */
-        backdrop-filter: blur(2px);
+        @include global.lite-backdrop;
         opacity: 0.8;
     }
 
@@ -145,7 +147,7 @@ body.bgenable {
     &.vscmobile {
         .side-panel {
             background-color: var(--lite-sidebar-background--mobile);
-            backdrop-filter: blur(2px);
+            @include global.lite-backdrop;
 
             &#model {
                 background-color: var(--lite-sidebar2-background--mobile);
@@ -193,7 +195,7 @@ body.bgenable {
 
         #menu.b3-menu {
             background-color: var(--lite-sidebar-background--mobile);
-            backdrop-filter: blur(2px);
+            @include global.lite-backdrop;
 
             // 移动端的菜单项，新设置菜单仍然有效
             .b3-menu__item,
@@ -228,7 +230,7 @@ body.bgenable {
         // 移动端底部快捷栏
         #mobileBottomBar {
             background-color: var(--lite-modify-surface__menu);
-            backdrop-filter: blur(2px);
+            @include global.lite-backdrop;
         }
 
         // 移动端数据库背景透明
@@ -255,7 +257,7 @@ body.bgenable {
     // 设置面板类的弹出面板
     .b3-dialog--open .b3-dialog__container {
         background-color: var(--lite-modify-surface__menu);
-        backdrop-filter: blur(2px);
+        @include global.lite-backdrop;
 
         // 适配命令面板
         .search__header {

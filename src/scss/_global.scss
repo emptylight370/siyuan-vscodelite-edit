@@ -1,0 +1,6 @@
+// 背景磨砂效果
+@mixin lite-backdrop {
+    @supports (backdrop-filter: blur(2px)) {
+        backdrop-filter: blur(2px);
+    }
+}
