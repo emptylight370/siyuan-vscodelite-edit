@@ -99,7 +99,7 @@ $heading-icons: (
     /* 文本块 */
     [data-node-id].h#{$level} > div:nth-child(1),
     .protyle-preview h#{$level} > div:nth-child(1) {
-        display: inline-flex contents;
+        // display: inline-flex contents;
         max-width: calc(100% - #{map.get($cfg, text-width)});
         min-width: 1px;
     }
